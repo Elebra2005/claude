@@ -4,6 +4,7 @@ import json
 import asyncio
 import secrets
 import string
+import logging
 from datetime import datetime, timedelta, timezone
 
 import psycopg2
@@ -19,6 +20,11 @@ from aiogram.types import (
     CallbackQuery,
     InlineKeyboardMarkup,
     InlineKeyboardButton,
+)
+from aiogram.exceptions import (
+    TelegramBadRequest,
+    TelegramForbiddenError,
+    TelegramRetryAfter,
 )
 
 load_dotenv()
@@ -38,6 +44,22 @@ POSTGRES_DB = os.getenv("POSTGRES_DB", "postgres")
 POSTGRES_USER = os.getenv("POSTGRES_USER", "postgres")
 POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD", "postgres")
 
+# Напоминания об окончании подписки
+REMINDER_CHECK_INTERVAL = int(os.getenv("REMINDER_CHECK_INTERVAL", "3600"))
+REMINDER_STARTUP_DELAY = int(os.getenv("REMINDER_STARTUP_DELAY", "60"))
+REMINDER_SEND_DELAY = float(os.getenv("REMINDER_SEND_DELAY", "0.1"))
+
+# Окна отправки: (метка, сколько осталось «больше чем», «не больше чем»).
+# Проверка идёт раз в час, поэтому клиент попадает в окно ровно один раз.
+REMINDER_WINDOWS = (
+    ("3d", timedelta(days=2), timedelta(days=3)),
+    ("1d", timedelta(0), timedelta(days=1)),
+)
+
+# Дату окончания показываем клиенту по Москве. Фиксированное смещение,
+# а не ZoneInfo — в контейнере может не быть tzdata.
+MSK = timezone(timedelta(hours=3))
+
 Configuration.account_id = YOOKASSA_SHOP_ID
 Configuration.secret_key = YOOKASSA_SECRET_KEY
 
@@ -52,6 +74,8 @@ pending_payments = {}
 
 bot = Bot(BOT_TOKEN)
 dp = Dispatcher()
+
+logger = logging.getLogger(__name__)
 
 
 def main_menu():
@@ -313,6 +337,202 @@ async def create_remna_user(tg_id: int, username: str, days: int):
         conn.close()
 
 
+def _db_connect():
+    return psycopg2.connect(
+        host=POSTGRES_HOST,
+        port=POSTGRES_PORT,
+        dbname=POSTGRES_DB,
+        user=POSTGRES_USER,
+        password=POSTGRES_PASSWORD,
+    )
+
+
+def _db_init_reminders():
+    """Отдельная таблица под отметки об отправке. Имя своё, с таблицами
+    Remnawave не пересекается и её миграции не трогает."""
+    conn = _db_connect()
+    try:
+        with conn, conn.cursor() as cur:
+            cur.execute(
+                """
+                create table if not exists bot_sent_reminders (
+                    id bigserial primary key,
+                    telegram_id text not null,
+                    expire_at timestamp not null,
+                    kind text not null,
+                    sent_at timestamptz not null default now(),
+                    unique (telegram_id, expire_at, kind)
+                )
+                """
+            )
+    finally:
+        conn.close()
+
+
+def _db_expiring_users():
+    """Подписки, истекающие в ближайшие дни.
+
+    Берём только самую свежую подписку каждого клиента: бот на каждую покупку
+    заводит нового пользователя Remnawave, поэтому у продлившегося клиента
+    остаются старые строки, и напоминать по ним не нужно.
+    """
+    conn = _db_connect()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                select u.telegram_id, u.expire_at
+                from users u
+                where u.telegram_id is not null
+                  and u.telegram_id <> ''
+                  and u.expire_at is not null
+                  and u.status = 'ACTIVE'
+                  and u.expire_at > now() - interval '1 day'
+                  and u.expire_at < now() + interval '5 days'
+                  and not exists (
+                      select 1
+                      from users u2
+                      where u2.telegram_id = u.telegram_id
+                        and u2.expire_at > u.expire_at
+                  )
+                """
+            )
+            return cur.fetchall()
+    finally:
+        conn.close()
+
+
+def _db_claim_reminder(telegram_id: str, expire_at, kind: str):
+    """Занимает отправку. Возвращает id отметки либо None, если это
+    напоминание уже уходило (в том числе до перезапуска бота)."""
+    conn = _db_connect()
+    try:
+        with conn, conn.cursor() as cur:
+            cur.execute(
+                """
+                insert into bot_sent_reminders (telegram_id, expire_at, kind)
+                values (%s, %s, %s)
+                on conflict (telegram_id, expire_at, kind) do nothing
+                returning id
+                """,
+                (telegram_id, expire_at, kind),
+            )
+            row = cur.fetchone()
+        return row[0] if row else None
+    finally:
+        conn.close()
+
+
+def _db_release_reminder(claim_id: int):
+    """Снимает отметку, чтобы напоминание ушло на следующем круге."""
+    conn = _db_connect()
+    try:
+        with conn, conn.cursor() as cur:
+            cur.execute("delete from bot_sent_reminders where id = %s", (claim_id,))
+    finally:
+        conn.close()
+
+
+def _as_utc(value: datetime) -> datetime:
+    """expire_at в базе лежит без таймзоны и означает UTC."""
+    if value.tzinfo is None:
+        return value.replace(tzinfo=timezone.utc)
+    return value.astimezone(timezone.utc)
+
+
+def _reminder_kind(expire_at_utc: datetime, now_utc: datetime):
+    left = expire_at_utc - now_utc
+    for kind, low, high in REMINDER_WINDOWS:
+        if low < left <= high:
+            return kind
+    return None
+
+
+def renew_keyboard():
+    return InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text="🔄 Продлить подписку", callback_data="buy")],
+    ])
+
+
+def reminder_text(kind: str, expire_at_utc: datetime):
+    when = expire_at_utc.astimezone(MSK).strftime("%d.%m.%Y в %H:%M")
+    if kind == "3d":
+        head = "⏳ Ваша подписка заканчивается через 3 дня."
+    else:
+        head = "⚠️ Ваша подписка заканчивается завтра."
+
+    return (
+        f"{head}\n\n"
+        f"Доступ к VPN будет отключён {when} (МСК).\n\n"
+        "Чтобы не потерять подключение, продлите подписку заранее — "
+        "сразу после оплаты бот выдаст новую ссылку."
+    )
+
+
+async def send_reminders_once():
+    rows = await asyncio.to_thread(_db_expiring_users)
+    now_utc = datetime.now(timezone.utc)
+    sent = 0
+
+    for telegram_id, expire_at in rows:
+        expire_at_utc = _as_utc(expire_at)
+        kind = _reminder_kind(expire_at_utc, now_utc)
+        if kind is None:
+            continue
+
+        try:
+            chat_id = int(telegram_id)
+        except (TypeError, ValueError):
+            logger.warning("Пропускаю некорректный telegram_id: %r", telegram_id)
+            continue
+
+        claim_id = await asyncio.to_thread(
+            _db_claim_reminder,
+            str(telegram_id),
+            expire_at_utc.replace(tzinfo=None),
+            kind,
+        )
+        if claim_id is None:
+            continue
+
+        try:
+            await bot.send_message(
+                chat_id,
+                reminder_text(kind, expire_at_utc),
+                reply_markup=renew_keyboard(),
+            )
+            sent += 1
+        except TelegramRetryAfter as e:
+            # Лимит Telegram — отметку снимаем, отправим на следующем круге.
+            await asyncio.to_thread(_db_release_reminder, claim_id)
+            logger.warning("Лимит Telegram, пауза %s c", e.retry_after)
+            await asyncio.sleep(e.retry_after)
+        except TelegramForbiddenError:
+            # Клиент заблокировал бота — повторять бессмысленно, отметку оставляем.
+            logger.info("Клиент %s заблокировал бота", chat_id)
+        except TelegramBadRequest as e:
+            logger.warning("Не удалось отправить напоминание %s: %s", chat_id, e)
+        except Exception:
+            await asyncio.to_thread(_db_release_reminder, claim_id)
+            logger.exception("Ошибка отправки напоминания %s", chat_id)
+
+        await asyncio.sleep(REMINDER_SEND_DELAY)
+
+    if sent:
+        logger.info("Отправлено напоминаний: %s", sent)
+    return sent
+
+
+async def reminders_loop():
+    await asyncio.sleep(REMINDER_STARTUP_DELAY)
+    while True:
+        try:
+            await send_reminders_once()
+        except Exception:
+            logger.exception("Сбой в цикле напоминаний")
+        await asyncio.sleep(REMINDER_CHECK_INTERVAL)
+
+
 @dp.message(CommandStart())
 async def start(message: Message):
     await message.answer(
@@ -429,6 +649,12 @@ async def check_payment(callback: CallbackQuery):
 
 
 async def main():
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+    )
+    await asyncio.to_thread(_db_init_reminders)
+    asyncio.create_task(reminders_loop())
     await dp.start_polling(bot)
 
 
