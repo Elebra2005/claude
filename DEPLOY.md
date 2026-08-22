@@ -39,7 +39,7 @@ docker exec 103c04531ada_remnawave-db psql -U postgres -d postgres \
 
 ```bash
 docker exec 103c04531ada_remnawave-db psql -U postgres -d postgres -c "
-select telegram_id, expire_at, expire_at - now() as osталось
+select telegram_id, expire_at, expire_at - now() as осталось
 from users u
 where telegram_id is not null and status = 'ACTIVE'
   and expire_at between now() and now() + interval '5 days'
