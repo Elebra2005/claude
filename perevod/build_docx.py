@@ -1,6 +1,6 @@
 import re
 from docx import Document
-from docx.shared import Pt, Cm, RGBColor
+from docx.shared import Pt, Cm, RGBColor, Emu
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.oxml.ns import qn
@@ -49,7 +49,28 @@ n = len(src)
 first_h1 = True
 while i < n:
     line = src[i].rstrip()
-    # table
+    # рисунок
+    mimg = re.match(r'^!\[(.*?)\]\((fig/[^)]+)\)\s*$', line)
+    if mimg:
+        from PIL import Image as PILImage
+        cap, path = mimg.group(1), mimg.group(2)
+        px_w, px_h = PILImage.open(path).size
+        dpi = 300 if path.rsplit('/', 1)[1] in ('sign_shock.png', 'label_lub.png') else 260
+        w_cm = px_w / dpi * 2.54
+        w_cm = min(w_cm, 16.0)
+        ip = doc.add_paragraph(); ip.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        ip.paragraph_format.space_before = Pt(6); ip.paragraph_format.space_after = Pt(2)
+        ip.add_run().add_picture(path, width=Cm(w_cm))
+        if cap:
+            cp = doc.add_paragraph(); cp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            cp.paragraph_format.space_after = Pt(10)
+            runs(cp, cap)
+            for r in cp.runs:
+                r.italic = True; r.font.size = Pt(9)
+                r.font.color.rgb = RGBColor(0x44, 0x44, 0x44)
+        i += 1
+        continue
+
     if line.startswith('|') and i + 1 < n and re.match(r'^\|[\s:|-]+\|$', src[i+1].strip()):
         rows = []
         while i < n and src[i].strip().startswith('|'):

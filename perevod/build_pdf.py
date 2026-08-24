@@ -9,7 +9,7 @@ from reportlab.lib.enums import TA_JUSTIFY, TA_CENTER
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import (BaseDocTemplate, PageTemplate, Frame, Paragraph,
-                                Spacer, Table, TableStyle, PageBreak, KeepTogether)
+                                Spacer, Table, TableStyle, PageBreak, KeepTogether, Image)
 
 LIB = '/usr/share/fonts/truetype/liberation/'
 pdfmetrics.registerFont(TTFont('Serif', LIB + 'LiberationSerif-Regular.ttf'))
@@ -38,6 +38,9 @@ QUOTE  = S('quote', fontSize=9.8, leading=13.5, textColor=WARN, leftIndent=0.35*
 LI     = S('li', fontSize=10, leading=13.5, spaceAfter=2.5, alignment=TA_JUSTIFY)
 TH     = S('th', fontName='Serif-Bold', fontSize=8.6, leading=11)
 TD     = S('td', fontSize=8.6, leading=11)
+CAP    = S('cap', fontSize=8.8, leading=11.5, alignment=TA_CENTER,
+           fontName='Serif-It', textColor=colors.HexColor('#444444'),
+           spaceBefore=3, spaceAfter=10)
 TITLE  = S('title', fontName='Serif-Bold', fontSize=22, leading=27, alignment=TA_CENTER,
            spaceAfter=10, textColor=ACCENT)
 SUB    = S('sub', fontSize=13, leading=17, alignment=TA_CENTER, spaceAfter=6)
@@ -67,11 +70,30 @@ def fmt(text):
     return CJK.sub(r'<font name="CJK">\1</font>', s)
 
 lines = open('SF4030T-5S_RU.md', encoding='utf-8').read().split('\n')
-story, i, n, first_h1 = [], 0, len(lines), True
+story, i, n, first_h1, cover = [], 0, len(lines), True, False
 AVAIL = A4[0] - 4 * cm
 
 while i < n:
     line = lines[i].rstrip()
+
+    # --- рисунок ---
+    mimg = re.match(r'^!\[(.*?)\]\((fig/[^)]+)\)\s*$', line)
+    if mimg:
+        cap, path = mimg.group(1), mimg.group(2)
+        from PIL import Image as PILImage
+        px_w, px_h = PILImage.open(path).size
+        dpi = 300 if path.rsplit('/', 1)[1] in ('sign_shock.png', 'label_lub.png') else 260
+        w = px_w / dpi * 72.0
+        h = px_h / dpi * 72.0
+        maxw, maxh = AVAIL, 20.5 * cm
+        k = min(maxw / w, maxh / h, 1.0)
+        w, h = w * k, h * k
+        blk = [Image(path, width=w, height=h, hAlign='CENTER')]
+        if cap:
+            blk.append(Paragraph(fmt(cap), CAP))
+        story += [Spacer(1, 5), KeepTogether(blk), Spacer(1, 3)]
+        i += 1
+        continue
 
     # --- таблица ---
     if line.startswith('|') and i + 1 < n and re.match(r'^\|[\s:|-]+\|$', lines[i + 1].strip()):
@@ -112,10 +134,18 @@ while i < n:
         if lvl == 1:
             if first_h1:
                 first_h1 = False
-                story += [Spacer(1, 5 * cm), Paragraph(fmt(txt), TITLE)]
+                story += [Spacer(1, 3.2 * cm), Paragraph(fmt(txt), TITLE)]
+                cover = True
                 i += 1
                 continue
             story.append(PageBreak())
+        if txt == 'Предисловие':
+            cover = False
+            story.append(PageBreak())
+        elif lvl == 2 and cover:
+            story.append(Paragraph(fmt(txt), SUB))
+            i += 1
+            continue
         story.append(Paragraph(fmt(txt), {1: H1, 2: H2, 3: H3}.get(lvl, H4)))
         i += 1; continue
 
@@ -163,9 +193,6 @@ while i < n:
     i += 1
 
 # --- титульный блок и колонтитулы ---
-story.insert(1, Paragraph('Портальный обрабатывающий центр SF4030T-5S', SUB))
-story.insert(2, Paragraph('Перевод с китайского языка', SUB))
-story.insert(3, PageBreak())
 
 def decorate(canv, doc):
     canv.saveState()
@@ -178,6 +205,8 @@ def decorate(canv, doc):
         canv.setLineWidth(0.4)
         canv.line(2 * cm, A4[1] - 1.45 * cm, A4[0] - 2 * cm, A4[1] - 1.45 * cm)
     canv.restoreState()
+
+story.insert(3, Paragraph('Перевод с китайского языка', SUB))
 
 doc = BaseDocTemplate('SF4030T-5S_Руководство_RU.pdf', pagesize=A4,
                       leftMargin=2 * cm, rightMargin=2 * cm,
