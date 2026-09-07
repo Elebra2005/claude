@@ -357,8 +357,15 @@ async def cmd_dolgov_debug(message: Message, service: RatesService) -> None:
         f"ветка парсера: {debug.source or '—'}",
         f"заход по скриптам: {'да' if debug.scanned_scripts else 'нет'}",
         f"ручной DOLGOV_REGEX: {'да' if debug.used_regex else 'нет'}",
-        f"выбрано: {debug.picked if debug.picked is not None else '—'}",
+        f"выбрано (банки): {debug.picked if debug.picked is not None else '—'}",
+        f"курс ЦБ со страницы: {debug.cbr_quoted if debug.cbr_quoted is not None else '—'}",
     ]
+    if (
+        debug.picked is not None
+        and debug.cbr_quoted is not None
+        and abs(debug.picked - debug.cbr_quoted) < 1e-9
+    ):
+        lines.append("⚠️ курсы совпали — похоже, взят цэбэшный вместо банковского")
     if debug.discovered_url:
         lines.append(f"карточка найдена в каталоге: {escape(debug.discovered_url)}")
     if debug.error:

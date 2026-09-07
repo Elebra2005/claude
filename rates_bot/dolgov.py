@@ -70,6 +70,7 @@ class DolgovDebug:
     yuan_hits: int = 0
     discovered_url: str | None = None
     source: str | None = None
+    cbr_quoted: float | None = None
 
 
 def to_text(raw_html: str, *, keep_scripts: bool = False) -> str:
@@ -80,12 +81,24 @@ def to_text(raw_html: str, *, keep_scripts: bool = False) -> str:
     return _SPACES.sub(" ", html.unescape(body)).strip()
 
 
+def _last_before(pattern: re.Pattern[str], text: str, limit: int) -> int | None:
+    """Позиция последнего совпадения левее limit."""
+    found = None
+    for match in pattern.finditer(text, 0, limit):
+        found = match.start()
+    return found
+
+
 def extract_pair(text: str) -> tuple[float | None, float | None]:
     """(курс банков, курс ЦБ) из блока «Полная стоимость авто».
 
-    Курсов на странице два, и важен именно банковский: берём тот, что стоит
-    после слов «коммерческих банках». Если разметка изменится и раздела не
-    найдётся, при двух числах банковское — второе (так свёрстано у них).
+    Каждый курс относим к ближайшему заголовку СЛЕВА от него, а не к первому
+    на странице: слово «коммерческ» вполне может встретиться выше — в меню
+    или описании услуг — и тогда привязка к первому вхождению отдала бы под
+    видом банковского курс ЦБ.
+
+    Если заголовков нет вовсе, при двух курсах банковским считается второй:
+    так свёрстано у них.
     """
     hits = [
         (match.start(), _as_float(match.group(1)))
@@ -95,18 +108,14 @@ def extract_pair(text: str) -> tuple[float | None, float | None]:
     if not hits:
         return None, None
 
-    bank_at = _BANK_SECTION.search(text)
-    cbr_at = _CBR_SECTION.search(text)
-
-    bank = next((v for pos, v in hits if bank_at and pos > bank_at.start()), None)
-    cbr = next(
-        (
-            v
-            for pos, v in hits
-            if cbr_at and pos > cbr_at.start() and (not bank_at or pos < bank_at.start())
-        ),
-        None,
-    )
+    bank = cbr = None
+    for pos, value in hits:
+        bank_at = _last_before(_BANK_SECTION, text, pos)
+        cbr_at = _last_before(_CBR_SECTION, text, pos)
+        if bank_at is not None and (cbr_at is None or bank_at > cbr_at):
+            bank = value if bank is None else bank
+        elif cbr_at is not None:
+            cbr = value if cbr is None else cbr
 
     if bank is None:
         bank = hits[1][1] if len(hits) >= 2 else hits[0][1]
@@ -248,7 +257,7 @@ async def fetch_page(
         match = _YUAN_RATE.search(text)
         if match:
             window = text[max(0, match.start() - 70) : match.end() + 70].strip()
-        debug.picked, debug.source = bank, "банки"
+        debug.picked, debug.source, debug.cbr_quoted = bank, "банки", cbr_quoted
         debug.candidates = [(bank, window)]
         return DolgovQuote(value=bank, context=window[:200], url=url,
                            cbr_quoted=cbr_quoted, source="банки"), debug
