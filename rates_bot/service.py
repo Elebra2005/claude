@@ -8,15 +8,17 @@ from datetime import date, datetime, timedelta
 import aiohttp
 from aiogram import Bot
 from aiogram.enums import ParseMode
+from aiogram.types import BufferedInputFile
 from aiogram.exceptions import (
     TelegramBadRequest,
     TelegramForbiddenError,
     TelegramRetryAfter,
 )
 
-from . import analytics, formatting, moex, storage
+from . import analytics, chart, dolgov, formatting, moex, storage
 from .analytics import Stats
 from .cbr import CbrClient, CbrError
+from .dolgov import DolgovDebug, DolgovQuote
 from .config import MSK, Config
 from .storage import Storage
 
@@ -37,6 +39,8 @@ class RatesService:
         self.bot = bot
         self.cbr = CbrClient(session)
         self._refresh_lock = asyncio.Lock()
+        self.last_dolgov: DolgovQuote | None = None
+        self.last_dolgov_debug: DolgovDebug | None = None
 
     # --- загрузка данных --------------------------------------------------
 
@@ -75,7 +79,30 @@ class RatesService:
                     log.warning("ЦБ не отдал курс %s", code)
                     continue
                 await storage.run(self.store.save_rates, code, [(on_date, value)])
+
+            await self.refresh_dolgov()
             return on_date
+
+    async def refresh_dolgov(self) -> DolgovQuote | None:
+        """Курс перевозчика меняется в течение дня — пишем последнее значение
+        за сегодня, перезаписывая предыдущее."""
+        if not self.config.dolgov_enabled:
+            return None
+        quote, debug = await dolgov.fetch(
+            self.session,
+            self.config.dolgov_url,
+            low=self.config.dolgov_min,
+            high=self.config.dolgov_max,
+            pattern=self.config.dolgov_regex,
+        )
+        self.last_dolgov_debug = debug
+        if quote is None:
+            return None
+        self.last_dolgov = quote
+        await storage.run(
+            self.store.save_rates, dolgov.CODE, [(datetime.now(MSK).date(), quote.value)]
+        )
+        return quote
 
     # --- расчёты ----------------------------------------------------------
 
@@ -96,6 +123,26 @@ class RatesService:
                 result.append(item)
         return result
 
+    async def alert_codes(self) -> list[str]:
+        """Валюты ЦБ плюс курс Долгова — по нему просадка важнее всего."""
+        codes = list(self.config.currencies)
+        if self.config.dolgov_enabled:
+            codes.append(dolgov.CODE)
+        return codes
+
+    async def chart_png(self, days: int | None = None) -> tuple[bytes | None, int]:
+        days = days or self.config.chart_days
+        cutoff = datetime.now(MSK).date() - timedelta(days=days)
+        cbr_series = [
+            row for row in await storage.run(self.store.series, "CNY", days * 2)
+            if row[0] >= cutoff
+        ]
+        dolgov_series = [
+            row for row in await storage.run(self.store.series, dolgov.CODE, days * 2)
+            if row[0] >= cutoff
+        ]
+        return chart.render(cbr_series, dolgov_series, days=days), days
+
     async def moex_quote(self) -> moex.MoexQuote | None:
         if not self.config.moex_enabled:
             return None
@@ -112,7 +159,9 @@ class RatesService:
                 for _, code, level in await storage.run(self.store.targets, chat_id)
             ]
         quote = await self.moex_quote()
-        return formatting.digest(blocks[0].on_date, blocks, quote, targets)
+        return formatting.digest(
+            blocks[0].on_date, blocks, quote, targets, self.last_dolgov
+        )
 
     # --- отправка ---------------------------------------------------------
 
@@ -134,6 +183,19 @@ class RatesService:
             except TelegramBadRequest as exc:
                 log.error("chat %s: сообщение отклонено (%s)", chat_id, exc)
                 return False
+        return False
+
+    async def send_photo(self, chat_id: int, png: bytes, caption: str = "") -> bool:
+        photo = BufferedInputFile(png, filename="cny.png")
+        try:
+            await self.bot.send_photo(chat_id, photo, caption=caption[:1024])
+            return True
+        except TelegramRetryAfter as exc:
+            await asyncio.sleep(exc.retry_after + 1)
+        except TelegramForbiddenError:
+            await storage.run(self.store.set_flag, chat_id, "active", False)
+        except TelegramBadRequest as exc:
+            log.error("chat %s: график отклонён (%s)", chat_id, exc)
         return False
 
     async def broadcast(self, recipients: list[int], text: str) -> int:
@@ -164,10 +226,19 @@ class RatesService:
                 continue
             if not await storage.run(self.store.mark_digest, sub.chat_id, today):
                 continue
-            text = await self.digest_text(sub.chat_id)
-            if text:
-                await self.send(sub.chat_id, text)
+            await self.send_digest(sub.chat_id)
             await asyncio.sleep(self.config.send_delay)
+
+    async def send_digest(self, chat_id: int) -> None:
+        text = await self.digest_text(chat_id)
+        if not text:
+            return
+        await self.send(chat_id, text)
+        if not self.config.chart_in_digest:
+            return
+        png, _ = await self.chart_png()
+        if png:
+            await self.send_photo(chat_id, png)
 
     async def run_dip_alerts(self) -> None:
         """После каждого обновления курсов: проверить пороги и цели."""
@@ -177,7 +248,7 @@ class RatesService:
 
         stats_by_code: dict[str, Stats] = {}
         dips: list[analytics.Dip] = []
-        for code in self.config.currencies:
+        for code in await self.alert_codes():
             item = await self.stats(code)
             if not item:
                 continue

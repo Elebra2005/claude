@@ -2,7 +2,9 @@ FROM python:3.12-slim
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    TZ=Europe/Moscow
+    TZ=Europe/Moscow \
+    MPLBACKEND=Agg \
+    MPLCONFIGDIR=/tmp/mpl
 
 WORKDIR /app
 

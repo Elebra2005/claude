@@ -4,17 +4,22 @@ from datetime import date
 from html import escape
 
 from .analytics import MONTH_NAMES, Dip, MonthStat, Stats
+from .dolgov import DolgovQuote
 from .moex import MoexQuote
+
+DOLGOV_TITLE = "🚚 Курс Долгова <b>CNY</b>"
 
 FLAGS = {
     "CNY": "🇨🇳", "USD": "🇺🇸", "EUR": "🇪🇺", "GBP": "🇬🇧", "JPY": "🇯🇵",
     "KZT": "🇰🇿", "TRY": "🇹🇷", "AED": "🇦🇪", "HKD": "🇭🇰", "CHF": "🇨🇭",
     "BYN": "🇧🇾", "KRW": "🇰🇷", "INR": "🇮🇳", "AMD": "🇦🇲", "GEL": "🇬🇪",
+    "CNYD": "🚚",
 }
 
 TITLES = {
     "CNY": "Юань", "USD": "Доллар", "EUR": "Евро", "GBP": "Фунт",
     "JPY": "Иена", "KZT": "Тенге", "TRY": "Лира", "AED": "Дирхам",
+    "CNYD": "Курс Долгова",
 }
 
 
@@ -93,15 +98,28 @@ def moex_block(quote: MoexQuote) -> str:
     )
 
 
+def dolgov_block(quote: DolgovQuote, cbr_value: float | None) -> str:
+    """Курс перевозчика и его наценка к ЦБ — та цифра, по которой реально платят."""
+    line = f"{DOLGOV_TITLE}  <b>{money(quote.value)} ₽</b>"
+    if cbr_value:
+        spread = (quote.value - cbr_value) / cbr_value * 100.0
+        line += f"\n   наценка к ЦБ {signed_pct(spread)}"
+    return line
+
+
 def digest(
     on_date: date,
     blocks: list[Stats],
     moex: MoexQuote | None,
     targets: list[tuple[str, float]],
+    dolgov: DolgovQuote | None = None,
 ) -> str:
     head = f"📅 <b>Курсы ЦБ на {on_date.strftime('%d.%m.%Y')}</b>"
     parts = [head, ""]
     parts.append("\n\n".join(stats_block(s) for s in blocks))
+    if dolgov:
+        cbr_value = next((b.value for b in blocks if b.char_code == "CNY"), None)
+        parts.extend(["", dolgov_block(dolgov, cbr_value)])
     if moex:
         parts.extend(["", moex_block(moex)])
     if targets:
@@ -173,6 +191,8 @@ def seasonality(char_code: str, months: list[MonthStat], span: str) -> str:
 HELP = """<b>Что умеет бот</b>
 
 /rates — курсы прямо сейчас
+/chart 90 — график юаня: ЦБ, Долгов и наценка
+/dolgov — курс юаня с сайта Долгова
 /dip — есть ли просадка на сегодня
 /history CNY 90 — минимум, максимум и динамика за N дней
 /seasonality CNY — по каким месяцам валюта исторически дешевела
@@ -181,4 +201,5 @@ HELP = """<b>Что умеет бот</b>
 /settings — время рассылки и переключатели
 /digest_time 09:30 — своё время ежедневной сводки
 /mute, /unmute — выключить/включить уведомления о просадках
-/stop — отписаться, /start — подписаться снова"""
+/stop — отписаться, /start — подписаться снова
+/dolgov_debug — что парсер видит на странице Долгова"""

@@ -9,7 +9,9 @@ from aiogram.enums import ParseMode
 from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
 
-from . import analytics, formatting, storage
+from aiogram.types import BufferedInputFile
+
+from . import analytics, dolgov, formatting, storage
 from .service import RatesService
 
 log = logging.getLogger(__name__)
@@ -279,6 +281,90 @@ async def cmd_settings(message: Message, service: RatesService) -> None:
 async def cmd_stop(message: Message, service: RatesService) -> None:
     await storage.run(service.store.set_flag, message.chat.id, "active", False)
     await _reply(message, "Отписал. Вернуться — /start")
+
+
+@router.message(Command("chart"))
+async def cmd_chart(message: Message, service: RatesService, command) -> None:
+    args = (command.args or "").split()
+    days = None
+    if args:
+        try:
+            days = max(14, min(1825, int(args[0])))
+        except ValueError:
+            days = None
+
+    png, used_days = await service.chart_png(days)
+    if png is None:
+        await _reply(message, "Пока нечего рисовать — история ещё загружается.")
+        return
+
+    dolgov_points = await storage.run(service.store.series, dolgov.CODE, used_days * 2)
+    caption = f"Юань к рублю за {used_days} дней"
+    if not dolgov_points:
+        caption += ". Курс Долгова начнёт накапливаться с сегодняшнего дня."
+    await message.answer_photo(
+        BufferedInputFile(png, filename="cny.png"), caption=caption
+    )
+
+
+@router.message(Command("dolgov"))
+async def cmd_dolgov(message: Message, service: RatesService) -> None:
+    if not service.config.dolgov_enabled:
+        await _reply(message, "Курс Долгова выключен: DOLGOV_ENABLED=false в .env")
+        return
+
+    quote = await service.refresh_dolgov()
+    if quote is None:
+        debug = service.last_dolgov_debug
+        reason = debug.error if debug and debug.error else "число на странице не нашлось"
+        await _reply(
+            message,
+            f"Не смог получить курс с сайта: {escape(str(reason))}\n\n"
+            f"Покажи, что видит парсер: /dolgov_debug",
+        )
+        return
+
+    cbr = await service.stats("CNY")
+    await _reply(
+        message,
+        formatting.dolgov_block(quote, cbr.value if cbr else None)
+        + f"\n\n<i>Источник: {escape(quote.url)}</i>",
+    )
+
+
+@router.message(Command("dolgov_debug"))
+async def cmd_dolgov_debug(message: Message, service: RatesService) -> None:
+    """Диагностика парсера: что именно найдено на странице."""
+    await service.refresh_dolgov()
+    debug = service.last_dolgov_debug
+    if debug is None:
+        await _reply(message, "Курс Долгова выключен в настройках.")
+        return
+
+    lines = [
+        "🔧 <b>Парсер сайта Долгова</b>",
+        "",
+        f"адрес: {escape(debug.url)}",
+        f"HTTP: {debug.status}",
+        f"размер страницы: {debug.html_len} символов, текста {debug.text_len}",
+        f"упоминаний юаня: {debug.marker_hits}",
+        f"ручной DOLGOV_REGEX: {'да' if debug.used_regex else 'нет'}",
+        f"выбрано: {debug.picked if debug.picked is not None else '—'}",
+    ]
+    if debug.error:
+        lines.append(f"ошибка: {escape(debug.error)}")
+    if debug.candidates:
+        lines.append("")
+        lines.append("<b>Кандидаты</b> (первый — выбранный):")
+        for value, window in debug.candidates[:5]:
+            lines.append(f"• <b>{value}</b> — <code>{escape(window[:160])}</code>")
+    elif not debug.error:
+        lines.append("")
+        lines.append(
+            "Чисел рядом со словом «юань» нет. Скорее всего курс подгружается "
+            "скриптом, и в HTML его нет — пришли этот вывод мне."
+        )
+    await _reply(message, "\n".join(lines))
 
 
 @router.message(F.text & ~F.text.startswith("/"))

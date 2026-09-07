@@ -11,8 +11,9 @@ from datetime import date, timedelta
 
 os.environ.setdefault("RATES_BOT_TOKEN", "test:token")
 
-from rates_bot import analytics, formatting  # noqa: E402
+from rates_bot import analytics, chart, formatting  # noqa: E402
 from rates_bot.cbr import _parse_xml, _unit_rate  # noqa: E402
+from rates_bot.dolgov import extract, to_text  # noqa: E402
 from rates_bot.storage import Storage  # noqa: E402
 
 FAILED: list[str] = []
@@ -208,6 +209,90 @@ def build_month_series():
     return series
 
 
+def parse_page(html: str, pattern: str | None = None):
+    value, candidates, _ = extract(
+        to_text(html), low=5.0, high=30.0, pattern=pattern, raw=html
+    )
+    return value, candidates
+
+
+def test_dolgov() -> None:
+    """Реальную страницу Долгова отсюда не видно, поэтому гоняем парсер на
+    правдоподобных вариантах вёрстки — включая ловушки."""
+    print("\nПарсер курса Долгова")
+
+    value, _ = parse_page('<div class="rate"><span>Курс юаня</span><b>12,15 ₽</b></div>')
+    check("курс после слова «юань»", value == 12.15, f"получено {value}")
+
+    value, _ = parse_page("<p>Курс: <b>12.4</b> руб. за юань</p>")
+    check("курс до слова «юань»", value == 12.4, f"получено {value}")
+
+    value, _ = parse_page('<td>CNY</td><td>11,98</td>')
+    check("курс по коду CNY", value == 11.98, f"получено {value}")
+
+    value, _ = parse_page("<div>¥ 1 = 12,07 ₽</div>")
+    check("курс по символу ¥", value == 12.07, f"получено {value}")
+
+    # Цены машин рядом с «юань» не должны победить: фильтр диапазона.
+    value, _ = parse_page(
+        "<div>Автомобиль за 1 250 000 рублей, оплата в юанях по курсу 12,33</div>"
+    )
+    check("цена авто не спутана с курсом", value == 12.33, f"получено {value}")
+
+    # Целое число рядом проигрывает дробному — у курса всегда копейки.
+    value, _ = parse_page("<div>Юань 7 дней доставки, курс 12,60 ₽</div>")
+    check("дробное предпочтительнее целого", value == 12.6, f"получено {value}")
+
+    # Скрипты выкидываются до разбора.
+    value, _ = parse_page(
+        '<script>var cny = 99.9; // юань</script><div>Курс юаня 12,20</div>'
+    )
+    check("содержимое script игнорируется", value == 12.2, f"получено {value}")
+
+    value, candidates = parse_page("<div>Автомобили из Китая под ключ</div>")
+    check("нет упоминаний — нет курса", value is None)
+    check("кандидатов тоже нет", candidates == [])
+
+    value, _ = parse_page("<div>Курс юаня 1200</div>")
+    check("значение вне диапазона отброшено", value is None, f"получено {value}")
+
+    value, _ = parse_page(
+        '<div data-rate="12,88">курс</div>', pattern=r'data-rate="([\d.,]+)"'
+    )
+    check("ручной DOLGOV_REGEX перебивает эвристику", value == 12.88, f"получено {value}")
+
+    value, _ = parse_page("<div>Курс юаня 12,15</div>", pattern=r"нетакого=([\d.,]+)")
+    check("нерабочий regex не откатывается на эвристику", value is None)
+
+    value, _ = parse_page(
+        '<script>window.rates={"cny":12.71};</script><div>Курс юаня 9,99</div>',
+        pattern=r'"cny"\s*:\s*([\d.]+)',
+    )
+    check("regex достаёт число из JS-блока", value == 12.71, f"получено {value}")
+
+    text = to_text("<p>Курс&nbsp;юаня &mdash; 12,15&nbsp;₽</p>")
+    check("сущности и пробелы нормализованы", "юаня" in text and "12,15" in text, text)
+
+
+def test_chart() -> None:
+    print("\nГрафик")
+    today = date.today()
+    cbr = [(today - timedelta(days=i), 12.0 - i * 0.01) for i in range(60, -1, -1)]
+    dolgov = [(day, value * 1.03) for day, value in cbr[-20:]]
+
+    png = chart.render(cbr, dolgov, days=60)
+    check("PNG отрисован", png is not None and png[:8] == b"\x89PNG\r\n\x1a\n")
+    check("размер разумный", 10_000 < len(png) < 900_000, f"{len(png)} байт")
+
+    solo = chart.render(cbr, [], days=60)
+    check("без данных Долгова тоже рисует", solo is not None and solo[:4] == b"\x89PNG")
+
+    one_point = chart.render(cbr, [(today, 12.5)], days=60)
+    check("одна точка Долгова не ломает", one_point is not None)
+
+    check("пустые данные — None", chart.render([], [], days=60) is None)
+
+
 def main() -> int:
     test_parsing()
     test_stats()
@@ -215,6 +300,8 @@ def main() -> int:
     test_seasonality()
     test_storage()
     test_formatting()
+    test_dolgov()
+    test_chart()
     print()
     if FAILED:
         print(f"ПРОВАЛЕНО: {len(FAILED)} — {', '.join(FAILED)}")

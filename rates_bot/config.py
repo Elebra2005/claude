@@ -68,6 +68,15 @@ class Config:
     moex_enabled: bool
     moex_intraday_drop_pct: float
 
+    dolgov_enabled: bool
+    dolgov_url: str
+    dolgov_regex: str | None
+    dolgov_min: float
+    dolgov_max: float
+
+    chart_in_digest: bool
+    chart_days: int
+
     poll_interval: int
     backfill_years: int
     db_path: str
@@ -112,6 +121,13 @@ class Config:
             dip_ma_window_days=_int("DIP_MA_WINDOW_DAYS", 30),
             moex_enabled=_bool("MOEX_ENABLED", True),
             moex_intraday_drop_pct=_float("MOEX_INTRADAY_DROP_PCT", 1.0),
+            dolgov_enabled=_bool("DOLGOV_ENABLED", True),
+            dolgov_url=(os.getenv("DOLGOV_URL") or "https://dolgov-auto.ru/").strip(),
+            dolgov_regex=(os.getenv("DOLGOV_REGEX") or "").strip() or None,
+            dolgov_min=_float("DOLGOV_MIN", 5.0),
+            dolgov_max=_float("DOLGOV_MAX", 30.0),
+            chart_in_digest=_bool("CHART_IN_DIGEST", True),
+            chart_days=max(14, min(1825, _int("CHART_DAYS", 90))),
             poll_interval=max(60, _int("POLL_INTERVAL", 900)),
             backfill_years=max(1, min(25, _int("BACKFILL_YEARS", 8))),
             db_path=os.getenv("DB_PATH", "/data/rates.db"),

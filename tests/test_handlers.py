@@ -15,6 +15,7 @@ os.environ.update(
     CURRENCIES="CNY,USD,EUR",
     PRIMARY_CURRENCY="CNY",
     MOEX_ENABLED="false",
+    DOLGOV_ENABLED="false",
     DIGEST_TIME="10:00",
 )
 
@@ -63,9 +64,13 @@ class StubCommand:
 class StubBot:
     def __init__(self) -> None:
         self.messages: list[tuple[int, str]] = []
+        self.photos: list[int] = []
 
     async def send_message(self, chat_id, text, **kwargs):
         self.messages.append((chat_id, text))
+
+    async def send_photo(self, chat_id, photo, **kwargs):
+        self.photos.append(chat_id)
 
 
 def seed(store: Storage) -> None:
@@ -208,11 +213,29 @@ async def scenario() -> None:
         await handlers.cmd_settings(msg, service)
         check("настройки показаны", "Настройки" in msg.last and "09:30" in msg.last)
 
+        print("\n/chart")
+        msg = StubMessage()
+        photos: list = []
+
+        async def answer_photo(photo, **kwargs):
+            photos.append(kwargs.get("caption", ""))
+
+        msg.answer_photo = answer_photo
+        await handlers.cmd_chart(msg, service, StubCommand("90"))
+        check("график отрисован", len(photos) == 1, f"{len(photos)} фото")
+        check("подпись про Долгова", "Долгова" in photos[0], photos[0] if photos else "")
+
+        print("\n/dolgov при выключенном источнике")
+        msg = StubMessage()
+        await handlers.cmd_dolgov(msg, service)
+        check("сообщает, что выключен", "выключен" in msg.last)
+
         print("\nЕжедневная сводка")
         bot.messages.clear()
         store.set_digest_time(555, *_now_msk())
         await service.run_digests()
         check("сводка ушла", len(bot.messages) == 1, f"{len(bot.messages)} сообщений")
+        check("график приложен к сводке", len(bot.photos) == 1, f"{len(bot.photos)} фото")
         await service.run_digests()
         check("вторая сводка за день не ушла", len(bot.messages) == 1)
 
