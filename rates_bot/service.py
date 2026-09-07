@@ -95,6 +95,7 @@ class RatesService:
             low=self.config.dolgov_min,
             high=self.config.dolgov_max,
             pattern=self.config.dolgov_regex,
+            catalog_url=self.config.dolgov_catalog_url,
         )
         self.last_dolgov_debug = debug
         if quote is None:

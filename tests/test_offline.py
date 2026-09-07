@@ -4,16 +4,28 @@
 Запуск:  python -m tests.test_offline
 """
 
+import asyncio
 import os
 import sys
 import tempfile
 from datetime import date, timedelta
 
+import aiohttp
+from multidict import CIMultiDict, CIMultiDictProxy
+from yarl import URL
+
 os.environ.setdefault("RATES_BOT_TOKEN", "test:token")
 
 from rates_bot import analytics, chart, formatting  # noqa: E402
 from rates_bot.cbr import _parse_xml, _unit_rate  # noqa: E402
-from rates_bot.dolgov import api_urls, extract, to_text  # noqa: E402
+from rates_bot.dolgov import (  # noqa: E402
+    api_urls,
+    car_links,
+    extract,
+    extract_pair,
+    to_text,
+)
+from rates_bot.dolgov import fetch as dolgov_fetch  # noqa: E402
 from rates_bot.storage import Storage  # noqa: E402
 
 FAILED: list[str] = []
@@ -284,6 +296,153 @@ def test_dolgov() -> None:
     check("подсказка по адресам курса", urls == ["/api/currency/rate"], f"получено {urls}")
 
 
+# Блок с карточки авто на catalog.dolgov-auto.ru — ровно как он свёрстан.
+DOLGOV_CARD = """
+<div class="price-block">
+  <h2>Полная стоимость авто</h2>
+  <p>Курс валют ЦБ на сегодня:</p>
+  <p><span>1$ - 86,1910&#8381;</span> <span>1&yen; - 12,8540&#8381;</span></p>
+  <p>Курс валют в коммерческих банках:</p>
+  <p><span>1$ - 89,25&#8381;</span> <span>1&yen; - 13,43&#8381;</span></p>
+</div>
+"""
+
+
+def test_dolgov_card() -> None:
+    """Курсов на странице два. Платят по банковскому — его и берём."""
+    print("\nКарточка авто у Долгова")
+    text = to_text(DOLGOV_CARD)
+
+    bank, cbr = extract_pair(text)
+    check("взят курс коммерческих банков", bank == 13.43, f"получено {bank}")
+    check("курс ЦБ разобран для сверки", cbr == 12.854, f"получено {cbr}")
+    check("банковский выше — иначе перепутали", bank > cbr)
+
+    # Долларовые строки рядом не должны перебивать юаневые.
+    check("доллар не спутан с юанем", bank != 89.25 and cbr != 86.191)
+
+    # Разметка сменилась, заголовков разделов нет: при двух курсах банковский второй.
+    plain = to_text("<p>1&yen; - 12,8540&#8381;</p><p>1&yen; - 13,43&#8381;</p>")
+    bank2, cbr2 = extract_pair(plain)
+    check("без заголовков берём второй", bank2 == 13.43, f"получено {bank2}")
+    check("первый уходит в курс ЦБ", cbr2 == 12.854, f"получено {cbr2}")
+
+    single, none_cbr = extract_pair(to_text("<p>1&yen; - 13,43&#8381;</p>"))
+    check("единственный курс берётся как есть", single == 13.43, f"получено {single}")
+    check("курса ЦБ при этом нет", none_cbr is None)
+
+    check("на странице без курсов — пусто", extract_pair("Авто из Китая") == (None, None))
+
+    # Общая эвристика на этом же тексте тоже не должна брать доллар.
+    value, _, _ = extract(text, low=5.0, high=30.0)
+    check("эвристика тоже остаётся в юанях", value in (12.854, 13.43), f"получено {value}")
+
+
+def test_car_links() -> None:
+    """Карточки уходят в продажу и отдают 404 — бот находит новую в каталоге."""
+    print("\nПоиск карточки в каталоге")
+    catalog = "https://catalog.dolgov-auto.ru/china-used/"
+    page = """
+      <a href="/china-used/mercedes-benz/c-class/2_12021338/">Mercedes</a>
+      <a href="/china-used/bmw/x5/2_9911777/">BMW</a>
+      <a href="/china-used/">Все авто</a>
+      <a href="/china-used/bmw/">BMW все</a>
+      <a href="https://catalog.dolgov-auto.ru/china-used/li/l7/2_555/">Li L7</a>
+    """
+    links = car_links(page, catalog)
+    check(
+        "относительная ссылка развёрнута",
+        "https://catalog.dolgov-auto.ru/china-used/mercedes-benz/c-class/2_12021338/" in links,
+        str(links),
+    )
+    check("абсолютная ссылка сохранена",
+          "https://catalog.dolgov-auto.ru/china-used/li/l7/2_555/" in links)
+    check("разделы каталога отброшены",
+          not any(url.rstrip("/").endswith(("china-used", "bmw")) for url in links), str(links))
+    check("дубликатов нет", len(links) == len(set(links)))
+    check("на странице без ссылок — пусто", car_links("<p>нет ссылок</p>", catalog) == [])
+
+
+class StubResponse:
+    def __init__(self, status: int, body: str, url: str = "https://example.test/") -> None:
+        self.status = status
+        self._body = body
+        self._url = url
+
+    async def __aenter__(self):
+        return self
+
+    async def __aexit__(self, *exc):
+        return False
+
+    def raise_for_status(self):
+        if self.status < 400:
+            return
+        # Настоящий ClientResponseError, а не заглушка: у него есть request_info,
+        # и код, который его форматирует, проверяется по-настоящему.
+        info = aiohttp.RequestInfo(
+            URL(self._url), "GET", CIMultiDictProxy(CIMultiDict()), URL(self._url)
+        )
+        raise aiohttp.ClientResponseError(info, (), status=self.status, message="Not Found")
+
+    async def text(self, **kwargs):
+        return self._body
+
+
+class StubSession:
+    """Отдаёт заранее заданные страницы; всё остальное — 404."""
+
+    def __init__(self, pages: dict[str, str]) -> None:
+        self.pages = pages
+        self.requested: list[str] = []
+
+    def get(self, url, **kwargs):
+        self.requested.append(url)
+        body = self.pages.get(url)
+        return StubResponse(200 if body is not None else 404, body or "not found", url)
+
+
+CATALOG = "https://catalog.dolgov-auto.ru/china-used/"
+CARD = CATALOG + "mercedes-benz/c-class/2_12021338/"
+FRESH_CARD = CATALOG + "bmw/x5/2_9911777/"
+
+
+def test_dolgov_fetch() -> None:
+    print("\nЗагрузка курса Долгова")
+
+    async def scenario():
+        # Обычный случай: карточка на месте.
+        session = StubSession({CARD: DOLGOV_CARD})
+        quote, debug = await dolgov_fetch(session, CARD, catalog_url=CATALOG)
+        check("курс снят с карточки", quote is not None and quote.value == 13.43)
+        check("курс ЦБ сохранён рядом", quote.cbr_quoted == 12.854)
+        check("ветка парсера — банки", debug.source == "банки")
+        check("в каталог не ходили", session.requested == [CARD], str(session.requested))
+
+        # Карточку продали: 404 → ищем свежую в каталоге.
+        catalog_html = f'<a href="{FRESH_CARD}">BMW</a><a href="/china-used/">все</a>'
+        session = StubSession({CATALOG: catalog_html, FRESH_CARD: DOLGOV_CARD})
+        quote, debug = await dolgov_fetch(session, CARD, catalog_url=CATALOG)
+        check("после 404 курс всё равно получен", quote is not None and quote.value == 13.43)
+        check("ссылка починилась сама", debug.discovered_url == FRESH_CARD)
+        check("каталог был запрошен", CATALOG in session.requested)
+
+        # Каталог тоже лежит — молча сдаёмся, без исключений.
+        session = StubSession({})
+        quote, debug = await dolgov_fetch(session, CARD, catalog_url=CATALOG)
+        check("всё недоступно — тихий отказ", quote is None)
+        check("причина записана в диагностику", bool(debug.error))
+
+        # Ручной шаблон обходит эвристику и берёт своё число.
+        session = StubSession({CARD: '<div data-cny="14,01">курс</div>'})
+        quote, _ = await dolgov_fetch(
+            session, CARD, pattern=r'data-cny="([\d.,]+)"', catalog_url=None
+        )
+        check("DOLGOV_REGEX сработал", quote is not None and quote.value == 14.01)
+
+    asyncio.run(scenario())
+
+
 def test_chart() -> None:
     print("\nГрафик")
     today = date.today()
@@ -311,6 +470,9 @@ def main() -> int:
     test_storage()
     test_formatting()
     test_dolgov()
+    test_dolgov_card()
+    test_car_links()
+    test_dolgov_fetch()
     test_chart()
     print()
     if FAILED:

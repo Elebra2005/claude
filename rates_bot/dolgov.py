@@ -11,6 +11,7 @@ import html
 import logging
 import re
 from dataclasses import dataclass, field
+from urllib.parse import urljoin
 
 import aiohttp
 
@@ -33,12 +34,23 @@ _MARKER = re.compile(r"юан|cny|¥|женьминьби|жэньминьби",
 # курс юаня заведомо двузначный.
 _NUMBER = re.compile(r"\d{1,3}(?:[.,]\d{1,4})?")
 
+# Основной формат Долгова на карточке авто:
+#   Курс валют ЦБ на сегодня:            1$ - 86,1910₽   1¥ - 12,8540₽
+#   Курс валют в коммерческих банках:    1$ - 89,25₽     1¥ - 13,43₽
+# Платят по банковскому, поэтому берём его, а курс ЦБ оставляем для сверки.
+_YUAN_RATE = re.compile(r"1\s*¥\s*[-–—−]?\s*(\d{1,3}(?:[.,]\d{1,4})?)\s*₽")
+_BANK_SECTION = re.compile(r"коммерческ", re.I)
+_CBR_SECTION = re.compile(r"валют\s+ЦБ", re.I)
+_CAR_LINK = re.compile(r"""href=["']([^"']*/china-used/[^"']+)["']""", re.I)
+
 
 @dataclass
 class DolgovQuote:
-    value: float
+    value: float          # курс коммерческих банков — по нему и платят
     context: str          # фрагмент страницы, из которого взято число
     url: str
+    cbr_quoted: float | None = None   # курс ЦБ, как его показывает сам сайт
+    source: str = "банки"             # какой веткой парсера получено
 
 
 @dataclass
@@ -55,6 +67,9 @@ class DolgovDebug:
     used_regex: bool = False
     scanned_scripts: bool = False
     script_urls: list[str] = field(default_factory=list)
+    yuan_hits: int = 0
+    discovered_url: str | None = None
+    source: str | None = None
 
 
 def to_text(raw_html: str, *, keep_scripts: bool = False) -> str:
@@ -63,6 +78,53 @@ def to_text(raw_html: str, *, keep_scripts: bool = False) -> str:
     body = raw_html if keep_scripts else _DROP_BLOCKS.sub(" ", raw_html)
     body = _TAGS.sub(" ", body)
     return _SPACES.sub(" ", html.unescape(body)).strip()
+
+
+def extract_pair(text: str) -> tuple[float | None, float | None]:
+    """(курс банков, курс ЦБ) из блока «Полная стоимость авто».
+
+    Курсов на странице два, и важен именно банковский: берём тот, что стоит
+    после слов «коммерческих банках». Если разметка изменится и раздела не
+    найдётся, при двух числах банковское — второе (так свёрстано у них).
+    """
+    hits = [
+        (match.start(), _as_float(match.group(1)))
+        for match in _YUAN_RATE.finditer(text)
+    ]
+    hits = [(pos, value) for pos, value in hits if value is not None]
+    if not hits:
+        return None, None
+
+    bank_at = _BANK_SECTION.search(text)
+    cbr_at = _CBR_SECTION.search(text)
+
+    bank = next((v for pos, v in hits if bank_at and pos > bank_at.start()), None)
+    cbr = next(
+        (
+            v
+            for pos, v in hits
+            if cbr_at and pos > cbr_at.start() and (not bank_at or pos < bank_at.start())
+        ),
+        None,
+    )
+
+    if bank is None:
+        bank = hits[1][1] if len(hits) >= 2 else hits[0][1]
+        if cbr is None and len(hits) >= 2:
+            cbr = hits[0][1]
+    return bank, cbr
+
+
+def car_links(raw_html: str, base_url: str) -> list[str]:
+    """Ссылки на карточки авто — курс печатается только на них."""
+    found: list[str] = []
+    for href in _CAR_LINK.findall(raw_html):
+        url = urljoin(base_url, html.unescape(href))
+        tail = url.rstrip("/").rsplit("/", 1)[-1]
+        # Карточка авто оканчивается идентификатором с цифрами, раздел — нет.
+        if any(ch.isdigit() for ch in tail) and url not in found:
+            found.append(url)
+    return found[:10]
 
 
 def api_urls(raw_html: str) -> list[str]:
@@ -133,26 +195,32 @@ def extract(
     return (candidates[0][0] if candidates else None), candidates, False
 
 
-async def fetch(
-    session: aiohttp.ClientSession,
-    url: str,
-    *,
-    low: float = 5.0,
-    high: float = 30.0,
-    pattern: str | None = None,
-) -> tuple[DolgovQuote | None, DolgovDebug]:
-    """Никогда не бросает исключений — блок необязательный."""
-    debug = DolgovDebug(url=url)
+async def _load(session: aiohttp.ClientSession, url: str, debug: DolgovDebug) -> str | None:
     try:
         async with session.get(
             url, timeout=_TIMEOUT, headers={"User-Agent": _UA}, allow_redirects=True
         ) as resp:
             debug.status = resp.status
             resp.raise_for_status()
-            raw = await resp.text(errors="replace")
+            return await resp.text(errors="replace")
     except (aiohttp.ClientError, asyncio.TimeoutError, UnicodeDecodeError) as exc:
         debug.error = f"{type(exc).__name__}: {exc}"
-        log.debug("Dolgov: страница не открылась (%s)", debug.error)
+        log.debug("Dolgov: %s не открылась (%s)", url, debug.error)
+        return None
+
+
+async def fetch_page(
+    session: aiohttp.ClientSession,
+    url: str,
+    *,
+    low: float,
+    high: float,
+    pattern: str | None,
+) -> tuple[DolgovQuote | None, DolgovDebug]:
+    """Разбор одной страницы. Исключений не бросает — блок необязательный."""
+    debug = DolgovDebug(url=url)
+    raw = await _load(session, url, debug)
+    if raw is None:
         return None, debug
 
     debug.html_len = len(raw)
@@ -161,28 +229,79 @@ async def fetch(
     debug.marker_hits = len(_MARKER.findall(text))
     debug.marker_hits_raw = len(_MARKER.findall(raw))
     debug.script_urls = api_urls(raw)
+    debug.yuan_hits = len(_YUAN_RATE.findall(text))
 
-    value, candidates, used_regex = extract(
-        text, low=low, high=high, pattern=pattern, raw=raw
-    )
+    # 1. Ручной шаблон, если задан, — он главнее всего.
+    if pattern:
+        value, candidates, _ = extract(text, low=low, high=high, pattern=pattern, raw=raw)
+        debug.used_regex = True
+        if value is not None:
+            debug.picked, debug.source, debug.candidates = value, "regex", candidates[:8]
+            return DolgovQuote(value=value, context=candidates[0][1][:200], url=url,
+                               source="regex"), debug
+        return None, debug
 
-    if value is None and not pattern and debug.marker_hits_raw:
-        # В видимом тексте пусто, но в исходнике маркеры есть — значит курс
-        # внутри <script>. Второй заход, уже без выбрасывания скриптов.
-        deep = to_text(raw, keep_scripts=True)
-        value, candidates, _ = extract(deep, low=low, high=high)
+    # 2. Штатный формат Долгова: два курса, берём банковский.
+    bank, cbr_quoted = extract_pair(text)
+    if bank is not None and low <= bank <= high:
+        window = ""
+        match = _YUAN_RATE.search(text)
+        if match:
+            window = text[max(0, match.start() - 70) : match.end() + 70].strip()
+        debug.picked, debug.source = bank, "банки"
+        debug.candidates = [(bank, window)]
+        return DolgovQuote(value=bank, context=window[:200], url=url,
+                           cbr_quoted=cbr_quoted, source="банки"), debug
+
+    # 3. Запасная эвристика: число рядом с любым упоминанием юаня.
+    value, candidates, _ = extract(text, low=low, high=high)
+    if value is None and debug.marker_hits_raw:
+        # В видимом тексте пусто, но в исходнике маркеры есть — курс в <script>.
+        value, candidates, _ = extract(to_text(raw, keep_scripts=True), low=low, high=high)
         debug.scanned_scripts = True
 
     debug.candidates = candidates[:8]
     debug.picked = value
-    debug.used_regex = used_regex
-
     if value is None:
-        log.debug(
-            "Dolgov: курс не найден (маркеров %s, длина текста %s)",
-            debug.marker_hits,
-            debug.text_len,
-        )
         return None, debug
 
-    return DolgovQuote(value=value, context=candidates[0][1][:200], url=url), debug
+    debug.source = "эвристика"
+    return DolgovQuote(value=value, context=candidates[0][1][:200], url=url,
+                       source="эвристика"), debug
+
+
+async def fetch(
+    session: aiohttp.ClientSession,
+    url: str,
+    *,
+    low: float = 5.0,
+    high: float = 30.0,
+    pattern: str | None = None,
+    catalog_url: str | None = None,
+) -> tuple[DolgovQuote | None, DolgovDebug]:
+    """Курс печатается на карточке конкретного авто, а карточки уходят в
+    продажу и отдают 404. Поэтому при неудаче берём из каталога первую живую
+    карточку и пробуем её — так ссылка чинит себя сама."""
+    quote, debug = await fetch_page(session, url, low=low, high=high, pattern=pattern)
+    if quote is not None or not catalog_url:
+        return quote, debug
+
+    catalog_debug = DolgovDebug(url=catalog_url)
+    raw = await _load(session, catalog_url, catalog_debug)
+    if raw is None:
+        debug.error = debug.error or catalog_debug.error
+        return None, debug
+
+    for candidate_url in car_links(raw, catalog_url):
+        if candidate_url.rstrip("/") == url.rstrip("/"):
+            continue
+        quote, fresh = await fetch_page(
+            session, candidate_url, low=low, high=high, pattern=pattern
+        )
+        fresh.discovered_url = candidate_url
+        if quote is not None:
+            log.info("Dolgov: курс снят с найденной карточки %s", candidate_url)
+            return quote, fresh
+        debug = fresh
+
+    return None, debug

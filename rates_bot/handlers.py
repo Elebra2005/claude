@@ -325,9 +325,13 @@ async def cmd_dolgov(message: Message, service: RatesService) -> None:
         return
 
     cbr = await service.stats("CNY")
+    tail = ""
+    if quote.cbr_quoted:
+        tail = f"\n<i>Сайт показывает курс ЦБ {formatting.money(quote.cbr_quoted)} ₽</i>"
     await _reply(
         message,
         formatting.dolgov_block(quote, cbr.value if cbr else None)
+        + tail
         + f"\n\n<i>Источник: {escape(quote.url)}</i>",
     )
 
@@ -349,10 +353,14 @@ async def cmd_dolgov_debug(message: Message, service: RatesService) -> None:
         f"размер страницы: {debug.html_len} символов, текста {debug.text_len}",
         f"упоминаний юаня: {debug.marker_hits} в тексте, "
         f"{debug.marker_hits_raw} в исходнике",
+        f"строк вида «1¥ - X₽»: {debug.yuan_hits}",
+        f"ветка парсера: {debug.source or '—'}",
         f"заход по скриптам: {'да' if debug.scanned_scripts else 'нет'}",
         f"ручной DOLGOV_REGEX: {'да' if debug.used_regex else 'нет'}",
         f"выбрано: {debug.picked if debug.picked is not None else '—'}",
     ]
+    if debug.discovered_url:
+        lines.append(f"карточка найдена в каталоге: {escape(debug.discovered_url)}")
     if debug.error:
         lines.append(f"ошибка: {escape(debug.error)}")
     if debug.candidates:

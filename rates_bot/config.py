@@ -70,6 +70,7 @@ class Config:
 
     dolgov_enabled: bool
     dolgov_url: str
+    dolgov_catalog_url: str
     dolgov_regex: str | None
     dolgov_min: float
     dolgov_max: float
@@ -122,7 +123,14 @@ class Config:
             moex_enabled=_bool("MOEX_ENABLED", True),
             moex_intraday_drop_pct=_float("MOEX_INTRADAY_DROP_PCT", 1.0),
             dolgov_enabled=_bool("DOLGOV_ENABLED", True),
-            dolgov_url=(os.getenv("DOLGOV_URL") or "https://dolgov-auto.ru/").strip(),
+            dolgov_url=(
+                os.getenv("DOLGOV_URL")
+                or "https://catalog.dolgov-auto.ru/china-used/mercedes-benz/c-class/2_12021338/"
+            ).strip(),
+            dolgov_catalog_url=(
+                os.getenv("DOLGOV_CATALOG_URL")
+                or "https://catalog.dolgov-auto.ru/china-used/"
+            ).strip(),
             dolgov_regex=(os.getenv("DOLGOV_REGEX") or "").strip() or None,
             dolgov_min=_float("DOLGOV_MIN", 5.0),
             dolgov_max=_float("DOLGOV_MAX", 30.0),

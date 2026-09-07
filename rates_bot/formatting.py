@@ -99,12 +99,12 @@ def moex_block(quote: MoexQuote) -> str:
 
 
 def dolgov_block(quote: DolgovQuote, cbr_value: float | None) -> str:
-    """Курс перевозчика и его наценка к ЦБ — та цифра, по которой реально платят."""
-    line = f"{DOLGOV_TITLE}  <b>{money(quote.value)} ₽</b>"
+    """Курс коммерческих банков с карточки авто — по нему и платят."""
+    lines = [f"{DOLGOV_TITLE}  <b>{money(quote.value)} ₽</b>", "   коммерческие банки"]
     if cbr_value:
         spread = (quote.value - cbr_value) / cbr_value * 100.0
-        line += f"\n   наценка к ЦБ {signed_pct(spread)}"
-    return line
+        lines.append(f"   наценка к ЦБ {signed_pct(spread)}")
+    return "\n".join(lines)
 
 
 def digest(
