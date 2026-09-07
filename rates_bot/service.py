@@ -41,6 +41,7 @@ class RatesService:
         self._refresh_lock = asyncio.Lock()
         self.last_dolgov: DolgovQuote | None = None
         self.last_dolgov_debug: DolgovDebug | None = None
+        self._dolgov_failures = 0
 
     # --- загрузка данных --------------------------------------------------
 
@@ -97,7 +98,20 @@ class RatesService:
         )
         self.last_dolgov_debug = debug
         if quote is None:
+            # Опрос идёт каждые 15 минут: ноем в лог о первой неудаче и дальше
+            # раз в несколько часов, иначе журнал состоит из одной строки.
+            self._dolgov_failures += 1
+            if self._dolgov_failures == 1 or self._dolgov_failures % 24 == 0:
+                log.warning(
+                    "Dolgov: курс не получен (%s подряд). %s. Подсказки: /dolgov_debug",
+                    self._dolgov_failures,
+                    debug.error or f"маркеров в тексте {debug.marker_hits}, "
+                    f"в исходнике {debug.marker_hits_raw}",
+                )
             return None
+        if self._dolgov_failures:
+            log.info("Dolgov: курс снова читается — %.4f", quote.value)
+            self._dolgov_failures = 0
         self.last_dolgov = quote
         await storage.run(
             self.store.save_rates, dolgov.CODE, [(datetime.now(MSK).date(), quote.value)]

@@ -152,7 +152,7 @@ async def fetch(
             raw = await resp.text(errors="replace")
     except (aiohttp.ClientError, asyncio.TimeoutError, UnicodeDecodeError) as exc:
         debug.error = f"{type(exc).__name__}: {exc}"
-        log.warning("Dolgov: страница не открылась (%s)", debug.error)
+        log.debug("Dolgov: страница не открылась (%s)", debug.error)
         return None, debug
 
     debug.html_len = len(raw)
@@ -178,7 +178,7 @@ async def fetch(
     debug.used_regex = used_regex
 
     if value is None:
-        log.warning(
+        log.debug(
             "Dolgov: курс не найден (маркеров %s, длина текста %s)",
             debug.marker_hits,
             debug.text_len,
