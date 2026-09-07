@@ -13,7 +13,7 @@ os.environ.setdefault("RATES_BOT_TOKEN", "test:token")
 
 from rates_bot import analytics, chart, formatting  # noqa: E402
 from rates_bot.cbr import _parse_xml, _unit_rate  # noqa: E402
-from rates_bot.dolgov import extract, to_text  # noqa: E402
+from rates_bot.dolgov import api_urls, extract, to_text  # noqa: E402
 from rates_bot.storage import Storage  # noqa: E402
 
 FAILED: list[str] = []
@@ -272,6 +272,16 @@ def test_dolgov() -> None:
 
     text = to_text("<p>Курс&nbsp;юаня &mdash; 12,15&nbsp;₽</p>")
     check("сущности и пробелы нормализованы", "юаня" in text and "12,15" in text, text)
+
+    # Курс внутри <script> — видимый текст пуст, но исходник его содержит.
+    page = '<script>window.__DATA__={"cny":12.44,"usd":81.2};</script><div>Авто из Китая</div>'
+    check("в очищенном тексте маркеров нет", "cny" not in to_text(page).lower())
+    deep = to_text(page, keep_scripts=True)
+    value, _, _ = extract(deep, low=5.0, high=30.0)
+    check("заход по скриптам находит курс", value == 12.44, f"получено {value}")
+
+    urls = api_urls('<script>fetch("/api/currency/rate");var x="https://cdn.site/app.js"</script>')
+    check("подсказка по адресам курса", urls == ["/api/currency/rate"], f"получено {urls}")
 
 
 def test_chart() -> None:

@@ -48,16 +48,31 @@ class DolgovDebug:
     html_len: int = 0
     text_len: int = 0
     marker_hits: int = 0
+    marker_hits_raw: int = 0
     candidates: list[tuple[float, str]] = field(default_factory=list)
     picked: float | None = None
     error: str | None = None
     used_regex: bool = False
+    scanned_scripts: bool = False
+    script_urls: list[str] = field(default_factory=list)
 
 
-def to_text(raw_html: str) -> str:
-    body = _DROP_BLOCKS.sub(" ", raw_html)
+def to_text(raw_html: str, *, keep_scripts: bool = False) -> str:
+    """Текст страницы. keep_scripts оставляет содержимое <script>: курс часто
+    лежит там в JSON, а не в видимой разметке."""
+    body = raw_html if keep_scripts else _DROP_BLOCKS.sub(" ", raw_html)
     body = _TAGS.sub(" ", body)
     return _SPACES.sub(" ", html.unescape(body)).strip()
+
+
+def api_urls(raw_html: str) -> list[str]:
+    """Адреса из скриптов, похожие на источник курса, — подсказка для наладки."""
+    found = {
+        url
+        for url in re.findall(r'["\'](https?://[^"\'\s]{6,160}|/[^"\'\s]{4,160})["\']', raw_html)
+        if re.search(r"kurs|курс|valut|currenc|rate|exchange|cny|yuan|juan", url, re.I)
+    }
+    return sorted(found)[:12]
 
 
 def _as_float(token: str) -> float | None:
@@ -144,10 +159,20 @@ async def fetch(
     text = to_text(raw)
     debug.text_len = len(text)
     debug.marker_hits = len(_MARKER.findall(text))
+    debug.marker_hits_raw = len(_MARKER.findall(raw))
+    debug.script_urls = api_urls(raw)
 
     value, candidates, used_regex = extract(
         text, low=low, high=high, pattern=pattern, raw=raw
     )
+
+    if value is None and not pattern and debug.marker_hits_raw:
+        # В видимом тексте пусто, но в исходнике маркеры есть — значит курс
+        # внутри <script>. Второй заход, уже без выбрасывания скриптов.
+        deep = to_text(raw, keep_scripts=True)
+        value, candidates, _ = extract(deep, low=low, high=high)
+        debug.scanned_scripts = True
+
     debug.candidates = candidates[:8]
     debug.picked = value
     debug.used_regex = used_regex

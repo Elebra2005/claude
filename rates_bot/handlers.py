@@ -347,7 +347,9 @@ async def cmd_dolgov_debug(message: Message, service: RatesService) -> None:
         f"адрес: {escape(debug.url)}",
         f"HTTP: {debug.status}",
         f"размер страницы: {debug.html_len} символов, текста {debug.text_len}",
-        f"упоминаний юаня: {debug.marker_hits}",
+        f"упоминаний юаня: {debug.marker_hits} в тексте, "
+        f"{debug.marker_hits_raw} в исходнике",
+        f"заход по скриптам: {'да' if debug.scanned_scripts else 'нет'}",
         f"ручной DOLGOV_REGEX: {'да' if debug.used_regex else 'нет'}",
         f"выбрано: {debug.picked if debug.picked is not None else '—'}",
     ]
@@ -362,8 +364,13 @@ async def cmd_dolgov_debug(message: Message, service: RatesService) -> None:
         lines.append("")
         lines.append(
             "Чисел рядом со словом «юань» нет. Скорее всего курс подгружается "
-            "скриптом, и в HTML его нет — пришли этот вывод мне."
+            "запросом уже в браузере — пришли этот вывод мне."
         )
+    if debug.script_urls:
+        lines.append("")
+        lines.append("<b>Похожие на источник курса адреса</b>:")
+        for url in debug.script_urls[:8]:
+            lines.append(f"• <code>{escape(url)}</code>")
     await _reply(message, "\n".join(lines))
 
 
