@@ -7,6 +7,8 @@
 
 ## Запуск
 
+В Windows — отдельная инструкция без git и bash: [WINDOWS.md](../WINDOWS.md).
+
 ```bash
 git clone -b claude/cool-darwin-cca52l https://github.com/Elebra2005/claude.git
 cd claude
