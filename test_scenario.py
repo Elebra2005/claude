@@ -66,6 +66,54 @@ def test_load_scenario_defaults():
     print("ok  defaults, стиль и params сливаются со сценой")
 
 
+def test_audio():
+    with tempfile.TemporaryDirectory() as tmp:
+        tmp = Path(tmp)
+
+        # Звук включён по умолчанию, описание звука дописывается к промпту.
+        path = write_scenario(
+            tmp,
+            shots=["город сверху", {"prompt": "дождь на стекле", "sound": "капли по стеклу"}],
+            defaults={"sound": "ровный гул города"},
+        )
+        first, second = scenario.load_scenario(path)["shots"]
+
+        check(first["generate_audio"] is True, "звук должен быть включён по умолчанию")
+        check(first["prompt"].endswith("Звук: ровный гул города"), f"промпт: {first['prompt']}")
+        check(second["prompt"].endswith("Звук: капли по стеклу"), f"промпт: {second['prompt']}")
+
+        # Звук можно выключить и целиком, и для отдельной сцены.
+        path = write_scenario(
+            tmp,
+            shots=["без звука", {"prompt": "со звуком", "generate_audio": True}],
+            defaults={"generate_audio": False},
+        )
+        quiet, loud = scenario.load_scenario(path)["shots"]
+        check(quiet["generate_audio"] is False, "явное выключение звука не сработало")
+        check(loud["generate_audio"] is True, "сцена должна переопределять defaults")
+
+        # Заготовка из текста тоже со звуком и с местом под его описание.
+        draft = scenario.scenario_from_text(TEXT)
+        check(draft["defaults"]["generate_audio"] is True, "в заготовке звук выключен")
+        check("sound" in draft["defaults"], "в заготовке нет поля sound")
+    print("ok  звук: включён по умолчанию, описание звука идёт в промпт, выключается явно")
+
+
+def test_audio_check():
+    with tempfile.TemporaryDirectory() as tmp:
+        clip = Path(tmp) / "clip.mp4"
+        clip.write_bytes(b"clip")
+
+        if shutil.which("ffprobe") is None:
+            check(scenario.has_audio(clip) is None, "без ffprobe ожидается None")
+            check(scenario.check_audio([clip]) == [], "без ffprobe жаловаться не на что")
+            print("--  проверка дорожек: ffprobe не установлен, проверен только запасной путь")
+        else:
+            check(scenario.has_audio(clip) is False, "в мусорном файле не должно быть дорожки")
+            check(scenario.check_audio([clip]) == [str(clip)], "сцена без звука не отмечена")
+            print("ok  проверка дорожек: сцены без звука находятся через ffprobe")
+
+
 def test_load_scenario_errors():
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
@@ -193,6 +241,8 @@ async def main():
     test_scenario_from_text()
     test_load_scenario_defaults()
     test_load_scenario_errors()
+    test_audio()
+    test_audio_check()
     test_dry_run()
 
     api = MockAPI()

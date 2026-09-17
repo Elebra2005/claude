@@ -18,6 +18,7 @@ import logging
 import re
 import shutil
 import subprocess
+import signal
 import sys
 from pathlib import Path
 from typing import Optional
@@ -37,6 +38,7 @@ DEFAULT_DEFAULTS = {
     "resolution": "720p",
     "aspect_ratio": "16:9",
     "output_format": "mp4",
+    "generate_audio": True,
 }
 
 
@@ -68,6 +70,7 @@ def load_scenario(path) -> dict:
 
     defaults = {**DEFAULT_DEFAULTS, **(data.get("defaults") or {})}
     style = defaults.pop("style", None)
+    sound = defaults.pop("sound", None)
 
     prepared = []
     seen = set()
@@ -82,8 +85,12 @@ def load_scenario(path) -> dict:
             raise ScenarioError(f"Сцена {index}: нужен prompt или image")
 
         shot_style = shot.get("style", style)
-        if shot_style and prompt:
-            prompt = f"{prompt}. {shot_style}".replace("..", ".")
+        shot_sound = shot.get("sound", sound)
+
+        parts = [prompt, shot_style]
+        if shot_sound:
+            parts.append(f"Звук: {shot_sound}")
+        prompt = ". ".join(part.strip().rstrip(".") for part in parts if part and part.strip())
 
         shot_id = str(shot.get("id") or f"{index:02d}-{_slug(prompt, str(index))}")
         if shot_id in seen:
@@ -91,6 +98,8 @@ def load_scenario(path) -> dict:
         seen.add(shot_id)
 
         merged = {key: shot.get(key, defaults.get(key)) for key in SHOT_FIELDS}
+        if shot_sound and shot.get("generate_audio") is None and defaults.get("generate_audio") is None:
+            merged["generate_audio"] = True
         merged["id"] = shot_id
         merged["prompt"] = prompt or None
         merged["params"] = {**(defaults.get("params") or {}), **(shot.get("params") or {})}
@@ -117,7 +126,7 @@ def scenario_from_text(text: str, name: str = "scenario") -> dict:
 
     return {
         "name": name,
-        "defaults": {**DEFAULT_DEFAULTS, "style": ""},
+        "defaults": {**DEFAULT_DEFAULTS, "style": "", "sound": ""},
         "shots": shots,
     }
 
@@ -237,6 +246,32 @@ async def run_scenario(scenario: dict, out_dir: Path, *, concurrency: int = 2,
     }
 
 
+def has_audio(path) -> Optional[bool]:
+    """Есть ли в файле звуковая дорожка. None — если ffprobe недоступен."""
+    if shutil.which("ffprobe") is None:
+        return None
+
+    result = subprocess.run(
+        ["ffprobe", "-v", "error", "-select_streams", "a",
+         "-show_entries", "stream=index", "-of", "csv=p=0", str(path)],
+        capture_output=True, text=True,
+    )
+    if result.returncode != 0:
+        return None
+    return bool(result.stdout.strip())
+
+
+def check_audio(files) -> list:
+    """Сцены без звука. Пустой список — либо всё со звуком, либо ffprobe нет."""
+    silent = [str(path) for path in files if has_audio(path) is False]
+    if silent:
+        logger.warning(
+            "Без звуковой дорожки: %s. Проверьте, что модель поддерживает "
+            "generate_audio, и опишите звук в сцене.", ", ".join(silent)
+        )
+    return silent
+
+
 def concat(files, target: Path) -> Optional[Path]:
     """Склеивает клипы в один файл через ffmpeg (перекодирования нет)."""
     target = Path(target)
@@ -258,8 +293,14 @@ def concat(files, target: Path) -> Optional[Path]:
         print(" ".join(command), file=sys.stderr)
         return None
 
+    silent = check_audio(files)
+
     logger.info("Склеиваем %s сцен → %s", len(files), target)
-    result = subprocess.run(command, capture_output=True, text=True)
+    if silent:
+        # Разные дорожки (часть сцен без звука) копированием не склеиваются.
+        result = subprocess.CompletedProcess(command, 1, "", "mixed audio streams")
+    else:
+        result = subprocess.run(command, capture_output=True, text=True)
     if result.returncode != 0:
         # -c copy не переживает разные кодеки/размеры — пробуем с перекодированием.
         logger.warning("Склейка без перекодирования не вышла, пробуем перекодировать")
@@ -271,6 +312,9 @@ def concat(files, target: Path) -> Optional[Path]:
         if result.returncode != 0:
             print(result.stderr[-2000:], file=sys.stderr)
             raise ScenarioError("ffmpeg не смог склеить сцены")
+
+    if has_audio(target) is False:
+        logger.warning("В склеенном файле нет звука: %s", target)
 
     logger.info("Готово: %s", target)
     return target
@@ -330,6 +374,10 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv=None) -> int:
     args = build_parser().parse_args(argv)
+
+    # Чтобы `... | head` не сыпал BrokenPipeError.
+    if hasattr(signal, "SIGPIPE"):
+        signal.signal(signal.SIGPIPE, signal.SIG_DFL)
     logging.basicConfig(
         level=logging.WARNING if getattr(args, "quiet", False) else logging.INFO,
         format="%(asctime)s %(levelname)s %(message)s",

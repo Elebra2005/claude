@@ -36,6 +36,7 @@ import logging
 import mimetypes
 import os
 import random
+import signal
 import sys
 import time
 from dataclasses import dataclass, field
@@ -667,6 +668,10 @@ async def _run(args) -> int:
 
 def main(argv=None) -> int:
     args = build_parser().parse_args(argv)
+
+    # Чтобы `... | head` не сыпал BrokenPipeError.
+    if hasattr(signal, "SIGPIPE"):
+        signal.signal(signal.SIGPIPE, signal.SIG_DFL)
     logging.basicConfig(
         level=logging.WARNING if args.quiet else logging.INFO,
         format="%(asctime)s %(levelname)s %(message)s",
