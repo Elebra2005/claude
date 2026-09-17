@@ -246,6 +246,24 @@ def test_extract_urls():
     print("ok  разбор ответа: ссылки на видео отделяются от картинок")
 
 
+async def test_auth_via_proxy(base_url: str, api: MockAPI):
+    """Ключ подставляет прокси среды — свой заголовок авторизации не шлём."""
+    async with higgsfield.HiggsfieldClient(base_url=base_url, auth_via_proxy=True) as hf:
+        await hf.submit("test/model", {"prompt": "x"})
+    check(api.auth_headers[-1] is None, f"заголовок: {api.auth_headers[-1]!r}")
+
+    saved = {k: os.environ.pop(k, None) for k in ("HF_KEY", "HF_API_KEY", "HF_API_SECRET")}
+    try:
+        # Без ключа в окружении такой клиент всё равно работает.
+        async with higgsfield.HiggsfieldClient(base_url=base_url, auth_via_proxy=True) as hf:
+            await hf.submit("test/model", {"prompt": "y"})
+    finally:
+        for key, value in saved.items():
+            if value is not None:
+                os.environ[key] = value
+    print("ok  режим подстановки ключа на прокси: свой Authorization не отправляется")
+
+
 def test_credentials():
     saved = {k: os.environ.pop(k, None) for k in
              ("HF_KEY", "HIGGSFIELD_KEY", "HF_API_KEY", "HF_API_SECRET",
@@ -295,6 +313,7 @@ async def main():
         await test_image_to_video(base_url, api)
         await test_webhook_and_cancel(base_url, api)
         await test_timeout(base_url)
+        await test_auth_via_proxy(base_url, api)
         api.flaky_left = 1
         await test_api_error(base_url)
     finally:

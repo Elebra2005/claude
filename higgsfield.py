@@ -153,6 +153,13 @@ class Job:
         )
 
 
+# Ключ может подставлять сам прокси среды (API credential в настройках
+# окружения Claude Code) — тогда свой заголовок авторизации мы не шлём.
+AUTH_VIA_PROXY = os.getenv("HIGGSFIELD_AUTH_VIA_PROXY", "").strip().lower() in (
+    "1", "true", "yes", "on",
+)
+
+
 def get_credential_key() -> str:
     """Собирает ключ вида ``key_id:key_secret`` из окружения."""
     key = os.getenv("HF_KEY") or os.getenv("HIGGSFIELD_KEY")
@@ -240,10 +247,12 @@ class HiggsfieldClient:
         timeout: float = REQUEST_TIMEOUT,
         max_retries: int = MAX_RETRIES,
         session: Optional[aiohttp.ClientSession] = None,
+        auth_via_proxy: Optional[bool] = None,
     ):
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout
         self.max_retries = max_retries
+        self.auth_via_proxy = AUTH_VIA_PROXY if auth_via_proxy is None else auth_via_proxy
         self._api_key = api_key
         self._session = session
         self._own_session = session is None
@@ -261,7 +270,9 @@ class HiggsfieldClient:
             self._session = None
 
     @property
-    def api_key(self) -> str:
+    def api_key(self) -> Optional[str]:
+        if self.auth_via_proxy:
+            return None
         if self._api_key is None:
             self._api_key = get_credential_key()
         return self._api_key
@@ -275,12 +286,15 @@ class HiggsfieldClient:
         return self._session
 
     def _headers(self) -> dict:
-        return {
-            "Authorization": f"Key {self.api_key}",
+        headers = {
             "Content-Type": "application/json",
             "Accept": "application/json",
             "User-Agent": USER_AGENT,
         }
+        key = self.api_key
+        if key:
+            headers["Authorization"] = f"Key {key}"
+        return headers
 
     def _absolute(self, url: str) -> str:
         if url.startswith(("http://", "https://")):
