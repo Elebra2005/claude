@@ -15,6 +15,7 @@ from pathlib import Path
 
 os.environ.setdefault("HF_KEY", "test-key-id:test-key-secret")
 
+import higgsfield  # noqa: E402
 import scenario  # noqa: E402
 from test_higgsfield import MockAPI, check, start_server  # noqa: E402
 
@@ -112,6 +113,74 @@ def test_audio_check():
             check(scenario.has_audio(clip) is False, "в мусорном файле не должно быть дорожки")
             check(scenario.check_audio([clip]) == [str(clip)], "сцена без звука не отмечена")
             print("ok  проверка дорожек: сцены без звука находятся через ffprobe")
+
+
+def test_preamble_and_chain_parsing():
+    with tempfile.TemporaryDirectory() as tmp:
+        tmp = Path(tmp)
+        path = write_scenario(
+            tmp,
+            shots=[
+                {"id": "a", "prompt": "первая сцена"},
+                {"id": "b", "prompt": "вторая сцена", "continue_from": "a"},
+            ],
+            defaults={"preamble": "Одни и те же футболисты в красно-белой форме",
+                      "style": "кинематографично"},
+        )
+        first, second = scenario.load_scenario(path)["shots"]
+
+        check(first["prompt"].startswith("Одни и те же футболисты"), f"промпт: {first['prompt']}")
+        check(first["prompt"].endswith("кинематографично"), f"промпт: {first['prompt']}")
+        check(second["continue_from"] == "a", "сцепка не разобралась")
+        check(second["image_model"] == higgsfield.DEFAULT_IMAGE_TO_VIDEO,
+              f"модель для сцепки: {second['image_model']}")
+
+        # Ссылка на несуществующую или на саму себя — ошибка до обращения к API.
+        for shots, hint in (
+            ([{"id": "a", "prompt": "x", "continue_from": "нет-такой"}], "неизвестный id"),
+            ([{"id": "a", "prompt": "x", "continue_from": "a"}], "ссылка на себя"),
+            ([{"id": "a", "prompt": "x", "continue_from": "b"}, {"id": "b", "prompt": "y"}],
+             "ссылка на сцену ниже"),
+        ):
+            bad = write_scenario(tmp, shots=shots)
+            try:
+                scenario.load_scenario(bad)
+            except scenario.ScenarioError:
+                pass
+            else:
+                raise AssertionError(f"ожидалась ScenarioError: {hint}")
+    print("ok  паспорт персонажей идёт в начало промпта, сцепка сцен проверяется")
+
+
+async def test_chain_run(base_url: str, api: MockAPI):
+    with tempfile.TemporaryDirectory() as tmp:
+        tmp = Path(tmp)
+        out = tmp / "out"
+        path = write_scenario(tmp, shots=[
+            {"id": "s1", "prompt": "раздевалка"},
+            {"id": "s2", "prompt": "коридор", "continue_from": "s1"},
+            {"id": "s3", "prompt": "тоннель", "continue_from": "s2"},
+        ])
+        data = scenario.load_scenario(path)
+
+        before = len(api.submissions)
+        outcome = await scenario.run_scenario(
+            data, out, concurrency=3, interval=0.01, base_url=base_url
+        )
+
+        check(not outcome["missing"], f"пропущено: {outcome['missing']}")
+        prompts = [body.get("prompt") for _, body, _ in api.submissions[before:]]
+        check(prompts == ["раздевалка", "коридор", "тоннель"],
+              f"сцепленные сцены должны идти по порядку: {prompts}")
+
+        manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+        if shutil.which("ffmpeg") is None:
+            # Без ffmpeg кадр не достать — сцены всё равно генерятся, но без сцепки.
+            check("start_frame" not in manifest["shots"]["s2"], "без ffmpeg кадра быть не должно")
+            print("--  сцепка: ffmpeg не установлен, проверен порядок и запасной путь")
+        else:
+            check(Path(manifest["shots"]["s2"]["start_frame"]).exists(), "стартовый кадр не создан")
+            print("ok  сцепка: последний кадр сцены становится первым кадром следующей")
 
 
 def test_load_scenario_errors():
@@ -241,6 +310,7 @@ async def main():
     test_scenario_from_text()
     test_load_scenario_defaults()
     test_load_scenario_errors()
+    test_preamble_and_chain_parsing()
     test_audio()
     test_audio_check()
     test_dry_run()
@@ -251,6 +321,7 @@ async def main():
     try:
         await test_run(base_url, api)
         await test_partial_failure(base_url, api)
+        await test_chain_run(base_url, api)
     finally:
         await runner.cleanup()
 

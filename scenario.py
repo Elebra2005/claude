@@ -71,6 +71,9 @@ def load_scenario(path) -> dict:
     defaults = {**DEFAULT_DEFAULTS, **(data.get("defaults") or {})}
     style = defaults.pop("style", None)
     sound = defaults.pop("sound", None)
+    preamble = defaults.pop("preamble", None)
+    part = defaults.pop("part", None)
+    image_model = defaults.pop("image_model", None) or higgsfield.DEFAULT_IMAGE_TO_VIDEO
 
     prepared = []
     seen = set()
@@ -87,7 +90,9 @@ def load_scenario(path) -> dict:
         shot_style = shot.get("style", style)
         shot_sound = shot.get("sound", sound)
 
-        parts = [prompt, shot_style]
+        shot_preamble = shot.get("preamble", preamble)
+
+        parts = [shot_preamble, prompt, shot_style]
         if shot_sound:
             parts.append(f"Звук: {shot_sound}")
         prompt = ". ".join(part.strip().rstrip(".") for part in parts if part and part.strip())
@@ -101,8 +106,22 @@ def load_scenario(path) -> dict:
         if shot_sound and shot.get("generate_audio") is None and defaults.get("generate_audio") is None:
             merged["generate_audio"] = True
         merged["id"] = shot_id
+        merged["part"] = shot.get("part", part)
         merged["prompt"] = prompt or None
         merged["params"] = {**(defaults.get("params") or {}), **(shot.get("params") or {})}
+
+        # Сцепка по последнему кадру предыдущей сцены — чтобы не было
+        # визуального скачка на стыке.
+        previous = shot.get("continue_from")
+        if previous is not None:
+            if previous not in seen or previous == shot_id:
+                raise ScenarioError(
+                    f"Сцена {shot_id}: continue_from ссылается на {previous!r}, "
+                    "а такой сцены выше нет"
+                )
+            merged["continue_from"] = previous
+            merged["image_model"] = shot.get("image_model") or image_model
+
         prepared.append(merged)
 
     return {"name": data.get("name") or Path(path).stem, "shots": prepared}
@@ -129,6 +148,54 @@ def scenario_from_text(text: str, name: str = "scenario") -> dict:
         "defaults": {**DEFAULT_DEFAULTS, "style": "", "sound": ""},
         "shots": shots,
     }
+
+
+_warned_no_ffmpeg = False
+
+
+def extract_last_frame(video, target) -> Optional[Path]:
+    """Достаёт последний кадр клипа — он станет стартовым кадром следующей сцены."""
+    global _warned_no_ffmpeg
+
+    video, target = Path(video), Path(target)
+    if shutil.which("ffmpeg") is None:
+        if not _warned_no_ffmpeg:
+            _warned_no_ffmpeg = True
+            logger.warning("ffmpeg не найден: сцены будут генериться без сцепки по кадру, "
+                           "на стыках возможен визуальный скачок")
+        return None
+
+    target.parent.mkdir(parents=True, exist_ok=True)
+    command = [
+        "ffmpeg", "-y", "-sseof", "-0.5", "-i", str(video),
+        "-frames:v", "1", "-q:v", "2", str(target),
+    ]
+    result = subprocess.run(command, capture_output=True, text=True)
+
+    if result.returncode != 0 or not target.exists() or target.stat().st_size == 0:
+        logger.warning("Не удалось достать последний кадр из %s: %s",
+                       video, result.stderr.strip()[-300:])
+        return None
+
+    return target
+
+
+def chain_shot(shot: dict, previous_file, out_dir: Path) -> dict:
+    """Подставляет сцене стартовый кадр из предыдущей сцены."""
+    shot_id = shot["id"]
+    if previous_file is None:
+        logger.warning("Сцена %s: предыдущая сцена не готова, генерим без сцепки", shot_id)
+        return shot
+
+    frame = extract_last_frame(previous_file, out_dir / "frames" / f"{shot_id}.jpg")
+    if frame is None:
+        return shot
+
+    chained = dict(shot)
+    chained["image"] = str(frame)
+    chained["model"] = shot.get("image_model") or higgsfield.DEFAULT_IMAGE_TO_VIDEO
+    logger.info("Сцена %s: стартовый кадр из %s", shot_id, Path(previous_file).name)
+    return chained
 
 
 class Manifest:
@@ -223,27 +290,51 @@ async def run_scenario(scenario: dict, out_dir: Path, *, concurrency: int = 2,
 
     semaphore = asyncio.Semaphore(max(1, concurrency))
     results: dict = {}
+    ready = {shot["id"]: asyncio.Event() for shot in scenario["shots"]}
 
     async with higgsfield.HiggsfieldClient(base_url=base_url) as hf:
         async def worker(shot: dict):
             shot_id = shot["id"]
-            if resume and manifest.done(shot_id):
-                logger.info("Сцена %s: уже готова, пропускаем", shot_id)
-                results[shot_id] = Path(manifest.get(shot_id)["file"])
-                return
-            async with semaphore:
-                results[shot_id] = await generate_shot(
-                    hf, shot, out_dir, manifest, interval, timeout
-                )
+            try:
+                if resume and manifest.done(shot_id):
+                    logger.info("Сцена %s: уже готова, пропускаем", shot_id)
+                    results[shot_id] = Path(manifest.get(shot_id)["file"])
+                    return
+
+                previous = shot.get("continue_from")
+                if previous:
+                    # Ждём предыдущую сцену: её последний кадр — наш первый.
+                    await ready[previous].wait()
+                    shot = chain_shot(shot, results.get(previous), out_dir)
+                    if shot.get("image"):
+                        manifest.update(shot_id, chained_from=previous, start_frame=shot["image"])
+
+                async with semaphore:
+                    results[shot_id] = await generate_shot(
+                        hf, shot, out_dir, manifest, interval, timeout
+                    )
+            finally:
+                ready[shot_id].set()
 
         await asyncio.gather(*(worker(shot) for shot in scenario["shots"]))
 
-    ready = [results.get(shot["id"]) for shot in scenario["shots"]]
+    ordered = [(shot, results.get(shot["id"])) for shot in scenario["shots"]]
     return {
         "manifest": manifest,
-        "files": [path for path in ready if path is not None],
-        "missing": [shot["id"] for shot in scenario["shots"] if results.get(shot["id"]) is None],
+        "files": [path for _, path in ordered if path is not None],
+        "missing": [shot["id"] for shot, path in ordered if path is None],
+        "by_part": _group_by_part(ordered),
     }
+
+
+def _group_by_part(ordered) -> dict:
+    """Готовые клипы по роликам, в порядке сценария."""
+    parts: dict = {}
+    for shot, path in ordered:
+        if path is None or not shot.get("part"):
+            continue
+        parts.setdefault(str(shot["part"]), []).append(path)
+    return parts
 
 
 def has_audio(path) -> Optional[bool]:
@@ -328,7 +419,10 @@ def _dry_run(scenario: dict, base_url: str) -> int:
             else higgsfield.DEFAULT_TEXT_TO_VIDEO
         )
         arguments = {"prompt": shot["prompt"]} if shot.get("prompt") else {}
-        if shot.get("image"):
+        if shot.get("continue_from"):
+            application = shot.get("image_model") or higgsfield.DEFAULT_IMAGE_TO_VIDEO
+            arguments["image_url"] = f"<последний кадр сцены {shot['continue_from']}>"
+        elif shot.get("image"):
             arguments["image_url"] = f"<загрузка файла {shot['image']}>"
         for key in ("duration", "resolution", "aspect_ratio", "output_format", "generate_audio"):
             if shot.get(key) is not None:
@@ -339,6 +433,14 @@ def _dry_run(scenario: dict, base_url: str) -> int:
         print(f"--- сцена {shot['id']}")
         print(f"POST {base_url.rstrip('/')}/{application}")
         print(json.dumps(arguments, ensure_ascii=False, indent=2))
+
+    by_part: dict = {}
+    for shot in scenario["shots"]:
+        if shot.get("part"):
+            by_part.setdefault(str(shot["part"]), []).append(float(shot.get("duration") or 0))
+
+    for name, durations in by_part.items():
+        print(f"ролик {name}: сцен {len(durations)}, ~{sum(durations):g} с")
 
     print(f"\nвсего сцен: {len(scenario['shots'])}, суммарно ~{total:g} с")
     return 0
@@ -360,6 +462,8 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("scenario", help="файл сценария (JSON)")
     run.add_argument("--out-dir", default="out", help="куда складывать клипы")
     run.add_argument("--concat", metavar="FILE", help="склеить всё в один файл")
+    run.add_argument("--concat-parts", action="store_true",
+                     help="склеить сцены по полю part: <out-dir>/<part>.mp4")
     run.add_argument("--concurrency", type=int, default=2, help="сколько сцен генерить параллельно")
     run.add_argument("--no-resume", dest="resume", action="store_false",
                      help="перегенерировать даже готовые сцены")
@@ -418,6 +522,15 @@ def main(argv=None) -> int:
             print(f"Не сгенерировались сцены: {', '.join(outcome['missing'])}. "
                   f"Повторный запуск доделает только их.", file=sys.stderr)
             return 1
+
+        if args.concat_parts:
+            if not outcome["by_part"]:
+                print("В сценарии не размечено поле part — склеивать по роликам нечего.",
+                      file=sys.stderr)
+            for name, files in outcome["by_part"].items():
+                target = Path(args.out_dir) / f"{name}.mp4"
+                concat(files, target)
+                print(f"Склеено: {target}")
 
         if args.concat:
             concat(outcome["files"], Path(args.concat))
