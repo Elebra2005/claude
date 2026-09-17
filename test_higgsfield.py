@@ -53,7 +53,12 @@ class MockAPI:
         self.submissions.append((model, body, dict(request.query)))
 
         request_id = f"req-{len(self.submissions)}"
-        self.requests[request_id] = {"polls": 0, "canceled": False}
+        self.requests[request_id] = {
+            "polls": 0,
+            "canceled": False,
+            # Промпт со словом "fail" роняем — это нужно прогону сценария.
+            "fails": "fail" in str(body.get("prompt", "")),
+        }
         return web.json_response({
             "request_id": request_id,
             "status_url": str(request.url.with_path(f"/requests/{request_id}/status").with_query(None)),
@@ -71,6 +76,9 @@ class MockAPI:
         # Задача с таким id никогда не завершается — для проверки таймаута.
         if request_id == "stuck":
             return web.json_response({"status": "queued"})
+
+        if state.get("fails"):
+            return web.json_response({"status": "failed", "detail": "мок: сцена провалена"})
 
         state["polls"] += 1
         if state["polls"] == 1:
