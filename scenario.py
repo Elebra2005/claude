@@ -278,19 +278,51 @@ async def generate_shot(hf: higgsfield.HiggsfieldClient, shot: dict, out_dir: Pa
     return target
 
 
+def select_shots(scenario: dict, parts=None) -> list:
+    """Сцены выбранных роликов (или все, если ролики не названы)."""
+    if not parts:
+        return list(scenario["shots"])
+
+    wanted = {str(part) for part in parts}
+    known = {str(shot["part"]) for shot in scenario["shots"] if shot.get("part")}
+    unknown = wanted - known
+    if unknown:
+        raise ScenarioError(
+            f"В сценарии нет роликов: {', '.join(sorted(unknown))}. "
+            f"Есть: {', '.join(sorted(known)) or '—'}"
+        )
+
+    return [shot for shot in scenario["shots"] if str(shot.get("part")) in wanted]
+
+
 async def run_scenario(scenario: dict, out_dir: Path, *, concurrency: int = 2,
                        resume: bool = True, interval: float = higgsfield.POLL_INTERVAL,
                        timeout: float = higgsfield.POLL_TIMEOUT,
-                       base_url: str = higgsfield.BASE_URL) -> dict:
-    """Генерирует все сцены сценария. Упавшая сцена не останавливает остальные."""
+                       base_url: str = higgsfield.BASE_URL, parts=None) -> dict:
+    """Генерирует сцены сценария. Упавшая сцена не останавливает остальные."""
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     manifest = Manifest(out_dir / "manifest.json")
     manifest.data["name"] = scenario["name"]
 
+    shots = select_shots(scenario, parts)
     semaphore = asyncio.Semaphore(max(1, concurrency))
     results: dict = {}
-    ready = {shot["id"]: asyncio.Event() for shot in scenario["shots"]}
+    ready = {shot["id"]: asyncio.Event() for shot in shots}
+
+    # Сцена может цепляться за ролик, который генерился в прошлый раз.
+    for shot in shots:
+        previous = shot.get("continue_from")
+        if not previous or previous in ready:
+            continue
+        if manifest.done(previous):
+            results[previous] = Path(manifest.get(previous)["file"])
+        else:
+            logger.warning("Сцена %s цепляется за %s из другого ролика — той сцены ещё нет, "
+                           "генерим без сцепки", shot["id"], previous)
+        event = asyncio.Event()
+        event.set()
+        ready[previous] = event
 
     async with higgsfield.HiggsfieldClient(base_url=base_url) as hf:
         async def worker(shot: dict):
@@ -316,9 +348,9 @@ async def run_scenario(scenario: dict, out_dir: Path, *, concurrency: int = 2,
             finally:
                 ready[shot_id].set()
 
-        await asyncio.gather(*(worker(shot) for shot in scenario["shots"]))
+        await asyncio.gather(*(worker(shot) for shot in shots))
 
-    ordered = [(shot, results.get(shot["id"])) for shot in scenario["shots"]]
+    ordered = [(shot, results.get(shot["id"])) for shot in shots]
     return {
         "manifest": manifest,
         "files": [path for _, path in ordered if path is not None],
@@ -464,6 +496,8 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--concat", metavar="FILE", help="склеить всё в один файл")
     run.add_argument("--concat-parts", action="store_true",
                      help="склеить сцены по полю part: <out-dir>/<part>.mp4")
+    run.add_argument("--part", action="append", metavar="PART",
+                     help="генерить только этот ролик (можно повторять)")
     run.add_argument("--concurrency", type=int, default=2, help="сколько сцен генерить параллельно")
     run.add_argument("--no-resume", dest="resume", action="store_false",
                      help="перегенерировать даже готовые сцены")
@@ -501,6 +535,9 @@ def main(argv=None) -> int:
             return 0
 
         scenario = load_scenario(args.scenario)
+
+        if args.part:
+            scenario = {**scenario, "shots": select_shots(scenario, args.part)}
 
         if args.dry_run:
             return _dry_run(scenario, args.base_url)
