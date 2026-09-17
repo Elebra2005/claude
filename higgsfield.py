@@ -268,7 +268,9 @@ class HiggsfieldClient:
 
     def _get_session(self) -> aiohttp.ClientSession:
         if self._session is None or self._session.closed:
-            self._session = aiohttp.ClientSession()
+            # trust_env=True — иначе aiohttp не видит HTTPS_PROXY и .netrc;
+            # в контейнерах с корпоративным прокси без него запросы висят.
+            self._session = aiohttp.ClientSession(trust_env=True)
             self._own_session = True
         return self._session
 
