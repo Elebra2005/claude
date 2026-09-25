@@ -53,6 +53,7 @@ import time
 
 import httpx
 
+from .bybit import total_usd_bybit
 from .config import env
 from .store import Store
 
@@ -633,15 +634,19 @@ async def check_once(cfg: dict, store: Store) -> None:
     all_current: dict[str, float] = {}
     async with httpx.AsyncClient(timeout=30) as client:
         for w in wallets:
-            address = w.get("address")
-            label = w.get("label") or ""
             chain = w.get("chain", "arbitrum")
+            # У биржи нет ончейн-адреса — "адрес" здесь только ключ для
+            # хранения прошлых значений.
+            address = w.get("address") or ("bybit" if chain == "bybit" else None)
+            label = w.get("label") or ""
             if not address:
                 continue
 
             breakdown: dict[str, dict] | None = None
             current: float | None = None
-            if source == "debank":
+            if chain == "bybit":
+                breakdown = await total_usd_bybit(client)
+            elif source == "debank":
                 current = await _total_usd_debank(client, debank_key, address)
             elif chain == "solana":
                 breakdown = await _total_usd_solana_onchain(client, address, store)

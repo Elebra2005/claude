@@ -21,3 +21,8 @@ wallet_watch:
       chain: starknet
       # Опционально, если STRK делегирован в пул стейкинга (например через Braavos):
       # starknet_delegation_pool: "0xАДРЕС_POOL_КОНТРАКТА"
+
+    # Биржа Bybit: адрес не нужен, баланс берётся по API-ключу (только чтение)
+    # из .env: BYBIT_API_KEY / BYBIT_API_SECRET.
+    - chain: bybit
+      label: "Bybit"
