@@ -37,12 +37,16 @@ async def main() -> None:
             address = w["address"]
             key = f"wallet_tokens_starknet_{address.lower()}"
             if "--reset" in sys.argv:
-                store._db.execute("DELETE FROM cursors WHERE key IN (?, ?)", (f"{key}_scanned_block", f"{key}_chunk"))
+                store._db.execute("DELETE FROM cursors WHERE key IN (?, ?, ?, ?)",
+                                 (f"{key}_scanned_block", f"{key}_chunk", f"{key}_nonce_block", f"{key}_nonce"))
                 store._db.commit()
                 print("прогресс скана сброшен")
             scanned = store.get_cursor(f"{key}_scanned_block")
             print(f"== {w.get('label')} {address}")
             print(f"история просканирована до блока {scanned} из {head}")
+            print(f"поиск своих транзакций: до блока {store.get_cursor(f'{key}_nonce_block')}, "
+                  f"nonce {store.get_cursor(f'{key}_nonce')}, "
+                  f"блоков с транзакциями {len(store.get_snapshot(f'{key}_tx_blocks') or [])}")
             bal = await _starknet_token_balance(client, STARKNET_STRK, address)
             print(f"STRK на кошельке: {bal}")
             print(f"найденные пулы: {sorted(store.get_snapshot(f'{key}_pools') or [])}")

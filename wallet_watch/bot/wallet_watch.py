@@ -124,7 +124,10 @@ STARKNET_TRANSFER_KEY = "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d
 STARKNET_EVENT_CHUNK_BLOCKS = 500_000
 STARKNET_MIN_CHUNK_BLOCKS = 10_000
 STARKNET_MAX_CHUNK_BLOCKS = 2_000_000
-STARKNET_SCAN_BUDGET_S = 240
+# Полный скан истории нужен теперь только для входящих токенов (исходящие
+# переводы, в том числе в пул стейкинга, находятся по своим транзакциям —
+# см. _starknet_scan_own_txs), поэтому время на него за проверку небольшое.
+STARKNET_SCAN_BUDGET_S = 60
 
 # Паузы между раундами пересчёта кошельков, которые не ответили (см. _fetch_all).
 WALLET_RETRY_PAUSES_S = [30, 60, 120, 240]
@@ -714,9 +717,81 @@ async def _starknet_detect_pools(client: httpx.AsyncClient, address: str, store:
     return pools
 
 
+async def _starknet_nonce(client: httpx.AsyncClient, address: str, block: int) -> int:
+    try:
+        return int(await _rpc(client, STARKNET_RPC, "starknet_getNonce", [{"block_number": block}, address]), 16)
+    except RuntimeError as exc:
+        if "contract not found" in str(exc).lower():
+            return 0  # кошелёк ещё не создан
+        raise
+
+
+async def _starknet_scan_own_txs(client: httpx.AsyncClient, address: str, store: Store, cache_key: str) -> None:
+    """Исходящие переводы кошелька — через его собственные транзакции.
+
+    Скан всей истории сети идёт на публичном узле слишком медленно
+    (миллионы блоков). Но исходящий перевод — в том числе STRK в пул
+    стейкинга — всегда часть транзакции, подписанной самим кошельком, а
+    каждая такая транзакция увеличивает nonce кошелька на 1. Двоичным
+    поиском по nonce в истории (starknet_getNonce на блоке) находим блоки
+    всех своих транзакций — это ~20 запросов на транзакцию, — и смотрим
+    переводы только в них. Дальше каждую проверку ищем только в новых блоках.
+    """
+    block_key, nonce_key = f"{cache_key}_nonce_block", f"{cache_key}_nonce"
+    strk_out_key, blocks_key = f"{cache_key}_strk_out", f"{cache_key}_tx_blocks"
+    me = int(address, 16)
+    try:
+        head = await _rpc(client, STARKNET_RPC, "starknet_blockNumber", [])
+        lo = int(store.get_cursor(block_key) or 0)
+        n_lo = int(store.get_cursor(nonce_key) or 0)
+        n_head = await _starknet_nonce(client, address, head)
+        if n_head == n_lo:
+            store.set_cursor(block_key, str(head))
+            return
+
+        memo: dict[int, int] = {lo: n_lo, head: n_head}
+
+        async def nonce(block: int) -> int:
+            if block not in memo:
+                memo[block] = await _starknet_nonce(client, address, block)
+            return memo[block]
+
+        tx_blocks: list[int] = []
+        stack = [(lo, head)]
+        while stack:
+            a, b = stack.pop()
+            if await nonce(a) == await nonce(b):
+                continue
+            if b - a == 1:
+                tx_blocks.append(b)
+                continue
+            mid = (a + b) // 2
+            stack += [(a, mid), (mid, b)]
+
+        strk_out: set[str] = set()
+        for block in tx_blocks:
+            events = await _starknet_get_events(client, [[STARKNET_TRANSFER_KEY], [address], []], block, block)
+            strk_out |= {
+                _felt(e["keys"][2]) for e in events
+                if _felt(e["from_address"]) == STARKNET_STRK and len(e.get("keys", [])) >= 3
+                and int(e["keys"][1], 16) == me
+            }
+        if strk_out:
+            store.save_snapshot(strk_out_key, (store.get_snapshot(strk_out_key) or set()) | strk_out)
+        store.save_snapshot(blocks_key, (store.get_snapshot(blocks_key) or set()) | {str(b) for b in tx_blocks})
+        store.set_cursor(block_key, str(head))
+        store.set_cursor(nonce_key, str(n_head))
+        log.info("wallet_watch: Starknet — %d своих транзакций, переводов STRK на %d адресов",
+                 len(tx_blocks), len(strk_out))
+    except Exception as exc:
+        # Прогресс не сохранён — в следующую проверку поиск повторится.
+        log.info("wallet_watch: поиск своих транзакций Starknet прерван (%s)", exc)
+
+
 async def _total_usd_starknet_onchain(
     client: httpx.AsyncClient, address: str, store: Store, cache_key: str, delegation_pool: str | None = None
 ) -> dict[str, dict] | None:
+    await _starknet_scan_own_txs(client, address, store, cache_key)
     tokens = await _discover_tokens_starknet(client, address, store, cache_key)
     tokens |= {STARKNET_ETH, STARKNET_STRK}  # системные токены сети есть всегда, проверяем их напрямую
 
