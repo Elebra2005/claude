@@ -1,3 +1,5 @@
 .env
 *.pyc
 __pycache__/
+wallet_watch/config.yaml
+wallet_watch/data/

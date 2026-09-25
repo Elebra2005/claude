@@ -1,0 +1,23 @@
+# Скопируйте в config.yaml и заполните. Секреты (токен бота) — в .env, не здесь.
+wallet_watch:
+  enabled: true
+  source: onchain        # onchain (бесплатно) | debank (платно, точнее, нужен DEBANK_ACCESS_KEY в .env)
+  interval_minutes: 30   # как часто проверять
+  telegram_chat_id: "ВАШ_TELEGRAM_CHAT_ID"   # узнать: python3 get_chat_id.py
+  min_change_usd: 1.0    # изменение меньше этого — не присылать
+  min_coin_usd: 1.0      # монеты дешевле — пыль, не считаем
+  wallets:
+    # Лишние кошельки просто удалите. Сети: arbitrum, solana, starknet.
+    - address: "0xВАШ_EVM_АДРЕС"
+      label: "Arbitrum"
+      chain: arbitrum
+
+    - address: "ВАШ_SOLANA_АДРЕС"
+      label: "Solana"
+      chain: solana
+
+    - address: "0xВАШ_STARKNET_АДРЕС"
+      label: "Starknet"
+      chain: starknet
+      # Опционально, если STRK делегирован в пул стейкинга (например через Braavos):
+      # starknet_delegation_pool: "0xАДРЕС_POOL_КОНТРАКТА"

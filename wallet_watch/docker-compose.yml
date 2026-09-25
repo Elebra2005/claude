@@ -1,0 +1,9 @@
+services:
+  wallet-watch:
+    build: .
+    container_name: wallet-watch
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+      - ./data:/app/data
