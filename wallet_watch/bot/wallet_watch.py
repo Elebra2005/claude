@@ -47,6 +47,7 @@ from __future__ import annotations
 
 import asyncio
 import base64
+import html
 import json
 import logging
 import time
@@ -774,11 +775,25 @@ async def _total_usd_debank(client: httpx.AsyncClient, access_key: str, address:
 
 # --- общее ---
 
+# Жирный шрифт: при сборке текста отмечаем фрагмент управляющими символами,
+# а в HTML превращаем их уже после экранирования всего остального текста —
+# так символ "<" или "&" в названии монеты не сломает разметку Telegram.
+_BOLD_START, _BOLD_END = "\x02", "\x03"
+
+
+def _bold(text: str) -> str:
+    return f"{_BOLD_START}{text}{_BOLD_END}"
+
+
+def _to_html(text: str) -> str:
+    return html.escape(text, quote=False).replace(_BOLD_START, "<b>").replace(_BOLD_END, "</b>")
+
+
 async def _send_dm(client: httpx.AsyncClient, token: str, chat_id: str, text: str) -> None:
     try:
         resp = await client.post(
             TELEGRAM_API.format(token=token),
-            json={"chat_id": chat_id, "text": text},
+            json={"chat_id": chat_id, "text": _to_html(text), "parse_mode": "HTML"},
         )
         if resp.status_code != 200:
             log.error("Личное уведомление не доставлено: %s %s", resp.status_code, resp.text)
@@ -796,7 +811,7 @@ def _format_change(label: str, address: str, previous: float, current: float) ->
     arrow = "📈" if delta > 0 else "📉" if delta < 0 else "➖"
     short_addr = f"{address[:6]}…{address[-4:]}"
     return (
-        f"{arrow} {label or short_addr}\n"
+        f"{arrow} {_bold(label or short_addr)}\n"
         f"{_usd(previous)} → {_usd(current)} ({pct:+.2f}%)\n"
         f"Изменение: {'+' if delta >= 0 else ''}{delta:,.2f}$"
     )
@@ -1019,7 +1034,7 @@ async def check_once(cfg: dict, store: Store) -> None:
                 # сумму, чтобы сразу было видно, что бот работает.
                 log.info("wallet_watch: baseline для %s = $%.2f", address, current)
                 short_addr = f"{address[:6]}…{address[-4:]}"
-                lines = [f"🆕 {label or short_addr}: {_usd(current)}"]
+                lines = [f"🆕 {_bold(label or short_addr)}: {_usd(current)}"]
                 if breakdown:
                     top = sorted(breakdown.values(), key=lambda e: -e["usd"])
                     lines += [f"  • {e['symbol']}: {_usd(e['usd'])}" for e in top]
