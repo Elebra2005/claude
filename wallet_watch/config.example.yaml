@@ -15,6 +15,9 @@ wallet_watch:
     - address: "0xВАШ_EVM_АДРЕС"
       label: "Rabby"
       chain: zerion
+      # Ещё адреса того же кошелька — в отчёте одной строкой, монеты складываются.
+      # Работает для любой сети, кроме bybit.
+      # extra_addresses: ["0xВТОРОЙ_АДРЕС"]
 
     - address: "ВАШ_SOLANA_АДРЕС"
       label: "Solana"

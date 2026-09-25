@@ -874,7 +874,25 @@ class _WarningCounter(logging.Handler):
 def _wallet_key(w: dict) -> str | None:
     # У биржи нет ончейн-адреса — "адрес" здесь только ключ для хранения
     # прошлых значений.
-    return w.get("address") or ("bybit" if w.get("chain") == "bybit" else None)
+    base = w.get("address") or ("bybit" if w.get("chain") == "bybit" else None)
+    extra = w.get("extra_addresses") or []
+    if base and extra:
+        # Несколько адресов под одним названием — отдельная история значений:
+        # сумма уже другая, сравнивать её с суммой одного адреса нельзя.
+        return "+".join([base, *sorted(a.lower() for a in extra)])
+    return base
+
+
+def _merge(parts: list[dict[str, dict]]) -> dict[str, dict]:
+    """Одна разбивка из нескольких адресов: одинаковые монеты складываются."""
+    merged: dict[str, dict] = {}
+    for part in parts:
+        for cid, e in part.items():
+            if cid in merged:
+                merged[cid]["usd"] += e["usd"]
+            else:
+                merged[cid] = dict(e)
+    return merged
 
 
 async def _fetch_one(client, w, source, debank_key, store):
@@ -883,7 +901,19 @@ async def _fetch_one(client, w, source, debank_key, store):
     pkg_log.addHandler(warnings)
     try:
         chain = w.get("chain", "arbitrum")
-        breakdown, current = await _fetch_wallet(client, w, chain, _wallet_key(w), source, debank_key, store)
+        addresses = [a for a in [w.get("address"), *(w.get("extra_addresses") or [])] if a] or [_wallet_key(w)]
+        parts = [
+            await _fetch_wallet(client, {**w, "address": a}, chain, a, source, debank_key, store)
+            for a in addresses
+        ]
+        if len(parts) == 1:
+            breakdown, current = parts[0]
+        elif any(b is None and c is None for b, c in parts):
+            breakdown, current = None, None  # один из адресов не посчитан — сумма неполная
+        elif all(b is not None for b, _ in parts):
+            breakdown, current = _merge([b for b, _ in parts]), None
+        else:  # source=debank — только суммы
+            breakdown, current = None, sum(c or 0.0 for _, c in parts)
     except Exception as exc:
         log.warning("wallet_watch: %s — непредвиденная ошибка: %s", w.get("label"), exc)
         breakdown, current = None, None
@@ -1031,7 +1061,7 @@ async def check_once(cfg: dict, store: Store) -> None:
 
             sections.append("\n".join(lines))
 
-        if not sections:
+        if not sections and not failed:
             return
 
         # Одно сообщение на все изменившиеся кошельки разом, а не по одному
