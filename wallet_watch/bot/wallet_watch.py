@@ -163,8 +163,11 @@ async def _coingecko_address_map(client: httpx.AsyncClient, store: Store) -> dic
         store.set_cursor("coingecko_map_ts_v2", str(time.time()))
         return mapping
     except Exception as exc:
-        log.warning("wallet_watch: не удалось обновить список CoinGecko (%s), использую старый кэш", exc)
-        return json.loads(cached_data) if cached_data else {}
+        if cached_data:
+            log.info("wallet_watch: не удалось обновить список CoinGecko (%s), использую старый кэш", exc)
+            return json.loads(cached_data)
+        log.warning("wallet_watch: список CoinGecko недоступен и кэша нет: %s", exc)
+        return {}
 
 
 async def _prices_by_ids(client: httpx.AsyncClient, ids: set[str]) -> dict[str, float]:
@@ -223,7 +226,8 @@ async def _discover_tokens(client: httpx.AsyncClient, rpc_url: str, address: str
         store.save_snapshot(cache_key, known)
         store.set_cursor(f"{cache_key}_scanned_block", str(head))
     except Exception as exc:
-        log.warning("wallet_watch: скан токенов кошелька не удался (%s), использую уже известные", exc)
+        # Курсор не сдвинулся — пропущенные блоки досканируются на следующей проверке.
+        log.info("wallet_watch: скан токенов кошелька не удался (%s), использую уже известные", exc)
 
     return known
 
@@ -272,7 +276,7 @@ async def _total_usd_evm_onchain(client: httpx.AsyncClient, chain: str, address:
         native_wei = int(await _rpc(client, rpc_url, "eth_getBalance", [address, "latest"]), 16)
         native_amount = native_wei / 1e18
     except Exception as exc:
-        log.debug("wallet_watch: нативный баланс недоступен: %s", exc)
+        log.warning("wallet_watch: нативный баланс недоступен: %s", exc)
     native_id = NATIVE_COIN_ID.get(chain)
 
     addr_map = (await _coingecko_address_map(client, store)).get(platform, {})
@@ -338,7 +342,7 @@ async def _jupiter_locked_amount(client: httpx.AsyncClient, address: str) -> flo
         amount = int.from_bytes(raw[JUPITER_DEPOSIT_AMOUNT_OFFSET:JUPITER_DEPOSIT_AMOUNT_OFFSET + 8], "little")
         return amount / 1e6
     except Exception as exc:
-        log.debug("wallet_watch: заблокированный JUP недоступен: %s", exc)
+        log.warning("wallet_watch: заблокированный JUP недоступен: %s", exc)
         return 0.0
 
 
@@ -356,7 +360,7 @@ async def _total_usd_solana_onchain(client: httpx.AsyncClient, address: str, sto
         lamports = resp.json().get("result", {}).get("value") or 0
         sol_amount = lamports / 1e9
     except Exception as exc:
-        log.debug("wallet_watch: нативный баланс SOL недоступен: %s", exc)
+        log.warning("wallet_watch: нативный баланс SOL недоступен: %s", exc)
 
     try:
         resp = await client.post(
@@ -489,7 +493,7 @@ async def _discover_tokens_starknet(client: httpx.AsyncClient, address: str, sto
         store.save_snapshot(cache_key, known)
         store.set_cursor(f"{cache_key}_scanned_block", str(head))
     except Exception as exc:
-        log.warning("wallet_watch: скан токенов Starknet не удался (%s), использую уже известные", exc)
+        log.info("wallet_watch: скан токенов Starknet не удался (%s), использую уже известные", exc)
 
     return known
 
@@ -510,7 +514,7 @@ async def _starknet_delegated_amount(client: httpx.AsyncClient, pool_address: st
         amount = int(result[1], 16)
         return amount / 1e18
     except Exception as exc:
-        log.debug("wallet_watch: делегированный STRK недоступен: %s", exc)
+        log.warning("wallet_watch: делегированный STRK недоступен: %s", exc)
         return 0.0
 
 
@@ -592,8 +596,9 @@ def _format_change(label: str, address: str, previous: float, current: float) ->
 
 def _format_coin_line(symbol: str, previous: float, current: float) -> str:
     delta = current - previous
-    arrow = "📈" if delta > 0 else "📉" if delta < 0 else "➖"
-    return f"{arrow} {symbol}: ${previous:,.2f} → ${current:,.2f} ({'+' if delta >= 0 else ''}{delta:,.2f}$)"
+    arrow = "📈" if delta > 0.005 else "📉" if delta < -0.005 else "➖"
+    pct = f", {delta / previous * 100:+.2f}%" if previous else ""
+    return f"{arrow} {symbol}: ${current:,.2f} ({'+' if delta >= 0 else ''}{delta:,.2f}${pct})"
 
 
 def _format_total_line(previous: float | None, current: float) -> str:
@@ -607,6 +612,53 @@ def _format_total_line(previous: float | None, current: float) -> str:
         f"${previous:,.2f} → ${current:,.2f} ({pct:+.2f}%)\n"
         f"Изменение: {'+' if delta >= 0 else ''}{delta:,.2f}$"
     )
+
+
+async def _fetch_wallet(
+    client: httpx.AsyncClient, w: dict, chain: str, address: str, source: str, debank_key: str | None, store: Store
+) -> tuple[dict[str, dict] | None, float | None]:
+    """(разбивка по монетам, сумма) — сумма только у source=debank."""
+    breakdown: dict[str, dict] | None = None
+    current: float | None = None
+    if chain == "bybit":
+        breakdown = await total_usd_bybit(client)
+    elif chain == "cosmos":
+        amounts = await cosmos_amounts(client, w)
+        prices = await _prices_by_ids(client, set(amounts))
+        breakdown = {
+            cid: {"symbol": sym, "usd": qty * prices[cid]}
+            for cid, (sym, qty) in amounts.items() if prices.get(cid)
+        }
+    elif source == "debank":
+        current = await _total_usd_debank(client, debank_key, address)
+    elif chain == "solana":
+        breakdown = await _total_usd_solana_onchain(client, address, store)
+    elif chain == "starknet":
+        cache_key = f"wallet_tokens_starknet_{address.lower()}"
+        pool = w.get("starknet_delegation_pool")
+        breakdown = await _total_usd_starknet_onchain(client, address, store, cache_key, pool)
+    else:
+        cache_key = f"wallet_tokens_{chain}_{address.lower()}"
+        breakdown = await _total_usd_evm_onchain(client, chain, address, store, cache_key)
+
+    return breakdown, current
+
+
+class _WarningCounter(logging.Handler):
+    """Считает предупреждения, пока считается один кошелёк.
+
+    Бэкенды при сбое сети не падают, а пишут предупреждение и возвращают
+    то, что успели получить, — это заниженная сумма, и без такой проверки
+    сбой публичного RPC выглядел бы как падение баланса (а на следующей
+    проверке — как такой же рост).
+    """
+
+    def __init__(self) -> None:
+        super().__init__(logging.WARNING)
+        self.count = 0
+
+    def emit(self, record: logging.LogRecord) -> None:
+        self.count += 1
 
 
 async def check_once(cfg: dict, store: Store) -> None:
@@ -631,7 +683,11 @@ async def check_once(cfg: dict, store: Store) -> None:
     # Позиции дешевле этого — пыль (мусорные аирдропы, копейки), не стоят
     # отдельной строки в личке и не считаются "монетой на кошельке".
     min_coin_usd = wc.get("min_coin_usd", 1.0)
+    # Отчёт на каждой проверке (по всем кошелькам, даже без изменений),
+    # а не только когда сумма сдвинулась больше чем на min_change_usd.
+    report_every_check = wc.get("report_every_check", True)
     sections: list[str] = []
+    failed: list[str] = []
     all_current: dict[str, float] = {}
     async with httpx.AsyncClient(timeout=30) as client:
         for w in wallets:
@@ -645,36 +701,27 @@ async def check_once(cfg: dict, store: Store) -> None:
 
             breakdown: dict[str, dict] | None = None
             current: float | None = None
-            if chain == "bybit":
-                breakdown = await total_usd_bybit(client)
-            elif chain == "cosmos":
-                amounts = await cosmos_amounts(client, w)
-                prices = await _prices_by_ids(client, set(amounts))
-                breakdown = {
-                    cid: {"symbol": sym, "usd": qty * prices[cid]}
-                    for cid, (sym, qty) in amounts.items() if prices.get(cid)
-                }
-            elif source == "debank":
-                current = await _total_usd_debank(client, debank_key, address)
-            elif chain == "solana":
-                breakdown = await _total_usd_solana_onchain(client, address, store)
-            elif chain == "starknet":
-                cache_key = f"wallet_tokens_starknet_{address.lower()}"
-                pool = w.get("starknet_delegation_pool")
-                breakdown = await _total_usd_starknet_onchain(client, address, store, cache_key, pool)
-            else:
-                cache_key = f"wallet_tokens_{chain}_{address.lower()}"
-                breakdown = await _total_usd_evm_onchain(client, chain, address, store, cache_key)
+            warnings = _WarningCounter()
+            pkg_log = logging.getLogger(__package__)
+            pkg_log.addHandler(warnings)
+            try:
+                breakdown, current = await _fetch_wallet(client, w, chain, address, source, debank_key, store)
+            finally:
+                pkg_log.removeHandler(warnings)
 
             if breakdown is not None:
                 breakdown = {cid: e for cid, e in breakdown.items() if e["usd"] >= min_coin_usd}
                 current = sum(entry["usd"] for entry in breakdown.values())
-            if current is None:
-                continue
-            all_current[address] = current
-
             cursor_key = f"wallet_value_{address.lower()}"
             previous_raw = store.get_cursor(cursor_key)
+            if current is None or warnings.count:
+                # Сумма неполная — не сохраняем её и не сравниваем, а в итог
+                # берём прошлое значение, чтобы он не "проваливался".
+                failed.append(label or address)
+                if previous_raw is not None:
+                    all_current[address] = float(previous_raw)
+                continue
+            all_current[address] = current
             store.set_cursor(cursor_key, str(current))
 
             # Разбивка по монетам хранится отдельно от общей суммы — нужна
@@ -701,7 +748,7 @@ async def check_once(cfg: dict, store: Store) -> None:
             # Порог против шума: разница в доли доллара от округления курсов
             # не стоит отдельного сообщения в личку каждые 30 минут.
             min_change_usd = wc.get("min_change_usd", 1.0)
-            if abs(current - previous) < min_change_usd:
+            if abs(current - previous) < min_change_usd and not report_every_check:
                 continue
 
             lines = [_format_change(label, address, previous, current)]
@@ -711,10 +758,12 @@ async def check_once(cfg: dict, store: Store) -> None:
                 for coin_id in set(prev_breakdown) | set(breakdown):
                     prev_usd = prev_breakdown.get(coin_id, 0.0)
                     cur_usd = breakdown.get(coin_id, {}).get("usd", 0.0)
-                    if abs(cur_usd - prev_usd) < min_change_usd:
+                    if abs(cur_usd - prev_usd) < min_change_usd and not report_every_check:
                         continue
                     symbol = breakdown.get(coin_id, {}).get("symbol", coin_id.upper())
-                    coin_lines.append((abs(cur_usd - prev_usd), _format_coin_line(symbol, prev_usd, cur_usd)))
+                    # В режиме отчёта — по размеру позиции, иначе — по размеру изменения.
+                    order = max(cur_usd, prev_usd) if report_every_check else abs(cur_usd - prev_usd)
+                    coin_lines.append((order, _format_coin_line(symbol, prev_usd, cur_usd)))
                 if coin_lines:
                     coin_lines.sort(key=lambda x: -x[0])
                     lines.append("\nПо монетам:")
@@ -733,7 +782,14 @@ async def check_once(cfg: dict, store: Store) -> None:
         store.set_cursor("wallet_watch_grand_total", str(grand_current))
         grand_previous = float(grand_prev_raw) if grand_prev_raw is not None else None
 
-        text = "\n\n".join(sections + [_format_total_line(grand_previous, grand_current)])
+        tail = [_format_total_line(grand_previous, grand_current)]
+        if failed:
+            # Иначе пропавший кошелёк выглядел бы как падение итога.
+            tail.append(
+                "⚠️ Не удалось посчитать (сеть не ответила): " + ", ".join(failed)
+                + "\nВ итоге для них — сумма с прошлой проверки."
+            )
+        text = "\n\n".join(sections + tail)
         await _send_dm(client, bot_token, chat_id, text)
         log.info("wallet_watch: отправлено уведомление (%d кошельков изменилось)", len(sections))
 

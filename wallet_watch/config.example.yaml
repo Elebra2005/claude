@@ -4,7 +4,8 @@ wallet_watch:
   source: onchain        # onchain (бесплатно) | debank (платно, точнее, нужен DEBANK_ACCESS_KEY в .env)
   interval_minutes: 30   # как часто проверять
   telegram_chat_id: "ВАШ_TELEGRAM_CHAT_ID"   # узнать: python3 get_chat_id.py
-  min_change_usd: 1.0    # изменение меньше этого — не присылать
+  report_every_check: true  # отчёт на каждой проверке по всем кошелькам; false — только при изменении
+  min_change_usd: 1.0    # при report_every_check: false — изменение меньше этого не присылать
   min_coin_usd: 1.0      # монеты дешевле — пыль, не считаем
   wallets:
     # Лишние кошельки просто удалите. Сети: arbitrum, solana, starknet, cosmos, bybit.

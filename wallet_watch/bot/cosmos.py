@@ -133,7 +133,7 @@ async def _network_amounts(client: httpx.AsyncClient, rest: str, address: str, a
         for d in data.get("delegation_responses", []):
             _add(amounts, d["balance"]["denom"], float(d["balance"]["amount"]))
     except Exception as exc:
-        log.debug("cosmos: стейкинг %s недоступен: %s", address, exc)
+        log.warning("cosmos: стейкинг %s недоступен: %s", address, exc)
 
     try:
         data = await _get(client, f"{rest}/cosmos/staking/v1beta1/delegators/{address}/unbonding_delegations")
@@ -145,14 +145,14 @@ async def _network_amounts(client: httpx.AsyncClient, rest: str, address: str, a
             for e in u.get("entries", []):
                 _add(amounts, bond_denom, float(e["balance"]))
     except Exception as exc:
-        log.debug("cosmos: unbonding %s недоступен: %s", address, exc)
+        log.warning("cosmos: unbonding %s недоступен: %s", address, exc)
 
     try:
         data = await _get(client, f"{rest}/cosmos/distribution/v1beta1/delegators/{address}/rewards")
         for c in data.get("total", []):
             _add(amounts, c["denom"], float(c["amount"]))
     except Exception as exc:
-        log.debug("cosmos: награды %s недоступны: %s", address, exc)
+        log.warning("cosmos: награды %s недоступны: %s", address, exc)
 
 
 async def cosmos_amounts(client: httpx.AsyncClient, wallet: dict) -> dict[str, tuple[str, float]]:
