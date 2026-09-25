@@ -347,7 +347,7 @@ async def _sol_rpc(client: httpx.AsyncClient, method: str, params: list):
     raise last_exc or RuntimeError("нет узлов Solana")
 
 
-async def _jupiter_locked_amount(client: httpx.AsyncClient, address: str) -> float:
+async def _jupiter_locked_amount(client: httpx.AsyncClient, address: str, store: Store) -> float:
     """JUP, заблокированный в голосовании Jupiter DAO — это позиция внутри
     их программы, не токен на кошельке, обычный скан токенов её не видит.
 
@@ -364,14 +364,30 @@ async def _jupiter_locked_amount(client: httpx.AsyncClient, address: str) -> flo
     (стандартный флаг is_used в данных нулевой даже у активного слота).
     Покрывает типичный случай одной активной блокировки.
     """
+    # getProgramAccounts (поиск по всем аккаунтам программы) — тяжёлый
+    # запрос, публичные узлы его часто режут. Поэтому найденный аккаунт
+    # блокировки запоминаем и дальше читаем его лёгким getAccountInfo.
+    escrow_key = f"jup_escrow_{address}"
     try:
-        accounts = await _sol_rpc(client, "getProgramAccounts", [JUPITER_VOTER_PROGRAM, {
-            "encoding": "base64",
-            "filters": [{"memcmp": {"offset": JUPITER_VOTER_AUTHORITY_OFFSET, "bytes": address}}],
-        }])
-        if not accounts:
-            return 0.0
-        raw = base64.b64decode(accounts[0]["account"]["data"][0])
+        escrow = store.get_cursor(escrow_key)
+        checked_at = float(store.get_cursor(f"{escrow_key}_none_ts") or 0)
+        if escrow:
+            info = (await _sol_rpc(client, "getAccountInfo", [escrow, {"encoding": "base64"}]))["value"]
+            if not info:
+                return 0.0  # аккаунт закрыт — блокировки больше нет
+            raw = base64.b64decode(info["data"][0])
+        elif time.time() - checked_at < 24 * 3600:
+            return 0.0  # недавно искали — блокировки не было
+        else:
+            accounts = await _sol_rpc(client, "getProgramAccounts", [JUPITER_VOTER_PROGRAM, {
+                "encoding": "base64",
+                "filters": [{"memcmp": {"offset": JUPITER_VOTER_AUTHORITY_OFFSET, "bytes": address}}],
+            }])
+            if not accounts:
+                store.set_cursor(f"{escrow_key}_none_ts", str(time.time()))
+                return 0.0
+            store.set_cursor(escrow_key, accounts[0]["pubkey"])
+            raw = base64.b64decode(accounts[0]["account"]["data"][0])
         if len(raw) < JUPITER_DEPOSIT_AMOUNT_OFFSET + 8:
             return 0.0
         amount = int.from_bytes(raw[JUPITER_DEPOSIT_AMOUNT_OFFSET:JUPITER_DEPOSIT_AMOUNT_OFFSET + 8], "little")
@@ -415,7 +431,7 @@ async def _total_usd_solana_onchain(client: httpx.AsyncClient, address: str, sto
     # контракте, getTokenAccountsByOwner её не видит (токен не лежит на
     # кошельке). Складываем поверх обычного баланса JUP, если он есть —
     # дальше по пайплайну это один и тот же коин с одной ценой.
-    locked_jup = await _jupiter_locked_amount(client, address)
+    locked_jup = await _jupiter_locked_amount(client, address, store)
     if locked_jup:
         balances[JUP_MINT] = balances.get(JUP_MINT, 0.0) + locked_jup
 
@@ -726,6 +742,51 @@ async def _starknet_nonce(client: httpx.AsyncClient, address: str, block: int) -
         raise
 
 
+def _transfer_parties(event: dict) -> tuple[int, int] | None:
+    """(from, to) перевода в обоих форматах события Transfer: в новом
+    отправитель и получатель — ключи события, в старом (так STRK писал
+    переводы раньше) — первые два поля данных."""
+    keys, data = event.get("keys") or [], event.get("data") or []
+    if len(keys) >= 3:
+        return int(keys[1], 16), int(keys[2], 16)
+    if len(keys) == 1 and len(data) >= 2:
+        return int(data[0], 16), int(data[1], 16)
+    return None
+
+
+async def _starknet_strk_out_in_blocks(client: httpx.AsyncClient, address: str, store: Store, cache_key: str) -> None:
+    """Получатели STRK с кошелька — по всем переводам STRK в блоках своих
+    транзакций (оба формата события). Каждый блок проверяется один раз."""
+    blocks_key, done_key = f"{cache_key}_tx_blocks", f"{cache_key}_tx_blocks_done_v2"
+    strk_out_key = f"{cache_key}_strk_out"
+    me = int(address, 16)
+    done = store.get_snapshot(done_key) or set()
+    todo = sorted((store.get_snapshot(blocks_key) or set()) - done, key=int)
+    strk_out: set[str] = set()
+    for block in todo:
+        params = {
+            "from_block": {"block_number": int(block)}, "to_block": {"block_number": int(block)},
+            "address": STARKNET_STRK, "keys": [[STARKNET_TRANSFER_KEY]], "chunk_size": 1000,
+        }
+        continuation = None
+        while True:
+            if continuation:
+                params["continuation_token"] = continuation
+            result = await _rpc(client, STARKNET_RPC, "starknet_getEvents", [params])
+            for e in result["events"]:
+                parties = _transfer_parties(e)
+                if parties and parties[0] == me:
+                    strk_out.add(f"0x{parties[1]:064x}")
+            continuation = result.get("continuation_token")
+            if not continuation:
+                break
+        done.add(block)
+        store.save_snapshot(done_key, done)
+    if strk_out:
+        store.save_snapshot(strk_out_key, (store.get_snapshot(strk_out_key) or set()) | strk_out)
+        log.info("wallet_watch: Starknet — STRK уходил на %d адресов", len(strk_out))
+
+
 async def _starknet_scan_own_txs(client: httpx.AsyncClient, address: str, store: Store, cache_key: str) -> None:
     """Исходящие переводы кошелька — через его собственные транзакции.
 
@@ -747,6 +808,7 @@ async def _starknet_scan_own_txs(client: httpx.AsyncClient, address: str, store:
         n_head = await _starknet_nonce(client, address, head)
         if n_head == n_lo:
             store.set_cursor(block_key, str(head))
+            await _starknet_strk_out_in_blocks(client, address, store, cache_key)
             return
 
         memo: dict[int, int] = {lo: n_lo, head: n_head}
@@ -768,21 +830,11 @@ async def _starknet_scan_own_txs(client: httpx.AsyncClient, address: str, store:
             mid = (a + b) // 2
             stack += [(a, mid), (mid, b)]
 
-        strk_out: set[str] = set()
-        for block in tx_blocks:
-            events = await _starknet_get_events(client, [[STARKNET_TRANSFER_KEY], [address], []], block, block)
-            strk_out |= {
-                _felt(e["keys"][2]) for e in events
-                if _felt(e["from_address"]) == STARKNET_STRK and len(e.get("keys", [])) >= 3
-                and int(e["keys"][1], 16) == me
-            }
-        if strk_out:
-            store.save_snapshot(strk_out_key, (store.get_snapshot(strk_out_key) or set()) | strk_out)
         store.save_snapshot(blocks_key, (store.get_snapshot(blocks_key) or set()) | {str(b) for b in tx_blocks})
         store.set_cursor(block_key, str(head))
         store.set_cursor(nonce_key, str(n_head))
-        log.info("wallet_watch: Starknet — %d своих транзакций, переводов STRK на %d адресов",
-                 len(tx_blocks), len(strk_out))
+        await _starknet_strk_out_in_blocks(client, address, store, cache_key)
+        log.info("wallet_watch: Starknet — найдено %d блоков со своими транзакциями", len(tx_blocks))
     except Exception as exc:
         # Прогресс не сохранён — в следующую проверку поиск повторится.
         log.info("wallet_watch: поиск своих транзакций Starknet прерван (%s)", exc)
