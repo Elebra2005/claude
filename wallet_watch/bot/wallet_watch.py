@@ -79,7 +79,7 @@ SPL_TOKEN_PROGRAM = "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
 # Token-2022: новый стандарт токенов Solana, на нём выпущена часть новых
 # монет — их аккаунты лежат под другой программой и без отдельного
 # запроса не видны.
-SPL_TOKEN_2022_PROGRAM = "TokenzQdBNbLqP5VEhdkAS5EPFLZ6ALXBVGvQrmAc4Tb8"
+SPL_TOKEN_2022_PROGRAM = "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
 # Цены Jupiter — для монет Solana, которых нет на CoinGecko (свежие токены).
 JUPITER_PRICE_API = "https://lite-api.jup.ag/price/v3"
 JUPITER_TOKENS_API = "https://lite-api.jup.ag/tokens/v2/search"
@@ -685,7 +685,9 @@ async def _discover_tokens_starknet(client: httpx.AsyncClient, address: str, sto
 STARKNET_NATIVE_SYMBOL = {STARKNET_ETH: "ETH", STARKNET_STRK: "STRK"}
 
 
-async def _starknet_delegated_amount(client: httpx.AsyncClient, pool_address: str, member_address: str) -> float:
+async def _starknet_delegated_amount(
+    client: httpx.AsyncClient, pool_address: str, member_address: str
+) -> tuple[float, float]:
     """STRK, делегированный в пул стейкинга — DeFi-позиция в отдельном
     контракте (свой у каждого валидатора/провайдера), balanceOf STRK её не
     видит. pool_address — из config.yaml (wallet_watch.wallets[].
@@ -693,18 +695,22 @@ async def _starknet_delegated_amount(client: httpx.AsyncClient, pool_address: st
     вызов сверен вживую с реальной позицией ($119.07 на 2.990 STRK)."""
     try:
         result = await _starknet_call(client, pool_address, STARKNET_POOL_MEMBER_INFO_SELECTOR, [member_address])
-        # pool_member_info_v1 -> (reward_address, amount_lo, amount_hi, ...) —
-        # amount представлен как u128, здесь укладывается в одно слово (lo).
-        amount = int(result[1], 16)
-        return amount / 1e18
+        # pool_member_info_v1 -> (reward_address, amount, unclaimed_rewards,
+        # commission, unpool_amount, unpool_time) — сверено с реальной
+        # позицией: amount = 126 STRK как в Braavos, commission = 1000 (10%).
+        # unpool_amount — выводимое из пула, это тоже ещё деньги кошелька.
+        field = lambda i: int(result[i], 16) if len(result) > i else 0  # noqa: E731
+        staked = (field(1) + field(4)) / 1e18
+        rewards = field(2) / 1e18
+        return staked, rewards
     except RuntimeError as exc:
         # Ошибка самого контракта (не участник пула / вышел из него) — это
         # честный ноль, а не сбой сети.
         log.debug("wallet_watch: %s — не пул или нет делегирования: %s", pool_address, exc)
-        return 0.0
+        return 0.0, 0.0
     except Exception as exc:
         log.warning("wallet_watch: делегированный STRK недоступен: %s", exc)
-        return 0.0
+        return 0.0, 0.0
 
 
 async def _starknet_detect_pools(client: httpx.AsyncClient, address: str, store: Store, cache_key: str) -> set[str]:
@@ -856,10 +862,11 @@ async def _total_usd_starknet_onchain(
     pools = await _starknet_detect_pools(client, address, store, cache_key)
     if delegation_pool:
         pools.add(_felt(delegation_pool))
+    staked = rewards = 0.0
     for pool in pools:
-        delegated = await _starknet_delegated_amount(client, pool, address)
-        if delegated:
-            balances[STARKNET_STRK] = balances.get(STARKNET_STRK, 0.0) + delegated
+        s_amount, r_amount = await _starknet_delegated_amount(client, pool, address)
+        staked += s_amount
+        rewards += r_amount
 
     raw_map = (await _coingecko_address_map(client, store)).get("starknet", {})
     addr_map = {}
@@ -873,6 +880,9 @@ async def _total_usd_starknet_onchain(
     symbol_by_token = dict(STARKNET_NATIVE_SYMBOL)
     symbol_by_token.update({token: addr_map[token.lower()]["symbol"] for token in balances if token.lower() in addr_map})
     needed_ids = {id_by_token[t] for t in balances if t in id_by_token}
+    strk_id = STARKNET_NATIVE_COIN_ID[STARKNET_STRK]
+    if staked or rewards:
+        needed_ids.add(strk_id)
     prices = await _prices_by_ids(client, needed_ids)
 
     breakdown: dict[str, dict] = {}
@@ -881,6 +891,12 @@ async def _total_usd_starknet_onchain(
         price = prices.get(coin_id)
         if coin_id and price:
             breakdown[coin_id] = {"symbol": symbol_by_token.get(token, coin_id.upper()), "usd": amount * price}
+    # Стейкинг и награды — отдельными строками, как в самом Braavos.
+    strk_price = prices.get(strk_id)
+    if strk_price and staked:
+        breakdown[f"{strk_id}:staked"] = {"symbol": "STRK (стейкинг)", "usd": staked * strk_price}
+    if strk_price and rewards:
+        breakdown[f"{strk_id}:rewards"] = {"symbol": "STRK (награды стейкинга)", "usd": rewards * strk_price}
     return breakdown
 
 
