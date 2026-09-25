@@ -57,6 +57,7 @@ from .bybit import total_usd_bybit
 from .config import env
 from .cosmos import cosmos_amounts
 from .store import Store
+from .zerion import total_usd_zerion
 
 log = logging.getLogger(__name__)
 
@@ -68,6 +69,13 @@ TELEGRAM_API = "https://api.telegram.org/bot{token}/sendMessage"
 ARBITRUM_RPC = "https://arb1.arbitrum.io/rpc"
 SOLANA_RPC = "https://api.mainnet-beta.solana.com"
 SPL_TOKEN_PROGRAM = "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+# Token-2022: новый стандарт токенов Solana, на нём выпущена часть новых
+# монет — их аккаунты лежат под другой программой и без отдельного
+# запроса не видны.
+SPL_TOKEN_2022_PROGRAM = "TokenzQdBNbLqP5VEhdkAS5EPFLZ6ALXBVGvQrmAc4Tb8"
+# Цены Jupiter — для монет Solana, которых нет на CoinGecko (свежие токены).
+JUPITER_PRICE_API = "https://lite-api.jup.ag/price/v3"
+JUPITER_TOKENS_API = "https://lite-api.jup.ag/tokens/v2/search"
 JUP_MINT = "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"
 # Jupiter DAO (vote.jup.ag / lock.jup.ag): форк voter-stake-registry, адрес
 # и раскладка байт нигде не документированы публично — найдены и проверены
@@ -362,28 +370,29 @@ async def _total_usd_solana_onchain(client: httpx.AsyncClient, address: str, sto
     except Exception as exc:
         log.warning("wallet_watch: нативный баланс SOL недоступен: %s", exc)
 
-    try:
-        resp = await client.post(
-            SOLANA_RPC,
-            json={
-                "jsonrpc": "2.0", "id": 1, "method": "getTokenAccountsByOwner",
-                "params": [address, {"programId": SPL_TOKEN_PROGRAM}, {"encoding": "jsonParsed"}],
-            },
-        )
-        data = resp.json()
-        if "error" in data:
-            raise RuntimeError(data["error"])
-        accounts = data["result"]["value"]
-    except Exception as exc:
-        log.warning("wallet_watch: список SPL-токенов недоступен: %s", exc)
-        accounts = []
+    accounts: list[dict] = []
+    for program in (SPL_TOKEN_PROGRAM, SPL_TOKEN_2022_PROGRAM):
+        try:
+            resp = await client.post(
+                SOLANA_RPC,
+                json={
+                    "jsonrpc": "2.0", "id": 1, "method": "getTokenAccountsByOwner",
+                    "params": [address, {"programId": program}, {"encoding": "jsonParsed"}],
+                },
+            )
+            data = resp.json()
+            if "error" in data:
+                raise RuntimeError(data["error"])
+            accounts += data["result"]["value"]
+        except Exception as exc:
+            log.warning("wallet_watch: список SPL-токенов (%s) недоступен: %s", program[:8], exc)
 
     balances: dict[str, float] = {}
     for acc in accounts:
         info = acc["account"]["data"]["parsed"]["info"]
         amount = float(info["tokenAmount"]["uiAmountString"] or 0)
         if amount > 0:
-            balances[info["mint"]] = amount
+            balances[info["mint"]] = balances.get(info["mint"], 0.0) + amount
 
     # JUP, заблокированный в голосовании Jupiter DAO — DeFi-позиция в чужом
     # контракте, getTokenAccountsByOwner её не видит (токен не лежит на
@@ -408,14 +417,63 @@ async def _total_usd_solana_onchain(client: httpx.AsyncClient, address: str, sto
         price = prices.get("solana")
         if price:
             breakdown["solana"] = {"symbol": "SOL", "usd": sol_amount * price}
+    unpriced: dict[str, float] = {}
     for mint, amount in balances.items():
-        # Как и на EVM: не найден в CoinGecko — не оцениваем, не называем.
         entry = entry_by_mint.get(mint)
         price = prices.get(entry["id"]) if entry else None
         if entry and price:
             breakdown[entry["id"]] = {"symbol": entry["symbol"], "usd": amount * price}
+        else:
+            unpriced[mint] = amount
+
+    # Нет на CoinGecko — пробуем цену Jupiter (там есть почти всё, что
+    # торгуется на Solana). Мусорные аирдропы без ликвидности цены не
+    # имеют или стоят копейки и отсекаются порогом min_coin_usd.
+    if unpriced:
+        for mint, (symbol, usd) in (await _jupiter_valuation(client, unpriced)).items():
+            breakdown[f"sol:{mint}"] = {"symbol": symbol, "usd": usd}
 
     return breakdown
+
+
+def _safe_symbol(symbol: str, fallback: str) -> str:
+    """Символ токена из внешнего источника — только буквы/цифры, коротко.
+
+    У фишинговых токенов в символе бывают ссылки ("t.me/...", "Visit ...");
+    так они не попадут в сообщение в виде ссылки.
+    """
+    clean = "".join(ch for ch in (symbol or "") if ch.isalnum())[:12]
+    return clean.upper() or fallback
+
+
+async def _jupiter_valuation(client: httpx.AsyncClient, amounts: dict[str, float]) -> dict[str, tuple[str, float]]:
+    """{mint: (символ, usd)} по ценам Jupiter для монет без цены на CoinGecko."""
+    mints = list(amounts)[:50]
+    try:
+        resp = await client.get(JUPITER_PRICE_API, params={"ids": ",".join(mints)})
+        resp.raise_for_status()
+        data = resp.json()
+        data = data.get("data", data)  # v3 — {mint: {...}}, v2 — {"data": {mint: {...}}}
+        prices = {
+            mint: float(info.get("usdPrice") or info.get("price") or 0)
+            for mint, info in data.items() if isinstance(info, dict)
+        }
+    except Exception as exc:
+        log.warning("wallet_watch: цены Jupiter недоступны: %s", exc)
+        return {}
+
+    priced = {m: amounts[m] * p for m, p in prices.items() if p and m in amounts}
+    if not priced:
+        return {}
+    symbols: dict[str, str] = {}
+    try:
+        resp = await client.get(JUPITER_TOKENS_API, params={"query": ",".join(priced)})
+        resp.raise_for_status()
+        for t in resp.json():
+            symbols[t.get("id") or t.get("address")] = t.get("symbol") or ""
+    except Exception as exc:
+        log.info("wallet_watch: символы токенов Jupiter недоступны: %s", exc)
+    return {m: (_safe_symbol(symbols.get(m, ""), m[:4] + "…"), usd) for m, usd in priced.items()}
 
 
 # --- бэкенд onchain: Starknet ---
@@ -475,27 +533,45 @@ async def _starknet_scan_transfers(client: httpx.AsyncClient, address: str, from
     return events
 
 
+def _felt(value: str) -> str:
+    """Адрес Starknet в одном виде: RPC отдаёт их то с ведущими нулями, то
+    без — без нормализации один и тот же токен считался бы дважды."""
+    return f"0x{int(value, 16):064x}"
+
+
 async def _discover_tokens_starknet(client: httpx.AsyncClient, address: str, store: Store, cache_key: str) -> set[str]:
     """Аналог _discover_tokens для EVM, но через starknet_getEvents —
-    инкрементально, тот же принцип (запоминаем последний просмотренный блок)."""
+    инкрементально, тот же принцип (запоминаем последний просмотренный блок).
+
+    Заодно запоминает получателей исходящих переводов STRK — среди них
+    пул стейкинга, если STRK делегирован (см. _starknet_detect_pools)."""
     known = store.get_snapshot(cache_key) or set()
     last_block = store.get_cursor(f"{cache_key}_scanned_block")
+    strk_out_key = f"{cache_key}_strk_out"
 
     try:
         head = await _rpc(client, STARKNET_RPC, "starknet_blockNumber", [])
         from_block = int(last_block) + 1 if last_block else 0
         if from_block > head:
-            return known
+            return {_felt(t) for t in known}
 
         events = await _starknet_scan_transfers(client, address, from_block, head)
-        new_tokens = {e["from_address"] for e in events}
-        known = known | new_tokens
+        new_tokens = {_felt(e["from_address"]) for e in events}
+        known = {_felt(t) for t in known} | new_tokens
+        me = int(address, 16)
+        strk_out = {
+            _felt(e["keys"][2]) for e in events
+            if _felt(e["from_address"]) == STARKNET_STRK and len(e.get("keys", [])) >= 3
+            and int(e["keys"][1], 16) == me
+        }
+        if strk_out:
+            store.save_snapshot(strk_out_key, (store.get_snapshot(strk_out_key) or set()) | strk_out)
         store.save_snapshot(cache_key, known)
         store.set_cursor(f"{cache_key}_scanned_block", str(head))
     except Exception as exc:
         log.info("wallet_watch: скан токенов Starknet не удался (%s), использую уже известные", exc)
 
-    return known
+    return {_felt(t) for t in known}
 
 
 STARKNET_NATIVE_SYMBOL = {STARKNET_ETH: "ETH", STARKNET_STRK: "STRK"}
@@ -513,9 +589,40 @@ async def _starknet_delegated_amount(client: httpx.AsyncClient, pool_address: st
         # amount представлен как u128, здесь укладывается в одно слово (lo).
         amount = int(result[1], 16)
         return amount / 1e18
+    except RuntimeError as exc:
+        # Ошибка самого контракта (не участник пула / вышел из него) — это
+        # честный ноль, а не сбой сети.
+        log.debug("wallet_watch: %s — не пул или нет делегирования: %s", pool_address, exc)
+        return 0.0
     except Exception as exc:
         log.warning("wallet_watch: делегированный STRK недоступен: %s", exc)
         return 0.0
+
+
+async def _starknet_detect_pools(client: httpx.AsyncClient, address: str, store: Store, cache_key: str) -> set[str]:
+    """Пулы стейкинга, куда кошелёк делегировал STRK, — без ручного ввода.
+
+    При делегировании STRK уходит с кошелька на контракт пула, поэтому пул
+    есть среди получателей исходящих переводов STRK. Каждого нового
+    получателя один раз спрашиваем pool_member_info_v1: ответил — это пул
+    (запоминаем), ошибка контракта — не пул (тоже запоминаем, больше не
+    спрашиваем)."""
+    pools_key, checked_key = f"{cache_key}_pools", f"{cache_key}_pool_checked"
+    pools = store.get_snapshot(pools_key) or set()
+    checked = store.get_snapshot(checked_key) or set()
+    candidates = (store.get_snapshot(f"{cache_key}_strk_out") or set()) - checked - pools
+    for candidate in candidates:
+        try:
+            await _starknet_call(client, candidate, STARKNET_POOL_MEMBER_INFO_SELECTOR, [address])
+            pools.add(candidate)
+            log.info("wallet_watch: найден пул стейкинга STRK %s", candidate)
+        except RuntimeError:
+            checked.add(candidate)
+        except Exception as exc:
+            log.info("wallet_watch: проверка пула %s отложена: %s", candidate, exc)
+    store.save_snapshot(pools_key, pools)
+    store.save_snapshot(checked_key, checked)
+    return pools
 
 
 async def _total_usd_starknet_onchain(
@@ -530,12 +637,21 @@ async def _total_usd_starknet_onchain(
         if bal:
             balances[token] = bal
 
+    pools = await _starknet_detect_pools(client, address, store, cache_key)
     if delegation_pool:
-        delegated = await _starknet_delegated_amount(client, delegation_pool, address)
+        pools.add(_felt(delegation_pool))
+    for pool in pools:
+        delegated = await _starknet_delegated_amount(client, pool, address)
         if delegated:
             balances[STARKNET_STRK] = balances.get(STARKNET_STRK, 0.0) + delegated
 
-    addr_map = (await _coingecko_address_map(client, store)).get("starknet", {})
+    raw_map = (await _coingecko_address_map(client, store)).get("starknet", {})
+    addr_map = {}
+    for k, v in raw_map.items():
+        try:
+            addr_map[_felt(k)] = v
+        except ValueError:
+            continue
     id_by_token = dict(STARKNET_NATIVE_COIN_ID)
     id_by_token.update({token: addr_map[token.lower()]["id"] for token in balances if token.lower() in addr_map})
     symbol_by_token = dict(STARKNET_NATIVE_SYMBOL)
@@ -582,6 +698,10 @@ async def _send_dm(client: httpx.AsyncClient, token: str, chat_id: str, text: st
         log.error("Личное уведомление: ошибка отправки: %s", exc)
 
 
+def _usd(value: float) -> str:
+    return f"-${-value:,.2f}" if value < 0 else f"${value:,.2f}"
+
+
 def _format_change(label: str, address: str, previous: float, current: float) -> str:
     delta = current - previous
     pct = (delta / previous * 100) if previous else 0.0
@@ -589,7 +709,7 @@ def _format_change(label: str, address: str, previous: float, current: float) ->
     short_addr = f"{address[:6]}…{address[-4:]}"
     return (
         f"{arrow} {label or short_addr}\n"
-        f"${previous:,.2f} → ${current:,.2f} ({pct:+.2f}%)\n"
+        f"{_usd(previous)} → {_usd(current)} ({pct:+.2f}%)\n"
         f"Изменение: {'+' if delta >= 0 else ''}{delta:,.2f}$"
     )
 
@@ -597,19 +717,19 @@ def _format_change(label: str, address: str, previous: float, current: float) ->
 def _format_coin_line(symbol: str, previous: float, current: float) -> str:
     delta = current - previous
     arrow = "📈" if delta > 0.005 else "📉" if delta < -0.005 else "➖"
-    pct = f", {delta / previous * 100:+.2f}%" if previous else ""
-    return f"{arrow} {symbol}: ${current:,.2f} ({'+' if delta >= 0 else ''}{delta:,.2f}${pct})"
+    pct = f", {delta / abs(previous) * 100:+.2f}%" if previous else ""
+    return f"{arrow} {symbol}: {_usd(current)} ({'+' if delta >= 0 else ''}{delta:,.2f}${pct})"
 
 
 def _format_total_line(previous: float | None, current: float) -> str:
     if previous is None:
-        return f"💰 Итого по всем кошелькам: ${current:,.2f}"
+        return f"💰 Итого по всем кошелькам: {_usd(current)}"
     delta = current - previous
     pct = (delta / previous * 100) if previous else 0.0
     arrow = "📈" if delta > 0 else "📉" if delta < 0 else "➖"
     return (
         f"{arrow} Итого по всем кошелькам\n"
-        f"${previous:,.2f} → ${current:,.2f} ({pct:+.2f}%)\n"
+        f"{_usd(previous)} → {_usd(current)} ({pct:+.2f}%)\n"
         f"Изменение: {'+' if delta >= 0 else ''}{delta:,.2f}$"
     )
 
@@ -622,6 +742,8 @@ async def _fetch_wallet(
     current: float | None = None
     if chain == "bybit":
         breakdown = await total_usd_bybit(client)
+    elif chain == "zerion":
+        breakdown = await total_usd_zerion(client, address)
     elif chain == "cosmos":
         amounts = await cosmos_amounts(client, w)
         prices = await _prices_by_ids(client, set(amounts))
@@ -710,7 +832,8 @@ async def check_once(cfg: dict, store: Store) -> None:
                 pkg_log.removeHandler(warnings)
 
             if breakdown is not None:
-                breakdown = {cid: e for cid, e in breakdown.items() if e["usd"] >= min_coin_usd}
+                # abs: займы в лендингах идут с минусом, но крупный долг — не пыль.
+                breakdown = {cid: e for cid, e in breakdown.items() if abs(e["usd"]) >= min_coin_usd}
                 current = sum(entry["usd"] for entry in breakdown.values())
             cursor_key = f"wallet_value_{address.lower()}"
             previous_raw = store.get_cursor(cursor_key)
@@ -737,10 +860,10 @@ async def check_once(cfg: dict, store: Store) -> None:
                 # сумму, чтобы сразу было видно, что бот работает.
                 log.info("wallet_watch: baseline для %s = $%.2f", address, current)
                 short_addr = f"{address[:6]}…{address[-4:]}"
-                lines = [f"🆕 {label or short_addr}: ${current:,.2f}"]
+                lines = [f"🆕 {label or short_addr}: {_usd(current)}"]
                 if breakdown:
                     top = sorted(breakdown.values(), key=lambda e: -e["usd"])
-                    lines += [f"  • {e['symbol']}: ${e['usd']:,.2f}" for e in top]
+                    lines += [f"  • {e['symbol']}: {_usd(e['usd'])}" for e in top]
                 sections.append("\n".join(lines))
                 continue
 

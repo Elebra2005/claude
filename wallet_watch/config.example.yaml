@@ -8,10 +8,13 @@ wallet_watch:
   min_change_usd: 1.0    # при report_every_check: false — изменение меньше этого не присылать
   min_coin_usd: 1.0      # монеты дешевле — пыль, не считаем
   wallets:
-    # Лишние кошельки просто удалите. Сети: arbitrum, solana, starknet, cosmos, bybit.
+    # Лишние кошельки просто удалите. Сети: zerion, arbitrum, solana, starknet, cosmos, bybit.
+    # EVM-кошелёк (Rabby, MetaMask…) целиком: все сети, лендинги, стейкинг.
+    # Нужен бесплатный ZERION_API_KEY в .env. Без ключа — chain: arbitrum
+    # (только Arbitrum и только токены на кошельке).
     - address: "0xВАШ_EVM_АДРЕС"
-      label: "Arbitrum"
-      chain: arbitrum
+      label: "Rabby"
+      chain: zerion
 
     - address: "ВАШ_SOLANA_АДРЕС"
       label: "Solana"
@@ -20,7 +23,8 @@ wallet_watch:
     - address: "0xВАШ_STARKNET_АДРЕС"
       label: "Starknet"
       chain: starknet
-      # Опционально, если STRK делегирован в пул стейкинга (например через Braavos):
+      # Пул стейкинга STRK бот находит сам по исходящим переводам STRK.
+      # Если не нашёл — можно указать вручную:
       # starknet_delegation_pool: "0xАДРЕС_POOL_КОНТРАКТА"
 
     # Keplr (сети Cosmos): достаточно адреса cosmos1…, адреса в остальных

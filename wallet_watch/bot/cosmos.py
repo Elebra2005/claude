@@ -118,20 +118,23 @@ def _add(amounts: dict, denom: str, raw: float) -> None:
 
 
 async def _network_amounts(client: httpx.AsyncClient, rest: str, address: str, amounts: dict, ibc_cache: dict) -> None:
+    async def add(denom: str, raw: float) -> None:
+        # ibc/… — токен другой сети (например, USDC в наградах dYdX).
+        if denom.startswith("ibc/"):
+            denom = await _resolve_ibc(client, rest, denom, ibc_cache) or denom
+        _add(amounts, denom, raw)
+
     try:
         data = await _get(client, f"{rest}/cosmos/bank/v1beta1/balances/{address}?pagination.limit=500")
         for c in data.get("balances", []):
-            denom = c["denom"]
-            if denom.startswith("ibc/"):
-                denom = await _resolve_ibc(client, rest, denom, ibc_cache) or denom
-            _add(amounts, denom, float(c["amount"]))
+            await add(c["denom"], float(c["amount"]))
     except Exception as exc:
         log.warning("cosmos: баланс %s недоступен: %s", address, exc)
 
     try:
         data = await _get(client, f"{rest}/cosmos/staking/v1beta1/delegations/{address}")
         for d in data.get("delegation_responses", []):
-            _add(amounts, d["balance"]["denom"], float(d["balance"]["amount"]))
+            await add(d["balance"]["denom"], float(d["balance"]["amount"]))
     except Exception as exc:
         log.warning("cosmos: стейкинг %s недоступен: %s", address, exc)
 
@@ -143,14 +146,14 @@ async def _network_amounts(client: httpx.AsyncClient, rest: str, address: str, a
                 params = await _get(client, f"{rest}/cosmos/staking/v1beta1/params")
                 bond_denom = params["params"]["bond_denom"]
             for e in u.get("entries", []):
-                _add(amounts, bond_denom, float(e["balance"]))
+                await add(bond_denom, float(e["balance"]))
     except Exception as exc:
         log.warning("cosmos: unbonding %s недоступен: %s", address, exc)
 
     try:
         data = await _get(client, f"{rest}/cosmos/distribution/v1beta1/delegators/{address}/rewards")
         for c in data.get("total", []):
-            _add(amounts, c["denom"], float(c["amount"]))
+            await add(c["denom"], float(c["amount"]))
     except Exception as exc:
         log.warning("cosmos: награды %s недоступны: %s", address, exc)
 

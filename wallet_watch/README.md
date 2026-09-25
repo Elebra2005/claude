@@ -37,6 +37,24 @@
 (гибкие сбережения, ончейн-стейкинг). Монеты, для которых на споте Bybit
 нет пары к USDT, не оцениваются.
 
+## Rabby и другие EVM-кошельки (Zerion)
+
+`chain: zerion` считает EVM-адрес целиком: токены во всех сетях, депозиты и
+займы в лендингах (займы с минусом), стейкинг, пулы, награды. Нужен бесплатный
+ключ: https://developers.zerion.io → войти → скопировать API key (`zk_dev_…`)
+в `.env` как `ZERION_API_KEY=`.
+
+## Solana (Backpack)
+
+Учитываются SOL, токены обоих стандартов (SPL и Token-2022) и JUP в
+голосовании Jupiter DAO. Цены — CoinGecko, а для монет, которых там нет, —
+Jupiter.
+
+## Braavos (Starknet)
+
+Пул стейкинга STRK бот находит сам по исходящим переводам STRK. Если не
+нашёл, адрес пула можно указать в `starknet_delegation_pool`.
+
 ## Keplr (Cosmos)
 
 Нужен один адрес `cosmos1…`: адреса в Osmosis, Celestia, dYdX, Akash, Stride,
