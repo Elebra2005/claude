@@ -1,5 +1,8 @@
 """Диагностика стейкинга STRK: docker exec wallet-watch python -m bot.diag_starknet
 
+С флагом --reset — сбросить прогресс скана истории: следующая проверка
+начнёт заново с блока создания кошелька.
+
 Показывает, докуда просканирована история, куда уходил STRK с кошелька и
 что отвечают эти адреса на запросы пула стейкинга.
 """
@@ -33,6 +36,10 @@ async def main() -> None:
         for w in wallets:
             address = w["address"]
             key = f"wallet_tokens_starknet_{address.lower()}"
+            if "--reset" in sys.argv:
+                store._db.execute("DELETE FROM cursors WHERE key IN (?, ?)", (f"{key}_scanned_block", f"{key}_chunk"))
+                store._db.commit()
+                print("прогресс скана сброшен")
             scanned = store.get_cursor(f"{key}_scanned_block")
             print(f"== {w.get('label')} {address}")
             print(f"история просканирована до блока {scanned} из {head}")

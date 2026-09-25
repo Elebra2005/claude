@@ -55,7 +55,7 @@ import httpx
 
 from .bybit import total_usd_bybit
 from .config import env
-from .net import RetryTransport
+from .net import NO_RETRY, RetryTransport
 from .cosmos import cosmos_amounts
 from .store import Store
 from .zerion import total_usd_zerion
@@ -116,6 +116,9 @@ STARKNET_TRANSFER_KEY = "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d
 # полную историю (на момент внедрения — больше 15М блоков) на чанки этого
 # размера вместо одного запроса genesis→head, который не проходит целиком.
 STARKNET_EVENT_CHUNK_BLOCKS = 500_000
+STARKNET_MIN_CHUNK_BLOCKS = 10_000
+STARKNET_MAX_CHUNK_BLOCKS = 2_000_000
+STARKNET_SCAN_BUDGET_S = 240
 
 # Паузы между раундами пересчёта кошельков, которые не ответили (см. _fetch_all).
 WALLET_RETRY_PAUSES_S = [30, 60, 120, 240]
@@ -201,8 +204,13 @@ async def _prices_by_ids(client: httpx.AsyncClient, ids: set[str]) -> dict[str, 
         return {}
 
 
-async def _rpc(client: httpx.AsyncClient, url: str, method: str, params: list):
-    resp = await client.post(url, json={"jsonrpc": "2.0", "id": 1, "method": method, "params": params})
+async def _rpc(client: httpx.AsyncClient, url: str, method: str, params: list, retry: bool = True):
+    # retry=False — для запросов, которые при сбое выгоднее сразу уменьшить,
+    # чем повторять как есть (скан истории Starknet).
+    resp = await client.post(
+        url, json={"jsonrpc": "2.0", "id": 1, "method": method, "params": params},
+        extensions={} if retry else {NO_RETRY: True},
+    )
     resp.raise_for_status()
     data = resp.json()
     if "error" in data:
@@ -515,7 +523,7 @@ async def _starknet_get_events(client: httpx.AsyncClient, keys: list, from_block
         }
         if continuation:
             params["continuation_token"] = continuation
-        result = await _rpc(client, STARKNET_RPC, "starknet_getEvents", [params])
+        result = await _rpc(client, STARKNET_RPC, "starknet_getEvents", [params], retry=False)
         events.extend(result["events"])
         continuation = result.get("continuation_token")
         if not continuation:
@@ -537,6 +545,36 @@ async def _starknet_scan_transfers(client: httpx.AsyncClient, address: str, from
     return events
 
 
+async def _starknet_deploy_block(client: httpx.AsyncClient, address: str, head: int) -> int:
+    """Блок, в котором создан кошелёк: двоичный поиск по getClassHashAt
+    (~25 запросов). Если узел ответил чем-то кроме "контракт не найден"
+    (например, старая история у него обрезана), честно начинаем с нуля,
+    чтобы не пропустить переводы."""
+    async def deployed(block: int) -> bool:
+        try:
+            await _rpc(client, STARKNET_RPC, "starknet_getClassHashAt", [{"block_number": block}, address])
+            return True
+        except RuntimeError as exc:
+            if "contract not found" in str(exc).lower():
+                return False
+            raise
+
+    try:
+        if not await deployed(head):
+            return 0
+        lo, hi = 0, head
+        while lo < hi:
+            mid = (lo + hi) // 2
+            if await deployed(mid):
+                hi = mid
+            else:
+                lo = mid + 1
+        return lo
+    except Exception as exc:
+        log.info("wallet_watch: блок создания кошелька Starknet не найден (%s), сканирую с нуля", exc)
+        return 0
+
+
 def _felt(value: str) -> str:
     """Адрес Starknet в одном виде: RPC отдаёт их то с ведущими нулями, то
     без — без нормализации один и тот же токен считался бы дважды."""
@@ -555,15 +593,34 @@ async def _discover_tokens_starknet(client: httpx.AsyncClient, address: str, sto
 
     known = {_felt(t) for t in known}
     me = int(address, 16)
+    chunk_key = f"{cache_key}_chunk"
+    chunk = int(store.get_cursor(chunk_key) or STARKNET_EVENT_CHUNK_BLOCKS)
+    deadline = time.monotonic() + STARKNET_SCAN_BUDGET_S
     try:
         head = await _rpc(client, STARKNET_RPC, "starknet_blockNumber", [])
-        start = int(last_block) + 1 if last_block else 0
-        # По кускам, с сохранением прогресса после каждого: полная история
-        # Starknet — миллионы блоков, и если узел оборвёт один кусок,
-        # следующая проверка продолжит с него, а не начнёт с нуля.
-        while start <= head:
-            end = min(start + STARKNET_EVENT_CHUNK_BLOCKS - 1, head)
-            events = await _starknet_scan_transfers(client, address, start, end)
+        if last_block:
+            start = int(last_block) + 1
+        else:
+            # До создания кошелька переводов на него быть не может —
+            # история до этого блока (миллионы блоков) не нужна.
+            start = await _starknet_deploy_block(client, address, head)
+            log.info("wallet_watch: кошелёк Starknet создан в блоке %d, сканирую с него", start)
+            store.set_cursor(f"{cache_key}_scanned_block", str(start - 1))
+        # По кускам, с сохранением прогресса после каждого: история Starknet —
+        # миллионы блоков. Кусок, на котором узел падает, делим пополам и
+        # пробуем сразу; удачный — увеличиваем. Время на скан за одну
+        # проверку ограничено, дальше продолжит следующая.
+        while start <= head and time.monotonic() < deadline:
+            end = min(start + chunk - 1, head)
+            try:
+                events = await _starknet_scan_transfers(client, address, start, end)
+            except Exception as exc:
+                if chunk <= STARKNET_MIN_CHUNK_BLOCKS:
+                    raise
+                chunk //= 2
+                log.info("wallet_watch: скан Starknet %d–%d не прошёл (%s), кусок → %d", start, end, exc, chunk)
+                continue
+            chunk = min(chunk * 2, STARKNET_MAX_CHUNK_BLOCKS)
             known |= {_felt(e["from_address"]) for e in events}
             strk_out = {
                 _felt(e["keys"][2]) for e in events
@@ -575,8 +632,12 @@ async def _discover_tokens_starknet(client: httpx.AsyncClient, address: str, sto
             store.save_snapshot(cache_key, known)
             store.set_cursor(f"{cache_key}_scanned_block", str(end))
             start = end + 1
+        if start <= head:
+            log.info("wallet_watch: история Starknet просканирована до %d из %d, продолжу со следующей проверки",
+                     start - 1, head)
     except Exception as exc:
         log.info("wallet_watch: скан истории Starknet прерван (%s), продолжу со следующей проверки", exc)
+    store.set_cursor(chunk_key, str(chunk))
 
     return {_felt(t) for t in known}
 

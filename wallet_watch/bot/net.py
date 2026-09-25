@@ -15,6 +15,9 @@ import httpx
 log = logging.getLogger(__name__)
 
 RETRY_STATUSES = {429, 500, 502, 503, 504}
+# Ключ в request.extensions: запрос не повторять (вызывающий сам решит,
+# что делать при сбое).
+NO_RETRY = "wallet_watch_no_retry"
 PAUSES_S = [2, 5, 10, 20]
 
 
@@ -24,6 +27,8 @@ class RetryTransport(httpx.AsyncBaseTransport):
 
     async def handle_async_request(self, request: httpx.Request) -> httpx.Response:
         body = request.content  # POST-тело уже в памяти, его можно отправить повторно
+        if request.extensions.pop(NO_RETRY, False):
+            return await self._inner.handle_async_request(request)
         for attempt, pause in enumerate([*PAUSES_S, None]):
             try:
                 response = await self._inner.handle_async_request(request)
