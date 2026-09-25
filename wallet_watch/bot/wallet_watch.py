@@ -55,6 +55,7 @@ import httpx
 
 from .bybit import total_usd_bybit
 from .config import env
+from .cosmos import cosmos_amounts
 from .store import Store
 
 log = logging.getLogger(__name__)
@@ -646,6 +647,13 @@ async def check_once(cfg: dict, store: Store) -> None:
             current: float | None = None
             if chain == "bybit":
                 breakdown = await total_usd_bybit(client)
+            elif chain == "cosmos":
+                amounts = await cosmos_amounts(client, w)
+                prices = await _prices_by_ids(client, set(amounts))
+                breakdown = {
+                    cid: {"symbol": sym, "usd": qty * prices[cid]}
+                    for cid, (sym, qty) in amounts.items() if prices.get(cid)
+                }
             elif source == "debank":
                 current = await _total_usd_debank(client, debank_key, address)
             elif chain == "solana":

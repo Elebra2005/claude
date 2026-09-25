@@ -7,7 +7,7 @@ wallet_watch:
   min_change_usd: 1.0    # изменение меньше этого — не присылать
   min_coin_usd: 1.0      # монеты дешевле — пыль, не считаем
   wallets:
-    # Лишние кошельки просто удалите. Сети: arbitrum, solana, starknet.
+    # Лишние кошельки просто удалите. Сети: arbitrum, solana, starknet, cosmos, bybit.
     - address: "0xВАШ_EVM_АДРЕС"
       label: "Arbitrum"
       chain: arbitrum
@@ -21,6 +21,14 @@ wallet_watch:
       chain: starknet
       # Опционально, если STRK делегирован в пул стейкинга (например через Braavos):
       # starknet_delegation_pool: "0xАДРЕС_POOL_КОНТРАКТА"
+
+    # Keplr (сети Cosmos): достаточно адреса cosmos1…, адреса в остальных
+    # сетях (osmo1…, celestia1…) бот получит сам.
+    - address: "cosmos1ВАШ_АДРЕС"
+      label: "Keplr"
+      chain: cosmos
+      # networks: [cosmoshub, osmosis, celestia]   # опционально, по умолчанию все известные
+      # addresses: {injective: "inj1…"}             # Injective — отдельный адрес из Keplr
 
     # Биржа Bybit: адрес не нужен, баланс берётся по API-ключу (только чтение)
     # из .env: BYBIT_API_KEY / BYBIT_API_SECRET.
