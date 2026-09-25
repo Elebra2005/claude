@@ -69,6 +69,11 @@ TELEGRAM_API = "https://api.telegram.org/bot{token}/sendMessage"
 
 ARBITRUM_RPC = "https://arb1.arbitrum.io/rpc"
 SOLANA_RPC = "https://api.mainnet-beta.solana.com"
+# Публичные узлы Solana по очереди: у каждого бесплатного свои лимиты,
+# и официальный режет запросы с серверов чаще остальных. Свой узел
+# (например, бесплатный ключ Helius) можно поставить первым через
+# SOLANA_RPC_URL в .env.
+SOLANA_RPCS = [SOLANA_RPC, "https://solana-rpc.publicnode.com", "https://solana.drpc.org"]
 SPL_TOKEN_PROGRAM = "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
 # Token-2022: новый стандарт токенов Solana, на нём выпущена часть новых
 # монет — их аккаунты лежат под другой программой и без отдельного
@@ -322,6 +327,22 @@ async def _total_usd_evm_onchain(client: httpx.AsyncClient, chain: str, address:
     return breakdown
 
 
+async def _sol_rpc(client: httpx.AsyncClient, method: str, params: list):
+    """Запрос к Solana с переключением на следующий узел при сбое."""
+    urls = [u for u in [env("SOLANA_RPC_URL"), *SOLANA_RPCS] if u]
+    last_exc: Exception | None = None
+    for i, url in enumerate(urls):
+        try:
+            # Пока есть запасные узлы — сразу к следующему; повторы с паузами
+            # только на последнем.
+            return await _rpc(client, url, method, params, retry=i == len(urls) - 1)
+        except Exception as exc:
+            log.info("wallet_watch: Solana %s через %s не удался (%s), пробую следующий узел",
+                     method, url.split("/")[2], exc)
+            last_exc = exc
+    raise last_exc or RuntimeError("нет узлов Solana")
+
+
 async def _jupiter_locked_amount(client: httpx.AsyncClient, address: str) -> float:
     """JUP, заблокированный в голосовании Jupiter DAO — это позиция внутри
     их программы, не токен на кошельке, обычный скан токенов её не видит.
@@ -340,20 +361,10 @@ async def _jupiter_locked_amount(client: httpx.AsyncClient, address: str) -> flo
     Покрывает типичный случай одной активной блокировки.
     """
     try:
-        resp = await client.post(
-            SOLANA_RPC,
-            json={
-                "jsonrpc": "2.0", "id": 1, "method": "getProgramAccounts",
-                "params": [JUPITER_VOTER_PROGRAM, {
-                    "encoding": "base64",
-                    "filters": [{"memcmp": {"offset": JUPITER_VOTER_AUTHORITY_OFFSET, "bytes": address}}],
-                }],
-            },
-        )
-        data = resp.json()
-        if "error" in data:
-            raise RuntimeError(data["error"])
-        accounts = data["result"]
+        accounts = await _sol_rpc(client, "getProgramAccounts", [JUPITER_VOTER_PROGRAM, {
+            "encoding": "base64",
+            "filters": [{"memcmp": {"offset": JUPITER_VOTER_AUTHORITY_OFFSET, "bytes": address}}],
+        }])
         if not accounts:
             return 0.0
         raw = base64.b64decode(accounts[0]["account"]["data"][0])
@@ -373,11 +384,8 @@ async def _total_usd_solana_onchain(client: httpx.AsyncClient, address: str, sto
     Возвращает разбивку {coin_id: {"symbol", "usd"}}, как и EVM-версия."""
     sol_amount = 0.0
     try:
-        resp = await client.post(
-            SOLANA_RPC,
-            json={"jsonrpc": "2.0", "id": 1, "method": "getBalance", "params": [address]},
-        )
-        lamports = resp.json().get("result", {}).get("value") or 0
+        # Раньше ответ-ошибка молча превращался в 0 SOL — теперь это сбой.
+        lamports = (await _sol_rpc(client, "getBalance", [address]))["value"]
         sol_amount = lamports / 1e9
     except Exception as exc:
         log.warning("wallet_watch: нативный баланс SOL недоступен: %s", exc)
@@ -385,17 +393,10 @@ async def _total_usd_solana_onchain(client: httpx.AsyncClient, address: str, sto
     accounts: list[dict] = []
     for program in (SPL_TOKEN_PROGRAM, SPL_TOKEN_2022_PROGRAM):
         try:
-            resp = await client.post(
-                SOLANA_RPC,
-                json={
-                    "jsonrpc": "2.0", "id": 1, "method": "getTokenAccountsByOwner",
-                    "params": [address, {"programId": program}, {"encoding": "jsonParsed"}],
-                },
+            result = await _sol_rpc(
+                client, "getTokenAccountsByOwner", [address, {"programId": program}, {"encoding": "jsonParsed"}]
             )
-            data = resp.json()
-            if "error" in data:
-                raise RuntimeError(data["error"])
-            accounts += data["result"]["value"]
+            accounts += result["value"]
         except Exception as exc:
             log.warning("wallet_watch: список SPL-токенов (%s) недоступен: %s", program[:8], exc)
 
@@ -448,6 +449,20 @@ async def _total_usd_solana_onchain(client: httpx.AsyncClient, address: str, sto
     return breakdown
 
 
+async def _dexscreener_prices(client: httpx.AsyncClient, mints: list[str]) -> tuple[dict[str, float], dict[str, str]]:
+    """Цены и символы с DexScreener — по самому ликвидному пулу токена."""
+    resp = await client.get(f"https://api.dexscreener.com/tokens/v1/solana/{','.join(mints)}")
+    resp.raise_for_status()
+    best: dict[str, tuple[float, float, str]] = {}  # mint -> (ликвидность, цена, символ)
+    for pair in resp.json():
+        base = pair.get("baseToken") or {}
+        mint, price = base.get("address"), pair.get("priceUsd")
+        liq = float((pair.get("liquidity") or {}).get("usd") or 0)
+        if mint in mints and price and liq > best.get(mint, (-1,))[0]:
+            best[mint] = (liq, float(price), base.get("symbol") or "")
+    return {m: b[1] for m, b in best.items()}, {m: b[2] for m, b in best.items()}
+
+
 def _safe_symbol(symbol: str, fallback: str) -> str:
     """Символ токена из внешнего источника — только буквы/цифры, коротко.
 
@@ -460,7 +475,8 @@ def _safe_symbol(symbol: str, fallback: str) -> str:
 
 async def _jupiter_valuation(client: httpx.AsyncClient, amounts: dict[str, float]) -> dict[str, tuple[str, float]]:
     """{mint: (символ, usd)} по ценам Jupiter для монет без цены на CoinGecko."""
-    mints = list(amounts)[:50]
+    mints = list(amounts)[:30]
+    symbols: dict[str, str] = {}
     try:
         resp = await client.get(JUPITER_PRICE_API, params={"ids": ",".join(mints)})
         resp.raise_for_status()
@@ -471,20 +487,24 @@ async def _jupiter_valuation(client: httpx.AsyncClient, amounts: dict[str, float
             for mint, info in data.items() if isinstance(info, dict)
         }
     except Exception as exc:
-        log.warning("wallet_watch: цены Jupiter недоступны: %s", exc)
-        return {}
+        log.info("wallet_watch: цены Jupiter недоступны (%s), беру DexScreener", exc)
+        try:
+            prices, symbols = await _dexscreener_prices(client, mints)
+        except Exception as exc2:
+            log.warning("wallet_watch: цены Solana-токенов недоступны (Jupiter: %s; DexScreener: %s)", exc, exc2)
+            return {}
 
     priced = {m: amounts[m] * p for m, p in prices.items() if p and m in amounts}
     if not priced:
         return {}
-    symbols: dict[str, str] = {}
-    try:
-        resp = await client.get(JUPITER_TOKENS_API, params={"query": ",".join(priced)})
-        resp.raise_for_status()
-        for t in resp.json():
-            symbols[t.get("id") or t.get("address")] = t.get("symbol") or ""
-    except Exception as exc:
-        log.info("wallet_watch: символы токенов Jupiter недоступны: %s", exc)
+    if not symbols:
+        try:
+            resp = await client.get(JUPITER_TOKENS_API, params={"query": ",".join(priced)})
+            resp.raise_for_status()
+            for t in resp.json():
+                symbols[t.get("id") or t.get("address")] = t.get("symbol") or ""
+        except Exception as exc:
+            log.info("wallet_watch: символы токенов Jupiter недоступны: %s", exc)
     return {m: (_safe_symbol(symbols.get(m, ""), m[:4] + "…"), usd) for m, usd in priced.items()}
 
 
@@ -960,7 +980,9 @@ async def check_once(cfg: dict, store: Store) -> None:
             breakdown_key = f"wallet_breakdown_{address.lower()}"
             previous_breakdown_raw = store.get_cursor(breakdown_key) if breakdown is not None else None
             if breakdown is not None:
-                store.set_cursor(breakdown_key, json.dumps({cid: e["usd"] for cid, e in breakdown.items()}))
+                store.set_cursor(breakdown_key, json.dumps(
+                    {cid: {"usd": e["usd"], "symbol": e["symbol"]} for cid, e in breakdown.items()}
+                ))
 
             if previous_raw is None:
                 # Первый замер — сравнивать не с чем, но сообщаем стартовую
@@ -986,11 +1008,19 @@ async def check_once(cfg: dict, store: Store) -> None:
                 prev_breakdown = json.loads(previous_breakdown_raw) if previous_breakdown_raw else {}
                 coin_lines = []
                 for coin_id in set(prev_breakdown) | set(breakdown):
-                    prev_usd = prev_breakdown.get(coin_id, 0.0)
+                    prev = prev_breakdown.get(coin_id, 0.0)
+                    # Старый формат хранения — просто сумма, новый — {"usd", "symbol"}.
+                    prev_usd = prev.get("usd", 0.0) if isinstance(prev, dict) else float(prev)
                     cur_usd = breakdown.get(coin_id, {}).get("usd", 0.0)
                     if abs(cur_usd - prev_usd) < min_change_usd and not report_every_check:
                         continue
-                    symbol = breakdown.get(coin_id, {}).get("symbol", coin_id.upper())
+                    # Монеты, которой больше нет, в текущей разбивке тоже нет —
+                    # название берём из прошлой, а не показываем внутренний ключ.
+                    symbol = (
+                        breakdown.get(coin_id, {}).get("symbol")
+                        or (prev.get("symbol") if isinstance(prev, dict) else None)
+                        or coin_id.split(":")[-1].upper()
+                    )
                     # В режиме отчёта — по размеру позиции, иначе — по размеру изменения.
                     order = max(cur_usd, prev_usd) if report_every_check else abs(cur_usd - prev_usd)
                     coin_lines.append((order, _format_coin_line(symbol, prev_usd, cur_usd)))
