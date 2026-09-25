@@ -55,6 +55,7 @@ import httpx
 
 from .bybit import total_usd_bybit
 from .config import env
+from .net import RetryTransport
 from .cosmos import cosmos_amounts
 from .store import Store
 from .zerion import total_usd_zerion
@@ -114,7 +115,10 @@ STARKNET_TRANSFER_KEY = "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d
 # после 30с — замерено: диапазон в 1М блоков занимает ~9.5с, поэтому режем
 # полную историю (на момент внедрения — больше 15М блоков) на чанки этого
 # размера вместо одного запроса genesis→head, который не проходит целиком.
-STARKNET_EVENT_CHUNK_BLOCKS = 1_500_000
+STARKNET_EVENT_CHUNK_BLOCKS = 500_000
+
+# Паузы между раундами пересчёта кошельков, которые не ответили (см. _fetch_all).
+WALLET_RETRY_PAUSES_S = [30, 60, 120, 240]
 
 COINGECKO_MAP_TTL_S = 24 * 3600  # список адрес->ID меняется редко, обновляем раз в сутки
 
@@ -549,27 +553,30 @@ async def _discover_tokens_starknet(client: httpx.AsyncClient, address: str, sto
     last_block = store.get_cursor(f"{cache_key}_scanned_block")
     strk_out_key = f"{cache_key}_strk_out"
 
+    known = {_felt(t) for t in known}
+    me = int(address, 16)
     try:
         head = await _rpc(client, STARKNET_RPC, "starknet_blockNumber", [])
-        from_block = int(last_block) + 1 if last_block else 0
-        if from_block > head:
-            return {_felt(t) for t in known}
-
-        events = await _starknet_scan_transfers(client, address, from_block, head)
-        new_tokens = {_felt(e["from_address"]) for e in events}
-        known = {_felt(t) for t in known} | new_tokens
-        me = int(address, 16)
-        strk_out = {
-            _felt(e["keys"][2]) for e in events
-            if _felt(e["from_address"]) == STARKNET_STRK and len(e.get("keys", [])) >= 3
-            and int(e["keys"][1], 16) == me
-        }
-        if strk_out:
-            store.save_snapshot(strk_out_key, (store.get_snapshot(strk_out_key) or set()) | strk_out)
-        store.save_snapshot(cache_key, known)
-        store.set_cursor(f"{cache_key}_scanned_block", str(head))
+        start = int(last_block) + 1 if last_block else 0
+        # По кускам, с сохранением прогресса после каждого: полная история
+        # Starknet — миллионы блоков, и если узел оборвёт один кусок,
+        # следующая проверка продолжит с него, а не начнёт с нуля.
+        while start <= head:
+            end = min(start + STARKNET_EVENT_CHUNK_BLOCKS - 1, head)
+            events = await _starknet_scan_transfers(client, address, start, end)
+            known |= {_felt(e["from_address"]) for e in events}
+            strk_out = {
+                _felt(e["keys"][2]) for e in events
+                if _felt(e["from_address"]) == STARKNET_STRK and len(e.get("keys", [])) >= 3
+                and int(e["keys"][1], 16) == me
+            }
+            if strk_out:
+                store.save_snapshot(strk_out_key, (store.get_snapshot(strk_out_key) or set()) | strk_out)
+            store.save_snapshot(cache_key, known)
+            store.set_cursor(f"{cache_key}_scanned_block", str(end))
+            start = end + 1
     except Exception as exc:
-        log.info("wallet_watch: скан токенов Starknet не удался (%s), использую уже известные", exc)
+        log.info("wallet_watch: скан истории Starknet прерван (%s), продолжу со следующей проверки", exc)
 
     return {_felt(t) for t in known}
 
@@ -783,6 +790,54 @@ class _WarningCounter(logging.Handler):
         self.count += 1
 
 
+def _wallet_key(w: dict) -> str | None:
+    # У биржи нет ончейн-адреса — "адрес" здесь только ключ для хранения
+    # прошлых значений.
+    return w.get("address") or ("bybit" if w.get("chain") == "bybit" else None)
+
+
+async def _fetch_one(client, w, source, debank_key, store):
+    warnings = _WarningCounter()
+    pkg_log = logging.getLogger(__package__)
+    pkg_log.addHandler(warnings)
+    try:
+        chain = w.get("chain", "arbitrum")
+        breakdown, current = await _fetch_wallet(client, w, chain, _wallet_key(w), source, debank_key, store)
+    except Exception as exc:
+        log.warning("wallet_watch: %s — непредвиденная ошибка: %s", w.get("label"), exc)
+        breakdown, current = None, None
+    finally:
+        pkg_log.removeHandler(warnings)
+    return breakdown, current, warnings.count
+
+
+async def _fetch_all(client, wallets: list[dict], source, debank_key, store) -> dict[int, tuple]:
+    """Данные по всем кошелькам, с повторными раундами для тех, что не ответили.
+
+    Публичные узлы то и дело отвечают "слишком много запросов" или
+    обрывают соединение. Отдельные запросы уже повторяет RetryTransport;
+    если кошелёк всё равно посчитан не полностью, ждём и пересчитываем его
+    целиком — отчёт уходит, только когда ответили все (или кончились
+    попытки)."""
+    results: dict[int, tuple] = {}
+    pending = [i for i, w in enumerate(wallets) if _wallet_key(w)]
+    for attempt, pause in enumerate([0, *WALLET_RETRY_PAUSES_S]):
+        if pause:
+            names = ", ".join(wallets[i].get("label") or str(i) for i in pending)
+            log.info("wallet_watch: не ответили (%s), жду %dс и пробую ещё раз", names, pause)
+            await asyncio.sleep(pause)
+        still: list[int] = []
+        for i in pending:
+            breakdown, current, warns = await _fetch_one(client, wallets[i], source, debank_key, store)
+            results[i] = (breakdown, current, warns)
+            if current is None and breakdown is None or warns:
+                still.append(i)
+        pending = still
+        if not pending:
+            break
+    return results
+
+
 async def check_once(cfg: dict, store: Store) -> None:
     """Один проход по всем отслеживаемым кошелькам."""
     wc = cfg.get("wallet_watch", {})
@@ -811,25 +866,16 @@ async def check_once(cfg: dict, store: Store) -> None:
     sections: list[str] = []
     failed: list[str] = []
     all_current: dict[str, float] = {}
-    async with httpx.AsyncClient(timeout=30) as client:
-        for w in wallets:
+    async with httpx.AsyncClient(timeout=60, transport=RetryTransport()) as client:
+        results = await _fetch_all(client, wallets, source, debank_key, store)
+        for i, w in enumerate(wallets):
             chain = w.get("chain", "arbitrum")
-            # У биржи нет ончейн-адреса — "адрес" здесь только ключ для
-            # хранения прошлых значений.
-            address = w.get("address") or ("bybit" if chain == "bybit" else None)
+            address = _wallet_key(w)
             label = w.get("label") or ""
             if not address:
                 continue
 
-            breakdown: dict[str, dict] | None = None
-            current: float | None = None
-            warnings = _WarningCounter()
-            pkg_log = logging.getLogger(__package__)
-            pkg_log.addHandler(warnings)
-            try:
-                breakdown, current = await _fetch_wallet(client, w, chain, address, source, debank_key, store)
-            finally:
-                pkg_log.removeHandler(warnings)
+            breakdown, current, warning_count = results.get(i, (None, None, 1))
 
             if breakdown is not None:
                 # abs: займы в лендингах идут с минусом, но крупный долг — не пыль.
@@ -837,7 +883,7 @@ async def check_once(cfg: dict, store: Store) -> None:
                 current = sum(entry["usd"] for entry in breakdown.values())
             cursor_key = f"wallet_value_{address.lower()}"
             previous_raw = store.get_cursor(cursor_key)
-            if current is None or warnings.count:
+            if current is None or warning_count:
                 # Сумма неполная — не сохраняем её и не сравниваем, а в итог
                 # берём прошлое значение, чтобы он не "проваливался".
                 failed.append(label or address)
@@ -922,8 +968,11 @@ async def run_wallet_watch(cfg: dict, store: Store) -> None:
     interval = max(int((cfg.get("wallet_watch") or {}).get("interval_minutes", 30)), 1) * 60
     log.info("wallet_watch: запущен, интервал %d мин", interval // 60)
     while True:
+        started = time.monotonic()
         try:
             await check_once(cfg, store)
         except Exception as exc:
             log.error("wallet_watch: непредвиденная ошибка цикла: %s", exc)
-        await asyncio.sleep(interval)
+        # Интервал от начала проверки: повторы при сбоях сетей не должны
+        # сдвигать расписание отчётов.
+        await asyncio.sleep(max(interval - (time.monotonic() - started), 60))

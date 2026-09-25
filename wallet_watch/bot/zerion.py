@@ -45,6 +45,45 @@ def _safe(text: str, limit: int = 20) -> str:
     return clean.strip()[:limit]
 
 
+def _parts(p: dict) -> tuple[str, str, str, str, float | None]:
+    a = p.get("attributes") or {}
+    symbol = _safe((a.get("fungible_info") or {}).get("symbol") or "", 12).upper()
+    chain = ((p.get("relationships") or {}).get("chain") or {}).get("data", {}).get("id", "")
+    return symbol, chain, a.get("position_type") or "wallet", a.get("protocol") or "", a.get("value")
+
+
+def _drop_receipt_tokens(positions: list[dict]) -> list[dict]:
+    """Убирает токены-квитанции, которые дублируют DeFi-позицию.
+
+    Депозит в Aave Zerion отдаёт дважды: как позицию протокола ("WETH,
+    депозит Aave V3") и как токен на кошельке (aToken, например AETHWETH) —
+    это одни и те же деньги. Квитанцию узнаём так: обычный токен без
+    протокола в той же сети, в символе которого есть символ депозита
+    (aBasWETH ⊃ WETH), и стоимость почти та же (±5%: курс квитанции и
+    депозита считается чуть по-разному).
+    """
+    defi = [
+        (sym, chain, float(value)) for sym, chain, ptype, protocol, value in map(_parts, positions)
+        if (ptype != "wallet" or protocol) and ptype != "loan" and value and sym
+    ]
+    used: set[int] = set()
+    kept = []
+    for p in positions:
+        sym, chain, ptype, protocol, value = _parts(p)
+        if ptype == "wallet" and not protocol and value and sym:
+            match = next(
+                (i for i, (dsym, dchain, dval) in enumerate(defi)
+                 if i not in used and dchain == chain and dsym != sym and dsym in sym
+                 and abs(float(value) - dval) <= 0.05 * dval),
+                None,
+            )
+            if match is not None:
+                used.add(match)
+                continue
+        kept.append(p)
+    return kept
+
+
 def _chain_name(chain_id: str) -> str:
     return " ".join(part.capitalize() for part in (chain_id or "").split("-"))
 
@@ -79,6 +118,7 @@ async def total_usd_zerion(client: httpx.AsyncClient, address: str) -> dict[str,
         log.warning("Zerion: не удалось получить позиции %s: %s", address, exc)
         return None
 
+    positions = _drop_receipt_tokens(positions)
     breakdown: dict[str, dict] = {}
     for p in positions:
         a = p.get("attributes") or {}
