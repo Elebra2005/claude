@@ -1030,6 +1030,29 @@ class _WarningCounter(logging.Handler):
         self.count += 1
 
 
+def _migrate_breakdown(prev: dict) -> dict:
+    """Прошлая разбивка в формате текущих ключей.
+
+    У Zerion раньше в ключ входила сеть (zerion:сеть:протокол:тип:символ),
+    теперь одинаковые токены из разных сетей — одна строка
+    (zerion:протокол:тип:символ). Без перевода первый отчёт после
+    обновления показал бы старые строки как исчезнувшие, а новые — как
+    появившиеся."""
+    out: dict = {}
+    for cid, e in prev.items():
+        parts = cid.split(":")
+        usd = e.get("usd", 0.0) if isinstance(e, dict) else float(e)
+        if parts[0] == "zerion" and len(parts) == 5:
+            cid = ":".join([parts[0], *parts[2:]])
+            e = {"usd": usd}  # старое название содержало сеть — берётся из текущей разбивки
+        if cid in out:
+            prev_usd = out[cid].get("usd", 0.0) if isinstance(out[cid], dict) else float(out[cid])
+            out[cid] = {**(out[cid] if isinstance(out[cid], dict) else {}), "usd": prev_usd + usd}
+        else:
+            out[cid] = e
+    return out
+
+
 def _wallet_key(w: dict) -> str | None:
     # У биржи нет ончейн-адреса — "адрес" здесь только ключ для хранения
     # прошлых значений.
@@ -1195,7 +1218,7 @@ async def check_once(cfg: dict, store: Store) -> None:
 
             lines = [_format_change(label, address, previous, current)]
             if breakdown is not None:
-                prev_breakdown = json.loads(previous_breakdown_raw) if previous_breakdown_raw else {}
+                prev_breakdown = _migrate_breakdown(json.loads(previous_breakdown_raw) if previous_breakdown_raw else {})
                 coin_lines = []
                 for coin_id in set(prev_breakdown) | set(breakdown):
                     prev = prev_breakdown.get(coin_id, 0.0)

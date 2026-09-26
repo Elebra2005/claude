@@ -101,10 +101,6 @@ def _drop_receipt_tokens(positions: list[dict]) -> list[dict]:
     return kept
 
 
-def _chain_name(chain_id: str) -> str:
-    return " ".join(part.capitalize() for part in (chain_id or "").split("-"))
-
-
 class _RateLimited(Exception):
     def __init__(self, retry_after: float) -> None:
         super().__init__(f"429, ждать {retry_after:.0f}с")
@@ -188,13 +184,18 @@ async def total_usd_zerion(
         protocol = _safe(a.get("protocol") or "")
 
         usd = -float(value) if ptype == "loan" else float(value)
-        where = _chain_name(chain)
+        # Сеть в ключ не входит: один и тот же токен в разных сетях — одна
+        # строка (ETH в Ethereum + Base + Arbitrum = ETH). По той же причине
+        # одинаковые токены с разных адресов кошелька складываются в
+        # wallet_watch._merge. DeFi-позиции остаются отдельными строками по
+        # протоколу и типу (депозит, стейкинг, долг).
         if ptype != "wallet" or protocol:
             what = " ".join(x for x in (TYPE_LABEL.get(ptype, ptype), protocol) if x)
-            where = f"{what}, {where}" if where else what
-        label = f"{symbol} ({where})" if where else symbol
+            label = f"{symbol} ({what})"
+        else:
+            label = symbol
 
-        key_ = f"zerion:{chain}:{protocol}:{ptype}:{symbol}"
+        key_ = f"zerion:{protocol}:{ptype}:{symbol}"
         if key_ in breakdown:
             breakdown[key_]["usd"] += usd
         else:
