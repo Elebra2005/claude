@@ -15,17 +15,34 @@ API key (вида zk_dev_…) в .env как ZERION_API_KEY.
 
 from __future__ import annotations
 
+import asyncio
 import base64
+import json
 import logging
+import time
+from datetime import datetime
 
 import httpx
 
 from .config import env
+from .net import NO_RETRY
+from .store import Store
 
 log = logging.getLogger(__name__)
 
 POSITIONS_URL = "https://api.zerion.io/v1/wallets/{address}/positions/"
 MAX_PAGES = 10
+# Лимиты бесплатного ключа. На 429 Zerion не долбим повторами (повторы
+# только выбирают лимит дальше и продлевают блокировку): ждём столько,
+# сколько он просит, а пока ждём — показываем последние полученные данные.
+MIN_GAP_S = 1.2
+DEFAULT_BLOCK_S = 15 * 60
+CACHE_MAX_AGE_S = 3 * 3600
+
+# Пояснения для отчёта (например, «данные Zerion на 21:30»); wallet_watch
+# очищает список в начале проверки и дописывает его в конец сообщения.
+NOTES: list[str] = []
+_last_request = 0.0
 
 TYPE_LABEL = {
     "deposit": "депозит",
@@ -88,12 +105,40 @@ def _chain_name(chain_id: str) -> str:
     return " ".join(part.capitalize() for part in (chain_id or "").split("-"))
 
 
-async def total_usd_zerion(client: httpx.AsyncClient, address: str) -> dict[str, dict] | None:
+class _RateLimited(Exception):
+    def __init__(self, retry_after: float) -> None:
+        super().__init__(f"429, ждать {retry_after:.0f}с")
+        self.retry_after = retry_after
+
+
+def _from_cache(store: Store, address: str, reason: str, wallet_label: str) -> dict[str, dict] | None:
+    raw = store.get_cursor(f"zerion_last_{address.lower()}")
+    if raw:
+        cached = json.loads(raw)
+        if time.time() - cached["ts"] < CACHE_MAX_AGE_S:
+            at = datetime.fromtimestamp(cached["ts"]).strftime("%H:%M")
+            note = f"ℹ️ {wallet_label}: Zerion {reason}, данные на {at}"
+            if note not in NOTES:
+                NOTES.append(note)
+            log.info("Zerion: %s для %s, беру данные на %s", reason, address, at)
+            return cached["breakdown"]
+    log.warning("Zerion: %s для %s, а свежих сохранённых данных нет", reason, address)
+    return None
+
+
+async def total_usd_zerion(
+    client: httpx.AsyncClient, address: str, store: Store, wallet_label: str = "Zerion"
+) -> dict[str, dict] | None:
+    global _last_request
     key = env("ZERION_API_KEY")
     if not key:
         log.warning("wallet_watch: кошелёк chain=zerion, но ZERION_API_KEY не задан в .env")
         return None
     auth = "Basic " + base64.b64encode(f"{key}:".encode()).decode()
+
+    blocked_until = float(store.get_cursor("zerion_blocked_until") or 0)
+    if time.time() < blocked_until:
+        return _from_cache(store, address, "ограничил запросы", wallet_label)
 
     url: str | None = POSITIONS_URL.format(address=address)
     params: dict | None = {
@@ -106,7 +151,17 @@ async def total_usd_zerion(client: httpx.AsyncClient, address: str) -> dict[str,
     positions: list[dict] = []
     try:
         for _ in range(MAX_PAGES):
-            resp = await client.get(url, params=params, headers={"Authorization": auth, "accept": "application/json"})
+            wait = _last_request + MIN_GAP_S - time.monotonic()
+            if wait > 0:
+                await asyncio.sleep(wait)
+            _last_request = time.monotonic()
+            resp = await client.get(
+                url, params=params, headers={"Authorization": auth, "accept": "application/json"},
+                extensions={NO_RETRY: True},
+            )
+            if resp.status_code == 429:
+                ra = resp.headers.get("retry-after", "")
+                raise _RateLimited(float(ra) if ra.isdigit() else DEFAULT_BLOCK_S)
             resp.raise_for_status()
             data = resp.json()
             positions += data.get("data", [])
@@ -114,9 +169,11 @@ async def total_usd_zerion(client: httpx.AsyncClient, address: str) -> dict[str,
             params = None  # в ссылке next параметры уже есть
             if not url:
                 break
+    except _RateLimited as exc:
+        store.set_cursor("zerion_blocked_until", str(time.time() + exc.retry_after))
+        return _from_cache(store, address, "ограничил запросы", wallet_label)
     except Exception as exc:
-        log.warning("Zerion: не удалось получить позиции %s: %s", address, exc)
-        return None
+        return _from_cache(store, address, f"не ответил ({type(exc).__name__})", wallet_label)
 
     positions = _drop_receipt_tokens(positions)
     breakdown: dict[str, dict] = {}
@@ -142,4 +199,5 @@ async def total_usd_zerion(client: httpx.AsyncClient, address: str) -> dict[str,
             breakdown[key_]["usd"] += usd
         else:
             breakdown[key_] = {"symbol": label, "usd": usd}
+    store.set_cursor(f"zerion_last_{address.lower()}", json.dumps({"ts": time.time(), "breakdown": breakdown}))
     return breakdown

@@ -59,6 +59,7 @@ from .config import env
 from .net import NO_RETRY, RetryTransport
 from .cosmos import cosmos_amounts
 from .store import Store
+from . import zerion
 from .zerion import total_usd_zerion
 
 log = logging.getLogger(__name__)
@@ -989,7 +990,7 @@ async def _fetch_wallet(
     if chain == "bybit":
         breakdown = await total_usd_bybit(client)
     elif chain == "zerion":
-        breakdown = await total_usd_zerion(client, address)
+        breakdown = await total_usd_zerion(client, address, store, w.get("label") or "Zerion")
     elif chain == "cosmos":
         amounts = await cosmos_amounts(client, w)
         prices = await _prices_by_ids(client, set(amounts))
@@ -1136,6 +1137,7 @@ async def check_once(cfg: dict, store: Store) -> None:
     failed: list[str] = []
     all_current: dict[str, float] = {}
     async with httpx.AsyncClient(timeout=60, transport=RetryTransport()) as client:
+        zerion.NOTES.clear()
         results = await _fetch_all(client, wallets, source, debank_key, store)
         for i, w in enumerate(wallets):
             chain = w.get("chain", "arbitrum")
@@ -1219,7 +1221,7 @@ async def check_once(cfg: dict, store: Store) -> None:
 
             sections.append("\n".join(lines))
 
-        if not sections and not failed:
+        if not sections and not failed and not zerion.NOTES:
             return
 
         # Одно сообщение на все изменившиеся кошельки разом, а не по одному
@@ -1231,6 +1233,8 @@ async def check_once(cfg: dict, store: Store) -> None:
         grand_previous = float(grand_prev_raw) if grand_prev_raw is not None else None
 
         tail = [_format_total_line(grand_previous, grand_current)]
+        if zerion.NOTES:
+            tail.append("\n".join(zerion.NOTES))
         if failed:
             # Иначе пропавший кошелёк выглядел бы как падение итога.
             tail.append(
