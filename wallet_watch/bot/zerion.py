@@ -38,6 +38,12 @@ MAX_PAGES = 10
 MIN_GAP_S = 1.2
 DEFAULT_BLOCK_S = 15 * 60
 CACHE_MAX_AGE_S = 3 * 3600
+# Бесплатный (demo) ключ: 75 запросов позиций в сутки (заголовок
+# ratelimit-limit: "75;w=86400"). Отчёт каждые 30 минут по двум адресам —
+# это 96 запросов, лимит кончался к вечеру. Поэтому каждый адрес
+# запрашиваем не чаще раза в REFRESH_S (двум адресам — 48 в сутки), а в
+# отчётах между запросами — данные последнего запроса.
+REFRESH_S = 55 * 60
 
 # Пояснения для отчёта (например, «данные Zerion на 21:30»); wallet_watch
 # очищает список в начале проверки и дописывает его в конец сообщения.
@@ -135,6 +141,11 @@ async def total_usd_zerion(
     blocked_until = float(store.get_cursor("zerion_blocked_until") or 0)
     if time.time() < blocked_until:
         return _from_cache(store, address, "ограничил запросы", wallet_label)
+    raw = store.get_cursor(f"zerion_last_{address.lower()}")
+    if raw:
+        cached = json.loads(raw)
+        if time.time() - cached["ts"] < REFRESH_S:
+            return cached["breakdown"]
 
     url: str | None = POSITIONS_URL.format(address=address)
     params: dict | None = {
@@ -156,8 +167,14 @@ async def total_usd_zerion(
                 extensions={NO_RETRY: True},
             )
             if resp.status_code == 429:
-                ra = resp.headers.get("retry-after", "")
-                raise _RateLimited(float(ra) if ra.isdigit() else DEFAULT_BLOCK_S)
+                # Zerion пишет, когда снимет ограничение, в ratelimit-reset
+                # (секунды); Retry-After он не присылает.
+                wait = next(
+                    (float(v) for v in (resp.headers.get("retry-after", ""), resp.headers.get("ratelimit-reset", ""))
+                     if v.isdigit()),
+                    DEFAULT_BLOCK_S,
+                )
+                raise _RateLimited(wait)
             resp.raise_for_status()
             data = resp.json()
             positions += data.get("data", [])
