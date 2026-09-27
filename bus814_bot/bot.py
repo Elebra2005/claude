@@ -26,7 +26,7 @@ load_dotenv()
 
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 ROUTE = os.getenv("ROUTE", "814")
-STOP_ID = os.getenv("STOP_ID", "")               # напр. stop__9643291
+STOP_ID = os.getenv("STOP_ID", "stop__9646450")  # «Касимовская улица»
 STOP_NAME = os.getenv("STOP_NAME", "Касимовская улица")
 # Прогноз до STOP_ID не больше этого (мин) — считаем, что автобус на остановке
 NOTIFY_ETA_MIN = float(os.getenv("NOTIFY_ETA_MIN") or os.getenv("DEPART_ETA_MIN") or "1")

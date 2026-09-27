@@ -20,7 +20,7 @@
 2. **ID остановки.** Откройте на yandex.ru/maps карточку остановки
    «Касимовская улица», где 814 идёт «до Платформа Чертаново». Скопируйте
    адрес страницы. В нём будет `masstransit[stopId]=stop__XXXXXXX`
-   (или `%5BstopId%5D=stop__XXXXXXX`). Нужна часть `stop__XXXXXXX`.
+   (или `/stops/stop__XXXXXXX/`). Нужна часть `stop__XXXXXXX`. Для «Касимовской улицы» это `stop__9646450`, он уже вписан в `.env.example`.
 3. `cp .env.example .env` и заполните `TELEGRAM_BOT_TOKEN` и `STOP_ID`.
 4. Запуск:
    ```bash
