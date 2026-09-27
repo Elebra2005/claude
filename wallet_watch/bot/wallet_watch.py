@@ -1161,6 +1161,9 @@ async def check_once(cfg: dict, store: Store) -> None:
     all_current: dict[str, float] = {}
     async with httpx.AsyncClient(timeout=60, transport=RetryTransport()) as client:
         zerion.NOTES.clear()
+        zerion.ADDRESS_COUNT = max(1, sum(
+            1 + len(w.get("extra_addresses") or []) for w in wallets if w.get("chain") == "zerion"
+        ))
         results = await _fetch_all(client, wallets, source, debank_key, store)
         for i, w in enumerate(wallets):
             chain = w.get("chain", "arbitrum")

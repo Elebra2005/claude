@@ -44,6 +44,14 @@ CACHE_MAX_AGE_S = 3 * 3600
 # запрашиваем не чаще раза в REFRESH_S (двум адресам — 48 в сутки), а в
 # отчётах между запросами — данные последнего запроса.
 REFRESH_S = 55 * 60
+DAILY_BUDGET = 70  # из 75 — с запасом на перезапуски
+# Сколько адресов считается через Zerion (выставляет wallet_watch.check_once):
+# чем их больше, тем реже обновляется каждый, чтобы уложиться в DAILY_BUDGET.
+ADDRESS_COUNT = 1
+
+
+def refresh_s() -> float:
+    return max(REFRESH_S, 86400 * ADDRESS_COUNT / DAILY_BUDGET)
 
 # Пояснения для отчёта (например, «данные Zerion на 21:30»); wallet_watch
 # очищает список в начале проверки и дописывает его в конец сообщения.
@@ -144,7 +152,7 @@ async def total_usd_zerion(
     raw = store.get_cursor(f"zerion_last_{address.lower()}")
     if raw:
         cached = json.loads(raw)
-        if time.time() - cached["ts"] < REFRESH_S:
+        if time.time() - cached["ts"] < refresh_s():
             return cached["breakdown"]
 
     url: str | None = POSITIONS_URL.format(address=address)
