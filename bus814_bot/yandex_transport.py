@@ -229,7 +229,13 @@ async def _diagnose(stop_id: str, route: str):
     yt = YandexTransport()
     try:
         data = await yt.stop_info(stop_id)
-        print("\nОтвет (начало):", json.dumps(data, ensure_ascii=False)[:1500])
+        names = [t.get("name") for t in data.get("data", {}).get("transports", [])]
+        print("\nМаршруты на остановке:", names)
+        nodes = list(_find_route_nodes(data, _norm(route)))
+        for node in nodes:
+            print(f"\nБлок маршрута {route}:", json.dumps(node, ensure_ascii=False)[:4000])
+        if not nodes:
+            print(f"\nМаршрута {route} в ответе нет")
         arr = parse_arrivals(data, route)
         print(f"\nПрогнозы {route}:", [(a.eta_sec, a.vehicle_id) for a in arr] or "нет")
     except YandexError as e:
