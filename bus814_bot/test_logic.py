@@ -4,7 +4,7 @@ os.environ.setdefault("STOP_ID", "stop__1")
 
 from datetime import datetime
 from bot import MSK, ArrivalDetector, in_active_window
-from yandex_transport import Arrival, parse_arrivals
+from yandex_transport import Arrival, parse_arrivals, parse_scheduled
 
 NOW = 1_800_000_000
 
@@ -25,6 +25,7 @@ def test_parse():
     arr = parse_arrivals(payload((400, "b"), (120, "a"), (None, None)), "814", now=NOW)
     assert [(a.eta_sec, a.vehicle_id) for a in arr] == [(120, "a"), (400, "b")]
     assert parse_arrivals(payload(), "814", now=NOW) == []
+    assert parse_scheduled(payload((None, None), (120, "a")), "814", now=NOW) == [NOW + 900]
 
 
 def test_detector():

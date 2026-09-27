@@ -20,7 +20,7 @@ from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
 from dotenv import load_dotenv
 
-from yandex_transport import Arrival, YandexError, YandexTransport
+from yandex_transport import Arrival, YandexError, YandexTransport, parse_arrivals, parse_scheduled
 
 load_dotenv()
 
@@ -185,17 +185,23 @@ async def cmd_status(message: Message):
     if not allowed(message):
         return
     try:
-        arrivals = await yandex.arrivals(STOP_ID, ROUTE)
+        data = await yandex.stop_info(STOP_ID)
     except Exception as e:
         steps = "\n".join(f"• {d[:300]}" for d in yandex.debug[-4:])
         await message.answer(f"Не удалось получить данные: {e}\n\nШаги:\n{steps}")
         return
     now = datetime.now(MSK)
+    arrivals = parse_arrivals(data, ROUTE)
+    scheduled = parse_scheduled(data, ROUTE)
     lines = [f"Автобус {ROUTE}, остановка «{STOP_NAME}»:"]
     if arrivals:
+        lines.append("Едут сейчас (живой прогноз):")
         lines += [f"• через {fmt_eta(a.eta_sec)}" for a in arrivals[:5]]
     else:
-        lines.append("прогнозов нет (автобусы ещё на конечной или не выходят на линию)")
+        lines.append("Живых прогнозов нет — на линии не видно автобусов, которые едут сюда.")
+    if scheduled:
+        times = ", ".join(datetime.fromtimestamp(t, MSK).strftime("%H:%M") for t in scheduled[:5])
+        lines.append(f"По расписанию: {times}")
     lines.append("")
     lines.append(f"Уведомляю при прогнозе ≤ {NOTIFY_ETA_MIN:g} мин")
     lines.append("Сейчас окно уведомлений: " + ("да" if in_active_window(now) else "нет"))

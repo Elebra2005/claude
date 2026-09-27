@@ -74,6 +74,36 @@ def _collect_events(obj, out: list):
             _collect_events(v, out)
 
 
+def _collect_scheduled(obj, out: list):
+    """Рейсы только по расписанию (Scheduled без Estimated)."""
+    if isinstance(obj, dict):
+        sch = obj.get("Scheduled")
+        if isinstance(sch, dict) and "value" in sch and "Estimated" not in obj:
+            out.append(sch["value"])
+        for v in obj.values():
+            _collect_scheduled(v, out)
+    elif isinstance(obj, list):
+        for v in obj:
+            _collect_scheduled(v, out)
+
+
+def parse_scheduled(payload: dict, route: str, now: float | None = None) -> list[int]:
+    """Ближайшие рейсы маршрута по расписанию (unix-время), без живого прогноза."""
+    now = time.time() if now is None else now
+    raw: list = []
+    for node in _find_route_nodes(payload, _norm(route)):
+        _collect_scheduled(node, raw)
+    out = set()
+    for value in raw:
+        try:
+            ts = int(float(value))
+        except (TypeError, ValueError):
+            continue
+        if ts >= now - 60:
+            out.add(ts)
+    return sorted(out)
+
+
 def parse_arrivals(payload: dict, route: str, now: float | None = None) -> list[Arrival]:
     """Прогнозы прибытия маршрута route, отсортированные по времени."""
     now = time.time() if now is None else now
