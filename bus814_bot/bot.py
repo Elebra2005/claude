@@ -187,7 +187,8 @@ async def cmd_status(message: Message):
     try:
         arrivals = await yandex.arrivals(STOP_ID, ROUTE)
     except Exception as e:
-        await message.answer(f"Не удалось получить данные: {e}")
+        steps = "\n".join(f"• {d[:300]}" for d in yandex.debug[-4:])
+        await message.answer(f"Не удалось получить данные: {e}\n\nШаги:\n{steps}")
         return
     now = datetime.now(MSK)
     lines = [f"Автобус {ROUTE}, остановка «{STOP_NAME}»:"]
