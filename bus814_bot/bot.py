@@ -1,11 +1,11 @@
-"""Telegram-бот: «автобус 814 отправился — пора выходить».
+"""Telegram-бот: «автобус 814 на остановке — пора выходить».
 
 Раз в POLL_INTERVAL секунд бот запрашивает у Яндекс.Карт прогноз прибытия
-маршрута на остановку STOP_ID (первую после конечной «6-я Радиальная»).
-Пока автобус стоит на конечной, прогноза до неё либо нет, либо он большой.
-Как только автобус тронулся, прогноз падает до пары минут — в этот момент
-бот присылает уведомление. Следующее придёт только когда этот автобус
-проедет остановку и к ней поедет следующий.
+маршрута на остановку STOP_ID («Касимовская улица»). Когда прогноз
+опускается до NOTIFY_ETA_MIN (автобус подъезжает или уже стоит на
+остановке), бот присылает уведомление. Если автобус проскочил остановку
+между двумя опросами, уведомление всё равно придёт. Следующее — только
+про следующий автобус.
 """
 
 import asyncio
@@ -27,10 +27,10 @@ load_dotenv()
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 ROUTE = os.getenv("ROUTE", "814")
 STOP_ID = os.getenv("STOP_ID", "")               # напр. stop__9643291
-STOP_NAME = os.getenv("STOP_NAME", "первая остановка после конечной")
-# Прогноз до STOP_ID не больше этого — значит автобус уже едет
-DEPART_ETA_MIN = float(os.getenv("DEPART_ETA_MIN", "3"))
-POLL_INTERVAL = int(os.getenv("POLL_INTERVAL", "30"))
+STOP_NAME = os.getenv("STOP_NAME", "Касимовская улица")
+# Прогноз до STOP_ID не больше этого (мин) — считаем, что автобус на остановке
+NOTIFY_ETA_MIN = float(os.getenv("NOTIFY_ETA_MIN") or os.getenv("DEPART_ETA_MIN") or "1")
+POLL_INTERVAL = int(os.getenv("POLL_INTERVAL", "20"))
 # Когда присылать уведомления (по Москве): дни 1=пн..7=вс и окно времени
 ACTIVE_DAYS = os.getenv("ACTIVE_DAYS", "1-5")
 ACTIVE_FROM = os.getenv("ACTIVE_FROM", "07:00")
@@ -71,31 +71,50 @@ def in_active_window(now: datetime) -> bool:
     return parse_hm(ACTIVE_FROM) <= t < parse_hm(ACTIVE_TO)
 
 
-class DepartureDetector:
+class ArrivalDetector:
     """Автомат «взведён → сработал → ждёт, пока автобус проедет».
 
     Срабатывает, когда ближайший прогноз опустился до threshold.
     Перевзводится, когда близких прогнозов больше нет (автобус проехал
     остановку) или у ближайшего автобуса сменился vehicleId.
+
+    Подстраховка: если на прошлом опросе автобус был в пределах grace,
+    а теперь исчез (проехал остановку между опросами), а уведомления
+    про него не было — тоже срабатывает.
     """
 
-    def __init__(self, threshold_sec: float):
+    def __init__(self, threshold_sec: float, grace_sec: float):
         self.threshold = threshold_sec
+        self.grace = grace_sec
         self.fired_vehicle: str | None = None
         self.fired = False
+        self.prev: Arrival | None = None
+
+    def _passed(self, arrivals: list[Arrival]) -> bool:
+        prev = self.prev
+        if prev is None or prev.eta_sec > self.grace:
+            return False
+        if prev.vehicle_id is not None:
+            return all(a.vehicle_id != prev.vehicle_id for a in arrivals)
+        # без vehicleId: ближайший прогноз заметно вырос — значит это уже другой автобус
+        return not arrivals or arrivals[0].eta_sec > prev.eta_sec + 60
 
     def update(self, arrivals: list[Arrival]) -> Arrival | None:
+        hit = None
         near = [a for a in arrivals if a.eta_sec <= self.threshold]
-        if not near:
+        if near:
+            first = near[0]
+            if not (self.fired and first.vehicle_id == self.fired_vehicle):
+                self.fired = True
+                self.fired_vehicle = first.vehicle_id
+                hit = first
+        else:
+            if not self.fired and self._passed(arrivals):
+                hit = Arrival(0, self.prev.vehicle_id)
             self.fired = False
             self.fired_vehicle = None
-            return None
-        first = near[0]
-        if self.fired and first.vehicle_id == self.fired_vehicle:
-            return None
-        self.fired = True
-        self.fired_vehicle = first.vehicle_id
-        return first
+        self.prev = arrivals[0] if arrivals else None
+        return hit
 
 
 class Subscribers:
@@ -140,7 +159,7 @@ async def cmd_start(message: Message):
         return
     subs.add(message.chat.id)
     await message.answer(
-        f"Готово! Пришлю сообщение, когда {ROUTE} отправится с конечной.\n"
+        f"Готово! Пришлю сообщение, когда {ROUTE} будет на остановке «{STOP_NAME}».\n"
         f"Окно: дни {ACTIVE_DAYS}, {ACTIVE_FROM}–{ACTIVE_TO} (МСК).\n\n"
         "/status — что сейчас видно по автобусам\n"
         "/off — выключить уведомления, /on — включить снова\n"
@@ -175,19 +194,20 @@ async def cmd_status(message: Message):
     if arrivals:
         lines += [f"• через {fmt_eta(a.eta_sec)}" for a in arrivals[:5]]
     else:
-        lines.append("прогнозов нет (автобусы стоят на конечной или не выходят на линию)")
+        lines.append("прогнозов нет (автобусы ещё на конечной или не выходят на линию)")
     lines.append("")
-    lines.append(f"Порог «отправился»: ≤ {DEPART_ETA_MIN:g} мин")
+    lines.append(f"Уведомляю при прогнозе ≤ {NOTIFY_ETA_MIN:g} мин")
     lines.append("Сейчас окно уведомлений: " + ("да" if in_active_window(now) else "нет"))
     lines.append("Вы подписаны: " + ("да" if message.chat.id in subs.ids else "нет"))
     await message.answer("\n".join(lines))
 
 
 async def notify(arrival: Arrival):
-    text = (
-        f"🚌 {ROUTE} отправился с конечной — пора выходить!\n"
-        f"До «{STOP_NAME}» ~{fmt_eta(arrival.eta_sec)}."
-    )
+    if arrival.eta_sec <= 30:
+        where = f"на остановке «{STOP_NAME}»"
+    else:
+        where = f"подъезжает к «{STOP_NAME}» (~{fmt_eta(arrival.eta_sec)})"
+    text = f"🚌 {ROUTE} {where} — пора выходить!"
     for chat_id in list(subs.ids):
         try:
             await bot.send_message(chat_id, text)
@@ -196,7 +216,7 @@ async def notify(arrival: Arrival):
 
 
 async def poller():
-    detector = DepartureDetector(DEPART_ETA_MIN * 60)
+    detector = ArrivalDetector(NOTIFY_ETA_MIN * 60, NOTIFY_ETA_MIN * 60 + 2 * POLL_INTERVAL)
     errors_in_row = 0
     while True:
         now = datetime.now(MSK)
@@ -210,7 +230,7 @@ async def poller():
             log.info("прогнозы %s: %s", ROUTE, [a.eta_sec for a in arrivals])
             hit = detector.update(arrivals)
             if hit:
-                log.info("отправился: eta=%s vehicle=%s", hit.eta_sec, hit.vehicle_id)
+                log.info("на остановке: eta=%s vehicle=%s", hit.eta_sec, hit.vehicle_id)
                 await notify(hit)
         except YandexError as e:
             errors_in_row += 1
