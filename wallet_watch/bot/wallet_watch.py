@@ -1030,6 +1030,20 @@ class _WarningCounter(logging.Handler):
         self.count += 1
 
 
+def _apply_exclude(breakdown: dict, exclude: list[str] | None) -> dict:
+    """Убирает позиции из wallets[].exclude — по вхождению слова (без учёта
+    регистра) во внутренний ключ или название позиции. Применяется и к
+    прошлой разбивке, чтобы исключённая позиция не показалась в отчёте
+    как «исчезнувшая»."""
+    words = [x.lower() for x in exclude or [] if x]
+    if not words:
+        return breakdown
+    def hit(cid: str, e) -> bool:
+        text = f"{cid} {e.get('symbol', '') if isinstance(e, dict) else ''}".lower()
+        return any(word in text for word in words)
+    return {cid: e for cid, e in breakdown.items() if not hit(cid, e)}
+
+
 def _migrate_breakdown(prev: dict) -> dict:
     """Прошлая разбивка в формате текущих ключей.
 
@@ -1177,6 +1191,7 @@ async def check_once(cfg: dict, store: Store) -> None:
             if breakdown is not None:
                 # abs: займы в лендингах идут с минусом, но крупный долг — не пыль.
                 breakdown = {cid: e for cid, e in breakdown.items() if abs(e["usd"]) >= min_coin_usd}
+                breakdown = _apply_exclude(breakdown, w.get("exclude"))
                 current = sum(entry["usd"] for entry in breakdown.values())
             cursor_key = f"wallet_value_{address.lower()}"
             previous_raw = store.get_cursor(cursor_key)
@@ -1221,7 +1236,10 @@ async def check_once(cfg: dict, store: Store) -> None:
 
             lines = [_format_change(label, address, previous, current)]
             if breakdown is not None:
-                prev_breakdown = _migrate_breakdown(json.loads(previous_breakdown_raw) if previous_breakdown_raw else {})
+                prev_breakdown = _apply_exclude(
+                    _migrate_breakdown(json.loads(previous_breakdown_raw) if previous_breakdown_raw else {}),
+                    w.get("exclude"),
+                )
                 coin_lines = []
                 for coin_id in set(prev_breakdown) | set(breakdown):
                     prev = prev_breakdown.get(coin_id, 0.0)
