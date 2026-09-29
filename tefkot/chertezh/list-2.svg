@@ -114,7 +114,7 @@
 <text x="132.00" y="61.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">202</text>
 <path d="M120.80,57.40 L127.20,57.40 L127.20,59.60 L120.80,59.60 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <path d="M124.00,60.00 L124.00,150.00" fill="none" stroke="#111111" stroke-width="0.4" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<text x="126.00" y="150.00" font-size="1.9" text-anchor="start" fill="#111111">гильза Ø8, L=300</text>
+<text x="126.00" y="150.00" font-size="1.9" text-anchor="start" fill="#111111">гильза Ø8, L=500</text>
 <path d="M135.80,55.60 L142.20,55.60 L142.20,56.70 L135.80,56.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M135.80,57.30 L142.20,57.30 L142.20,58.40 L135.80,58.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M135.20,55.20 L135.20,58.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -270,7 +270,7 @@
 <text x="249.00" y="163.47" font-size="2.1" text-anchor="start" fill="#111111">термогильза TI (Pt100)</text>
 <text x="291.00" y="163.47" font-size="2.1" text-anchor="start" fill="#c62828">DIN 11851 / кламп?</text>
 <text x="327.00" y="163.47" font-size="2.1" text-anchor="start" fill="#111111">25</text>
-<text x="338.00" y="163.47" font-size="2.1" text-anchor="start" fill="#111111">заглушка с гильзой Ø8×300</text>
+<text x="338.00" y="163.47" font-size="2.1" text-anchor="start" fill="#111111">заглушка с гильзой Ø8×500</text>
 <path d="M222.00,165.20 L391.00,165.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="168.87" font-size="2.1" text-anchor="start" fill="#111111">P3</text>
 <text x="235.00" y="168.87" font-size="2.1" text-anchor="start" fill="#111111">N5</text>
