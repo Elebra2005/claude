@@ -51,6 +51,7 @@ import html
 import json
 import logging
 import time
+from datetime import datetime, timedelta, timezone
 
 import httpx
 
@@ -1318,16 +1319,139 @@ async def check_once(cfg: dict, store: Store) -> None:
         log.info("wallet_watch: отправлено уведомление (%d кошельков изменилось)", len(sections))
 
 
+# --- дневной отчёт ---
+
+def _daily_settings(cfg: dict) -> tuple[int, int, timezone] | None:
+    """Время дневного отчёта: daily_report_time ("23:00") в поясе
+    daily_report_utc_offset (3 = Москва). daily_report: false — выключить."""
+    wc = cfg.get("wallet_watch") or {}
+    if not wc.get("daily_report", True):
+        return None
+    hh, mm = (int(x) for x in str(wc.get("daily_report_time", "23:00")).split(":"))
+    return hh, mm, timezone(timedelta(hours=float(wc.get("daily_report_utc_offset", 3))))
+
+
+def _daily_due_ts(cfg: dict, store: Store, now: float) -> float | None:
+    """Когда следующий дневной отчёт: сегодня в заданное время, если за
+    сегодня ещё не отправлен (если это время прошло — прямо сейчас), иначе завтра."""
+    settings = _daily_settings(cfg)
+    if not settings:
+        return None
+    hh, mm, tz = settings
+    today_at = datetime.fromtimestamp(now, tz).replace(hour=hh, minute=mm, second=0, microsecond=0)
+    if store.get_cursor("daily_last_date") != today_at.date().isoformat():
+        return today_at.timestamp()
+    return (today_at + timedelta(days=1)).timestamp()
+
+
+def _current_state(cfg: dict, store: Store) -> dict:
+    """Последние посчитанные суммы и разбивки по всем кошелькам."""
+    state = {}
+    for w in (cfg.get("wallet_watch") or {}).get("wallets") or []:
+        key = _wallet_key(w)
+        value = store.get_cursor(f"wallet_value_{key.lower()}") if key else None
+        if value is None:
+            continue
+        breakdown = json.loads(store.get_cursor(f"wallet_breakdown_{key.lower()}") or "{}")
+        breakdown = {cid: e if isinstance(e, dict) else {"usd": float(e)} for cid, e in breakdown.items()}
+        state[key] = {"label": w.get("label") or key, "value": float(value), "breakdown": breakdown}
+    return state
+
+
+def _save_daily_snapshot(cfg: dict, store: Store, ts: float) -> None:
+    store.set_cursor("daily_snapshot", json.dumps({"ts": ts, "wallets": _current_state(cfg, store)}))
+
+
+def _build_daily(cfg: dict, store: Store, now: float) -> str | None:
+    raw = store.get_cursor("daily_snapshot")
+    if not raw:
+        return None
+    snap = json.loads(raw)
+    current = _current_state(cfg, store)
+    tz = _daily_settings(cfg)[2]
+    since = datetime.fromtimestamp(snap["ts"], tz)
+    header = f"📊 {_bold('Итоги дня ' + datetime.fromtimestamp(now, tz).strftime('%d.%m.%Y'))}\n"
+    header += ("Изменения за сутки" if now - snap["ts"] > 20 * 3600
+               else f"Изменения с {since.strftime('%d.%m %H:%M')}")
+    sections = [header]
+    prev_total = cur_total = 0.0
+    for key, cur in current.items():
+        prev = snap["wallets"].get(key)
+        if prev is None:
+            sections.append(f"🆕 {_bold(cur['label'])}: {_usd(cur['value'])}")
+            cur_total += cur["value"]
+            continue
+        prev_total += prev["value"]
+        cur_total += cur["value"]
+        lines = [_format_change(cur["label"], key, prev["value"], cur["value"])]
+        coins = []
+        for cid in set(prev["breakdown"]) | set(cur["breakdown"]):
+            p, c = prev["breakdown"].get(cid, {}), cur["breakdown"].get(cid, {})
+            p_usd, c_usd = p.get("usd", 0.0), c.get("usd", 0.0)
+            symbol = c.get("symbol") or p.get("symbol") or cid.split(":")[-1].upper()
+            coins.append((max(abs(p_usd), abs(c_usd)), _format_coin_line(symbol, p_usd, c_usd)))
+        if coins:
+            lines.append("\nПо монетам:")
+            lines += [line for _, line in sorted(coins, key=lambda x: -x[0])]
+        sections.append("\n".join(lines))
+    sections.append(_format_total_line(prev_total, cur_total).replace(
+        "Итого по всем кошелькам", "Итого по всем кошелькам за день" if now - snap["ts"] > 20 * 3600
+        else "Итого по всем кошелькам"))
+    return "\n\n".join(sections)
+
+
+async def _send_daily(cfg: dict, store: Store, due: float) -> None:
+    now = time.time()
+    tz = _daily_settings(cfg)[2]
+    day = datetime.fromtimestamp(due, tz).date().isoformat()
+    raw = store.get_cursor("daily_snapshot")
+    # Точка отсчёта появилась уже после времени отчёта (бот запущен в тот же
+    # вечер позже) — сравнивать не с чем, первый отчёт будет завтра.
+    if raw and json.loads(raw)["ts"] < due:
+        text = _build_daily(cfg, store, now)
+        bot_token, chat_id = env("TELEGRAM_BOT_TOKEN"), (cfg.get("wallet_watch") or {}).get("telegram_chat_id")
+        if text and bot_token and chat_id:
+            async with httpx.AsyncClient(timeout=60, transport=RetryTransport()) as client:
+                await _send_dm(client, bot_token, chat_id, text)
+            log.info("wallet_watch: отправлен дневной отчёт за %s", day)
+    store.set_cursor("daily_last_date", day)
+    _save_daily_snapshot(cfg, store, now)
+
+
+async def _run_check(cfg: dict, store: Store) -> None:
+    try:
+        await check_once(cfg, store)
+    except Exception as exc:
+        log.error("wallet_watch: непредвиденная ошибка цикла: %s", exc)
+    if not store.get_cursor("daily_snapshot"):
+        # Первая точка отсчёта для дневного отчёта — первый же расчёт.
+        _save_daily_snapshot(cfg, store, time.time())
+
+
 async def run_wallet_watch(cfg: dict, store: Store) -> None:
-    """Независимый цикл — своя частота опроса, не связанная с основным ботом."""
+    """Независимый цикл: обычный отчёт раз в interval_minutes и дневной
+    отчёт в daily_report_time (по умолчанию 23:00 МСК) отдельным сообщением."""
     interval = max(int((cfg.get("wallet_watch") or {}).get("interval_minutes", 30)), 1) * 60
     log.info("wallet_watch: запущен, интервал %d мин", interval // 60)
+    next_regular = time.time()
     while True:
-        started = time.monotonic()
-        try:
-            await check_once(cfg, store)
-        except Exception as exc:
-            log.error("wallet_watch: непредвиденная ошибка цикла: %s", exc)
-        # Интервал от начала проверки: повторы при сбоях сетей не должны
-        # сдвигать расписание отчётов.
-        await asyncio.sleep(max(interval - (time.monotonic() - started), 60))
+        now = time.time()
+        due = _daily_due_ts(cfg, store, now)
+        if due is not None and due <= now:
+            # Свежий расчёт ровно ко времени дневного отчёта, затем сам отчёт.
+            await _run_check(cfg, store)
+            try:
+                await _send_daily(cfg, store, due)
+            except Exception as exc:
+                log.error("wallet_watch: дневной отчёт не отправлен: %s", exc)
+                store.set_cursor("daily_last_date", datetime.fromtimestamp(due, _daily_settings(cfg)[2]).date().isoformat())
+            next_regular = time.time() + interval
+            continue
+        if next_regular <= now:
+            await _run_check(cfg, store)
+            # Интервал от начала проверки: повторы при сбоях сетей не должны
+            # сдвигать расписание отчётов.
+            next_regular = max(now + interval, time.time() + 60)
+            continue
+        wake = min(next_regular, due) if due is not None else next_regular
+        await asyncio.sleep(max(1.0, wake - now))
