@@ -73,23 +73,26 @@ class Sheet:
     def axis(self, x1, y1, x2, y2):
         self.line(x1, y1, x2, y2, lw=0.18, dash='axis', color=GREY)
 
-    def clamp(self, x, y, orient='h', tag=None, tag_side=1):
-        """Кламповое соединение: две ферулы + хомут. orient — направление трубы."""
+    def clamp(self, x, y, orient='h', tag=None, tag_side=1, w=None):
+        """Кламповое соединение: две ферулы + хомут. orient — направление трубы.
+        w — полуширина ферулы (для крупных аппаратных клампов на вертикальной оси)."""
         if orient == 'h':      # труба горизонтальна → ферулы вертикальные
-            self.rect(x - 1.4, y - 3.2, 1.1, 6.4, lw=0.3, fill='#ffffff')
-            self.rect(x + 0.3, y - 3.2, 1.1, 6.4, lw=0.3, fill='#ffffff')
-            self.line(x - 1.8, y - 3.8, x + 1.8, y - 3.8, lw=0.5)
-            self.line(x - 1.8, y + 3.8, x + 1.8, y + 3.8, lw=0.5)
+            hw = w or 3.2
+            self.rect(x - 1.4, y - hw, 1.1, 2 * hw, lw=0.3, fill='#ffffff')
+            self.rect(x + 0.3, y - hw, 1.1, 2 * hw, lw=0.3, fill='#ffffff')
+            self.line(x - 1.8, y - hw - 0.6, x + 1.8, y - hw - 0.6, lw=0.5)
+            self.line(x - 1.8, y + hw + 0.6, x + 1.8, y + hw + 0.6, lw=0.5)
             if tag:
-                ty = y - 7 if tag_side > 0 else y + 9.5
+                ty = y - hw - 4 if tag_side > 0 else y + hw + 6.5
                 self.jtag(x, ty, tag)
         else:
-            self.rect(x - 3.2, y - 1.4, 6.4, 1.1, lw=0.3, fill='#ffffff')
-            self.rect(x - 3.2, y + 0.3, 6.4, 1.1, lw=0.3, fill='#ffffff')
-            self.line(x - 3.8, y - 1.8, x - 3.8, y + 1.8, lw=0.5)
-            self.line(x + 3.8, y - 1.8, x + 3.8, y + 1.8, lw=0.5)
+            hw = w or 3.2
+            self.rect(x - hw, y - 1.4, 2 * hw, 1.1, lw=0.3, fill='#ffffff')
+            self.rect(x - hw, y + 0.3, 2 * hw, 1.1, lw=0.3, fill='#ffffff')
+            self.line(x - hw - 0.6, y - 1.8, x - hw - 0.6, y + 1.8, lw=0.5)
+            self.line(x + hw + 0.6, y - 1.8, x + hw + 0.6, y + 1.8, lw=0.5)
             if tag:
-                tx = x + 8 if tag_side > 0 else x - 8
+                tx = x + hw + 4.8 if tag_side > 0 else x - hw - 4.8
                 self.jtag(tx, y, tag)
 
     def jtag(self, x, y, tag):
