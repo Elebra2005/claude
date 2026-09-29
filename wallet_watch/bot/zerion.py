@@ -37,14 +37,32 @@ MAX_PAGES = 10
 # сколько он просит, а пока ждём — показываем последние полученные данные.
 MIN_GAP_S = 1.2
 DEFAULT_BLOCK_S = 15 * 60
-CACHE_MAX_AGE_S = 3 * 3600
+# Количества позиций меняются, только когда вы сами что-то делаете, поэтому
+# сохранённые данные годятся надолго: цены к ним каждый отчёт берутся свежие.
+CACHE_MAX_AGE_S = 48 * 3600
+STALE_NOTE_S = 6 * 3600
 # Бесплатный (demo) ключ: 75 запросов позиций в сутки (заголовок
-# ratelimit-limit: "75;w=86400"). Отчёт каждые 30 минут по двум адресам —
-# это 96 запросов, лимит кончался к вечеру. Поэтому каждый адрес
-# запрашиваем не чаще раза в REFRESH_S (двум адресам — 48 в сутки), а в
-# отчётах между запросами — данные последнего запроса.
-REFRESH_S = 55 * 60
-DAILY_BUDGET = 70  # из 75 — с запасом на перезапуски
+# ratelimit-limit: "75;w=86400"). Поэтому у Zerion берём только СОСТАВ
+# кошелька — какие позиции и в каком количестве — и не чаще раза в
+# REFRESH_S на адрес; а цены к этим количествам в каждом отчёте берём у
+# DefiLlama (бесплатно, без ключа и суточного лимита). Так отчёт может
+# приходить сколь угодно часто, а изменения в $ и % по Rabby актуальны.
+REFRESH_S = 3 * 3600
+DAILY_BUDGET = 60  # из 75 — с запасом на перезапуски и ручные проверки
+LLAMA_PRICES = "https://coins.llama.fi/prices/current/"
+# Сеть Zerion -> сеть DefiLlama (где названия различаются).
+LLAMA_CHAIN = {
+    "avalanche": "avax", "binance-smart-chain": "bsc", "zksync-era": "era", "xdai": "xdai",
+    "gnosis": "xdai", "manta-pacific": "manta", "polygon-zkevm": "polygon_zkevm",
+}
+# Нативные монеты сетей (у них нет адреса контракта) -> id CoinGecko.
+NATIVE_PRICE = {
+    "ETH": "coingecko:ethereum", "AVAX": "coingecko:avalanche-2", "BNB": "coingecko:binancecoin",
+    "POL": "coingecko:polygon-ecosystem-token", "MATIC": "coingecko:matic-network",
+    "MNT": "coingecko:mantle", "XDAI": "coingecko:xdai", "CELO": "coingecko:celo",
+    "FTM": "coingecko:fantom", "S": "coingecko:sonic-3", "BERA": "coingecko:berachain-bera",
+    "SOL": "coingecko:solana",
+}
 # Сколько адресов считается через Zerion (выставляет wallet_watch.check_once):
 # чем их больше, тем реже обновляется каждый, чтобы уложиться в DAILY_BUDGET.
 ADDRESS_COUNT = 1
@@ -121,94 +139,30 @@ class _RateLimited(Exception):
         self.retry_after = retry_after
 
 
-def _from_cache(store: Store, address: str, reason: str, wallet_label: str) -> dict[str, dict] | None:
-    raw = store.get_cursor(f"zerion_last_{address.lower()}")
-    if raw:
-        cached = json.loads(raw)
-        if time.time() - cached["ts"] < CACHE_MAX_AGE_S:
-            at = datetime.fromtimestamp(cached["ts"]).strftime("%H:%M")
-            note = f"ℹ️ {wallet_label}: Zerion {reason}, данные на {at}"
-            if note not in NOTES:
-                NOTES.append(note)
-            log.info("Zerion: %s для %s, беру данные на %s", reason, address, at)
-            return cached["breakdown"]
-    log.warning("Zerion: %s для %s, а свежих сохранённых данных нет", reason, address)
-    return None
+def _price_key(p: dict) -> str | None:
+    """Ключ цены DefiLlama для позиции: сеть:адрес контракта токена, а для
+    нативной монеты сети — её id CoinGecko."""
+    a = p.get("attributes") or {}
+    fi = a.get("fungible_info") or {}
+    chain = ((p.get("relationships") or {}).get("chain") or {}).get("data", {}).get("id", "")
+    for impl in fi.get("implementations") or []:
+        if impl.get("chain_id") == chain and impl.get("address"):
+            return f"{LLAMA_CHAIN.get(chain, chain)}:{impl['address']}"
+    return NATIVE_PRICE.get((fi.get("symbol") or "").upper())
 
 
-async def total_usd_zerion(
-    client: httpx.AsyncClient, address: str, store: Store, wallet_label: str = "Zerion"
-) -> dict[str, dict] | None:
-    global _last_request
-    key = env("ZERION_API_KEY")
-    if not key:
-        log.warning("wallet_watch: кошелёк chain=zerion, но ZERION_API_KEY не задан в .env")
-        return None
-    auth = "Basic " + base64.b64encode(f"{key}:".encode()).decode()
-
-    blocked_until = float(store.get_cursor("zerion_blocked_until") or 0)
-    if time.time() < blocked_until:
-        return _from_cache(store, address, "ограничил запросы", wallet_label)
-    raw = store.get_cursor(f"zerion_last_{address.lower()}")
-    if raw:
-        cached = json.loads(raw)
-        if time.time() - cached["ts"] < refresh_s():
-            return cached["breakdown"]
-
-    url: str | None = POSITIONS_URL.format(address=address)
-    params: dict | None = {
-        "filter[positions]": "no_filter",   # и обычные токены, и DeFi-позиции
-        "filter[trash]": "only_non_trash",
-        "currency": "usd",
-        "sort": "value",
-        "page[size]": "100",
-    }
-    positions: list[dict] = []
-    try:
-        for _ in range(MAX_PAGES):
-            wait = _last_request + MIN_GAP_S - time.monotonic()
-            if wait > 0:
-                await asyncio.sleep(wait)
-            _last_request = time.monotonic()
-            resp = await client.get(
-                url, params=params, headers={"Authorization": auth, "accept": "application/json"},
-                extensions={NO_RETRY: True},
-            )
-            if resp.status_code == 429:
-                # Zerion пишет, когда снимет ограничение, в ratelimit-reset
-                # (секунды); Retry-After он не присылает.
-                wait = next(
-                    (float(v) for v in (resp.headers.get("retry-after", ""), resp.headers.get("ratelimit-reset", ""))
-                     if v.isdigit()),
-                    DEFAULT_BLOCK_S,
-                )
-                raise _RateLimited(wait)
-            resp.raise_for_status()
-            data = resp.json()
-            positions += data.get("data", [])
-            url = (data.get("links") or {}).get("next")
-            params = None  # в ссылке next параметры уже есть
-            if not url:
-                break
-    except _RateLimited as exc:
-        store.set_cursor("zerion_blocked_until", str(time.time() + exc.retry_after))
-        return _from_cache(store, address, "ограничил запросы", wallet_label)
-    except Exception as exc:
-        return _from_cache(store, address, f"не ответил ({type(exc).__name__})", wallet_label)
-
-    positions = _drop_receipt_tokens(positions)
-    breakdown: dict[str, dict] = {}
-    for p in positions:
+def _parse(positions: list[dict]) -> list[dict]:
+    """Позиции Zerion -> компактный список: что, сколько, откуда брать цену."""
+    items = []
+    for p in _drop_receipt_tokens(positions):
         a = p.get("attributes") or {}
         value = a.get("value")
         if value is None:
             continue  # нет цены — не оцениваем
         symbol = _safe((a.get("fungible_info") or {}).get("symbol") or "", 12).upper() or "?"
-        chain = ((p.get("relationships") or {}).get("chain") or {}).get("data", {}).get("id", "")
         ptype = a.get("position_type") or "wallet"
         protocol = _safe(a.get("protocol") or "")
-
-        usd = -float(value) if ptype == "loan" else float(value)
+        sign = -1.0 if ptype == "loan" else 1.0  # долг уменьшает стоимость кошелька
         # Сеть в ключ не входит: один и тот же токен в разных сетях — одна
         # строка (ETH в Ethereum + Base + Arbitrum = ETH). По той же причине
         # одинаковые токены с разных адресов кошелька складываются в
@@ -219,11 +173,129 @@ async def total_usd_zerion(
             label = f"{symbol} ({what})"
         else:
             label = symbol
+        items.append({
+            "key": f"zerion:{protocol}:{ptype}:{symbol}",
+            "label": label,
+            "qty": float(((a.get("quantity") or {}).get("float")) or 0),
+            "sign": sign,
+            "price_key": _price_key(p),
+            "usd": sign * float(value),
+        })
+    return items
 
-        key_ = f"zerion:{protocol}:{ptype}:{symbol}"
-        if key_ in breakdown:
-            breakdown[key_]["usd"] += usd
+
+async def _llama_prices(client: httpx.AsyncClient, keys: set[str]) -> dict[str, float]:
+    prices: dict[str, float] = {}
+    keys_l = sorted(k for k in keys if k)
+    for i in range(0, len(keys_l), 80):
+        try:
+            resp = await client.get(LLAMA_PRICES + ",".join(keys_l[i:i + 80]))
+            resp.raise_for_status()
+            for k, v in (resp.json().get("coins") or {}).items():
+                if v.get("price"):
+                    prices[k] = float(v["price"])
+        except Exception as exc:
+            # Без свежей цены позиция просто останется по последней цене Zerion.
+            log.info("DefiLlama: цены недоступны (%s)", exc)
+    return prices
+
+
+def _aggregate(items: list[dict], prices: dict[str, float]) -> dict[str, dict]:
+    breakdown: dict[str, dict] = {}
+    for it in items:
+        price = prices.get(it["price_key"]) if it.get("price_key") else None
+        usd = it["sign"] * it["qty"] * price if price and it["qty"] else it["usd"]
+        if it["key"] in breakdown:
+            breakdown[it["key"]]["usd"] += usd
         else:
-            breakdown[key_] = {"symbol": label, "usd": usd}
-    store.set_cursor(f"zerion_last_{address.lower()}", json.dumps({"ts": time.time(), "breakdown": breakdown}))
+            breakdown[it["key"]] = {"symbol": it["label"], "usd": usd}
     return breakdown
+
+
+def _note(wallet_label: str, reason: str, ts: float) -> None:
+    at = datetime.fromtimestamp(ts).strftime("%d.%m %H:%M")
+    note = f"ℹ️ {wallet_label}: Zerion {reason}, состав кошелька на {at} (цены свежие)"
+    if note not in NOTES:
+        NOTES.append(note)
+
+
+async def _fetch_positions(client: httpx.AsyncClient, address: str, auth: str) -> list[dict]:
+    global _last_request
+    url: str | None = POSITIONS_URL.format(address=address)
+    params: dict | None = {
+        "filter[positions]": "no_filter",   # и обычные токены, и DeFi-позиции
+        "filter[trash]": "only_non_trash",
+        "currency": "usd",
+        "sort": "value",
+        "page[size]": "100",
+    }
+    positions: list[dict] = []
+    for _ in range(MAX_PAGES):
+        wait = _last_request + MIN_GAP_S - time.monotonic()
+        if wait > 0:
+            await asyncio.sleep(wait)
+        _last_request = time.monotonic()
+        resp = await client.get(
+            url, params=params, headers={"Authorization": auth, "accept": "application/json"},
+            extensions={NO_RETRY: True},
+        )
+        if resp.status_code == 429:
+            # Zerion пишет, когда снимет ограничение, в ratelimit-reset
+            # (секунды); Retry-After он не присылает.
+            wait = next(
+                (float(v) for v in (resp.headers.get("retry-after", ""), resp.headers.get("ratelimit-reset", ""))
+                 if v.isdigit()),
+                DEFAULT_BLOCK_S,
+            )
+            raise _RateLimited(wait)
+        resp.raise_for_status()
+        data = resp.json()
+        positions += data.get("data", [])
+        url = (data.get("links") or {}).get("next")
+        params = None  # в ссылке next параметры уже есть
+        if not url:
+            break
+    return positions
+
+
+async def total_usd_zerion(
+    client: httpx.AsyncClient, address: str, store: Store, wallet_label: str = "Zerion"
+) -> dict[str, dict] | None:
+    key = env("ZERION_API_KEY")
+    if not key:
+        log.warning("wallet_watch: кошелёк chain=zerion, но ZERION_API_KEY не задан в .env")
+        return None
+    auth = "Basic " + base64.b64encode(f"{key}:".encode()).decode()
+
+    cache_key = f"zerion_pos_{address.lower()}"
+    raw = store.get_cursor(cache_key)
+    cached = json.loads(raw) if raw else None
+    age = time.time() - cached["ts"] if cached else None
+    blocked = time.time() < float(store.get_cursor("zerion_blocked_until") or 0)
+
+    if cached and age < CACHE_MAX_AGE_S and (age < refresh_s() or blocked):
+        items, reason = cached["items"], "ограничил запросы" if blocked else None
+    else:
+        reason = None
+        try:
+            if blocked:
+                raise _RateLimited(0)
+            items = _parse(await _fetch_positions(client, address, auth))
+            store.set_cursor(cache_key, json.dumps({"ts": time.time(), "items": items}))
+            return _aggregate(items, {})  # только что от Zerion — цены в нём свежие
+        except _RateLimited as exc:
+            if exc.retry_after:
+                store.set_cursor("zerion_blocked_until", str(time.time() + exc.retry_after))
+            reason = "ограничил запросы"
+        except Exception as exc:
+            reason = f"не ответил ({type(exc).__name__})"
+        if not cached or age > CACHE_MAX_AGE_S:
+            log.warning("Zerion: %s для %s, а сохранённого состава кошелька нет", reason, address)
+            return None
+        items = cached["items"]
+        log.info("Zerion: %s для %s, беру сохранённый состав кошелька", reason, address)
+
+    if reason and age > STALE_NOTE_S:
+        _note(wallet_label, reason, cached["ts"])
+    prices = await _llama_prices(client, {it.get("price_key") for it in items})
+    return _aggregate(items, prices)
