@@ -1,0 +1,701 @@
+<title>Тефкот 770 на стальном реакторе</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: инженерный регламент — узкая колонка текста, широкие таблицы и схема в собственных скролл-контейнерах */
+:root{
+  --bg:#f5f6f4; --paper:#ffffff; --fg:#1d2226; --muted:#5d666d; --rule:#d5dadb;
+  --accent:#0f5e78;            /* сталь/техн. синий */
+  --warn:#b4491b; --warn-bg:#fbeee6;
+  --ok:#2f6b3a;  --ok-bg:#e8f2ea;
+  --note-bg:#eef3f5;
+  --l-amine:#b4491b; --l-argon:#2d6fb3; --l-vent:#7a4fa0; --l-liq:#2f6b3a; --l-cool:#0f8a8a; --l-vac:#6b6f73; --l-aq:#a07a12;
+  --f-display:"IBM Plex Sans Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"IBM Plex Sans","Segoe UI",Roboto,Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",Consolas,"Courier New",monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14181b; --paper:#1b2024; --fg:#e3e7e9; --muted:#9aa4ab; --rule:#323a40;
+  --accent:#5fb4d2; --warn:#f08a5d; --warn-bg:#35231b; --ok:#7cc48a; --ok-bg:#1e2d22; --note-bg:#1f2a30;
+  --l-amine:#f08a5d; --l-argon:#6fa8e8; --l-vent:#b996dc; --l-liq:#7cc48a; --l-cool:#4fd0d0; --l-vac:#a3a8ac; --l-aq:#e0b84a;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14181b; --paper:#1b2024; --fg:#e3e7e9; --muted:#9aa4ab; --rule:#323a40;
+  --accent:#5fb4d2; --warn:#f08a5d; --warn-bg:#35231b; --ok:#7cc48a; --ok-bg:#1e2d22; --note-bg:#1f2a30;
+  --l-amine:#f08a5d; --l-argon:#6fa8e8; --l-vent:#b996dc; --l-liq:#7cc48a; --l-cool:#4fd0d0; --l-vac:#a3a8ac; --l-aq:#e0b84a;
+  color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.6 var(--f-body)}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:28px 80px}
+header.doc{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:28px;display:grid;gap:8px}
+.eyebrow{font:600 12px/1.2 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font:700 clamp(28px,4.4vw,44px)/1.08 var(--f-display);margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font:700 26px/1.2 var(--f-display);margin:48px 0 12px;text-wrap:balance;padding-top:10px;border-top:1px solid var(--rule)}
+h3{font:600 19px/1.3 var(--f-display);margin:28px 0 8px}
+h2 .no,h3 .no{font-family:var(--f-mono);color:var(--accent);font-weight:600;margin-right:.4em}
+p,li{max-width:74ch}
+.meta{color:var(--muted);font-size:14px}
+code,.tag{font-family:var(--f-mono);font-size:.9em}
+.tag{background:var(--note-bg);border:1px solid var(--rule);border-radius:3px;padding:0 4px;white-space:nowrap}
+.box{border:1px solid var(--rule);border-left:4px solid var(--accent);background:var(--paper);padding:12px 16px;margin:16px 0;max-width:80ch}
+.box.warn{border-left-color:var(--warn);background:var(--warn-bg)}
+.box.ok{border-left-color:var(--ok);background:var(--ok-bg)}
+.box > :first-child{margin-top:0}.box > :last-child{margin-bottom:0}
+.box b.h{display:block;font-family:var(--f-display);font-size:16px;margin-bottom:4px}
+.tbl{overflow-x:auto;margin:12px 0 20px;border:1px solid var(--rule);background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{padding:7px 10px;border-bottom:1px solid var(--rule);vertical-align:top;text-align:left}
+th{font:600 12px/1.3 var(--f-mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--note-bg);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.n{text-align:right;white-space:nowrap}
+td.pos{font-family:var(--f-mono);font-weight:600;white-space:nowrap;color:var(--accent)}
+tr.sec td{background:var(--note-bg);font:600 13px/1.3 var(--f-display);letter-spacing:.02em;color:var(--fg)}
+.buy{font:600 11px/1 var(--f-mono);padding:2px 5px;border-radius:3px;white-space:nowrap}
+.buy.y{background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn)}
+.buy.h{background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok)}
+.buy.c{background:var(--note-bg);color:var(--accent);border:1px solid var(--accent)}
+.toc{columns:2 280px;gap:28px;padding:14px 18px;background:var(--paper);border:1px solid var(--rule);margin:0 0 8px}
+.toc a{color:var(--fg);text-decoration:none;display:block;padding:2px 0;break-inside:avoid}
+.toc a:hover,.toc a:focus-visible{color:var(--accent);text-decoration:underline}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.scheme{overflow-x:auto;background:var(--paper);border:1px solid var(--rule);margin:14px 0}
+.scheme svg{display:block;min-width:960px;width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font:500 13px var(--f-mono);margin:6px 0 4px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{display:inline-block;width:26px;height:0;border-top:3px solid}
+ol.steps{padding-left:1.4em}ol.steps > li{margin:0 0 10px}
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin:12px 0}
+.photos figure{margin:0;background:var(--paper);border:1px solid var(--rule)}
+.photos img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
+.photos figcaption{font-size:12.5px;color:var(--muted);padding:6px 8px}
+/* SVG */
+svg text{font-family:var(--f-mono);fill:var(--fg)}
+svg .lbl{font-size:12px;font-weight:600}
+svg .sm{font-size:10.5px;fill:var(--muted)}
+svg .eq{fill:var(--paper);stroke:var(--fg);stroke-width:1.6}
+svg .eqf{fill:var(--note-bg);stroke:var(--fg);stroke-width:1.6}
+svg .thin{fill:none;stroke:var(--muted);stroke-width:1}
+svg .liqlvl{fill:none;stroke:var(--l-liq);stroke-width:1.2;stroke-dasharray:6 4}
+svg .amine{fill:none;stroke:var(--l-amine);stroke-width:2.6}
+svg .aq{fill:none;stroke:var(--l-aq);stroke-width:2.2}
+svg .argon{fill:none;stroke:var(--l-argon);stroke-width:2.2}
+svg .vent{fill:none;stroke:var(--l-vent);stroke-width:2.6}
+svg .liq{fill:none;stroke:var(--l-liq);stroke-width:2.8}
+svg .cool{fill:none;stroke:var(--l-cool);stroke-width:2.2;stroke-dasharray:8 5}
+svg .vac{fill:none;stroke:var(--l-vac);stroke-width:2.2;stroke-dasharray:2 4}
+svg .v{fill:var(--paper);stroke:var(--fg);stroke-width:1.4}
+svg .vno{fill:var(--fg);stroke:var(--fg);stroke-width:1.4}
+svg .zone{fill:none;stroke:var(--rule);stroke-width:1.2;stroke-dasharray:4 4}
+svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+<header class="doc">
+  <div class="eyebrow">АО «ИНУМиТ» · проект обвязки · ред. 1 · 29.09.2026</div>
+  <h1>Антиадгезив «ТЕФКОТ 770»: синтез на стальном реакторе 50 л</h1>
+  <div class="meta">Технологическая схема, спецификация оборудования, гребёнка безопасности, уставки давления и порядок проведения синтеза. Основание: справка по техпроцессу (Терехов В.Е., Давыдов Д.А., 2026), требования А. Бабкина и Д. (переписка), фото реактора Wiggens и бака Atmaler БК-40.</div>
+</header>
+
+<nav class="toc" aria-label="Содержание">
+  <a href="#s1">1. Главные решения</a>
+  <a href="#s2">2. Масштаб загрузки на 50 л</a>
+  <a href="#s3">3. Технологическая схема</a>
+  <a href="#s4">4. Реактор R-1 и распределение штуцеров</a>
+  <a href="#s5">5. Генерация и сушка метиламина</a>
+  <a href="#s6">6. Конденсатор E-1</a>
+  <a href="#s7">7. Гребёнка безопасности и скруббер</a>
+  <a href="#s8">8. Аргоновая и вакуумная линии</a>
+  <a href="#s9">9. Дозирование MeSiCl₃ и PDMS-OH</a>
+  <a href="#s10">10. Термостатирование</a>
+  <a href="#s11">11. Выгрузка, фильтрация, фасовка</a>
+  <a href="#s12">12. Материалы: уплотнения и шланги</a>
+  <a href="#s13">13. Уставки давления</a>
+  <a href="#s14">14. Спецификация (что купить)</a>
+  <a href="#s15">15. Порядок проведения синтеза</a>
+  <a href="#s16">16. Безопасность</a>
+  <a href="#s17">17. Что замерить и уточнить до заказа</a>
+</nav>
+
+<!-- ============ 1 ============ -->
+<h2 id="s1"><span class="no">1</span>Главные решения</h2>
+<ol>
+  <li><b>Загрузка ×3 от лабораторной</b> (15 л петролейного эфира вместо 5). При 5 л реакционная масса на 50-литровом реакторе едва покроет мешалку и термопару. ×3 даёт ≈22 л массы, то есть заполнение ~45% с запасом под пену и отдувку.</li>
+  <li><b>Азотная ловушка на шлифе заменяется стальным конденсатором-«пальцем» E-1</b> на клампе крышки. В нём сухой лёд + изопропанол (−78 °C): метиламин не замерзает (т. пл. −93 °C), и следить за нижней границей, как с жидким азотом, не нужно. Тот же E-1 работает обратным холодильником на стадии 40 °C, только заливается ледяной водой.</li>
+  <li><b>Метиламин подаётся под слой эфира через погружную трубку</b> и дополнительно конденсируется рубашкой (−20…−25 °C) и E-1. Выход E-1 не глухой, как в колбе, а через гребёнку безопасности.</li>
+  <li><b>Гребёнка безопасности по требованию Бабкина</b>: коллектор с тройниками, и перед каждым устройством свой кран. Рабочий регулятор давления — шпунт-аппарат. Резерв — обратный клапан 0,1 бар. Аварийный сброс — 0,2 бар. Экспериментальная ветка — перевёрнутый обратный KF25-клапан. Выходы всех устройств сведены в один коллектор, дальше прозрачный барботёр-индикатор (пузырьки видны), буферная склянка и кислотный скруббер.</li>
+  <li><b>Вакуумная защита — аргоновая «подпитка по требованию»</b>: редуктор держит +20–30 мбар. Реактор никогда не уходит в вакуум и не подсасывает воздух или кислоту из скруббера. Поэтому сбросник, срабатывающий и на вакуум, в гребёнке не нужен (замечание Дани учтено).</li>
+  <li><b>Все давления ≤ 0,5 бар изб.</b> Это ниже 0,07 МПа, то есть вне области ФНП ОРПД (приказ Ростехнадзора №536). Реактор, генератор и колонны не становятся поднадзорными сосудами. Главное — не поднять уставки выше.</li>
+  <li><b>Бак Atmaler БК-40 как генератор метиламина годен, но с доработкой</b>: латунь и цинк заменить нержавейкой (амины разъедают медные сплавы, щёлочь растворяет цинк с выделением H₂), штатный предохранительный клапан дополнить низким сбросом 0,3–0,5 бар. Бак ставится в ванну с водой на весы.</li>
+  <li><b>Везде, где касается продукт или эфир</b>: трикламп + прокладки PTFE (требование Бабкина). EPDM только на воде, теплоносителе, щёлочи и водном метиламине. Фторкаучук (FKM/Viton) не применять нигде: метиламин его разрушает.</li>
+  <li><b>Два отклонения от лабораторной методики</b> (обоснование в разделе 15):
+    <ul>
+      <li>дегазация пустого реактора вместо эфира при 25 мбар: при 20 °C давление паров петролейного эфира 40–70 около 400 мбар, и при откачке до 25 мбар он просто выкипит в насос;</li>
+      <li>MeSiCl₃ дозируется из стальной дозировочной ёмкости под аргоном, а не шприцем через септу (1,3 л шприцем нереально). Время дозирования задаёт температура в реакторе, а не час.</li>
+    </ul>
+  </li>
+</ol>
+
+<div class="photos">
+  <figure><img src="foto-reaktor-obshchiy.jpg" alt="Реактор Wiggens 50 л в раме, общий вид"><figcaption>R-1 общий вид: рубашка, откидные болты крышки, стояк сзади слева</figcaption></figure>
+  <figure><img src="foto-kryshka.jpg" alt="Крышка реактора со штуцерами"><figcaption>Крышка: 3 клампа, 2 обжимных штуцера 1/4″, мановакуумметр</figcaption></figure>
+  <figure><img src="foto-nizhniy-sliv.jpg" alt="Нижний слив со Swagelok краном"><figcaption>Нижний слив: шаровой кран Swagelok → кламп → отвод 90°; слева ёлочка рубашки</figcaption></figure>
+  <figure><img src="foto-bak-atmaler.jpg" alt="Красконагнетательный бак Atmaler"><figcaption>Бак Atmaler БК-40 — будущий генератор метиламина G-1</figcaption></figure>
+</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="s2"><span class="no">2</span>Масштаб загрузки на 50 л</h2>
+<p>Пересчёт методики ×3. Если начальник решит иначе, все количества ниже (колонны, скруббер, сухой лёд) масштабируются линейно.</p>
+<div class="tbl"><table>
+<thead><tr><th>Компонент</th><th>Лаб. (реактор 15 л)</th><th>×3 (реактор 50 л)</th><th>Комментарий</th></tr></thead>
+<tbody>
+<tr><td>Петролейный эфир 40–70</td><td class="n">5 л</td><td class="n">15 л</td><td>+ промывки 2 × 3 л</td></tr>
+<tr><td>NaOH твёрдый (в генератор)</td><td class="n">2 790 г</td><td class="n">8 370 г</td><td>+ NaOH в осушительную колонну C-2, ≈2 кг</td></tr>
+<tr><td>Метиламин 38% водн.</td><td class="n">3,48 кг (3,75 л)</td><td class="n">10,44 кг (11,25 л)</td><td>содержит 3,97 кг CH₃NH₂</td></tr>
+<tr><td>CH₃NH₂ сконденсировать, не менее</td><td class="n">926 г</td><td class="n">2 780 г</td><td>теоретически нужно 2 090 г (6 экв. на MeSiCl₃)</td></tr>
+<tr><td>CH₃SiCl₃</td><td class="n">558 г (438 мл)</td><td class="n">1 674 г (1 314 мл)</td><td>11,2 моль</td></tr>
+<tr><td>PDMS-OH JZH-203A</td><td class="n">706 г</td><td class="n">2 118 г</td><td></td></tr>
+<tr><td>Na₂SO₄ б/в (слой на нутче)</td><td class="n">2 кг</td><td class="n">6 кг</td><td>≈4,5 л слоя</td></tr>
+<tr><td>Соль CH₃NH₃Cl в осадке (расчёт)</td><td class="n">≈0,75 кг</td><td class="n">≈2,3 кг</td><td>нагрузка на нутч</td></tr>
+<tr><td>Реакционная масса перед выгрузкой</td><td class="n">≈7 л</td><td class="n">≈22 л</td><td>заполнение 50-л реактора ~45%</td></tr>
+<tr><td>Готовый 1% раствор (оценка)</td><td class="n">≈115 кг</td><td class="n">≈350 кг</td><td>нужно ~340 кг эфира и тара на разбавление</td></tr>
+</tbody></table></div>
+
+<div class="box"><b class="h">Тепловые нагрузки ×3 (для выбора чиллера и хладагентов)</b>
+<ul>
+<li><b>Конденсация метиламина</b>: ≈2,8 кг за 3–4 ч → ≈0,7 моль/мин, это ~17 л/мин газа и ≈300 Вт тепла конденсации.</li>
+<li><b>Дозирование MeSiCl₃</b> (аминолиз Si–Cl + образование соли): оценка ≈5 МДж. За 1 ч это 1,4 кВт, что на порядок выше того, что снимет рубашка при −20 °C. Поэтому дозируем 2,5–4 ч по температуре (≤ −10 °C в массе), с сухим льдом в E-1: кипящий метиламин отводит тепло рефлюксом.</li>
+<li><b>Генератор</b>: растворение 8,4 кг NaOH минус десорбция метиламина дают нетто ≈3 МДж за 3 ч (~300 Вт). Бак G-1 обязательно в ванне с холодной водой, иначе раствор разогреется и вынесет много воды на сита.</li>
+</ul></div>
+
+<!-- ============ 3 ============ -->
+<h2 id="s3"><span class="no">3</span>Технологическая схема</h2>
+<p>Схема принципиальная, без масштаба. Позиции (R-1, G-1, PCV-1…) используются во всех таблицах ниже. Широкую схему можно прокручивать по горизонтали.</p>
+<div class="legend" aria-label="Условные обозначения линий">
+  <span><i style="border-color:var(--l-amine)"></i>газ CH₃NH₂</span>
+  <span><i style="border-color:var(--l-aq)"></i>водн. метиламин</span>
+  <span><i style="border-color:var(--l-argon)"></i>аргон</span>
+  <span><i style="border-color:var(--l-vent)"></i>отдувка / сброс</span>
+  <span><i style="border-color:var(--l-liq)"></i>жидкость, продукт</span>
+  <span><i style="border-color:var(--l-cool);border-top-style:dashed"></i>теплоноситель</span>
+  <span><i style="border-color:var(--l-vac);border-top-style:dotted"></i>вакуум</span>
+</div>
+<div class="scheme">
+<svg viewBox="0 0 1400 900" role="img" aria-label="Технологическая схема синтеза Тефкот 770 на реакторе 50 л">
+<defs>
+  <!-- шаровой кран, горизонтальный -->
+  <g id="bv"><path class="v" d="M-9,-6 L9,6 L9,-6 L-9,6 Z"/></g>
+  <g id="bvv"><path class="v" d="M-6,-9 L6,9 L-6,9 L6,-9 Z"/></g>
+  <!-- обратный клапан: поток слева направо / сверху вниз -->
+  <g id="nrv"><path class="vno" d="M-8,-6 L6,0 L-8,6 Z"/><path d="M8,-7 L8,7" stroke="currentColor" style="stroke:var(--fg)" stroke-width="2"/></g>
+  <g id="nrvd"><path class="vno" d="M-6,-8 L0,6 L6,-8 Z"/><path d="M-7,8 L7,8" style="stroke:var(--fg)" stroke-width="2"/></g>
+  <g id="nrvu"><path class="vno" d="M-6,8 L0,-6 L6,8 Z"/><path d="M-7,-8 L7,-8" style="stroke:var(--fg)" stroke-width="2"/></g>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" style="fill:var(--fg)"/></marker>
+</defs>
+
+<!-- зоны -->
+<rect class="zone" x="12" y="12" width="560" height="190"/><text class="zt" x="22" y="30">АРГОН</text>
+<rect class="zone" x="12" y="222" width="560" height="400"/><text class="zt" x="22" y="240">ГЕНЕРАЦИЯ И СУШКА МЕТИЛАМИНА (в вытяжке)</text>
+<rect class="zone" x="1010" y="12" width="378" height="610"/><text class="zt" x="1020" y="30">ГРЕБЁНКА БЕЗОПАСНОСТИ → СКРУББЕР</text>
+<rect class="zone" x="560" y="650" width="828" height="238"/><text class="zt" x="1100" y="668">ВЫГРУЗКА, ФИЛЬТРАЦИЯ, ФАСОВКА</text>
+
+<!-- ============ АРГОН ============ -->
+<rect class="eqf" x="40" y="60" width="40" height="120" rx="18"/>
+<text class="lbl" x="34" y="196">AR-1</text><text class="sm" x="30" y="52">Ar 99,998</text>
+<path class="argon" d="M60,60 L60,44 L120,44 L120,80"/>
+<circle class="eq" cx="120" cy="92" r="12"/><text class="sm" x="112" y="96">R</text><text class="lbl" x="100" y="124">PR-1</text><text class="sm" x="92" y="138">150→1 бар</text>
+<path class="argon" d="M132,92 L185,92"/>
+<circle class="eq" cx="197" cy="92" r="12"/><text class="sm" x="189" y="96">R</text><text class="lbl" x="178" y="124">PR-2</text><text class="sm" x="166" y="138">+20…30 мбар</text>
+<path class="argon" d="M209,92 L262,92"/>
+<!-- PSV-2 -->
+<path class="argon" d="M236,92 L236,66"/><rect class="eq" x="226" y="46" width="20" height="20"/><text class="lbl" x="250" y="60">PSV-2</text><text class="sm" x="250" y="72">0,5 бар</text>
+<!-- ротаметр -->
+<path class="eq" d="M262,78 L286,78 L282,106 L266,106 Z"/><text class="lbl" x="258" y="124">FI-1</text><text class="sm" x="246" y="138">0,5–15 л/мин</text>
+<path class="argon" d="M286,92 L560,92 L630,92"/>
+<!-- A2 к генератору -->
+<path class="argon" d="M330,92 L330,300"/><use href="#bvv" x="330" y="130"/><text class="sm" x="338" y="134">A2</text><use href="#nrvd" x="330" y="165"/>
+<!-- A3 к дозатору -->
+<path class="argon" d="M420,92 L420,150"/><use href="#bvv" x="420" y="120"/><text class="sm" x="428" y="124">A3</text><text class="sm" x="384" y="166">→ D-1</text>
+<!-- A4 резерв -->
+<path class="argon" d="M500,92 L500,150"/><use href="#bvv" x="500" y="120"/><text class="sm" x="508" y="124">A4</text><text class="sm" x="470" y="166">→ F-1, тара</text>
+<!-- A1 к реактору -->
+<path class="argon" d="M630,92 L630,398"/><use href="#bvv" x="630" y="130"/><text class="sm" x="638" y="134">A1</text><use href="#nrvd" x="630" y="165"/>
+
+<!-- ============ ГЕНЕРАТОР ============ -->
+<!-- V-1 канистра -->
+<rect class="eq" x="36" y="420" width="62" height="96" rx="4"/><text class="lbl" x="44" y="440">V-1</text><text class="sm" x="40" y="456">MeNH₂</text><text class="sm" x="40" y="468">38%</text><text class="sm" x="40" y="480">11,25 л</text>
+<rect class="thin" x="30" y="520" width="74" height="10"/><text class="sm" x="40" y="546">W-1 весы</text>
+<path class="aq" d="M60,420 L60,400 L140,400 L140,448"/>
+<circle class="eq" cx="140" cy="462" r="15"/><circle class="thin" cx="140" cy="462" r="6"/><text class="lbl" x="124" y="496">P-1</text><text class="sm" x="108" y="510">перист.</text><text class="sm" x="104" y="522">50–60 мл/мин</text>
+<path class="aq" d="M155,462 L175,462 L175,330 L232,330 L232,360"/>
+<use href="#nrvd" x="175" y="400"/>
+<!-- ванна + бак -->
+<rect class="thin" x="186" y="440" width="140" height="136" rx="4"/><text class="sm" x="192" y="570">ванна с водой</text>
+<rect class="eq" x="206" y="360" width="100" height="180" rx="6"/>
+<path class="aq" d="M232,360 L232,520"/>
+<rect class="eqf" x="210" y="490" width="92" height="46"/><text class="sm" x="220" y="512">NaOH + р-р</text>
+<text class="lbl" x="222" y="386">G-1</text><text class="sm" x="248" y="400">Atmaler</text><text class="sm" x="248" y="412">БК-40</text>
+<rect class="thin" x="190" y="584" width="132" height="10"/><text class="sm" x="228" y="610">W-2 весы 60 кг</text>
+<!-- PI + PSV-3 на генераторе -->
+<path class="vent" d="M290,360 L290,330 L290,300"/><rect class="eq" x="280" y="280" width="20" height="20"/><text class="lbl" x="232" y="276">PSV-3</text><text class="sm" x="236" y="296">0,4 бар</text><text class="sm" x="200" y="256">→ на T-1/S-1</text>
+<circle class="eq" cx="262" cy="340" r="10"/><path class="thin" d="M262,350 L262,360"/><text class="sm" x="240" y="326">PI-3</text>
+<!-- аргон A2 в G-1 -->
+<path class="argon" d="M330,300 L312,300 L312,360"/>
+<!-- выход газа -->
+<path class="amine" d="M300,380 L360,380 L360,300"/><use href="#bvv" x="360" y="345"/><text class="sm" x="368" y="350">V-G1</text>
+<!-- K-1 -->
+<rect class="eq" x="340" y="252" width="40" height="48" rx="4"/><text class="lbl" x="344" y="248">K-1</text>
+<path class="amine" d="M380,262 L406,262 L406,520 L416,520"/>
+<!-- C-1 -->
+<rect class="eqf" x="416" y="300" width="44" height="240" rx="3"/><text class="lbl" x="420" y="294">C-1</text><text class="sm" x="418" y="556">сита 3A</text><text class="sm" x="418" y="568">3″×600</text>
+<path class="amine" d="M438,300 L438,280 L484,280 L484,560 L500,560 L500,540"/>
+<!-- C-2 -->
+<rect class="eqf" x="478" y="300" width="44" height="240" rx="3"/><text class="lbl" x="480" y="294">C-2</text><text class="sm" x="478" y="584">NaOH/KOH</text><text class="sm" x="478" y="596">3″×600</text>
+<path class="amine" d="M500,300 L500,256 L548,256"/>
+<circle class="eq" cx="545" cy="330" r="10"/><path class="thin" d="M545,320 L545,256"/><text class="sm" x="524" y="354">PI-2</text>
+<use href="#bv" x="560" y="256"/><text class="sm" x="540" y="278">V-G2</text>
+<use href="#nrv" x="584" y="256"/><text class="lbl" x="560" y="236">NRV-3</text><text class="sm" x="560" y="224">≤30 мбар</text>
+<path class="amine" d="M592,256 L604,256 L604,398"/>
+
+<!-- ============ РЕАКТОР ============ -->
+<!-- рубашка -->
+<path class="eq" d="M566,418 L566,590 Q566,640 700,646 Q834,640 834,590 L834,418 Z"/>
+<!-- корпус -->
+<path class="eqf" d="M580,400 L580,586 Q580,628 700,632 Q820,628 820,586 L820,400 Z"/>
+<rect class="eq" x="574" y="394" width="252" height="10" rx="2"/>
+<path class="liqlvl" d="M582,500 L818,500"/><text class="sm" x="586" y="494">~22 л</text>
+<text class="lbl" x="668" y="560">R-1</text><text class="sm" x="648" y="576">сталь, 50 л</text>
+<!-- погружная трубка T2 -->
+<path class="amine" d="M604,404 L604,600"/><text class="sm" x="590" y="616">T2</text>
+<!-- стояк P4 -->
+<text class="sm" x="612" y="388">P4</text>
+<circle class="eq" cx="660" cy="366" r="11"/><path class="thin" d="M660,377 L660,394"/><text class="sm" x="642" y="350">PI-1</text><text class="sm" x="650" y="390">T1</text>
+<!-- мешалка -->
+<rect class="eq" x="686" y="300" width="28" height="60"/><text class="sm" x="690" y="296">M</text>
+<rect class="eq" x="690" y="360" width="20" height="34"/>
+<path style="stroke:var(--fg)" stroke-width="2" d="M700,404 L700,600 M672,600 L728,600"/>
+<!-- TI P2 -->
+<path style="stroke:var(--fg)" stroke-width="2" d="M736,380 L736,560"/><circle class="eq" cx="736" cy="368" r="11"/><text class="sm" x="727" y="372">TI</text><text class="sm" x="740" y="574">P2 Pt100</text>
+<!-- E-1 конденсатор -->
+<rect class="eq" x="758" y="236" width="30" height="158"/>
+<rect class="eqf" x="765" y="222" width="16" height="140"/>
+<text class="lbl" x="742" y="216">E-1</text><text class="sm" x="696" y="200">сухой лёд/IPA −78 °C</text><text class="sm" x="696" y="188">или лёд/вода 0 °C</text>
+<text class="sm" x="792" y="390">P1</text>
+<!-- D-1 дозатор -->
+<rect class="eq" x="846" y="260" width="48" height="84" rx="6"/><text class="lbl" x="850" y="254">D-1</text><text class="sm" x="850" y="300">1,5 л</text><text class="sm" x="846" y="312">MeSiCl₃</text><text class="sm" x="846" y="324">PDMS-OH</text>
+<path class="argon" d="M870,260 L870,236 L900,236"/><text class="sm" x="904" y="240">Ar (A3)</text>
+<rect class="thin" x="840" y="350" width="60" height="8"/><text class="sm" x="904" y="358">W-4</text>
+<path class="liq" d="M870,344 L870,372 L810,372 L810,398"/><use href="#bv" x="850" y="372"/><text class="sm" x="822" y="388">FV-1</text><text class="sm" x="880" y="388">игольч.</text><text class="sm" x="812" y="412">P3</text>
+<!-- отдувка с E-1 на гребёнку -->
+<path class="vent" d="M788,250 L806,250 L806,140 L1046,140"/>
+<!-- вакуум -->
+<path class="vac" d="M900,140 L900,90"/><use href="#bvv" x="900" y="112"/><text class="sm" x="908" y="116">VV-1</text>
+<rect class="eq" x="880" y="40" width="40" height="50" rx="4"/><text class="lbl" x="880" y="34">CT-1</text><text class="sm" x="862" y="102"></text>
+<path class="vac" d="M920,60 L952,60"/>
+<circle class="eq" cx="970" cy="60" r="17"/><path class="thin" d="M958,60 L982,60 M970,48 L970,72"/><text class="lbl" x="954" y="30">VP-1</text><text class="sm" x="942" y="96">≤10 мбар</text>
+<!-- теплоноситель -->
+<rect class="eq" x="380" y="760" width="120" height="70" rx="4"/><text class="lbl" x="392" y="784">TC-1</text><text class="sm" x="392" y="800">чиллер</text><text class="sm" x="392" y="814">−30…+50 °C</text>
+<path class="cool" d="M500,780 L540,780 L540,620 L566,620"/>
+<path class="cool" d="M500,812 L548,812 L548,720 L850,720 L850,430 L834,430"/>
+
+<!-- ============ ГРЕБЁНКА ============ -->
+<path class="vent" d="M1046,140 L1360,140"/>
+<!-- ветка PI-4 -->
+<circle class="eq" cx="1060" cy="108" r="11"/><path class="thin" d="M1060,119 L1060,140"/><text class="lbl" x="1030" y="88">PI-4</text><text class="sm" x="1026" y="76">0–250 мбар</text>
+<!-- ветка 1 шпунт -->
+<path class="vent" d="M1110,140 L1110,300"/><use href="#bvv" x="1110" y="180"/><text class="sm" x="1118" y="184">SV-1</text>
+<rect class="eq" x="1096" y="210" width="28" height="36" rx="3"/><text class="sm" x="1100" y="232">ШП</text><text class="lbl" x="1086" y="262">PCV-1</text><text class="sm" x="1080" y="276">50–80 мбар</text>
+<!-- ветка 2 обратный -->
+<path class="vent" d="M1180,140 L1180,300"/><use href="#bvv" x="1180" y="180"/><text class="sm" x="1188" y="184">SV-2</text>
+<use href="#nrvd" x="1180" y="226"/><text class="lbl" x="1158" y="262">NRV-1</text><text class="sm" x="1158" y="276">100 мбар</text>
+<!-- ветка 3 аварийный -->
+<path class="vent" d="M1250,140 L1250,300"/><use href="#bvv" x="1250" y="180"/><text class="sm" x="1258" y="184">SV-3 🔒</text>
+<rect class="eq" x="1238" y="210" width="24" height="30"/><path class="thin" d="M1242,214 L1258,236"/><text class="lbl" x="1230" y="262">PSV-1</text><text class="sm" x="1228" y="276">200 мбар</text>
+<!-- ветка 4 KF -->
+<path class="vent" d="M1320,140 L1320,300"/><use href="#bvv" x="1320" y="180"/><text class="sm" x="1328" y="184">SV-4 НЗ</text>
+<use href="#nrvd" x="1320" y="226"/><text class="lbl" x="1300" y="262">NRV-2</text><text class="sm" x="1296" y="276">KF25 перев.</text>
+<!-- коллектор -->
+<path class="vent" d="M1110,300 L1350,300 L1350,360"/><text class="sm" x="1120" y="318">коллектор сбросов</text>
+<!-- BU-1 -->
+<rect class="eq" x="1326" y="360" width="48" height="56" rx="6"/><path class="liqlvl" d="M1330,392 L1370,392"/><text class="lbl" x="1180" y="384">BU-1</text><text class="sm" x="1180" y="398">барботёр-индикатор</text>
+<path class="vent" d="M1350,416 L1350,440 L1300,440 L1300,456"/>
+<!-- T-1 -->
+<rect class="eq" x="1276" y="456" width="48" height="56" rx="6"/><text class="lbl" x="1208" y="484">T-1</text><text class="sm" x="1180" y="498">буфер ≥3 л</text>
+<path class="vent" d="M1300,512 L1300,540 L1336,540 L1336,556"/>
+<!-- S-1 -->
+<rect class="eq" x="1290" y="556" width="90" height="56" rx="6"/><path class="liqlvl" d="M1294,574 L1376,574"/><text class="lbl" x="1206" y="582">S-1</text><text class="sm" x="1150" y="596">скруббер 20 л, лимонная к-та</text>
+<path class="vent" d="M1370,556 L1370,536 L1384,536" marker-end="url(#arr)"/><text class="sm" x="1296" y="530">в вытяжку</text>
+<text class="sm" x="1024" y="444">PSV-3 от G-1 →</text><path class="vent" d="M1124,440 L1260,440 L1260,470 L1276,470"/>
+
+<!-- ============ ВЫГРУЗКА ============ -->
+<path class="liq" d="M700,646 L700,700"/><use href="#bvv" x="700" y="662"/><text class="sm" x="708" y="660">BV-1 Swagelok</text>
+<path class="liq" d="M700,700 L700,740 L780,740"/>
+<use href="#bvv" x="700" y="720"/><text class="sm" x="620" y="716">SP-1 проба</text>
+<path class="liq" d="M700,740 L640,740 L640,800"/><text class="sm" x="574" y="820">ПЭ-бочка →</text><text class="sm" x="574" y="832">загрузка эфира</text>
+<!-- P-2 AODD -->
+<rect class="eq" x="780" y="720" width="56" height="40" rx="4"/><text class="lbl" x="788" y="745">P-2</text><text class="sm" x="772" y="776">мембр. пневм.</text>
+<path class="liq" d="M836,740 L900,740"/>
+<!-- F-1 нутч -->
+<path class="eq" d="M900,700 L1000,700 L1000,760 L975,790 L925,790 L900,760 Z"/><path class="thin" d="M904,752 L996,752"/><text class="lbl" x="930" y="724">F-1</text><text class="sm" x="914" y="742">нутч, Na₂SO₄</text>
+<path class="argon" d="M950,700 L950,684 L990,684"/><text class="sm" x="994" y="688">Ar (A4)</text>
+<path class="liq" d="M950,790 L950,830 L1040,830"/>
+<!-- F-2 -->
+<rect class="eq" x="1040" y="790" width="40" height="80" rx="6"/><text class="lbl" x="1034" y="784">F-2</text><text class="sm" x="1086" y="820">10″ патрон</text><text class="sm" x="1086" y="832">5/2/0,2/0,05 мкм</text>
+<path class="liq" d="M1060,790 L1060,770 L1200,770 L1200,800"/>
+<!-- канистры -->
+<rect class="eq" x="1180" y="800" width="44" height="60" rx="3"/><rect class="eq" x="1236" y="800" width="44" height="60" rx="3"/>
+<rect class="thin" x="1172" y="864" width="116" height="8"/><text class="sm" x="1294" y="872">W-3 весы</text>
+<text class="sm" x="1180" y="894">канистры с эфиром (заземлены ⏚)</text>
+</svg>
+</div>
+<p class="meta">Кран <span class="tag">SV-3 🔒</span> перед аварийным сбросом во время синтеза опломбирован в положении «открыто». <span class="tag">SV-4 НЗ</span> нормально закрыт, пока KF-клапан не проверен на стенде.</p>
+
+<!-- ============ 4 ============ -->
+<h2 id="s4"><span class="no">4</span>Реактор R-1 и распределение штуцеров</h2>
+<p>Что видно на фото: крышка на 6 откидных болтах; три кламповых штуцера (два под глухими заглушками, один открыт); два обжимных штуцера 1/4″ (один на мановакуумметр, второй с трубкой, выведенной вверх); сзади слева стояк со смотровым фонарём и белым дыхательным фильтром с синей крышкой. Мешалка сверху через фонарь с белыми PTFE-кольцами. Рубашка: вход ёлочкой у днища (слева), выход ёлочкой у верха (справа). Нижний слив: шаровой кран Swagelok → кламп → отвод 90°.</p>
+<div class="box warn"><b class="h">Размеры клампов оценены по фото</b>
+До заказа замерить штангенциркулем наружный диаметр фланца каждого штуцера: 25 мм = кламп 1/2″–3/4″, 50,5 мм = 1″–1½″, 64 мм = 2″, 77,5 мм = 2½″, 91 мм = 3″. Ниже обозначения <span class="tag">КЛ-25</span>, <span class="tag">КЛ-50</span>, <span class="tag">КЛ-64</span>, <span class="tag">КЛ-91</span>.</div>
+<div class="tbl"><table>
+<thead><tr><th>Штуцер</th><th>Где (по фото 2)</th><th>Размер (оценка)</th><th>Назначение</th><th>Что ставим</th></tr></thead>
+<tbody>
+<tr><td class="pos">P1</td><td>кламп спереди слева, под глухой заглушкой</td><td>КЛ-64 (2″)</td><td>конденсатор E-1 и отдувка на гребёнку</td><td>E-1 (раздел 6) напрямую на кламп, прокладка PTFE</td></tr>
+<tr><td class="pos">P2</td><td>малый открытый кламп спереди справа</td><td>КЛ-25</td><td>температура в массе</td><td>кламповая заглушка с приварной термогильзой Ø8, L≈300 мм, внутри Pt100 → вход на чиллер (внешний датчик) или отдельный термометр</td></tr>
+<tr><td class="pos">P3</td><td>кламп сзади справа, под глухой заглушкой</td><td>КЛ-50</td><td>дозирование MeSiCl₃ и PDMS-OH; резервная загрузка эфира</td><td>переход КЛ-50→КЛ-25, шаровой кран КЛ-25, тройник с септовой заглушкой (проба, шприц), далее D-1</td></tr>
+<tr><td class="pos">P4</td><td>стояк сзади слева (фонарь + фильтр)</td><td>по месту</td><td>ввод аргона; визуальный контроль</td><td>дыхательный фильтр снять (его мембрана и корпус не для эфира); сверху заглушка КЛ с переходом на 1/4″ обжим → линия A1</td></tr>
+<tr><td class="pos">T1</td><td>обжим 1/4″ с мановакуумметром</td><td>1/4″</td><td>давление в реакторе</td><td>оставить PI-1. Проверить шкалу: для 0–200 мбар нужна разрешающая способность, поэтому на гребёнке добавлен PI-4 0–250 мбар</td></tr>
+<tr><td class="pos">T2</td><td>обжим 1/4″ с трубкой вверх</td><td>1/4″</td><td>ввод газа CH₃NH₂ под слой эфира; барботаж аргоном</td><td>проверить, погружная ли трубка. Если нет, заменить на трубку 1/4″ 316L до 30–50 мм от дна (через сквозной обжимной фитинг)</td></tr>
+<tr><td class="pos">BV-1</td><td>нижний слив, Swagelok</td><td>выход КЛ-50 (оценка)</td><td>выгрузка суспензии, отбор проб, загрузка эфира снизу</td><td>тройник КЛ с краном отбора SP-1 (КЛ-25), далее рукав на P-2</td></tr>
+<tr><td class="pos">J-in/out</td><td>ёлочки рубашки</td><td>ёлочка ~16–19 мм</td><td>теплоноситель</td><td>утеплённые рукава EPDM на хомутах</td></tr>
+</tbody></table></div>
+<div class="box warn"><b class="h">Проверить на самом реакторе до первого пуска</b>
+<ul>
+<li><b>Шильдик</b>: допустимое давление и допустимость полного вакуума. Нам нужно −975 мбар (25 мбар абс.) … +200 мбар.</li>
+<li><b>Уплотнение крышки</b> (большое кольцо под откидными болтами): если силикон или EPDM, заменить на кольцо в оболочке FEP или PTFE-конверт. Пары эфира и метиламина идут прямо на него.</li>
+<li><b>Уплотнение вала мешалки</b>: тип и материал (манжета PTFE, торцевое, магнитная муфта?). Под вакуумом 25 мбар должен держать без подсоса.</li>
+<li><b>Материал корпуса</b>: желательно AISI 316L. Хлорид метиламмония во влажной среде даёт питтинг, поэтому после каждой партии реактор промыть водой и высушить.</li>
+</ul></div>
+
+<!-- ============ 5 ============ -->
+<h2 id="s5"><span class="no">5</span>Генерация и сушка метиламина</h2>
+<h3>5.1 Генератор G-1 (бак Atmaler БК-40)</h3>
+<p>На крышке бака сейчас: блок редуктора воздуха (латунь, манометр 0–10 бар, штатный предохранительный клапан, краны с зелёными ручками), пневмомешалка по центру, выход краски с сифонной трубкой до дна, быстроразъём, загрузочный лючок.</p>
+<div class="tbl"><table>
+<thead><tr><th>Узел бака</th><th>Что делаем</th><th>Почему</th></tr></thead>
+<tbody>
+<tr><td>Внутренняя поверхность</td><td>Проверить: нержавейка, окрашенная сталь, оцинковка? Если цинк или алюминий, работать только с вкладышем-мешком из PE/PP или отказаться от бака</td><td>NaOH растворяет Zn и Al с выделением H₂: взрывоопасная смесь с метиламином</td></tr>
+<tr><td>Блок редуктора воздуха (латунь)</td><td>Снять целиком. Отверстие закрыть нержавеющим переходником: резьба → кламп КЛ-25 → линия аргона A2 и PSV-3</td><td>Метиламин с влагой разрушает латунь. Редуктор нам не нужен, давление задаёт сам процесс</td></tr>
+<tr><td>Штатный предохранительный клапан</td><td>Оставить как последний рубеж (если нержавеющий). Добавить PSV-3 на 0,3–0,5 бар со сбросом в T-1/S-1</td><td>Штатный сработает при ~5–6 бар: колонны и PTFE-линии столько не держат</td></tr>
+<tr><td>Выход краски (сифон до дна)</td><td>Использовать как ввод водного метиламина. Латунную ёлочку заменить нержавеющей, трубка PTFE или EPDM</td><td>Раствор подаётся под слой щёлочи, газ выделяется равномерно, без брызг на крышку</td></tr>
+<tr><td>Выход газа</td><td>Через свободный штуцер или лючок: нержавеющий переходник на КЛ-25 + кран V-G1</td><td></td></tr>
+<tr><td>Пневмомешалка</td><td>Первые запуски не включать. Уплотнение вала проверить мыльным раствором под 0,3 бар аргона. Если пропускает, снять и заглушить</td><td>Утечка метиламина через вал. Мешалка полезна в конце для «дожима» газа</td></tr>
+<tr><td>Прокладка крышки</td><td>Заменить на EPDM</td><td>Стойкость к щёлочи и аминам</td></tr>
+<tr><td>Манометр</td><td>Добавить PI-3: мановакуумметр −1…+0,6 бар, нержавеющий</td><td>Штатный 0–10 бар не показывает наши 0,1–0,3 бар</td></tr>
+</tbody></table></div>
+<p>Бак ставится в пластиковую ванну (таз ~60 л) с холодной водой, а ванна — на весы W-2 (до 60 кг, дискретность 5–10 г). <b>Убыль массы G-1 — это масса ушедшего метиламина</b> (плюс немного воды). Так проверяется «не менее 2 780 г» без гадания. Канистра V-1 с раствором стоит на своих весах W-1 и показывает, сколько раствора подано.</p>
+<p>Продувка G-1 от воздуха: бак, скорее всего, не рассчитан на вакуум, поэтому продуваем аргоном потоком. 5–6 объёмов ≈ 250 л при 10–15 л/мин, около 20 мин, выход через K-1 → C-1 → C-2 → байпас в вытяжку, до подключения к реактору.</p>
+
+<h3>5.2 Дозирование водного метиламина</h3>
+<p>Перистальтический насос P-1 (он уже есть по методике) качает 11,25 л за 3–4 ч, то есть 50–60 мл/мин. Трубка насоса PharMed BPT или Norprene Chemical, не силикон. Всасывание из канистры V-1 через крышку с двумя штуцерами: заборная трубка и «дыхание», причём дыхание через трубку в ту же вытяжку, так как метиламин из 38% раствора сильно летуч. На нагнетании обратный клапан, чтобы при остановке насоса газ из бака не выдавливал раствор назад.</p>
+
+<h3>5.3 Осушка: каплеотбойник K-1, колонны C-1 и C-2</h3>
+<div class="tbl"><table>
+<thead><tr><th>Поз.</th><th>Конструкция</th><th>Заполнение</th><th>Заметки</th></tr></thead>
+<tbody>
+<tr><td class="pos">K-1</td><td>Патрубок кламповый 3″ (КЛ-91) × 300 мм, заглушки КЛ-91 с отводами КЛ-25, внизу кран слива</td><td>пустой</td><td>Ловит брызги и пену щёлочи. Он же буфер от обратного заброса</td></tr>
+<tr><td class="pos">C-1</td><td>Патрубок КЛ-91 × 600 мм (≈3 л), концы: заглушка-переход КЛ-91→КЛ-25; внизу сетчатая кламповая прокладка + диск сетки AISI 316</td><td>молекулярные сита <b>3A</b>, 2,0–2,5 кг, прокалка 300 °C сутки</td><td>Именно 3A: поры 4A и 5A сорбируют метиламин (кинетический диаметр ~3,7 Å), выход упадёт. У лабораторных сит поставщик неизвестен, закупить новые 3A</td></tr>
+<tr><td class="pos">C-2</td><td>То же, КЛ-91 × 600 мм</td><td>NaOH гранулы (или KOH, он лучше сушит амины), ≈2,5 кг</td><td>Порядок как в методике: газ снизу вверх, сначала сита, потом щёлочь</td></tr>
+</tbody></table></div>
+<p>Газ во всех колоннах идёт снизу вверх. Колонны крепятся вертикально на стойке к раме или лабораторному стенду. На выходе C-2 стоят мановакуумметр PI-2, кран V-G2 и обратный клапан <b>NRV-3 с малым давлением открытия (≤ 30 мбар)</b>, например Swagelok серии CH с пружиной 1/3 psi. Клапан на 0,1 бар здесь не подходит: генератору пришлось бы держать лишние 100 мбар. Затем линия PTFE 10×12 в штуцер T2.</p>
+<div class="box"><b class="h">Защита от обратного заброса</b>
+При остановке подачи холодный эфир продолжает поглощать метиламин, давление в линии падает, и эфир может подняться по T2 к колоннам. Держат три вещи: NRV-3, аргоновая подпитка G-1 через A2 (генератор не уходит в вакуум) и K-1 как пустой буфер.</div>
+
+<!-- ============ 6 ============ -->
+<h2 id="s6"><span class="no">6</span>Конденсатор E-1 («холодный палец» на клампе)</h2>
+<p>Стальной аналог лабораторной азотной ловушки. Изготовление под заказ: сварка из стандартных санитарных деталей 316L, любой цех, работающий с пищевой нержавейкой.</p>
+<div class="tbl"><table>
+<thead><tr><th>Деталь</th><th>Размер</th><th>Примечание</th></tr></thead>
+<tbody>
+<tr><td>Кожух</td><td>труба 76,2×1,6 (3″), L = 450 мм</td><td>снизу переход-концентрик 3″→2″ с ферулой КЛ-64 под P1 (или под фактический размер P1)</td></tr>
+<tr><td>Боковой отвод газа</td><td>ферула КЛ-25, на 40 мм ниже верха</td><td>выход на гребёнку</td></tr>
+<tr><td>Верх кожуха</td><td>ферула КЛ-91</td><td>разборно, чтобы чистить</td></tr>
+<tr><td>«Палец» (стакан)</td><td>труба 50,8×1,5, L = 420 мм, донышко заварено; вварен в центр глухой заглушки КЛ-91</td><td>объём ≈0,8 л под сухой лёд + IPA. Зазор до кожуха ~11 мм, поверхность ≈0,07 м², съём до ~1 кВт при −78 °C</td></tr>
+<tr><td>Изоляция</td><td>вспененный каучук 13–19 мм снаружи кожуха</td><td>иначе обмерзание и капель на крышку</td></tr>
+</tbody></table></div>
+<ul>
+<li><b>Стадии 3–5</b>: в стакан сухой лёд + изопропанол (−78 °C). Метиламин, не поглощённый эфиром, конденсируется и стекает в реактор. На стадии 5 он же снимает тепло реакции через кипение и рефлюкс метиламина. Расход сухого льда ×3 — порядка 10–15 кг на партию, заказать 20 кг.</li>
+<li><b>Стадия 7 (40 °C, выгонка метиламина)</b>: стакан опустошить, залить ледяной водой (0…+5 °C). Эфир конденсируется и возвращается, метиламин (т. кип. −6 °C) проходит на скруббер. <b>Если оставить сухой лёд, метиламин будет возвращаться в реактор, и стадия 7 не закончится.</b></li>
+<li>Альтернатива, если будет второй криостат: вместо стакана змеевик 10×1 из 316L с подачей теплоносителя −30 °C / +5 °C.</li>
+</ul>
+
+<!-- ============ 7 ============ -->
+<h2 id="s7"><span class="no">7</span>Гребёнка безопасности и скруббер</h2>
+<p>Собрана по требованиям А. Бабкина и Д.: все устройства на тройниках от общего коллектора, перед каждым кран, выходы сведены вместе. Коллектор на КЛ-50 (1″–1½″), потому что шпунт-аппарат и кламповые обратные клапаны Гросснер выпускаются в этих размерах. Переход на КЛ-25 делается на отводе E-1.</p>
+<div class="tbl"><table>
+<thead><tr><th>Поз.</th><th>Устройство</th><th>Кран перед</th><th>Уставка</th><th>Роль</th></tr></thead>
+<tbody>
+<tr><td class="pos">PI-4</td><td>Манометр 0–250 мбар (или 0–0,6 бар), мембранный, нерж., на кламп</td><td>—</td><td>—</td><td>Штатный манометр шпунта (0–3/4 бар) и PI-1 на крышке грубые для 50–200 мбар</td></tr>
+<tr><td class="pos">PCV-1</td><td><a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/predohranitelnye-klapany-nerzhaveyuschie/shpunt-apparat/shpunt-apparat-s-manometrom-uglovoj/">Шпунт-аппарат угловой с манометром</a></td><td>SV-1, открыт</td><td>минимально устойчивая, ориентир 50–80 мбар</td><td><b>Рабочий регулятор.</b> Держит небольшое избыточное давление, лишнее стравливает</td></tr>
+<tr><td class="pos">NRV-1</td><td><a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/klapany-iz-nerzhaveyuschey-stali/klapan-obratnyj-klamp/">Клапан обратный кламповый</a></td><td>SV-2, открыт</td><td>100 мбар (заводская пружина)</td><td>Резерв №1: не срабатывает на вакуум, срабатывает на избыток</td></tr>
+<tr><td class="pos">PSV-1</td><td>Предохранительный клапан кламповый, <b>только на давление</b></td><td>SV-3, открыт и опломбирован</td><td>200 мбар</td><td>Аварийный сброс. <a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/predohranitelnye-klapany-nerzhaveyuschie/klapan-predoxranitelnyj-klampovyj/klapan-dlya-emkosti-sbrosa-davleniya-i-vakuuma-klampovyj/">Клапан давления-вакуума</a> ставить только с обратным клапаном на выходе (см. ниже)</td></tr>
+<tr><td class="pos">NRV-2</td><td><a href="https://grossner.ru/shop/vakuumnoe-oborudovanie/vakuumnyj-klapan-kf/klapan-obratnyj-kf-pod-vakuum/">Клапан обратный KF25</a>, установлен наоборот + переход трикламп→KF25</td><td>SV-4, закрыт</td><td>определить на стенде</td><td>Эксперимент Бабкина: самый чувствительный сброс. После стендовой проверки может заменить шпунт как рабочий</td></tr>
+</tbody></table></div>
+<div class="box warn"><b class="h">Почему клапан давления-вакуума нельзя ставить «как есть»</b>
+При разрежении в реакторе он откроется и потянет газ из общего коллектора, то есть из скруббера. Метиламин поглощается кислотой очень жадно, и при подсосе кислота пойдёт в реактор с хлорсиланом. Если другого сбросника не найти, после этого клапана обязательно поставить обратный клапан по ходу сброса. Тогда уставка будет ≈0,2 + 0,1 = 0,3 бар, что допустимо. Лучший вариант — чисто предохранительный клапан на 0,2–0,3 бар.</div>
+<h3>Коллектор сбросов → BU-1 → T-1 → S-1</h3>
+<ul>
+<li><b>BU-1, барботёр-индикатор (ответ на вопрос «пузырьки непонятно, как приколхозить»)</b>: все выходы сходятся в один коллектор, а он опущен на 1–2 см в силиконовое масло (ПМС-50) в прозрачном сосуде. Любой сброс через любое устройство виден пузырьками. Сосуд — стеклянная склянка Дрекселя 500–1000 мл или прозрачный патрубок-фонарь КЛ-50 со стеклом (Гросснер, «смотровой фонарь»); ввод трубкой PTFE. Противодавление ≈1–2 мбар.</li>
+<li><b>T-1, буферная пустая склянка ≥ 3 л</b>: если S-1 начнёт засасывать, жидкость остановится здесь.</li>
+<li><b>S-1, скруббер</b>: канистра PE 20 л, 12 л раствора, 2,5 кг лимонной кислоты (моногидрат) + фенолфталеин. Хватит на ≈35 моль метиламина, то есть весь избыток ×3 (≈22 моль) с запасом. Ввод — PTFE трубка с просверленными отверстиями на дно, выход газа — в вытяжку. <b>Раствор порозовел — кислота кончилась</b>, долить. Лимонная кислота безопаснее серной и не дымит.</li>
+<li>В тот же T-1/S-1 заведён сброс PSV-3 генератора и выхлоп вакуумного насоса.</li>
+</ul>
+
+<!-- ============ 8 ============ -->
+<h2 id="s8"><span class="no">8</span>Аргоновая и вакуумная линии</h2>
+<h3>Аргон</h3>
+<ol>
+<li><b>AR-1</b>: баллон 40 л, аргон 99,998% (ГОСТ 10157, высший сорт), на цепи к стене.</li>
+<li><b>PR-1</b>: баллонный редуктор аргона (можно штатный с ротаметром), на выходе ~1 бар.</li>
+<li><b>PR-2</b>: регулятор низкого давления 0–0,5 бар (нерж., мембранный, с ручной точной настройкой), уставка <b>+20–30 мбар</b>. Это и есть «аргоновая подушка по требованию»: пока в реакторе выше 30 мбар, аргон не течёт. Как только давление падает (реактор остыл, метиламин поглотился, насос выкачивает суспензию), аргон подтекает сам.</li>
+<li><b>PSV-2</b>: предохранительный клапан 0,5 бар после PR-2 на случай отказа регулятора.</li>
+<li><b>FI-1</b>: ротаметр 0,5–15 л/мин с игольчатым вентилем. Показывает, сколько аргона уходит; при выкачке P-2 нужно до ~10 л/мин.</li>
+<li>Раздаточная гребёнка из 4 шаровых кранов 1/4″ (обжим): <b>A1</b> → реактор (через NRV, стояк P4), <b>A2</b> → G-1 (через NRV), <b>A3</b> → D-1 (уравнительная), <b>A4</b> → нутч F-1 и тара.</li>
+<li>Трубка PTFE 6×8 или 1/4″ нерж. Обратные клапаны на A1 и A2 обязательны: без них метиламин уходит в аргоновую линию и дальше в соседние аппараты.</li>
+</ol>
+<h3>Вакуум</h3>
+<ul>
+<li><b>VP-1</b>: химический мембранный насос с PTFE-головками, ≤ 7–10 мбар, 1,5–2 м³/ч (типа Vacuubrand MZ 2C NT или аналог). Масляный пластинчато-роторный не годится: его масло растворит эфир и поглотит амин.</li>
+<li><b>CT-1</b>: ловушка перед насосом (сухой лёд/IPA или жидкий азот), стальная или стеклянная.</li>
+<li>Подключение: кран <b>VV-1</b> на коллекторе отдувки после E-1. Вакуумируем реактор через E-1. Нужен и для нутча F-1 (10 мбар), для него отдельная линия через A4-тройник.</li>
+<li>Выхлоп насоса — в вытяжку.</li>
+<li>Во время вакуумирования все краны гребёнки SV-1…SV-4 закрыты, <b>в том числе опломбированный SV-3</b> (единственный разрешённый случай). Вакуумирование только пустого реактора.</li>
+</ul>
+
+<!-- ============ 9 ============ -->
+<h2 id="s9"><span class="no">9</span>Дозирование MeSiCl₃ и PDMS-OH</h2>
+<p>1,3 л метилтрихлорсилана через септу шприцом на 50-литровом реакторе — долго, опасно (HCl на воздухе) и невоспроизводимо. Предлагается <b>дозировочная ёмкость D-1</b>:</p>
+<ul>
+<li>Патрубок кламповый КЛ-91 × 300 мм (≈1,5 л) + глухая заглушка сверху с отводом 1/4″ (аргон A3) + заглушка-переход снизу КЛ-91→КЛ-25. Все прокладки PTFE. Вариант — стеклянная капельная воронка с выравниванием давления на 2 л с переходником на кламп: так видно уровень.</li>
+<li>Ниже: шаровой кран КЛ-25 → игольчатый вентиль нерж. 1/4″ (обжим) → трубка PTFE 1/4″ через P3, срез в 5–10 см над уровнем жидкости (не под слой: выпадающая соль CH₃NH₃Cl забьёт трубку).</li>
+<li>D-1 подвешен на весах W-4 (или стоит на них) — скорость дозирования видна по убыли массы.</li>
+<li>Заполнение D-1: в вытяжке, под током аргона, переливом из тары MeSiCl₃ через PTFE-трубку. Хлорсилан дымит на влажном воздухе.</li>
+<li>Скорость: по температуре. Держать ≤ −10 °C в массе (TI на P2); при −5 °C остановить подачу. Ожидаемо 2,5–4 ч.</li>
+<li>После MeSiCl₃ D-1 не мыть водой. Промыть сухим петролейным эфиром (0,5 л, слить в реактор), затем залить PDMS-OH. PDMS-OH дозируется так же, 30–60 мин. Если он вязкий, подать аргон через A3 с уставкой на 50–100 мбар выше реактора (отдельный редуктор не нужен: временно поднять PR-2).</li>
+</ul>
+<p>Отбор пробы для pH (стадия 6): через SP-1 на нижнем сливе при работающей мешалке. Сначала слить 20–30 мл «мёртвого объёма» в отдельную склянку (вернуть или утилизировать), затем 1 мл в пробирку с водой. Альтернатива — шприц через септовую заглушку на P3.</p>
+
+<!-- ============ 10 ============ -->
+<h2 id="s10"><span class="no">10</span>Термостатирование</h2>
+<ul>
+<li><b>TC-1 (чиллер)</b>: нужен диапазон −30…+50 °C и холодопроизводительность ≥ 0,8–1 кВт при −20 °C. Проверить, какой чиллер Wiggens или какой есть в лаборатории: у многих лабораторных при −20 °C остаётся 30–40% номинала.</li>
+<li><b>Теплоноситель</b>: водно-спиртовой (этанол 40–50%), водно-гликолевый −35 °C или силиконовое масло по паспорту чиллера. На −25 °C чистая вода не годится.</li>
+<li><b>Рукава</b>: EPDM армированные, ID под ёлочки рубашки, в теплоизоляции 13 мм, хомуты нерж. по 2 на соединение. Вход снизу, выход сверху (так и сделано на реакторе).</li>
+<li><b>Управление по внутренней температуре</b>: если чиллер умеет работать по внешнему датчику, подключить Pt100 из гильзы P2. Иначе чиллер работает по своей температуре, а TI в массе читается отдельно.</li>
+</ul>
+
+<!-- ============ 11 ============ -->
+<h2 id="s11"><span class="no">11</span>Выгрузка, фильтрация, фасовка</h2>
+<h3>Насос P-2</h3>
+<p><a href="https://www.ampika.ru/oborudovanie.html?id=19460">Пневматический мембранный насос</a> (предложение Бабкина) + <a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-naruzhnaya/">переходники резьба→кламп</a>. Он хорош тем, что не искрит (эфир легковоспламеним), качает суспензию с солью, работает всухую. Требования к исполнению:</p>
+<ul>
+<li>корпус PP (лучше токопроводящий PP) или нерж. 316; не алюминий;</li>
+<li>мембраны и шары PTFE, седла PP/PTFE/нерж.;</li>
+<li>клемма заземления на корпусе;</li>
+<li>воздух: 3–6 бар, через фильтр-регулятор с маслоотделителем. Выхлоп увести в вытяжку: при разрыве мембраны в выхлоп пойдёт эфир.</li>
+</ul>
+<p>Одним насосом делаем: загрузку эфира в реактор снизу через BV-1 (меньше брызг и статики), выгрузку суспензии на нутч, перекачку концентрата через F-2 в канистры.</p>
+<h3>Нутч F-1</h3>
+<p>Под ×3 нужна площадь ≥ 700 см² (DN300) и объём ≥ 30 л: 6 кг Na₂SO₄ (≈4,5 л), ≈2,3 кг соли, 22 л суспензии и 6 л промывок. Если есть только лабораторный нутч, фильтровать в 3 приёма, меняя слой. Фильтрация под аргоном с вакуумом 10 мбар, как в методике, но вакуумировать холодным или через CT-1: эфир при 10 мбар активно испаряется. Альтернатива лучше: <b>фильтрация под давлением аргона 0,1–0,2 бар</b> в закрытом стальном нутче, без потерь эфира. Тогда нутч сам получает гребёнку «кран + сбросник 0,3 бар».</p>
+<h3>Тонкая фильтрация F-2</h3>
+<ul>
+<li><a href="https://grossner.ru/shop/filtry-nerzhaveyuschie/mikroporistyj-membrannyj-filtr/">Корпус 10″ под один патрон, на клампах</a>, патроны <a href="https://grossner.ru/shop/filtry-nerzhaveyuschie/patron-mikroporistogo-membrannogo-filtra/">5; 2; 0,2; 0,05 мкм</a>, по 2 шт. каждого.</li>
+<li><b>Материал мембраны</b>: PTFE (гидрофобный, стоек к эфиру и аминам) или PP для 2–5 мкм. PES допустим. Нейлон и ацетат целлюлозы не брать.</li>
+<li><b>Уплотнительные кольца патрона и корпуса</b>: у Гросснера по умолчанию обычно силикон или EPDM. Заказать кольца в оболочке FEP (FEP/силикон) под тот же размер. Уточнить тип посадки патрона (код 7/226, 222 или DOE) и брать патроны под него.</li>
+<li>Порядок: проход 5 мкм, затем 0,2 мкм как финиш. Использовать 0,05 мкм только если по ОТК нужен. Если одного корпуса мало (два прохода), предлагаю второй корпус и ставить последовательно 5 → 0,2.</li>
+</ul>
+<div class="box warn"><b class="h">Статика на фильтре</b>
+Микрофильтрация углеводорода — один из сильнейших генераторов статического заряда. Корпус F-2, насос, рукава и канистры заземлить единой шиной. Скорость в трубке ≤ 1 м/с. После фильтра — ≥ 1 м заземлённой металлической трубы или рукава перед канистрой (время релаксации). Налив в канистру трубкой до дна.</div>
+<h3>Фасовка</h3>
+<p>Канистры на весах W-3 (до 30–60 кг, дискретность 5–10 г). Расчёт по методике (п. 10): тара — по минимальной массе из серии, затем эфир, затем концентрат насосом P-2 через F-2. Канистры металлические, с зажимом заземления.</p>
+
+<!-- ============ 12 ============ -->
+<h2 id="s12"><span class="no">12</span>Материалы: уплотнения и шланги</h2>
+<div class="tbl"><table>
+<thead><tr><th>Среда</th><th>PTFE/FEP</th><th>EPDM</th><th>Силикон</th><th>NBR</th><th>FKM (Viton)</th><th>Сталь 316</th></tr></thead>
+<tbody>
+<tr><td>Петролейный эфир</td><td>✔</td><td>✘</td><td>✘</td><td>✔</td><td>✔</td><td>✔</td></tr>
+<tr><td>CH₃NH₂ газ / р-р</td><td>✔</td><td>✔</td><td>±</td><td>±</td><td>✘</td><td>✔ (Cu, латунь, Zn, Al — ✘)</td></tr>
+<tr><td>CH₃SiCl₃ (+HCl)</td><td>✔</td><td>✘</td><td>✘</td><td>✘</td><td>±</td><td>✔ сухой</td></tr>
+<tr><td>NaOH р-р</td><td>✔</td><td>✔</td><td>±</td><td>±</td><td>±</td><td>✔</td></tr>
+<tr><td>Реакционная масса</td><td>✔</td><td>✘</td><td>✘</td><td>±</td><td>✘</td><td>✔</td></tr>
+</tbody></table></div>
+<p><b>Вывод</b>: на всё, что касается эфира, продукта и хлорсилана, — только PTFE/FEP. EPDM разрешён на воде, теплоносителе, щёлочи и водном метиламине.</p>
+<div class="tbl"><table>
+<thead><tr><th>Линия</th><th>Шланг / трубка</th><th>Соединение</th><th>Прокладки КЛ</th></tr></thead>
+<tbody>
+<tr><td>Продукт, суспензия, эфир (P-2, F-1, F-2, канистры)</td><td>Рукав PTFE гладкоствольный 3/4″ (ID 19) в нерж. оплётке, <b>антистатический</b> (чёрный токопроводящий лайнер), с заводскими клампами КЛ-25/КЛ-50. Длины 1,5 и 2,5 м</td><td>кламп</td><td>PTFE</td></tr>
+<tr><td>Газ CH₃NH₂, аргон, отдувка, дозирование MeSiCl₃</td><td><b>Бухта</b> трубки PTFE (Ф-4) 10×12 и 6×8 мм, 20 м + 10 м</td><td>обжимные фитинги нерж. 12 мм / 8 мм + переходник кламп→резьба</td><td>PTFE</td></tr>
+<tr><td>Теплоноситель, водный метиламин, скруббер, выхлопы</td><td><b>Бухта</b> EPDM армированного рукава ID 12 и ID 19 (под ёлочки рубашки), 10 м + 10 м; изоляция на теплоноситель</td><td><b>клампы с ёлочкой</b> + 2 нерж. хомута на соединение (как предложил Д.)</td><td>EPDM</td></tr>
+<tr><td>Сжатый воздух на P-2 и мешалку G-1</td><td>PU 8×6 / 10×8</td><td>быстроразъёмы</td><td>—</td></tr>
+</tbody></table></div>
+<div class="box"><b class="h">Про ёлочки и бухту (запрос Д.)</b>
+Ёлочка с хомутом надёжно работает на EPDM. На PTFE-трубке ёлочка не держит (PTFE жёсткий и «течёт» под хомутом), поэтому для бухты PTFE используются обжимные фитинги, по сути та же быстрая сборка. Бухта EPDM + клампы-ёлочки закрывают все водные и щелочные линии. Бухта PTFE + обжим закрывает газовые линии. Для продукта нужен готовый рукав PTFE на клампах: кроме стойкости, он антистатический, а на эфире это обязательно.</div>
+
+<!-- ============ 13 ============ -->
+<h2 id="s13"><span class="no">13</span>Уставки давления</h2>
+<div class="tbl"><table>
+<thead><tr><th>Поз.</th><th>Что</th><th>Уставка, мбар изб.</th><th>Замечание</th></tr></thead>
+<tbody>
+<tr><td class="pos">PR-2</td><td>аргоновая подпитка</td><td class="n">+20…30</td><td>всегда ниже шпунта, иначе аргон постоянно уходит через PCV-1</td></tr>
+<tr><td class="pos">BU-1+S-1</td><td>противодавление сброса</td><td class="n">≈10–15</td><td>прибавляется к уставкам всех устройств</td></tr>
+<tr><td class="pos">PCV-1</td><td>шпунт-аппарат, рабочий</td><td class="n">50…80</td><td>«минимальное» (Бабкин). Найти минимальную устойчивую точку на стенде</td></tr>
+<tr><td class="pos">NRV-2</td><td>KF25 перевёрнутый</td><td class="n">стенд</td><td>ожидаемо 10–50; если ниже PCV-1, станет рабочим</td></tr>
+<tr><td class="pos">NRV-1</td><td>обратный кламповый</td><td class="n">100</td><td>резерв</td></tr>
+<tr><td class="pos">PSV-1</td><td>аварийный</td><td class="n">200</td><td>SV-3 опломбирован открытым</td></tr>
+<tr><td class="pos">NRV-3</td><td>вход газа в реактор</td><td class="n">≤ 30</td><td>генератор работает при 100–250 мбар</td></tr>
+<tr><td class="pos">PSV-3</td><td>генератор G-1</td><td class="n">300…500</td><td>при росте выше 250 — остановить P-1</td></tr>
+<tr><td class="pos">PSV-2</td><td>аргон после PR-2</td><td class="n">500</td><td></td></tr>
+<tr><td>—</td><td>граница ФНП ОРПД (приказ №536)</td><td class="n">700</td><td>не превышать ни в одном аппарате</td></tr>
+</tbody></table></div>
+<p><b>Стендовая проверка гребёнки до монтажа на реактор</b>: собрать коллектор на заглушке с манометром PI-4 и тройником аргона, подать аргон через игольчатый вентиль и по очереди, открывая только один SV, записать давление открытия и закрытия каждого устройства. Особенно шпунта на минимуме и перевёрнутого KF25. Так мы получим фактические, а не паспортные уставки.</p>
+
+<!-- ============ 14 ============ -->
+<h2 id="s14"><span class="no">14</span>Спецификация</h2>
+<p><span class="buy y">КУПИТЬ</span> — заказать; <span class="buy c">ИЗГОТОВИТЬ</span> — сварка под заказ; <span class="buy h">ЕСТЬ</span> — в наличии, проверить. Количества указаны с запасом (+1 на критичные клампы и прокладки). Размеры клампов подтвердить замером (раздел 4).</p>
+<div class="tbl"><table>
+<thead><tr><th>Поз.</th><th>Наименование</th><th>Характеристика</th><th>Кол.</th><th>Статус</th></tr></thead>
+<tbody>
+<tr class="sec"><td colspan="5">Реактор R-1</td></tr>
+<tr><td class="pos">R-1</td><td>Реактор Wiggens 50 л с рубашкой и мешалкой</td><td>проверить шильдик: давление, вакуум</td><td class="n">1</td><td><span class="buy h">ЕСТЬ</span></td></tr>
+<tr><td></td><td>Кольцо уплотнения крышки FEP-оболочка</td><td>по размеру штатного</td><td class="n">2</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Заглушка КЛ-25 с приварной термогильзой Ø8×300</td><td>316L</td><td class="n">1</td><td><span class="buy c">ИЗГОТОВИТЬ</span></td></tr>
+<tr><td></td><td>Термометр сопротивления Pt100 Ø6 + индикатор/вход чиллера</td><td>−50…+100 °C</td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Трубка 1/4″ 316L (погружная T2), 1 м + сквозной обжимной фитинг 1/4″</td><td>если T2 не погружная</td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Заглушка КЛ под стояк P4 с отводом 1/4″ обжим</td><td></td><td class="n">1</td><td><span class="buy c">ИЗГОТОВИТЬ</span></td></tr>
+<tr><td></td><td>Переход КЛ-50→КЛ-25 (для P3)</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Тройник КЛ-25 + септовая заглушка (КЛ-25 с 1/4″ и септой GC)</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr class="sec"><td colspan="5">Генератор и осушка метиламина</td></tr>
+<tr><td class="pos">G-1</td><td>Бак Atmaler БК-40</td><td>доработка по разделу 5.1</td><td class="n">1</td><td><span class="buy h">ЕСТЬ</span></td></tr>
+<tr><td></td><td>Прокладка крышки бака EPDM</td><td>по размеру</td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Переходники нерж. резьба (по штуцерам бака) → кламп КЛ-25</td><td></td><td class="n">3</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Ёлочка нерж. вместо латунной на сифоне</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">PI-3, PI-2</td><td>Мановакуумметр −1…+0,6 бар, нерж., глицерин, на кламп КЛ-25</td><td></td><td class="n">2</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">PSV-3</td><td>Клапан предохранительный кламповый 0,3–0,5 бар</td><td>КЛ-25/КЛ-50</td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Ванна пластиковая ~60 л</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">W-1, W-2</td><td>Весы платформенные 30 кг / 60 кг, дискр. ≤10 г</td><td></td><td class="n">2</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">P-1</td><td>Перистальтический насос</td><td>50–60 мл/мин</td><td class="n">1</td><td><span class="buy h">ЕСТЬ</span></td></tr>
+<tr><td></td><td>Трубка насоса PharMed BPT / Norprene Chemical</td><td>под головку</td><td class="n">2 м</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">K-1</td><td>Патрубок кламповый КЛ-91 (3″) × 300</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">C-1, C-2</td><td>Патрубок кламповый КЛ-91 × 600</td><td></td><td class="n">2</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Заглушка-переход КЛ-91→КЛ-25 (концентрический)</td><td>K-1, C-1, C-2, D-1</td><td class="n">7</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Прокладка сетчатая КЛ-91 + диск сетки 316</td><td>опоры засыпки</td><td class="n">4</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Молекулярные сита 3A, гранулы 3–5 мм</td><td></td><td class="n">3 кг</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>KOH или NaOH гранулированный (C-2)</td><td></td><td class="n">3 кг</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">NRV-3</td><td>Обратный клапан 1/4″–3/8″, открытие ≤ 1/3 psi (Swagelok CH или аналог)</td><td>316, уплотнение — не FKM (EPDM/Kalrez)</td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Стойка/кронштейны для колонн</td><td></td><td class="n">1 компл.</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr class="sec"><td colspan="5">Конденсатор E-1</td></tr>
+<tr><td class="pos">E-1</td><td>Холодный палец по эскизу раздела 6</td><td>316L</td><td class="n">1</td><td><span class="buy c">ИЗГОТОВИТЬ</span></td></tr>
+<tr><td></td><td>Изоляция каучук 13–19 мм</td><td></td><td class="n">1 м</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Сухой лёд (на партию) + IPA 3 л</td><td></td><td class="n">20 кг</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr class="sec"><td colspan="5">Гребёнка безопасности и скруббер</td></tr>
+<tr><td class="pos">PCV-1</td><td>Шпунт-аппарат угловой с манометром (Гросснер)</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">NRV-1</td><td>Клапан обратный кламповый (Гросснер), 0,1 бар</td><td>+1 на PSV-1 при варианте P/V</td><td class="n">2</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">PSV-1</td><td>Клапан предохранительный кламповый 0,2 бар (только давление)</td><td>или P/V клапан + NRV</td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">NRV-2</td><td>Клапан обратный KF25 под вакуум + переход трикламп→KF25 + центрирующее кольцо и хомут KF25</td><td>кольцо KF: PTFE/EPDM, не FKM</td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">SV-1…4, VV-1</td><td>Кран шаровой кламповый КЛ-50, седла PTFE</td><td></td><td class="n">5</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Тройник кламповый КЛ-50</td><td>коллектор + сбор выходов</td><td class="n">10</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Отвод 90° КЛ-50, переходы КЛ-50→КЛ-25</td><td></td><td class="n">4+4</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">PI-4</td><td>Манометр мембранный 0–250 мбар (0–0,6 бар), кламп</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Пломбировочный замок/хомут для рукоятки SV-3</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">BU-1</td><td>Склянка Дрекселя 1 л или смотровой фонарь КЛ-50 + масло ПМС-50</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">T-1</td><td>Склянка буферная 3–5 л (стекло/PE) с двумя штуцерами</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">S-1</td><td>Канистра PE 20 л, лимонная кислота 2,5 кг, фенолфталеин</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr class="sec"><td colspan="5">Аргон и вакуум</td></tr>
+<tr><td class="pos">AR-1</td><td>Баллон аргона 40 л, 99,998%</td><td></td><td class="n">1–2</td><td><span class="buy h">ЕСТЬ</span></td></tr>
+<tr><td class="pos">PR-1</td><td>Редуктор баллонный аргоновый</td><td></td><td class="n">1</td><td><span class="buy h">ЕСТЬ</span></td></tr>
+<tr><td class="pos">PR-2</td><td>Регулятор низкого давления 0–0,5 бар, нерж.</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">PSV-2</td><td>Предохранительный клапан 1/4″, 0,5 бар</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">FI-1</td><td>Ротаметр 0,5–15 л/мин с вентилем</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">A1–A4</td><td>Кран шаровой 1/4″ обжим, нерж.</td><td></td><td class="n">5</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Обратный клапан 1/4″ (A1, A2, P-1 нагнетание)</td><td>уплотнение EPDM</td><td class="n">3</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Тройники 1/4″ обжим</td><td></td><td class="n">6</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">VP-1</td><td>Мембранный химический вакуумный насос ≤ 10 мбар</td><td>PTFE-головки</td><td class="n">1</td><td><span class="buy h">ЕСТЬ?</span></td></tr>
+<tr><td class="pos">CT-1</td><td>Ловушка вакуумная охлаждаемая</td><td></td><td class="n">1</td><td><span class="buy h">ЕСТЬ?</span></td></tr>
+<tr class="sec"><td colspan="5">Дозирование</td></tr>
+<tr><td class="pos">D-1</td><td>Патрубок КЛ-91 × 300 + глухая заглушка КЛ-91 с отводом 1/4″</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">FV-1</td><td>Игольчатый вентиль 1/4″ обжим, нерж., PTFE-сальник</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Кран шаровой кламповый КЛ-25, седла PTFE</td><td>D-1 выход, P3, SP-1</td><td class="n">3</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">W-4</td><td>Весы 6–15 кг, дискр. 1 г</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr class="sec"><td colspan="5">Выгрузка, фильтрация, фасовка</td></tr>
+<tr><td class="pos">P-2</td><td>Мембранный пневмонасос (ampika id=19460), PTFE мембраны, PP/316 корпус</td><td>проверить исполнение</td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Переходники кламп – резьба наружная под P-2</td><td>вх./вых.</td><td class="n">2</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Фильтр-регулятор воздуха + PU трубка + быстроразъёмы</td><td></td><td class="n">1 компл.</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">F-1</td><td>Нутч-фильтр ≥ DN300, с крышкой, под аргон</td><td>см. раздел 11</td><td class="n">1</td><td><span class="buy h">УТОЧНИТЬ</span></td></tr>
+<tr><td class="pos">F-2</td><td>Корпус 10″ микропористого фильтра на клампах</td><td>+1 опционально</td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Патроны 5 / 2 / 0,2 / 0,05 мкм (PTFE или PP/PES)</td><td>по 2 шт.</td><td class="n">8</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Кольца патрона и корпуса FEP-оболочка</td><td>по размеру</td><td class="n">4</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td class="pos">W-3</td><td>Весы 60 кг, дискр. 10 г</td><td>можно W-2</td><td class="n">—</td><td><span class="buy h">W-2</span></td></tr>
+<tr><td></td><td>Шина и кабели заземления с зажимами-крокодилами</td><td>5–6 точек</td><td class="n">1 компл.</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr class="sec"><td colspan="5">Шланги, трубки, крепёж</td></tr>
+<tr><td></td><td>Рукав PTFE 3/4″ антистат. в оплётке, клампы КЛ-25/КЛ-50</td><td>1,5 м ×2; 2,5 м ×2</td><td class="n">4</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Трубка PTFE 10×12, бухта</td><td></td><td class="n">20 м</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Трубка PTFE 6×8, бухта</td><td></td><td class="n">10 м</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Фитинги обжимные нерж. 12 мм / 8 мм: прямые, тройники, резьба 1/4″–1/2″</td><td></td><td class="n">≈20</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Переходник кламп КЛ-25 – резьба наружная 1/4″ и 1/2″</td><td>стыковка обжима с клампами</td><td class="n">10</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Рукав EPDM армированный ID 12, бухта</td><td></td><td class="n">10 м</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Рукав EPDM армированный ID под ёлочки рубашки (16–19), бухта</td><td>+ изоляция</td><td class="n">10 м</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Кламп КЛ-25 с ёлочкой 12 мм / КЛ-25 с ёлочкой 19 мм</td><td></td><td class="n">8 + 6</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Хомуты нерж. червячные под 12 и 19 мм</td><td>по 2 на ёлочку</td><td class="n">30</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Хомуты кламповые КЛ-25 / КЛ-50 / КЛ-64 / КЛ-91</td><td></td><td class="n">20 / 25 / 3 / 12</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Прокладки PTFE КЛ-25 / КЛ-50 / КЛ-64 / КЛ-91</td><td>с запасом ×2</td><td class="n">40 / 50 / 6 / 24</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Прокладки EPDM КЛ-25</td><td>водные линии</td><td class="n">20</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Заглушки глухие КЛ-25 / КЛ-50</td><td></td><td class="n">6 / 4</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+</tbody></table></div>
+
+<!-- ============ 15 ============ -->
+<h2 id="s15"><span class="no">15</span>Порядок проведения синтеза на R-1</h2>
+<p>Нумерация стадий совпадает со справкой. Курсивом — отличия от лабораторной методики.</p>
+<ol class="steps" start="0">
+<li><b>Подготовка (накануне).</b> Опрессовка аргоном 150 мбар всей собранной схемы: реактор + E-1 + гребёнка (SV-1…4 закрыты), газовая линия до G-1. Места соединений проверить мыльным раствором, выдержка 30 мин, падение ≤ 5 мбар. Вакуумный тест пустого реактора: 25 мбар, натекание ≤ 2 мбар/мин. Прокалка сит 300 °C сутки, загрузка C-1 горячими (≤120 °C) под аргоном, C-2 — щёлочью. Стендовые уставки гребёнки записаны. Скруббер S-1 заправлен.</li>
+<li><b>Инертизация и эфир.</b> <i>Пустой сухой реактор: 3 цикла «вакуум 25 мбар (VV-1) → аргон (A1)».</i> Открыть SV-1, SV-2, SV-3 (опломбировать). Загрузить 15 л эфира насосом P-2 через BV-1 снизу, под током аргона, с заземлёнными бочкой и насосом. <i>Барботировать аргон через T2 3–5 л/мин 15 мин (вместо дегазации эфира вакуумом).</i> Включить мешалку 100–120 об/мин, TC-1 на −25 °C, довести массу до −20 °C.</li>
+<li><b>Генератор.</b> 8,37 кг NaOH в G-1 через лючок, прокладка, крышка. G-1 в ванне с холодной водой, на весах W-2. Продувка аргоном (раздел 5.1). V-1 (10,44 кг р-ра) на W-1. Записать нули весов.</li>
+<li><b>Метиламин.</b> E-1 заправить сухим льдом + IPA. Открыть V-G1, V-G2, A2. Пустить P-1 с 20 мл/мин, через 10 мин выйти на 50–60 мл/мин. Контроль: PI-3 генератора 100–250 мбар (выше 250 — снизить подачу, выше 300 — стоп), PI-1 реактора держится шпунтом, BU-1 без сплошного потока пузырей. Сплошной поток — метиламин не успевает конденсироваться: снизить подачу, добавить льда в E-1, понизить TC-1. Температура в G-1 ≤ 40 °C (лёд в ванну). Время 3–4 ч.</li>
+<li><b>Окончание конденсации.</b> После подачи всего раствора (W-1) подождать до прекращения выделения, в конце слабо продуть G-1 аргоном через A2 (1–2 л/мин, 20 мин), чтобы вытеснить метиламин из 35 л газового пространства бака. Закрыть V-G2. Убыль W-2 ≥ 2,8 кг — продолжаем. Если меньше, подогреть ванну G-1 до 40–50 °C и дожать.</li>
+<li><b>MeSiCl₃.</b> D-1 заполнить 1 674 г, уравнять аргоном (A3). E-1 с сухим льдом. Масса −20 °C, 100–120 об/мин. Дозировать через FV-1, держа ≤ −10 °C. При −5 °C стоп. Ожидаемо 2,5–4 ч. Затем промыть D-1 0,5 л эфира в реактор.</li>
+<li><b>Контроль pH.</b> Когда TI перестанет расти, проба через SP-1 (раздел 9). Кислый pH — нужен ещё метиламин: снова пустить G-1 (при необходимости свежий раствор). Нейтральный или щелочной — залить в D-1 2 118 г PDMS-OH и дозировать 30–60 мин.</li>
+<li><b>Нагрев и выгонка метиламина.</b> Температура пошла вниз — выключить охлаждение, дать дойти до комнатной. <i>E-1: убрать сухой лёд, залить ледяную воду.</i> TC-1 на +40 °C. Слабая продувка аргоном через T2 0,5–1 л/мин. Метиламин уходит через E-1 → гребёнка → BU-1 → S-1 (следить за фенолфталеином). Конец стадии: пузыри в BU-1 — только аргон (влажная индикаторная бумага у выхода S-1 не синеет), несколько часов.</li>
+<li><b>Фильтрация.</b> Охладить до 20 °C. Нутч F-1: 2 цикла вакуум/аргон, 6 кг Na₂SO₄, снова вакуум/аргон. Выгрузка P-2 через BV-1 (аргон подтекает через PR-2 сам, FI-1 до 10 л/мин). Промыть реактор 2 × 3 л эфира, на нутч.</li>
+<li><b>Анализ концентрата</b> — как в методике.</li>
+<li><b>Разбавление и фасовка</b> — по методике, P-2 через F-2 в заземлённые канистры на W-3.</li>
+<li><b>После партии.</b> Реактор промыть эфиром, затем водой (соль CH₃NH₃Cl), высушить (вакуум + нагрев 50 °C). G-1: раствор NaOH/метиламина нейтрализовать и утилизировать в вытяжке. Сита — на регенерацию. S-1 — на нейтрализацию.</li>
+</ol>
+
+<!-- ============ 16 ============ -->
+<h2 id="s16"><span class="no">16</span>Безопасность</h2>
+<ul>
+<li><b>Пожар и взрыв.</b> Петролейный эфир 40–70: т. всп. &lt; −20 °C. Метиламин — горючий газ, НКПР 4,9%. В зоне ≥ 3 м вокруг: никакого открытого огня, плитки и нагревателей с открытой спиралью. Упаривание аликвоты на плитке 200 °C (п. 9 методики) — в другой вытяжке, после сборки основной установки.</li>
+<li><b>Статика.</b> Единый контур заземления: реактор, рама, P-2, F-1, F-2, бочки, канистры, G-1. Рукава для эфира — только антистатические.</li>
+<li><b>Токсичность.</b> Метиламин: ПДК р.з. 1 мг/м³, резкий запах уже при ~3 ppm. Вся газовая часть (G-1, колонны, гребёнка, S-1) в вытяжке или под местным отсосом. Выход S-1, выхлопы VP-1 и P-2 — в вытяжку. Иметь переносной газоанализатор на амины или хотя бы индикаторные трубки.</li>
+<li><b>MeSiCl₃</b>: с влагой — HCl. Работа в очках-маске, перчатках (бутил), заполнение D-1 только под аргоном.</li>
+<li><b>Щёлочь.</b> Засыпка 8,4 кг NaOH: маска, фартук. Разогрев — ванна с водой.</li>
+<li><b>Криогеника.</b> Сухой лёд + IPA: криоперчатки, стакан E-1 не закрывать герметично (CO₂).</li>
+<li><b>Давление.</b> Опломбированный SV-3 и PSV-1 никогда не отключаются когда в реакторе продукт. Уставки не поднимать выше таблицы раздела 13.</li>
+</ul>
+
+<!-- ============ 17 ============ -->
+<h2 id="s17"><span class="no">17</span>Что замерить и уточнить до заказа</h2>
+<div class="tbl"><table>
+<thead><tr><th>#</th><th>Вопрос</th><th>Кто/как</th><th>Влияет на</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>Масштаб: ×3 (15 л эфира) — утверждаем?</td><td>Бабкин</td><td>всё</td></tr>
+<tr><td class="n">2</td><td>Диаметры фланцев P1, P2, P3, стояка P4, выхода BV-1; ID ёлочек рубашки</td><td>штангенциркуль</td><td>клампы, E-1</td></tr>
+<tr><td class="n">3</td><td>Шильдик R-1: P раб., вакуум, материал; уплотнение крышки и вала</td><td>осмотр, паспорт Wiggens</td><td>уставки, прокладки</td></tr>
+<tr><td class="n">4</td><td>T2 — погружная трубка или короткий штуцер?</td><td>снять и посмотреть</td><td>ввод газа</td></tr>
+<tr><td class="n">5</td><td>Чиллер: модель, мощность при −20 °C, внешний датчик</td><td>паспорт</td><td>время дозирования</td></tr>
+<tr><td class="n">6</td><td>Бак Atmaler: внутреннее покрытие, давление бака, материал уплотнения мешалки, резьбы штуцеров</td><td>паспорт, осмотр</td><td>годность G-1</td></tr>
+<tr><td class="n">7</td><td>Насос ampika id=19460: материал корпуса, мембран, присоединение</td><td>страница/менеджер</td><td>P-2, переходники</td></tr>
+<tr><td class="n">8</td><td>Есть ли нутч нужного размера</td><td>лаборатория</td><td>F-1</td></tr>
+<tr><td class="n">9</td><td>Размеры присоединения шпунт-аппарата и обратного клапана Гросснер (1″ или 1½″) и диапазон шпунта</td><td>менеджер Гросснер</td><td>КЛ-50 коллектор</td></tr>
+<tr><td class="n">10</td><td>Мембранный вакуумный насос и ловушка в наличии?</td><td>лаборатория</td><td>VP-1, CT-1</td></tr>
+</tbody></table></div>
+<p class="meta">Документ подготовлен как проект: все уставки и тепловые оценки проверить на стенде и в первом (водно-эфирном холостом) прогоне без реагентов.</p>
+</div>
