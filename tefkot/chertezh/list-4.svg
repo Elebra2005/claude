@@ -65,7 +65,7 @@
 <text x="399.00" y="275.80" font-size="2.2" text-anchor="start" fill="#111111">Листов 8</text>
 <text x="387.50" y="286.00" font-size="3.2" text-anchor="middle" fill="#111111" font-weight="bold">АО «ИНУМиТ»</text>
 <text x="330.00" y="288.00" font-size="2.2" text-anchor="middle" fill="#666666">ТЕФКОТ 770 · реактор 50 л</text>
-<text x="25.00" y="13.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">ГРЕБЁНКА БЕЗОПАСНОСТИ: коллектор КЛ-50 (1″–1½″), вид спереди, б/м</text>
+<text x="25.00" y="13.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">ГРЕБЁНКА БЕЗОПАСНОСТИ: коллектор DN25 (1″–1½″), вид спереди, б/м</text>
 <text x="24.50" y="94.00" font-size="2.0" text-anchor="start" fill="#111111">рукав PTFE ¾″ от E-1</text>
 <text x="24.00" y="99.00" font-size="2.0" text-anchor="start" fill="#c62828">L=?</text>
 <path d="M34.60,51.80 L35.70,51.80 L35.70,58.20 L34.60,58.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
@@ -256,12 +256,12 @@
 <circle cx="202.00" cy="80.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="202.00" y="80.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">423</text>
 <path d="M206.00,85.00 L214.00,85.00 L214.00,88.00 L206.00,88.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="216.00" y="87.00" font-size="1.8" text-anchor="start" fill="#111111">переход КЛ-50/KF25</text>
+<text x="216.00" y="87.00" font-size="1.8" text-anchor="start" fill="#111111">переход DN25/KF25</text>
 <path d="M207.00,89.00 L213.00,89.00 L213.00,99.00 L207.00,99.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M210.00,95.92 L208.32,92.08 L211.68,92.08 Z" fill="#111111" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M208.08,95.92 L211.92,95.92" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M206.00,100.00 L214.00,100.00 L214.00,103.00 L206.00,103.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="216.00" y="102.00" font-size="1.8" text-anchor="start" fill="#111111">переход KF25/КЛ-50</text>
+<text x="216.00" y="102.00" font-size="1.8" text-anchor="start" fill="#111111">переход KF25/DN25</text>
 <text x="216.00" y="107.00" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">NRV-2</text>
 <text x="216.00" y="111.00" font-size="1.9" text-anchor="start" fill="#111111">KF25 перевёрн.</text>
 <text x="216.00" y="115.00" font-size="1.9" text-anchor="start" fill="#111111">стенд</text>
@@ -271,8 +271,8 @@
 <path d="M213.80,119.20 L213.80,122.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="202.00" cy="121.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="202.00" y="121.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">424</text>
-<text x="122.00" y="181.00" font-size="2.1" text-anchor="start" fill="#111111">коллектор сбросов КЛ-50 (тройники в точках C…F)</text>
-<text x="332.00" y="56.00" font-size="1.9" text-anchor="start" fill="#111111">заглушка КЛ-50</text>
+<text x="122.00" y="181.00" font-size="2.1" text-anchor="start" fill="#111111">коллектор сбросов DN25 (тройники в точках C…F)</text>
+<text x="332.00" y="56.00" font-size="1.9" text-anchor="start" fill="#111111">заглушка DN25</text>
 <path d="M330.00,51.80 L331.50,51.80 L331.50,58.20 L330.00,58.20 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <path d="M310.60,171.80 L311.70,171.80 L311.70,178.20 L310.60,178.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M312.30,171.80 L313.40,171.80 L313.40,178.20 L312.30,178.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>

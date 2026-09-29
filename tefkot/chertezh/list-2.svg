@@ -135,13 +135,13 @@
 <text x="156.00" y="53.50" font-size="1.9" text-anchor="start" fill="#111111">(лист 3)</text>
 <path d="M36.00,172.00 L30.00,173.00 L30.00,175.00 L36.00,176.00 Z" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M33.00,174.00 L24.00,190.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M24.00,190.00 L49.30,190.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="24.50" y="189.20" font-size="2.0" text-anchor="start" fill="#c62828">N8 вход DN25 DIN 11851?</text>
+<path d="M24.00,190.00 L44.90,190.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<text x="24.50" y="189.20" font-size="2.0" text-anchor="start" fill="#111111">N8 вход, кламп DN25</text>
 <circle cx="33.00" cy="174.00" r="0.50" fill="#111111" stroke="#111111" stroke-width="0.1"/>
 <path d="M174.00,96.00 L180.00,97.00 L180.00,99.00 L174.00,100.00 Z" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M177.00,98.00 L184.00,88.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M184.00,88.00 L199.40,88.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="184.50" y="87.20" font-size="2.0" text-anchor="start" fill="#c62828">N7 выход DN25?</text>
+<path d="M184.00,88.00 L206.00,88.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<text x="184.50" y="87.20" font-size="2.0" text-anchor="start" fill="#111111">N7 выход, кламп DN25</text>
 <circle cx="177.00" cy="98.00" r="0.50" fill="#111111" stroke="#111111" stroke-width="0.1"/>
 <path d="M99.00,207.00 L111.00,207.00 L111.00,216.00 L99.00,216.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M111.00,211.00 L124.00,209.00" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
@@ -261,35 +261,35 @@
 <text x="223.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">P1</text>
 <text x="235.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">N3</text>
 <text x="249.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">конденсатор E-1</text>
-<text x="291.00" y="158.07" font-size="2.1" text-anchor="start" fill="#c62828">DIN 11851 / кламп?</text>
+<text x="291.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">кламп Ø50,5</text>
 <text x="327.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">25</text>
 <text x="338.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">E-1 (лист 3)</text>
 <path d="M222.00,159.80 L391.00,159.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="163.47" font-size="2.1" text-anchor="start" fill="#111111">P2</text>
 <text x="235.00" y="163.47" font-size="2.1" text-anchor="start" fill="#111111">N4</text>
 <text x="249.00" y="163.47" font-size="2.1" text-anchor="start" fill="#111111">термогильза TI (Pt100)</text>
-<text x="291.00" y="163.47" font-size="2.1" text-anchor="start" fill="#c62828">DIN 11851 / кламп?</text>
+<text x="291.00" y="163.47" font-size="2.1" text-anchor="start" fill="#111111">кламп Ø50,5</text>
 <text x="327.00" y="163.47" font-size="2.1" text-anchor="start" fill="#111111">25</text>
-<text x="338.00" y="163.47" font-size="2.1" text-anchor="start" fill="#111111">заглушка с гильзой Ø8×500</text>
+<text x="338.00" y="163.47" font-size="2.1" text-anchor="start" fill="#111111">заглушка DN25 с гильзой Ø8×500</text>
 <path d="M222.00,165.20 L391.00,165.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="168.87" font-size="2.1" text-anchor="start" fill="#111111">P3</text>
 <text x="235.00" y="168.87" font-size="2.1" text-anchor="start" fill="#111111">N5</text>
 <text x="249.00" y="168.87" font-size="2.1" text-anchor="start" fill="#111111">дозирование P-3 (был pH)</text>
-<text x="291.00" y="168.87" font-size="2.1" text-anchor="start" fill="#c62828">DIN 11851 / кламп?</text>
+<text x="291.00" y="168.87" font-size="2.1" text-anchor="start" fill="#111111">кламп Ø50,5</text>
 <text x="327.00" y="168.87" font-size="2.1" text-anchor="start" fill="#111111">25</text>
 <text x="338.00" y="168.87" font-size="2.1" text-anchor="start" fill="#111111">узел P3 (лист 3)</text>
 <path d="M222.00,170.60 L391.00,170.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="174.27" font-size="2.1" text-anchor="start" fill="#111111">P4</text>
 <text x="235.00" y="174.27" font-size="2.1" text-anchor="start" fill="#111111">N1</text>
 <text x="249.00" y="174.27" font-size="2.1" text-anchor="start" fill="#111111">ввод Ar (A1), резерв</text>
-<text x="291.00" y="174.27" font-size="2.1" text-anchor="start" fill="#c62828">DIN 11851 / кламп?</text>
+<text x="291.00" y="174.27" font-size="2.1" text-anchor="start" fill="#111111">кламп Ø50,5</text>
 <text x="327.00" y="174.27" font-size="2.1" text-anchor="start" fill="#111111">25</text>
 <text x="338.00" y="174.27" font-size="2.1" text-anchor="start" fill="#111111">заглушка + обжим ¼″</text>
 <path d="M222.00,176.00 L391.00,176.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="179.67" font-size="2.1" text-anchor="start" fill="#111111">T1</text>
 <text x="235.00" y="179.67" font-size="2.1" text-anchor="start" fill="#111111">N2</text>
 <text x="249.00" y="179.67" font-size="2.1" text-anchor="start" fill="#111111">мановакуумметр PI-1</text>
-<text x="291.00" y="179.67" font-size="2.1" text-anchor="start" fill="#c62828">резьба?</text>
+<text x="291.00" y="179.67" font-size="2.1" text-anchor="start" fill="#111111">обжим ¼″</text>
 <text x="327.00" y="179.67" font-size="2.1" text-anchor="start" fill="#111111">8</text>
 <text x="338.00" y="179.67" font-size="2.1" text-anchor="start" fill="#111111">существующий</text>
 <path d="M222.00,181.40 L391.00,181.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -310,16 +310,16 @@
 <text x="223.00" y="195.87" font-size="2.1" text-anchor="start" fill="#111111">BV-1</text>
 <text x="235.00" y="195.87" font-size="2.1" text-anchor="start" fill="#111111">L</text>
 <text x="249.00" y="195.87" font-size="2.1" text-anchor="start" fill="#111111">нижний слив</text>
-<text x="291.00" y="195.87" font-size="2.1" text-anchor="start" fill="#c62828">DIN 11851 / кламп?</text>
+<text x="291.00" y="195.87" font-size="2.1" text-anchor="start" fill="#111111">кламп Ø50,5</text>
 <text x="327.00" y="195.87" font-size="2.1" text-anchor="start" fill="#111111">38</text>
 <text x="338.00" y="195.87" font-size="2.1" text-anchor="start" fill="#111111">тройник + SP-1 (лист 7)</text>
 <path d="M222.00,197.60 L391.00,197.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="201.27" font-size="2.1" text-anchor="start" fill="#111111">JI/JO</text>
 <text x="235.00" y="201.27" font-size="2.1" text-anchor="start" fill="#111111">N8/N7</text>
 <text x="249.00" y="201.27" font-size="2.1" text-anchor="start" fill="#111111">рубашка вход / выход</text>
-<text x="291.00" y="201.27" font-size="2.1" text-anchor="start" fill="#c62828">DIN 11851?</text>
+<text x="291.00" y="201.27" font-size="2.1" text-anchor="start" fill="#111111">кламп Ø50,5</text>
 <text x="327.00" y="201.27" font-size="2.1" text-anchor="start" fill="#111111">25</text>
-<text x="338.00" y="201.27" font-size="2.1" text-anchor="start" fill="#111111">рукав EPDM, переходник</text>
+<text x="338.00" y="201.27" font-size="2.1" text-anchor="start" fill="#111111">переходник кламп→ёлочка</text>
 <path d="M222.00,203.00 L391.00,203.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="206.67" font-size="2.1" text-anchor="start" fill="#111111">—</text>
 <text x="235.00" y="206.67" font-size="2.1" text-anchor="start" fill="#111111">—</text>
@@ -335,9 +335,9 @@
 <text x="338.00" y="20.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">Примечания</text>
 <text x="338.00" y="25.50" font-size="2.1" text-anchor="start" fill="#c62828">1. Размеры «?» — уточнить замером.</text>
 <text x="338.00" y="29.10" font-size="2.1" text-anchor="start" fill="#111111">   Wiggens: H общ. 1140, 414, 410.</text>
-<text x="338.00" y="32.70" font-size="2.1" text-anchor="start" fill="#111111">2. Кламп по Ø ферулы: 25 = ½–¾″;</text>
-<text x="338.00" y="36.30" font-size="2.1" text-anchor="start" fill="#111111">   50,5 = 1–1½″; 64 = 2″; 77,5 = 2½″;</text>
-<text x="338.00" y="39.90" font-size="2.1" text-anchor="start" fill="#111111">   91 = 3″; 119 = 4″.</text>
+<text x="338.00" y="32.70" font-size="2.1" text-anchor="start" fill="#111111">2. Ø ферулы кламп по DN: DN15 — 34;</text>
+<text x="338.00" y="36.30" font-size="2.1" text-anchor="start" fill="#111111">   DN25, DN38 — 50,5; DN40 — 64;</text>
+<text x="338.00" y="39.90" font-size="2.1" text-anchor="start" fill="#111111">   DN65 (3″) — 91; DN100 (4″) — 119.</text>
 <text x="338.00" y="43.50" font-size="2.1" text-anchor="start" fill="#111111">3. Шильдик: P раб., полный вакуум,</text>
 <text x="338.00" y="47.10" font-size="2.1" text-anchor="start" fill="#111111">   материал корпуса (нужен 316L).</text>
 <text x="338.00" y="50.70" font-size="2.1" text-anchor="start" fill="#111111">4. Проверить тип уплотнения вала.</text>
@@ -345,10 +345,9 @@
 <text x="338.00" y="57.90" font-size="2.1" text-anchor="start" fill="#111111">   снять (не стоек к р-лю).</text>
 <text x="338.00" y="61.50" font-size="2.1" text-anchor="start" fill="#111111">6. Все прокладки в контакте с</text>
 <text x="338.00" y="65.10" font-size="2.1" text-anchor="start" fill="#111111">   продуктом — PTFE. PN всех — 0,5.</text>
-<text x="338.00" y="68.70" font-size="2.1" text-anchor="start" fill="#111111">7. ВАЖНО: в Nozzle list Wiggens —</text>
-<text x="338.00" y="72.30" font-size="2.1" text-anchor="start" fill="#111111">   DIN 11851 (гайка), на фото — клампы.</text>
-<text x="338.00" y="75.90" font-size="2.1" text-anchor="start" fill="#111111">   Если DIN — нужны переходники</text>
-<text x="338.00" y="79.50" font-size="2.1" text-anchor="start" fill="#111111">   DIN 11851 → кламп на каждый штуцер.</text>
+<text x="338.00" y="68.70" font-size="2.1" text-anchor="start" fill="#111111">7. Все штуцеры — трикламп; DN по</text>
+<text x="338.00" y="72.30" font-size="2.1" text-anchor="start" fill="#111111">   DIN 11851 (Wiggens). DN25 и DN38 —</text>
+<text x="338.00" y="75.90" font-size="2.1" text-anchor="start" fill="#111111">   ферула Ø50,5.</text>
 <text x="338.00" y="94.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold"></text>
 <text x="338.00" y="99.50" font-size="1.9" text-anchor="start" fill="#111111">Условные обозначения:</text>
 <text x="338.00" y="102.80" font-size="1.9" text-anchor="start" fill="#111111">⊣⊢ кламповое соединение, № — ведомость (лист 8)</text>

@@ -1025,17 +1025,17 @@
 <text x="797.00" y="49.72" font-size="1.8" text-anchor="start" fill="#111111">5</text>
 <path d="M712.00,50.90 L806.00,50.90" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="713.00" y="53.42" font-size="1.8" text-anchor="start" fill="#111111">K-1</text>
-<text x="727.00" y="53.42" font-size="1.8" text-anchor="start" fill="#111111">Каплеотбойник КЛ-91×300</text>
+<text x="727.00" y="53.42" font-size="1.8" text-anchor="start" fill="#111111">Каплеотбойник DN65×300</text>
 <text x="789.00" y="53.42" font-size="1.8" text-anchor="start" fill="#111111">1</text>
 <text x="797.00" y="53.42" font-size="1.8" text-anchor="start" fill="#111111">5</text>
 <path d="M712.00,54.60 L806.00,54.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="713.00" y="57.12" font-size="1.8" text-anchor="start" fill="#111111">C-1</text>
-<text x="727.00" y="57.12" font-size="1.8" text-anchor="start" fill="#111111">Колонна, сита 3A ≈1,8 кг, КЛ-91×600</text>
+<text x="727.00" y="57.12" font-size="1.8" text-anchor="start" fill="#111111">Колонна, сита 3A ≈1,8 кг, DN65×600</text>
 <text x="789.00" y="57.12" font-size="1.8" text-anchor="start" fill="#111111">1</text>
 <text x="797.00" y="57.12" font-size="1.8" text-anchor="start" fill="#111111">5</text>
 <path d="M712.00,58.30 L806.00,58.30" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="713.00" y="60.82" font-size="1.8" text-anchor="start" fill="#111111">C-2</text>
-<text x="727.00" y="60.82" font-size="1.8" text-anchor="start" fill="#111111">Колонна, NaOH ≈2,7 кг, КЛ-91×600</text>
+<text x="727.00" y="60.82" font-size="1.8" text-anchor="start" fill="#111111">Колонна, NaOH ≈2,7 кг, DN65×600</text>
 <text x="789.00" y="60.82" font-size="1.8" text-anchor="start" fill="#111111">1</text>
 <text x="797.00" y="60.82" font-size="1.8" text-anchor="start" fill="#111111">5</text>
 <path d="M712.00,62.00 L806.00,62.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -1080,12 +1080,12 @@
 <text x="797.00" y="90.42" font-size="1.8" text-anchor="start" fill="#111111">4</text>
 <path d="M712.00,91.60 L806.00,91.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="713.00" y="94.12" font-size="1.8" text-anchor="start" fill="#111111">SV-1…4</text>
-<text x="727.00" y="94.12" font-size="1.8" text-anchor="start" fill="#111111">Кран шаровой КЛ-50</text>
+<text x="727.00" y="94.12" font-size="1.8" text-anchor="start" fill="#111111">Кран шаровой DN25</text>
 <text x="789.00" y="94.12" font-size="1.8" text-anchor="start" fill="#111111">4</text>
 <text x="797.00" y="94.12" font-size="1.8" text-anchor="start" fill="#111111">4</text>
 <path d="M712.00,95.30 L806.00,95.30" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="713.00" y="97.82" font-size="1.8" text-anchor="start" fill="#111111">VV-1</text>
-<text x="727.00" y="97.82" font-size="1.8" text-anchor="start" fill="#111111">Кран шаровой КЛ-50 (вакуум)</text>
+<text x="727.00" y="97.82" font-size="1.8" text-anchor="start" fill="#111111">Кран шаровой DN25 (вакуум)</text>
 <text x="789.00" y="97.82" font-size="1.8" text-anchor="start" fill="#111111">1</text>
 <text x="797.00" y="97.82" font-size="1.8" text-anchor="start" fill="#111111">4</text>
 <path d="M712.00,99.00 L806.00,99.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>

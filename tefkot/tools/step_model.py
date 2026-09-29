@@ -270,7 +270,7 @@ def condenser_and_manifold():
     parts.append(cyl((x, y, z0 + 566), (x, y, z0 + 578), 91))
     add(g, 'E-1_shell_3in_L500', parts, 'steel')
     add(g, 'E-1_coil_stubs', [cyl((x - 15, y, z0 + 578), (x - 15, y, z0 + 640), 12), cyl((x + 15, y, z0 + 578), (x + 15, y, z0 + 640), 12)], 'steel')
-    zg = z0 + 520                               # отвод газа КЛ-25, в сторону +X
+    zg = z0 + 520                               # отвод газа DN15, в сторону +X
     add(g, 'E-1_gas_outlet', [cyl((x + 30, y, zg), (x + 90, y, zg), 25.4)] + clampj((x + 90, y, zg), (1, 0, 0), 50.5), 'steel')
     # изоляция
     add(g, 'E-1_insulation', [cyl((x, y, z0 + 70), (x, y, z0 + 500), 110).cut(cyl((x, y, z0 + 60), (x, y, z0 + 510), 78))], 'epdm')
@@ -481,7 +481,7 @@ def dosing(p3_top, ar_outs):
 # ---------------------------------------------------------------- выгрузка
 def discharge(zap, ar_outs):
     g = 'Discharge_Filtration'
-    # BV-1 Swagelok → тройник КЛ-50 с SP-1 → отвод → рукав на P-2
+    # BV-1 Swagelok → тройник DN25 с SP-1 → отвод → рукав на P-2
     add(g, 'BV-1_Swagelok', ball_valve((0, 0, 470), (0, 0, 1), 38, lever=(1, 0, 0), L=58), 'steel')
     parts = clampj((0, 0, 440), (0, 0, 1), 64)
     parts.append(cyl((0, 0, 437), (0, 0, 370), 50.8))

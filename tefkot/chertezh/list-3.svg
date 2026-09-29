@@ -102,9 +102,9 @@
 <text x="85.70" y="59.93" font-size="2.0" text-anchor="middle" fill="#1f5fa8">302</text>
 <path d="M96.90,49.33 L94.70,50.23 L94.70,48.43 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="100.70" y="50.33" font-size="2.1" text-anchor="start" fill="#111111">на гребёнку (лист 4)</text>
-<path d="M49.30,202.67 L74.70,202.67 L70.47,210.67 L53.53,210.67 Z" fill="#ffffff" stroke="#111111" stroke-width="0.35" stroke-linejoin="round"/>
-<path d="M51.33,210.67 L72.67,210.67 L72.67,212.67 L51.33,212.67 Z" fill="#ffffff" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<text x="76.00" y="213.67" font-size="2.1" text-anchor="start" fill="#c62828">переход под P1 (N3 DN25 по Wiggens; тип ?)</text>
+<path d="M49.30,202.67 L74.70,202.67 L66.23,210.67 L57.77,210.67 Z" fill="#ffffff" stroke="#111111" stroke-width="0.35" stroke-linejoin="round"/>
+<path d="M53.58,210.67 L70.42,210.67 L70.42,212.67 L53.58,212.67 Z" fill="#ffffff" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="76.00" y="213.67" font-size="2.1" text-anchor="start" fill="#111111">переход 3″→1″, ферула DN25 под P1 (N3)</text>
 <text x="62.00" y="220.67" font-size="2.0" text-anchor="middle" fill="#111111">→ R-1, штуцер P1 (соед. 203, лист 2)</text>
 <path d="M49.30,36.00 L29.80,36.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <path d="M49.30,202.67 L29.80,202.67" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -172,7 +172,7 @@
 <path d="M147.76,200.13 L152.24,206.53 L147.76,206.53 L152.24,200.13 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M150.00,203.33 L154.16,203.33" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M154.16,201.83 L154.16,204.83" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="156.00" y="204.33" font-size="2.0" text-anchor="start" fill="#111111">V-D1 КЛ-25</text>
+<text x="156.00" y="204.33" font-size="2.0" text-anchor="start" fill="#111111">V-D1 DN15</text>
 <path d="M146.80,208.93 L153.20,208.93 L153.20,210.03 L146.80,210.03 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M146.80,210.63 L153.20,210.63 L153.20,211.73 L146.80,211.73 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M146.20,208.53 L146.20,212.13" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -224,7 +224,7 @@
 <path d="M222.76,202.80 L227.24,209.20 L222.76,209.20 L227.24,202.80 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M225.00,206.00 L229.16,206.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M229.16,204.50 L229.16,207.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="203.00" y="207.00" font-size="2.0" text-anchor="start" fill="#111111">V-P3 КЛ-25</text>
+<text x="203.00" y="207.00" font-size="2.0" text-anchor="start" fill="#111111">V-P3 DN15</text>
 <path d="M221.80,196.60 L228.20,196.60 L228.20,197.70 L221.80,197.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M221.80,198.30 L228.20,198.30 L228.20,199.40 L221.80,199.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M221.20,196.20 L221.20,199.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -246,7 +246,7 @@
 <circle cx="217.00" cy="175.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="217.00" y="175.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">311</text>
 <path d="M221.80,171.40 L228.20,171.40 L228.20,173.60 L221.80,173.60 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="230.00" y="169.00" font-size="1.9" text-anchor="start" fill="#111111">заглушка КЛ-25 + обжим ¼″</text>
+<text x="230.00" y="169.00" font-size="1.9" text-anchor="start" fill="#111111">заглушка DN15 + обжим ¼″</text>
 <path d="M213.00,232.00 L214.50,232.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <path d="M213.00,171.00 L214.50,171.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <path d="M213.00,232.00 L213.00,171.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -298,7 +298,7 @@
 <text x="300.00" y="43.50" font-size="2.1" text-anchor="start" fill="#111111">   на стадии 7 — ледяная вода IW-1.</text>
 <text x="300.00" y="47.10" font-size="2.1" text-anchor="start" fill="#111111">5. Строительные длины кранов, тройников,</text>
 <text x="300.00" y="50.70" font-size="2.1" text-anchor="start" fill="#c62828">   переходов — по каталогу Гросснер (?).</text>
-<text x="300.00" y="54.30" font-size="2.1" text-anchor="start" fill="#111111">6. Все прокладки КЛ — PTFE.</text>
+<text x="300.00" y="54.30" font-size="2.1" text-anchor="start" fill="#111111">6. Все прокладки кламп — PTFE.</text>
 <text x="300.00" y="57.90" font-size="2.1" text-anchor="start" fill="#111111">7. D-1: патрубок 4″×400 (3 л) на весах W-4.</text>
 <text x="300.00" y="61.50" font-size="2.1" text-anchor="start" fill="#111111">   Подача MeSiCl₃ / PDMS-OH — насосом P-3,</text>
 <text x="300.00" y="65.10" font-size="2.1" text-anchor="start" fill="#111111">   расход по W-4, темп — по TI (≤ −10 °C).</text>
