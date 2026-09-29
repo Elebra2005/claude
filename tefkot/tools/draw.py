@@ -12,10 +12,35 @@ class Sheet:
     def __init__(self, name, w=420.0, h=297.0):
         self.name, self.w, self.h = name, w, h
         self.items = []
+        self.symbols = []      # для проверки стыков: (вид, x, y, ось, полудлина, i0, i1)
+        self.nocheck = set()   # линии, не являющиеся трубопроводом (пол, мешалка, болты…)
+
+    def _sym(self, kind, x, y, axis, half, i0):
+        self.symbols.append((kind, x, y, axis, half, i0, len(self.items)))
 
     # ---------- примитивы
-    def poly(self, pts, lw=0.35, color=INK, dash=None, closed=False, fill=None):
+    def poly(self, pts, lw=0.35, color=INK, dash=None, closed=False, fill=None, nc=False):
+        if nc:
+            self.nocheck.add(len(self.items))
         self.items.append(('poly', [tuple(p) for p in pts], lw, color, dash, closed, fill))
+
+    def ordered(self):
+        """Трубопроводы — под символами (символы с белой заливкой лежат поверх линии)."""
+        if getattr(self, 'keep_order', False):
+            return list(self.items)
+        own = set()
+        for sym in self.symbols:
+            own.update(range(sym[5], sym[6]))
+        pipes = [it for i, it in enumerate(self.items)
+                 if it[0] == 'poly' and not it[5] and it[2] >= 0.44 and i not in own and i not in self.nocheck]
+        rest = [it for i, it in enumerate(self.items)
+                if not (it[0] == 'poly' and not it[5] and it[2] >= 0.44 and i not in own and i not in self.nocheck)]
+        return pipes + rest
+
+    def stub_arrow(self, x, y, direction):
+        """Стрелка на конце линии, уходящей за пределы вида (в вытяжку, на другой лист)."""
+        ang = {'right': 0, 'down': math.pi / 2, 'left': math.pi, 'up': -math.pi / 2}[direction]
+        self.arrow(x + 2.2 * math.cos(ang), y + 2.2 * math.sin(ang), ang, L=2.2, W=0.9)
 
     def line(self, x1, y1, x2, y2, **kw):
         self.poly([(x1, y1), (x2, y2)], **kw)
@@ -76,6 +101,7 @@ class Sheet:
     def clamp(self, x, y, orient='h', tag=None, tag_side=1, w=None):
         """Кламповое соединение: две ферулы + хомут. orient — направление трубы.
         w — полуширина ферулы (для крупных аппаратных клампов на вертикальной оси)."""
+        i0 = len(self.items)
         if orient == 'h':      # труба горизонтальна → ферулы вертикальные
             hw = w or 3.2
             self.rect(x - 1.4, y - hw, 1.1, 2 * hw, lw=0.3, fill='#ffffff')
@@ -94,12 +120,18 @@ class Sheet:
             if tag:
                 tx = x + hw + 4.8 if tag_side > 0 else x - hw - 4.8
                 self.jtag(tx, y, tag)
+        self._sym('flange' if (w and orient == 'v') else 'clamp', x, y, orient, 1.8, i0)
 
     def jtag(self, x, y, tag):
         self.circle(x, y, 2.9, lw=0.25, fill='#ffffff', color=BLUE)
         self.text(x, y + 0.9, tag, 2.0, 'middle', color=BLUE)
 
     def ball_valve(self, x, y, orient='h', s=3.2):
+        i0 = len(self.items)
+        self._ball_valve(x, y, orient, s)
+        self._sym('valve', x, y, orient, s, i0)
+
+    def _ball_valve(self, x, y, orient='h', s=3.2):
         if orient == 'h':
             self.poly([(x - s, y - s * 0.7), (x + s, y + s * 0.7), (x + s, y - s * 0.7), (x - s, y + s * 0.7)], lw=0.3, closed=True, fill='#ffffff')
             self.line(x, y, x, y - s * 1.3, lw=0.3)
@@ -110,6 +142,11 @@ class Sheet:
             self.line(x + s * 1.3, y - 1.5, x + s * 1.3, y + 1.5, lw=0.4)
 
     def check_valve(self, x, y, direction='down', s=3.0):
+        i0 = len(self.items)
+        self._check_valve(x, y, direction, s)
+        self._sym('check', x, y, 'v' if direction in ('down', 'up') else 'h', s * 0.8, i0)
+
+    def _check_valve(self, x, y, direction='down', s=3.0):
         d = {'down': (0, 1), 'up': (0, -1), 'right': (1, 0), 'left': (-1, 0)}[direction]
         px, py = -d[1], d[0]
         tip = (x + d[0] * s * 0.8, y + d[1] * s * 0.8)
@@ -119,6 +156,11 @@ class Sheet:
         self.line(tip[0] + px * s * 0.8, tip[1] + py * s * 0.8, tip[0] - px * s * 0.8, tip[1] - py * s * 0.8, lw=0.5)
 
     def gauge(self, x, y, r=3.5, up=True, label='PI'):
+        i0 = len(self.items)
+        self._gauge(x, y, r, up, label)
+        self._sym('gauge', x, y, 'v', 0, i0)
+
+    def _gauge(self, x, y, r=3.5, up=True, label='PI'):
         cy = y - r - 3 if up else y + r + 3
         self.line(x, y, x, cy + (r if up else -r), lw=0.3)
         self.circle(x, cy, r, lw=0.3, fill='#ffffff')
@@ -126,6 +168,14 @@ class Sheet:
 
     def reducer(self, x, y, orient, big, small, L=5):
         """Концентрический переход; для 'v' вершина вниз: большой торец сверху."""
+        i0 = len(self.items)
+        self._reducer(x, y, orient, big, small, L)
+        if orient == 'v':
+            self._sym('reducer', x, y + L / 2, 'v', L / 2, i0)
+        else:
+            self._sym('reducer', x + L / 2, y, 'h', L / 2, i0)
+
+    def _reducer(self, x, y, orient, big, small, L=5):
         if orient == 'v':
             self.poly([(x - big / 2, y), (x + big / 2, y), (x + small / 2, y + L), (x - small / 2, y + L)], lw=0.35, closed=True, fill='#ffffff')
         else:
@@ -209,7 +259,7 @@ class Sheet:
 def to_svg(sh):
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {sh.w} {sh.h}" width="{sh.w}mm" height="{sh.h}mm" '
            f'font-family="Arial, \'Liberation Sans\', sans-serif"><rect width="100%" height="100%" fill="#fff"/>']
-    for it in sh.items:
+    for it in sh.ordered():
         if it[0] == 'poly':
             _, pts, lw, color, dash, closed, fill = it
             d = 'M' + ' L'.join(f'{x:.2f},{y:.2f}' for x, y in pts) + (' Z' if closed else '')
@@ -269,7 +319,7 @@ def _shape_circle(i, sh, cx, cy, r, lw, color, fill, dash):
 
 def _shape_text(i, sh, x, y, s, size, anchor, bold, color):
     sz = size * MM                       # высота шрифта ≈ кегль
-    w = max(len(s), 1) * sz * 0.66 + 0.05
+    w = max(len(s), 1) * sz * 0.9 + 0.12
     h = sz * 1.45
     X = x * MM
     cx = {'start': X + w / 2, 'middle': X, 'end': X - w / 2}[anchor]
@@ -296,7 +346,7 @@ def to_vsdx(sheets, template, out):
     pages_xml, rels, overrides = [], [], []
     for n, sh in enumerate(sheets, 1):
         shapes, i = [], 0
-        for it in sh.items:
+        for it in sh.ordered():
             i += 1
             if it[0] == 'poly':
                 shapes.append(_shape_poly(i, sh, *it[1:]))
