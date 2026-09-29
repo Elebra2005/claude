@@ -196,22 +196,50 @@ async def _coingecko_address_map(client: httpx.AsyncClient, store: Store) -> dic
 
 
 async def _prices_by_ids(client: httpx.AsyncClient, ids: set[str]) -> dict[str, float]:
-    """Цены пакетом по ID монет — в отличие от поиска по адресу контракта,
-    здесь бесплатный тариф не режет до одного элемента за запрос."""
+    """Цены по ID монет CoinGecko — пакетом, одним запросом.
+
+    Сначала DefiLlama (принимает те же ID как "coingecko:<id>", без ключа и
+    без жёстких лимитов), CoinGecko — только запасной вариант для того, чего
+    у DefiLlama не нашлось. Бесплатный CoinGecko без ключа режет частые
+    запросы (при отчёте раз в 15 минут он начал отвечать 429, и Solana,
+    Starknet и Cosmos считались «не ответившими»)."""
     if not ids:
         return {}
+    prices: dict[str, float] = {}
+    llama_ok = False
     try:
-        resp = await _get_with_backoff(
-            client,
-            "https://api.coingecko.com/api/v3/simple/price",
-            {"ids": ",".join(sorted(ids)), "vs_currencies": "usd"},
+        resp = await client.get(
+            "https://coins.llama.fi/prices/current/" + ",".join(f"coingecko:{i}" for i in sorted(ids))
         )
         resp.raise_for_status()
-        data = resp.json()
-        return {coin_id: info["usd"] for coin_id, info in data.items() if "usd" in info}
+        for k, v in (resp.json().get("coins") or {}).items():
+            if v.get("price"):
+                prices[k.split(":", 1)[1]] = float(v["price"])
+        llama_ok = True
     except Exception as exc:
-        log.warning("wallet_watch: пакетный запрос цен CoinGecko не удался: %s", exc)
-        return {}
+        log.info("wallet_watch: цены DefiLlama недоступны (%s), беру CoinGecko", exc)
+
+    missing = ids - set(prices)
+    if not missing:
+        return prices
+    try:
+        url, params = "https://api.coingecko.com/api/v3/simple/price", {"ids": ",".join(sorted(missing)), "vs_currencies": "usd"}
+        if llama_ok:
+            # Добор нескольких монет — одной попыткой, без ожиданий: отчёт не
+            # должен задерживаться из-за лимитов CoinGecko.
+            resp = await client.get(url, params=params, extensions={NO_RETRY: True})
+        else:
+            resp = await _get_with_backoff(client, url, params)
+        resp.raise_for_status()
+        prices.update({cid: info["usd"] for cid, info in resp.json().items() if "usd" in info})
+    except Exception as exc:
+        if llama_ok:
+            # DefiLlama ответил — непокрытые монеты просто без цены (как и раньше
+            # для монет, которых нет в CoinGecko), это не сбой сети.
+            log.info("wallet_watch: CoinGecko не дал цены для %s: %s", ", ".join(sorted(missing)), exc)
+        else:
+            log.warning("wallet_watch: цены недоступны ни в DefiLlama, ни в CoinGecko: %s", exc)
+    return prices
 
 
 async def _rpc(client: httpx.AsyncClient, url: str, method: str, params: list, retry: bool = True):
