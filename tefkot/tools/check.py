@@ -108,6 +108,12 @@ def check_sheet(sh, only=None):
         for bx, s in boxes:
             if overlap(tg, bx) and not s.isdigit():
                 problems.append(f'номер соединения закрывает подпись «{s}» ({tg[0]+2.9:.1f},{tg[1]+2.9:.1f})')
+    others = [c for c in circs if abs(c[2] - 2.9) > 0.01]
+    for tg in tags:
+        tx, ty = tg[0] + 2.9, tg[1] + 2.9
+        for cx, cy, r, i in others:
+            if math.hypot(tx - cx, ty - cy) < r + 2.9 + 0.3:
+                problems.append(f'номер соединения ({tx:.1f},{ty:.1f}) наезжает на круглый символ ({cx:.1f},{cy:.1f})')
     for a in range(len(tags)):
         for b in range(a + 1, len(tags)):
             if overlap(tags[a], tags[b]):
@@ -151,6 +157,17 @@ def check_sheet(sh, only=None):
                 if seg_hits_box(a, b, bx):
                     problems.append(f'подпись «{txt}» лежит на линии')
                     break
+    # 5. подписи, пересекающие контур окружности (штуцеры, приборы)
+    for it in items:
+        if it[0] != 'circle' or abs(it[3] - 2.9) < 0.01:
+            continue
+        cx, cy, r = it[1], it[2], it[3]
+        for bx, txt in boxes:
+            x0, y0, x1, y1 = bx[0] + 0.2, bx[1] + 0.2, bx[2] - 0.2, bx[3] - 0.2
+            near = math.hypot(max(x0 - cx, 0, cx - x1), max(y0 - cy, 0, cy - y1))
+            far = max(math.hypot(px - cx, py - cy) for px in (x0, x1) for py in (y0, y1))
+            if near < r < far:
+                problems.append(f'подпись «{txt}» пересекает окружность ({cx:.1f},{cy:.1f})')
     return problems
 
 

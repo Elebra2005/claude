@@ -12,14 +12,16 @@
 <path d="M397.00,272.00 L397.00,277.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <path d="M74.70,49.33 L84.70,49.33" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
 <path d="M85.70,49.33 L94.70,49.33" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M144.00,49.00 L144.00,40.00 L130.00,40.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M156.00,49.00 L156.00,44.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
-<path d="M150.00,163.00 L150.00,183.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
-<path d="M150.00,188.00 L150.00,202.00 L180.00,202.00 L180.00,165.00 L205.00,165.00 L205.00,171.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M205.00,232.00 L205.00,174.00" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round"/>
-<path d="M205.00,186.00 L216.50,186.00" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round"/>
-<path d="M318.00,206.00 L318.00,146.00" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
-<path d="M318.00,143.00 L318.00,132.00 L348.00,132.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M142.00,45.00 L142.00,36.00 L128.00,36.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M158.00,45.00 L158.00,40.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
+<path d="M150.00,192.33 L150.00,212.33" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
+<path d="M150.00,210.33 L150.00,221.33 L160.00,221.33" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M165.00,228.33 L165.00,232.33" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M176.00,221.33 L199.00,221.33 L199.00,160.00 L225.00,160.00 L225.00,171.40" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M225.00,232.00 L225.00,174.00" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M225.00,186.00 L236.50,186.00" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M345.00,206.00 L345.00,146.00" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M345.00,143.00 L345.00,132.00 L375.00,132.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M0.20,0.20 L419.80,0.20 L419.80,296.80 L0.20,296.80 Z" fill="none" stroke="#bbbbbb" stroke-width="0.1" stroke-linejoin="round"/>
 <path d="M20.00,5.00 L415.00,5.00 L415.00,292.00 L20.00,292.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <path d="M230.00,237.00 L415.00,237.00 L415.00,292.00 L230.00,292.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
@@ -47,8 +49,8 @@
 <text x="230.60" y="281.20" font-size="1.8" text-anchor="start" fill="#111111">Утв.</text>
 <text x="248.60" y="256.20" font-size="1.8" text-anchor="start" fill="#111111"></text>
 <text x="355.00" y="246.50" font-size="4.2" text-anchor="middle" fill="#111111" font-weight="bold">ИНУМ.770-50.00.03</text>
-<text x="330.00" y="259.70" font-size="2.9" text-anchor="middle" fill="#111111" font-weight="bold">Конденсатор E-1, дозатор D-1,</text>
-<text x="330.00" y="264.30" font-size="2.9" text-anchor="middle" fill="#111111">узлы P2, P3, P4</text>
+<text x="330.00" y="259.70" font-size="2.9" text-anchor="middle" fill="#111111" font-weight="bold">Конденсатор E-1, питатель D-1,</text>
+<text x="330.00" y="264.30" font-size="2.9" text-anchor="middle" fill="#111111">насос P-3, узлы P2, P3, P4</text>
 <text x="369.00" y="255.80" font-size="1.9" text-anchor="start" fill="#111111">Лит.</text>
 <text x="384.00" y="255.80" font-size="1.9" text-anchor="start" fill="#111111">Масса</text>
 <text x="399.00" y="255.80" font-size="1.9" text-anchor="start" fill="#111111">Масштаб</text>
@@ -102,7 +104,7 @@
 <text x="100.70" y="50.33" font-size="2.1" text-anchor="start" fill="#111111">на гребёнку (лист 4)</text>
 <path d="M49.30,202.67 L74.70,202.67 L70.47,210.67 L53.53,210.67 Z" fill="#ffffff" stroke="#111111" stroke-width="0.35" stroke-linejoin="round"/>
 <path d="M51.33,210.67 L72.67,210.67 L72.67,212.67 L51.33,212.67 Z" fill="#ffffff" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<text x="76.00" y="213.67" font-size="2.1" text-anchor="start" fill="#c62828">ферула КЛ-64 под P1 (или по факту P1 ?)</text>
+<text x="76.00" y="213.67" font-size="2.1" text-anchor="start" fill="#c62828">переход под P1 (N3 DN25 по Wiggens; тип ?)</text>
 <text x="62.00" y="220.67" font-size="2.0" text-anchor="middle" fill="#111111">→ R-1, штуцер P1 (соед. 203, лист 2)</text>
 <path d="M49.30,36.00 L29.80,36.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <path d="M49.30,202.67 L29.80,202.67" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -134,148 +136,161 @@
 <path d="M49.30,192.67 L51.50,191.87 L51.50,193.47 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <path d="M74.70,192.67 L72.50,193.47 L72.50,191.87 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="62.00" y="191.87" font-size="2.5" text-anchor="middle" fill="#111111">Ø76,2×1,6</text>
-<text x="125.00" y="13.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">D-1 ДОЗАТОР 1,5 л, М 1:3</text>
-<path d="M150.00,40.00 L150.00,222.00" fill="none" stroke="#666666" stroke-width="0.18" stroke-dasharray="6 1.5 1 1.5" stroke-linejoin="round"/>
-<path d="M137.30,52.00 L162.70,52.00 L162.70,152.00 L137.30,152.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
-<path d="M134.83,49.00 L165.17,49.00 L165.17,52.00 L134.83,52.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M134.83,50.60 L165.17,50.60 L165.17,51.70 L134.83,51.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M134.83,52.30 L165.17,52.30 L165.17,53.40 L134.83,53.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M134.23,50.20 L134.23,53.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M165.77,50.20 L165.77,53.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="130.03" cy="52.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="130.03" y="52.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">303</text>
-<text x="129.00" y="40.80" font-size="2.0" text-anchor="end" fill="#111111">Ar (A3) ¼″</text>
-<path d="M152.80,41.60 L159.20,41.60 L159.20,42.70 L152.80,42.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M152.80,43.30 L159.20,43.30 L159.20,44.40 L152.80,44.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M152.20,41.20 L152.20,44.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M159.80,41.20 L159.80,44.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="164.00" cy="43.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="164.00" y="43.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">304</text>
-<path d="M152.80,39.40 L159.20,39.40 L159.20,41.60 L152.80,41.60 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="166.00" y="36.00" font-size="1.9" text-anchor="start" fill="#111111">заливка</text>
-<path d="M134.83,152.00 L165.17,152.00 L165.17,154.00 L134.83,154.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M134.83,150.60 L165.17,150.60 L165.17,151.70 L134.83,151.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M134.83,152.30 L165.17,152.30 L165.17,153.40 L134.83,153.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M134.23,150.20 L134.23,153.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M165.77,150.20 L165.77,153.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="130.03" cy="152.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="130.03" y="152.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">305</text>
-<path d="M137.30,154.00 L162.70,154.00 L153.17,163.00 L146.83,163.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.35" stroke-linejoin="round"/>
-<path d="M146.80,165.60 L153.20,165.60 L153.20,166.70 L146.80,166.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M146.80,167.30 L153.20,167.30 L153.20,168.40 L146.80,168.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M146.20,165.20 L146.20,168.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M153.80,165.20 L153.80,168.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="142.00" cy="167.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="142.00" y="167.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">306</text>
-<path d="M147.76,170.80 L152.24,177.20 L147.76,177.20 L152.24,170.80 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M150.00,174.00 L154.16,174.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M154.16,172.50 L154.16,175.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="156.00" y="175.00" font-size="2.0" text-anchor="start" fill="#111111">V-D1 КЛ-25</text>
-<path d="M146.80,179.60 L153.20,179.60 L153.20,180.70 L146.80,180.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M146.80,181.30 L153.20,181.30 L153.20,182.40 L146.80,182.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M146.20,179.20 L146.20,182.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M153.80,179.20 L153.80,182.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="142.00" cy="181.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="142.00" y="181.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">307</text>
-<path d="M146.50,183.00 L153.50,183.00 L151.50,188.00 L148.50,188.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.35" stroke-linejoin="round"/>
-<path d="M148.25,190.50 L151.75,195.50 L148.25,195.50 L151.75,190.50 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M150.00,193.00 L153.25,193.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M153.25,191.50 L153.25,194.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="156.00" y="194.00" font-size="2.0" text-anchor="start" fill="#111111">FV-1 игольч. ¼″</text>
-<text x="158.00" y="207.00" font-size="2.0" text-anchor="start" fill="#c62828">трубка PTFE ¼″, L=?</text>
-<path d="M137.30,52.00 L147.80,52.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M137.30,152.00 L147.80,152.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M146.30,52.00 L146.30,152.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M146.30,52.00 L147.10,54.20 L145.50,54.20 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<path d="M146.30,152.00 L145.50,149.80 L147.10,149.80 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="147.50" y="102.88" font-size="2.5" text-anchor="start" fill="#111111">300</text>
-<text x="108.00" y="158.00" font-size="2.0" text-anchor="start" fill="#111111">W-4 весы (подвес)</text>
-<text x="185.00" y="13.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">УЗЕЛ P3 (дозирование), б/м</text>
-<path d="M188.00,232.00 L222.00,232.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
-<text x="190.00" y="236.00" font-size="2.0" text-anchor="start" fill="#111111">крышка R-1</text>
-<path d="M201.80,223.60 L208.20,223.60 L208.20,224.70 L201.80,224.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M201.80,225.30 L208.20,225.30 L208.20,226.40 L201.80,226.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M201.20,223.20 L201.20,226.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M208.80,223.20 L208.80,226.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="213.00" cy="225.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="213.00" y="225.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">204</text>
-<path d="M202.50,216.00 L207.50,216.00 L210.00,224.00 L200.00,224.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.35" stroke-linejoin="round"/>
-<path d="M201.80,212.60 L208.20,212.60 L208.20,213.70 L201.80,213.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M201.80,214.30 L208.20,214.30 L208.20,215.40 L201.80,215.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M201.20,212.20 L201.20,215.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M208.80,212.20 L208.80,215.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="213.00" cy="214.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="213.00" y="214.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">308</text>
-<path d="M202.76,202.80 L207.24,209.20 L202.76,209.20 L207.24,202.80 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M205.00,206.00 L209.16,206.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M209.16,204.50 L209.16,207.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="183.00" y="207.00" font-size="2.0" text-anchor="start" fill="#111111">V-P3 КЛ-25</text>
-<path d="M201.80,196.60 L208.20,196.60 L208.20,197.70 L201.80,197.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M201.80,198.30 L208.20,198.30 L208.20,199.40 L201.80,199.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M201.20,196.20 L201.20,199.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M208.80,196.20 L208.80,199.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="213.00" cy="198.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="213.00" y="198.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">309</text>
-<path d="M213.60,182.80 L214.70,182.80 L214.70,189.20 L213.60,189.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M215.30,182.80 L216.40,182.80 L216.40,189.20 L215.30,189.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M213.20,182.20 L216.80,182.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M213.20,189.80 L216.80,189.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="215.00" cy="178.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="215.00" y="179.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">310</text>
-<path d="M216.50,183.00 L219.50,183.00 L219.50,189.00 L216.50,189.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="221.00" y="187.00" font-size="1.9" text-anchor="start" fill="#111111">септа</text>
-<path d="M201.80,173.60 L208.20,173.60 L208.20,174.70 L201.80,174.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M201.80,175.30 L208.20,175.30 L208.20,176.40 L201.80,176.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M201.20,173.20 L201.20,176.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M208.80,173.20 L208.80,176.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="197.00" cy="175.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="197.00" y="175.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">311</text>
-<path d="M201.80,171.40 L208.20,171.40 L208.20,173.60 L201.80,173.60 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="210.00" y="169.00" font-size="1.9" text-anchor="start" fill="#111111">заглушка КЛ-25 + обжим ¼″</text>
-<path d="M193.00,232.00 L194.50,232.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M193.00,171.00 L194.50,171.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M193.00,232.00 L193.00,171.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M193.00,232.00 L192.20,229.80 L193.80,229.80 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<path d="M193.00,171.00 L193.80,173.20 L192.20,173.20 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="194.20" y="202.38" font-size="2.5" text-anchor="start" fill="#c62828">L=?</text>
-<text x="246.00" y="118.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">УЗЕЛ P2 (TI), М 1:4</text>
-<path d="M257.00,128.00 L267.00,128.00 L267.00,131.00 L257.00,131.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M257.00,129.60 L267.00,129.60 L267.00,130.70 L257.00,130.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M257.00,131.30 L267.00,131.30 L267.00,132.40 L257.00,132.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M256.40,129.20 L256.40,132.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M267.60,129.20 L267.60,132.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="252.20" cy="131.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="252.20" y="131.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">202</text>
-<path d="M261.00,131.00 L263.00,131.00 L263.00,206.00 L261.00,206.00 Z" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<path d="M261.70,125.00 L261.70,205.00" fill="none" stroke="#666666" stroke-width="0.2" stroke-linejoin="round"/>
-<path d="M262.00,128.00 L262.00,118.00" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="265.00" y="124.00" font-size="1.9" text-anchor="start" fill="#111111">Pt100 Ø6 → чиллер / индикатор</text>
-<path d="M263.00,131.00 L255.50,131.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M263.00,206.00 L255.50,206.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M257.00,131.00 L257.00,206.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M257.00,131.00 L257.80,133.20 L256.20,133.20 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<path d="M257.00,206.00 L256.20,203.80 L257.80,203.80 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="258.20" y="169.38" font-size="2.5" text-anchor="start" fill="#111111">300</text>
-<text x="265.00" y="200.00" font-size="1.9" text-anchor="start" fill="#111111">Ø8×1, дно заварено</text>
-<text x="300.00" y="118.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">УЗЕЛ P4 (Ar), б/м</text>
-<path d="M315.00,170.00 L321.00,170.00 L321.00,184.00 L315.00,184.00 Z" fill="#eaf2f8" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<path d="M306.00,206.00 L330.00,206.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
-<text x="306.00" y="210.00" font-size="1.9" text-anchor="start" fill="#111111">крышка R-1</text>
-<text x="323.00" y="178.00" font-size="1.9" text-anchor="start" fill="#111111">смотр. фонарь (сущ.)</text>
-<path d="M314.80,146.60 L321.20,146.60 L321.20,147.70 L314.80,147.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M314.80,148.30 L321.20,148.30 L321.20,149.40 L314.80,149.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M314.20,146.20 L314.20,149.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M321.80,146.20 L321.80,149.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="326.00" cy="148.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="326.00" y="148.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">201</text>
-<path d="M314.80,143.00 L321.20,143.00 L321.20,146.00 L314.80,146.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<path d="M332.08,132.00 L335.92,130.32 L335.92,133.68 Z" fill="#111111" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M332.08,130.08 L332.08,133.92" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<text x="330.00" y="128.00" font-size="1.9" text-anchor="start" fill="#111111">NRV (A1)</text>
-<text x="350.00" y="133.00" font-size="2.0" text-anchor="start" fill="#111111">← Ar от A1</text>
-<text x="306.00" y="215.00" font-size="1.9" text-anchor="start" fill="#111111">снять дыхательный фильтр</text>
+<text x="112.00" y="13.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">D-1 ПИТАТЕЛЬ 3 л + НАСОС P-3, М 1:3</text>
+<path d="M150.00,36.00 L150.00,206.00" fill="none" stroke="#666666" stroke-width="0.18" stroke-dasharray="6 1.5 1 1.5" stroke-linejoin="round"/>
+<path d="M133.07,48.00 L166.93,48.00 L166.93,181.33 L133.07,181.33 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
+<path d="M130.17,45.00 L169.83,45.00 L169.83,48.00 L130.17,48.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M130.17,46.60 L169.83,46.60 L169.83,47.70 L130.17,47.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M130.17,48.30 L169.83,48.30 L169.83,49.40 L130.17,49.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M129.57,46.20 L129.57,49.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M170.43,46.20 L170.43,49.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="174.63" cy="48.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="174.63" y="48.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">303</text>
+<text x="127.00" y="36.80" font-size="2.0" text-anchor="end" fill="#111111">Ar (A3) ¼″</text>
+<path d="M154.80,37.60 L161.20,37.60 L161.20,38.70 L154.80,38.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M154.80,39.30 L161.20,39.30 L161.20,40.40 L154.80,40.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M154.20,37.20 L154.20,40.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M161.80,37.20 L161.80,40.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="166.00" cy="39.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="166.00" y="39.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">304</text>
+<path d="M154.80,35.40 L161.20,35.40 L161.20,37.60 L154.80,37.60 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<text x="167.00" y="33.00" font-size="1.9" text-anchor="start" fill="#111111">заливка</text>
+<path d="M130.17,181.33 L169.83,181.33 L169.83,183.33 L130.17,183.33 Z" fill="#ffffff" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M130.17,179.93 L169.83,179.93 L169.83,181.03 L130.17,181.03 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M130.17,181.63 L169.83,181.63 L169.83,182.73 L130.17,182.73 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M129.57,179.53 L129.57,183.13" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M170.43,179.53 L170.43,183.13" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="125.37" cy="181.33" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="125.37" y="182.23" font-size="2.0" text-anchor="middle" fill="#1f5fa8">305</text>
+<path d="M133.07,183.33 L166.93,183.33 L153.17,192.33 L146.83,192.33 Z" fill="#ffffff" stroke="#111111" stroke-width="0.35" stroke-linejoin="round"/>
+<path d="M146.80,194.93 L153.20,194.93 L153.20,196.03 L146.80,196.03 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M146.80,196.63 L153.20,196.63 L153.20,197.73 L146.80,197.73 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M146.20,194.53 L146.20,198.13" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M153.80,194.53 L153.80,198.13" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="142.00" cy="196.33" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="142.00" y="197.23" font-size="2.0" text-anchor="middle" fill="#1f5fa8">306</text>
+<path d="M147.76,200.13 L152.24,206.53 L147.76,206.53 L152.24,200.13 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M150.00,203.33 L154.16,203.33" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M154.16,201.83 L154.16,204.83" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<text x="156.00" y="204.33" font-size="2.0" text-anchor="start" fill="#111111">V-D1 КЛ-25</text>
+<path d="M146.80,208.93 L153.20,208.93 L153.20,210.03 L146.80,210.03 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M146.80,210.63 L153.20,210.63 L153.20,211.73 L146.80,211.73 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M146.20,208.53 L146.20,212.13" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M153.80,208.53 L153.80,212.13" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="142.00" cy="210.33" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="142.00" y="211.23" font-size="2.0" text-anchor="middle" fill="#1f5fa8">307</text>
+<path d="M160.00,214.33 L176.00,214.33 L176.00,228.33 L160.00,228.33 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
+<text x="168.00" y="222.33" font-size="2.2" text-anchor="middle" fill="#111111" font-weight="bold">P-3</text>
+<text x="158.00" y="210.33" font-size="1.9" text-anchor="start" fill="#111111">мембр. пневм. (как P-2)</text>
+<text x="167.00" y="233.33" font-size="1.7" text-anchor="start" fill="#111111">воздух</text>
+<path d="M180.80,219.79 L185.20,222.87 L185.20,219.79 L180.80,222.87 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M183.00,221.33 L183.00,218.47" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M181.50,218.47 L184.50,218.47" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<text x="181.00" y="227.33" font-size="1.8" text-anchor="start" fill="#111111">FV-1</text>
+<path d="M193.76,221.33 L190.24,222.87 L190.24,219.79 Z" fill="#111111" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M193.76,223.09 L193.76,219.57" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="189.50" y="227.33" font-size="1.8" text-anchor="start" fill="#111111">NRV-4</text>
+<text x="201.00" y="158.00" font-size="1.9" text-anchor="start" fill="#c62828">трубка PTFE ¼″, L=?</text>
+<path d="M133.07,48.00 L143.57,48.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<path d="M133.07,181.33 L143.57,181.33" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<path d="M142.07,48.00 L142.07,181.33" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<path d="M142.07,48.00 L142.87,50.20 L141.27,50.20 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
+<path d="M142.07,181.33 L141.27,179.13 L142.87,179.13 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
+<text x="143.27" y="115.54" font-size="2.5" text-anchor="start" fill="#111111">400</text>
+<path d="M133.07,171.33 L133.07,172.83" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<path d="M166.93,171.33 L166.93,172.83" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<path d="M133.07,171.33 L166.93,171.33" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<path d="M133.07,171.33 L135.27,170.53 L135.27,172.13 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
+<path d="M166.93,171.33 L164.73,172.13 L164.73,170.53 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
+<text x="150.00" y="170.53" font-size="2.5" text-anchor="middle" fill="#111111"></text>
+<text x="138.00" y="170.53" font-size="2.5" text-anchor="middle" fill="#111111">Ø101,6×2</text>
+<text x="131.07" y="151.33" font-size="2.0" text-anchor="end" fill="#111111">W-4 весы (подвес)</text>
+<text x="210.00" y="13.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">УЗЕЛ P3, б/м</text>
+<path d="M208.00,232.00 L242.00,232.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
+<text x="210.00" y="236.00" font-size="2.0" text-anchor="start" fill="#111111">крышка R-1</text>
+<path d="M221.80,223.60 L228.20,223.60 L228.20,224.70 L221.80,224.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M221.80,225.30 L228.20,225.30 L228.20,226.40 L221.80,226.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M221.20,223.20 L221.20,226.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M228.80,223.20 L228.80,226.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="233.00" cy="225.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="233.00" y="225.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">204</text>
+<path d="M222.50,216.00 L227.50,216.00 L230.00,224.00 L220.00,224.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.35" stroke-linejoin="round"/>
+<path d="M221.80,212.60 L228.20,212.60 L228.20,213.70 L221.80,213.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M221.80,214.30 L228.20,214.30 L228.20,215.40 L221.80,215.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M221.20,212.20 L221.20,215.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M228.80,212.20 L228.80,215.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="233.00" cy="214.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="233.00" y="214.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">308</text>
+<path d="M222.76,202.80 L227.24,209.20 L222.76,209.20 L227.24,202.80 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M225.00,206.00 L229.16,206.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M229.16,204.50 L229.16,207.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<text x="203.00" y="207.00" font-size="2.0" text-anchor="start" fill="#111111">V-P3 КЛ-25</text>
+<path d="M221.80,196.60 L228.20,196.60 L228.20,197.70 L221.80,197.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M221.80,198.30 L228.20,198.30 L228.20,199.40 L221.80,199.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M221.20,196.20 L221.20,199.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M228.80,196.20 L228.80,199.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="233.00" cy="198.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="233.00" y="198.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">309</text>
+<path d="M233.60,182.80 L234.70,182.80 L234.70,189.20 L233.60,189.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M235.30,182.80 L236.40,182.80 L236.40,189.20 L235.30,189.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M233.20,182.20 L236.80,182.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M233.20,189.80 L236.80,189.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="235.00" cy="178.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="235.00" y="179.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">310</text>
+<path d="M236.50,183.00 L239.50,183.00 L239.50,189.00 L236.50,189.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<text x="241.00" y="187.00" font-size="1.9" text-anchor="start" fill="#111111">септа</text>
+<path d="M221.80,173.60 L228.20,173.60 L228.20,174.70 L221.80,174.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M221.80,175.30 L228.20,175.30 L228.20,176.40 L221.80,176.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M221.20,173.20 L221.20,176.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M228.80,173.20 L228.80,176.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="217.00" cy="175.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="217.00" y="175.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">311</text>
+<path d="M221.80,171.40 L228.20,171.40 L228.20,173.60 L221.80,173.60 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<text x="230.00" y="169.00" font-size="1.9" text-anchor="start" fill="#111111">заглушка КЛ-25 + обжим ¼″</text>
+<path d="M213.00,232.00 L214.50,232.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<path d="M213.00,171.00 L214.50,171.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<path d="M213.00,232.00 L213.00,171.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<path d="M213.00,232.00 L212.20,229.80 L213.80,229.80 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
+<path d="M213.00,171.00 L213.80,173.20 L212.20,173.20 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
+<text x="214.20" y="202.38" font-size="2.5" text-anchor="start" fill="#c62828">L=?</text>
+<text x="268.00" y="112.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">УЗЕЛ P2 (TI), М 1:4</text>
+<path d="M280.00,128.00 L290.00,128.00 L290.00,131.00 L280.00,131.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M280.00,129.60 L290.00,129.60 L290.00,130.70 L280.00,130.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M280.00,131.30 L290.00,131.30 L290.00,132.40 L280.00,132.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M279.40,129.20 L279.40,132.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M290.60,129.20 L290.60,132.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="275.20" cy="131.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="275.20" y="131.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">202</text>
+<path d="M284.00,131.00 L286.00,131.00 L286.00,206.00 L284.00,206.00 Z" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<path d="M284.70,125.00 L284.70,205.00" fill="none" stroke="#666666" stroke-width="0.2" stroke-linejoin="round"/>
+<path d="M285.00,128.00 L285.00,118.00" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<text x="288.00" y="124.00" font-size="1.9" text-anchor="start" fill="#111111">Pt100 Ø6 → чиллер</text>
+<path d="M286.00,131.00 L293.50,131.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<path d="M286.00,206.00 L293.50,206.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<path d="M292.00,131.00 L292.00,206.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<path d="M292.00,131.00 L292.80,133.20 L291.20,133.20 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
+<path d="M292.00,206.00 L291.20,203.80 L292.80,203.80 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
+<text x="293.20" y="169.38" font-size="2.5" text-anchor="start" fill="#111111">300</text>
+<text x="288.00" y="212.00" font-size="1.9" text-anchor="start" fill="#111111">Ø8×1, дно заварено</text>
+<text x="330.00" y="112.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">УЗЕЛ P4 (Ar), б/м</text>
+<path d="M342.00,170.00 L348.00,170.00 L348.00,184.00 L342.00,184.00 Z" fill="#eaf2f8" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<path d="M333.00,206.00 L357.00,206.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
+<text x="333.00" y="210.00" font-size="1.9" text-anchor="start" fill="#111111">крышка R-1</text>
+<text x="350.00" y="178.00" font-size="1.9" text-anchor="start" fill="#111111">смотр. фонарь (сущ.)</text>
+<path d="M341.80,146.60 L348.20,146.60 L348.20,147.70 L341.80,147.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M341.80,148.30 L348.20,148.30 L348.20,149.40 L341.80,149.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M341.20,146.20 L341.20,149.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M348.80,146.20 L348.80,149.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="353.00" cy="148.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="353.00" y="148.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">201</text>
+<path d="M341.80,143.00 L348.20,143.00 L348.20,146.00 L341.80,146.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<path d="M359.08,132.00 L362.92,130.32 L362.92,133.68 Z" fill="#111111" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M359.08,130.08 L359.08,133.92" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="357.00" y="128.00" font-size="1.9" text-anchor="start" fill="#111111">NRV (A1)</text>
+<text x="377.00" y="133.00" font-size="2.0" text-anchor="start" fill="#111111">← Ar от A1</text>
+<text x="333.00" y="215.00" font-size="1.9" text-anchor="start" fill="#111111">снять дыхательный фильтр</text>
 <text x="300.00" y="20.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">Примечания</text>
-<text x="300.00" y="25.50" font-size="2.1" text-anchor="start" fill="#111111">1. E-1, D-1 — сталь AISI 316L; сварка TIG,</text>
+<text x="300.00" y="25.50" font-size="2.1" text-anchor="start" fill="#111111">1. E-1 — сталь AISI 316L; сварка TIG,</text>
 <text x="300.00" y="29.10" font-size="2.1" text-anchor="start" fill="#111111">   пищевая полировка внутр. поверхности.</text>
 <text x="300.00" y="32.70" font-size="2.1" text-anchor="start" fill="#111111">2. Змеевик E-1: опрессовка 3 бар (теплонос.).</text>
 <text x="300.00" y="36.30" font-size="2.1" text-anchor="start" fill="#111111">3. E-1 вертикально: конденсат стекает в R-1.</text>
@@ -284,4 +299,7 @@
 <text x="300.00" y="47.10" font-size="2.1" text-anchor="start" fill="#111111">5. Строительные длины кранов, тройников,</text>
 <text x="300.00" y="50.70" font-size="2.1" text-anchor="start" fill="#c62828">   переходов — по каталогу Гросснер (?).</text>
 <text x="300.00" y="54.30" font-size="2.1" text-anchor="start" fill="#111111">6. Все прокладки КЛ — PTFE.</text>
+<text x="300.00" y="57.90" font-size="2.1" text-anchor="start" fill="#111111">7. D-1: патрубок 4″×400 (3 л) на весах W-4.</text>
+<text x="300.00" y="61.50" font-size="2.1" text-anchor="start" fill="#111111">   Подача MeSiCl₃ / PDMS-OH — насосом P-3,</text>
+<text x="300.00" y="65.10" font-size="2.1" text-anchor="start" fill="#111111">   расход по W-4, темп — по TI (≤ −10 °C).</text>
 </svg>

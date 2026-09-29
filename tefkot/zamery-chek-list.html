@@ -1,0 +1,185 @@
+<title>Замеры Тефкот 770</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: одна колонка под телефон — группы по месту работы, у каждого пункта галочка и поле для результата */
+:root{
+  --bg:#f3f5f4; --card:#ffffff; --fg:#1b2023; --muted:#5f6a70; --rule:#d6dcdd;
+  --accent:#0f5e78; --done:#2f6b3a; --done-bg:#e7f1e9; --warn:#b4491b;
+  --f-display:"IBM Plex Sans Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"IBM Plex Sans","Segoe UI",Roboto,Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#131719; --card:#1b2124; --fg:#e4e8ea; --muted:#9aa5ab; --rule:#323b40;
+  --accent:#5fb4d2; --done:#7cc48a; --done-bg:#1d2b21; --warn:#f08a5d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#131719; --card:#1b2124; --fg:#e4e8ea; --muted:#9aa5ab; --rule:#323b40;
+  --accent:#5fb4d2; --done:#7cc48a; --done-bg:#1d2b21; --warn:#f08a5d; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 var(--f-body)}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:20px 96px}
+h1{font:700 26px/1.15 var(--f-display);margin:0 0 6px;text-wrap:balance}
+.lead{color:var(--muted);margin:0 0 14px;max-width:62ch}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:2;background:var(--bg);padding-block:10px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--rule);margin-bottom:8px}
+.prog{flex:1 1 160px;min-width:0}
+.prog b{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.track{height:6px;background:var(--rule);border-radius:3px;margin-top:4px;overflow:hidden}
+.track i{display:block;height:100%;width:0;background:var(--done);transition:width .2s}
+button{font:600 14px var(--f-body);border:1px solid var(--accent);color:var(--accent);background:var(--card);border-radius:6px;padding:8px 12px;cursor:pointer}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.msg{font-size:13px;color:var(--done)}
+section{margin-top:22px}
+h2{font:700 19px/1.25 var(--f-display);margin:0 0 4px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+h2 small{font:500 12px var(--f-mono);color:var(--muted)}
+.where{font-size:13px;color:var(--muted);margin:0 0 8px}
+.item{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:10px 12px;margin-top:8px;display:grid;grid-template-columns:auto 1fr;gap:4px 10px}
+.item.done{background:var(--done-bg);border-color:var(--done)}
+.item input[type=checkbox]{width:22px;height:22px;margin:2px 0 0;accent-color:var(--done)}
+.item label{font-weight:600;min-width:0}
+.item .hint{grid-column:2;font-size:13px;color:var(--muted);min-width:0}
+.item textarea{grid-column:2;font:14px var(--f-body);width:100%;box-sizing:border-box;min-height:36px;resize:vertical;border:1px solid var(--rule);border-radius:6px;padding:6px 8px;background:var(--bg);color:var(--fg)}
+.tag{font:500 11px var(--f-mono);color:var(--warn);border:1px solid var(--warn);border-radius:3px;padding:0 4px;margin-left:6px;white-space:nowrap}
+.tip{background:var(--card);border-left:4px solid var(--accent);padding:10px 12px;margin:12px 0;font-size:14px}
+</style>
+
+<div class="wrap">
+  <h1>Замеры и вопросы на завтра</h1>
+  <p class="lead">ТЕФКОТ 770, реактор 50 л. Всё, что нужно для чертежей без «?» и для STEP-модели. Отмечайте пункты и пишите результат в поле, в конце нажмите «Скопировать ответы» и пришлите текст в чат. Отметки хранятся только в этом браузере.</p>
+  <div class="tip"><b>С собой:</b> рулетка, штангенциркуль, телефон. Каждый замер лучше сфотографировать с рулеткой в кадре. <b>Кламп по Ø ферулы</b>: 25 мм = ½–¾″, 50,5 = 1–1½″, 64 = 2″, 77,5 = 2½″, 91 = 3″, 119 = 4″.</div>
+
+  <div class="bar">
+    <div class="prog">Готово <b id="cnt">0 / 0</b><div class="track"><i id="fill"></i></div></div>
+    <button type="button" id="copy">Скопировать ответы</button>
+    <span class="msg" id="msg" aria-live="polite"></span>
+  </div>
+  <textarea id="fallback" hidden aria-label="Ответы для копирования" style="width:100%;min-height:160px;margin-top:8px"></textarea>
+
+  <div id="list"></div>
+</div>
+
+<script>
+const DATA = [
+ {g:'Реактор R-1: замеры', w:'Рулетка и штангенциркуль. Реактор в рабочем положении.', items:[
+  ['r0','ГЛАВНОЕ: штуцеры крышки и слив — кламп или DIN 11851 (резьбовая гайка)? Проверить каждый', 'На чертеже Wiggens — DIN 11851, на фото — клампы. От этого зависят переходники', 1],
+  ['r1','Шильдик реактора: модель, объём, P раб., допустимый вакуум, материал', 'Сфотографировать целиком', 1],
+  ['r2','Внутренний диаметр корпуса', 'По чертежу Wiggens Ø450 — подтвердить (наружный или внутренний?)'],
+  ['r3','Наружный диаметр рубашки', 'Длина окружности рулеткой ÷ 3,14; на чертеже, похоже, Ø556'],
+  ['r4','Высота корпуса: от плоскости разъёма крышки до низа днища', ''],
+  ['r5','Фланец крышки: наружный диаметр и толщина обоих фланцев', ''],
+  ['r6','Откидные болты: количество, шаг по окружности', ''],
+  ['r7','P1 (большой кламп спереди слева): Ø ферулы, высота торца над крышкой. Это N3?', 'По фото оценка 64 мм, по Wiggens DN25 — расхождение', 1],
+  ['r8','P2 (малый кламп спереди справа): Ø ферулы, высота над крышкой', 'Оценка 25 мм', 1],
+  ['r9','P3 (кламп сзади справа): Ø ферулы, высота над крышкой. Это N5 (pH)?', 'Оценка 50,5 мм, по Wiggens DN25', 1],
+  ['r10','P4 (стояк сзади слева): Ø ферулы сверху, высота стояка, что за фильтр', '', 1],
+  ['r11','Какой штуцер на фото какой по Wiggens (N1…N6): подписать на фото крышки сверху; угол от оси цапф', 'По чертежу окружности Ø230/Ø320, шаг 30°'],
+  ['r12','T2 (по Wiggens N6 — игольчатый вентиль): есть ли под ним погружная трубка, длина под крышкой, наружный Ø', 'Нужно снять и посмотреть', 1],
+  ['r13','T1: шкала мановакуумметра, резьба', ''],
+  ['r14','Нижний слив (L, DN38): маркировка крана Swagelok, присоединение после крана — кламп или DIN', 'Оценка 50,5 мм', 1],
+  ['r15','Высота низа сливного крана над полом', ''],
+  ['r16','Рубашка N7/N8: ёлочки или DIN 11851 DN25? Наружный Ø, высота над полом', 'По ним подбираем рукав и переходники'],
+  ['r17','Цапфы: высота оси над полом, диаметр', ''],
+  ['r18','Мешалка: тип и диаметр лопастей, зазор до дна; габариты мотора и фонаря', ''],
+  ['r19','Уплотнение крышки: материал/цвет кольца, есть ли маркировка', 'Если силикон или EPDM — меняем на FEP'],
+  ['r20','Уплотнение вала мешалки: манжета, торцевое или магнитная муфта', ''],
+  ['r21','Рама Wiggens: габариты (Ш×Г×В), сечение стоек — к ним крепим гребёнку', 'Для STEP и кронштейнов'],
+ ]},
+ {g:'Бак Atmaler G-1 (генератор метиламина)', w:'Там, где стоит бак.', items:[
+  ['g1','Шильдик: модель, объём, рабочее давление, давление предохранительного клапана', 'Фото'],
+  ['g2','Наружный диаметр и высота бака, высота с крышкой', ''],
+  ['g3','Внутреннее покрытие: нержавейка, краска, оцинковка? Магнит липнет?', 'Цинк или алюминий — бак не годится', 1],
+  ['g4','Все штуцеры на крышке: резьба каждого (G¼, G⅜, G½…), расположение', 'Фото крышки сверху', 1],
+  ['g5','Диаметр загрузочного лючка', ''],
+  ['g6','Сифонная трубка: длина, диаметр', ''],
+  ['g7','Прокладка крышки: материал, размеры', 'Меняем на EPDM'],
+  ['g8','Пневмомешалка: как уплотнён вал', ''],
+ ]},
+ {g:'Остальное оборудование', w:'Что есть в лаборатории.', items:[
+  ['o1','Чиллер: модель, мощность охлаждения при −25 °C, диапазон, присоединения шлангов', 'Нужно ≥1 кВт при −25 °C', 1],
+  ['o2','Есть ли второй малый чиллер или криостат (для E-1)', ''],
+  ['o3','Чиллер умеет работать по внешнему датчику Pt100?', ''],
+  ['o4','Вакуумный насос: модель, предельный вакуум, присоединение; есть ли ловушка', ''],
+  ['o5','Аргон: баллон, модель редуктора, давление на выходе, резьба выхода', ''],
+  ['o6','Сжатый воздух: есть ли линия или компрессор, давление, производительность, фитинги', 'Питает 3 мембранных насоса', 1],
+  ['o7','Весы: какие есть (пределы и дискретность)', 'Нужны: 60 кг / 10 г, 30 кг / 10 г, 15 кг / 1 г'],
+  ['o8','Нутч: есть ли, диаметр, объём, есть ли крышка; штуцеры на крышке (сколько, какие) — нужны 4: аргон, вакуум, манометр, сбросной', 'Нужен ≥ DN300 и ≥ 30 л, герметичный под 0,3 бар'],
+  ['o9','Перистальтический насос из методики — оставляем в резерве или убираем?', ''],
+ ]},
+ {g:'Размещение', w:'Эскиз вида сверху от руки с размерами.', items:[
+  ['p1','Эскиз помещения вокруг реактора: стены, двери, проходы, расстояния', '', 1],
+  ['p2','Вытяжной шкаф: внешние и внутренние размеры, куда можно поставить G-1 и колонны', ''],
+  ['p3','Где будут: генератор, колонны, гребёнка, скруббер, чиллер, насосы, нутч, фильтр, канистры', ''],
+  ['p4','Высота, на которой удобно крепить гребёнку безопасности', ''],
+  ['p5','Розетки, вода и слив, точки заземления рядом с реактором', ''],
+ ]},
+ {g:'Уточнить у поставщиков', w:'Звонок или письмо менеджеру.', items:[
+  ['s1','Гросснер: присоединение и строительная длина шпунт-аппарата, обратного клампового клапана, P/V-клапана', 'Нужно 1″ или 1½″', 1],
+  ['s2','Гросснер: строительные длины тройника КЛ-50, крана шарового КЛ-50 и КЛ-25, переходов 50/25', 'Для шага гребёнки'],
+  ['s3','Гросснер: клапан KF25 и переход трикламп→KF25 — размеры, материал колец', ''],
+  ['s4','Гросснер: корпус фильтра 10″ — тип посадки патрона (код 7/226, 222, DOE), материал колец, есть ли кольца FEP', ''],
+  ['s5','Гросснер: патроны 5 / 2 / 0,2 / 0,05 мкм — материал мембраны (нужен PTFE или PP)', ''],
+  ['s6','Гросснер: есть ли патрубок кламповый 3″ × 600 и 3″ × 300, 4″ × 400; заглушки-переходы 91→25 и 119→25; сетчатые прокладки КЛ-91', 'Колонны K-1, C-1, C-2 и дозатор D-1'],
+  ['s7','Ampika (насос id=19460): модель, материал корпуса/мембран/шаров, резьба присоединения, объём одного хода, минимальная подача', 'Нужно 3 шт.: P-1, P-2, P-3', 1],
+ ]},
+ {g:'Решить с Бабкиным', w:'', items:[
+  ['b1','Масштаб ×3 (15 л растворителя) — утверждаем?', '', 1],
+  ['b2','Нутч или мешочный фильтр в корпусе на клампах? Слой Na₂SO₄ оставляем?', '', 1],
+  ['b3','Три мембранных насоса (водн. метиламин / продукт / дозирование) или P-2 также на дозирование?', ''],
+  ['b4','Второй чиллер для E-1 или контур ледяной воды на стадии 7', ''],
+ ]},
+ {g:'Реактивы и тара', w:'', items:[
+  ['t1','Тара MeSiCl₃: объём, горловина (резьба, диаметр)', 'Как заправлять D-1 под аргоном'],
+  ['t2','Тара PDMS-OH: объём, горловина; вязкость по паспорту', 'Проверка, потянет ли насос'],
+  ['t3','Тара петролейного эфира (бочка?), горловина', 'Под заборную трубку насоса P-2'],
+ ]},
+];
+
+const KEY='tefkot-zamery-v1';
+let state={};
+try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){state={}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+
+const list=document.getElementById('list');
+let total=0;
+DATA.forEach(sec=>{
+  const s=document.createElement('section');
+  const h=document.createElement('h2'); h.textContent=sec.g;
+  const sm=document.createElement('small'); sm.textContent=sec.items.length+' пунктов'; h.appendChild(sm);
+  s.appendChild(h);
+  if(sec.w){const p=document.createElement('p');p.className='where';p.textContent=sec.w;s.appendChild(p)}
+  sec.items.forEach(([id,text,hint,key])=>{
+    total++;
+    const st=state[id]||{};
+    const d=document.createElement('div'); d.className='item'+(st.c?' done':'');
+    const cb=document.createElement('input'); cb.type='checkbox'; cb.id='c_'+id; cb.checked=!!st.c;
+    const lb=document.createElement('label'); lb.htmlFor=cb.id; lb.textContent=text;
+    if(key){const t=document.createElement('span');t.className='tag';t.textContent='важно';lb.appendChild(t)}
+    d.append(cb,lb);
+    if(hint){const hi=document.createElement('div');hi.className='hint';hi.textContent=hint;d.appendChild(hi)}
+    const ta=document.createElement('textarea'); ta.id='v_'+id; ta.rows=1; ta.placeholder='результат'; ta.value=st.v||'';
+    ta.setAttribute('aria-label','Результат: '+text);
+    d.appendChild(ta);
+    cb.addEventListener('change',()=>{state[id]=Object.assign(state[id]||{},{c:cb.checked});d.classList.toggle('done',cb.checked);save();upd()});
+    ta.addEventListener('input',()=>{state[id]=Object.assign(state[id]||{},{v:ta.value});if(ta.value.trim()&&!cb.checked){cb.checked=true;state[id].c=true;d.classList.add('done')}save();upd()});
+    s.appendChild(d);
+  });
+  list.appendChild(s);
+});
+function upd(){
+  const n=Object.values(state).filter(x=>x&&x.c).length;
+  document.getElementById('cnt').textContent=n+' / '+total;
+  document.getElementById('fill').style.width=(100*n/total)+'%';
+}
+upd();
+document.getElementById('copy').addEventListener('click',()=>{
+  const lines=['Замеры Тефкот 770:'];
+  DATA.forEach(sec=>{
+    const rows=sec.items.filter(([id])=>state[id]&&(state[id].v||'').trim());
+    if(rows.length){lines.push('','# '+sec.g);rows.forEach(([id,text])=>lines.push('- '+text+': '+state[id].v.trim()))}
+  });
+  const todo=[];DATA.forEach(sec=>sec.items.forEach(([id,text])=>{if(!(state[id]&&state[id].c))todo.push('- '+text)}));
+  if(todo.length){lines.push('','# Не сделано');lines.push(...todo)}
+  const txt=lines.join('\n');
+  const msg=document.getElementById('msg'), fb=document.getElementById('fallback');
+  const showFallback=()=>{fb.hidden=false;fb.value=txt;fb.focus();fb.select();msg.textContent='Выделено — скопируйте вручную'};
+  try{navigator.clipboard.writeText(txt).then(()=>{msg.textContent='Скопировано';fb.hidden=true},showFallback)}catch(e){showFallback()}
+});
+</script>

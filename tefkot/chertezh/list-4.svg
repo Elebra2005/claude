@@ -25,6 +25,7 @@
 <path d="M376.00,172.00 L376.00,190.00 L392.00,190.00 L392.00,198.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M400.00,198.00 L400.00,190.00 L408.00,190.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M250.00,200.00 L360.00,200.00 L360.00,160.00 L365.00,160.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M250.00,210.00 L340.00,210.00 L340.00,200.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M0.20,0.20 L419.80,0.20 L419.80,296.80 L0.20,296.80 Z" fill="none" stroke="#bbbbbb" stroke-width="0.1" stroke-linejoin="round"/>
 <path d="M20.00,5.00 L415.00,5.00 L415.00,292.00 L20.00,292.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <path d="M230.00,237.00 L415.00,237.00 L415.00,292.00 L230.00,292.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
@@ -301,6 +302,7 @@
 <path d="M410.20,190.00 L408.00,190.90 L408.00,189.10 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="396.00" y="186.00" font-size="1.9" text-anchor="start" fill="#111111">в вытяжку</text>
 <text x="250.00" y="198.00" font-size="2.0" text-anchor="start" fill="#111111">от PSV-3 генератора (лист 5)</text>
+<text x="250.00" y="208.50" font-size="2.0" text-anchor="start" fill="#111111">от PSV-4 нутча (лист 7)</text>
 <path d="M120.00,55.00 L120.00,35.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <path d="M150.00,55.00 L150.00,35.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <path d="M120.00,37.00 L150.00,37.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>

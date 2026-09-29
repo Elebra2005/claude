@@ -13,7 +13,7 @@ root = ET.fromstring(svg)
 sh = Sheet('Технологическая схема', 1400, 900)
 sh.vessels = []
 LW = {'amine': 2.6, 'aq': 2.2, 'argon': 2.2, 'vent': 2.6, 'liq': 2.8, 'cool': 2.2, 'vac': 2.2}
-SYM = {'bv': ('valve', 'h', 9), 'bvv': ('valve', 'v', 9), 'nrv': ('check', 'h', 8), 'nrvd': ('check', 'v', 8), 'nrvu': ('check', 'v', 8)}
+SYM = {'bv': ('valve', 'h', 9), 'bvv': ('valve', 'v', 9), 'nrv': ('check', 'h', 8), 'nrvd': ('check', 'v', 8), 'nrvu': ('check', 'v', 8), 'nrvl': ('check', 'h', 8)}
 
 
 def parse_path(d):
