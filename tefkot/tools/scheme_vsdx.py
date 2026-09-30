@@ -147,7 +147,7 @@ DROP_BOX = [(P(186, 440), P(326, 576)), (P(582, 500), P(818, 500))]      # ва�
 
 def _dropped(it):
     if it[0] == 'text':
-        return it[3] in RU_DROP
+        return it[3] in RU_DROP or it[3].startswith(('ТЕФКОТ 770 — синтез', 'АО «ИНУМиТ» · позиции'))      # шапку убрать
     if it[0] == 'poly':
         xs = [q[0] for q in it[1]]; ys = [q[1] for q in it[1]]
         return any(abs(min(xs) - a[0]) < 0.6 and abs(min(ys) - a[1]) < 0.6 and abs(max(xs) - b[0]) < 0.6 and abs(max(ys) - b[1]) < 0.6
