@@ -13,15 +13,21 @@
 <path d="M30.00,214.00 L30.00,150.00 L33.00,150.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M42.00,150.00 L254.00,150.00 L260.00,144.00 L260.00,142.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M55.00,150.00 L55.00,138.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
-<path d="M85.00,150.00 L85.00,119.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
+<path d="M85.00,150.00 L85.00,135.20" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
+<path d="M85.00,128.80 L85.00,119.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M85.00,116.00 L85.00,92.00 L73.00,92.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M125.00,150.00 L125.00,70.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
+<path d="M125.00,150.00 L125.00,135.20" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
+<path d="M125.00,128.80 L125.00,115.40" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
+<path d="M125.00,110.60 L125.00,70.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M125.00,72.00 L125.00,45.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M170.00,150.00 L170.00,98.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
+<path d="M170.00,150.00 L170.00,135.20" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
+<path d="M170.00,128.80 L170.00,98.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M170.00,100.00 L170.00,45.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M215.00,150.00 L215.00,120.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
+<path d="M215.00,150.00 L215.00,135.20" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
+<path d="M215.00,128.80 L215.00,120.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M215.00,115.00 L215.00,86.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M260.00,142.00 L260.00,120.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
+<path d="M260.00,142.00 L260.00,135.20" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
+<path d="M260.00,128.80 L260.00,120.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M260.00,115.00 L260.00,96.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M125.00,45.00 L340.00,45.00 L340.00,110.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M348.00,110.00 L348.00,100.00 L378.00,100.00 L378.00,150.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>

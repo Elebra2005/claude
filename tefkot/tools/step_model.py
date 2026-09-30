@@ -115,15 +115,12 @@ NAMES = {
 'G-1_Atmaler_BK-40': 'Генератор метиламина — бак Atmaler БК-40 (G-1)',
 'G-1_fittings': 'Штуцеры и манометр генератора (PI-3)',
 'column_stand': 'Штатив колонн осушки',
-'K-1_knockout_300': 'Каплеотбойник, патрубок DN65 × 300 (K-1)',
-'K-1_knockout_300_clamp_arm': 'Держатель каплеотбойника',
 'C-1_3A_sieves_600': 'Колонна осушки с ситами 3A, DN65 × 600 (C-1)',
 'C-1_3A_sieves_600_clamp_arm': 'Держатель колонны с ситами',
 'C-2_NaOH_600': 'Колонна осушки с NaOH, DN65 × 600 (C-2)',
 'C-2_NaOH_600_clamp_arm': 'Держатель колонны с NaOH',
-'gas_G1_K1': 'Трубка газа: генератор → каплеотбойник',
-'gas_col0_col1': 'Трубка газа: каплеотбойник → колонна с ситами',
-'gas_col1_col2': 'Трубка газа: колонна с ситами → колонна с NaOH',
+'gas_G1_C1': 'Трубка газа: генератор → колонна с ситами',
+'gas_col0_col1': 'Трубка газа: колонна с ситами → колонна с NaOH',
 'gas_C2_to_T2': 'Трубка газа метиламина: колонна с NaOH → газовое пространство реактора (T2)',
 'NRV-3': 'Клапан обратный на входе газа в реактор, ≤ 30 мбар (NRV-3)',
 'W-1_scale_30kg': 'Весы 30 кг под канистрой метиламина (W-1)',
@@ -594,7 +591,7 @@ def generator(t2_top):
     # колонны на лабораторном штативе
     sx, sy = -1000, 150
     add(g, 'column_stand', [box(sx - 150, sy - 300, 0, sx + 150, sy + 300, 20), cyl((sx + 110, sy, 20), (sx + 110, sy, 1700), 16)], 'dark')
-    cols = [('K-1_knockout_300', sy - 200, 300, 'steel'), ('C-1_3A_sieves_600', sy, 600, 'steel'), ('C-2_NaOH_600', sy + 200, 600, 'steel')]
+    cols = [('C-1_3A_sieves_600', sy - 100, 600, 'steel'), ('C-2_NaOH_600', sy + 100, 600, 'steel')]
     tops = []
     for name, cy_, L, col in cols:
         z0 = 850
@@ -606,16 +603,16 @@ def generator(t2_top):
         add(g, name, parts, col)
         add(g, name + '_clamp_arm', [box(sx, cy_ - 10, z0 + L / 2 - 10, sx + 110, cy_ + 10, z0 + L / 2 + 10)], 'dark')
         tops.append(((sx, cy_, z0 - 40), (sx, cy_, z0 + L + 40)))
-    # газовая линия ¼″ PTFE: G-1 → K-1 → C-1 → C-2 → NRV-3 → T2
-    add(g, 'gas_G1_K1', run([(gx + 60, gy, 620), (gx + 60, gy, 700), (gx + 60, tops[0][0][1], 700), (sx, tops[0][0][1], 700), tops[0][0]], 6.35), 'gas')
-    for a, b in ((0, 1), (1, 2)):
+    # газовая линия ¼″ PTFE: G-1 → C-1 → C-2 → NRV-3 → T2
+    add(g, 'gas_G1_C1', run([(gx + 60, gy, 620), (gx + 60, gy, 700), (gx + 60, tops[0][0][1], 700), (sx, tops[0][0][1], 700), tops[0][0]], 6.35), 'gas')
+    for a, b in ((0, 1),):
         ya, yb = tops[a][1][1], tops[b][0][1]
         add(g, f'gas_col{a}_col{b}', run([tops[a][1], (sx, ya, 1560 + 20 * a), (sx - 60 - 20 * a, ya, 1560 + 20 * a), (sx - 60 - 20 * a, ya, 780),
                                           (sx - 60 - 20 * a, yb, 780), (sx, yb, 780), tops[b][0]], 6.35), 'gas')
     zr = 1640
-    route = [tops[2][1], (sx, tops[2][1][1], zr), (-600, tops[2][1][1], zr), (-600, t2_top[1], zr), (t2_top[0] - 30, t2_top[1], zr), (t2_top[0] - 30, t2_top[1], 1217)]
+    route = [tops[1][1], (sx, tops[1][1][1], zr), (-600, tops[1][1][1], zr), (-600, t2_top[1], zr), (t2_top[0] - 30, t2_top[1], zr), (t2_top[0] - 30, t2_top[1], 1217)]
     add(g, 'gas_C2_to_T2', run(route, 6.35), 'gas')
-    add(g, 'NRV-3', check_valve((-800, tops[2][1][1], zr), (1, 0, 0), 12), 'steel')
+    add(g, 'NRV-3', check_valve((-800, tops[1][1][1], zr), (1, 0, 0), 12), 'steel')
     # раствор метиламина: V-1 на W-1 → P-1 → G-1
     vx, vy = -1450, -650
     add(g, 'W-1_scale_30kg', [box(vx - 200, vy - 200, 0, vx + 200, vy + 200, 70)], 'dark')

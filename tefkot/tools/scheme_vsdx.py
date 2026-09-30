@@ -93,7 +93,8 @@ for el in root:
                     fill=C['fg'] if name.startswith('nrv') else C['paper'])
         if name in BAR:
             sh.poly([P(ux + a, uy + b) for a, b in BAR[name]], lw=2.0 * K, color=C['fg'])
-        sh._sym('valve', *P(ux, uy), 'h', 0, i0)
+        ax = 'v' if name in ('bvv', 'nrvd', 'nrvu') else 'h'
+        sh._sym('valve', *P(ux, uy), ax, (9 if name.startswith('bv') else 8) * K, i0)
     elif tag == 'text':
         x, y = P(float(el.get('x')), float(el.get('y')))
         s = ''.join(el.itertext())

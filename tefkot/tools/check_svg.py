@@ -72,7 +72,7 @@ for el in root:
         name = el.get('href').lstrip('#'); x, y = float(el.get('x')), float(el.get('y'))
         kind, ax, half = SYM[name]
         i0 = len(sh.items)
-        sh.rect(x - 3, y - 3, 6, 6, lw=0.3)
+        sh.rect(*((x - half, y - 3, 2 * half, 6) if ax == 'h' else (x - 3, y - half, 6, 2 * half)), lw=0.3)   # линия подходит к краю символа
         sh._sym(kind, x, y, ax, half, i0)
     elif tag == 'text':
         sh.text(float(el.get('x')), float(el.get('y')), ''.join(el.itertext()), 12 if c == 'lbl' else 10.5, {'end': 'end', 'middle': 'middle'}.get(el.get('text-anchor'), 'start'))

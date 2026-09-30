@@ -212,13 +212,13 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <path class="eq" d="M262,78 L286,78 L282,106 L266,106 Z"/><text class="lbl" x="258" y="124">PR-1</text><text class="sm" x="246" y="138">ротаметр</text>
 <path class="argon" d="M286,92 L560,92 L630,92"/>
 <!-- A2 к генератору -->
-<path class="argon" d="M330,92 L330,300"/><use href="#bvv" x="330" y="130"/><text class="sm" x="338" y="134">A2</text><use href="#nrvd" x="330" y="165"/>
+<path class="argon" d="M330,92 L330,121 M330,139 L330,157 M330,173 L330,300"/><use href="#bvv" x="330" y="130"/><text class="sm" x="338" y="134">A2</text><use href="#nrvd" x="330" y="165"/>
 <!-- A3 к дозатору -->
-<path class="argon" d="M420,92 L420,150"/><use href="#bvv" x="420" y="120"/><text class="sm" x="428" y="124">A3</text><text class="sm" x="384" y="166">→ тара</text>
+<path class="argon" d="M420,92 L420,111 M420,129 L420,150"/><use href="#bvv" x="420" y="120"/><text class="sm" x="428" y="124">A3</text><text class="sm" x="384" y="166">→ тара</text>
 <!-- A4 резерв -->
-<path class="argon" d="M500,92 L500,170 L800,170 L803,164 L809,164 L812,170 L1000,170 L1000,684 L950,684 L950,700"/><use href="#bvv" x="500" y="120"/><text class="sm" x="508" y="124">A4</text><use href="#nrvd" x="1000" y="600"/><text class="sm" x="1008" y="604">NRV-5</text><use href="#bvv" x="1000" y="640"/><text class="sm" x="1008" y="644">V-F1</text>
+<path class="argon" d="M500,92 L500,111 M500,129 L500,170 L800,170 L803,164 L809,164 L812,170 L1000,170 L1000,592 M1000,608 L1000,631 M1000,649 L1000,684 L950,684 L950,700"/><use href="#bvv" x="500" y="120"/><text class="sm" x="508" y="124">A4</text><use href="#nrvd" x="1000" y="600"/><text class="sm" x="1008" y="604">NRV-5</text><use href="#bvv" x="1000" y="640"/><text class="sm" x="1008" y="644">V-F1</text>
 <!-- A1 на гребёнку (кран AV-1, G½″) -->
-<path class="argon" d="M630,92 L1100,92 L1100,140"/><use href="#bv" x="660" y="92"/><text class="sm" x="652" y="80">A1</text><use href="#nrv" x="700" y="92"/><text class="sm" x="724" y="84">Ar → гребёнка</text>
+<path class="argon" d="M630,92 L651,92 M669,92 L692,92 M708,92 L1100,92 L1100,107 M1100,125 L1100,140"/><use href="#bv" x="660" y="92"/><text class="sm" x="652" y="80">A1</text><use href="#nrv" x="700" y="92"/><text class="sm" x="724" y="84">Ar → гребёнка</text>
 
 <!-- ============ ГЕНЕРАТОР ============ -->
 <!-- V-1 канистра -->
@@ -226,7 +226,7 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <rect class="thin" x="30" y="520" width="74" height="10"/><text class="sm" x="40" y="546">W-1 весы</text>
 <path class="aq" d="M60,420 L60,400 L140,400 L140,448"/>
 <rect class="eq" x="124" y="448" width="32" height="28" rx="3"/><text class="lbl" x="128" y="466">P-1</text><text class="sm" x="108" y="496">мембр. пневм.</text><text class="sm" x="108" y="522">50–60 мл/мин</text>
-<path class="aq" d="M156,462 L175,462 L175,330 L232,330 L232,360"/>
+<path class="aq" d="M156,462 L175,462 L175,408 M175,392 L175,330 L232,330 L232,360"/>
 <use href="#nrvd" x="175" y="400"/>
 <!-- ванна + бак -->
 <rect class="thin" x="186" y="440" width="140" height="136" rx="4"/><text class="sm" x="192" y="570">ванна с водой</text>
@@ -241,16 +241,13 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <!-- аргон A2 в G-1 -->
 <path class="argon" d="M330,300 L330,330 L300,330 L300,360"/>
 <!-- выход газа -->
-<path class="amine" d="M306,380 L360,380 L360,300"/><use href="#bvv" x="360" y="345"/><text class="sm" x="368" y="350">V-G1</text>
-<!-- K-1 -->
-<rect class="eq" x="340" y="252" width="40" height="48" rx="4"/><text class="lbl" x="344" y="248">K-1</text>
-<path class="amine" d="M380,262 L406,262 L406,520 L416,520"/>
+<path class="amine" d="M306,380 L360,380 L360,354 M360,336 L360,262 L406,262 L406,520 L416,520"/><use href="#bvv" x="360" y="345"/><text class="sm" x="368" y="350">V-G1</text>
 <!-- C-1 -->
 <rect class="eqf" x="416" y="300" width="44" height="240" rx="3"/><text class="lbl" x="428" y="420">C-1</text><text class="sm" x="418" y="556">сита 3A</text><text class="sm" x="418" y="568">3″×600</text>
 <path class="amine" d="M438,300 L438,280 L484,280 L484,560 L500,560 L500,540"/>
 <!-- C-2 -->
 <rect class="eqf" x="478" y="300" width="44" height="240" rx="3"/><text class="lbl" x="490" y="420">C-2</text><text class="sm" x="478" y="584">NaOH/KOH</text><text class="sm" x="478" y="596">3″×600</text>
-<path class="amine" d="M500,300 L500,256 L604,256 L604,394"/>
+<path class="amine" d="M500,300 L500,256 L551,256 M569,256 L576,256 M592,256 L604,256 L604,394"/>
 <use href="#bv" x="560" y="256"/><text class="sm" x="553" y="278">V-G2</text>
 <use href="#nrv" x="584" y="256"/><text class="lbl" x="560" y="236">NRV-3</text><text class="sm" x="560" y="224">≤30 мбар</text>
 
@@ -285,9 +282,9 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <!-- тара MeSiCl₃ / PDMS-OH на весах W-4 + насос P-3 -->
 <rect class="eq" x="872" y="236" width="56" height="66" rx="8"/><rect class="eq" x="890" y="226" width="20" height="10"/><text class="sm" x="878" y="264">MeSiCl₃</text><text class="sm" x="878" y="276">PDMS-OH</text><text class="sm" x="866" y="296" text-anchor="end">W-4 (весы)</text>
 <path class="argon" d="M894,226 L894,200 L930,200"/><text class="sm" x="934" y="204">Ar (A3)</text>
-<path class="liq" d="M906,226 L906,214 L948,214 L948,330 L914,330"/><use href="#bvv" x="948" y="270"/><text class="sm" x="956" y="274">V-B1</text>
+<path class="liq" d="M906,226 L906,214 L948,214 L948,261 M948,279 L948,330 L914,330"/><use href="#bvv" x="948" y="270"/><text class="sm" x="956" y="274">V-B1</text>
 <rect class="eq" x="886" y="318" width="28" height="24" rx="3"/><text class="lbl" x="889" y="335">P-3</text><text class="sm" x="880" y="334" text-anchor="end">мембр. пневм.</text>
-<path class="liq" d="M900,342 L900,372 L810,372 L810,398"/><use href="#bv" x="870" y="372"/><text class="sm" x="861" y="392">FV-1</text><use href="#nrvl" x="840" y="372"/><text class="sm" x="828" y="362">NRV-4</text><text class="sm" x="813" y="392">P3</text>
+<path class="liq" d="M900,342 L900,372 L879,372 M861,372 L848,372 M832,372 L810,372 L810,398"/><use href="#bv" x="870" y="372"/><text class="sm" x="861" y="392">FV-1</text><use href="#nrvl" x="840" y="372"/><text class="sm" x="828" y="362">NRV-4</text><text class="sm" x="813" y="392">P3</text>
 <!-- отдувка с E-1 на гребёнку -->
 <path class="vent" d="M790,250 L806,250 L806,140 L1046,140"/>
 <!-- теплоноситель -->
@@ -297,20 +294,20 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 
 <!-- ============ ГРЕБЁНКА ============ -->
 <!-- коллектор DN15: вход шлангом от E-1, концевой отвод вверх на VV-1 -->
-<path class="vent" d="M1046,140 L1345,140 L1345,80"/>
+<path class="vent" d="M1046,140 L1345,140 L1345,119 M1345,101 L1345,80"/>
 <!-- PI-4 -->
 <path class="thin" d="M1060,140 L1060,161"/><circle class="eq" cx="1060" cy="172" r="11"/><text class="lbl" x="1044" y="176" text-anchor="end">PI-4</text><text class="sm" x="1060" y="198" text-anchor="middle">0–250 мбар</text>
 <!-- AV-1: аргон G½″ -->
 <use href="#bvv" x="1100" y="116"/><text class="sm" x="1092" y="120" text-anchor="end">AV-1</text>
 <!-- SV-1 → NRV-1 → PCV-1 шпунт -->
-<path class="vent" d="M1150,140 L1150,300"/><use href="#bvv" x="1150" y="168"/><text class="sm" x="1158" y="172">SV-1</text>
+<path class="vent" d="M1150,140 L1150,159 M1150,177 L1150,192 M1150,208 L1150,300"/><use href="#bvv" x="1150" y="168"/><text class="sm" x="1158" y="172">SV-1</text>
 <use href="#nrvd" x="1150" y="200"/><text class="sm" x="1158" y="204">NRV-1</text>
 <rect class="eq" x="1136" y="222" width="28" height="36" rx="3"/><text class="sm" x="1140" y="244">ШП</text><text class="lbl" x="1130" y="244" text-anchor="end">PCV-1</text><text class="sm" x="1130" y="258" text-anchor="end">50–80 мбар</text>
 <!-- SV-2 🔒 → PSV-1 -->
-<path class="vent" d="M1210,140 L1210,300"/><use href="#bvv" x="1210" y="168"/><text class="sm" x="1218" y="172">SV-2 🔒</text>
+<path class="vent" d="M1210,140 L1210,159 M1210,177 L1210,300"/><use href="#bvv" x="1210" y="168"/><text class="sm" x="1218" y="172">SV-2 🔒</text>
 <rect class="eq" x="1198" y="210" width="24" height="30"/><path class="thin" d="M1202,214 L1218,236"/><text class="lbl" x="1226" y="230">PSV-1</text><text class="sm" x="1226" y="244">200 мбар</text>
 <!-- SV-3 → атмосфера -->
-<path class="vent" d="M1280,140 L1280,262" marker-end="url(#arr)"/><use href="#bvv" x="1280" y="168"/><text class="sm" x="1288" y="172">SV-3</text><text class="sm" x="1290" y="248">атмосфера</text><text class="sm" x="1290" y="262">→ вытяжка</text>
+<path class="vent" d="M1280,140 L1280,159 M1280,177 L1280,262" marker-end="url(#arr)"/><use href="#bvv" x="1280" y="168"/><text class="sm" x="1288" y="172">SV-3</text><text class="sm" x="1290" y="248">атмосфера</text><text class="sm" x="1290" y="262">→ вытяжка</text>
 <!-- VV-1 → CT-1 → VP-1 -->
 <use href="#bvv" x="1345" y="110"/><text class="sm" x="1337" y="114" text-anchor="end">VV-1</text>
 <rect class="eq" x="1325" y="40" width="40" height="40" rx="4"/><text class="lbl" x="1345" y="65" text-anchor="middle">CT-1</text>
@@ -330,8 +327,8 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <text class="sm" x="1120" y="444" text-anchor="end">PSV-3 от G-1 →</text><path class="vent" d="M1124,440 L1260,440 L1260,470 L1276,470"/><text class="sm" x="1120" y="460" text-anchor="end">PSV-4 от F-1 →</text><path class="vent" d="M1124,456 L1250,456 L1250,490 L1276,490"/>
 
 <!-- ============ ВЫГРУЗКА ============ -->
-<path class="liq" d="M700,646 L700,700"/><use href="#bvv" x="700" y="662"/><text class="sm" x="708" y="660">BV-1</text>
-<path class="liq" d="M700,700 L700,740 L780,740"/>
+<path class="liq" d="M700,646 L700,653 M700,671 L700,700"/><use href="#bvv" x="700" y="662"/><text class="sm" x="708" y="660">BV-1</text>
+<path class="liq" d="M700,700 L700,711 M700,729 L700,740 L780,740"/>
 <use href="#bvv" x="700" y="720"/><text class="sm" x="620" y="716">SP-1 проба</text>
 <path class="liq" d="M700,740 L640,740 L640,800"/><text class="sm" x="574" y="820">бочка р-ля →</text><text class="sm" x="574" y="832">загрузка р-ля</text>
 <!-- P-2 AODD -->
@@ -398,22 +395,21 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <tr><td>Манометр</td><td>Добавить PI-3: мановакуумметр −1…+0,6 бар, нержавеющий</td><td>Штатный 0–7 бар не показывает наши 0,1–0,3 бар</td></tr>
 </tbody></table></div>
 <p>Бак ставится в пластиковую ванну (таз ~60 л) с холодной водой, а ванна — на весы W-2 (до 60 кг, дискретность 5–10 г). <b>Убыль массы G-1 — это масса ушедшего метиламина</b> (плюс немного воды). Так проверяется «не менее 2 780 г» без гадания. Канистра V-1 с раствором стоит на своих весах W-1 и показывает, сколько раствора подано.</p>
-<p>Продувка G-1 от воздуха: бак, скорее всего, не рассчитан на вакуум, поэтому продуваем аргоном потоком. 5–6 объёмов ≈ 250 л при 10–15 л/мин, около 20 мин, выход через K-1 → C-1 → C-2 → байпас в вытяжку, до подключения к реактору.</p>
+<p>Продувка G-1 от воздуха: бак, скорее всего, не рассчитан на вакуум, поэтому продуваем аргоном потоком. 5–6 объёмов ≈ 250 л при 10–15 л/мин, около 20 мин, выход через C-1 → C-2 → байпас в вытяжку, до подключения к реактору.</p>
 
 <h3>5.2 Дозирование водного метиламина</h3>
 <p>P-1 — <a href="https://www.ampika.ru/oborudovanie.html?id=19460">пневматический мембранный насос</a> (предложение Бабкина, перистальтика не используется). Это второй экземпляр той же модели, что P-2: один насос на водный метиламин и на безводный продукт использовать нельзя, остатки воды гидролизуют продукт. Нужно подать 11,25 л за 3–4 ч, то есть 50–60 мл/мин. Для такого насоса это нижний край, поэтому подача задаётся тремя способами вместе: фильтр-регулятором воздуха (давление 1–2 бар, редкие ходы), игольчатым вентилем на нагнетании и контролем по весам W-1. Подача идёт порциями на каждый ход, для генератора это допустимо. Исполнение: корпус PP, мембраны и шары PTFE (38% метиламин). Присоединения: резьба ? → ёлочка под рукав EPDM. Выхлоп воздуха — в вытяжку. Всасывание из канистры V-1 через крышку с двумя штуцерами: заборная трубка и «дыхание», причём дыхание через трубку в ту же вытяжку, так как метиламин из 38% раствора сильно летуч. На нагнетании обратный клапан, чтобы при остановке насоса газ из бака не выдавливал раствор назад.</p>
 
-<h3>5.3 Осушка: каплеотбойник K-1, колонны C-1 и C-2</h3>
+<h3>5.3 Осушка: колонны C-1 и C-2</h3>
 <div class="tbl"><table>
 <thead><tr><th>Поз.</th><th>Конструкция</th><th>Заполнение</th><th>Заметки</th></tr></thead>
 <tbody>
-<tr><td class="pos">K-1</td><td>Царга кламп 3″ (DN65) × 300 мм, заглушки DN65 с отводами DN15, внизу кран слива</td><td>пустой</td><td>Ловит брызги и пену щёлочи. Он же буфер от обратного заброса</td></tr>
 <tr><td class="pos">C-1</td><td>Патрубок DN65 × 600 мм (≈2,5 л), концы: заглушка-переход DN65→DN15; внизу сетчатая кламповая прокладка + диск сетки AISI 316</td><td>молекулярные сита <b>3A</b>, ≈1,8 кг (полностью), прокалка 300 °C сутки</td><td>Именно 3A: поры 4A и 5A сорбируют метиламин (кинетический диаметр ~3,7 Å), выход упадёт. Ёмкости по воде (~350 г) хватает с большим запасом: с газом уходит ~25 г воды за партию</td></tr>
 <tr><td class="pos">C-2</td><td>То же, DN65 × 600 мм</td><td>NaOH гранулы (или KOH, он лучше сушит амины), ≈2,7 кг</td><td>Порядок как в методике: газ снизу вверх, сначала сита, потом щёлочь</td></tr>
 </tbody></table></div>
 <div class="box"><b class="h">Из чего собрана каждая колонна (всё — стандартные кламповые детали Гросснер, сварки нет)</b>
 <ol>
-<li><b>Корпус</b>: царга кламп 3″ — труба 76,2×1,6 AISI 316 с ферулами DN65 на обоих концах. C-1 и C-2 длиной 600 мм (≈2,5 л), K-1 — 300 мм (пустой).</li>
+<li><b>Корпус</b>: царга кламп 3″ — труба 76,2×1,6 AISI 316 с ферулами DN65 на обоих концах. C-1 и C-2 длиной 600 мм (≈2,5 л).</li>
 <li><b>Низ и верх</b>: заглушка-переход кламповая DN65 → DN15 (концентрический переход 3″ → ¾″). Снизу вход газа, сверху выход.</li>
 <li><b>Удержание засыпки</b> (C-1, C-2): между корпусом и нижней заглушкой — сетчатая кламповая прокладка DN65 плюс диск сетки AISI 316 с ячейкой до 1 мм. Такая же сверху — чтобы пыль сит и щёлочи не уносило в реактор.</li>
 <li><b>Хомуты</b>: DN65 — 2 шт., DN15 — 2 шт. на колонну. Крепление — 2 хомута-держателя Ø76 на стойку.</li>
@@ -625,9 +621,8 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <tr><td class="pos">W-1, W-2</td><td>Весы платформенные 30 кг / 60 кг, дискр. ≤10 г</td><td></td><td class="n">2</td><td><span class="buy y">КУПИТЬ</span></td></tr>
 <tr><td class="pos">P-1</td><td>Мембранный пневмонасос (ampika id=19460, как P-2), PP/PTFE</td><td>дозирование водн. метиламина</td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
 <tr><td></td><td>Фильтр-регулятор воздуха + игольчатый вентиль нерж. на нагнетание P-1 + ёлочки под резьбу насоса</td><td>регулировка 50–60 мл/мин</td><td class="n">1 компл.</td><td><span class="buy y">КУПИТЬ</span></td></tr>
-<tr><td class="pos">K-1</td><td>Царга кламп DN65 (3″) × 300</td><td></td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
 <tr><td class="pos">C-1, C-2</td><td>Царга кламп DN65 × 600</td><td></td><td class="n">2</td><td><span class="buy y">КУПИТЬ</span></td></tr>
-<tr><td></td><td>Заглушка-переход DN65→DN15 (концентрический)</td><td>K-1, C-1, C-2</td><td class="n">6</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Заглушка-переход DN65→DN15 (концентрический)</td><td>C-1, C-2</td><td class="n">4</td><td><span class="buy y">КУПИТЬ</span></td></tr>
 <tr><td></td><td>Прокладка сетчатая DN65 + диск сетки 316</td><td>опоры засыпки</td><td class="n">4</td><td><span class="buy y">КУПИТЬ</span></td></tr>
 <tr><td></td><td>Молекулярные сита 3A, гранулы 3–5 мм</td><td>≈1,8 кг в C-1 + запас</td><td class="n">3 кг</td><td><span class="buy y">КУПИТЬ</span></td></tr>
 <tr><td></td><td>KOH или NaOH гранулированный (C-2)</td><td></td><td class="n">3 кг</td><td><span class="buy y">КУПИТЬ</span></td></tr>
@@ -700,9 +695,9 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <tr><td></td><td>Кламп DN15 с ёлочкой 12 мм / DN15 с ёлочкой 19 мм</td><td></td><td class="n">8 + 6</td><td><span class="buy y">КУПИТЬ</span></td></tr>
 <tr><td></td><td>Хомуты нерж. червячные под 12 и 19 мм</td><td>по 2 на ёлочку</td><td class="n">30</td><td><span class="buy y">КУПИТЬ</span></td></tr>
 <tr><td></td><td>Переходник кламп DN25 → ёлочка под рукав теплоносителя + хомут DN25 + прокладка EPDM</td><td>рубашка N7/N8</td><td class="n">2</td><td><span class="buy y">КУПИТЬ</span></td></tr>
-<tr><td></td><td>Хомуты кламповые DN15 / DN25 / DN38 / DN65 (+ нутч, по его штуцеру)</td><td>ведомость, лист 8: 41 / 7 / 3 / 7, + 2 шт.</td><td class="n">43 / 9 / 5 / 9</td><td><span class="buy y">КУПИТЬ</span></td></tr>
-<tr><td></td><td>Прокладки PTFE DN15 / DN25 / DN38 / DN65</td><td>ведомость: 37 / 5 / 3 / 5, + 2 шт.</td><td class="n">39 / 7 / 5 / 7</td><td><span class="buy y">КУПИТЬ</span></td></tr>
-<tr><td></td><td>Прокладки EPDM DN15 / DN25 / DN65</td><td>водные линии, рубашка: 4 / 2 / 2, + 2 шт.</td><td class="n">6 / 4 / 4</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Хомуты кламповые DN15 / DN25 / DN38 / DN65 (+ нутч, по его штуцеру)</td><td>ведомость, лист 8: 39 / 7 / 3 / 5, + 2 шт.</td><td class="n">41 / 9 / 5 / 7</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Прокладки PTFE DN15 / DN25 / DN38 / DN65</td><td>ведомость: 35 / 5 / 3 / 5, + 2 шт.</td><td class="n">37 / 7 / 5 / 7</td><td><span class="buy y">КУПИТЬ</span></td></tr>
+<tr><td></td><td>Прокладки EPDM DN15 / DN25</td><td>водные линии, рубашка: 4 / 2, + 2 шт.</td><td class="n">6 / 4</td><td><span class="buy y">КУПИТЬ</span></td></tr>
 </tbody></table></div>
 
 <!-- ============ 15 ============ -->

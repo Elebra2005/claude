@@ -25,16 +25,23 @@ class Sheet:
         self.items.append(('poly', [tuple(p) for p in pts], lw, color, dash, closed, fill))
 
     def ordered(self):
-        """Трубопроводы — под символами (символы с белой заливкой лежат поверх линии)."""
-        if getattr(self, 'keep_order', False):
-            return list(self.items)
+        """Трубопроводы — под символами; линия прерывается на кране/клапане и подходит к нему с двух сторон."""
         own = set()
         for sym in self.symbols:
             own.update(range(sym[5], sym[6]))
-        pipes = [it for i, it in enumerate(self.items)
-                 if it[0] == 'poly' and not it[5] and it[2] >= 0.44 and i not in own and i not in self.nocheck]
-        rest = [it for i, it in enumerate(self.items)
-                if not (it[0] == 'poly' and not it[5] and it[2] >= 0.44 and i not in own and i not in self.nocheck)]
+        gaps = [(x, y, ax, half) for kind, x, y, ax, half, *_ in self.symbols if kind in ('valve', 'check') and half > 0]
+        is_pipe = lambda i, it: it[0] == 'poly' and not it[5] and i not in own and i not in self.nocheck
+        if getattr(self, 'keep_order', False):
+            out = []
+            for i, it in enumerate(self.items):
+                out += _cut(it, gaps) if is_pipe(i, it) else [it]
+            return out
+        pipes, rest = [], []
+        for i, it in enumerate(self.items):
+            if is_pipe(i, it) and it[2] >= 0.44:
+                pipes += _cut(it, gaps)
+            else:
+                rest += _cut(it, gaps) if is_pipe(i, it) else [it]
         return pipes + rest
 
     def stub_arrow(self, x, y, direction):
@@ -253,6 +260,45 @@ class Sheet:
         self.text(xr + 104, y0 + 38.8, f'Листов {sheets}', 2.2)
         self.text(xr + 92.5, y0 + 49, 'АО «ИНУМиТ»', 3.2, 'middle', bold=True)
         self.text(xr + 35, y0 + 51, 'ТЕФКОТ 770 · реактор 50 л', 2.2, 'middle', color=GREY)
+
+
+def _cut(it, gaps, tol=0.05):
+    """Разрезать ломаную там, где на неё посажен кран или клапан (вдоль его оси)."""
+    pts = it[1]
+    runs, cur = [], [pts[0]]
+    for (x1, y1), (x2, y2) in zip(pts, pts[1:]):
+        horiz, vert = abs(y1 - y2) < tol, abs(x1 - x2) < tol
+        a0, a1 = (x1, x2) if horiz else (y1, y2)
+        lo, hi = min(a0, a1), max(a0, a1)
+        cuts = []
+        for gx, gy, ax, half in gaps:
+            if ax == 'h' and horiz and abs(y1 - gy) < tol:
+                g = gx
+            elif ax == 'v' and vert and abs(x1 - gx) < tol:
+                g = gy
+            else:
+                continue
+            c0, c1 = max(lo, g - half), min(hi, g + half)
+            if c0 < c1 - 1e-6:
+                cuts.append((c0, c1))
+        at = (lambda a: (a, y1)) if horiz else (lambda a: (x1, a))
+        if not cuts or not (horiz or vert):
+            cur.append((x2, y2))
+            continue
+        sgn = 1 if a1 >= a0 else -1
+        for c0, c1 in sorted(cuts, key=lambda c: sgn * c[0]):
+            near, far = (c0, c1) if sgn > 0 else (c1, c0)
+            cur.append(at(near))
+            runs.append(cur)
+            cur = [at(far)]
+        cur.append((x2, y2))
+    runs.append(cur)
+    out = []
+    for r in runs:
+        r = [p for k, p in enumerate(r) if k == 0 or abs(p[0] - r[k - 1][0]) + abs(p[1] - r[k - 1][1]) > 1e-6]
+        if len(r) > 1:
+            out.append((it[0], r) + tuple(it[2:]))
+    return out
 
 
 # ================= вывод SVG =================

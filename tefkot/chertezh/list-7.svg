@@ -12,7 +12,8 @@
 <path d="M397.00,272.00 L397.00,277.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <path d="M70.00,44.00 L70.00,103.00" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
 <path d="M70.00,64.00 L70.00,90.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
-<path d="M70.00,74.00 L113.00,74.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
+<path d="M70.00,74.00 L99.80,74.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
+<path d="M106.20,74.00 L113.00,74.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M70.00,103.00 L70.00,130.00 L121.00,130.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M121.00,130.00 L125.00,130.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
 <path d="M147.00,130.00 L151.00,130.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
@@ -20,8 +21,11 @@
 <path d="M136.00,120.00 L136.00,108.00 L150.00,108.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M136.00,140.00 L136.00,155.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M201.00,96.00 L205.00,96.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
-<path d="M245.00,86.00 L245.00,66.00 L275.00,66.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M222.00,86.00 L222.00,70.00 L200.00,70.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M245.00,86.00 L245.00,82.20" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M245.00,77.80 L245.00,73.76" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M245.00,70.24 L245.00,66.00 L275.00,66.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M222.00,86.00 L222.00,80.20" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M222.00,75.80 L222.00,70.00 L200.00,70.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M233.00,86.00 L233.00,82.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M233.00,76.00 L233.00,60.00 L211.00,60.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M230.00,136.00 L230.00,148.00" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round"/>
