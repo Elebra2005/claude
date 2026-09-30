@@ -273,7 +273,10 @@
 <text x="311.86" y="249.36" font-size="3.4799999999999995" text-anchor="end" fill="#1d2226" font-weight="bold">Фильтр</text>
 <text x="321.94" y="259.80" font-size="3.045" text-anchor="start" fill="#5d666d">патрон 10″</text>
 <text x="321.94" y="263.28" font-size="3.045" text-anchor="start" fill="#5d666d">5…0,05 мкм</text>
-<path d="M314.40,251.10 L314.40,245.30 L355.00,245.30 L355.00,254.00" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M314.40,251.10 L314.40,245.30 L332.09,245.30" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M337.31,245.30 L355.00,245.30 L355.00,254.00" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M332.09,243.56 L337.31,247.04 L337.31,243.56 L332.09,247.04 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
+<text x="331.22" y="242.40" font-size="3.045" text-anchor="start" fill="#5d666d">Кран фильтра</text>
 <path d="M349.20,254.00 L361.96,254.00 L361.96,271.40 L349.20,271.40 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M365.44,254.00 L378.20,254.00 L378.20,271.40 L365.44,271.40 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M346.88,272.56 L380.52,272.56 L380.52,274.88 L346.88,274.88 Z" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
