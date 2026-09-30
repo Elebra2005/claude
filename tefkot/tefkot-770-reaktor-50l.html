@@ -294,7 +294,7 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 
 <!-- ============ ГРЕБЁНКА ============ -->
 <!-- коллектор DN15: вход шлангом от E-1, концевой отвод вверх на VV-1 -->
-<path class="vent" d="M1046,140 L1345,140 L1345,119 M1345,101 L1345,80"/>
+<path class="vent" d="M1046,140 L1345,140 L1345,119"/>
 <!-- PI-4 -->
 <path class="thin" d="M1060,140 L1060,161"/><circle class="eq" cx="1060" cy="172" r="11"/><text class="lbl" x="1044" y="176" text-anchor="end">PI-4</text><text class="sm" x="1060" y="198" text-anchor="middle">0–250 мбар</text>
 <!-- AV-1: аргон G½″ -->
@@ -308,10 +308,9 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <rect class="eq" x="1198" y="210" width="24" height="30"/><path class="thin" d="M1202,214 L1218,236"/><text class="lbl" x="1226" y="230">PSV-1</text><text class="sm" x="1226" y="244">200 мбар</text>
 <!-- SV-3 → атмосфера -->
 <path class="vent" d="M1280,140 L1280,159"/><path class="vent" d="M1280,177 L1280,262" marker-end="url(#arr)"/><use href="#bvv" x="1280" y="168"/><text class="sm" x="1288" y="172">SV-3</text><text class="sm" x="1290" y="248">атмосфера</text><text class="sm" x="1290" y="262">→ вытяжка</text>
-<!-- VV-1 → CT-1 → VP-1 -->
+<!-- VV-1 → VP-1 -->
 <use href="#bvv" x="1345" y="110"/><text class="sm" x="1337" y="114" text-anchor="end">VV-1</text>
-<rect class="eq" x="1325" y="40" width="40" height="40" rx="4"/><text class="lbl" x="1345" y="65" text-anchor="middle">CT-1</text>
-<path class="vac" d="M1325,60 L1291,60"/>
+<path class="vac" d="M1345,101 L1345,60 L1291,60"/>
 <path class="vent" d="M1257,60 L1236,60" marker-end="url(#arr)"/><text class="sm" x="1230" y="56" text-anchor="end">выхлоп</text><text class="sm" x="1230" y="70" text-anchor="end">→ вытяжка</text><circle class="eq" cx="1274" cy="60" r="17"/><path class="thin" d="M1262,60 L1286,60 M1274,48 L1274,72"/><text class="lbl" x="1274" y="98" text-anchor="middle">VP-1</text>
 <!-- коллектор сбросов -->
 <path class="vent" d="M1150,300 L1340,300 L1340,404"/><text class="sm" x="1160" y="318">коллектор сбросов</text>
@@ -468,7 +467,7 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <tr><td class="pos">SV-1</td><td>кран кламп DN15, открыт</td><td>NRV-1 обратный кламп DN15 → переход DN15/DN25 → <a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/predohranitelnye-klapany-nerzhaveyuschie/shpunt-apparat/shpunt-apparat-s-manometrom-uglovoj/">PCV-1 шпунт-аппарат</a></td><td>50…80 + NRV ≤30</td><td><b>Рабочий регулятор.</b> Обратный клапан не даёт шпунту подсосать воздух и скрубберный газ при разрежении</td></tr>
 <tr><td class="pos">SV-2 🔒</td><td>кран кламп DN15, открыт и опломбирован</td><td>PSV-1 предохранительный кламповый, <b>только на давление</b></td><td>200</td><td>Аварийный сброс</td></tr>
 <tr><td class="pos">SV-3</td><td>кран кламп DN15, закрыт</td><td>Ёлочка → шланг в вытяжку</td><td>—</td><td><b>Сброс на атмосферу</b> вручную. Только при давлении ≥ 0 по PI-4: под вакуумом через него засосёт влажный воздух</td></tr>
-<tr><td class="pos">VV-1</td><td>кран кламп DN15, закрыт</td><td>На концевом отводе. Ёлочка → вакуумный шланг → CT-1 → VP-1</td><td>—</td><td>Вакуумирование пустого реактора</td></tr>
+<tr><td class="pos">VV-1</td><td>кран кламп DN15, закрыт</td><td>На концевом отводе. Ёлочка → вакуумный шланг → VP-1</td><td>—</td><td>Вакуумирование пустого реактора</td></tr>
 </tbody></table></div>
 <p>Обратный клапан NRV-1 стоит последовательно со шпунтом, поэтому их уставки складываются. Нужен клапан с открытием не выше 30 мбар, тогда рабочее давление будет 80–110 мбар, ниже аварийного сброса 200 мбар. Перевёрнутый KF25-клапан из первого варианта в гребёнку не входит. Его можно проверить на стенде как NRV-1: если откроется ниже 30 мбар, ставим его.</p>
 <div class="box warn"><b class="h">Почему клапан давления-вакуума нельзя ставить «как есть»</b>
@@ -495,7 +494,6 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <h3>Вакуум</h3>
 <ul>
 <li><b>VP-1</b>: химический мембранный насос с PTFE-головками, ≤ 7–10 мбар, 1,5–2 м³/ч (типа Vacuubrand MZ 2C NT или аналог). Масляный пластинчато-роторный не годится: его масло растворит растворитель и поглотит амин.</li>
-<li><b>CT-1</b>: пустая склянка-сепаратор перед насосом (защита от капель). Охлаждаемая ловушка не нужна: вакуумируем только пустой сухой реактор и пустой нутч, растворитель под вакуумом не откачиваем.</li>
 <li>Подключение: кран <b>VV-1</b> на коллекторе отдувки после E-1. Вакуумируем реактор через E-1. Нужен и для нутча F-1 (10 мбар), для него отдельная линия через A4-тройник.</li>
 <li>Выхлоп насоса — в вытяжку.</li>
 <li>Во время вакуумирования краны гребёнки SV-1, SV-3 и AV-1 закрыты, <b>в том числе опломбированный SV-2</b> (единственный разрешённый случай). Открыт только VV-1. Вакуумирование только пустого реактора.</li>
@@ -662,7 +660,6 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <tr><td class="pos">NRV-4, NRV-5</td><td>Обратный клапан 1/4″ нерж. (P-3 → реактор; A4 → F-1)</td><td>уплотнение PTFE/FFKM, не FKM</td><td class="n">2</td><td><span class="buy y">КУПИТЬ</span></td></tr>
 <tr><td></td><td>Тройники 1/4″ обжим</td><td></td><td class="n">6</td><td><span class="buy y">КУПИТЬ</span></td></tr>
 <tr><td class="pos">VP-1</td><td>Мембранный химический вакуумный насос ≤ 10 мбар</td><td>PTFE-головки</td><td class="n">1</td><td><span class="buy h">ЕСТЬ?</span></td></tr>
-<tr><td class="pos">CT-1</td><td>Склянка-сепаратор перед вакуумным насосом</td><td></td><td class="n">1</td><td><span class="buy h">ЕСТЬ?</span></td></tr>
 <tr class="sec"><td colspan="5">Дозирование</td></tr>
 <tr><td></td><td>Крышка-переходник на тару с 2 вводами (заборная трубка PTFE до дна + аргон 1/4″), PTFE, под резьбу горловины (GL45 или по таре)</td><td>MeSiCl₃, PDMS-OH, эфир</td><td class="n">2</td><td><span class="buy h">УТОЧНИТЬ</span></td></tr>
 <tr><td></td><td>Поддон под тару на весах W-4</td><td>PP или нерж.</td><td class="n">1</td><td><span class="buy y">КУПИТЬ</span></td></tr>
@@ -745,7 +742,7 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <tr><td class="n">7</td><td>Насос ampika id=19460: материал корпуса, мембран, присоединение</td><td>страница/менеджер</td><td>P-2, переходники</td></tr>
 <tr><td class="n">8</td><td>Есть ли нутч нужного размера</td><td>лаборатория</td><td>F-1</td></tr>
 <tr><td class="n">9</td><td>Размеры присоединения шпунт-аппарата и обратного клапана Гросснер (1″ или 1½″) и диапазон шпунта</td><td>менеджер Гросснер</td><td>DN25 коллектор</td></tr>
-<tr><td class="n">10</td><td>Мембранный вакуумный насос и ловушка в наличии?</td><td>лаборатория</td><td>VP-1, CT-1</td></tr>
+<tr><td class="n">10</td><td>Мембранный вакуумный насос в наличии?</td><td>лаборатория</td><td>VP-1</td></tr>
 </tbody></table></div>
 <p class="meta">Документ подготовлен как проект: все уставки и тепловые оценки проверить на стенде и в первом холостом прогоне на воде и растворителе без реагентов.</p>
 </div>

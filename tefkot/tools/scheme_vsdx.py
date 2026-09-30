@@ -119,6 +119,7 @@ out = os.path.join(HERE, 'tefkot-770-skhema.vsdx')
 tpl = tempfile.mkdtemp()
 with zipfile.ZipFile(os.path.join(HERE, 'tools', 'visio-template.vsdx')) as z:
     z.extractall(tpl)
-to_vsdx([sh], tpl, out)
+from legend import scheme_legend
+to_vsdx([sh, scheme_legend()], tpl, out)
 open(os.path.join(HERE, 'chertezh', 'skhema.svg'), 'w', encoding='utf-8').write(to_svg(sh))
 print('ok', out)

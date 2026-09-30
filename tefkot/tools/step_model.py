@@ -152,7 +152,6 @@ NAMES = {
 'A2_to_G-1': 'Трубка аргона ¼″ к генератору',
 'G-1_Ar_inlet': 'Штуцер ввода аргона в генератор',
 'VP-1_vacuum_pump': 'Насос вакуумный мембранный химический (VP-1)',
-'CT-1_separator': 'Склянка-сепаратор перед вакуумным насосом (CT-1)',
 'vacuum_line': 'Вакуумный шланг от гребёнки к сепаратору',
 # --- дозирование
 'trolley': 'Тележка дозирования',
@@ -658,12 +657,11 @@ def argon_vacuum(p4_top, zc_e1, e1xy, M):
     # A2 → G-1 (продувка генератора)
     add(g, 'A2_to_G-1', run([outs['A2'], (outs['A2'][0], outs['A2'][1], 1380), (-1340, outs['A2'][1], 1380), (-1340, -50, 1380), (-1340, -50, 600)], 6.35), 'argon')
     add(g, 'G-1_Ar_inlet', [cyl((-1340, -50, 555), (-1340, -50, 600), 20)], 'dark')
-    # вакуум: VV-1 на гребёнке → CT-1 → VP-1
+    # вакуум: VV-1 на гребёнке → VP-1
     vx, vy = -650, 480
     add(g, 'VP-1_vacuum_pump', [box(vx - 175, vy - 125, 0, vx + 175, vy + 125, 260)], 'dark')
-    add(g, 'CT-1_separator', [cyl((vx + 100, vy, 260), (vx + 100, vy, 460), 120)], 'glass')
     x, y, z = M['vac_top']
-    add(g, 'vacuum_line', run([(x, y, z), (x, y, 1900), (vx + 100, y, 1900), (vx + 100, vy, 1900), (vx + 100, vy, 460)], 16), 'ptfe')
+    add(g, 'vacuum_line', run([(x, y, z), (x, y, 1900), (vx + 100, y, 1900), (vx + 100, vy, 1900), (vx + 100, vy, 260)], 16), 'ptfe')
     return outs
 
 
@@ -811,7 +809,7 @@ ASCII_FIX = {'₂': '2', '₃': '3', '″': '"', '¼': '1/4', '½': '1/2', '≤'
 
 def fix_step_names(path):
     """OCCT пишет имена дважды закодированным UTF-8. Пишем два варианта файла:
-    основной — имена в UTF-8 (КОМПАС v20+, FreeCAD), и ...-cp1251.step — имена в Windows-1251.
+    основной — имена в Windows-1251 (КОМПАС), и ...-utf8.step — имена в UTF-8 (FreeCAD и др.).
     Стандартная запись \\X2\\…\\X0\\ КОМПАС не расшифровывает."""
     raw = open(path, 'rb').read().decode('utf-8')
     try:
@@ -820,8 +818,9 @@ def fix_step_names(path):
         txt = raw
     for k, v in ASCII_FIX.items():
         txt = txt.replace(k, v)
-    open(path, 'w', encoding='utf-8', newline='\n').write(txt)
-    open(path.replace('.step', '-cp1251.step'), 'w', encoding='cp1251', newline='\n').write(txt)
+    # основной файл — для КОМПАС (читает названия как Windows-1251); копия в UTF-8 — для FreeCAD и др.
+    open(path, 'w', encoding='cp1251', newline='\n').write(txt)
+    open(path.replace('.step', '-utf8.step'), 'w', encoding='utf-8', newline='\n').write(txt)
 
 
 def build():

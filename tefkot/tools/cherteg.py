@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from draw import Sheet, to_svg, to_vsdx, RED, INK, GREY, BLUE
 
 CODE = 'ИНУМ.770-50.00'
-N_SHEETS = 8
+N_SHEETS = 9
 SHIFT = 1
 JOINTS = []            # (номер, лист, место, размер, прокладка)
 
@@ -385,7 +385,7 @@ def sheet3():
     valve(x, 'VV-1', 'ёлочка вакуумная')
     s.poly([(x - 2.4, hy - 30), (x + 2.4, hy - 30), (x + 1.4, hy - 35), (x - 1.4, hy - 35)], lw=0.35, closed=True, fill='#ffffff')
     hose(s, [(x, hy - 35), (x, 96)]); s.stub_arrow(x, 96, 'up')
-    s.text(x + 3, 90, 'вакуум: CT-1, VP-1', 1.9); s.text(x + 3, 93.5, '(лист 6)', 1.9)
+    s.text(x + 3, 90, 'вакуум: VP-1', 1.9); s.text(x + 3, 93.5, '(лист 6)', 1.9)
     # линия сбросов → BU-1 → T-1 → S-1
     tube(s, [(X['SH'], vy), (340, vy), (340, 110)])
     s.text(X['SH'] + 2, vy - 1.5, 'сбросы PCV-1 и PSV-1 → BU-1, трубка PTFE 10×12', 2.0)
@@ -544,9 +544,7 @@ def sheet5():
         s.text(x - 3, 79, 'L=?', 1.8)
     # вакуум
     s.text(300, 13, 'ВАКУУМ', 3.0, bold=True)
-    hose(s, [(300, 40), (320, 40)]); s.text(299, 41, 'от VV-1 (лист 4)', 1.9, 'end')
-    s.rect(320, 30, 14, 22, lw=0.5, fill='#ffffff'); s.text(320, 27, 'CT-1 сепаратор', 2.1, bold=True)
-    hose(s, [(334, 40), (350, 40)])
+    hose(s, [(300, 40), (350, 40)]); s.text(299, 41, 'от VV-1 (лист 4)', 1.9, 'end')
     s.circle(358, 40, 8, lw=0.5, fill='#ffffff'); s.line(352, 40, 364, 40, lw=0.3); s.line(358, 34, 358, 46, lw=0.3)
     s.text(350, 54, 'VP-1 мембр., ≤10 мбар', 2.0, bold=True); s.text(350, 58, 'присоед. KF? / ёлочка ?', 1.9)
     tube(s, [(366, 40), (380, 40), (380, 28)]); s.stub_arrow(380, 28, 'up'); s.text(384, 27, 'выхлоп в вытяжку', 1.9)
@@ -953,9 +951,7 @@ def sheet_assembly():
     pipe(s, [(x, hy - 8), (x, hy - 30)], lw=2.0)
     gval(x, 'VV-1', 'ёлочка вакуумная')
     s.poly([(x - 2.4, hy - 30), (x + 2.4, hy - 30), (x + 1.4, hy - 35), (x - 1.4, hy - 35)], lw=0.35, closed=True, fill='#ffffff')
-    hose(s, [(x, hy - 35), (x, 92), (655, 92), (655, 175)])
-    s.rect(648, 175, 14, 16, lw=0.5, fill='#ffffff'); s.text(646, 180, 'CT-1', 2.0, 'end', bold=True)
-    hose(s, [(655, 191), (655, 199)])
+    hose(s, [(x, hy - 35), (x, 92), (655, 92), (655, 199)])
     s.circle(655, 206, 7, lw=0.5, fill='#ffffff'); s.line(649, 206, 661, 206, lw=0.3); s.line(655, 200, 655, 212, lw=0.3)
     s.text(646, 205, 'VP-1', 2.0, 'end', bold=True); s.text(646, 209, 'выхлоп → вытяжка', 1.7, 'end')
     # сбросы PCV-1, PSV-1 → BU-1 → T-1 → S-1 (мостик над A4 на x=680)
@@ -1041,7 +1037,7 @@ def sheet_assembly():
            ['VV-1', 'Кран кламп DN15 (вакуум)', '1', '4'], ['PI-1, 3, 4, 5', 'Мановакуумметры', '4', '2–7'],
            ['BU-1', 'Барботёр-индикатор', '1', '4'], ['T-1', 'Буферная склянка ≥3 л', '1', '4'],
            ['S-1', 'Скруббер 20 л', '1', '4'], ['VP-1', 'Насос вакуумный мембранный', '1', '6'],
-           ['CT-1', 'Сепаратор вакуумный', '1', '6'], ['TC-1', 'Чиллер', '1', '6'],
+           ['TC-1', 'Чиллер', '1', '6'],
            ['IW-1', 'Контур ледяной воды', '1', '6'], ['CV/X', 'Краны теплоносителя', '2+2', '6'],
            ['P-2', 'Насос мембр. пневм. (продукт)', '1', '7'], ['P-3', 'Насос мембр. пневм. (дозирование)', '1', '3'], ['F-1', 'Нутч ≥DN300 (?) под аргоном', '1', '7'], ['PSV-4', 'Сбросной клапан нутча 0,3 бар', '1', '7'],
            ['F-2', 'Корпус фильтра 10″', '1', '7'], ['W-1…4', 'Весы', '4', '3,5,7'],
@@ -1066,6 +1062,8 @@ def build():
     sheets = [sheet1(), sheet2(), sheet3(), sheet4(), sheet5(), sheet6()]
     sheets.append(sheet7())
     sheets.insert(0, sheet_assembly())
+    from legend import drawings_legend
+    sheets.append(drawings_legend(9, N_SHEETS, CODE + '.09'))
     return sheets
 
 
@@ -1080,7 +1078,7 @@ def main():
     with zipfile.ZipFile(os.path.join(here, 'tools', 'visio-template.vsdx')) as z:
         z.extractall(tpl)
     to_vsdx(sheets, tpl, os.path.join(outdir, 'tefkot-770-montazhnye-chertezhi.vsdx'))
-    to_vsdx(sheets[:1], tpl, os.path.join(outdir, 'tefkot-770-sborka-A1.vsdx'))
+    to_vsdx(sheets[:1] + sheets[-1:], tpl, os.path.join(outdir, 'tefkot-770-sborka-A1.vsdx'))
     print('joints:', len(JOINTS))
 
 

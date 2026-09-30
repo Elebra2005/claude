@@ -181,7 +181,6 @@
 <path d="M152.00,248.20 L163.60,248.20 L163.60,190.20 L171.14,190.20" fill="none" stroke="#0f8a8a" stroke-width="0.638" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M152.00,257.48 L165.92,257.48 L165.92,230.80 L253.50,230.80 L253.50,146.70 L248.86,146.70" fill="none" stroke="#0f8a8a" stroke-width="0.638" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M310.34,62.60 L397.05,62.60 L397.05,56.51" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
-<path d="M397.05,51.29 L397.05,45.20" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M314.40,62.60 L314.40,68.69" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
 <circle cx="314.40" cy="71.88" r="3.19" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
 <text x="309.76" y="73.04" font-size="3.4799999999999995" text-anchor="end" fill="#1d2226" font-weight="bold">PI-4</text>
@@ -217,9 +216,7 @@
 <text x="381.10" y="97.98" font-size="3.045" text-anchor="start" fill="#5d666d">→ вытяжка</text>
 <path d="M395.31,51.29 L398.79,56.51 L395.31,56.51 L398.79,51.29 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="394.73" y="55.06" font-size="3.045" text-anchor="end" fill="#1d2226">VV-1</text>
-<path d="M391.25,33.60 L402.85,33.60 L402.85,45.20 L391.25,45.20 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<text x="397.05" y="40.85" font-size="3.4799999999999995" text-anchor="middle" fill="#1d2226" font-weight="bold">CT-1</text>
-<path d="M391.25,39.40 L381.39,39.40" fill="none" stroke="#6b6f73" stroke-width="0.638" stroke-dasharray="0.6 1" stroke-linejoin="round"/>
+<path d="M397.05,51.29 L397.05,39.40 L381.39,39.40" fill="none" stroke="#6b6f73" stroke-width="0.638" stroke-dasharray="0.6 1" stroke-linejoin="round"/>
 <path d="M371.53,39.40 L365.44,39.40" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M365.44,39.40 L367.84,38.40 L367.84,40.40 Z" fill="#1d2226" stroke="#1d2226" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="363.70" y="38.24" font-size="3.045" text-anchor="end" fill="#5d666d">выхлоп</text>
