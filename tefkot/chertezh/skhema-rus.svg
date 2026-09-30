@@ -18,7 +18,6 @@
 <path d="M45.28,48.68 L82.98,48.68" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
 <path d="M82.98,44.62 L89.94,44.62 L88.78,52.74 L84.14,52.74 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="81.82" y="57.96" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">Ротаметр</text>
-<text x="78.34" y="62.02" font-size="3.045" text-anchor="start" fill="#5d666d">ротаметр</text>
 <path d="M89.94,48.68 L169.40,48.68 L189.70,48.68" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
 <path d="M102.70,48.68 L102.70,57.09" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
 <path d="M102.70,62.31 L102.70,67.53" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
@@ -274,5 +273,4 @@
 <text x="240.00" y="286.90" font-size="2.4" text-anchor="start" fill="#1d2226">теплоноситель</text>
 <path d="M272.00,286.00 L282.00,286.00" fill="none" stroke="#37474f" stroke-width="0.8119999999999999" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <text x="284.00" y="286.90" font-size="2.4" text-anchor="start" fill="#1d2226">вакуум</text>
-<text x="330.00" y="286.90" font-size="2.2" text-anchor="start" fill="#1d2226">Обозначения — лист «Условные обозначения»</text>
 </svg>
