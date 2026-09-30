@@ -266,7 +266,7 @@
 <path d="M286.92,55.00 L283.08,56.68 L283.08,53.32 Z" fill="#111111" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M286.92,56.92 L286.92,53.08" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <text x="278.00" y="50.00" font-size="1.9" text-anchor="start" fill="#111111">NRV-3 ≤30 мбар</text>
-<text x="302.00" y="56.00" font-size="2.0" text-anchor="start" fill="#111111">→ R-1, T2 (лист 2)</text>
+<text x="302.00" y="56.00" font-size="2.0" text-anchor="start" fill="#111111">→ R-1, T2 под крышку (лист 2)</text>
 <text x="250.00" y="62.00" font-size="2.0" text-anchor="start" fill="#c62828">трубка PTFE 10×12 + обжим 12 мм, L=?</text>
 <text x="250.00" y="66.00" font-size="2.0" text-anchor="start" fill="#111111">переход обжим 12 мм → ¼″ у T2</text>
 <text x="250.00" y="80.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">Доработка бака Atmaler G-1</text>

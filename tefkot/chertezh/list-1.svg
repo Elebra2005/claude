@@ -479,9 +479,11 @@
 <text x="357.00" y="360.50" font-size="1.9" text-anchor="start" fill="#1f5fa8">~22 л</text>
 <text x="392.00" y="395.00" font-size="3.2" text-anchor="start" fill="#111111" font-weight="bold">R-1</text>
 <text x="388.00" y="400.00" font-size="2.0" text-anchor="start" fill="#111111">сталь, 50 л</text>
-<path d="M362.00,300.00 L362.00,422.00" fill="none" stroke="#111111" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M362.00,300.00 L362.00,312.00" fill="none" stroke="#111111" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M360.00,294.00 L364.00,294.00 L364.00,300.00 L360.00,300.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <text x="358.00" y="297.00" font-size="1.9" text-anchor="end" fill="#111111">T2</text>
+<path d="M431.00,304.00 L431.00,358.00" fill="none" stroke="#1f5fa8" stroke-width="0.45" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<text x="434.00" y="340.00" font-size="1.7" text-anchor="start" fill="#1f5fa8">MeNH₂ ж.</text>
 <path d="M372.00,288.00 L372.00,285.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <circle cx="372.00" cy="282.00" r="3.00" fill="#ffffff" stroke="#111111" stroke-width="0.3"/>
 <text x="372.00" y="282.80" font-size="1.8" text-anchor="middle" fill="#111111">PI-1</text>

@@ -85,12 +85,17 @@
 <path d="M90.00,186.00 L120.00,186.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
 <path d="M56.00,135.00 L140.00,135.00" fill="none" stroke="#1f5fa8" stroke-width="0.25" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <text x="68.00" y="133.50" font-size="2.0" text-anchor="start" fill="#1f5fa8">~22 л (×3)</text>
-<path d="M64.00,58.00 L64.00,190.00" fill="none" stroke="#111111" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M64.00,58.00 L64.00,90.00" fill="none" stroke="#111111" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M62.00,64.00 L66.00,64.00 L66.00,70.00 L62.00,70.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M64.00,58.00 L30.00,48.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M30.00,48.00 L60.03,48.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="30.50" y="47.20" font-size="2.1" text-anchor="start" fill="#c62828">T2 ¼″ обжим, погружная L=?</text>
+<path d="M30.00,48.00 L64.65,48.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<text x="30.50" y="47.20" font-size="2.1" text-anchor="start" fill="#111111">T2: ввод газа MeNH₂ под крышку</text>
 <circle cx="64.00" cy="58.00" r="0.50" fill="#111111" stroke="#111111" stroke-width="0.1"/>
+<path d="M139.00,84.00 L139.00,130.00" fill="none" stroke="#1f5fa8" stroke-width="0.45" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M139.00,112.00 L172.00,124.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<path d="M172.00,124.00 L200.60,124.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<text x="172.50" y="123.20" font-size="2.0" text-anchor="start" fill="#111111">жидкий MeNH₂ стекает с E-1</text>
+<circle cx="139.00" cy="112.00" r="0.50" fill="#111111" stroke="#111111" stroke-width="0.1"/>
 <path d="M72.00,64.00 L76.00,64.00 L76.00,70.00 L72.00,70.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M74.00,55.00 L74.00,52.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <circle cx="74.00" cy="48.50" r="3.50" fill="#ffffff" stroke="#111111" stroke-width="0.3"/>
@@ -294,10 +299,10 @@
 <path d="M222.00,181.40 L391.00,181.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="185.07" font-size="2.1" text-anchor="start" fill="#111111">T2</text>
 <text x="235.00" y="185.07" font-size="2.1" text-anchor="start" fill="#111111">N6</text>
-<text x="249.00" y="185.07" font-size="2.1" text-anchor="start" fill="#111111">ввод CH₃NH₂ / барботаж Ar</text>
+<text x="249.00" y="185.07" font-size="2.1" text-anchor="start" fill="#111111">ввод газа MeNH₂ под крышку</text>
 <text x="291.00" y="185.07" font-size="2.1" text-anchor="start" fill="#111111">игольч. вентиль</text>
 <text x="327.00" y="185.07" font-size="2.1" text-anchor="start" fill="#111111">8</text>
-<text x="338.00" y="185.07" font-size="2.1" text-anchor="start" fill="#c62828">погружная трубка, L=?</text>
+<text x="338.00" y="185.07" font-size="2.1" text-anchor="start" fill="#111111">без погружной трубки</text>
 <path d="M222.00,186.80 L391.00,186.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="190.47" font-size="2.1" text-anchor="start" fill="#111111">M</text>
 <text x="235.00" y="190.47" font-size="2.1" text-anchor="start" fill="#111111">M</text>

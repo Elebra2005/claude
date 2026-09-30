@@ -122,9 +122,10 @@
 <text x="184.48" y="165.26" font-size="3.045" text-anchor="start" fill="#5d666d">~22 л</text>
 <text x="198.40" y="184.40" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">R-1</text>
 <text x="189.12" y="189.04" font-size="3.045" text-anchor="start" fill="#5d666d">сталь, 50 л</text>
-<path d="M182.16,139.16 L182.16,196.00" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
-<text x="178.10" y="200.64" font-size="3.045" text-anchor="start" fill="#1d2226">T2</text>
-<text x="184.48" y="134.52" font-size="3.045" text-anchor="start" fill="#1d2226">P4</text>
+<path d="M182.16,139.16 L182.16,143.80" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
+<path d="M231.17,139.16 L231.17,164.68" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
+<text x="232.62" y="151.34" font-size="3.045" text-anchor="start" fill="#5d666d">MeNH₂</text>
+<text x="184.48" y="134.52" font-size="3.045" text-anchor="start" fill="#1d2226">T2</text>
 <circle cx="198.40" cy="128.14" r="3.19" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
 <path d="M198.40,131.33 L198.40,136.26" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
 <text x="193.18" y="123.50" font-size="3.045" text-anchor="start" fill="#1d2226">PI-1</text>
