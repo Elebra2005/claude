@@ -267,8 +267,8 @@
 <text x="223.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">P1</text>
 <text x="235.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">N3</text>
 <text x="249.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">конденсатор E-1</text>
-<text x="291.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">кламп 2″ (ф. 64)</text>
-<text x="327.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">2″</text>
+<text x="291.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">кламп Ø50,5</text>
+<text x="327.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">25</text>
 <text x="338.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">E-1 (лист 3)</text>
 <path d="M222.00,159.80 L391.00,159.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="163.47" font-size="2.1" text-anchor="start" fill="#111111">P2</text>
@@ -353,7 +353,7 @@
 <text x="338.00" y="65.10" font-size="2.1" text-anchor="start" fill="#111111">   продуктом — PTFE. PN всех — 0,5.</text>
 <text x="338.00" y="68.70" font-size="2.1" text-anchor="start" fill="#111111">7. Все штуцеры — трикламп; DN по</text>
 <text x="338.00" y="72.30" font-size="2.1" text-anchor="start" fill="#111111">   DIN 11851 (Wiggens). DN25 и DN38 —</text>
-<text x="338.00" y="75.90" font-size="2.1" text-anchor="start" fill="#111111">   ферула Ø50,5; P1 — 2″ (ф. 64, по фото).</text>
+<text x="338.00" y="75.90" font-size="2.1" text-anchor="start" fill="#111111">   ферула Ø50,5.</text>
 <text x="338.00" y="94.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold"></text>
 <text x="338.00" y="99.50" font-size="1.9" text-anchor="start" fill="#111111">Условные обозначения:</text>
 <text x="338.00" y="102.80" font-size="1.9" text-anchor="start" fill="#111111">⊣⊢ кламповое соединение, № — ведомость (лист 8)</text>
