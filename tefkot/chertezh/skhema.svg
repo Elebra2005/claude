@@ -202,14 +202,15 @@
 <path d="M363.41,68.11 L366.89,73.33 L363.41,73.33 L366.89,68.11 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="367.47" y="71.88" font-size="3.045" text-anchor="start" fill="#1d2226">VV-1</text>
 <path d="M365.15,73.33 L365.15,90.15" fill="none" stroke="#37474f" stroke-width="0.8119999999999999" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<text x="366.89" y="82.32" font-size="3.045" text-anchor="start" fill="#5d666d">вакуум</text>
+<text x="366.89" y="80.58" font-size="3.045" text-anchor="start" fill="#5d666d">вакуум:</text>
+<text x="366.89" y="84.06" font-size="3.045" text-anchor="start" fill="#5d666d">всас насоса</text>
 <circle cx="365.15" cy="95.08" r="4.93" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
 <path d="M361.67,95.08 L368.63,95.08" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
 <path d="M365.15,91.60 L365.15,98.56" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
 <text x="365.15" y="105.52" font-size="3.4799999999999995" text-anchor="middle" fill="#1d2226" font-weight="bold">VP-1</text>
 <path d="M370.08,95.08 L375.01,95.08" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M375.01,95.08 L372.61,96.08 L372.61,94.08 Z" fill="#1d2226" stroke="#1d2226" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="377.33" y="93.92" font-size="3.045" text-anchor="start" fill="#5d666d">выхлоп</text>
+<text x="377.33" y="93.92" font-size="3.045" text-anchor="start" fill="#5d666d">выхлоп насоса</text>
 <text x="377.33" y="97.40" font-size="3.045" text-anchor="start" fill="#5d666d">→ вытяжка</text>
 <path d="M379.36,53.03 L382.84,58.25 L379.36,58.25 L382.84,53.03 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="383.42" y="56.80" font-size="3.045" text-anchor="start" fill="#1d2226">AV-1</text>
