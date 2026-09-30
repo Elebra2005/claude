@@ -123,11 +123,9 @@
 <path d="M182.16,139.16 L182.16,143.80" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M231.17,139.16 L231.17,164.68" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
 <text x="232.62" y="151.34" font-size="3.045" text-anchor="start" fill="#5d666d">MeNH₂</text>
-<text x="184.48" y="134.52" font-size="3.045" text-anchor="start" fill="#1d2226">Т2</text>
 <circle cx="198.40" cy="128.14" r="3.19" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
 <path d="M198.40,131.33 L198.40,136.26" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
 <text x="193.18" y="123.50" font-size="2.1315" text-anchor="start" fill="#1d2226">Манометр</text>
-<text x="193.76" y="135.10" font-size="3.045" text-anchor="start" fill="#1d2226">Т1</text>
 <path d="M205.94,109.00 L214.06,109.00 L214.06,126.40 L205.94,126.40 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="207.10" y="107.84" font-size="3.045" text-anchor="start" fill="#5d666d">Мотор</text>
 <path d="M207.10,126.40 L212.90,126.40 L212.90,136.26 L207.10,136.26 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
@@ -136,7 +134,7 @@
 <path d="M220.44,132.20 L220.44,184.40" fill="none" stroke="#1d2226" stroke-width="0.58" stroke-linejoin="round"/>
 <circle cx="220.44" cy="128.72" r="3.19" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
 <text x="217.83" y="129.88" font-size="3.045" text-anchor="start" fill="#5d666d">Т</text>
-<text x="221.60" y="188.46" font-size="2.58825" text-anchor="start" fill="#1d2226">П2 термометр</text>
+<text x="221.60" y="188.46" font-size="3.045" text-anchor="start" fill="#5d666d">Pt100</text>
 <path d="M226.24,90.44 L236.10,90.44 L236.10,136.26 L226.24,136.26 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M228.56,83.48 L228.56,97.40 L233.78,100.30 L228.56,103.20 L233.78,106.10 L228.56,109.00 L233.78,111.90 L228.56,114.80 L233.78,117.70 L233.78,83.48" fill="none" stroke="#0f8a8a" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M228.56,83.48 L228.56,78.84 L222.18,78.84" fill="none" stroke="#0f8a8a" stroke-width="0.638" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
@@ -145,7 +143,6 @@
 <text x="221.02" y="80.00" font-size="3.045" text-anchor="end" fill="#5d666d">от чиллера / ледяной воды</text>
 <text x="227.40" y="129.88" font-size="2.4359999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">Конденсатор</text>
 <text x="182.16" y="65.50" font-size="3.045" text-anchor="start" fill="#5d666d">змеевик: −25 °C / ст.7 +5 °C</text>
-<text x="236.68" y="135.10" font-size="3.045" text-anchor="start" fill="#1d2226">П1</text>
 <path d="M259.88,90.44 L276.12,90.44 L276.12,109.58 L259.88,109.58 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M265.10,87.54 L270.90,87.54 L270.90,90.44 L265.10,90.44 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="261.62" y="98.56" font-size="3.045" text-anchor="start" fill="#5d666d">MeSiCl₃</text>
@@ -162,13 +159,12 @@
 <text x="262.20" y="118.86" font-size="3.045" text-anchor="end" fill="#5d666d">мембр. пневм.</text>
 <path d="M268.00,121.18 L268.00,129.88 L261.91,129.88" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
 <path d="M256.69,129.88 L252.92,129.88" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
-<path d="M248.28,129.88 L241.90,129.88 L241.90,137.42" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M248.28,129.88 L241.90,129.88 L241.90,139.16" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
 <path d="M256.69,128.14 L261.91,131.62 L261.91,128.14 L256.69,131.62 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="256.69" y="135.68" font-size="3.045" text-anchor="start" fill="#1d2226">Игольч. вентиль</text>
 <path d="M252.92,128.14 L248.86,129.88 L252.92,131.62 Z" fill="#1d2226" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <path d="M248.28,127.85 L248.28,131.91" fill="none" stroke="#1d2226" stroke-width="0.58" stroke-linejoin="round"/>
 <text x="247.12" y="126.98" font-size="3.045" text-anchor="start" fill="#1d2226">Обр. клапан</text>
-<text x="242.77" y="135.68" font-size="3.045" text-anchor="start" fill="#1d2226">П3</text>
 <path d="M236.10,94.50 L240.74,94.50 L240.74,62.60 L310.34,62.60" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M117.20,242.40 L152.00,242.40 L152.00,262.70 L117.20,262.70 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="120.68" y="249.36" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">Чиллер</text>
