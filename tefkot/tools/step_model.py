@@ -25,7 +25,32 @@ C = {
     'blue': Color(0.20, 0.35, 0.70), 'sieve': Color(0.85, 0.75, 0.55), 'poly': Color(0.90, 0.90, 0.80, 0.8),
 }
 
-ROOT = cq.Assembly(name='TEFKOT-770')
+RU = {'body': 'Корпус', 'jacket': 'Рубашка', 'lid': 'Крышка', 'swing_bolts': 'Откидные болты (8 шт.)', 'M_DN133': 'Штуцер M DN133 (мешалка)', 'lantern': 'Фонарь мешалки', 'motor_WB1800-C': 'Мотор WB1800-C', 'agitator': 'Мешалка, вал Ø26', 'N7_jacket_out': 'N7 рубашка выход DN25', 'N8_jacket_in': 'N8 рубашка вход DN25', 'trunnions': 'Цапфы', 'tilt_gearbox': 'Редуктор опрокидывания', 'L_DN38': 'L нижний слив DN38', 'frame': 'Рама Wiggens', 'control_cart': 'Тележка управления', 'control_box': 'Блок управления', 'E-1_shell_3in_L500': 'E-1 кожух DN65 (3″) L500', 'E-1_coil_stubs': 'E-1 выводы змеевика 12 мм', 'E-1_gas_outlet': 'E-1 отвод газа DN15', 'E-1_insulation': 'E-1 изоляция', 'collector_1in': 'Коллектор гребёнки DN25', 'collector_end_cap': 'Заглушка коллектора DN25', 'PI-4_tee': 'PI-4 тройник', 'PI-4_0-250mbar': 'PI-4 мановакуумметр 0–250 мбар', 'VV-1_tee': 'VV-1 тройник', 'VV-1': 'VV-1 кран вакуума', 'vent_collector': 'Коллектор сбросов DN25', 'vent_hose_to_T-1': 'Сброс → T-1', 'T-1_buffer_4in_L300': 'T-1 буфер DN100 L300', 'T-1_stand': 'T-1 подставка', 'BU-1_bubbler': 'BU-1 барботёр', 'BU-1_stand': 'BU-1 подставка', 'T-1_to_BU-1': 'T-1 → BU-1', 'S-1_scrubber_20L': 'S-1 скруббер 20 л', 'BU-1_to_S-1': 'BU-1 → S-1', 'P2_joint': 'P2 кламп DN25', 'P2_thermowell_8x500': 'P2 заглушка DN25 с гильзой Ø8×500', 'P2_Pt100_head': 'P2 датчик Pt100', 'V-P3': 'V-P3 кран DN15', 'P3_tee_septum_cap': 'P3 тройник с септой и заглушкой', 'P3_dosing_tube': 'P3 трубка дозирования ¼″', 'P4_stack': 'P4 стояк DN25', 'P4_sight_glass': 'P4 смотровой фонарь', 'PI-1': 'PI-1 мановакуумметр', 'T2_needle_valve': 'T2 игольчатый вентиль', 'T2_dip_tube': 'T2 погружная трубка ¼″', 'W-2_scale_60kg': 'W-2 весы 60 кг', 'ice_bath': 'Ванна со льдом', 'G-1_Atmaler_BK-40': 'G-1 бак Atmaler БК-40', 'G-1_fittings': 'G-1 штуцеры и манометр', 'column_stand': 'Штатив колонн', 'gas_G1_K1': 'Газ G-1 → K-1', 'gas_C2_to_T2': 'Газ C-2 → T2 реактора', 'NRV-3': 'NRV-3 обратный клапан', 'W-1_scale_30kg': 'W-1 весы 30 кг', 'V-1_MeNH2_aq_canister': 'V-1 канистра 38% MeNH₂', 'P-1_suction': 'P-1 всас', 'P-1_to_G-1': 'P-1 → G-1', 'P-1_needle_NRV': 'P-1 игольчатый вентиль и обратный клапан', 'AR-1_cylinder_40L': 'AR-1 баллон аргона 40 л', 'PR-1_regulator': 'PR-1 редуктор баллона', 'PR-2_FI-1_PSV-2_panel': 'Панель аргона', 'PR-2': 'PR-2 редуктор', 'FI-1_rotameter': 'FI-1 ротаметр', 'Ar_distributor': 'Раздаточная гребёнка аргона', 'Ar_supply': 'Аргон от баллона', 'Ar_PR2_FI1': 'Аргон PR-2 → FI-1', 'A1_to_P4': 'A1 → P4', 'NRV_A1': 'Обратный клапан A1', 'A2_to_G-1': 'A2 → G-1', 'G-1_Ar_inlet': 'G-1 ввод аргона', 'VP-1_vacuum_pump': 'VP-1 вакуумный насос', 'CT-1_separator': 'CT-1 склянка-сепаратор', 'vacuum_line': 'Вакуумная линия', 'trolley': 'Тележка дозирования', 'tray': 'Поддон', 'container': 'Тара MeSiCl₃ / PDMS-OH', 'cap_adapter': 'Крышка-переходник PTFE', 'dip_tube': 'Заборная трубка до дна', 'container_to_P-3': 'Тара → P-3', 'V-B1': 'V-B1 кран ¼″', 'A3_to_container': 'A3 → тара', 'W-4_scale_15kg': 'W-4 весы 15 кг', 'P-3_to_P3_tube': 'P-3 → P3 трубка ¼″', 'FV-1_needle': 'FV-1 игольчатый вентиль', 'NRV-4': 'NRV-4 обратный клапан', 'BV-1_Swagelok': 'BV-1 кран Swagelok', 'tee_KL50_elbow': 'Тройник DN38 с отводом', 'SP-1': 'SP-1 кран отбора проб', 'BV-1_to_P-2_hose': 'BV-1 → P-2 рукав', 'F-1_nutsche_DN350': 'F-1 нутч DN350', 'F-1_stand': 'F-1 опора', 'F-1_lid_fittings': 'F-1 штуцеры крышки', 'PI-5': 'PI-5 мановакуумметр', 'PSV-4_0.3bar': 'PSV-4 сбросной 0,3 бар', 'VV-2': 'VV-2 кран вакуума', 'V-F1_NRV-5': 'V-F1 кран и NRV-5', 'A4_to_F-1': 'A4 → F-1', 'PSV-4_to_T-1': 'PSV-4 → T-1', 'P-2_to_F-1_hose': 'P-2 → F-1 рукав', 'F-2_10in_housing': 'F-2 корпус фильтра 10″', 'F-2_stand': 'F-2 опора', 'F-1_to_F-2': 'F-1 → F-2', 'W-3_scale': 'W-3 весы', 'canister_20L': 'Канистра 20 л', 'F-2_to_canister': 'F-2 → канистра', 'TC-1_chiller': 'TC-1 чиллер', 'TC-1_panel': 'TC-1 панель', 'hose_to_N8': 'Рукав TC-1 → N8', 'hose_from_N7': 'Рукав N7 → TC-1', 'hose_to_E-1_in': 'Рукав TC-1 → E-1', 'hose_from_E-1_out': 'Рукав E-1 → TC-1', 'X1_X2_3way': 'X1, X2 трёхходовые краны', 'P-1_AODD': 'P-1 мембранный насос', 'P-2_AODD': 'P-2 мембранный насос', 'P-3_AODD': 'P-3 мембранный насос', 'PCV-1_spunding': 'PCV-1 шпунт-аппарат', 'NRV-1_100mbar': 'NRV-1 обратный 100 мбар', 'PSV-1_200mbar': 'PSV-1 сбросной 200 мбар', 'NRV-2_KF25': 'NRV-2 KF25 перевёрнутый', 'K-1_knockout_300': 'K-1 каплеотбойник DN65 L300', 'C-1_3A_sieves_600': 'C-1 сита 3A DN65 L600', 'C-2_NaOH_600': 'C-2 NaOH DN65 L600'}
+GR = {'R-1_Wiggens_50L': 'R-1 реактор Wiggens 50 л', 'Frame_Wiggens': 'Рама Wiggens и тележка управления', 'E-1_condenser': 'E-1 конденсатор', 'Safety_manifold': 'Гребёнка безопасности, T-1, BU-1, S-1', 'Lid_nodes': 'Узлы крышки P2 P3 P4 T1 T2', 'Generator_G-1': 'Генератор G-1, колонны, P-1', 'Argon_Vacuum': 'Аргон и вакуум', 'Dosing_P-3': 'Дозирование MeSiCl₃ / PDMS-OH, P-3', 'Discharge_Filtration': 'Выгрузка: P-2, F-1, F-2', 'Thermostat_TC-1': 'Чиллер TC-1 и рукава'}
+
+
+def ru(name):
+    """Русское имя детали для дерева STEP."""
+    import re
+    if name in RU:
+        return RU[name]
+    m = re.match(r'^(N\d)_(DN25|8mm)_(\w+)$', name)
+    if m:
+        return f'Штуцер {m.group(1)} {"DN25" if m.group(2) == "DN25" else "8 мм"} ({m.group(3)})'
+    m = re.match(r'^gas_col(\d)_col(\d)$', name)
+    if m:
+        cols = ['K-1', 'C-1', 'C-2']
+        return f'Газ {cols[int(m.group(1))]} → {cols[int(m.group(2))]}'
+    for suf, txt in (('_tee', 'тройник'), ('_joint', 'кламп'), ('_drop', 'опуск на коллектор сбросов'), ('_clamp_arm', 'держатель')):
+        if name.endswith(suf):
+            base = name[:-len(suf)]
+            return f'{RU.get(base, base).split(" ")[0]} {txt}'
+    if re.match(r'^SV-\d$', name):
+        return f'{name} кран DN25'
+    return name
+
+
+ROOT = cq.Assembly(name='ТЕФКОТ 770 установка')
 GROUPS = {}
 _names = {}
 
@@ -33,6 +58,7 @@ _names = {}
 def add(group, name, shape, color):
     if isinstance(shape, (list, tuple)):
         shape = cq.Compound.makeCompound(list(shape))
+    group, name = GR.get(group, group), ru(name)
     g = GROUPS.get(group)
     if g is None:
         g = GROUPS[group] = cq.Assembly(name=group)
@@ -440,9 +466,9 @@ def argon_vacuum(p4_top, zc_e1, e1xy):
     return outs
 
 
-# ---------------------------------------------------------------- дозирование D-1 / P-3
+# ---------------------------------------------------------------- дозирование P-3 из тары
 def dosing(p3_top, ar_outs):
-    g = 'Dosing_D-1_P-3'
+    g = 'Dosing_P-3'
     tx, ty = -560, -560                     # тележка
     parts = []
     for x in (tx - 200, tx + 200):
@@ -451,31 +477,24 @@ def dosing(p3_top, ar_outs):
     parts += [box(tx - 215, ty - 215, 900, tx + 215, ty + 215, 915), box(tx - 215, ty - 215, 280, tx + 215, ty + 215, 295)]
     add(g, 'trolley', parts, 'frame')
     add(g, 'W-4_scale_15kg', [box(tx - 160, ty - 160, 915, tx + 160, ty + 160, 965)], 'dark')
-    add(g, 'D-1_tripod', [cyl((tx + 90 * math.cos(math.radians(a)), ty + 90 * math.sin(math.radians(a)), 965),
-                                (tx + 60 * math.cos(math.radians(a)), ty + 60 * math.sin(math.radians(a)), 1150), 12) for a in (90, 210, 330)]
-        + [cyl((tx, ty, 1140), (tx, ty, 1150), 140).cut(cyl((tx, ty, 1130), (tx, ty, 1160), 104))], 'dark')
-    zb, zt = 1150, 1550
-    parts = [cyl((tx, ty, zb), (tx, ty, zt), 101.6)]
-    for zz in (zb, zt):
-        parts += clampj((tx, ty, zz), (0, 0, 1), 119)
-    parts.append(cyl((tx, ty, zt + 3), (tx, ty, zt + 15), 119))
-    parts.append(cone((tx, ty, zb - 3), (tx, ty, zb - 45), 119, 25.4))
-    parts += clampj((tx, ty, zb - 48), (0, 0, 1), 50.5)
-    parts.append(cyl((tx + 30, ty, zt + 15), (tx + 30, ty, zt + 50), 25.4))
-    parts += clampj((tx + 30, ty, zt + 53), (0, 0, 1), 50.5)
-    add(g, 'D-1_4in_L400_3L', parts, 'steel')
-    add(g, 'D-1_fill_valve', ball_valve((tx + 30, ty, zt + 90), (0, 0, 1), 25.4, lever=(1, 0, 0), L=64), 'steel')
-    add(g, 'V-D1', ball_valve((tx, ty, zb - 83), (0, 0, 1), 25.4, lever=(0, -1, 0), L=64), 'steel')
+    add(g, 'tray', [box(tx - 110, ty - 110, 965, tx + 110, ty + 110, 1025).cut(box(tx - 104, ty - 104, 971, tx + 104, ty + 104, 1030))], 'poly')
+    z0 = 971                                   # тара поставщика (бутыль 2,5 л — размеры уточнить)
+    zc = z0 + 330
+    add(g, 'container', [cyl((tx, ty, z0), (tx, ty, z0 + 250), 140), cone((tx, ty, z0 + 250), (tx, ty, z0 + 300), 140, 50),
+                         cyl((tx, ty, z0 + 300), (tx, ty, zc - 20), 50)], 'glass')
+    add(g, 'cap_adapter', [cyl((tx, ty, zc - 20), (tx, ty, zc), 60)], 'ptfe')
+    add(g, 'dip_tube', [cyl((tx + 12, ty, zc + 40), (tx + 12, ty, z0 + 8), 8)], 'ptfe')
     suc, dis = pump((tx, ty, 295), 'P-3_AODD', g)
-    add(g, 'D-1_to_P-3_hose', run([(tx, ty, zb - 118), (tx, ty, zb - 150), (tx - 150, ty, zb - 150), (tx - 150, ty, 330), (suc[0] - 100, ty, suc[2])], 16), 'ptfe')
+    add(g, 'container_to_P-3', run([(tx + 12, ty, zc + 40), (tx + 12, ty, zc + 70), (tx - 250, ty, zc + 70), (tx - 250, ty, suc[2]), (suc[0] - 100, ty, suc[2])], 8), 'ptfe')
+    add(g, 'V-B1', ball_valve((tx - 250, ty, 700), (0, 0, 1), 10, lever=(0, -1, 0), L=36), 'steel')
     x, y, z = p3_top
     route = [(dis[0] + 100, dis[1], dis[2]), (tx + 160, ty, dis[2]), (tx + 160, ty, 1700), (x, ty, 1700), (x, y, 1700), (x, y, z)]
     add(g, 'P-3_to_P3_tube', run(route, 6.35), 'ptfe')
     add(g, 'FV-1_needle', [cbox((tx + 160, ty, 800), 30, 30, 50), cyl((tx + 160, ty, 800), (tx + 160, ty - 50, 800), 20)], 'steel')
     add(g, 'NRV-4', check_valve((tx + 160, ty, 1000), (0, 0, 1), 10), 'steel')
-    # аргон A3 на крышку D-1
+    # аргон A3 на крышку-переходник тары
     a3 = ar_outs['A3']
-    add(g, 'A3_to_D-1', run([a3, (a3[0], a3[1], 1760), (tx - 30, a3[1], 1760), (tx - 30, ty, 1760), (tx - 30, ty, zt + 15)], 6.35), 'argon')
+    add(g, 'A3_to_container', run([a3, (a3[0], a3[1], 1760), (tx - 12, a3[1], 1760), (tx - 12, ty, 1760), (tx - 12, ty, zc)], 6.35), 'argon')
 
 
 # ---------------------------------------------------------------- выгрузка
@@ -544,7 +563,8 @@ def thermostat(e1xy, zc_e1):
 
 
 def glb_to_gltf_json(src, dst):
-    """GLB → glTF с встроенным буфером (для просмотрщика: .glb артефакт не отдаёт)."""
+    """Чиним двойную кодировку имён в GLB и пишем glTF с встроенным буфером
+    (для просмотрщика: .glb артефакт не отдаёт)."""
     import base64, json, struct
     b = open(src, 'rb').read()
     length, off, js, binary = struct.unpack('<III', b[:12])[2], 12, None, None
@@ -556,9 +576,36 @@ def glb_to_gltf_json(src, dst):
             js = json.loads(d)
         elif ct == 0x004E4942:
             binary = d
+    for key in ('nodes', 'meshes', 'materials', 'scenes'):
+        for item in js.get(key, []):
+            if 'name' in item:
+                try:
+                    item['name'] = item['name'].encode('latin-1').decode('utf-8')
+                except (UnicodeEncodeError, UnicodeDecodeError):
+                    pass
+    jb = json.dumps(js, ensure_ascii=False, separators=(',', ':')).encode('utf-8')
+    jb += b' ' * (-len(jb) % 4)
+    binary += b'\0' * (-len(binary) % 4)
+    body = struct.pack('<II', len(jb), 0x4E4F534A) + jb + struct.pack('<II', len(binary), 0x004E4942) + binary
+    open(src, 'wb').write(struct.pack('<III', 0x46546C67, 2, 12 + len(body)) + body)
     js['buffers'][0]['uri'] = 'data:application/octet-stream;base64,' + base64.b64encode(binary).decode()
-    with open(dst, 'w') as f:
-        json.dump(js, f, separators=(',', ':'))
+    with open(dst, 'w', encoding='utf-8') as f:
+        json.dump(js, f, ensure_ascii=False, separators=(',', ':'))
+
+
+def fix_step_names(path):
+    """OCCT пишет имена в STEP дважды закодированным UTF-8. Перекодируем в стандартный
+    для STEP вид \\X2\\hhhh\\X0\\ (ISO 10303-21), его читают КОМПАС, SolidWorks, FreeCAD."""
+    import re
+    raw = open(path, 'rb').read().decode('utf-8')
+    try:
+        txt = raw.encode('latin-1').decode('utf-8')
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        txt = raw
+    def enc(m):
+        return '\\X2\\' + ''.join('%04X' % ord(c) for c in m.group(0)) + '\\X0\\'
+    txt = re.sub(r'[^\x00-\x7f]+', enc, txt)
+    open(path, 'w', encoding='ascii').write(txt)
 
 
 def build():
@@ -581,6 +628,7 @@ if __name__ == '__main__':
     a = build()
     step = os.path.join(OUT, 'tefkot-770-ustanovka.step')
     a.save(step)
+    fix_step_names(step)
     try:
         a.save(os.path.join(OUT, 'tefkot-770-ustanovka.glb'), tolerance=0.8, angularTolerance=0.4)
         glb_to_gltf_json(os.path.join(OUT, 'tefkot-770-ustanovka.glb'), os.path.join(OUT, 'tefkot-770-ustanovka.gltf.json'))

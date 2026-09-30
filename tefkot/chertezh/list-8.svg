@@ -12,7 +12,7 @@
 <path d="M397.00,272.00 L397.00,277.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <path d="M24.00,21.60 L195.00,21.60" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M222.00,21.60 L393.00,21.60" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M222.00,151.20 L335.00,151.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M222.00,128.20 L335.00,128.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M0.20,0.20 L419.80,0.20 L419.80,296.80 L0.20,296.80 Z" fill="none" stroke="#bbbbbb" stroke-width="0.1" stroke-linejoin="round"/>
 <path d="M20.00,5.00 L415.00,5.00 L415.00,292.00 L20.00,292.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <path d="M230.00,237.00 L415.00,237.00 L415.00,292.00 L230.00,292.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
@@ -102,444 +102,408 @@
 <path d="M24.00,53.80 L195.00,53.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="56.93" font-size="1.85" text-anchor="start" fill="#111111">303</text>
 <text x="34.00" y="56.93" font-size="1.85" text-anchor="start" fill="#111111">3</text>
-<text x="40.00" y="56.93" font-size="1.85" text-anchor="start" fill="#111111">D-1 верхняя заглушка</text>
-<text x="158.00" y="56.93" font-size="1.85" text-anchor="start" fill="#111111">DN100 (4″)</text>
+<text x="40.00" y="56.93" font-size="1.85" text-anchor="start" fill="#111111">переход → кран V-P3</text>
+<text x="158.00" y="56.93" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
 <text x="183.00" y="56.93" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,58.40 L195.00,58.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">304</text>
 <text x="34.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">3</text>
-<text x="40.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">D-1 заливной штуцер — заглушка</text>
+<text x="40.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">V-P3 → тройник DN15</text>
 <text x="158.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
 <text x="183.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,63.00 L195.00,63.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="66.13" font-size="1.85" text-anchor="start" fill="#111111">305</text>
 <text x="34.00" y="66.13" font-size="1.85" text-anchor="start" fill="#111111">3</text>
-<text x="40.00" y="66.13" font-size="1.85" text-anchor="start" fill="#111111">D-1 низ — заглушка-переход DN100/DN15</text>
-<text x="158.00" y="66.13" font-size="1.85" text-anchor="start" fill="#111111">DN100 (4″)</text>
+<text x="40.00" y="66.13" font-size="1.85" text-anchor="start" fill="#111111">тройник → септовая заглушка</text>
+<text x="158.00" y="66.13" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
 <text x="183.00" y="66.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,67.60 L195.00,67.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">306</text>
 <text x="34.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">3</text>
-<text x="40.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">D-1 → кран V-D1</text>
+<text x="40.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">тройник → заглушка с обжимом ¼″</text>
 <text x="158.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
 <text x="183.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,72.20 L195.00,72.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="75.33" font-size="1.85" text-anchor="start" fill="#111111">307</text>
-<text x="34.00" y="75.33" font-size="1.85" text-anchor="start" fill="#111111">3</text>
-<text x="40.00" y="75.33" font-size="1.85" text-anchor="start" fill="#111111">V-D1 → рукав на всас P-3</text>
+<text x="25.00" y="75.33" font-size="1.85" text-anchor="start" fill="#111111">401</text>
+<text x="34.00" y="75.33" font-size="1.85" text-anchor="start" fill="#111111">4</text>
+<text x="40.00" y="75.33" font-size="1.85" text-anchor="start" fill="#111111">рукав от E-1 → переход DN15/DN25</text>
 <text x="158.00" y="75.33" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
 <text x="183.00" y="75.33" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,76.80 L195.00,76.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">308</text>
-<text x="34.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">3</text>
-<text x="40.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">переход → кран V-P3</text>
-<text x="158.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="25.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">402</text>
+<text x="34.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">4</text>
+<text x="40.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">переход → тройник A (PI-4)</text>
+<text x="158.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,81.40 L195.00,81.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">309</text>
-<text x="34.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">3</text>
-<text x="40.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">V-P3 → тройник DN15</text>
-<text x="158.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="25.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">403</text>
+<text x="34.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">4</text>
+<text x="40.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">тройник A → переход DN38/DN15</text>
+<text x="158.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,86.00 L195.00,86.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">310</text>
-<text x="34.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">3</text>
-<text x="40.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">тройник → септовая заглушка</text>
+<text x="25.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">404</text>
+<text x="34.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">4</text>
+<text x="40.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">переход → манометр PI-4</text>
 <text x="158.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
 <text x="183.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,90.60 L195.00,90.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">311</text>
-<text x="34.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">3</text>
-<text x="40.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">тройник → заглушка с обжимом ¼″</text>
-<text x="158.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="25.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">405</text>
+<text x="34.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">4</text>
+<text x="40.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">тройник A → тройник B</text>
+<text x="158.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,95.20 L195.00,95.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">401</text>
+<text x="25.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">406</text>
 <text x="34.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">рукав от E-1 → переход DN15/DN25</text>
-<text x="158.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="40.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">тройник B → кран VV-1</text>
+<text x="158.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,99.80 L195.00,99.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">402</text>
+<text x="25.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">407</text>
 <text x="34.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">переход → тройник A (PI-4)</text>
+<text x="40.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">VV-1 → переход DN38/DN15</text>
 <text x="158.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,104.40 L195.00,104.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">403</text>
+<text x="25.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">408</text>
 <text x="34.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">тройник A → переход DN38/DN15</text>
-<text x="158.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
+<text x="40.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">переход → ёлочка вакуумная</text>
+<text x="158.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
 <text x="183.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,109.00 L195.00,109.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">404</text>
+<text x="25.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">409</text>
 <text x="34.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">переход → манометр PI-4</text>
-<text x="158.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="40.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">тройник B → тройник C</text>
+<text x="158.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,113.60 L195.00,113.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">405</text>
+<text x="25.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">410</text>
 <text x="34.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">тройник A → тройник B</text>
+<text x="40.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">тройник C → кран SV-1</text>
 <text x="158.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,118.20 L195.00,118.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">406</text>
+<text x="25.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">411</text>
 <text x="34.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">тройник B → кран VV-1</text>
+<text x="40.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">SV-1 → PCV-1</text>
 <text x="158.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,122.80 L195.00,122.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">407</text>
+<text x="25.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">412</text>
 <text x="34.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">VV-1 → переход DN38/DN15</text>
+<text x="40.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">PCV-1 → коллектор сбросов</text>
 <text x="158.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,127.40 L195.00,127.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">408</text>
+<text x="25.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">413</text>
 <text x="34.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">переход → ёлочка вакуумная</text>
-<text x="158.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="40.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">тройник C → следующий</text>
+<text x="158.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,132.00 L195.00,132.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">409</text>
+<text x="25.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">414</text>
 <text x="34.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">тройник B → тройник C</text>
+<text x="40.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">тройник D → кран SV-2</text>
 <text x="158.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,136.60 L195.00,136.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">410</text>
+<text x="25.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">415</text>
 <text x="34.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">тройник C → кран SV-1</text>
+<text x="40.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">SV-2 → NRV-1</text>
 <text x="158.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,141.20 L195.00,141.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="144.33" font-size="1.85" text-anchor="start" fill="#111111">411</text>
+<text x="25.00" y="144.33" font-size="1.85" text-anchor="start" fill="#111111">416</text>
 <text x="34.00" y="144.33" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="144.33" font-size="1.85" text-anchor="start" fill="#111111">SV-1 → PCV-1</text>
+<text x="40.00" y="144.33" font-size="1.85" text-anchor="start" fill="#111111">NRV-1 → коллектор сбросов</text>
 <text x="158.00" y="144.33" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="144.33" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,145.80 L195.00,145.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="148.93" font-size="1.85" text-anchor="start" fill="#111111">412</text>
+<text x="25.00" y="148.93" font-size="1.85" text-anchor="start" fill="#111111">417</text>
 <text x="34.00" y="148.93" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="148.93" font-size="1.85" text-anchor="start" fill="#111111">PCV-1 → коллектор сбросов</text>
+<text x="40.00" y="148.93" font-size="1.85" text-anchor="start" fill="#111111">тройник D → следующий</text>
 <text x="158.00" y="148.93" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="148.93" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,150.40 L195.00,150.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="153.53" font-size="1.85" text-anchor="start" fill="#111111">413</text>
+<text x="25.00" y="153.53" font-size="1.85" text-anchor="start" fill="#111111">418</text>
 <text x="34.00" y="153.53" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="153.53" font-size="1.85" text-anchor="start" fill="#111111">тройник C → следующий</text>
+<text x="40.00" y="153.53" font-size="1.85" text-anchor="start" fill="#111111">тройник E → кран SV-3*</text>
 <text x="158.00" y="153.53" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="153.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,155.00 L195.00,155.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="158.13" font-size="1.85" text-anchor="start" fill="#111111">414</text>
+<text x="25.00" y="158.13" font-size="1.85" text-anchor="start" fill="#111111">419</text>
 <text x="34.00" y="158.13" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="158.13" font-size="1.85" text-anchor="start" fill="#111111">тройник D → кран SV-2</text>
+<text x="40.00" y="158.13" font-size="1.85" text-anchor="start" fill="#111111">SV-3* → PSV-1</text>
 <text x="158.00" y="158.13" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="158.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,159.60 L195.00,159.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="162.73" font-size="1.85" text-anchor="start" fill="#111111">415</text>
+<text x="25.00" y="162.73" font-size="1.85" text-anchor="start" fill="#111111">420</text>
 <text x="34.00" y="162.73" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="162.73" font-size="1.85" text-anchor="start" fill="#111111">SV-2 → NRV-1</text>
+<text x="40.00" y="162.73" font-size="1.85" text-anchor="start" fill="#111111">PSV-1 → коллектор сбросов</text>
 <text x="158.00" y="162.73" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="162.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,164.20 L195.00,164.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="167.33" font-size="1.85" text-anchor="start" fill="#111111">416</text>
+<text x="25.00" y="167.33" font-size="1.85" text-anchor="start" fill="#111111">421</text>
 <text x="34.00" y="167.33" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="167.33" font-size="1.85" text-anchor="start" fill="#111111">NRV-1 → коллектор сбросов</text>
+<text x="40.00" y="167.33" font-size="1.85" text-anchor="start" fill="#111111">тройник E → следующий</text>
 <text x="158.00" y="167.33" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="167.33" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,168.80 L195.00,168.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="171.93" font-size="1.85" text-anchor="start" fill="#111111">417</text>
+<text x="25.00" y="171.93" font-size="1.85" text-anchor="start" fill="#111111">422</text>
 <text x="34.00" y="171.93" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="171.93" font-size="1.85" text-anchor="start" fill="#111111">тройник D → следующий</text>
+<text x="40.00" y="171.93" font-size="1.85" text-anchor="start" fill="#111111">тройник F → кран SV-4 НЗ</text>
 <text x="158.00" y="171.93" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="171.93" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,173.40 L195.00,173.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="176.53" font-size="1.85" text-anchor="start" fill="#111111">418</text>
+<text x="25.00" y="176.53" font-size="1.85" text-anchor="start" fill="#111111">423</text>
 <text x="34.00" y="176.53" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="176.53" font-size="1.85" text-anchor="start" fill="#111111">тройник E → кран SV-3*</text>
+<text x="40.00" y="176.53" font-size="1.85" text-anchor="start" fill="#111111">SV-4 НЗ → NRV-2</text>
 <text x="158.00" y="176.53" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="176.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,178.00 L195.00,178.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="181.13" font-size="1.85" text-anchor="start" fill="#111111">419</text>
+<text x="25.00" y="181.13" font-size="1.85" text-anchor="start" fill="#111111">424</text>
 <text x="34.00" y="181.13" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="181.13" font-size="1.85" text-anchor="start" fill="#111111">SV-3* → PSV-1</text>
+<text x="40.00" y="181.13" font-size="1.85" text-anchor="start" fill="#111111">NRV-2 → коллектор сбросов</text>
 <text x="158.00" y="181.13" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="181.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,182.60 L195.00,182.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="185.73" font-size="1.85" text-anchor="start" fill="#111111">420</text>
+<text x="25.00" y="185.73" font-size="1.85" text-anchor="start" fill="#111111">425</text>
 <text x="34.00" y="185.73" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="185.73" font-size="1.85" text-anchor="start" fill="#111111">PSV-1 → коллектор сбросов</text>
+<text x="40.00" y="185.73" font-size="1.85" text-anchor="start" fill="#111111">коллектор → переход DN38/DN15</text>
 <text x="158.00" y="185.73" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
 <text x="183.00" y="185.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,187.20 L195.00,187.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="190.33" font-size="1.85" text-anchor="start" fill="#111111">421</text>
+<text x="25.00" y="190.33" font-size="1.85" text-anchor="start" fill="#111111">426</text>
 <text x="34.00" y="190.33" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="190.33" font-size="1.85" text-anchor="start" fill="#111111">тройник E → следующий</text>
-<text x="158.00" y="190.33" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
+<text x="40.00" y="190.33" font-size="1.85" text-anchor="start" fill="#111111">переход → рукав на BU-1</text>
+<text x="158.00" y="190.33" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
 <text x="183.00" y="190.33" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,191.80 L195.00,191.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="194.93" font-size="1.85" text-anchor="start" fill="#111111">422</text>
-<text x="34.00" y="194.93" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="194.93" font-size="1.85" text-anchor="start" fill="#111111">тройник F → кран SV-4 НЗ</text>
-<text x="158.00" y="194.93" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
-<text x="183.00" y="194.93" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
+<text x="25.00" y="194.93" font-size="1.85" text-anchor="start" fill="#111111">501</text>
+<text x="34.00" y="194.93" font-size="1.85" text-anchor="start" fill="#111111">5</text>
+<text x="40.00" y="194.93" font-size="1.85" text-anchor="start" fill="#c62828">G-1 порт регулятора (переходник G?→DN15) → тройник</text>
+<text x="158.00" y="194.93" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="183.00" y="194.93" font-size="1.85" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M24.00,196.40 L195.00,196.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="199.53" font-size="1.85" text-anchor="start" fill="#111111">423</text>
-<text x="34.00" y="199.53" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="199.53" font-size="1.85" text-anchor="start" fill="#111111">SV-4 НЗ → NRV-2</text>
-<text x="158.00" y="199.53" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
-<text x="183.00" y="199.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
+<text x="25.00" y="199.53" font-size="1.85" text-anchor="start" fill="#111111">502</text>
+<text x="34.00" y="199.53" font-size="1.85" text-anchor="start" fill="#111111">5</text>
+<text x="40.00" y="199.53" font-size="1.85" text-anchor="start" fill="#111111">тройник → PSV-3</text>
+<text x="158.00" y="199.53" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="183.00" y="199.53" font-size="1.85" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M24.00,201.00 L195.00,201.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="204.13" font-size="1.85" text-anchor="start" fill="#111111">424</text>
-<text x="34.00" y="204.13" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="204.13" font-size="1.85" text-anchor="start" fill="#111111">NRV-2 → коллектор сбросов</text>
-<text x="158.00" y="204.13" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
-<text x="183.00" y="204.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
+<text x="25.00" y="204.13" font-size="1.85" text-anchor="start" fill="#111111">503</text>
+<text x="34.00" y="204.13" font-size="1.85" text-anchor="start" fill="#111111">5</text>
+<text x="40.00" y="204.13" font-size="1.85" text-anchor="start" fill="#c62828">G-1 выход газа (переходник G?→DN15) → V-G1</text>
+<text x="158.00" y="204.13" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="183.00" y="204.13" font-size="1.85" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M24.00,205.60 L195.00,205.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="208.73" font-size="1.85" text-anchor="start" fill="#111111">425</text>
-<text x="34.00" y="208.73" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="208.73" font-size="1.85" text-anchor="start" fill="#111111">коллектор → переход DN38/DN15</text>
-<text x="158.00" y="208.73" font-size="1.85" text-anchor="start" fill="#111111">DN25</text>
-<text x="183.00" y="208.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
+<text x="25.00" y="208.73" font-size="1.85" text-anchor="start" fill="#111111">504</text>
+<text x="34.00" y="208.73" font-size="1.85" text-anchor="start" fill="#111111">5</text>
+<text x="40.00" y="208.73" font-size="1.85" text-anchor="start" fill="#111111">V-G1 → ёлочка / трубка на K-1</text>
+<text x="158.00" y="208.73" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="183.00" y="208.73" font-size="1.85" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M24.00,210.20 L195.00,210.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="213.33" font-size="1.85" text-anchor="start" fill="#111111">426</text>
-<text x="34.00" y="213.33" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="213.33" font-size="1.85" text-anchor="start" fill="#111111">переход → рукав на BU-1</text>
-<text x="158.00" y="213.33" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
-<text x="183.00" y="213.33" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
+<text x="25.00" y="213.33" font-size="1.85" text-anchor="start" fill="#111111">505</text>
+<text x="34.00" y="213.33" font-size="1.85" text-anchor="start" fill="#111111">5</text>
+<text x="40.00" y="213.33" font-size="1.85" text-anchor="start" fill="#111111">K-1 верх — заглушка-переход DN65/DN15</text>
+<text x="158.00" y="213.33" font-size="1.85" text-anchor="start" fill="#111111">DN65</text>
+<text x="183.00" y="213.33" font-size="1.85" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M24.00,214.80 L195.00,214.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="217.93" font-size="1.85" text-anchor="start" fill="#111111">501</text>
+<text x="25.00" y="217.93" font-size="1.85" text-anchor="start" fill="#111111">506</text>
 <text x="34.00" y="217.93" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="40.00" y="217.93" font-size="1.85" text-anchor="start" fill="#c62828">G-1 порт регулятора (переходник G?→DN15) → тройник</text>
+<text x="40.00" y="217.93" font-size="1.85" text-anchor="start" fill="#111111">K-1 верхний выход DN15</text>
 <text x="158.00" y="217.93" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
-<text x="183.00" y="217.93" font-size="1.85" text-anchor="start" fill="#111111">EPDM</text>
+<text x="183.00" y="217.93" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,219.40 L195.00,219.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="25.00" y="222.53" font-size="1.85" text-anchor="start" fill="#111111">502</text>
+<text x="25.00" y="222.53" font-size="1.85" text-anchor="start" fill="#111111">507</text>
 <text x="34.00" y="222.53" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="40.00" y="222.53" font-size="1.85" text-anchor="start" fill="#111111">тройник → PSV-3</text>
-<text x="158.00" y="222.53" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="40.00" y="222.53" font-size="1.85" text-anchor="start" fill="#111111">K-1 низ — заглушка-переход DN65/DN15</text>
+<text x="158.00" y="222.53" font-size="1.85" text-anchor="start" fill="#111111">DN65</text>
 <text x="183.00" y="222.53" font-size="1.85" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M33.00,17.00 L33.00,224.00" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
 <path d="M39.00,17.00 L39.00,224.00" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
 <path d="M157.00,17.00 L157.00,224.00" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
 <path d="M182.00,17.00 L182.00,224.00" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M222.00,17.00 L393.00,17.00 L393.00,136.60 L222.00,136.60 Z" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M222.00,17.00 L393.00,17.00 L393.00,113.60 L222.00,113.60 Z" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <text x="223.00" y="20.13" font-size="1.85" text-anchor="start" fill="#111111" font-weight="bold">№</text>
 <text x="232.00" y="20.13" font-size="1.85" text-anchor="start" fill="#111111" font-weight="bold">Л.</text>
 <text x="238.00" y="20.13" font-size="1.85" text-anchor="start" fill="#111111" font-weight="bold">Место</text>
 <text x="356.00" y="20.13" font-size="1.85" text-anchor="start" fill="#111111" font-weight="bold">Размер</text>
 <text x="381.00" y="20.13" font-size="1.85" text-anchor="start" fill="#111111" font-weight="bold">Прокл.</text>
-<text x="223.00" y="24.73" font-size="1.85" text-anchor="start" fill="#111111">503</text>
+<text x="223.00" y="24.73" font-size="1.85" text-anchor="start" fill="#111111">508</text>
 <text x="232.00" y="24.73" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="238.00" y="24.73" font-size="1.85" text-anchor="start" fill="#c62828">G-1 выход газа (переходник G?→DN15) → V-G1</text>
+<text x="238.00" y="24.73" font-size="1.85" text-anchor="start" fill="#111111">K-1 нижний вход DN15</text>
 <text x="356.00" y="24.73" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
-<text x="381.00" y="24.73" font-size="1.85" text-anchor="start" fill="#111111">EPDM</text>
+<text x="381.00" y="24.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,26.20 L393.00,26.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="29.33" font-size="1.85" text-anchor="start" fill="#111111">504</text>
+<text x="223.00" y="29.33" font-size="1.85" text-anchor="start" fill="#111111">509</text>
 <text x="232.00" y="29.33" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="238.00" y="29.33" font-size="1.85" text-anchor="start" fill="#111111">V-G1 → ёлочка / трубка на K-1</text>
-<text x="356.00" y="29.33" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
-<text x="381.00" y="29.33" font-size="1.85" text-anchor="start" fill="#111111">EPDM</text>
+<text x="238.00" y="29.33" font-size="1.85" text-anchor="start" fill="#111111">C-1 верх — заглушка-переход DN65/DN15</text>
+<text x="356.00" y="29.33" font-size="1.85" text-anchor="start" fill="#111111">DN65</text>
+<text x="381.00" y="29.33" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,30.80 L393.00,30.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="33.93" font-size="1.85" text-anchor="start" fill="#111111">505</text>
+<text x="223.00" y="33.93" font-size="1.85" text-anchor="start" fill="#111111">510</text>
 <text x="232.00" y="33.93" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="238.00" y="33.93" font-size="1.85" text-anchor="start" fill="#111111">K-1 верх — заглушка-переход DN65/DN15</text>
-<text x="356.00" y="33.93" font-size="1.85" text-anchor="start" fill="#111111">DN65</text>
-<text x="381.00" y="33.93" font-size="1.85" text-anchor="start" fill="#111111">EPDM</text>
+<text x="238.00" y="33.93" font-size="1.85" text-anchor="start" fill="#111111">C-1 верхний выход DN15</text>
+<text x="356.00" y="33.93" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="381.00" y="33.93" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,35.40 L393.00,35.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="38.53" font-size="1.85" text-anchor="start" fill="#111111">506</text>
+<text x="223.00" y="38.53" font-size="1.85" text-anchor="start" fill="#111111">511</text>
 <text x="232.00" y="38.53" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="238.00" y="38.53" font-size="1.85" text-anchor="start" fill="#111111">K-1 верхний выход DN15</text>
-<text x="356.00" y="38.53" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="238.00" y="38.53" font-size="1.85" text-anchor="start" fill="#111111">C-1 низ — заглушка-переход DN65/DN15 + сетч. прокладка</text>
+<text x="356.00" y="38.53" font-size="1.85" text-anchor="start" fill="#111111">DN65</text>
 <text x="381.00" y="38.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,40.00 L393.00,40.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="43.13" font-size="1.85" text-anchor="start" fill="#111111">507</text>
+<text x="223.00" y="43.13" font-size="1.85" text-anchor="start" fill="#111111">512</text>
 <text x="232.00" y="43.13" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="238.00" y="43.13" font-size="1.85" text-anchor="start" fill="#111111">K-1 низ — заглушка-переход DN65/DN15</text>
-<text x="356.00" y="43.13" font-size="1.85" text-anchor="start" fill="#111111">DN65</text>
-<text x="381.00" y="43.13" font-size="1.85" text-anchor="start" fill="#111111">EPDM</text>
+<text x="238.00" y="43.13" font-size="1.85" text-anchor="start" fill="#111111">C-1 нижний вход DN15</text>
+<text x="356.00" y="43.13" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="381.00" y="43.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,44.60 L393.00,44.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="47.73" font-size="1.85" text-anchor="start" fill="#111111">508</text>
+<text x="223.00" y="47.73" font-size="1.85" text-anchor="start" fill="#111111">513</text>
 <text x="232.00" y="47.73" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="238.00" y="47.73" font-size="1.85" text-anchor="start" fill="#111111">K-1 нижний вход DN15</text>
-<text x="356.00" y="47.73" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="238.00" y="47.73" font-size="1.85" text-anchor="start" fill="#111111">C-2 верх — заглушка-переход DN65/DN15</text>
+<text x="356.00" y="47.73" font-size="1.85" text-anchor="start" fill="#111111">DN65</text>
 <text x="381.00" y="47.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,49.20 L393.00,49.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="52.33" font-size="1.85" text-anchor="start" fill="#111111">509</text>
+<text x="223.00" y="52.33" font-size="1.85" text-anchor="start" fill="#111111">514</text>
 <text x="232.00" y="52.33" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="238.00" y="52.33" font-size="1.85" text-anchor="start" fill="#111111">C-1 верх — заглушка-переход DN65/DN15</text>
-<text x="356.00" y="52.33" font-size="1.85" text-anchor="start" fill="#111111">DN65</text>
+<text x="238.00" y="52.33" font-size="1.85" text-anchor="start" fill="#111111">C-2 верхний выход DN15</text>
+<text x="356.00" y="52.33" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
 <text x="381.00" y="52.33" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,53.80 L393.00,53.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="56.93" font-size="1.85" text-anchor="start" fill="#111111">510</text>
+<text x="223.00" y="56.93" font-size="1.85" text-anchor="start" fill="#111111">515</text>
 <text x="232.00" y="56.93" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="238.00" y="56.93" font-size="1.85" text-anchor="start" fill="#111111">C-1 верхний выход DN15</text>
-<text x="356.00" y="56.93" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="238.00" y="56.93" font-size="1.85" text-anchor="start" fill="#111111">C-2 низ — заглушка-переход DN65/DN15 + сетч. прокладка</text>
+<text x="356.00" y="56.93" font-size="1.85" text-anchor="start" fill="#111111">DN65</text>
 <text x="381.00" y="56.93" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,58.40 L393.00,58.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">511</text>
+<text x="223.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">516</text>
 <text x="232.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="238.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">C-1 низ — заглушка-переход DN65/DN15 + сетч. прокладка</text>
-<text x="356.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">DN65</text>
+<text x="238.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">C-2 нижний вход DN15</text>
+<text x="356.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
 <text x="381.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,63.00 L393.00,63.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="66.13" font-size="1.85" text-anchor="start" fill="#111111">512</text>
-<text x="232.00" y="66.13" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="238.00" y="66.13" font-size="1.85" text-anchor="start" fill="#111111">C-1 нижний вход DN15</text>
-<text x="356.00" y="66.13" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="223.00" y="66.13" font-size="1.85" text-anchor="start" fill="#111111">701</text>
+<text x="232.00" y="66.13" font-size="1.85" text-anchor="start" fill="#111111">7</text>
+<text x="238.00" y="66.13" font-size="1.85" text-anchor="start" fill="#111111">тройник → переход DN38/DN15 (проба)</text>
+<text x="356.00" y="66.13" font-size="1.85" text-anchor="start" fill="#111111">DN38</text>
 <text x="381.00" y="66.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,67.60 L393.00,67.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">513</text>
-<text x="232.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="238.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">C-2 верх — заглушка-переход DN65/DN15</text>
-<text x="356.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">DN65</text>
+<text x="223.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">702</text>
+<text x="232.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">7</text>
+<text x="238.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">переход → кран SP-1</text>
+<text x="356.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
 <text x="381.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,72.20 L393.00,72.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="75.33" font-size="1.85" text-anchor="start" fill="#111111">514</text>
-<text x="232.00" y="75.33" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="238.00" y="75.33" font-size="1.85" text-anchor="start" fill="#111111">C-2 верхний выход DN15</text>
+<text x="223.00" y="75.33" font-size="1.85" text-anchor="start" fill="#111111">703</text>
+<text x="232.00" y="75.33" font-size="1.85" text-anchor="start" fill="#111111">7</text>
+<text x="238.00" y="75.33" font-size="1.85" text-anchor="start" fill="#111111">SP-1 → носик пробоотборника</text>
 <text x="356.00" y="75.33" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
 <text x="381.00" y="75.33" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,76.80 L393.00,76.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">515</text>
-<text x="232.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="238.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">C-2 низ — заглушка-переход DN65/DN15 + сетч. прокладка</text>
-<text x="356.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">DN65</text>
+<text x="223.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">704</text>
+<text x="232.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">7</text>
+<text x="238.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">тройник → переход DN38/DN15 (выгрузка)</text>
+<text x="356.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">DN38</text>
 <text x="381.00" y="79.93" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,81.40 L393.00,81.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">516</text>
-<text x="232.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="238.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">C-2 нижний вход DN15</text>
+<text x="223.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">705</text>
+<text x="232.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">7</text>
+<text x="238.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">переход → рукав PTFE (выгрузка)</text>
 <text x="356.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
 <text x="381.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,86.00 L393.00,86.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">701</text>
+<text x="223.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">706</text>
 <text x="232.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">тройник → переход DN38/DN15 (проба)</text>
-<text x="356.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">DN38</text>
+<text x="238.00" y="89.13" font-size="1.85" text-anchor="start" fill="#c62828">рукав → переходник DN15/резьба ? на P-2 (вход)</text>
+<text x="356.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
 <text x="381.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,90.60 L393.00,90.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">702</text>
+<text x="223.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">707</text>
 <text x="232.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">переход → кран SP-1</text>
+<text x="238.00" y="93.73" font-size="1.85" text-anchor="start" fill="#c62828">P-2 выход (переходник резьба ?/DN15) → рукав</text>
 <text x="356.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
 <text x="381.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,95.20 L393.00,95.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">703</text>
+<text x="223.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">708</text>
 <text x="232.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">SP-1 → носик пробоотборника</text>
-<text x="356.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="238.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">рукав → вход нутча F-1</text>
+<text x="356.00" y="98.33" font-size="1.85" text-anchor="start" fill="#c62828">DN15?</text>
 <text x="381.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,99.80 L393.00,99.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">704</text>
+<text x="223.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">709</text>
 <text x="232.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">тройник → переход DN38/DN15 (выгрузка)</text>
-<text x="356.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">DN38</text>
+<text x="238.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">выход нутча → рукав на F-2</text>
+<text x="356.00" y="102.93" font-size="1.85" text-anchor="start" fill="#c62828">DN?</text>
 <text x="381.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,104.40 L393.00,104.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">705</text>
+<text x="223.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">710</text>
 <text x="232.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">переход → рукав PTFE (выгрузка)</text>
-<text x="356.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="238.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">рукав → вход F-2</text>
+<text x="356.00" y="107.53" font-size="1.85" text-anchor="start" fill="#c62828">DN15?</text>
 <text x="381.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,109.00 L393.00,109.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">706</text>
+<text x="223.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">711</text>
 <text x="232.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="112.13" font-size="1.85" text-anchor="start" fill="#c62828">рукав → переходник DN15/резьба ? на P-2 (вход)</text>
-<text x="356.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
+<text x="238.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">выход F-2 → рукав на налив</text>
+<text x="356.00" y="112.13" font-size="1.85" text-anchor="start" fill="#c62828">DN15?</text>
 <text x="381.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
-<path d="M222.00,113.60 L393.00,113.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">707</text>
-<text x="232.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="116.73" font-size="1.85" text-anchor="start" fill="#c62828">P-2 выход (переходник резьба ?/DN15) → рукав</text>
-<text x="356.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">DN15</text>
-<text x="381.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
-<path d="M222.00,118.20 L393.00,118.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">708</text>
-<text x="232.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">рукав → вход нутча F-1</text>
-<text x="356.00" y="121.33" font-size="1.85" text-anchor="start" fill="#c62828">DN15?</text>
-<text x="381.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
-<path d="M222.00,122.80 L393.00,122.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">709</text>
-<text x="232.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">выход нутча → рукав на F-2</text>
-<text x="356.00" y="125.93" font-size="1.85" text-anchor="start" fill="#c62828">DN?</text>
-<text x="381.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
-<path d="M222.00,127.40 L393.00,127.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">710</text>
-<text x="232.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">рукав → вход F-2</text>
-<text x="356.00" y="130.53" font-size="1.85" text-anchor="start" fill="#c62828">DN15?</text>
-<text x="381.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
-<path d="M222.00,132.00 L393.00,132.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">711</text>
-<text x="232.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">выход F-2 → рукав на налив</text>
-<text x="356.00" y="135.13" font-size="1.85" text-anchor="start" fill="#c62828">DN15?</text>
-<text x="381.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
-<path d="M231.00,17.00 L231.00,136.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M237.00,17.00 L237.00,136.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M355.00,17.00 L355.00,136.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M380.00,17.00 L380.00,136.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<text x="222.00" y="144.60" font-size="2.6" text-anchor="start" fill="#111111" font-weight="bold">СВОДКА (без запаса; заказывать ×2 прокладки)</text>
-<path d="M222.00,146.60 L335.00,146.60 L335.00,188.00 L222.00,188.00 Z" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<text x="223.00" y="149.73" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Размер</text>
-<text x="253.00" y="149.73" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Прокладка</text>
-<text x="275.00" y="149.73" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Соед.</text>
-<text x="290.00" y="149.73" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Хомутов</text>
-<text x="308.00" y="149.73" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Прокладок ×2</text>
-<text x="223.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111">DN100</text>
+<path d="M231.00,17.00 L231.00,113.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<path d="M237.00,17.00 L237.00,113.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<path d="M355.00,17.00 L355.00,113.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<path d="M380.00,17.00 L380.00,113.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<text x="222.00" y="121.60" font-size="2.6" text-anchor="start" fill="#111111" font-weight="bold">СВОДКА (без запаса; заказывать ×2 прокладки)</text>
+<path d="M222.00,123.60 L335.00,123.60 L335.00,160.40 L222.00,160.40 Z" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="223.00" y="126.73" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Размер</text>
+<text x="253.00" y="126.73" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Прокладка</text>
+<text x="275.00" y="126.73" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Соед.</text>
+<text x="290.00" y="126.73" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Хомутов</text>
+<text x="308.00" y="126.73" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Прокладок ×2</text>
+<text x="223.00" y="131.33" font-size="1.9" text-anchor="start" fill="#111111">DN15</text>
+<text x="253.00" y="131.33" font-size="1.9" text-anchor="start" fill="#111111">EPDM</text>
+<text x="275.00" y="131.33" font-size="1.9" text-anchor="start" fill="#111111">4</text>
+<text x="290.00" y="131.33" font-size="1.9" text-anchor="start" fill="#111111">4</text>
+<text x="308.00" y="131.33" font-size="1.9" text-anchor="start" fill="#111111">8</text>
+<path d="M222.00,132.80 L335.00,132.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<text x="223.00" y="135.93" font-size="1.9" text-anchor="start" fill="#111111">DN15</text>
+<text x="253.00" y="135.93" font-size="1.9" text-anchor="start" fill="#111111">PTFE</text>
+<text x="275.00" y="135.93" font-size="1.9" text-anchor="start" fill="#111111">23</text>
+<text x="290.00" y="135.93" font-size="1.9" text-anchor="start" fill="#111111">23</text>
+<text x="308.00" y="135.93" font-size="1.9" text-anchor="start" fill="#111111">46</text>
+<path d="M222.00,137.40 L335.00,137.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<text x="223.00" y="140.53" font-size="1.9" text-anchor="start" fill="#111111">DN25</text>
+<text x="253.00" y="140.53" font-size="1.9" text-anchor="start" fill="#111111">PTFE</text>
+<text x="275.00" y="140.53" font-size="1.9" text-anchor="start" fill="#111111">26</text>
+<text x="290.00" y="140.53" font-size="1.9" text-anchor="start" fill="#111111">26</text>
+<text x="308.00" y="140.53" font-size="1.9" text-anchor="start" fill="#111111">52</text>
+<path d="M222.00,142.00 L335.00,142.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<text x="223.00" y="145.13" font-size="1.9" text-anchor="start" fill="#111111">DN38</text>
+<text x="253.00" y="145.13" font-size="1.9" text-anchor="start" fill="#111111">PTFE</text>
+<text x="275.00" y="145.13" font-size="1.9" text-anchor="start" fill="#111111">3</text>
+<text x="290.00" y="145.13" font-size="1.9" text-anchor="start" fill="#111111">3</text>
+<text x="308.00" y="145.13" font-size="1.9" text-anchor="start" fill="#111111">6</text>
+<path d="M222.00,146.60 L335.00,146.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<text x="223.00" y="149.73" font-size="1.9" text-anchor="start" fill="#111111">DN65</text>
+<text x="253.00" y="149.73" font-size="1.9" text-anchor="start" fill="#111111">EPDM</text>
+<text x="275.00" y="149.73" font-size="1.9" text-anchor="start" fill="#111111">2</text>
+<text x="290.00" y="149.73" font-size="1.9" text-anchor="start" fill="#111111">2</text>
+<text x="308.00" y="149.73" font-size="1.9" text-anchor="start" fill="#111111">4</text>
+<path d="M222.00,151.20 L335.00,151.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<text x="223.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111">DN65</text>
 <text x="253.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111">PTFE</text>
-<text x="275.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111">2</text>
-<text x="290.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111">2</text>
-<text x="308.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111">4</text>
+<text x="275.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111">5</text>
+<text x="290.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111">5</text>
+<text x="308.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111">10</text>
 <path d="M222.00,155.80 L335.00,155.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">DN15</text>
-<text x="253.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">EPDM</text>
-<text x="275.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">4</text>
-<text x="290.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">4</text>
-<text x="308.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">8</text>
-<path d="M222.00,160.40 L335.00,160.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">DN15</text>
-<text x="253.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">PTFE</text>
-<text x="275.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">26</text>
-<text x="290.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">26</text>
-<text x="308.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">52</text>
-<path d="M222.00,165.00 L335.00,165.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">DN25</text>
-<text x="253.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">PTFE</text>
-<text x="275.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">26</text>
-<text x="290.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">26</text>
-<text x="308.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">52</text>
-<path d="M222.00,169.60 L335.00,169.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="172.73" font-size="1.9" text-anchor="start" fill="#111111">DN38</text>
-<text x="253.00" y="172.73" font-size="1.9" text-anchor="start" fill="#111111">PTFE</text>
-<text x="275.00" y="172.73" font-size="1.9" text-anchor="start" fill="#111111">3</text>
-<text x="290.00" y="172.73" font-size="1.9" text-anchor="start" fill="#111111">3</text>
-<text x="308.00" y="172.73" font-size="1.9" text-anchor="start" fill="#111111">6</text>
-<path d="M222.00,174.20 L335.00,174.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="177.33" font-size="1.9" text-anchor="start" fill="#111111">DN65</text>
-<text x="253.00" y="177.33" font-size="1.9" text-anchor="start" fill="#111111">EPDM</text>
-<text x="275.00" y="177.33" font-size="1.9" text-anchor="start" fill="#111111">2</text>
-<text x="290.00" y="177.33" font-size="1.9" text-anchor="start" fill="#111111">2</text>
-<text x="308.00" y="177.33" font-size="1.9" text-anchor="start" fill="#111111">4</text>
-<path d="M222.00,178.80 L335.00,178.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="181.93" font-size="1.9" text-anchor="start" fill="#111111">DN65</text>
-<text x="253.00" y="181.93" font-size="1.9" text-anchor="start" fill="#111111">PTFE</text>
-<text x="275.00" y="181.93" font-size="1.9" text-anchor="start" fill="#111111">5</text>
-<text x="290.00" y="181.93" font-size="1.9" text-anchor="start" fill="#111111">5</text>
-<text x="308.00" y="181.93" font-size="1.9" text-anchor="start" fill="#111111">10</text>
-<path d="M222.00,183.40 L335.00,183.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="186.53" font-size="1.9" text-anchor="start" fill="#c62828">DN?</text>
-<text x="253.00" y="186.53" font-size="1.9" text-anchor="start" fill="#111111">PTFE</text>
-<text x="275.00" y="186.53" font-size="1.9" text-anchor="start" fill="#111111">1</text>
-<text x="290.00" y="186.53" font-size="1.9" text-anchor="start" fill="#111111">1</text>
-<text x="308.00" y="186.53" font-size="1.9" text-anchor="start" fill="#111111">2</text>
-<path d="M252.00,146.60 L252.00,188.00" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M274.00,146.60 L274.00,188.00" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M289.00,146.60 L289.00,188.00" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M307.00,146.60 L307.00,188.00" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<text x="223.00" y="158.93" font-size="1.9" text-anchor="start" fill="#c62828">DN?</text>
+<text x="253.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">PTFE</text>
+<text x="275.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">1</text>
+<text x="290.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">1</text>
+<text x="308.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">2</text>
+<path d="M252.00,123.60 L252.00,160.40" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<path d="M274.00,123.60 L274.00,160.40" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<path d="M289.00,123.60 L289.00,160.40" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<path d="M307.00,123.60 L307.00,160.40" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
 </svg>
