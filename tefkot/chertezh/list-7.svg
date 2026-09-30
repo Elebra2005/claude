@@ -196,7 +196,7 @@
 <text x="208.50" y="81.00" font-size="1.8" text-anchor="end" fill="#111111">PI-5</text>
 <path d="M230.00,76.00 L236.00,76.00 L236.00,82.00 L230.00,82.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <text x="237.00" y="76.00" font-size="1.8" text-anchor="start" fill="#111111">PSV-4</text>
-<text x="210.00" y="61.00" font-size="1.8" text-anchor="end" fill="#111111">сброс → T-1 (лист 4)</text>
+<text x="210.00" y="61.00" font-size="1.8" text-anchor="end" fill="#111111">сброс → коллектор сбросов (лист 4)</text>
 <path d="M226.80,144.60 L233.20,144.60 L233.20,145.70 L226.80,145.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M226.80,146.30 L233.20,146.30 L233.20,147.40 L226.80,147.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M226.20,144.20 L226.20,147.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>

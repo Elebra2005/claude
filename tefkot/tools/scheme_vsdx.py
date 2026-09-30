@@ -17,7 +17,7 @@ C = {'fg': '#1d2226', 'muted': '#5d666d', 'paper': '#ffffff', 'note': '#eef3f5',
 LINE = {  # класс: (цвет, толщина px, штрих)
     'amine': ('#b4491b', 2.6, None), 'aq': ('#a07a12', 2.2, None), 'argon': ('#2d6fb3', 2.2, None),
     'vent': ('#7a4fa0', 2.6, None), 'liq': ('#2f6b3a', 2.8, None), 'cool': ('#0f8a8a', 2.2, 'dash'),
-    'vac': ('#6b6f73', 2.2, 'dot'), 'thin': (C['muted'], 1.0, None), 'liqlvl': ('#2f6b3a', 1.2, 'dash'),
+    'vac': ('#37474f', 2.8, 'dash'), 'thin': (C['muted'], 1.0, None), 'liqlvl': ('#2f6b3a', 1.2, 'dash'),
     'zone': (C['rule'], 1.2, 'dash'), 'eq': (C['fg'], 1.6, None), 'eqf': (C['fg'], 1.6, None),
 }
 FILL = {'eq': C['paper'], 'eqf': C['note']}

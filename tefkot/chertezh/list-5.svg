@@ -128,7 +128,7 @@
 <path d="M78.30,63.20 L78.30,66.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="66.50" cy="65.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="66.50" y="65.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">504</text>
-<text x="102.00" y="59.00" font-size="1.9" text-anchor="start" fill="#111111">→ T-1/S-1 (лист 4)</text>
+<text x="102.00" y="59.00" font-size="1.9" text-anchor="start" fill="#111111">→ коллектор сбросов (лист 4)</text>
 <text x="39.00" y="62.70" font-size="1.9" text-anchor="end" fill="#111111">Ar A2</text>
 <path d="M49.76,62.00 L46.24,63.54 L46.24,60.46 Z" fill="#111111" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M49.76,63.76 L49.76,60.24" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>

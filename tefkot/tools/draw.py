@@ -336,7 +336,8 @@ def _shape_poly(i, sh, pts, lw, color, dash, closed, fill):
     cells = (f"<Cell N='PinX' V='{minx + w / 2:.5f}'/><Cell N='PinY' V='{miny + h / 2:.5f}'/>"
              f"<Cell N='Width' V='{w:.5f}'/><Cell N='Height' V='{h:.5f}'/>"
              f"<Cell N='LocPinX' V='{w / 2:.5f}' F='Width*0.5'/><Cell N='LocPinY' V='{h / 2:.5f}' F='Height*0.5'/>"
-             f"<Cell N='LineColor' V='{color}'/><Cell N='LineWeight' V='{lw * MM:.5f}' U='MM'/><Cell N='LinePattern' V='{pat}'/>")
+             f"<Cell N='LineColor' V='{color}'/><Cell N='LineWeight' V='{lw * MM:.5f}' U='MM'/><Cell N='LinePattern' V='{pat}'/>"
+             f"<Cell N='Rounding' V='0'/>")
     if fill:
         cells += f"<Cell N='FillForegnd' V='{fill}'/><Cell N='FillPattern' V='1'/>"
     rows = [f"<Cell N='NoFill' V='{0 if (closed and fill) else 1}'/><Cell N='NoLine' V='0'/><Cell N='NoShow' V='0'/><Cell N='NoSnap' V='0'/>"]

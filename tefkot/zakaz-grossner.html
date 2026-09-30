@@ -59,7 +59,7 @@ textarea{width:100%;min-height:140px;font:13px/1.45 var(--mono);background:var(-
   <div class="eyebrow">ТЕФКОТ 770 · реактор Wiggens 50 л · ИНУМ.770-50.00</div>
   <h1>Заказ у Гросснера: кламповые детали и арматура</h1>
   <p class="lead">Список собран по ведомости соединений (лист 8 монтажных чертежей) и сверен с замечаниями Бабкина. Везде AISI 316L, кламп DIN 32676, прокладки на продукт и газ — PTFE. Количество: по схеме; хомуты, прокладки, ёлочки и переходники на резьбу — по схеме + 2 шт. Краны, клапаны и фасонные детали — без запаса.</p>
-  <div class="facts"><span>ферула <b>25</b> = DN15 («к25»)</span><span>ферула <b>50,5</b> = DN25 и DN38 (один хомут)</span><span>ферула <b>91</b> = DN65 (3″)</span><span>ведомость: <b>58</b> соединений</span></div>
+  <div class="facts"><span>ферула <b>25</b> = DN15 («к25»)</span><span>ферула <b>50,5</b> = DN25 и DN38 (один хомут)</span><span>ферула <b>91</b> = DN65 (3″)</span><span>ведомость: <b>56</b> соединений</span></div>
 </header>
 
 <section>
@@ -70,8 +70,8 @@ textarea{width:100%;min-height:140px;font:13px/1.45 var(--mono);background:var(-
       <tr><td>«Для наших объёмов достаточно к25»</td><td>Все малые линии — DN15 (ферула 25): газ, аргон, дозирование, пробоотбор, выгрузка, входы и выходы колонн. Крупнее только штуцеры реактора (50,5) и корпуса колонн (3″).</td><td><span class="st ok">выполнено</span></td></tr>
       <tr><td>«Краны нужно использовать попроще»</td><td>Все краны — простой «кран кламп» DN15: 4 шт. в основной части и 5 шт. на гребёнке. Трёхсоставной кран на P4 — существующий.</td><td><span class="st ok">выполнено</span></td></tr>
       <tr><td>«У выхода с реактора и у шпунта 50,5 — поставить переходы»</td><td>P3: переход DN25→DN15. Нижний слив BV-1: тройник DN38 и два перехода DN38→DN15. Шпунт: переход DN15→DN25. E-1 стоит на P1 напрямую (50,5), его газовый выход — DN15.</td><td><span class="st ok">выполнено</span></td></tr>
-      <tr><td>«Надо и шпунт-аппарат, и обратный клапан»</td><td>PCV-1 + NRV-1 в одной ветке гребёнки (кран SV-1 → NRV-1 → PCV-1).</td><td><span class="st hold">гребёнка на паузе</span></td></tr>
-      <tr><td>«Сброс на атмосферу — в эту же гребёнку»</td><td>Ветка SV-3 → ёлочка → шланг в вытяжку.</td><td><span class="st hold">гребёнка на паузе</span></td></tr>
+      <tr><td>«Надо и шпунт-аппарат, и обратный клапан»</td><td>По эскизу Дани: шпунт PCV-1 (кран SV-1) и отдельной веткой обратный клапан NRV-1 без крана — аварийный сброс (Бабкин). Кран SV-2 — в резерве.</td><td><span class="st ok">выполнено</span></td></tr>
+      <tr><td>«Сброс на атмосферу — в эту же гребёнку»</td><td>Конец коллектора: SV-3 → ёлочка → шланг в вытяжку (vent).</td><td><span class="st ok">выполнено</span></td></tr>
       <tr><td>«Главное, чтобы были шланги, ёлочки, клэмпы и уголки»</td><td>В списке: штуцеры шланговые (ёлочки), отводы 90°, хомуты с запасом. Уголки-кронштейны для крепления гребёнки к раме — не Гросснер, по месту.</td><td><span class="st ok">выполнено</span></td></tr>
       <tr><td>Даня: «на реактор — переходник с клампа на ёлку, гребёнку — со входом ёлкой»</td><td>Выход E-1 DN15 → штуцер шланговый; вход гребёнки — штуцер шланговый DN15; между ними шланг.</td><td><span class="st ok">выполнено</span></td></tr>
     </tbody>
@@ -82,13 +82,13 @@ textarea{width:100%;min-height:140px;font:13px/1.45 var(--mono);background:var(-
   <h2>Что нашлось при проверке и уже исправлено</h2>
   <div class="card"><ul>
     <li>В ведомости не было двух соединений на генераторе: бокового вывода тройника G-1 (аргон A2 и манометр PI-3) и выхода PSV-3 на сброс. Добавлены на лист 5 и сборку.</li>
-    <li>Развилки под нижним сливом собраны на тройниках: тройник DN38 (выгрузка / проба) и после перехода тройник DN15 (рукав на P-2 / кран V-S1 и рукав к бочке). Нарисованы на листе 7, сборке и в 3D-модели. В ведомости теперь 58 соединений.</li>
+    <li>Развилки под нижним сливом собраны на тройниках: тройник DN38 (выгрузка / проба) и после перехода тройник DN15 (рукав на P-2 / кран V-S1 и рукав к бочке). Нарисованы на листе 7, сборке и в 3D-модели. В ведомости теперь 56 соединений (с новой гребёнкой).</li>
     <li>Кран V-G1 на выходе генератора не попал в спецификацию — добавлен. Кранов DN15 в основной части 4: V-P3, V-G1, SP-1, V-S1.</li>
     <li>Тройник DN38 и два перехода DN38→DN15 под нижним сливом были на чертеже, но не в спецификации — добавлены. Туда же отвод 90° DN15 — носик пробоотбора после SP-1.</li>
     <li>Тройник DN15 на порту регулятора G-1 не был посчитан — с ним и тройником под сливом их теперь три.</li>
     <li>Переходников на бак Atmaler было 3, по чертежу нужно 2 (порт регулятора и выход газа). Переходников кламп–резьба ¼″/½″ было 10 без разбивки — пересчитано по месту: 3 и 6 (+2).</li>
     <li>Удалена строка «кламп с ёлочкой 12 мм / 19 мм, 8 + 6» — таких соединений на чертежах нет. В строке ёлочек рубашки хомут и прокладка считались второй раз — убрано.</li>
-    <li>PSV-3 и PSV-1: нужен угловой клапан с выходом на кламп, чтобы сброс уходил трубкой в T-1 или в коллектор сбросов. «Мини» клапан стравливает в помещение — для метиламина не подходит.</li>
+    <li>PSV-3: нужен угловой клапан с выходом на кламп, чтобы сброс уходил трубкой в коллектор сбросов. «Мини» клапан стравливает в помещение — для метиламина не подходит.</li>
     <li>Колонны: на стыках корпус–заглушка стоят сетчатые прокладки, поэтому обычных PTFE DN65 нужна одна (верх E-1) + 2 запасных.</li>
   </ul></div>
 </section>
@@ -112,7 +112,7 @@ textarea{width:100%;min-height:140px;font:13px/1.45 var(--mono);background:var(-
 
       <tr class="grp"><td colspan="5">Краны и клапаны</td></tr>
       <tr><td><a href="https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/">Кран кламп</a> шаровой, сёдла PTFE</td><td class="pos">DN15</td><td class="where">V-P3 (дозирование), V-G1 (генератор), SP-1 (проба), V-S1 (бочка растворителя)</td><td class="n">4</td><td class="q">4</td></tr>
-      <tr><td><a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/predohranitelnye-klapany-nerzhaveyuschie/klapan-predoxranitelnyj-uglovoj/klapan-predoxranitelnyj-uglovoj-klamp/">Клапан предохранительный угловой кламп</a>, 0,3–0,5 бар</td><td class="pos">DN15</td><td class="where">PSV-3 на генераторе, выход трубкой на T-1</td><td class="n">1</td><td class="q">1</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/predohranitelnye-klapany-nerzhaveyuschie/klapan-predoxranitelnyj-uglovoj/klapan-predoxranitelnyj-uglovoj-klamp/">Клапан предохранительный угловой кламп</a>, 0,3–0,5 бар</td><td class="pos">DN15</td><td class="where">PSV-3 на генераторе, выход трубкой в коллектор сбросов</td><td class="n">1</td><td class="q">1</td></tr>
 
       <tr class="grp"><td colspan="5">Фасонные детали</td></tr>
       <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/trojniki-klamp/trojnik-klamp-t-tip/">Тройник кламп T-тип</a></td><td class="pos">DN15</td><td class="where">узел P3 (кран → септа + ввод P-3); порт регулятора G-1 (PSV-3, аргон, PI-3); под сливом после перехода — на P-2 и через V-S1 на бочку</td><td class="n">3</td><td class="q">3</td></tr>
@@ -140,22 +140,22 @@ textarea{width:100%;min-height:140px;font:13px/1.45 var(--mono);background:var(-
 </section>
 
 <section>
-  <h2>Часть Б. Гребёнка — заказывать после решения Бабкина и Дани</h2>
-  <p class="lead">По текущему листу 4, уже без манометра PI-4 (договорились его убрать). Запас по хомутам и прокладкам заложен в части А. Если схема гребёнки изменится, этот блок пересчитаю.</p>
+  <h2>Часть Б. Гребёнка по эскизу Дани</h2>
+  <p class="lead">По листу 4: вход 50,5 снизу, коллектор DN15, отводы — шпунт, обратный клапан без крана, вакуум, аргон; на конце — vent. Манометра PI-4 и клапана PSV-1 больше нет. Запас по хомутам и прокладкам заложен в части А.</p>
   <div class="tbl"><table id="partB">
     <thead><tr><th>Позиция (Гросснер)</th><th>Размер</th><th>Где стоит</th><th>По схеме</th><th>Заказать</th></tr></thead>
     <tbody>
-      <tr><td><a href="https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/">Кран кламп</a> шаровой, сёдла PTFE</td><td class="pos">DN15</td><td class="where">AV-1 (аргон), SV-1 (шпунт), SV-2 (PSV-1, опломбирован), SV-3 (атмосфера), VV-1 (вакуум)</td><td class="n">5</td><td class="q">5</td></tr>
-      <tr><td><a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/klapany-iz-nerzhaveyuschey-stali/klapan-obratnyj-klamp/">Клапан обратный кламп</a>, открытие ≤ 30 мбар</td><td class="pos">DN15</td><td class="where">NRV-1 перед шпунтом</td><td class="n">1</td><td class="q">1</td></tr>
-      <tr><td><a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/predohranitelnye-klapany-nerzhaveyuschie/shpunt-apparat/shpunt-apparat-s-manometrom-uglovoj/">Шпунт-аппарат угловой с манометром</a></td><td class="pos">50,5 (DN25)</td><td class="where">PCV-1, 50–80 мбар</td><td class="n">1</td><td class="q">1</td></tr>
-      <tr><td><a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/predohranitelnye-klapany-nerzhaveyuschie/klapan-predoxranitelnyj-uglovoj/klapan-predoxranitelnyj-uglovoj-klamp/">Клапан предохранительный угловой кламп</a>, 0,2 бар</td><td class="pos">DN15</td><td class="where">PSV-1, аварийный; выход в коллектор сбросов</td><td class="n">1</td><td class="q">1</td></tr>
-      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/trojniki-klamp/trojnik-klamp-t-tip/">Тройник кламп T-тип</a></td><td class="pos">DN15</td><td class="where">коллектор: AV-1, SV-1, SV-2, SV-3</td><td class="n">4</td><td class="q">4</td></tr>
-      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/otvody-klamp/otvod-klamp/">Отвод кламп 90°</a></td><td class="pos">DN15</td><td class="where">конец коллектора → VV-1</td><td class="n">1</td><td class="q">1</td></tr>
-      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexod-klamp/">Переход кламп–кламп</a> концентрический</td><td class="pos">DN15 → DN25</td><td class="where">NRV-1 → шпунт</td><td class="n">1</td><td class="q">1</td></tr>
-      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/shtucery-klamp/shtucer-shlangovyj-klamp/">Штуцер шланговый кламп</a> (ёлочка)</td><td class="pos">DN15</td><td class="where">вход от E-1, выход SV-3 в вытяжку, вакуум VV-1</td><td class="n">3</td><td class="q">3</td></tr>
-      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-naruzhnaya/">Переходник кламп – резьба наружная</a> ½″</td><td class="pos">DN15</td><td class="where">вход аргона AV-1; выход PSV-1 в трубку сбросов</td><td class="n">2</td><td class="q">2</td></tr>
-      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/xomuty-klamp/xomut-klamp-soedineniya/">Хомут кламп</a> + <a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/prokladka-klamp-ptfe/">прокладка PTFE</a></td><td class="pos">DN15</td><td class="where">соединения гребёнки без PI-4, с выходом PSV-1</td><td class="n">17</td><td class="q">17</td></tr>
-      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/xomuty-klamp/xomut-klamp-soedineniya/">Хомут кламп</a> + <a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/prokladka-klamp-ptfe/">прокладка PTFE</a></td><td class="pos">50,5</td><td class="where">переход → шпунт</td><td class="n">1</td><td class="q">1</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/">Кран кламп</a> шаровой, сёдла PTFE</td><td class="pos">DN15</td><td class="where">SV-1 (шпунт), VV-1 (вакуум), AV-1 (аргон), SV-3 (vent); SV-2 — резерв под NRV-1, сначала не ставим</td><td class="n">4 + 1</td><td class="q">5</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/klapany-iz-nerzhaveyuschey-stali/klapan-obratnyj-klamp/">Клапан обратный кламп</a> пружинный, открытие ≈ 0,2 бар</td><td class="pos">DN15</td><td class="where">NRV-1 — аварийный сброс, без крана</td><td class="n">1</td><td class="q">1</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/predohranitelnye-klapany-nerzhaveyuschie/shpunt-apparat/shpunt-apparat-s-manometrom-uglovoj/">Шпунт-аппарат угловой с манометром</a></td><td class="pos">50,5 (DN25)</td><td class="where">PCV-1, 50–80 мбар; его манометр — давление в гребёнке</td><td class="n">1</td><td class="q">1</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/trojniki-klamp/trojnik-klamp-t-tip/">Тройник кламп T-тип</a></td><td class="pos">DN15</td><td class="where">коллектор: SV-1, NRV-1, VV-1, AV-1</td><td class="n">4</td><td class="q">4</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/otvody-klamp/otvod-klamp/">Отвод кламп 90°</a></td><td class="pos">DN15</td><td class="where">вход гребёнки → коллектор</td><td class="n">1</td><td class="q">1</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexod-klamp/">Переход кламп–кламп</a> концентрический</td><td class="pos">DN25 ↔ DN15</td><td class="where">вход 50,5 → 25; SV-1 → шпунт 25 → 50,5</td><td class="n">2</td><td class="q">2</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/shtucery-klamp/shtucer-shlangovyj-klamp/">Штуцер шланговый кламп</a> (ёлочка)</td><td class="pos">DN25 (50,5)</td><td class="where">вход гребёнки — шланг от E-1</td><td class="n">1</td><td class="q">1</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/shtucery-klamp/shtucer-shlangovyj-klamp/">Штуцер шланговый кламп</a> (ёлочка)</td><td class="pos">DN15</td><td class="where">вакуум VV-1, vent SV-3</td><td class="n">2</td><td class="q">2</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-naruzhnaya/">Переходник кламп – резьба наружная</a> ½″</td><td class="pos">DN15</td><td class="where">ввод аргона AV-1; выход NRV-1 в трубку сбросов</td><td class="n">2</td><td class="q">2</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/xomuty-klamp/xomut-klamp-soedineniya/">Хомут кламп</a> + <a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/prokladka-klamp-ptfe/">прокладка PTFE</a></td><td class="pos">DN15</td><td class="where">соединения гребёнки (лист 4); +2 — если ставить SV-2</td><td class="n">15</td><td class="q">15</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/xomuty-klamp/xomut-klamp-soedineniya/">Хомут кламп</a> + <a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/prokladka-klamp-ptfe/">прокладка PTFE</a></td><td class="pos">50,5</td><td class="where">вход гребёнки; переход → шпунт</td><td class="n">2</td><td class="q">2</td></tr>
     </tbody>
   </table></div>
 </section>
@@ -163,8 +163,8 @@ textarea{width:100%;min-height:140px;font:13px/1.45 var(--mono);background:var(-
 <section>
   <h2>Уточнить у Гросснера при заказе</h2>
   <div class="note"><ol>
-    <li><b>Обратный клапан кламп DN15 (NRV-1)</b>: какое давление открытия? Нам нужно не больше 30 мбар, иначе оно добавится к уставке шпунта. Если пружина только жёсткая — спросить самую слабую или клапан без пружины.</li>
-    <li><b>Предохранительные клапаны</b>: угловое исполнение с выходом на кламп DN15, диапазон настройки 0,2 бар (PSV-1) и 0,3–0,5 бар (PSV-3), уплотнение PTFE или EPDM, не FKM.</li>
+    <li><b>Обратный клапан кламп DN15 (NRV-1)</b>: нужна пружина на открытие ≈ 0,2 бар — это аварийный сброс, выше рабочего давления шпунта 50–80 мбар. И клапан должен держать вакуум 25 мбар в обратную сторону.</li>
+    <li><b>Предохранительный клапан PSV-3</b>: угловое исполнение с выходом на кламп DN15, настройка 0,3–0,5 бар, уплотнение PTFE или EPDM, не FKM.</li>
     <li><b>Переход DN65 → DN15</b>: есть ли такой концентрический? Если нет — заглушка DN65 с приваренным патрубком DN15 под заказ (4 шт.), либо DN65→DN25 + DN25→DN15 (тогда +4 соединения).</li>
     <li><b>Прокладка с сеткой DN65</b>: из PTFE, ячейка не больше 1 мм. Если сетка крупнее — дополнительно диск сетки AISI 316 с ячейкой ≤ 1 мм.</li>
     <li><b>Шпунт-аппарат</b>: подключение именно кламп 50,5 и минимальная уставка — сможет ли держать 50–80 мбар.</li>
@@ -193,7 +193,7 @@ function rowsText(id, title){
 }
 document.getElementById('copy').addEventListener('click',()=>{
   const text='Заказ Гросснер — ТЕФКОТ 770 (AISI 316L, кламп DIN 32676, прокладки PTFE)\n\n'
-    +rowsText('partA','ЧАСТЬ А — сейчас')+'\n\n'+rowsText('partB','ЧАСТЬ Б — гребёнка (после согласования)');
+    +rowsText('partA','ЧАСТЬ А — сейчас')+'\n\n'+rowsText('partB','ЧАСТЬ Б — гребёнка по эскизу Дани');
   const out=document.getElementById('out'), msg=document.getElementById('msg');
   out.value=text;
   const fallback=()=>{out.hidden=false;out.focus();out.select();msg.textContent='Текст выделен — нажмите Ctrl+C.';};

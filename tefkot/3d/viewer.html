@@ -34,7 +34,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-const GROUPS = ["Реактор Wiggens 50 л (R-1)", "Рама реактора и тележка управления", "Конденсатор змеевиковый (E-1)", "Гребёнка: шпунт, аварийный сброс, аргон, вакуум, атмосфера; барботёр, буфер, скруббер", "Узлы крышки реактора: термогильза, дозирование, резерв, манометр, ввод газа", "Генератор метиламина и колонны осушки", "Аргон и вакуум", "Дозирование MeSiCl₃ / PDMS-OH насосом", "Выгрузка, фильтрация, фасовка", "Чиллер и рукава теплоносителя"];
+const GROUPS = ["Реактор Wiggens 50 л (R-1)", "Рама реактора и тележка управления", "Конденсатор змеевиковый (E-1)", "Гребёнка: шпунт, аварийный сброс, аргон, вакуум, атмосфера; коллектор сбросов", "Узлы крышки реактора: термогильза, дозирование, резерв, манометр, ввод газа", "Генератор метиламина и колонны осушки", "Аргон и вакуум", "Дозирование MeSiCl₃ / PDMS-OH насосом", "Выгрузка, фильтрация, фасовка", "Чиллер и рукава теплоносителя"];
 const canvas = document.getElementById('c');
 const renderer = new THREE.WebGLRenderer({canvas, antialias:true, preserveDrawingBuffer:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));

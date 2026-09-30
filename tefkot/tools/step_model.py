@@ -57,12 +57,12 @@ NAMES = {
 'E-1_barb': 'Переходник кламп DN15 → ёлочка на отводе конденсатора',
 'E-1_insulation': 'Теплоизоляция конденсатора, каучук 13–19 мм',
 # --- гребёнка
-'inlet_barb': 'Вход гребёнки: переходник ёлочка → кламп DN15',
+'inlet_barb': 'Вход гребёнки снизу: ёлочка DN25 → кламп 50,5 (шланг от конденсатора)',
+'inlet_reducer': 'Переход кламповый DN25 → DN15 на входе гребёнки',
+'inlet_elbow': 'Отвод 90° DN15 на входе гребёнки',
 'hose_E-1_to_manifold': 'Шланг PTFE от конденсатора к гребёнке',
 'collector': 'Коллектор гребёнки DN15 (тройники на клампах)',
 'collector_clamps': 'Хомуты кламповые DN15 коллектора гребёнки',
-'PI-4_tee': 'Тройник DN15 под манометр гребёнки',
-'PI-4_gauge': 'Мановакуумметр гребёнки 0–250 мбар (PI-4)',
 'AV-1_tee': 'Тройник DN15 ветки аргона',
 'AV-1': 'Кран шаровой кламп DN15 — ввод аргона в гребёнку (AV-1)',
 'AV-1_joint': 'Хомут DN15 над краном аргона',
@@ -70,32 +70,21 @@ NAMES = {
 'SV-1_tee': 'Тройник DN15 ветки шпунт-аппарата',
 'SV-1': 'Кран шаровой кламп DN15 перед шпунт-аппаратом (SV-1)',
 'SV-1_joint': 'Хомут DN15 над краном шпунт-аппарата',
-'NRV-1': 'Клапан обратный кламп DN15, открытие ≤ 30 мбар, перед шпунтом (NRV-1)',
+'NRV-1': 'Клапан обратный пружинный кламп DN15, ≈0,2 бар — аварийный сброс без крана (NRV-1)',
+'NRV-1_tee': 'Тройник DN15 ветки аварийного обратного клапана',
 'NRV-1_joint': 'Хомут DN15 над обратным клапаном',
 'reducer_DN15_DN25': 'Переход кламповый DN15 → DN25 под шпунт-аппарат',
 'PCV-1_spunding': 'Шпунт-аппарат с манометром, DN25 — рабочий регулятор давления (PCV-1)',
-'SV-2_tee': 'Тройник DN15 ветки аварийного клапана',
-'SV-2': 'Кран шаровой кламп DN15 перед аварийным клапаном, опломбирован (SV-2)',
-'SV-2_joint': 'Хомут DN15 над краном аварийного клапана',
-'PSV-1_200mbar': 'Клапан предохранительный аварийный 200 мбар (PSV-1)',
-'SV-3_tee': 'Тройник DN15 ветки сброса на атмосферу',
-'SV-3': 'Кран шаровой кламп DN15 — сброс на атмосферу (SV-3)',
-'SV-3_joint': 'Хомут DN15 над краном сброса на атмосферу',
+'SV-3': 'Кран шаровой кламп DN15 на конце коллектора — сброс на атмосферу, vent (SV-3)',
+'SV-3_joint': 'Хомут DN15 за краном сброса на атмосферу',
 'SV-3_barb': 'Переходник кламп DN15 → ёлочка (сброс на атмосферу)',
 'SV-3_hose_to_hood': 'Шланг сброса на атмосферу в вытяжку',
-'VV-1_tee': 'Отвод 90° DN15 на конце коллектора (ветка вакуума)',
+'VV-1_tee': 'Тройник DN15 ветки вакуума',
 'VV-1': 'Кран шаровой кламп DN15 — вакуум (VV-1)',
 'VV-1_joint': 'Хомут DN15 над краном вакуума',
 'VV-1_barb': 'Переходник кламп DN15 → ёлочка под вакуумный шланг',
 'brackets': 'Уголки и консоли крепления гребёнки к раме',
-'vent_line': 'Трубка сброса от шпунт-аппарата и аварийного клапана к барботёру',
-'BU-1_bubbler': 'Барботёр-индикатор с маслом, пузырьки видны (BU-1)',
-'BU-1_stand': 'Подставка барботёра',
-'T-1_buffer_4in_L300': 'Буферная ёмкость от подсоса DN100, 300 мм (T-1)',
-'T-1_stand': 'Подставка буферной ёмкости',
-'BU-1_to_T-1': 'Трубка от барботёра к буферной ёмкости',
-'S-1_scrubber_20L': 'Скруббер 20 л, раствор лимонной кислоты (S-1)',
-'T-1_to_S-1': 'Трубка от буферной ёмкости в скруббер',
+'vent_line': 'Коллектор сбросов от шпунт-аппарата и обратного клапана NRV-1 в вытяжку',
 # --- узлы крышки
 'P2_joint': 'Хомут DN25 термогильзы',
 'P2_thermowell_8x500': 'Заглушка DN25 с термогильзой Ø8×500 (P2)',
@@ -190,7 +179,7 @@ NAMES = {
 'VV-2': 'Кран шаровой ¼″ вакуума нутч-фильтра (VV-2)',
 'V-F1_NRV-5': 'Кран ¼″ и обратный клапан аргона на нутч (V-F1, NRV-5)',
 'A4_to_F-1': 'Трубка аргона ¼″ к нутч-фильтру',
-'PSV-4_to_T-1': 'Трубка сброса нутч-фильтра в буферную ёмкость',
+'PSV-4_to_vent': 'Трубка сброса нутч-фильтра в вытяжку',
 'P-2_to_F-1_hose': 'Рукав PTFE от насоса выгрузки в нутч-фильтр',
 'F-2_10in_housing': 'Корпус патронного фильтра 10″ (F-2)',
 'F-2_stand': 'Опора патронного фильтра',
@@ -211,7 +200,7 @@ GR = {
 'R-1_Wiggens_50L': 'Реактор Wiggens 50 л (R-1)',
 'Frame_Wiggens': 'Рама реактора и тележка управления',
 'E-1_condenser': 'Конденсатор змеевиковый (E-1)',
-'Manifold': 'Гребёнка: шпунт, аварийный сброс, аргон, вакуум, атмосфера; барботёр, буфер, скруббер',
+'Manifold': 'Гребёнка: шпунт, аварийный сброс, аргон, вакуум, атмосфера; коллектор сбросов',
 'Lid_nodes': 'Узлы крышки реактора: термогильза, дозирование, резерв, манометр, ввод газа',
 'Generator_G-1': 'Генератор метиламина и колонны осушки',
 'Argon_Vacuum': 'Аргон и вакуум',
@@ -483,67 +472,63 @@ def condenser_and_manifold():
     # ---- гребёнка: отдельно, на уголках к колонне рамы; к E-1 — шлангом на ёлочках
     g = 'Manifold'
     my, zc = 620, 1400                          # ось коллектора DN15 (кламп 25)
-    X = {'PI': 0, 'AR': 90, 'SH': 180, 'PS': 270, 'AT': 360, 'VAC': 450}
-    D = 19                                      # труба ¾″
-    add(g, 'inlet_barb', [cone((-100, my, zc), (-62, my, zc), 12, 25)] + clampj((-59, my, zc), (1, 0, 0), 25), 'steel')
-    add(g, 'hose_E-1_to_manifold', run([(x, y + 130, zg), (x, 400, zg), (-150, 400, zg), (-150, my, zg), (-150, my, zc), (-100, my, zc)], 16), 'ptfe')
-    add(g, 'collector', [cyl((-56, my, zc), (X['VAC'], my, zc), D), sph((X['VAC'], my, zc), D)], 'steel')
+    X = {'SH': 60, 'NR': 150, 'VAC': 240, 'AR': 330}     # по эскизу Дани: шпунт, обратный клапан, вакуум, аргон; на конце — vent
+    D = 19                                      # труба ¾″ (кламп 25)
+    xi, zin = -40, zc - 260                     # вход снизу: ёлочка DN25 → кламп 50,5 → переход → отвод 90°
+    add(g, 'inlet_barb', [cone((xi, my, zin - 40), (xi, my, zin), 16, 33.7)] + clampj((xi, my, zin + 3), (0, 0, 1), 50.5), 'steel')
+    add(g, 'inlet_reducer', [cone((xi, my, zin + 6), (xi, my, zin + 40), 33.7, D)] + clampj((xi, my, zin + 43), (0, 0, 1), 25), 'steel')
+    add(g, 'inlet_elbow', [cyl((xi, my, zin + 46), (xi, my, zc), D), sph((xi, my, zc), D)], 'steel')
+    add(g, 'hose_E-1_to_manifold', run([(x, y + 130, zg), (x, 400, zg), (xi, 400, zg), (xi, my, zg), (xi, my, zin - 40)], 16), 'ptfe')
+    xe = X['AR'] + 40
+    add(g, 'collector', [cyl((xi, my, zc), (xe, my, zc), D)], 'steel')
     joints = []
-    for a_, b_ in (('PI', 'AR'), ('AR', 'SH'), ('SH', 'PS'), ('PS', 'AT'), ('AT', 'VAC')):
-        joints += clampj(((X[a_] + X[b_]) / 2, my, zc), (1, 0, 0), 25)
+    for xj in ((xi + X['SH']) / 2, (X['SH'] + X['NR']) / 2, (X['NR'] + X['VAC']) / 2, (X['VAC'] + X['AR']) / 2, xe):
+        joints += clampj((xj, my, zc), (1, 0, 0), 25)
     add(g, 'collector_clamps', joints, 'steel')
 
-    def branch(xx, name, top_extra):
+    def branch(xx, name):
         add(g, f'{name}_tee', [cyl((xx, my, zc), (xx, my, zc + 40), D)] + clampj((xx, my, zc + 40), (0, 0, 1), 25), 'steel')
-        if name == 'PI-4':
-            return zc + 43
-        add(g, name, ball_valve((xx, my, zc + 80), (0, 0, 1), D, lever=(0, -1, 0), L=70), 'red' if name == 'SV-2' else 'steel')
+        add(g, name, ball_valve((xx, my, zc + 80), (0, 0, 1), D, lever=(0, -1, 0), L=70), 'steel')
         add(g, f'{name}_joint', clampj((xx, my, zc + 118), (0, 0, 1), 25), 'steel')
         return zc + 121
-    z = branch(X['PI'], 'PI-4', 0)
-    add(g, 'PI-4_gauge', [cyl((X['PI'], my, z), (X['PI'], my, z + 50), 12)] + gauge((X['PI'], my - 20, z + 95), (0, -1, 0), 100), 'white')
-    z = branch(X['AR'], 'AV-1', 0)
-    add(g, 'AV-1_G12_adapter', [cyl((X['AR'], my, z), (X['AR'], my, z + 25), 28), cyl((X['AR'], my, z + 25), (X['AR'], my, z + 45), 14)], 'steel')
-    av_top = (X['AR'], my, z + 45)
+    # 1: SV-1 → переход DN15/DN25 → шпунт PCV-1
     xx = X['SH']
-    z = branch(xx, 'SV-1', 0)
-    add(g, 'NRV-1', check_valve((xx, my, z + 30), (0, 0, 1), D), 'steel')
-    add(g, 'NRV-1_joint', clampj((xx, my, z + 63), (0, 0, 1), 25), 'steel')
-    add(g, 'reducer_DN15_DN25', [cone((xx, my, z + 66), (xx, my, z + 100), D, 33.7)] + clampj((xx, my, z + 103), (0, 0, 1), 50.5), 'steel')
-    add(g, 'PCV-1_spunding', [cyl((xx, my, z + 106), (xx, my, z + 200), 60), cyl((xx, my, z + 200), (xx, my, z + 220), D)]
-        + gauge((xx + 45, my, z + 160), (1, 0, 0), 63) + [cyl((xx + 30, my, z + 160), (xx + 33, my, z + 160), 10)], 'steel')
-    sh_top = (xx, my, z + 220)
-    xx = X['PS']
-    z = branch(xx, 'SV-2', 0)
-    add(g, 'PSV-1_200mbar', [cyl((xx, my, z), (xx, my, z + 95), 45), cyl((xx, my, z + 95), (xx, my, z + 110), D)], 'steel')
-    ps_top = (xx, my, z + 110)
-    xx = X['AT']
-    z = branch(xx, 'SV-3', 0)
-    add(g, 'SV-3_barb', [cone((xx, my, z), (xx, my, z + 35), 25, 12)], 'steel')
-    add(g, 'SV-3_hose_to_hood', [cyl((xx, my, z + 35), (xx, my, z + 300), 16)], 'ptfe')
+    z = branch(xx, 'SV-1')
+    add(g, 'reducer_DN15_DN25', [cone((xx, my, z), (xx, my, z + 34), D, 33.7)] + clampj((xx, my, z + 37), (0, 0, 1), 50.5), 'steel')
+    add(g, 'PCV-1_spunding', [cyl((xx, my, z + 40), (xx, my, z + 134), 60), cyl((xx, my, z + 134), (xx, my, z + 154), D)]
+        + gauge((xx + 45, my, z + 94), (1, 0, 0), 63) + [cyl((xx + 30, my, z + 94), (xx + 33, my, z + 94), 10)], 'steel')
+    sh_top = (xx, my, z + 154)
+    # 2: NRV-1 пружинный — аварийный сброс, без крана
+    xx = X['NR']
+    add(g, 'NRV-1_tee', [cyl((xx, my, zc), (xx, my, zc + 40), D)] + clampj((xx, my, zc + 40), (0, 0, 1), 25), 'steel')
+    add(g, 'NRV-1', check_valve((xx, my, zc + 75), (0, 0, 1), D), 'steel')
+    add(g, 'NRV-1_joint', clampj((xx, my, zc + 110), (0, 0, 1), 25), 'steel')
+    ps_top = (xx, my, zc + 113)
+    # 3: VV-1 → вакуум
     xx = X['VAC']
-    z = branch(xx, 'VV-1', 0)
+    z = branch(xx, 'VV-1')
     add(g, 'VV-1_barb', [cone((xx, my, z), (xx, my, z + 35), 25, 12)], 'steel')
     vac_top = (xx, my, z + 35)
+    # 4: AV-1 → аргон ½″
+    xx = X['AR']
+    z = branch(xx, 'AV-1')
+    add(g, 'AV-1_G12_adapter', [cyl((xx, my, z), (xx, my, z + 25), 28), cyl((xx, my, z + 25), (xx, my, z + 45), 14)], 'steel')
+    av_top = (xx, my, z + 45)
+    # конец коллектора: SV-3 → ёлочка → шланг в вытяжку (vent)
+    add(g, 'SV-3', ball_valve((xe + 40, my, zc), (1, 0, 0), D, lever=(0, 0, 1), L=70), 'steel')
+    add(g, 'SV-3_joint', clampj((xe + 78, my, zc), (1, 0, 0), 25), 'steel')
+    add(g, 'SV-3_barb', [cone((xe + 81, my, zc), (xe + 116, my, zc), 25, 12)], 'steel')
+    add(g, 'SV-3_hose_to_hood', run([(xe + 116, my, zc), (xe + 170, my, zc), (xe + 170, my, zc + 450)], 16), 'ptfe')
     # крепление: уголок поперёк колонны рамы + две консоли с хомутами-держателями
     add(g, 'brackets', [box(-380, 668, zc - 70, 380, 690, zc - 40), box(-380, 668, zc - 70, 380, 690 - 18, zc - 66)]
         + [box(xb - 15, my, zc - 70, xb + 15, 668, zc - 40) for xb in (40, 315)]
         + [cyl((xb - 10, my, zc), (xb + 10, my, zc), 40).cut(cyl((xb - 12, my, zc), (xb + 12, my, zc), D)) for xb in (40, 315)]
         + [box(xb - 6, my - 6, zc - 40, xb + 6, my + 6, zc - 20) for xb in (40, 315)], 'frame')
-    # сбросы PCV-1 и PSV-1 → BU-1 → T-1 → S-1 (на полу за тележкой)
+    # коллектор сбросов PCV-1 и NRV-1 → вверх в вытяжку
     bx, by = 1060, 520
     vz = 1860
-    add(g, 'vent_line', run([sh_top, (sh_top[0], my, vz), (bx, my, vz), (bx, by, vz), (bx, by, 470)], 12)
+    add(g, 'vent_line', run([sh_top, (sh_top[0], my, vz), (bx, my, vz), (bx, by, vz), (bx, by, 2250)], 12)
         + run([ps_top, (ps_top[0], my, vz)], 12), 'vent')
-    add(g, 'BU-1_bubbler', [cyl((bx, by, 150), (bx, by, 450), 60), cyl((bx, by, 450), (bx, by, 470), 30)], 'glass')
-    add(g, 'BU-1_stand', [box(bx - 60, by - 60, 0, bx + 60, by + 60, 10), cyl((bx, by, 10), (bx, by, 150), 40)], 'dark')
-    tx, ty = 1200, 520
-    add(g, 'T-1_buffer_4in_L300', [cyl((tx, ty, 200), (tx, ty, 500), 101.6), cyl((tx, ty, 500), (tx, ty, 515), 119), cyl((tx, ty, 185), (tx, ty, 200), 119), cyl((tx, ty, 515), (tx, ty, 560), 25.4)], 'steel')
-    add(g, 'T-1_stand', [box(tx - 80, ty - 80, 0, tx + 80, ty + 80, 10), cyl((tx, ty, 10), (tx, ty, 185), 60)], 'dark')
-    add(g, 'BU-1_to_T-1', run([(bx + 20, by, 460), (bx + 20, by, 600), (tx, ty, 600), (tx, ty, 560)], 8), 'ptfe')
-    sx, sy = 1360, 540
-    add(g, 'S-1_scrubber_20L', [box(sx - 120, sy - 120, 0, sx + 120, sy + 120, 380), cyl((sx, sy, 380), (sx, sy, 410), 50)], 'poly')
-    add(g, 'T-1_to_S-1', run([(tx + 50, ty, 470), (tx + 110, ty, 470), (sx, sy, 470), (sx, sy, 410)], 8), 'ptfe')
     return (x, y), zc, {'av_top': av_top, 'vac_top': vac_top}
 
 
@@ -738,8 +723,7 @@ def discharge(zap, ar_outs):
     add(g, 'V-F1_NRV-5', ball_valve((fx - 100, fy, 980), (0, 0, 1), 10, lever=(-1, 0, 0), L=36) + check_valve((fx - 100, fy, 1050), (0, 0, -1), 10), 'steel')
     a4 = ar_outs['A4']
     add(g, 'A4_to_F-1', run([a4, (a4[0], a4[1], 1250), (a4[0], -150, 1250), (-300, -150, 1250), (-300, -1150, 1250), (fx - 100, -1150, 1250), (fx - 100, fy, 1250), (fx - 100, fy, 1080)], 6.35), 'argon')
-    tx, ty = 1200, 520
-    add(g, 'PSV-4_to_T-1', run([(fx + 100, fy, 1010), (fx + 100, fy, 1120), (1500, fy, 1120), (1500, ty, 1120), (tx + 60, ty, 1120), (tx + 60, ty, 420), (tx + 50, ty, 420)], 8), 'vent')
+    add(g, 'PSV-4_to_vent', run([(fx + 100, fy, 1010), (fx + 100, fy, 2250)], 8), 'vent')
     add(g, 'P-2_to_F-1_hose', run([(dis[0] + 100, dis[1], dis[2]), (560, -850, 250), (560, -850, 800), (fx - 180, fy, 800)], 32), 'ptfe')
     # фильтр F-2 10″ и канистра на W-3
     f2x, f2y = 1150, -900
@@ -804,7 +788,7 @@ def glb_to_gltf_json(src, dst):
 
 # символы, которых нет в Windows-1251, — заменяем, чтобы названия читались в любом CAD
 ASCII_FIX = {'₂': '2', '₃': '3', '″': '"', '¼': '1/4', '½': '1/2', '≤': '<=', '≥': '>=', '→': '->', 'Ø': 'D', '×': 'x',
-             '…': '...', '−': '-', '–': '-'}
+             '…': '...', '−': '-', '–': '-', '≈': '~'}
 
 
 def fix_step_names(path):
