@@ -34,8 +34,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-const GROUPS = ['R-1 реактор Wiggens 50 л','Рама Wiggens и тележка управления','E-1 конденсатор','Гребёнка, BU-1, T-1, S-1',
-  'Узлы крышки P2 P3 P4 T1 T2','Генератор G-1, колонны, P-1','Аргон и вакуум','Дозирование MeSiCl₃ / PDMS-OH, P-3','Выгрузка: P-2, F-1, F-2','Чиллер TC-1 и рукава'];
+const GROUPS = ["Реактор Wiggens 50 л (R-1)", "Рама реактора и тележка управления", "Конденсатор змеевиковый (E-1)", "Гребёнка: шпунт, аварийный сброс, аргон, вакуум, атмосфера; барботёр, буфер, скруббер", "Узлы крышки реактора: термогильза, дозирование, резерв, манометр, ввод газа", "Генератор метиламина и колонны осушки", "Аргон и вакуум", "Дозирование MeSiCl₃ / PDMS-OH насосом", "Выгрузка, фильтрация, фасовка", "Чиллер и рукава теплоносителя"];
 const canvas = document.getElementById('c');
 const renderer = new THREE.WebGLRenderer({canvas, antialias:true, preserveDrawingBuffer:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
@@ -71,11 +70,13 @@ new GLTFLoader().load('tefkot-770-ustanovka.gltf.json', g => {
   scene.add(root);
   const box = document.getElementById('groups');
   const groups = [];
-  root.traverse(o => { if (GROUPS.includes(o.name) && !groups.find(x => x.name === o.name)) groups.push(o); });
-  for (const o of groups) {
+  const norm = t => (t || '').replace(/[\s_\[\]\.:\/]/g, '');
+  const want = new Map(GROUPS.map(g => [norm(g), g]));
+  root.traverse(o => { const k = norm(o.name); if (want.has(k) && !groups.find(x => x.o === o)) groups.push({ o, label: want.get(k) }); });
+  for (const { o, label } of groups) {
     const l = document.createElement('label');
     const c = document.createElement('input'); c.type = 'checkbox'; c.checked = true; c.onchange = () => { o.visible = c.checked; };
-    l.append(c, o.name); box.append(l);
+    l.append(c, label); box.append(l);
   }
   document.getElementById('load').remove();
   const q = new URLSearchParams(location.search);
@@ -90,7 +91,7 @@ canvas.addEventListener('pointermove', e => {
   mouse.set(e.clientX / innerWidth * 2 - 1, -e.clientY / innerHeight * 2 + 1);
   ray.setFromCamera(mouse, camera);
   const hit = ray.intersectObjects(scene.children, true).find(h => h.object.isMesh && h.object.visible);
-  if (hit) { let o = hit.object; while (o.parent && !o.name) o = o.parent; hover.textContent = o.name || ''; hover.style.display = o.name ? 'block' : 'none'; }
+  if (hit) { let o = hit.object; while (o.parent && !o.name) o = o.parent; hover.textContent = (o.name || '').replace(/_/g, ' '); hover.style.display = o.name ? 'block' : 'none'; }
   else hover.style.display = 'none';
 });
 renderer.setAnimationLoop(() => renderer.render(scene, camera));
