@@ -12,8 +12,7 @@
 <path d="M818.00,569.00 L818.00,574.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <path d="M38.00,60.00 L38.00,55.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
 <path d="M41.00,52.00 L56.00,52.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
-<path d="M64.00,52.00 L91.00,52.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M99.00,52.00 L136.00,52.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M64.00,52.00 L136.00,52.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M108.00,52.00 L108.00,44.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M130.00,52.00 L225.00,52.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M150.00,52.00 L150.00,78.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
@@ -246,10 +245,7 @@
 <circle cx="60.00" cy="52.00" r="4.00" fill="#ffffff" stroke="#111111" stroke-width="0.5"/>
 <text x="60.00" y="53.00" font-size="2.2" text-anchor="middle" fill="#111111">R</text>
 <text x="54.00" y="64.00" font-size="2.2" text-anchor="start" fill="#111111" font-weight="bold">PR-1</text>
-<circle cx="95.00" cy="52.00" r="4.00" fill="#ffffff" stroke="#111111" stroke-width="0.5"/>
-<text x="95.00" y="53.00" font-size="2.2" text-anchor="middle" fill="#111111">R</text>
-<text x="89.00" y="64.00" font-size="2.2" text-anchor="start" fill="#111111" font-weight="bold">PR-2</text>
-<text x="85.00" y="68.00" font-size="1.8" text-anchor="start" fill="#111111">+20…30 мбар</text>
+<text x="54.00" y="68.00" font-size="1.8" text-anchor="start" fill="#111111">0…250 мбар</text>
 <path d="M105.00,38.00 L111.00,38.00 L111.00,44.00 L105.00,44.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <text x="113.00" y="42.00" font-size="1.9" text-anchor="start" fill="#111111">PSV-2</text>
 <path d="M120.00,46.00 L130.00,46.00 L128.00,58.00 L122.00,58.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
@@ -973,9 +969,9 @@
 <text x="789.00" y="64.52" font-size="1.8" text-anchor="start" fill="#111111">1</text>
 <text x="797.00" y="64.52" font-size="1.8" text-anchor="start" fill="#111111">6</text>
 <path d="M712.00,65.70 L806.00,65.70" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="68.22" font-size="1.8" text-anchor="start" fill="#111111">PR-1/2</text>
-<text x="727.00" y="68.22" font-size="1.8" text-anchor="start" fill="#111111">Редуктор баллонный / низк. давл.</text>
-<text x="789.00" y="68.22" font-size="1.8" text-anchor="start" fill="#111111">1+1</text>
+<text x="713.00" y="68.22" font-size="1.8" text-anchor="start" fill="#111111">PR-1</text>
+<text x="727.00" y="68.22" font-size="1.8" text-anchor="start" fill="#111111">Редуктор баллонный, вых. 0…250 мбар</text>
+<text x="789.00" y="68.22" font-size="1.8" text-anchor="start" fill="#111111">1</text>
 <text x="797.00" y="68.22" font-size="1.8" text-anchor="start" fill="#111111">6</text>
 <path d="M712.00,69.40 L806.00,69.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="713.00" y="71.92" font-size="1.8" text-anchor="start" fill="#111111">FI-1</text>

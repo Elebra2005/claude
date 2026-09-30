@@ -17,13 +17,8 @@
 <circle cx="41.80" cy="48.68" r="3.48" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
 <text x="39.48" y="49.84" font-size="3.045" text-anchor="start" fill="#5d666d">R</text>
 <text x="36.00" y="57.96" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">PR-1</text>
-<text x="33.68" y="62.02" font-size="3.045" text-anchor="start" fill="#5d666d">150→1 бар</text>
-<path d="M45.28,48.68 L60.65,48.68" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
-<circle cx="64.13" cy="48.68" r="3.48" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
-<text x="61.81" y="49.84" font-size="3.045" text-anchor="start" fill="#5d666d">R</text>
-<text x="58.62" y="57.96" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">PR-2</text>
-<text x="55.14" y="62.02" font-size="3.045" text-anchor="start" fill="#5d666d">+20…30 мбар</text>
-<path d="M67.61,48.68 L82.98,48.68" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
+<text x="31.36" y="62.02" font-size="3.045" text-anchor="start" fill="#5d666d">→ 0…250 мбар</text>
+<path d="M45.28,48.68 L82.98,48.68" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
 <path d="M75.44,48.68 L75.44,41.14" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
 <path d="M72.54,35.34 L78.34,35.34 L78.34,41.14 L72.54,41.14 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="79.50" y="39.40" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">PSV-2</text>
