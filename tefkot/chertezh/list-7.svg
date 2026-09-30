@@ -210,7 +210,7 @@
 <path d="M57.00,210.00 L63.00,210.00" fill="none" stroke="#2e7d32" stroke-width="0.4" stroke-linejoin="round"/>
 <path d="M59.00,212.00 L61.00,212.00" fill="none" stroke="#2e7d32" stroke-width="0.3" stroke-linejoin="round"/>
 <text x="70.00" y="206.00" font-size="2.0" text-anchor="start" fill="#2e7d32">шина заземления: R-1, P-2, F-1, F-2, канистры, бочка</text>
-<text x="25.00" y="176.00" font-size="2.0" text-anchor="start" fill="#111111">Загрузка растворителя: бочка → P-2 → рукав → BV-1 снизу</text>
+<text x="25.00" y="176.00" font-size="2.0" text-anchor="start" fill="#111111">Загрузка растворителя: бочка → кран V-S1 → P-2 → рукав → BV-1 снизу</text>
 <text x="25.00" y="180.00" font-size="2.0" text-anchor="start" fill="#111111">(рукава переставить; соединения те же)</text>
 <text x="290.00" y="20.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">Примечания</text>
 <text x="290.00" y="25.50" font-size="2.0" text-anchor="start" fill="#111111">1. Рукава продукта — PTFE ¾″ антистат.</text>

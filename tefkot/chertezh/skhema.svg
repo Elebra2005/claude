@@ -251,11 +251,16 @@
 <path d="M210.00,216.59 L210.00,225.00" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
 <path d="M208.26,211.37 L211.74,216.59 L208.26,216.59 L211.74,211.37 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="212.32" y="213.40" font-size="3.045" text-anchor="start" fill="#1d2226">BV-1</text>
-<path d="M210.00,225.00 L210.00,228.19" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
-<path d="M210.00,233.41 L210.00,236.60 L233.20,236.60" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
-<path d="M208.26,228.19 L211.74,233.41 L208.26,233.41 L211.74,228.19 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
-<text x="186.80" y="229.64" font-size="3.045" text-anchor="start" fill="#1d2226">SP-1 проба</text>
-<path d="M210.00,236.60 L192.60,236.60 L192.60,254.00" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M210.00,225.00 L210.00,236.60 L233.20,236.60" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M210.00,225.00 L213.77,225.00" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M218.99,225.00 L221.60,225.00 L221.60,227.90" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M213.77,223.26 L218.99,226.74 L218.99,223.26 L213.77,226.74 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
+<text x="214.06" y="221.52" font-size="3.045" text-anchor="start" fill="#1d2226">SP-1</text>
+<text x="223.34" y="228.48" font-size="3.045" text-anchor="start" fill="#5d666d">проба</text>
+<path d="M210.00,236.60 L192.60,236.60 L192.60,242.69" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M192.60,247.91 L192.60,254.00" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M190.86,242.69 L194.34,247.91 L190.86,247.91 L194.34,242.69 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
+<text x="194.92" y="246.46" font-size="3.045" text-anchor="start" fill="#5d666d">V-S1</text>
 <text x="173.46" y="259.80" font-size="3.045" text-anchor="start" fill="#5d666d">бочка р-ля →</text>
 <text x="173.46" y="263.28" font-size="3.045" text-anchor="start" fill="#5d666d">загрузка р-ля</text>
 <path d="M233.20,230.80 L249.44,230.80 L249.44,242.40 L233.20,242.40 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
