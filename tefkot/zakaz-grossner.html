@@ -1,0 +1,204 @@
+<title>Заказ Гросснер ТЕФКОТ 770</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* layout: одна колонна документа; таблицы заказа — главный объект, перед ними сверка */
+:root{
+  --bg:#f5f7f7; --paper:#ffffff; --ink:#18201f; --mute:#5b6866; --rule:#d6dedc;
+  --accent:#0f6b63; --accent-soft:#e3f0ee; --warn:#9a5a00; --warn-soft:#fbf1e1; --ok:#2f7a3a;
+  --sans:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121716; --paper:#1a2120; --ink:#e4ebe9; --mute:#9aa9a6; --rule:#2e3a38;
+  --accent:#5cc3b6; --accent-soft:#1d302d; --warn:#e7b25c; --warn-soft:#2d2518; --ok:#79c587; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121716; --paper:#1a2120; --ink:#e4ebe9; --mute:#9aa9a6; --rule:#2e3a38;
+  --accent:#5cc3b6; --accent-soft:#1d302d; --warn:#e7b25c; --warn-soft:#2d2518; --ok:#79c587; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--sans);margin:0;padding-inline:16px;padding-block:28px 64px}
+main{max-width:1060px;margin:0 auto;display:grid;gap:32px}
+header{display:grid;gap:8px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(26px,4vw,34px);line-height:1.15;margin:0;font-weight:700;text-wrap:balance}
+h2{font-size:21px;margin:0;font-weight:600;text-wrap:balance}
+h3{font-size:16px;margin:0;font-weight:600}
+p{margin:0;max-width:72ch}
+.lead{color:var(--mute)}
+section{display:grid;gap:14px}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:18px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;font:13px/1.4 var(--mono);color:var(--mute)}
+.facts b{color:var(--ink);font-weight:500}
+.tbl{overflow-x:auto;background:var(--paper);border:1px solid var(--rule);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--rule)}
+thead th{font:500 12px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);background:var(--bg)}
+tbody tr:last-child td{border-bottom:0}
+tr.grp td{background:var(--accent-soft);font-weight:600;color:var(--accent)}
+td.n{font:500 14px/1.4 var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+td.q{font:600 15px/1.4 var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;color:var(--accent)}
+td.pos{font:500 13px/1.4 var(--mono);white-space:nowrap}
+.where{color:var(--mute);font-size:13px}
+a{color:var(--accent);text-underline-offset:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.st{display:inline-block;font:500 12px/1 var(--mono);padding:4px 7px;border-radius:4px;white-space:nowrap}
+.st.ok{background:var(--accent-soft);color:var(--ok)}
+.st.hold{background:var(--warn-soft);color:var(--warn)}
+ul,ol{margin:0;padding-left:20px;display:grid;gap:6px;max-width:80ch}
+.note{background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 35%,transparent);border-radius:8px;padding:14px 16px;display:grid;gap:8px}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+button{font:500 14px var(--sans);padding:8px 14px;border-radius:6px;border:1px solid var(--accent);background:var(--accent);color:var(--paper);cursor:pointer}
+button.ghost{background:transparent;color:var(--accent)}
+.msg{font-size:13px;color:var(--mute)}
+textarea{width:100%;min-height:140px;font:13px/1.45 var(--mono);background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:10px}
+@media (max-width:560px){.card{padding:14px}}
+</style>
+
+<main>
+<header>
+  <div class="eyebrow">ТЕФКОТ 770 · реактор Wiggens 50 л · ИНУМ.770-50.00</div>
+  <h1>Заказ у Гросснера: кламповые детали и арматура</h1>
+  <p class="lead">Список собран по ведомости соединений (лист 8 монтажных чертежей) и сверен с замечаниями Бабкина. Везде AISI 316L, кламп DIN 32676, прокладки на продукт и газ — PTFE. Количество: по схеме; хомуты, прокладки, ёлочки и переходники на резьбу — по схеме + 2 шт. Краны, клапаны и фасонные детали — без запаса.</p>
+  <div class="facts"><span>ферула <b>25</b> = DN15 («к25»)</span><span>ферула <b>50,5</b> = DN25 и DN38 (один хомут)</span><span>ферула <b>91</b> = DN65 (3″)</span><span>ведомость: <b>58</b> соединений</span></div>
+</header>
+
+<section>
+  <h2>Сверка с замечаниями Бабкина</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Замечание</th><th>Как сделано</th><th>Статус</th></tr></thead>
+    <tbody>
+      <tr><td>«Для наших объёмов достаточно к25»</td><td>Все малые линии — DN15 (ферула 25): газ, аргон, дозирование, пробоотбор, выгрузка, входы и выходы колонн. Крупнее только штуцеры реактора (50,5) и корпуса колонн (3″).</td><td><span class="st ok">выполнено</span></td></tr>
+      <tr><td>«Краны нужно использовать попроще»</td><td>Все краны — простой «кран кламп» DN15: 4 шт. в основной части и 5 шт. на гребёнке. Трёхсоставной кран на P4 — существующий.</td><td><span class="st ok">выполнено</span></td></tr>
+      <tr><td>«У выхода с реактора и у шпунта 50,5 — поставить переходы»</td><td>P3: переход DN25→DN15. Нижний слив BV-1: тройник DN38 и два перехода DN38→DN15. Шпунт: переход DN15→DN25. E-1 стоит на P1 напрямую (50,5), его газовый выход — DN15.</td><td><span class="st ok">выполнено</span></td></tr>
+      <tr><td>«Надо и шпунт-аппарат, и обратный клапан»</td><td>PCV-1 + NRV-1 в одной ветке гребёнки (кран SV-1 → NRV-1 → PCV-1).</td><td><span class="st hold">гребёнка на паузе</span></td></tr>
+      <tr><td>«Сброс на атмосферу — в эту же гребёнку»</td><td>Ветка SV-3 → ёлочка → шланг в вытяжку.</td><td><span class="st hold">гребёнка на паузе</span></td></tr>
+      <tr><td>«Главное, чтобы были шланги, ёлочки, клэмпы и уголки»</td><td>В списке: штуцеры шланговые (ёлочки), отводы 90°, хомуты с запасом. Уголки-кронштейны для крепления гребёнки к раме — не Гросснер, по месту.</td><td><span class="st ok">выполнено</span></td></tr>
+      <tr><td>Даня: «на реактор — переходник с клампа на ёлку, гребёнку — со входом ёлкой»</td><td>Выход E-1 DN15 → штуцер шланговый; вход гребёнки — штуцер шланговый DN15; между ними шланг.</td><td><span class="st ok">выполнено</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Что нашлось при проверке и уже исправлено</h2>
+  <div class="card"><ul>
+    <li>В ведомости не было двух соединений на генераторе: бокового вывода тройника G-1 (аргон A2 и манометр PI-3) и выхода PSV-3 на сброс. Добавлены на лист 5 и сборку.</li>
+    <li>Развилки под нижним сливом собраны на тройниках: тройник DN38 (выгрузка / проба) и после перехода тройник DN15 (рукав на P-2 / кран V-S1 и рукав к бочке). Нарисованы на листе 7, сборке и в 3D-модели. В ведомости теперь 58 соединений.</li>
+    <li>Кран V-G1 на выходе генератора не попал в спецификацию — добавлен. Кранов DN15 в основной части 4: V-P3, V-G1, SP-1, V-S1.</li>
+    <li>Тройник DN38 и два перехода DN38→DN15 под нижним сливом были на чертеже, но не в спецификации — добавлены. Туда же отвод 90° DN15 — носик пробоотбора после SP-1.</li>
+    <li>Тройник DN15 на порту регулятора G-1 не был посчитан — с ним и тройником под сливом их теперь три.</li>
+    <li>Переходников на бак Atmaler было 3, по чертежу нужно 2 (порт регулятора и выход газа). Переходников кламп–резьба ¼″/½″ было 10 без разбивки — пересчитано по месту: 3 и 6 (+2).</li>
+    <li>Удалена строка «кламп с ёлочкой 12 мм / 19 мм, 8 + 6» — таких соединений на чертежах нет. В строке ёлочек рубашки хомут и прокладка считались второй раз — убрано.</li>
+    <li>PSV-3 и PSV-1: нужен угловой клапан с выходом на кламп, чтобы сброс уходил трубкой в T-1 или в коллектор сбросов. «Мини» клапан стравливает в помещение — для метиламина не подходит.</li>
+    <li>Колонны: на стыках корпус–заглушка стоят сетчатые прокладки, поэтому обычных PTFE DN65 нужна одна (верх E-1) + 2 запасных.</li>
+  </ul></div>
+</section>
+
+<section>
+  <div class="bar"><h2>Часть А. Заказать сейчас</h2></div>
+  <p class="lead">Всё, кроме гребёнки. Колонка «по схеме» — сколько стоит на чертежах; «заказать» — с запасом там, где он положен.</p>
+  <div class="tbl"><table id="partA">
+    <thead><tr><th>Позиция (Гросснер)</th><th>Размер</th><th>Где стоит</th><th>По схеме</th><th>Заказать</th></tr></thead>
+    <tbody>
+      <tr class="grp"><td colspan="5">Хомуты и прокладки</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/xomuty-klamp/xomut-klamp-soedineniya/">Хомут кламп</a></td><td class="pos">DN15 (25)</td><td class="where">все малые соединения, кроме гребёнки</td><td class="n">26</td><td class="q">28</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/xomuty-klamp/xomut-klamp-soedineniya/">Хомут кламп</a></td><td class="pos">50,5 (DN25/DN38)</td><td class="where">P1–P4, рубашка N7/N8, нижний слив BV-1 и тройник</td><td class="n">9</td><td class="q">11</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/xomuty-klamp/xomut-klamp-soedineniya/">Хомут кламп</a></td><td class="pos">DN65 (91)</td><td class="where">колонны C-1, C-2 (4), верх E-1 (1)</td><td class="n">5</td><td class="q">7</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/prokladka-klamp-ptfe/">Прокладка кламп PTFE</a></td><td class="pos">DN15 (25)</td><td class="where">продукт, растворитель, газ после колонн</td><td class="n">20</td><td class="q">22</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/prokladka-klamp-ptfe/">Прокладка кламп PTFE</a></td><td class="pos">50,5</td><td class="where">P1–P4, BV-1, тройник DN38</td><td class="n">7</td><td class="q">9</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/prokladka-klamp-ptfe/">Прокладка кламп PTFE</a></td><td class="pos">DN65 (91)</td><td class="where">верх E-1</td><td class="n">1</td><td class="q">3</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/uplotneniya-klamp/prokladka-klamp-s-setkoj/">Прокладка кламп с сеткой</a> (PTFE, ячейка ≤ 1 мм)</td><td class="pos">DN65 (91)</td><td class="where">опора и верх засыпки C-1, C-2</td><td class="n">4</td><td class="q">4</td></tr>
+      <tr><td><a href="https://grossner.ru/katalog/soedinitelnaya-armatura/clamp-soedineniya/uplotneniya-klamp/">Прокладка кламп EPDM</a></td><td class="pos">DN15 (25)</td><td class="where">генератор G-1: порты, PSV-3, V-G1 (щёлочь, водный метиламин)</td><td class="n">6</td><td class="q">8</td></tr>
+      <tr><td><a href="https://grossner.ru/katalog/soedinitelnaya-armatura/clamp-soedineniya/uplotneniya-klamp/">Прокладка кламп EPDM</a></td><td class="pos">50,5</td><td class="where">рубашка N7/N8 (теплоноситель)</td><td class="n">2</td><td class="q">4</td></tr>
+
+      <tr class="grp"><td colspan="5">Краны и клапаны</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/">Кран кламп</a> шаровой, сёдла PTFE</td><td class="pos">DN15</td><td class="where">V-P3 (дозирование), V-G1 (генератор), SP-1 (проба), V-S1 (бочка растворителя)</td><td class="n">4</td><td class="q">4</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/predohranitelnye-klapany-nerzhaveyuschie/klapan-predoxranitelnyj-uglovoj/klapan-predoxranitelnyj-uglovoj-klamp/">Клапан предохранительный угловой кламп</a>, 0,3–0,5 бар</td><td class="pos">DN15</td><td class="where">PSV-3 на генераторе, выход трубкой на T-1</td><td class="n">1</td><td class="q">1</td></tr>
+
+      <tr class="grp"><td colspan="5">Фасонные детали</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/trojniki-klamp/trojnik-klamp-t-tip/">Тройник кламп T-тип</a></td><td class="pos">DN15</td><td class="where">узел P3 (кран → септа + ввод P-3); порт регулятора G-1 (PSV-3, аргон, PI-3); под сливом после перехода — на P-2 и через V-S1 на бочку</td><td class="n">3</td><td class="q">3</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/trojniki-klamp/trojnik-klamp-t-tip/">Тройник кламп T-тип</a></td><td class="pos">DN38</td><td class="where">под нижним сливом BV-1: вниз — выгрузка, вбок — проба</td><td class="n">1</td><td class="q">1</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexod-klamp/">Переход кламп–кламп</a> концентрический</td><td class="pos">DN38 → DN15</td><td class="where">после тройника BV-1: на выгрузку и на SP-1</td><td class="n">2</td><td class="q">2</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexod-klamp/">Переход кламп–кламп</a> концентрический</td><td class="pos">DN25 → DN15</td><td class="where">штуцер P3 → кран V-P3</td><td class="n">1</td><td class="q">1</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/otvody-klamp/otvod-klamp/">Отвод кламп 90°</a></td><td class="pos">DN15</td><td class="where">носик пробоотбора после SP-1</td><td class="n">1</td><td class="q">1</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/shtucery-klamp/shtucer-shlangovyj-klamp/">Штуцер шланговый кламп</a> (ёлочка)</td><td class="pos">DN15</td><td class="where">газовый выход E-1 → шланг на гребёнку</td><td class="n">1</td><td class="q">3</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/shtucery-klamp/shtucer-shlangovyj-klamp/">Штуцер шланговый кламп</a> (ёлочка под рукав 16–19 мм)</td><td class="pos">DN25</td><td class="where">рубашка N7/N8 → рукава теплоносителя</td><td class="n">2</td><td class="q">4</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-naruzhnaya/">Переходник кламп – резьба наружная</a> ¼″</td><td class="pos">DN15</td><td class="where">септа на P3; ввод трубки P-3 (NRV-4); аргон A2 в тройник G-1</td><td class="n">3</td><td class="q">5</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-naruzhnaya/">Переходник кламп – резьба наружная</a> ½″</td><td class="pos">DN15</td><td class="where">трубка PTFE 10×12 через обжим: после V-G1, вход и выход C-1 и C-2, выход PSV-3</td><td class="n">6</td><td class="q">8</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-naruzhnaya/">Переходник кламп – резьба наружная</a>, резьба по баку</td><td class="pos">DN15 × G?</td><td class="where">бак Atmaler G-1: порт регулятора, выход газа — резьбу замерить</td><td class="n">2</td><td class="q">2</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-naruzhnaya/">Переходник кламп – резьба наружная</a>, резьба по насосу</td><td class="pos">DN15 × ?</td><td class="where">насос P-2, вход и выход — резьбу взять из паспорта</td><td class="n">2</td><td class="q">2</td></tr>
+
+      <tr class="grp"><td colspan="5">Колонны осушки C-1, C-2</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/carga-klamp/">Царга кламп</a> (труба 76,2×1,6)</td><td class="pos">3″ (DN65) × 600</td><td class="where">корпуса C-1 (сита 3A) и C-2 (NaOH/KOH)</td><td class="n">2</td><td class="q">2</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexod-klamp/">Переход кламп–кламп</a> концентрический (или заглушка с отводом)</td><td class="pos">DN65 → DN15</td><td class="where">низ и верх каждой колонны</td><td class="n">4</td><td class="q">4</td></tr>
+
+      <tr class="grp"><td colspan="5">Под заказ и фильтр F-2</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/zaglushka-clamp/">Заглушка кламп</a> с приваренной термогильзой Ø8 × 500</td><td class="pos">DN25</td><td class="where">штуцер P2 (N4), датчик Pt100 в массу</td><td class="n">1</td><td class="q">1</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/filtry-nerzhaveyuschie/mikroporistyj-membrannyj-filtr/">Корпус микропористого фильтра 10″ на клампах</a></td><td class="pos">кламп по корпусу</td><td class="where">F-2, тонкая фильтрация продукта</td><td class="n">1</td><td class="q">1</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/filtry-nerzhaveyuschie/patron-mikroporistogo-membrannogo-filtra/">Патроны 10″</a> 5 / 2 / 0,2 / 0,05 мкм, PTFE или PP/PES</td><td class="pos">10″</td><td class="where">F-2, по 2 шт. каждого</td><td class="n">8</td><td class="q">8</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Часть Б. Гребёнка — заказывать после решения Бабкина и Дани</h2>
+  <p class="lead">По текущему листу 4, уже без манометра PI-4 (договорились его убрать). Запас по хомутам и прокладкам заложен в части А. Если схема гребёнки изменится, этот блок пересчитаю.</p>
+  <div class="tbl"><table id="partB">
+    <thead><tr><th>Позиция (Гросснер)</th><th>Размер</th><th>Где стоит</th><th>По схеме</th><th>Заказать</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/">Кран кламп</a> шаровой, сёдла PTFE</td><td class="pos">DN15</td><td class="where">AV-1 (аргон), SV-1 (шпунт), SV-2 (PSV-1, опломбирован), SV-3 (атмосфера), VV-1 (вакуум)</td><td class="n">5</td><td class="q">5</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/klapany-iz-nerzhaveyuschey-stali/klapan-obratnyj-klamp/">Клапан обратный кламп</a>, открытие ≤ 30 мбар</td><td class="pos">DN15</td><td class="where">NRV-1 перед шпунтом</td><td class="n">1</td><td class="q">1</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/predohranitelnye-klapany-nerzhaveyuschie/shpunt-apparat/shpunt-apparat-s-manometrom-uglovoj/">Шпунт-аппарат угловой с манометром</a></td><td class="pos">50,5 (DN25)</td><td class="where">PCV-1, 50–80 мбар</td><td class="n">1</td><td class="q">1</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/predohranitelnye-klapany-nerzhaveyuschie/klapan-predoxranitelnyj-uglovoj/klapan-predoxranitelnyj-uglovoj-klamp/">Клапан предохранительный угловой кламп</a>, 0,2 бар</td><td class="pos">DN15</td><td class="where">PSV-1, аварийный; выход в коллектор сбросов</td><td class="n">1</td><td class="q">1</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/trojniki-klamp/trojnik-klamp-t-tip/">Тройник кламп T-тип</a></td><td class="pos">DN15</td><td class="where">коллектор: AV-1, SV-1, SV-2, SV-3</td><td class="n">4</td><td class="q">4</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/otvody-klamp/otvod-klamp/">Отвод кламп 90°</a></td><td class="pos">DN15</td><td class="where">конец коллектора → VV-1</td><td class="n">1</td><td class="q">1</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexod-klamp/">Переход кламп–кламп</a> концентрический</td><td class="pos">DN15 → DN25</td><td class="where">NRV-1 → шпунт</td><td class="n">1</td><td class="q">1</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/shtucery-klamp/shtucer-shlangovyj-klamp/">Штуцер шланговый кламп</a> (ёлочка)</td><td class="pos">DN15</td><td class="where">вход от E-1, выход SV-3 в вытяжку, вакуум VV-1</td><td class="n">3</td><td class="q">3</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-naruzhnaya/">Переходник кламп – резьба наружная</a> ½″</td><td class="pos">DN15</td><td class="where">вход аргона AV-1; выход PSV-1 в трубку сбросов</td><td class="n">2</td><td class="q">2</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/xomuty-klamp/xomut-klamp-soedineniya/">Хомут кламп</a> + <a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/prokladka-klamp-ptfe/">прокладка PTFE</a></td><td class="pos">DN15</td><td class="where">соединения гребёнки без PI-4, с выходом PSV-1</td><td class="n">17</td><td class="q">17</td></tr>
+      <tr><td><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/xomuty-klamp/xomut-klamp-soedineniya/">Хомут кламп</a> + <a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/prokladka-klamp-ptfe/">прокладка PTFE</a></td><td class="pos">50,5</td><td class="where">переход → шпунт</td><td class="n">1</td><td class="q">1</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Уточнить у Гросснера при заказе</h2>
+  <div class="note"><ol>
+    <li><b>Обратный клапан кламп DN15 (NRV-1)</b>: какое давление открытия? Нам нужно не больше 30 мбар, иначе оно добавится к уставке шпунта. Если пружина только жёсткая — спросить самую слабую или клапан без пружины.</li>
+    <li><b>Предохранительные клапаны</b>: угловое исполнение с выходом на кламп DN15, диапазон настройки 0,2 бар (PSV-1) и 0,3–0,5 бар (PSV-3), уплотнение PTFE или EPDM, не FKM.</li>
+    <li><b>Переход DN65 → DN15</b>: есть ли такой концентрический? Если нет — заглушка DN65 с приваренным патрубком DN15 под заказ (4 шт.), либо DN65→DN25 + DN25→DN15 (тогда +4 соединения).</li>
+    <li><b>Прокладка с сеткой DN65</b>: из PTFE, ячейка не больше 1 мм. Если сетка крупнее — дополнительно диск сетки AISI 316 с ячейкой ≤ 1 мм.</li>
+    <li><b>Шпунт-аппарат</b>: подключение именно кламп 50,5 и минимальная уставка — сможет ли держать 50–80 мбар.</li>
+    <li><b>Материал</b>: всё, что касается продукта и газа, — AISI 316L; прокладки PTFE (белые, не силикон).</li>
+    <li><b>Рукава</b>: есть ли у них рукав PTFE ¾″ в оплётке, антистатический, с приварными клампами DN15 (1,5 м × 2 и 2,5 м × 2) — для выгрузки и растворителя.</li>
+  </ol></div>
+</section>
+
+<section>
+  <h2>Скопировать список для письма</h2>
+  <p class="lead">Кнопка собирает обе части в текст с табуляцией — вставляется в письмо или в Excel.</p>
+  <div class="bar"><button id="copy" type="button">Скопировать список</button><span class="msg" id="msg" role="status"></span></div>
+  <textarea id="out" readonly hidden aria-label="Список для копирования"></textarea>
+</section>
+</main>
+
+<script>
+function rowsText(id, title){
+  const lines=[title];
+  document.querySelectorAll('#'+id+' tbody tr').forEach(tr=>{
+    if(tr.classList.contains('grp')){lines.push('— '+tr.textContent.trim());return;}
+    const c=[...tr.children].map(td=>td.textContent.replace(/\s+/g,' ').trim());
+    lines.push([c[0],c[1],c[4]+' шт.',c[2]].join('\t'));
+  });
+  return lines.join('\n');
+}
+document.getElementById('copy').addEventListener('click',()=>{
+  const text='Заказ Гросснер — ТЕФКОТ 770 (AISI 316L, кламп DIN 32676, прокладки PTFE)\n\n'
+    +rowsText('partA','ЧАСТЬ А — сейчас')+'\n\n'+rowsText('partB','ЧАСТЬ Б — гребёнка (после согласования)');
+  const out=document.getElementById('out'), msg=document.getElementById('msg');
+  out.value=text;
+  const fallback=()=>{out.hidden=false;out.focus();out.select();msg.textContent='Текст выделен — нажмите Ctrl+C.';};
+  try{
+    navigator.clipboard.writeText(text).then(()=>{msg.textContent='Скопировано.';},fallback);
+  }catch(e){fallback();}
+});
+</script>
