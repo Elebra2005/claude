@@ -87,8 +87,8 @@ def sheet1():
     # P4 стояк
     pipe(s, [(86, 70), (86, 40)], lw=1.2)
     s.rect(83, 46, 6, 12, lw=0.4, fill='#eaf2f8'); s.text(89.5, 53, 'фонарь', 1.8)
-    J(s, 2, 86, 40, 'v', 'DN25 (P4, N1)', 'PTFE', 'P4 — заглушка с обжимом ¼″ (Ar, A1)', side=-1)
-    s.rect(82, 35, 8, 3, lw=0.4, fill='#ffffff'); tube(s, [(86, 35), (86, 26), (70, 26)]); s.text(69, 27, 'A1 (лист 6)', 2.0, 'end')
+    J(s, 2, 86, 40, 'v', 'DN25 (P4, N1)', 'PTFE', 'P4 — глухая заглушка (резерв)', side=-1)
+    s.rect(82, 35, 8, 3, lw=0.4, fill='#ffffff'); s.text(80, 34, 'резерв', 2.0, 'end')
     # P2 термогильза
     pipe(s, [(124, 70), (124, 62)], lw=1.4)
     J(s, 2, 124, 61, 'v', 'DN25 (P2, N4)', 'PTFE', 'P2 — заглушка с термогильзой')
@@ -163,7 +163,7 @@ def sheet1():
     notes(s, 338, 20, 'Примечания', [
         '1. Размеры «?» — уточнить замером.',
         '   Wiggens: H общ. 1140, 414, 410.',
-        '2. Ø ферулы кламп по DN: DN15 — 34;',
+        '2. Ø ферулы кламп по DN: DN15 («к25») — 25;',
         '   DN25, DN38 — 50,5; DN40 — 64;',
         '   DN65 (3″) — 91; DN100 (4″) — 119.',
         '3. Шильдик: P раб., полный вакуум,',
@@ -215,9 +215,10 @@ def sheet2():
     # боковой отвод
     oy = top + 40 * k
     pipe(s, [(cx + R, oy), (cx + R + 10, oy)], lw=1.2)
-    J(s, 3, cx + R + 11, oy, 'h', 'DN15', 'PTFE', 'E-1 отвод газа → рукав на гребёнку', side=-1)
-    hose(s, [(cx + R + 11, oy), (cx + R + 20, oy)]); s.stub_arrow(cx + R + 20, oy, 'right')
-    s.text(cx + R + 26, oy + 1, 'на гребёнку (лист 4)', 2.1)
+    J(s, 3, cx + R + 11, oy, 'h', 'DN15', 'PTFE', 'E-1 отвод газа → переходник на ёлочку', side=-1)
+    s.poly([(cx + R + 12.8, oy - 2.4), (cx + R + 17, oy - 1.4), (cx + R + 17, oy + 1.4), (cx + R + 12.8, oy + 2.4)], lw=0.35, closed=True, fill='#ffffff')
+    hose(s, [(cx + R + 17, oy), (cx + R + 24, oy)]); s.stub_arrow(cx + R + 24, oy, 'right')
+    s.text(cx + R + 30, oy + 1, 'шланг на гребёнку (лист 4)', 2.1)
     # низ: переход 3″→1″, ферула DN25 под P1
     s.reducer(cx, bot, 'v', 76.2 * k, 25.4 * k, 8)
     s.rect(cx - 50.5 * k / 2, bot + 8, 50.5 * k, 2, lw=0.5, fill='#ffffff')
@@ -285,16 +286,14 @@ def sheet2():
     s.dim(tx + 1, 131, tx + 1, 206, -6, '500')
     s.text(tx + 3, 212, 'Ø8×1, дно заварено', 1.9)
     # --- P4
-    s.text(330, 112, 'УЗЕЛ P4 (Ar), б/м', 3.0, bold=True)
+    s.text(330, 112, 'УЗЕЛ P4 (резерв), б/м', 3.0, bold=True)
     qx = 345
     pipe(s, [(qx, 206), (qx, 146)], lw=1.6); s.rect(qx - 3, 170, 6, 14, lw=0.4, fill='#eaf2f8')
     s.line(333, 206, 357, 206, lw=0.8, nc=True); s.text(333, 210, 'крышка R-1', 1.9)
     s.text(qx + 5, 178, 'смотр. фонарь (сущ.)', 1.9)
-    JR(s, qx, 148, 'v', 'P4 — заглушка с обжимом ¼″ (Ar, A1)', side=1)
+    JR(s, qx, 148, 'v', 'P4 — глухая заглушка (резерв)', side=1)
     s.rect(qx - 3.2, 143, 6.4, 3, lw=0.4, fill='#eeeeee')
-    tube(s, [(qx, 143), (qx, 132), (qx + 30, 132)])
-    s.check_valve(qx + 16, 132, 'left', 2.4); s.text(qx + 12, 128, 'NRV (A1)', 1.9)
-    s.text(qx + 32, 133, '← Ar от A1', 2.0)
+    s.text(qx + 5, 141, 'глухая заглушка DN25', 1.9); s.text(qx + 5, 137, 'аргон — через гребёнку (лист 4)', 1.9)
     s.text(qx - 12, 215, 'снять дыхательный фильтр', 1.9)
     notes(s, 300, 20, 'Примечания', [
         '1. E-1 — сталь AISI 316L; сварка TIG,',
@@ -314,73 +313,79 @@ def sheet2():
 
 # =====================================================================
 def sheet3():
-    s = Sheet('4 Гребёнка безопасности')
-    s.frame('Гребёнка безопасности, сброс на скруббер', CODE + '.04', 4, N_SHEETS)
-    s.text(25, 13, 'ГРЕБЁНКА БЕЗОПАСНОСТИ: коллектор DN25 (1″–1½″), вид спереди, б/м', 3.0, bold=True)
-    hy, cy = 55, 175                      # коллектор отдувки и коллектор сбросов
-    hose(s, [(24, 90), (32, 90), (32, hy), (36, hy)]); s.text(24.5, 94, 'рукав PTFE ¾″ от E-1', 2.0); s.text(24, 99, 'L=?', 2.0)
-    J(s, 4, 36, hy, 'h', 'DN15', 'PTFE', 'рукав от E-1 → переход DN15/DN25', side=1)
-    s.reducer(38, hy, 'h', 3.2, 6.4, 6)
-    pipe(s, [(44, hy), (330, hy)], lw=2.0)
-    xs = {}
-    x = 50
-    # тройник A: PI-4
-    J(s, 4, x, hy, 'h', 'DN25', 'PTFE', 'переход → тройник A (PI-4)', side=-1); x += 12
-    xs['A'] = x
-    pipe(s, [(x, hy), (x, hy - 18)], lw=2.0)
-    J(s, 4, x, hy - 9, 'v', 'DN25', 'PTFE', 'тройник A → переход DN38/DN15', side=1)
-    s.reducer(x, hy - 16, 'v', 3.2, 6.4, 6)
-    J(s, 4, x, hy - 17, 'v', 'DN15', 'PTFE', 'переход → манометр PI-4', side=1)
-    s.gauge(x, hy - 18, 4, True, 'PI-4'); s.text(x + 6, hy - 27, 'PI-4 0–250 мбар', 2.0)
-    x += 14
-    J(s, 4, x, hy, 'h', 'DN25', 'PTFE', 'тройник A → тройник B', side=-1); x += 14
-    # тройник B: вакуум
-    xs['B'] = x
-    pipe(s, [(x, hy), (x, hy + 35)], lw=2.0)
-    J(s, 4, x, hy + 9, 'v', 'DN25', 'PTFE', 'тройник B → кран VV-1', side=-1)
-    s.ball_valve(x, hy + 17, 'v'); s.text(x - 16, hy + 18, 'VV-1', 2.2, bold=True)
-    J(s, 4, x, hy + 25, 'v', 'DN25', 'PTFE', 'VV-1 → переход DN38/DN15', side=-1)
-    s.reducer(x, hy + 26, 'v', 6.4, 3.2, 6)
-    J(s, 4, x, hy + 33, 'v', 'DN15', 'PTFE', 'переход → ёлочка вакуумная', side=-1)
-    hose(s, [(x, hy + 33), (x, hy + 46)]); s.stub_arrow(x, hy + 46, 'down'); s.text(x - 18, hy + 54, 'CT-1, VP-1 (лист 6)', 2.0)
-    x += 14
-    J(s, 4, x, hy, 'h', 'DN25', 'PTFE', 'тройник B → тройник C', side=-1); x += 16
-    branches = [('C', 'SV-1', 'PCV-1', 'шпунт-аппарат', '50–80 мбар'),
-                ('D', 'SV-2', 'NRV-1', 'обр. клапан', '100 мбар'),
-                ('E', 'SV-3*', 'PSV-1', 'предохр. клапан', '200 мбар'),
-                ('F', 'SV-4 НЗ', 'NRV-2', 'KF25 перевёрн.', 'стенд')]
-    for bi, (tee, sv, dev, devname, setp) in enumerate(branches):
-        xs[tee] = x
-        pipe(s, [(x, hy), (x, cy)], lw=2.0)
-        J(s, 4, x, hy + 9, 'v', 'DN25', 'PTFE', f'тройник {tee} → кран {sv}', side=-1)
-        s.ball_valve(x, hy + 17, 'v'); s.text(x + 6, hy + 18.5, sv, 2.2, bold=True)
-        J(s, 4, x, hy + 25, 'v', 'DN25', 'PTFE', f'{sv} → {dev}', side=-1)
-        if dev == 'PCV-1':
-            s.rect(x - 5, hy + 30, 10, 16, lw=0.5, fill='#ffffff'); s.gauge(x + 5, hy + 34, 3.2, True, 'P')
-            s.text(x - 3.5, hy + 40, 'ШП', 2.0)
-        elif dev == 'NRV-1':
-            s.rect(x - 4, hy + 30, 8, 16, lw=0.5, fill='#ffffff'); s.check_valve(x, hy + 38, 'down')
-        elif dev == 'PSV-1':
-            s.rect(x - 4, hy + 30, 8, 16, lw=0.5, fill='#ffffff'); s.line(x - 3, hy + 32, x + 3, hy + 44, lw=0.3)
-            s.poly([(x + 4, hy + 34), (x + 7, hy + 35), (x + 4, hy + 36), (x + 7, hy + 37), (x + 4, hy + 38)], lw=0.3)
-        else:
-            s.rect(x - 4, hy + 30, 8, 3, lw=0.4, fill='#eeeeee'); s.text(x + 6, hy + 32, 'переход DN25/KF25', 1.8)
-            s.rect(x - 3, hy + 34, 6, 10, lw=0.5, fill='#ffffff'); s.check_valve(x, hy + 39, 'down', 2.4)
-            s.rect(x - 4, hy + 45, 8, 3, lw=0.4, fill='#eeeeee'); s.text(x + 6, hy + 47, 'переход KF25/DN25', 1.8)
-        s.text(x + 6, hy + 52, dev, 2.3, bold=True); s.text(x + 6, hy + 56, devname, 1.9); s.text(x + 6, hy + 60, setp, 1.9)
-        J(s, 4, x, hy + 66, 'v', 'DN25', 'PTFE', f'{dev} → коллектор сбросов', side=-1)
-        if bi < 3:
-            J(s, 4, x + 13, hy, 'h', 'DN25', 'PTFE', f'тройник {tee} → следующий', side=-1)
-            x += 30
-    # коллектор сбросов
-    pipe(s, [(xs['C'], cy), (310, cy)], lw=2.0)
-    s.text(xs['C'] + 2, cy + 6, 'коллектор сбросов DN25 (тройники в точках C…F)', 2.1)
-    s.text(332, hy + 1, 'заглушка DN25', 1.9); s.rect(330, hy - 3.2, 1.5, 6.4, lw=0.4, fill='#eeeeee')
-    J(s, 4, 312, cy, 'h', 'DN25', 'PTFE', 'коллектор → переход DN38/DN15', side=-1)
-    s.reducer(314, cy, 'h', 6.4, 3.2, 6)
-    J(s, 4, 322, cy, 'h', 'DN15', 'PTFE', 'переход → рукав на BU-1', side=-1)
-    hose(s, [(322, cy), (340, cy), (340, 132)])
-    # BU-1, T-1, S-1
+    s = Sheet('4 Гребёнка')
+    s.frame('Гребёнка: шпунт, сброс, вакуум, аргон, атмосфера', CODE + '.04', 4, N_SHEETS)
+    s.text(25, 13, 'ГРЕБЁНКА: коллектор DN15 (кламп 25), ветки вверх, вид спереди, б/м', 3.0, bold=True)
+    hy, vy = 150, 45                      # ось коллектора, линия сбросов на BU-1
+    X = {'PI': 55, 'AR': 85, 'SH': 125, 'PS': 170, 'AT': 215, 'VAC': 260}
+    # вход от E-1
+    hose(s, [(30, 214), (30, hy), (33, hy)]); s.stub_arrow(30, 214, 'down'); s.text(33, 216, 'шланг от E-1 (лист 3), L=?', 2.0)
+    s.poly([(33, hy - 1.4), (38, hy - 2.4), (38, hy + 2.4), (33, hy + 1.4)], lw=0.35, closed=True, fill='#ffffff')
+    s.text(31, hy - 5, 'ёлочка', 1.8)
+    J(s, 4, 40, hy, 'h', 'DN15', 'PTFE', 'ёлочка входа → тройник PI-4', side=1)
+    # коллектор: тройники на клампах + концевой отвод вверх на VV-1
+    pipe(s, [(42, hy), (X['VAC'] - 6, hy), (X['VAC'], hy - 6), (X['VAC'], hy - 8)], lw=2.0)
+    order = ['PI', 'AR', 'SH', 'PS', 'AT']
+    names = {'PI': 'PI-4', 'AR': 'AV-1', 'SH': 'SV-1', 'PS': 'SV-2', 'AT': 'SV-3'}
+    for a_, b_ in zip(order, order[1:]):
+        J(s, 4, (X[a_] + X[b_]) / 2, hy, 'h', 'DN15', 'PTFE', f'тройник {names[a_]} → тройник {names[b_]}', side=-1)
+    J(s, 4, (X['AT'] + X['VAC']) / 2 - 3, hy, 'h', 'DN15', 'PTFE', 'тройник SV-3 → отвод 90° на VV-1', side=-1)
+    # PI-4
+    x = X['PI']
+    pipe(s, [(x, hy), (x, hy - 12)], lw=2.0)
+    J(s, 4, x, hy - 9, 'v', 'DN15', 'PTFE', 'тройник → манометр PI-4', side=-1)
+    s.gauge(x, hy - 12, 4.5, True, 'PI-4'); s.text(x - 6, hy - 27, 'PI-4 0–250 мбар', 2.0, 'end')
+
+    def valve(x, name, nxt, lab_side=1):
+        J(s, 4, x, hy - 9 if name != 'VV-1' else hy - 10, 'v', 'DN15', 'PTFE', f'{"тройник" if name != "VV-1" else "отвод"} → кран {name}', side=-1)
+        s.ball_valve(x, hy - 18, 'v')
+        s.text(x + 6 * lab_side, hy - 16.5, name, 2.3, 'start' if lab_side > 0 else 'end', bold=True)
+        J(s, 4, x, hy - 27, 'v', 'DN15', 'PTFE', f'{name} → {nxt}', side=-1)
+    # AV-1: аргон, переход кламп DN15 → G½″
+    x = X['AR']
+    pipe(s, [(x, hy), (x, hy - 31)], lw=2.0)
+    valve(x, 'AV-1', 'переходник кламп/G½″')
+    s.rect(x - 3.2, hy - 34, 6.4, 3, lw=0.4, fill='#eeeeee'); s.text(x + 5, hy - 31, 'G½″', 1.9)
+    tube(s, [(x, hy - 34), (x, 92), (x - 12, 92)]); s.text(x - 13, 91.2, 'Ar ← A1', 2.0, 'end'); s.text(x - 13, 95.2, '(лист 6)', 1.8, 'end')
+    # SV-1 → NRV-1 → переход DN15/DN25 → PCV-1 шпунт
+    x = X['SH']
+    pipe(s, [(x, hy), (x, hy - 80)], lw=2.0)
+    valve(x, 'SV-1', 'NRV-1')
+    s.rect(x - 3.5, hy - 44, 7, 14, lw=0.5, fill='#ffffff'); s.check_valve(x, hy - 37, 'up')
+    s.text(x + 6, hy - 37, 'NRV-1', 2.1, bold=True); s.text(x + 6, hy - 33.5, '≤ 30 мбар', 1.8)
+    J(s, 4, x, hy - 46, 'v', 'DN15', 'PTFE', 'NRV-1 → переход DN15/DN25', side=-1)
+    s.reducer(x, hy - 54, 'v', 6.4, 3.2, 6)
+    J(s, 4, x, hy - 56, 'v', 'DN25', 'PTFE', 'переход → шпунт PCV-1', side=-1, w=4.4)
+    s.rect(x - 6, hy - 78, 12, 20, lw=0.5, fill='#ffffff'); s.gauge(x + 6, hy - 71, 3, True, 'P')
+    s.text(x - 4, hy - 66, 'ШП', 2.0)
+    s.text(x - 8, hy - 70, 'PCV-1', 2.3, 'end', bold=True); s.text(x - 8, hy - 66.5, 'шпунт', 1.9, 'end'); s.text(x - 8, hy - 63, '50–80 мбар', 1.9, 'end')
+    tube(s, [(x, hy - 78), (x, vy)])
+    # SV-2 🔒 → PSV-1
+    x = X['PS']
+    pipe(s, [(x, hy), (x, hy - 52)], lw=2.0)
+    valve(x, 'SV-2', 'PSV-1')
+    s.rect(x - 4, hy - 50, 8, 18, lw=0.5, fill='#ffffff'); s.line(x - 3, hy - 48, x + 3, hy - 34, lw=0.3)
+    s.poly([(x + 4, hy - 46), (x + 7, hy - 45), (x + 4, hy - 44), (x + 7, hy - 43), (x + 4, hy - 42)], lw=0.3)
+    s.text(x + 9, hy - 41, 'PSV-1', 2.3, bold=True); s.text(x + 9, hy - 37.5, '200 мбар', 1.9)
+    s.text(x - 6, hy - 16.5, '🔒', 2.2, 'end')
+    tube(s, [(x, hy - 50), (x, vy)])
+    # SV-3 → сброс на атмосферу
+    x = X['AT']
+    pipe(s, [(x, hy), (x, hy - 30)], lw=2.0)
+    valve(x, 'SV-3', 'ёлочка (атмосфера)')
+    s.poly([(x - 2.4, hy - 30), (x + 2.4, hy - 30), (x + 1.4, hy - 35), (x - 1.4, hy - 35)], lw=0.35, closed=True, fill='#ffffff')
+    hose(s, [(x, hy - 35), (x, 86)]); s.stub_arrow(x, 86, 'up')
+    s.text(x + 3, 80, 'сброс на атмосферу', 1.9); s.text(x + 3, 83.5, '→ вытяжка', 1.9)
+    # VV-1 на концевом отводе → вакуум
+    x = X['VAC']
+    pipe(s, [(x, hy - 8), (x, hy - 30)], lw=2.0)
+    valve(x, 'VV-1', 'ёлочка вакуумная')
+    s.poly([(x - 2.4, hy - 30), (x + 2.4, hy - 30), (x + 1.4, hy - 35), (x - 1.4, hy - 35)], lw=0.35, closed=True, fill='#ffffff')
+    hose(s, [(x, hy - 35), (x, 96)]); s.stub_arrow(x, 96, 'up')
+    s.text(x + 3, 90, 'вакуум: CT-1, VP-1', 1.9); s.text(x + 3, 93.5, '(лист 6)', 1.9)
+    # линия сбросов → BU-1 → T-1 → S-1
+    tube(s, [(X['SH'], vy), (340, vy), (340, 110)])
+    s.text(X['SH'] + 2, vy - 1.5, 'сбросы PCV-1 и PSV-1 → BU-1, трубка PTFE 10×12', 2.0)
     s.rect(335, 110, 18, 22, lw=0.5, fill='#f4f8fb'); s.line(336, 124, 352, 124, lw=0.2, dash='dash', color=BLUE)
     s.text(355, 116, 'BU-1 барботёр', 2.2, bold=True); s.text(355, 120, 'масло ПМС-50, 1–2 см', 1.9)
     tube(s, [(348, 110), (348, 100), (378, 100), (378, 150)])
@@ -393,18 +398,15 @@ def sheet3():
     tube(s, [(250, 200), (360, 200), (360, 160), (365, 160)]); s.text(250, 198, 'от PSV-3 генератора (лист 5)', 2.0)
     tube(s, [(250, 210), (340, 210), (340, 200)]); s.text(250, 208.5, 'от PSV-4 нутча (лист 7)', 2.0)
     # размеры
-    s.dim(xs['C'], hy, xs['D'], hy, -18, '?')
-    s.dim(xs['D'], hy, xs['E'], hy, -18, '?')
-    s.dim(xs['E'], hy, xs['F'], hy, -18, '?')
-    s.dim(xs['F'] + 18, hy, xs['F'] + 18, cy, 0, '?')
-    s.dim(44, hy, xs['F'], hy, -32, 'L общ. = ?')
-    notes(s, 25, 195, 'Примечания', [
-        '1. Все соединения — трикламп, прокладки PTFE; хомуты нерж.',
-        '2. Кран SV-3* опломбирован «открыт»; закрывать только при вакуумировании.',
-        '3. SV-4 нормально закрыт до стендовой проверки NRV-2.',
-        '4. Шаг тройников — по строительным длинам кранов/устройств (?).',
-        '5. Присоединения PCV-1, NRV-1, PSV-1 — уточнить у Гросснер (1″ / 1½″ ?).',
-        '6. Крепление гребёнки к раме реактора — хомуты-держатели Ø50,8 (?).'], size=2.1, step=3.6)
+    for a_, b_ in zip(order + ['VAC'], (order + ['VAC'])[1:]):
+        s.dim(X[a_], hy, X[b_], hy, 20, '?')
+    s.dim(40, hy, X['VAC'], hy, 30, 'L общ. = ?')
+    notes(s, 25, 225, 'Примечания', [
+        '1. Коллектор и краны — DN15 (кламп 25, «к25»), прокладки PTFE. Краны — простые «кран кламп» Гросснер.',
+        '2. Переход DN15/DN25 (25/50,5) только у шпунт-аппарата; отвод E-1 сразу DN15.',
+        '3. SV-2 опломбирован «открыт»; закрывать только при вакуумировании. SV-3 открывать только при P ≥ 0.',
+        '4. Гребёнка отдельно, на уголках к раме Wiggens; к E-1 — шлангом на ёлочках (или ½″). Место — по месту.',
+        '5. Порядок веток и шаг тройников — по строительным длинам кранов (?).'], size=2.1, step=3.6)
     return s
 
 
@@ -519,7 +521,7 @@ def sheet4():
 def sheet5():
     s = Sheet('6 Аргон, вакуум, теплоноситель')
     s.frame('Линии аргона, вакуума, теплоносителя', CODE + '.06', 6, N_SHEETS)
-    s.text(25, 13, 'АРГОН: баллон → редукторы → раздаточная гребёнка ¼″, б/м', 3.0, bold=True)
+    s.text(25, 13, 'АРГОН: баллон → редукторы → раздаточный коллектор ¼″, б/м', 3.0, bold=True)
     s.rect(28, 40, 16, 70, lw=0.6, fill='#f2f2f2'); s.text(28, 116, 'AR-1 Ar 99,998 %', 2.1, bold=True)
     s.line(36, 40, 36, 33, lw=0.8); s.circle(36, 30, 3, lw=0.4, fill='#ffffff'); s.text(30, 24.5, 'вентиль баллона, W21,8', 1.8)
     s.circle(56, 30, 4, lw=0.5, fill='#ffffff'); s.text(56, 31, 'R', 2.2, 'middle'); s.text(50, 40, 'PR-1', 2.2, bold=True)
@@ -531,8 +533,8 @@ def sheet5():
     tube(s, [(108, 30), (108, 20)]); s.rect(105, 14, 6, 6, lw=0.4, fill='#ffffff'); s.text(113, 18, 'PSV-2 0,5 бар', 1.8)
     s.poly([(122, 24), (132, 24), (130, 36), (124, 36)], lw=0.4, closed=True, fill='#ffffff'); s.text(120, 42, 'FI-1', 2.2, bold=True)
     s.text(116, 46, '0,5–15 л/мин', 1.8)
-    tube(s, [(150, 30), (270, 30)]); s.rect(270, 28.4, 1.2, 3.2, lw=0.4, fill='#eeeeee'); s.text(152, 27, 'раздаточная гребёнка: тройники ¼″ обжим', 1.8)
-    for i, (nm, dest, nrv) in enumerate([('A1', 'R-1, P4 (лист 3)', True), ('A2', 'G-1 (лист 5)', True), ('A3', 'тара MeSiCl₃ (лист 3)', False), ('A4', 'F-1 (лист 7)', False)]):
+    tube(s, [(150, 30), (270, 30)]); s.rect(270, 28.4, 1.2, 3.2, lw=0.4, fill='#eeeeee'); s.text(152, 27, 'раздаточный коллектор: тройники ¼″ обжим', 1.8)
+    for i, (nm, dest, nrv) in enumerate([('A1', 'гребёнка, AV-1 G½″ (лист 4)', True), ('A2', 'G-1 (лист 5)', True), ('A3', 'тара MeSiCl₃ (лист 3)', False), ('A4', 'F-1 (лист 7)', False)]):
         x = 170 + i * 30
         tube(s, [(x, 30), (x, 68)]); s.stub_arrow(x, 68, 'down')
         s.ball_valve(x, 42, 'v', 2.6); s.text(x + 4, 41, nm, 2.2, bold=True)
@@ -683,11 +685,16 @@ def sheet7():
         key = m.group(0) if m else sz
         cnt[(key, g)] += 1
     y0 = 17 + 4.6 * (len(rest[:per - 2]) + 1) + 8 if rest else 17
-    s.text(222, y0, 'СВОДКА (без запаса; заказывать ×2 прокладки)', 2.6, bold=True)
-    srows = [['Размер', 'Прокладка', 'Соед.', 'Хомутов', 'Прокладок ×2']]
-    for (sz, g), c in sorted(cnt.items()):
-        srows.append([sz, g, str(c), str(c), str(2 * c)])
-    s.table(222, y0 + 2, [30, 22, 15, 18, 28], srows, rowh=4.6, size=1.9)
+    extra = {'DN25': ('рубашка N7/N8: +2 EPDM', 2)}          # переходники кламп → ёлочка на рубашке (вне ведомости)
+    s.text(222, y0, 'СВОДКА: заказ = по схеме + 2 шт. каждого размера', 2.6, bold=True)
+    srows = [['Размер', 'Соед.', 'Хомутов', 'PTFE', 'EPDM', 'Примечание']]
+    for sz in sorted({k[0] for k in cnt}, key=lambda t: (t == 'DN?', int(t[2:]) if t[2:].isdigit() else 0)):
+        pt, ep = cnt.get((sz, 'PTFE'), 0), cnt.get((sz, 'EPDM'), 0)
+        note, add_ep = extra.get(sz, ('', 0))
+        ep += add_ep
+        srows.append([sz, str(pt + ep), str(pt + ep + 2), str(pt + 2) if pt else '—', str(ep + 2) if ep else '—', note])
+    s.table(222, y0 + 2, [18, 14, 18, 14, 14, 42], srows, rowh=4.6, size=1.9)
+    s.text(222, y0 + 4 + 4.6 * len(srows) + 3, 'Хомуты и прокладки — по схеме + 2 шт.; DN25 и DN38 — одна ферула 50,5.', 1.9)
     return s
 
 
@@ -720,13 +727,15 @@ def sheet_assembly():
     for nm, x in (('A2', 150), ('A1', 190), ('A3', 210)):
         tube(s, [(x, 52), (x, 78 if nm in ('A1', 'A2') else 70)]); s.ball_valve(x, 60, 'v', 2.4); s.text(x + 3.5, 57, nm, 2.0, bold=True)
     s.check_valve(150, 74, 'down', 2.2); s.check_valve(190, 74, 'down', 2.2)
-    tube(s, [(190, 77), (190, 85), (382, 85), (382, 254.5)])                       # A1 → P4
+    r_ = 2.4                                                                          # A1 → гребёнка, кран AV-1 (мостик над A3)
+    tube(s, [(190, 77), (190, 85), (471 - r_, 85), (471 - r_ * 0.45, 85 - r_ * 0.9), (471, 85 - r_), (471 + r_ * 0.45, 85 - r_ * 0.9),
+             (471 + r_, 85), (520, 85), (520, 106)])
     tube(s, [(210, 70), (471, 70), (471, 139)])                                   # A3 → тара
     # A4 → нутч F-1 (вверх, по верху листа, вниз справа от гребёнки; мостики над коллекторами)
     HX = 680
     def hop(y0, r=2.4):
         return [(HX, y0 - r), (HX + r * 0.9, y0 - r * 0.45), (HX + r, y0), (HX + r * 0.9, y0 + r * 0.45), (HX, y0 + r)]
-    tube(s, [(170, 52), (170, 38), (HX, 38)] + hop(120) + hop(215) + [(HX, 436), (572, 436), (572, 440)])
+    tube(s, [(170, 52), (170, 38), (HX, 38)] + hop(230) + [(HX, 436), (572, 436), (572, 440)])
     s.ball_valve(170, 45, 'v', 2.4); s.text(174, 46, 'A4', 2.0, bold=True)
     s.ball_valve(HX, 410, 'v', 2.2); s.text(HX + 4, 411, 'V-F1', 1.8)
     s.check_valve(620, 436, 'left', 2.2); s.text(620, 432, 'NRV-5', 1.7, 'middle')
@@ -812,8 +821,8 @@ def sheet_assembly():
     s.line(372, 300, 372, 288, lw=0.45); s.gauge(372, 288, 3, True, 'PI-1')
     # P4
     pipe(s, [(382, 300), (382, 262)], lw=1.2); s.rect(379, 268, 6, 12, lw=0.4, fill='#eaf2f8')
-    JA(s, 382, 260, 'v', 'P4 — заглушка с обжимом ¼″ (Ar, A1)', side=-1)
-    s.rect(378.8, 254.5, 6.4, 3, lw=0.4, fill='#eeeeee'); s.check_valve(382, 240, 'down', 2.2); s.text(372, 238, 'NRV', 1.7, 'end')
+    JA(s, 382, 260, 'v', 'P4 — глухая заглушка (резерв)', side=-1)
+    s.rect(378.8, 254.5, 6.4, 3, lw=0.4, fill='#eeeeee'); s.text(377, 256, 'P4 резерв', 1.7, 'end')
     # P2
     pipe(s, [(416, 300), (416, 296)], lw=1.2)
     JA(s, 416, 294, 'v', 'P2 — заглушка с термогильзой', side=-1)
@@ -837,9 +846,10 @@ def sheet_assembly():
     s.text(EX - Re - 2, etop + 25, 'E-1', 2.6, 'end', bold=True)
     oy = etop + 40 * k
     pipe(s, [(EX + Re, oy), (440, oy)], lw=1.2)
-    JA(s, 441.5, oy, 'h', 'E-1 отвод газа → рукав на гребёнку', side=-1)
-    hose(s, [(443, oy), (455, oy), (455, 120), (472, 120)])
-    s.text(453, 116, 'рукав PTFE ¾″ от E-1', 1.8, 'end')
+    JA(s, 441.5, oy, 'h', 'E-1 отвод газа → переходник на ёлочку', side=-1)
+    s.poly([(443, oy - 2.4), (447, oy - 1.4), (447, oy + 1.4), (443, oy + 2.4)], lw=0.35, closed=True, fill='#ffffff')
+    hose(s, [(447, oy), (455, oy), (455, 140), (468.6, 140), (469.2, 138.1), (471, 137.6), (472.8, 138.1), (473.4, 140), (478, 140)])
+    s.text(453, 136, 'шланг от E-1', 1.8, 'end')
     # теплоноситель E-1
     COOL = '#0f6f6f'
     s.poly([((EX - 3), etop - 8), ((EX - 3), 150), (305, 150), (305, 484.6)], lw=0.7, color=COOL, dash='dash')     # подача на E-1
@@ -887,58 +897,64 @@ def sheet_assembly():
     s.text(466, 336, 'JO', 1.8); s.text(330, 416, 'JI', 1.8)
 
     # ---------------- ГРЕБЁНКА ----------------
-    hy, cy = 120, 215
-    s.text(480, 32, 'ГРЕБЁНКА БЕЗОПАСНОСТИ (лист 4)', 2.8, bold=True)
-    JA(s, 474, hy, 'h', 'рукав от E-1 → переход DN15/DN25', side=1)
-    s.reducer(476, hy, 'h', 3.2, 6.4, 6)
-    pipe(s, [(482, hy), (705, hy)], lw=2.0); s.rect(705, hy - 3.2, 1.5, 6.4, lw=0.4, fill='#eeeeee')
-    x = 488
-    JA(s, x, hy, 'h', 'переход → тройник A (PI-4)', side=-1); x += 12
-    pipe(s, [(x, hy), (x, hy - 18)], lw=2.0)
-    JA(s, x, hy - 9, 'v', 'тройник A → переход DN38/DN15', side=1)
-    s.reducer(x, hy - 16, 'v', 3.2, 6.4, 6)
-    JA(s, x, hy - 17, 'v', 'переход → манометр PI-4', side=1)
-    s.gauge(x, hy - 18, 4, True, 'PI-4')
-    x += 14
-    JA(s, x, hy, 'h', 'тройник A → тройник B', side=-1); x += 14
-    pipe(s, [(x, hy), (x, hy + 35)], lw=2.0)
-    JA(s, x, hy + 9, 'v', 'тройник B → кран VV-1', side=-1)
-    s.ball_valve(x, hy + 17, 'v'); s.text(x - 14, hy + 18, 'VV-1', 2.0, bold=True)
-    JA(s, x, hy + 25, 'v', 'VV-1 → переход DN38/DN15', side=-1)
-    s.reducer(x, hy + 26, 'v', 6.4, 3.2, 6)
-    JA(s, x, hy + 33, 'v', 'переход → ёлочка вакуумная', side=-1)
-    hose(s, [(x, hy + 33), (x, 190), (514, 190)])
-    s.rect(500, 182, 14, 16, lw=0.5, fill='#ffffff'); s.text(500, 180, 'CT-1', 2.0, bold=True)
-    hose(s, [(507, 198), (507, 206)])
-    s.circle(507, 213, 7, lw=0.5, fill='#ffffff'); s.line(501, 213, 513, 213, lw=0.3); s.line(507, 207, 507, 219, lw=0.3)
-    s.text(517, 212, 'VP-1', 2.0, bold=True); s.text(517, 216, 'выхлоп → вытяжка', 1.7)
-    x += 14
-    JA(s, x, hy, 'h', 'тройник B → тройник C', side=-1); x += 16
-    xs = {}
-    branches = [('C', 'SV-1', 'PCV-1', '50–80 мбар'), ('D', 'SV-2', 'NRV-1', '100 мбар'), ('E', 'SV-3*', 'PSV-1', '200 мбар'), ('F', 'SV-4 НЗ', 'NRV-2', 'KF25 перев.')]
-    for bi, (tee, sv, dev, setp) in enumerate(branches):
-        xs[tee] = x
-        pipe(s, [(x, hy), (x, cy)], lw=2.0)
-        JA(s, x, hy + 9, 'v', f'тройник {tee} → кран {sv}', side=-1)
-        s.ball_valve(x, hy + 17, 'v'); s.text(x + 6, hy + 14, sv, 2.0, bold=True)
-        JA(s, x, hy + 25, 'v', f'{sv} → {dev}', side=-1)
-        s.rect(x - 4, hy + 30, 8, 16, lw=0.5, fill='#ffffff')
-        if dev == 'PCV-1':
-            s.gauge(x + 4, hy + 34, 3, True, 'P'); s.text(x - 3, hy + 40, 'ШП', 1.9)
-        elif dev == 'PSV-1':
-            s.line(x - 3, hy + 32, x + 3, hy + 44, lw=0.3)
-        else:
-            s.check_valve(x, hy + 38, 'down')
-        s.text(x + 6, hy + 52, dev, 2.1, bold=True); s.text(x + 6, hy + 56, setp, 1.8)
-        JA(s, x, hy + 66, 'v', f'{dev} → коллектор сбросов', side=-1)
-        if bi < 3:
-            JA(s, x + 13, hy, 'h', f'тройник {tee} → следующий', side=-1)
-            x += 30
-    pipe(s, [(xs['C'], cy), (712, cy)], lw=2.0)
-    JA(s, 714, cy, 'h', 'коллектор → переход DN38/DN15', side=-1)
-    s.reducer(716, cy, 'h', 6.4, 3.2, 6)
-    JA(s, 724, cy, 'h', 'переход → рукав на BU-1', side=-1)
-    hose(s, [(726, cy), (760, cy), (760, 238)])
+    hy, vy = 140, 50
+    s.text(480, 32, 'ГРЕБЁНКА (лист 4)', 2.8, bold=True)
+    s.poly([(478, hy - 1.4), (483, hy - 2.4), (483, hy + 2.4), (478, hy + 1.4)], lw=0.35, closed=True, fill='#ffffff')
+    JA(s, 485, hy, 'h', 'ёлочка входа → тройник PI-4', side=1)
+    G = {'PI': 500, 'AR': 520, 'SH': 545, 'PS': 575, 'AT': 605, 'VAC': 635}
+    pipe(s, [(487, hy), (G['VAC'] - 6, hy), (G['VAC'], hy - 6), (G['VAC'], hy - 8)], lw=2.0)
+    order = ['PI', 'AR', 'SH', 'PS', 'AT']
+    nm = {'PI': 'PI-4', 'AR': 'AV-1', 'SH': 'SV-1', 'PS': 'SV-2', 'AT': 'SV-3'}
+    for a_, b_ in zip(order, order[1:]):
+        JA(s, (G[a_] + G[b_]) / 2, hy, 'h', f'тройник {nm[a_]} → тройник {nm[b_]}', side=-1)
+    JA(s, (G['AT'] + G['VAC']) / 2 - 3, hy, 'h', 'тройник SV-3 → отвод 90° на VV-1', side=-1)
+    x = G['PI']
+    pipe(s, [(x, hy), (x, hy - 12)], lw=2.0)
+    JA(s, x, hy - 9, 'v', 'тройник → манометр PI-4', side=-1)
+    s.gauge(x, hy - 12, 4, True, 'PI-4')
+
+    def gval(x, name, nxt, lab=1):
+        JA(s, x, hy - 9 if name != 'VV-1' else hy - 10, 'v', f'{"тройник" if name != "VV-1" else "отвод"} → кран {name}', side=-1)
+        s.ball_valve(x, hy - 18, 'v')
+        s.text(x + 5 * lab, hy - 16.5, name, 1.9, 'start' if lab > 0 else 'end', bold=True)
+        JA(s, x, hy - 27, 'v', f'{name} → {nxt}', side=-1)
+    x = G['AR']
+    pipe(s, [(x, hy), (x, hy - 31)], lw=2.0)
+    gval(x, 'AV-1', 'переходник кламп/G½″')
+    s.rect(x - 3.2, hy - 34, 6.4, 3, lw=0.4, fill='#eeeeee')
+    x = G['SH']
+    pipe(s, [(x, hy), (x, hy - 80)], lw=2.0)
+    gval(x, 'SV-1', 'NRV-1')
+    s.rect(x - 3.5, hy - 44, 7, 14, lw=0.5, fill='#ffffff'); s.check_valve(x, hy - 37, 'up'); s.text(x + 5, hy - 36, 'NRV-1', 1.8, bold=True)
+    JA(s, x, hy - 46, 'v', 'NRV-1 → переход DN15/DN25', side=-1)
+    s.reducer(x, hy - 54, 'v', 6.4, 3.2, 6)
+    JA(s, x, hy - 56, 'v', 'переход → шпунт PCV-1', side=-1, w=4.4)
+    s.rect(x - 6, hy - 78, 12, 20, lw=0.5, fill='#ffffff'); s.gauge(x + 6, hy - 71, 2.6, True, 'P'); s.text(x - 4, hy - 66, 'ШП', 1.9)
+    s.text(x - 8, hy - 70, 'PCV-1', 1.9, 'end', bold=True); s.text(x - 8, hy - 66.5, '50–80', 1.7, 'end')
+    tube(s, [(x, hy - 78), (x, vy)])
+    x = G['PS']
+    pipe(s, [(x, hy), (x, hy - 50)], lw=2.0)
+    gval(x, 'SV-2', 'PSV-1')
+    s.rect(x - 4, hy - 50, 8, 18, lw=0.5, fill='#ffffff'); s.line(x - 3, hy - 48, x + 3, hy - 34, lw=0.3)
+    s.text(x + 6, hy - 41, 'PSV-1', 1.9, bold=True); s.text(x + 6, hy - 37.5, '200 мбар', 1.7)
+    tube(s, [(x, hy - 50), (x, vy)])
+    x = G['AT']
+    pipe(s, [(x, hy), (x, hy - 30)], lw=2.0)
+    gval(x, 'SV-3', 'ёлочка (атмосфера)')
+    s.poly([(x - 2.4, hy - 30), (x + 2.4, hy - 30), (x + 1.4, hy - 35), (x - 1.4, hy - 35)], lw=0.35, closed=True, fill='#ffffff')
+    hose(s, [(x, hy - 35), (x, 76)]); s.stub_arrow(x, 76, 'up'); s.text(x + 3, 71, 'атмосфера →', 1.7); s.text(x + 3, 74.5, 'вытяжка', 1.7)
+    x = G['VAC']
+    pipe(s, [(x, hy - 8), (x, hy - 30)], lw=2.0)
+    gval(x, 'VV-1', 'ёлочка вакуумная')
+    s.poly([(x - 2.4, hy - 30), (x + 2.4, hy - 30), (x + 1.4, hy - 35), (x - 1.4, hy - 35)], lw=0.35, closed=True, fill='#ffffff')
+    hose(s, [(x, hy - 35), (x, 92), (655, 92), (655, 175)])
+    s.rect(648, 175, 14, 16, lw=0.5, fill='#ffffff'); s.text(646, 180, 'CT-1', 2.0, 'end', bold=True)
+    hose(s, [(655, 191), (655, 199)])
+    s.circle(655, 206, 7, lw=0.5, fill='#ffffff'); s.line(649, 206, 661, 206, lw=0.3); s.line(655, 200, 655, 212, lw=0.3)
+    s.text(646, 205, 'VP-1', 2.0, 'end', bold=True); s.text(646, 209, 'выхлоп → вытяжка', 1.7, 'end')
+    # сбросы PCV-1, PSV-1 → BU-1 → T-1 → S-1 (мостик над A4 на x=680)
+    tube(s, [(G['SH'], vy), (672, vy), (672, 230)] + [(HX - 2.4, 230), (HX - 2.4 * 0.45, 230 - 2.4 * 0.9), (HX, 227.6), (HX + 2.4 * 0.45, 230 - 2.4 * 0.9), (HX + 2.4, 230)] + [(760, 230), (760, 238)])
+    s.text(G['SH'] + 2, vy - 1.5, 'сбросы PCV-1, PSV-1 → BU-1', 1.8)
     s.rect(752, 238, 18, 24, lw=0.5, fill='#f4f8fb'); s.line(753, 252, 769, 252, lw=0.2, dash='dash', color=BLUE); s.text(772, 246, 'BU-1', 2.2, bold=True)
     tube(s, [(766, 238), (766, 232), (790, 232), (790, 270)])
     s.rect(782, 270, 16, 24, lw=0.5, fill='#ffffff'); s.text(800, 278, 'T-1', 2.2, bold=True)
@@ -992,7 +1008,7 @@ def sheet_assembly():
     s.dim(285, FLOOR, cx, FLOOR, 14, '?')
     s.dim(cx, FLOOR, 558, FLOOR, 14, '?')
     s.dim(455, 120, 455, FLOOR, -175, 'H гребёнки = ?') if False else None
-    s.text(600, 112, 'ось коллектора: H над полом = ?', 1.9)
+    s.text(540, 160, 'ось коллектора гребёнки: H над полом = ?', 1.9)
     s.dim(470, 300, 470, FLOOR, 0, '?') if False else None
     s.text(470, 555, '', 1)
 
@@ -1005,9 +1021,9 @@ def sheet_assembly():
            ['C-2', 'Колонна, NaOH ≈2,7 кг, DN65×600', '1', '5'], ['AR-1', 'Баллон Ar 40 л', '1', '6'],
            ['PR-1/2', 'Редуктор баллонный / низк. давл.', '1+1', '6'], ['FI-1', 'Ротаметр 0,5–15 л/мин', '1', '6'],
            ['A1–A4', 'Кран шаровой ¼″ обжим', '4', '6'], ['PCV-1', 'Шпунт-аппарат с манометром', '1', '4'],
-           ['NRV-1', 'Клапан обратный кламп. 0,1 бар', '1', '4'], ['PSV-1', 'Клапан предохр. кламп. 0,2 бар', '1', '4'],
-           ['NRV-2', 'Клапан обратный KF25 (перев.)', '1', '4'], ['SV-1…4', 'Кран шаровой DN25', '4', '4'],
-           ['VV-1', 'Кран шаровой DN25 (вакуум)', '1', '4'], ['PI-1…4', 'Мановакуумметры', '4', '2–5'],
+           ['NRV-1', 'Клапан обратный кламп DN15, ≤30 мбар', '1', '4'], ['PSV-1', 'Клапан предохр. кламп. 0,2 бар', '1', '4'],
+           ['SV-1…3, AV-1', 'Кран кламп DN15 (простой)', '4', '4'],
+           ['VV-1', 'Кран кламп DN15 (вакуум)', '1', '4'], ['PI-1…4', 'Мановакуумметры', '4', '2–5'],
            ['BU-1', 'Барботёр-индикатор', '1', '4'], ['T-1', 'Буферная склянка ≥3 л', '1', '4'],
            ['S-1', 'Скруббер 20 л', '1', '4'], ['VP-1', 'Насос вакуумный мембранный', '1', '6'],
            ['CT-1', 'Сепаратор вакуумный', '1', '6'], ['TC-1', 'Чиллер', '1', '6'],

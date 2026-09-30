@@ -25,8 +25,8 @@ C = {
     'blue': Color(0.20, 0.35, 0.70), 'sieve': Color(0.85, 0.75, 0.55), 'poly': Color(0.90, 0.90, 0.80, 0.8),
 }
 
-RU = {'body': 'Корпус', 'jacket': 'Рубашка', 'lid': 'Крышка', 'swing_bolts': 'Откидные болты (8 шт.)', 'M_DN133': 'Штуцер M DN133 (мешалка)', 'lantern': 'Фонарь мешалки', 'motor_WB1800-C': 'Мотор WB1800-C', 'agitator': 'Мешалка, вал Ø26', 'N7_jacket_out': 'N7 рубашка выход DN25', 'N8_jacket_in': 'N8 рубашка вход DN25', 'trunnions': 'Цапфы', 'tilt_gearbox': 'Редуктор опрокидывания', 'L_DN38': 'L нижний слив DN38', 'frame': 'Рама Wiggens', 'control_cart': 'Тележка управления', 'control_box': 'Блок управления', 'E-1_shell_3in_L500': 'E-1 кожух DN65 (3″) L500', 'E-1_coil_stubs': 'E-1 выводы змеевика 12 мм', 'E-1_gas_outlet': 'E-1 отвод газа DN15', 'E-1_insulation': 'E-1 изоляция', 'collector_1in': 'Коллектор гребёнки DN25', 'collector_end_cap': 'Заглушка коллектора DN25', 'PI-4_tee': 'PI-4 тройник', 'PI-4_0-250mbar': 'PI-4 мановакуумметр 0–250 мбар', 'VV-1_tee': 'VV-1 тройник', 'VV-1': 'VV-1 кран вакуума', 'vent_collector': 'Коллектор сбросов DN25', 'vent_hose_to_T-1': 'Сброс → T-1', 'T-1_buffer_4in_L300': 'T-1 буфер DN100 L300', 'T-1_stand': 'T-1 подставка', 'BU-1_bubbler': 'BU-1 барботёр', 'BU-1_stand': 'BU-1 подставка', 'T-1_to_BU-1': 'T-1 → BU-1', 'S-1_scrubber_20L': 'S-1 скруббер 20 л', 'BU-1_to_S-1': 'BU-1 → S-1', 'P2_joint': 'P2 кламп DN25', 'P2_thermowell_8x500': 'P2 заглушка DN25 с гильзой Ø8×500', 'P2_Pt100_head': 'P2 датчик Pt100', 'V-P3': 'V-P3 кран DN15', 'P3_tee_septum_cap': 'P3 тройник с септой и заглушкой', 'P3_dosing_tube': 'P3 трубка дозирования ¼″', 'P4_stack': 'P4 стояк DN25', 'P4_sight_glass': 'P4 смотровой фонарь', 'PI-1': 'PI-1 мановакуумметр', 'T2_needle_valve': 'T2 игольчатый вентиль', 'T2_dip_tube': 'T2 погружная трубка ¼″', 'W-2_scale_60kg': 'W-2 весы 60 кг', 'ice_bath': 'Ванна со льдом', 'G-1_Atmaler_BK-40': 'G-1 бак Atmaler БК-40', 'G-1_fittings': 'G-1 штуцеры и манометр', 'column_stand': 'Штатив колонн', 'gas_G1_K1': 'Газ G-1 → K-1', 'gas_C2_to_T2': 'Газ C-2 → T2 реактора', 'NRV-3': 'NRV-3 обратный клапан', 'W-1_scale_30kg': 'W-1 весы 30 кг', 'V-1_MeNH2_aq_canister': 'V-1 канистра 38% MeNH₂', 'P-1_suction': 'P-1 всас', 'P-1_to_G-1': 'P-1 → G-1', 'P-1_needle_NRV': 'P-1 игольчатый вентиль и обратный клапан', 'AR-1_cylinder_40L': 'AR-1 баллон аргона 40 л', 'PR-1_regulator': 'PR-1 редуктор баллона', 'PR-2_FI-1_PSV-2_panel': 'Панель аргона', 'PR-2': 'PR-2 редуктор', 'FI-1_rotameter': 'FI-1 ротаметр', 'Ar_distributor': 'Раздаточная гребёнка аргона', 'Ar_supply': 'Аргон от баллона', 'Ar_PR2_FI1': 'Аргон PR-2 → FI-1', 'A1_to_P4': 'A1 → P4', 'NRV_A1': 'Обратный клапан A1', 'A2_to_G-1': 'A2 → G-1', 'G-1_Ar_inlet': 'G-1 ввод аргона', 'VP-1_vacuum_pump': 'VP-1 вакуумный насос', 'CT-1_separator': 'CT-1 склянка-сепаратор', 'vacuum_line': 'Вакуумная линия', 'trolley': 'Тележка дозирования', 'tray': 'Поддон', 'container': 'Тара MeSiCl₃ / PDMS-OH', 'cap_adapter': 'Крышка-переходник PTFE', 'dip_tube': 'Заборная трубка до дна', 'container_to_P-3': 'Тара → P-3', 'V-B1': 'V-B1 кран ¼″', 'A3_to_container': 'A3 → тара', 'W-4_scale_15kg': 'W-4 весы 15 кг', 'P-3_to_P3_tube': 'P-3 → P3 трубка ¼″', 'FV-1_needle': 'FV-1 игольчатый вентиль', 'NRV-4': 'NRV-4 обратный клапан', 'BV-1_Swagelok': 'BV-1 кран Swagelok', 'tee_KL50_elbow': 'Тройник DN38 с отводом', 'SP-1': 'SP-1 кран отбора проб', 'BV-1_to_P-2_hose': 'BV-1 → P-2 рукав', 'F-1_nutsche_DN350': 'F-1 нутч DN350', 'F-1_stand': 'F-1 опора', 'F-1_lid_fittings': 'F-1 штуцеры крышки', 'PI-5': 'PI-5 мановакуумметр', 'PSV-4_0.3bar': 'PSV-4 сбросной 0,3 бар', 'VV-2': 'VV-2 кран вакуума', 'V-F1_NRV-5': 'V-F1 кран и NRV-5', 'A4_to_F-1': 'A4 → F-1', 'PSV-4_to_T-1': 'PSV-4 → T-1', 'P-2_to_F-1_hose': 'P-2 → F-1 рукав', 'F-2_10in_housing': 'F-2 корпус фильтра 10″', 'F-2_stand': 'F-2 опора', 'F-1_to_F-2': 'F-1 → F-2', 'W-3_scale': 'W-3 весы', 'canister_20L': 'Канистра 20 л', 'F-2_to_canister': 'F-2 → канистра', 'TC-1_chiller': 'TC-1 чиллер', 'TC-1_panel': 'TC-1 панель', 'hose_to_N8': 'Рукав TC-1 → N8', 'hose_from_N7': 'Рукав N7 → TC-1', 'hose_to_E-1_in': 'Рукав TC-1 → E-1', 'hose_from_E-1_out': 'Рукав E-1 → TC-1', 'X1_X2_3way': 'X1, X2 трёхходовые краны', 'P-1_AODD': 'P-1 мембранный насос', 'P-2_AODD': 'P-2 мембранный насос', 'P-3_AODD': 'P-3 мембранный насос', 'PCV-1_spunding': 'PCV-1 шпунт-аппарат', 'NRV-1_100mbar': 'NRV-1 обратный 100 мбар', 'PSV-1_200mbar': 'PSV-1 сбросной 200 мбар', 'NRV-2_KF25': 'NRV-2 KF25 перевёрнутый', 'K-1_knockout_300': 'K-1 каплеотбойник DN65 L300', 'C-1_3A_sieves_600': 'C-1 сита 3A DN65 L600', 'C-2_NaOH_600': 'C-2 NaOH DN65 L600'}
-GR = {'R-1_Wiggens_50L': 'R-1 реактор Wiggens 50 л', 'Frame_Wiggens': 'Рама Wiggens и тележка управления', 'E-1_condenser': 'E-1 конденсатор', 'Safety_manifold': 'Гребёнка безопасности, T-1, BU-1, S-1', 'Lid_nodes': 'Узлы крышки P2 P3 P4 T1 T2', 'Generator_G-1': 'Генератор G-1, колонны, P-1', 'Argon_Vacuum': 'Аргон и вакуум', 'Dosing_P-3': 'Дозирование MeSiCl₃ / PDMS-OH, P-3', 'Discharge_Filtration': 'Выгрузка: P-2, F-1, F-2', 'Thermostat_TC-1': 'Чиллер TC-1 и рукава'}
+RU = {'inlet_barb': 'Вход гребёнки: ёлочка → кламп DN15', 'hose_E-1_to_manifold': 'Шланг E-1 → гребёнка', 'collector': 'Коллектор DN15', 'collector_clamps': 'Хомуты коллектора DN15', 'PI-4_gauge': 'PI-4 мановакуумметр 0–250 мбар', 'AV-1': 'AV-1 кран кламп DN15 (аргон)', 'AV-1_G12_adapter': 'AV-1 переходник кламп → G½″ → ¼″', 'NRV-1': 'NRV-1 обратный DN15 ≤30 мбар', 'reducer_DN15_DN25': 'Переход DN15/DN25', 'SV-3_barb': 'SV-3 ёлочка', 'SV-3_hose_to_hood': 'SV-3 шланг на атмосферу (вытяжка)', 'VV-1_barb': 'VV-1 ёлочка вакуумная', 'brackets': 'Уголки и консоли крепления гребёнки', 'vent_line': 'Сбросы PCV-1, PSV-1 → BU-1', 'BU-1_to_T-1': 'BU-1 → T-1', 'T-1_to_S-1': 'T-1 → S-1', 'E-1_barb': 'E-1 переходник кламп → ёлочка', 'A1_to_AV-1': 'A1 → гребёнка AV-1', 'NRV_A1': 'Обратный клапан A1', 'body': 'Корпус', 'jacket': 'Рубашка', 'lid': 'Крышка', 'swing_bolts': 'Откидные болты (8 шт.)', 'M_DN133': 'Штуцер M DN133 (мешалка)', 'lantern': 'Фонарь мешалки', 'motor_WB1800-C': 'Мотор WB1800-C', 'agitator': 'Мешалка, вал Ø26', 'N7_jacket_out': 'N7 рубашка выход DN25', 'N8_jacket_in': 'N8 рубашка вход DN25', 'trunnions': 'Цапфы', 'tilt_gearbox': 'Редуктор опрокидывания', 'L_DN38': 'L нижний слив DN38', 'frame': 'Рама Wiggens', 'control_cart': 'Тележка управления', 'control_box': 'Блок управления', 'E-1_shell_3in_L500': 'E-1 кожух DN65 (3″) L500', 'E-1_coil_stubs': 'E-1 выводы змеевика 12 мм', 'E-1_gas_outlet': 'E-1 отвод газа DN15', 'E-1_insulation': 'E-1 изоляция', 'collector_1in': 'Коллектор гребёнки DN25', 'collector_end_cap': 'Заглушка коллектора DN25', 'PI-4_tee': 'PI-4 тройник', 'PI-4_0-250mbar': 'PI-4 мановакуумметр 0–250 мбар', 'VV-1_tee': 'VV-1 тройник', 'VV-1': 'VV-1 кран кламп DN15 (вакуум)', 'vent_collector': 'Коллектор сбросов DN25', 'vent_hose_to_T-1': 'Сброс → T-1', 'T-1_buffer_4in_L300': 'T-1 буфер DN100 L300', 'T-1_stand': 'T-1 подставка', 'BU-1_bubbler': 'BU-1 барботёр', 'BU-1_stand': 'BU-1 подставка', 'T-1_to_BU-1': 'T-1 → BU-1', 'S-1_scrubber_20L': 'S-1 скруббер 20 л', 'BU-1_to_S-1': 'BU-1 → S-1', 'P2_joint': 'P2 кламп DN25', 'P2_thermowell_8x500': 'P2 заглушка DN25 с гильзой Ø8×500', 'P2_Pt100_head': 'P2 датчик Pt100', 'V-P3': 'V-P3 кран DN15', 'P3_tee_septum_cap': 'P3 тройник с септой и заглушкой', 'P3_dosing_tube': 'P3 трубка дозирования ¼″', 'P4_stack': 'P4 стояк DN25 (резерв, заглушка)', 'P4_sight_glass': 'P4 смотровой фонарь', 'PI-1': 'PI-1 мановакуумметр', 'T2_needle_valve': 'T2 игольчатый вентиль', 'T2_dip_tube': 'T2 погружная трубка ¼″', 'W-2_scale_60kg': 'W-2 весы 60 кг', 'ice_bath': 'Ванна со льдом', 'G-1_Atmaler_BK-40': 'G-1 бак Atmaler БК-40', 'G-1_fittings': 'G-1 штуцеры и манометр', 'column_stand': 'Штатив колонн', 'gas_G1_K1': 'Газ G-1 → K-1', 'gas_C2_to_T2': 'Газ C-2 → T2 реактора', 'NRV-3': 'NRV-3 обратный клапан', 'W-1_scale_30kg': 'W-1 весы 30 кг', 'V-1_MeNH2_aq_canister': 'V-1 канистра 38% MeNH₂', 'P-1_suction': 'P-1 всас', 'P-1_to_G-1': 'P-1 → G-1', 'P-1_needle_NRV': 'P-1 игольчатый вентиль и обратный клапан', 'AR-1_cylinder_40L': 'AR-1 баллон аргона 40 л', 'PR-1_regulator': 'PR-1 редуктор баллона', 'PR-2_FI-1_PSV-2_panel': 'Панель аргона', 'PR-2': 'PR-2 редуктор', 'FI-1_rotameter': 'FI-1 ротаметр', 'Ar_distributor': 'Раздаточная гребёнка аргона', 'Ar_supply': 'Аргон от баллона', 'Ar_PR2_FI1': 'Аргон PR-2 → FI-1', 'A1_to_P4': 'A1 → P4', 'NRV_A1': 'Обратный клапан A1', 'A2_to_G-1': 'A2 → G-1', 'G-1_Ar_inlet': 'G-1 ввод аргона', 'VP-1_vacuum_pump': 'VP-1 вакуумный насос', 'CT-1_separator': 'CT-1 склянка-сепаратор', 'vacuum_line': 'Вакуумная линия', 'trolley': 'Тележка дозирования', 'tray': 'Поддон', 'container': 'Тара MeSiCl₃ / PDMS-OH', 'cap_adapter': 'Крышка-переходник PTFE', 'dip_tube': 'Заборная трубка до дна', 'container_to_P-3': 'Тара → P-3', 'V-B1': 'V-B1 кран ¼″', 'A3_to_container': 'A3 → тара', 'W-4_scale_15kg': 'W-4 весы 15 кг', 'P-3_to_P3_tube': 'P-3 → P3 трубка ¼″', 'FV-1_needle': 'FV-1 игольчатый вентиль', 'NRV-4': 'NRV-4 обратный клапан', 'BV-1_Swagelok': 'BV-1 кран Swagelok', 'tee_KL50_elbow': 'Тройник DN38 с отводом', 'SP-1': 'SP-1 кран отбора проб', 'BV-1_to_P-2_hose': 'BV-1 → P-2 рукав', 'F-1_nutsche_DN350': 'F-1 нутч DN350', 'F-1_stand': 'F-1 опора', 'F-1_lid_fittings': 'F-1 штуцеры крышки', 'PI-5': 'PI-5 мановакуумметр', 'PSV-4_0.3bar': 'PSV-4 сбросной 0,3 бар', 'VV-2': 'VV-2 кран вакуума', 'V-F1_NRV-5': 'V-F1 кран и NRV-5', 'A4_to_F-1': 'A4 → F-1', 'PSV-4_to_T-1': 'PSV-4 → T-1', 'P-2_to_F-1_hose': 'P-2 → F-1 рукав', 'F-2_10in_housing': 'F-2 корпус фильтра 10″', 'F-2_stand': 'F-2 опора', 'F-1_to_F-2': 'F-1 → F-2', 'W-3_scale': 'W-3 весы', 'canister_20L': 'Канистра 20 л', 'F-2_to_canister': 'F-2 → канистра', 'TC-1_chiller': 'TC-1 чиллер', 'TC-1_panel': 'TC-1 панель', 'hose_to_N8': 'Рукав TC-1 → N8', 'hose_from_N7': 'Рукав N7 → TC-1', 'hose_to_E-1_in': 'Рукав TC-1 → E-1', 'hose_from_E-1_out': 'Рукав E-1 → TC-1', 'X1_X2_3way': 'X1, X2 трёхходовые краны', 'P-1_AODD': 'P-1 мембранный насос', 'P-2_AODD': 'P-2 мембранный насос', 'P-3_AODD': 'P-3 мембранный насос', 'PCV-1_spunding': 'PCV-1 шпунт-аппарат DN25', 'NRV-1_100mbar': 'NRV-1 обратный 100 мбар', 'PSV-1_200mbar': 'PSV-1 сбросной 200 мбар', 'NRV-2_KF25': 'NRV-2 KF25 перевёрнутый', 'K-1_knockout_300': 'K-1 каплеотбойник DN65 L300', 'C-1_3A_sieves_600': 'C-1 сита 3A DN65 L600', 'C-2_NaOH_600': 'C-2 NaOH DN65 L600'}
+GR = {'R-1_Wiggens_50L': 'R-1 реактор Wiggens 50 л', 'Frame_Wiggens': 'Рама Wiggens и тележка управления', 'E-1_condenser': 'E-1 конденсатор', 'Manifold': 'Гребёнка, BU-1, T-1, S-1', 'Lid_nodes': 'Узлы крышки P2 P3 P4 T1 T2', 'Generator_G-1': 'Генератор G-1, колонны, P-1', 'Argon_Vacuum': 'Аргон и вакуум', 'Dosing_P-3': 'Дозирование MeSiCl₃ / PDMS-OH, P-3', 'Discharge_Filtration': 'Выгрузка: P-2, F-1, F-2', 'Thermostat_TC-1': 'Чиллер TC-1 и рукава'}
 
 
 def ru(name):
@@ -296,53 +296,77 @@ def condenser_and_manifold():
     parts.append(cyl((x, y, z0 + 566), (x, y, z0 + 578), 91))
     add(g, 'E-1_shell_3in_L500', parts, 'steel')
     add(g, 'E-1_coil_stubs', [cyl((x - 15, y, z0 + 578), (x - 15, y, z0 + 640), 12), cyl((x + 15, y, z0 + 578), (x + 15, y, z0 + 640), 12)], 'steel')
-    zg = z0 + 520                               # отвод газа DN15, в сторону +X
-    add(g, 'E-1_gas_outlet', [cyl((x + 30, y, zg), (x + 90, y, zg), 25.4)] + clampj((x + 90, y, zg), (1, 0, 0), 50.5), 'steel')
+    zg = z0 + 520                               # отвод газа DN15 (кламп 25), назад (+Y) к гребёнке
+    add(g, 'E-1_gas_outlet', [cyl((x, y + 30, zg), (x, y + 90, zg), 19)] + clampj((x, y + 90, zg), (0, 1, 0), 25), 'steel')
+    add(g, 'E-1_barb', [cone((x, y + 93, zg), (x, y + 130, zg), 25, 12)], 'steel')
     # изоляция
     add(g, 'E-1_insulation', [cyl((x, y, z0 + 70), (x, y, z0 + 500), 110).cut(cyl((x, y, z0 + 60), (x, y, z0 + 510), 78))], 'epdm')
 
-    # ---- гребёнка безопасности: коллектор 1″ на уровне отвода E-1
-    g = 'Safety_manifold'
-    x0 = x + 97
-    xe = 900
-    zc = zg
-    add(g, 'collector_1in', [cyl((x0, y, zc), (xe, y, zc), 25.4)], 'steel')
-    add(g, 'collector_end_cap', clampj((xe, y, zc), (1, 0, 0), 50.5), 'steel')
-    # PI-4 и тройник аргона/вакуума
-    add(g, 'PI-4_tee', [cyl((230, y, zc), (230, y, zc + 60), 25.4)] + clampj((230, y, zc + 60), (0, 0, 1), 50.5), 'steel')
-    add(g, 'PI-4_0-250mbar', gauge((230, y - 20, zc + 110), (0, -1, 0), 100) + [cyl((230, y, zc + 63), (230, y, zc + 110), 12)], 'white')
-    add(g, 'VV-1_tee', [cyl((170, y, zc), (170, y, zc + 60), 25.4)] + clampj((170, y, zc + 60), (0, 0, 1), 50.5), 'steel')
-    add(g, 'VV-1', ball_valve((170, y, zc + 105), (0, 0, 1), 25.4, lever=(0, -1, 0)), 'steel')
-    devices = [('SV-1', 'PCV-1_spunding', 340), ('SV-2', 'NRV-1_100mbar', 480), ('SV-3', 'PSV-1_200mbar', 620), ('SV-4', 'NRV-2_KF25', 760)]
-    zv = zc - 330                                # коллектор сбросов
-    for sv, dev, xx in devices:
-        add(g, f'{sv}_tee', [cyl((xx, y, zc), (xx, y, zc - 50), 25.4)] + clampj((xx, y, zc - 50), (0, 0, 1), 50.5), 'steel')
-        add(g, sv, ball_valve((xx, y, zc - 100), (0, 0, 1), 25.4, lever=(0, -1, 0)), 'red' if sv == 'SV-3' else 'steel')
-        add(g, f'{sv}_joint', clampj((xx, y, zc - 150), (0, 0, 1), 50.5), 'steel')
-        if 'PCV' in dev:
-            body = [cyl((xx, y, zc - 153), (xx, y, zc - 175), 25.4), cyl((xx, y, zc - 175), (xx, y, zc - 260), 60), cyl((xx, y, zc - 260), (xx, y, zc - 270), 25.4)]
-        elif 'KF25' in dev:
-            body = [cyl((xx, y, zc - 153), (xx, y, zc - 190), 25.4), cyl((xx, y, zc - 190), (xx, y, zc - 200), 40),
-                    cyl((xx, y, zc - 200), (xx, y, zc - 240), 30), cyl((xx, y, zc - 240), (xx, y, zc - 250), 40), cyl((xx, y, zc - 250), (xx, y, zc - 270), 25.4)]
-        else:
-            body = [cyl((xx, y, zc - 153), (xx, y, zc - 165), 25.4), cyl((xx, y, zc - 165), (xx, y, zc - 255), 50), cyl((xx, y, zc - 255), (xx, y, zc - 270), 25.4)]
-        add(g, dev, body, 'steel')
-        add(g, f'{dev}_joint', clampj((xx, y, zc - 273), (0, 0, 1), 50.5), 'steel')
-        add(g, f'{dev}_drop', [cyl((xx, y, zc - 276), (xx, y, zv), 25.4)], 'steel')
-    add(g, 'vent_collector', [cyl((340 - 12.7, y, zv), (1000, y, zv), 25.4)], 'steel')
-    # сброс → T-1 → BU-1 → S-1 (за тележкой, на полу)
-    tx, ty = 1060, 520
-    add(g, 'vent_hose_to_T-1', run([(1000, y, zv), (tx, y, zv), (tx, ty, zv), (tx, ty, 560)], 16), 'ptfe')
+    # ---- гребёнка: отдельно, на уголках к колонне рамы; к E-1 — шлангом на ёлочках
+    g = 'Manifold'
+    my, zc = 620, 1400                          # ось коллектора DN15 (кламп 25)
+    X = {'PI': 0, 'AR': 90, 'SH': 180, 'PS': 270, 'AT': 360, 'VAC': 450}
+    D = 19                                      # труба ¾″
+    add(g, 'inlet_barb', [cone((-100, my, zc), (-62, my, zc), 12, 25)] + clampj((-59, my, zc), (1, 0, 0), 25), 'steel')
+    add(g, 'hose_E-1_to_manifold', run([(x, y + 130, zg), (x, 400, zg), (-150, 400, zg), (-150, my, zg), (-150, my, zc), (-100, my, zc)], 16), 'ptfe')
+    add(g, 'collector', [cyl((-56, my, zc), (X['VAC'], my, zc), D), sph((X['VAC'], my, zc), D)], 'steel')
+    joints = []
+    for a_, b_ in (('PI', 'AR'), ('AR', 'SH'), ('SH', 'PS'), ('PS', 'AT'), ('AT', 'VAC')):
+        joints += clampj(((X[a_] + X[b_]) / 2, my, zc), (1, 0, 0), 25)
+    add(g, 'collector_clamps', joints, 'steel')
+
+    def branch(xx, name, top_extra):
+        add(g, f'{name}_tee', [cyl((xx, my, zc), (xx, my, zc + 40), D)] + clampj((xx, my, zc + 40), (0, 0, 1), 25), 'steel')
+        if name == 'PI-4':
+            return zc + 43
+        add(g, name, ball_valve((xx, my, zc + 80), (0, 0, 1), D, lever=(0, -1, 0), L=70), 'red' if name == 'SV-2' else 'steel')
+        add(g, f'{name}_joint', clampj((xx, my, zc + 118), (0, 0, 1), 25), 'steel')
+        return zc + 121
+    z = branch(X['PI'], 'PI-4', 0)
+    add(g, 'PI-4_gauge', [cyl((X['PI'], my, z), (X['PI'], my, z + 50), 12)] + gauge((X['PI'], my - 20, z + 95), (0, -1, 0), 100), 'white')
+    z = branch(X['AR'], 'AV-1', 0)
+    add(g, 'AV-1_G12_adapter', [cyl((X['AR'], my, z), (X['AR'], my, z + 25), 28), cyl((X['AR'], my, z + 25), (X['AR'], my, z + 45), 14)], 'steel')
+    av_top = (X['AR'], my, z + 45)
+    xx = X['SH']
+    z = branch(xx, 'SV-1', 0)
+    add(g, 'NRV-1', check_valve((xx, my, z + 30), (0, 0, 1), D), 'steel')
+    add(g, 'NRV-1_joint', clampj((xx, my, z + 63), (0, 0, 1), 25), 'steel')
+    add(g, 'reducer_DN15_DN25', [cone((xx, my, z + 66), (xx, my, z + 100), D, 33.7)] + clampj((xx, my, z + 103), (0, 0, 1), 50.5), 'steel')
+    add(g, 'PCV-1_spunding', [cyl((xx, my, z + 106), (xx, my, z + 200), 60), cyl((xx, my, z + 200), (xx, my, z + 220), D)]
+        + gauge((xx + 45, my, z + 160), (1, 0, 0), 63) + [cyl((xx + 30, my, z + 160), (xx + 33, my, z + 160), 10)], 'steel')
+    sh_top = (xx, my, z + 220)
+    xx = X['PS']
+    z = branch(xx, 'SV-2', 0)
+    add(g, 'PSV-1_200mbar', [cyl((xx, my, z), (xx, my, z + 95), 45), cyl((xx, my, z + 95), (xx, my, z + 110), D)], 'steel')
+    ps_top = (xx, my, z + 110)
+    xx = X['AT']
+    z = branch(xx, 'SV-3', 0)
+    add(g, 'SV-3_barb', [cone((xx, my, z), (xx, my, z + 35), 25, 12)], 'steel')
+    add(g, 'SV-3_hose_to_hood', [cyl((xx, my, z + 35), (xx, my, z + 300), 16)], 'ptfe')
+    xx = X['VAC']
+    z = branch(xx, 'VV-1', 0)
+    add(g, 'VV-1_barb', [cone((xx, my, z), (xx, my, z + 35), 25, 12)], 'steel')
+    vac_top = (xx, my, z + 35)
+    # крепление: уголок поперёк колонны рамы + две консоли с хомутами-держателями
+    add(g, 'brackets', [box(-380, 668, zc - 70, 380, 690, zc - 40), box(-380, 668, zc - 70, 380, 690 - 18, zc - 66)]
+        + [box(xb - 15, my, zc - 70, xb + 15, 668, zc - 40) for xb in (40, 315)]
+        + [cyl((xb - 10, my, zc), (xb + 10, my, zc), 40).cut(cyl((xb - 12, my, zc), (xb + 12, my, zc), D)) for xb in (40, 315)]
+        + [box(xb - 6, my - 6, zc - 40, xb + 6, my + 6, zc - 20) for xb in (40, 315)], 'frame')
+    # сбросы PCV-1 и PSV-1 → BU-1 → T-1 → S-1 (на полу за тележкой)
+    bx, by = 1060, 520
+    vz = 1860
+    add(g, 'vent_line', run([sh_top, (sh_top[0], my, vz), (bx, my, vz), (bx, by, vz), (bx, by, 470)], 12)
+        + run([ps_top, (ps_top[0], my, vz)], 12), 'vent')
+    add(g, 'BU-1_bubbler', [cyl((bx, by, 150), (bx, by, 450), 60), cyl((bx, by, 450), (bx, by, 470), 30)], 'glass')
+    add(g, 'BU-1_stand', [box(bx - 60, by - 60, 0, bx + 60, by + 60, 10), cyl((bx, by, 10), (bx, by, 150), 40)], 'dark')
+    tx, ty = 1200, 520
     add(g, 'T-1_buffer_4in_L300', [cyl((tx, ty, 200), (tx, ty, 500), 101.6), cyl((tx, ty, 500), (tx, ty, 515), 119), cyl((tx, ty, 185), (tx, ty, 200), 119), cyl((tx, ty, 515), (tx, ty, 560), 25.4)], 'steel')
     add(g, 'T-1_stand', [box(tx - 80, ty - 80, 0, tx + 80, ty + 80, 10), cyl((tx, ty, 10), (tx, ty, 185), 60)], 'dark')
-    bx, by = 1200, 520
-    add(g, 'BU-1_bubbler', [cyl((bx, by, 150), (bx, by, 450), 60)], 'glass')
-    add(g, 'BU-1_stand', [box(bx - 60, by - 60, 0, bx + 60, by + 60, 10), cyl((bx, by, 10), (bx, by, 150), 40)], 'dark')
-    add(g, 'T-1_to_BU-1', run([(tx + 30, ty, 480), (tx + 70, ty, 480), (tx + 70, ty, 520), (bx, by, 520), (bx, by, 450)], 8), 'ptfe')
+    add(g, 'BU-1_to_T-1', run([(bx + 20, by, 460), (bx + 20, by, 600), (tx, ty, 600), (tx, ty, 560)], 8), 'ptfe')
     sx, sy = 1360, 540
     add(g, 'S-1_scrubber_20L', [box(sx - 120, sy - 120, 0, sx + 120, sy + 120, 380), cyl((sx, sy, 380), (sx, sy, 410), 50)], 'poly')
-    add(g, 'BU-1_to_S-1', run([(bx, by, 450), (bx, by, 470), (bx + 60, by, 470), (sx, sy, 470), (sx, sy, 410)], 8), 'ptfe')
-    return (x, y), zc, (tx, ty)
+    add(g, 'T-1_to_S-1', run([(tx + 50, ty, 470), (tx + 110, ty, 470), (sx, sy, 470), (sx, sy, 410)], 8), 'ptfe')
+    return (x, y), zc, {'av_top': av_top, 'vac_top': vac_top}
 
 
 # ---------------------------------------------------------------- узлы P2, P3, P4, T1, T2
@@ -366,7 +390,7 @@ def lid_nodes():
     add(g, 'P3_tee_septum_cap', parts, 'steel')
     add(g, 'P3_dosing_tube', [cyl((x, y, Z_NOZ + 162), (x, y, 830), 6.35)], 'ptfe')
     p3_top = (x, y, Z_NOZ + 175)
-    # P4: стояк Ar со смотровым фонарём
+    # P4: стояк со смотровым фонарём — резерв, глухая заглушка
     x, y = nxy('N1')
     parts = clampj((x, y, Z_NOZ), (0, 0, 1), 50.5)
     parts.append(cyl((x, y, Z_NOZ + 3), (x, y, Z_NOZ + 30), 33.7))
@@ -432,7 +456,7 @@ def generator(t2_top):
 
 
 # ---------------------------------------------------------------- аргон и вакуум
-def argon_vacuum(p4_top, zc_e1, e1xy):
+def argon_vacuum(p4_top, zc_e1, e1xy, M):
     g = 'Argon_Vacuum'
     ax, ay = -900, 620
     add(g, 'AR-1_cylinder_40L', [cyl((ax, ay, 0), (ax, ay, 1300), 230), sph((ax, ay, 1300), 230), cyl((ax, ay, 1400), (ax, ay, 1460), 40)], 'blue')
@@ -450,10 +474,11 @@ def argon_vacuum(p4_top, zc_e1, e1xy):
         add(g, name, ball_valve((xx, dy, dz - 40), (0, 0, 1), 10, lever=(0, -1, 0), L=36), 'steel')
         add(g, name + '_drop', [cyl((xx, dy, dz), (xx, dy, dz - 22), 6.35)], 'argon')
         outs[name] = (xx, dy, dz - 58)
-    # A1 → P4 (обратный клапан на крышке P4)
-    x, y, z = p4_top
-    add(g, 'A1_to_P4', run([outs['A1'], (outs['A1'][0], outs['A1'][1], 1400), (outs['A1'][0], y, 1400), (x, y, 1400), (x, y, z)], 6.35), 'argon')
-    add(g, 'NRV_A1', check_valve((x, y, 1370), (0, 0, -1), 10), 'steel')
+    # A1 → гребёнка, кран AV-1 (G½″), обратный клапан на линии
+    x, y, z = M['av_top']
+    a1 = outs['A1']
+    add(g, 'A1_to_AV-1', run([a1, (a1[0], 580, a1[2]), (x, 580, a1[2]), (x, 580, z + 60), (x, y, z + 60), (x, y, z)], 6.35), 'argon')
+    add(g, 'NRV_A1', check_valve((-100, 580, a1[2]), (1, 0, 0), 10), 'steel')
     # A2 → G-1 (продувка генератора)
     add(g, 'A2_to_G-1', run([outs['A2'], (outs['A2'][0], outs['A2'][1], 1380), (-1340, outs['A2'][1], 1380), (-1340, -50, 1380), (-1340, -50, 600)], 6.35), 'argon')
     add(g, 'G-1_Ar_inlet', [cyl((-1340, -50, 555), (-1340, -50, 600), 20)], 'dark')
@@ -461,8 +486,8 @@ def argon_vacuum(p4_top, zc_e1, e1xy):
     vx, vy = -650, 480
     add(g, 'VP-1_vacuum_pump', [box(vx - 175, vy - 125, 0, vx + 175, vy + 125, 260)], 'dark')
     add(g, 'CT-1_separator', [cyl((vx + 100, vy, 260), (vx + 100, vy, 460), 120)], 'glass')
-    ex, ey = e1xy
-    add(g, 'vacuum_line', run([(170, ey, zc_e1 + 128), (170, ey, 1900), (vx + 100, ey, 1900), (vx + 100, vy, 1900), (vx + 100, vy, 460)], 10), 'ptfe')
+    x, y, z = M['vac_top']
+    add(g, 'vacuum_line', run([(x, y, z), (x, y, 1900), (vx + 100, y, 1900), (vx + 100, vy, 1900), (vx + 100, vy, 460)], 16), 'ptfe')
     return outs
 
 
@@ -529,7 +554,7 @@ def discharge(zap, ar_outs):
     add(g, 'V-F1_NRV-5', ball_valve((fx - 100, fy, 980), (0, 0, 1), 10, lever=(-1, 0, 0), L=36) + check_valve((fx - 100, fy, 1050), (0, 0, -1), 10), 'steel')
     a4 = ar_outs['A4']
     add(g, 'A4_to_F-1', run([a4, (a4[0], a4[1], 1250), (a4[0], -150, 1250), (-300, -150, 1250), (-300, -1150, 1250), (fx - 100, -1150, 1250), (fx - 100, fy, 1250), (fx - 100, fy, 1080)], 6.35), 'argon')
-    tx, ty = 1060, 520
+    tx, ty = 1200, 520
     add(g, 'PSV-4_to_T-1', run([(fx + 100, fy, 1010), (fx + 100, fy, 1120), (1500, fy, 1120), (1500, ty, 1120), (tx + 60, ty, 1120), (tx + 60, ty, 420), (tx + 50, ty, 420)], 8), 'vent')
     add(g, 'P-2_to_F-1_hose', run([(dis[0] + 100, dis[1], dis[2]), (560, -850, 250), (560, -850, 800), (fx - 180, fy, 800)], 32), 'ptfe')
     # фильтр F-2 10″ и канистра на W-3
@@ -611,10 +636,10 @@ def fix_step_names(path):
 def build():
     zap = reactor()
     frame()
-    e1xy, zc, _ = condenser_and_manifold()
+    e1xy, zc, M = condenser_and_manifold()
     p3_top, p4_top, t2_top = lid_nodes()
     generator(t2_top)
-    outs = argon_vacuum(p4_top, zc, e1xy)
+    outs = argon_vacuum(p4_top, zc, e1xy, M)
     dosing(p3_top, outs)
     discharge(zap, outs)
     thermostat(e1xy, zc)

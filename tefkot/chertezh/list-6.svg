@@ -72,7 +72,7 @@
 <text x="399.00" y="275.80" font-size="2.2" text-anchor="start" fill="#111111">Листов 8</text>
 <text x="387.50" y="286.00" font-size="3.2" text-anchor="middle" fill="#111111" font-weight="bold">АО «ИНУМиТ»</text>
 <text x="330.00" y="288.00" font-size="2.2" text-anchor="middle" fill="#666666">ТЕФКОТ 770 · реактор 50 л</text>
-<text x="25.00" y="13.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">АРГОН: баллон → редукторы → раздаточная гребёнка ¼″, б/м</text>
+<text x="25.00" y="13.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">АРГОН: баллон → редукторы → раздаточный коллектор ¼″, б/м</text>
 <path d="M28.00,40.00 L44.00,40.00 L44.00,110.00 L28.00,110.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
 <text x="28.00" y="116.00" font-size="2.1" text-anchor="start" fill="#111111" font-weight="bold">AR-1 Ar 99,998 %</text>
 <circle cx="36.00" cy="30.00" r="3.00" fill="#ffffff" stroke="#111111" stroke-width="0.4"/>
@@ -93,7 +93,7 @@
 <text x="120.00" y="42.00" font-size="2.2" text-anchor="start" fill="#111111" font-weight="bold">FI-1</text>
 <text x="116.00" y="46.00" font-size="1.8" text-anchor="start" fill="#111111">0,5–15 л/мин</text>
 <path d="M270.00,28.40 L271.20,28.40 L271.20,31.60 L270.00,31.60 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="152.00" y="27.00" font-size="1.8" text-anchor="start" fill="#111111">раздаточная гребёнка: тройники ¼″ обжим</text>
+<text x="152.00" y="27.00" font-size="1.8" text-anchor="start" fill="#111111">раздаточный коллектор: тройники ¼″ обжим</text>
 <path d="M170.00,70.20 L169.10,68.00 L170.90,68.00 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <path d="M168.18,39.40 L171.82,44.60 L168.18,44.60 L171.82,39.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M170.00,42.00 L173.38,42.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
@@ -102,7 +102,7 @@
 <path d="M170.00,56.92 L168.32,53.08 L171.68,53.08 Z" fill="#111111" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M168.08,56.92 L171.92,56.92" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <text x="174.00" y="56.00" font-size="1.8" text-anchor="start" fill="#111111">NRV</text>
-<text x="167.00" y="75.00" font-size="1.8" text-anchor="start" fill="#111111">→ R-1, P4 (лист 3)</text>
+<text x="167.00" y="75.00" font-size="1.8" text-anchor="start" fill="#111111">→ гребёнка, AV-1 G½″ (лист 4)</text>
 <text x="167.00" y="79.00" font-size="1.8" text-anchor="start" fill="#c62828">L=?</text>
 <path d="M200.00,70.20 L199.10,68.00 L200.90,68.00 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <path d="M198.18,39.40 L201.82,44.60 L198.18,44.60 L201.82,39.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
