@@ -202,6 +202,11 @@
 <path d="M363.41,68.11 L366.89,73.33 L363.41,73.33 L366.89,68.11 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="367.47" y="71.88" font-size="3.045" text-anchor="start" fill="#1d2226">VV-1</text>
 <path d="M365.15,73.33 L365.15,90.15" fill="none" stroke="#37474f" stroke-width="0.8119999999999999" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M365.15,77.10 L406.62,77.10 L406.62,222.68 L308.31,222.68" fill="none" stroke="#37474f" stroke-width="0.8119999999999999" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M303.09,220.94 L308.31,224.42 L308.31,220.94 L303.09,224.42 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
+<path d="M303.09,222.68 L292.65,222.68 L292.65,225.00" fill="none" stroke="#37474f" stroke-width="0.8119999999999999" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<text x="303.38" y="219.78" font-size="3.045" text-anchor="start" fill="#1d2226">VV-2</text>
+<text x="314.40" y="220.94" font-size="3.045" text-anchor="start" fill="#5d666d">вакуум от VP-1</text>
 <text x="366.89" y="80.58" font-size="3.045" text-anchor="start" fill="#5d666d">вакуум:</text>
 <text x="366.89" y="84.06" font-size="3.045" text-anchor="start" fill="#5d666d">всас насоса</text>
 <circle cx="365.15" cy="95.08" r="4.93" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
@@ -262,7 +267,10 @@
 <path d="M275.54,217.46 L279.60,217.46 L279.60,222.10 L275.54,222.10 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M277.57,217.46 L277.57,215.14" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <text x="276.41" y="214.27" font-size="3.045" text-anchor="end" fill="#1d2226">PSV-4 → сбросы</text>
-<path d="M282.50,251.10 L282.50,262.70 L308.60,262.70" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M282.50,251.10 L282.50,254.29" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M282.50,259.51 L282.50,262.70 L308.60,262.70" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M280.76,254.29 L284.24,259.51 L280.76,259.51 L284.24,254.29 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
+<text x="284.82" y="258.06" font-size="3.045" text-anchor="start" fill="#5d666d">V-F2</text>
 <path d="M308.60,251.10 L320.20,251.10 L320.20,274.30 L308.60,274.30 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="306.86" y="249.36" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">F-2</text>
 <text x="321.94" y="259.80" font-size="3.045" text-anchor="start" fill="#5d666d">патрон 10″</text>

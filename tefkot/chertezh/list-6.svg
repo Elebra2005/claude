@@ -26,6 +26,7 @@
 <path d="M260.00,30.00 L260.00,39.40" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M260.00,44.60 L260.00,68.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M300.00,40.00 L350.00,40.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M325.00,40.00 L325.00,64.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M366.00,40.00 L380.00,40.00 L380.00,28.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M68.00,158.00 L100.00,158.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M68.00,172.00 L100.00,172.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
@@ -132,6 +133,8 @@
 <text x="257.00" y="79.00" font-size="1.8" text-anchor="start" fill="#c62828">L=?</text>
 <text x="300.00" y="13.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">ВАКУУМ</text>
 <text x="299.00" y="41.00" font-size="1.9" text-anchor="end" fill="#111111">от VV-1 (лист 4)</text>
+<path d="M325.00,66.20 L324.10,64.00 L325.90,64.00 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
+<text x="322.00" y="70.00" font-size="1.9" text-anchor="end" fill="#111111">тройник на всасе → VV-2 нутча F-1 (лист 7)</text>
 <circle cx="358.00" cy="40.00" r="8.00" fill="#ffffff" stroke="#111111" stroke-width="0.5"/>
 <path d="M352.00,40.00 L364.00,40.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M358.00,34.00 L358.00,46.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
@@ -139,7 +142,7 @@
 <text x="350.00" y="58.00" font-size="1.9" text-anchor="start" fill="#c62828">присоед. KF? / ёлочка ?</text>
 <path d="M380.00,25.80 L380.90,28.00 L379.10,28.00 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="384.00" y="27.00" font-size="1.9" text-anchor="start" fill="#111111">выхлоп в вытяжку</text>
-<text x="300.00" y="64.00" font-size="1.9" text-anchor="start" fill="#c62828">рукав вакуумный армир. ID ?, L=?</text>
+<text x="330.00" y="50.00" font-size="1.9" text-anchor="start" fill="#c62828">рукав вакуумный армир. ID ?, L=?</text>
 <text x="25.00" y="130.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">ТЕПЛОНОСИТЕЛЬ: TC-1 → рубашка R-1 ∥ E-1; стадия 7: E-1 на IW-1, б/м</text>
 <path d="M28.00,150.00 L68.00,150.00 L68.00,180.00 L28.00,180.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
 <text x="32.00" y="160.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">TC-1</text>
