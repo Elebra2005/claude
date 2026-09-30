@@ -16,10 +16,10 @@ DATA;
 #5 = PRODUCT_DEFINITION('design','',#6,#9);
 #6 = PRODUCT_DEFINITION_FORMATION('','',#7);
 #7 = PRODUCT(
-'РЈСЃС‚Р°РЅРѕРІРєР° СЃРёРЅС‚РµР·Р° 
-РўР•Р¤РљРћРў 770',
-'РЈСЃС‚Р°РЅРѕРІРєР° СЃРёРЅС‚РµР·Р° 
-РўР•Р¤РљРћРў 770','',(#8));
+'Установка синтеза 
+ТЕФКОТ 770',
+'Установка синтеза 
+ТЕФКОТ 770','',(#8));
 #8 = PRODUCT_CONTEXT('',#2,'mechanical');
 #9 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #10 = SHAPE_REPRESENTATION('',(#11,#15,#19,#23,#27,#31,#35,#39,#43,#47,
@@ -82,8 +82,8 @@ GLOBAL_UNCERTAINTY_ASSIGNED_CONTEXT((#59)) GLOBAL_UNIT_ASSIGNED_CONTEXT(
 #62 = PRODUCT_DEFINITION_SHAPE('','',#63);
 #63 = PRODUCT_DEFINITION('design','',#64,#67);
 #64 = PRODUCT_DEFINITION_FORMATION('','',#65);
-#65 = PRODUCT('Р РµР°РєС‚РѕСЂ Wiggens 50 Р» (R-1)',
-  'Р РµР°РєС‚РѕСЂ Wiggens 50 Р» (R-1)','',(#66));
+#65 = PRODUCT('Реактор Wiggens 50 л (R-1)',
+  'Реактор Wiggens 50 л (R-1)','',(#66));
 #66 = PRODUCT_CONTEXT('',#2,'mechanical');
 #67 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #68 = SHAPE_REPRESENTATION('',(#11,#69,#73,#77,#81,#85,#89,#93,#97,#101,
@@ -187,10 +187,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #158 = PRODUCT_DEFINITION('design','',#159,#162);
 #159 = PRODUCT_DEFINITION_FORMATION('','',#160);
 #160 = PRODUCT(
-'РљРѕСЂРїСѓСЃ СЂРµР°РєС‚РѕСЂР° 
-(РІРЅСѓС‚СЂРµРЅРЅРёР№ СЃРѕСЃСѓРґ)',
-'РљРѕСЂРїСѓСЃ СЂРµР°РєС‚РѕСЂР° 
-(РІРЅСѓС‚СЂРµРЅРЅРёР№ СЃРѕСЃСѓРґ)','',(
+'Корпус реактора 
+(внутренний сосуд)',
+'Корпус реактора 
+(внутренний сосуд)','',(
     #161));
 #161 = PRODUCT_CONTEXT('',#2,'mechanical');
 #162 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -1272,8 +1272,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #1099 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #1100);
 #1100 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('1',
-'РљРѕСЂРїСѓСЃ СЂРµР°РєС‚РѕСЂР° 
-(РІРЅСѓС‚СЂРµРЅРЅРёР№ СЃРѕСЃСѓРґ)','',#63,
+'Корпус реактора 
+(внутренний сосуд)','',#63,
   #158,$);
 #1101 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#160));
 #1102 = SHAPE_DEFINITION_REPRESENTATION(#1103,#1109);
@@ -1281,10 +1281,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #1104 = PRODUCT_DEFINITION('design','',#1105,#1108);
 #1105 = PRODUCT_DEFINITION_FORMATION('','',#1106);
 #1106 = PRODUCT(
-'Р СѓР±Р°С€РєР° СЂРµР°РєС‚РѕСЂР° 
-(С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЊ)',
-'Р СѓР±Р°С€РєР° СЂРµР°РєС‚РѕСЂР° 
-(С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЊ)','',(#1107));
+'Рубашка реактора 
+(теплоноситель)',
+'Рубашка реактора 
+(теплоноситель)','',(#1107));
 #1107 = PRODUCT_CONTEXT('',#2,'mechanical');
 #1108 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #1109 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#1110),#2776);
@@ -3214,16 +3214,16 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #2784 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #2785);
 #2785 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('2',
-'Р СѓР±Р°С€РєР° СЂРµР°РєС‚РѕСЂР° 
-(С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЊ)','',#63,#1104,$);
+'Рубашка реактора 
+(теплоноситель)','',#63,#1104,$);
 #2786 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#1106));
 #2787 = SHAPE_DEFINITION_REPRESENTATION(#2788,#2794);
 #2788 = PRODUCT_DEFINITION_SHAPE('','',#2789);
 #2789 = PRODUCT_DEFINITION('design','',#2790,#2793);
 #2790 = PRODUCT_DEFINITION_FORMATION('','',#2791);
 #2791 = PRODUCT(
-  'РљСЂС‹С€РєР° СЂРµР°РєС‚РѕСЂР°',
-  'РљСЂС‹С€РєР° СЂРµР°РєС‚РѕСЂР°','',(#2792)
+  'Крышка реактора',
+  'Крышка реактора','',(#2792)
   );
 #2792 = PRODUCT_CONTEXT('',#2,'mechanical');
 #2793 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -3801,7 +3801,7 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #3290 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #3291);
 #3291 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('3',
-  'РљСЂС‹С€РєР° СЂРµР°РєС‚РѕСЂР°','',#63,
+  'Крышка реактора','',#63,
   #2789,$);
 #3292 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#2791));
 #3293 = SHAPE_DEFINITION_REPRESENTATION(#3294,#3300);
@@ -3809,10 +3809,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #3295 = PRODUCT_DEFINITION('design','',#3296,#3299);
 #3296 = PRODUCT_DEFINITION_FORMATION('','',#3297);
 #3297 = PRODUCT(
-'РћС‚РєРёРґРЅС‹Рµ Р±РѕР»С‚С‹ 
-РєСЂС‹С€РєРё, 8 С€С‚.',
-'РћС‚РєРёРґРЅС‹Рµ Р±РѕР»С‚С‹ 
-РєСЂС‹С€РєРё, 8 С€С‚.','',(#3298));
+'Откидные болты 
+крышки, 8 шт.',
+'Откидные болты 
+крышки, 8 шт.','',(#3298));
 #3298 = PRODUCT_CONTEXT('',#2,'mechanical');
 #3299 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #3300 = SHAPE_REPRESENTATION('',(#11,#3301,#3631,#3729,#4059,#4157,#4487
@@ -7739,19 +7739,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #6733 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #6734);
 #6734 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('4',
-'РћС‚РєРёРґРЅС‹Рµ Р±РѕР»С‚С‹ 
-РєСЂС‹С€РєРё, 8 С€С‚.','',#63,#3295,$);
+'Откидные болты 
+крышки, 8 шт.','',#63,#3295,$);
 #6735 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#3297));
 #6736 = SHAPE_DEFINITION_REPRESENTATION(#6737,#6743);
 #6737 = PRODUCT_DEFINITION_SHAPE('','',#6738);
 #6738 = PRODUCT_DEFINITION('design','',#6739,#6742);
 #6739 = PRODUCT_DEFINITION_FORMATION('','',#6740);
 #6740 = PRODUCT(
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё РїРѕРґ 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂ, РєР»Р°РјРї DN25 
+'Штуцер крышки под 
+конденсатор, кламп DN25 
 (N3 / P1)',
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё РїРѕРґ 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂ, РєР»Р°РјРї DN25 
+'Штуцер крышки под 
+конденсатор, кламп DN25 
 (N3 / P1)','',(#6741));
 #6741 = PRODUCT_CONTEXT('',#2,'mechanical');
 #6742 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -7993,8 +7993,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #6948 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #6949);
 #6949 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('5',
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё РїРѕРґ 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂ, РєР»Р°РјРї DN25 
+'Штуцер крышки под 
+конденсатор, кламп DN25 
 (N3 / P1)','',#63,#6738,$);
 #6950 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#6740));
 #6951 = SHAPE_DEFINITION_REPRESENTATION(#6952,#6958);
@@ -8002,11 +8002,11 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #6953 = PRODUCT_DEFINITION('design','',#6954,#6957);
 #6954 = PRODUCT_DEFINITION_FORMATION('','',#6955);
 #6955 = PRODUCT(
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё РїРѕРґ 
-С‚РµСЂРјРѕРіРёР»СЊР·Сѓ, РєР»Р°РјРї DN25 
+'Штуцер крышки под 
+термогильзу, кламп DN25 
 (N4 / P2)',
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё РїРѕРґ 
-С‚РµСЂРјРѕРіРёР»СЊР·Сѓ, РєР»Р°РјРї DN25 
+'Штуцер крышки под 
+термогильзу, кламп DN25 
 (N4 / P2)','',(#6956));
 #6956 = PRODUCT_CONTEXT('',#2,'mechanical');
 #6957 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -8250,8 +8250,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #7163 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #7164);
 #7164 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('6',
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё РїРѕРґ 
-С‚РµСЂРјРѕРіРёР»СЊР·Сѓ, РєР»Р°РјРї DN25 
+'Штуцер крышки под 
+термогильзу, кламп DN25 
 (N4 / P2)','',#63,#6953,$);
 #7165 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#6955));
 #7166 = SHAPE_DEFINITION_REPRESENTATION(#7167,#7173);
@@ -8259,11 +8259,11 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #7168 = PRODUCT_DEFINITION('design','',#7169,#7172);
 #7169 = PRODUCT_DEFINITION_FORMATION('','',#7170);
 #7170 = PRODUCT(
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё РґР»СЏ 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ, РєР»Р°РјРї DN25 
+'Штуцер крышки для 
+дозирования, кламп DN25 
 (N5 / P3)',
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё РґР»СЏ 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ, РєР»Р°РјРї DN25 
+'Штуцер крышки для 
+дозирования, кламп DN25 
 (N5 / P3)','',(#7171));
 #7171 = PRODUCT_CONTEXT('',#2,'mechanical');
 #7172 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -8505,8 +8505,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #7378 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #7379);
 #7379 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('7',
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё РґР»СЏ 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ, РєР»Р°РјРї DN25 
+'Штуцер крышки для 
+дозирования, кламп DN25 
 (N5 / P3)','',#63,#7168,$);
 #7380 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#7170));
 #7381 = SHAPE_DEFINITION_REPRESENTATION(#7382,#7388);
@@ -8514,11 +8514,11 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #7383 = PRODUCT_DEFINITION('design','',#7384,#7387);
 #7384 = PRODUCT_DEFINITION_FORMATION('','',#7385);
 #7385 = PRODUCT(
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё 
-СЂРµР·РµСЂРІРЅС‹Р№, РєР»Р°РјРї DN25 (N1 / 
+'Штуцер крышки 
+резервный, кламп DN25 (N1 / 
 P4)',
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё 
-СЂРµР·РµСЂРІРЅС‹Р№, РєР»Р°РјРї DN25 (N1 / 
+'Штуцер крышки 
+резервный, кламп DN25 (N1 / 
 P4)','',(#7386));
 #7386 = PRODUCT_CONTEXT('',#2,'mechanical');
 #7387 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -8765,8 +8765,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #7593 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #7594);
 #7594 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('8',
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё 
-СЂРµР·РµСЂРІРЅС‹Р№, РєР»Р°РјРї DN25 (N1 / 
+'Штуцер крышки 
+резервный, кламп DN25 (N1 / 
 P4)','',#63,#7383,$);
 #7595 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#7385));
 #7596 = SHAPE_DEFINITION_REPRESENTATION(#7597,#7603);
@@ -8774,10 +8774,10 @@ P4)','',#63,#7383,$);
 #7598 = PRODUCT_DEFINITION('design','',#7599,#7602);
 #7599 = PRODUCT_DEFINITION_FORMATION('','',#7600);
 #7600 = PRODUCT(
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё РїРѕРґ 
-РјР°РЅРѕРјРµС‚СЂ, 8 РјРј (N2 / T1)',
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё РїРѕРґ 
-РјР°РЅРѕРјРµС‚СЂ, 8 РјРј (N2 / T1)','',(#7601));
+'Штуцер крышки под 
+манометр, 8 мм (N2 / T1)',
+'Штуцер крышки под 
+манометр, 8 мм (N2 / T1)','',(#7601));
 #7601 = PRODUCT_CONTEXT('',#2,'mechanical');
 #7602 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #7603 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#7604),#7702);
@@ -8908,18 +8908,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #7710 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #7711);
 #7711 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('9',
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё РїРѕРґ 
-РјР°РЅРѕРјРµС‚СЂ, 8 РјРј (N2 / T1)','',#63,#7598,$);
+'Штуцер крышки под 
+манометр, 8 мм (N2 / T1)','',#63,#7598,$);
 #7712 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#7600));
 #7713 = SHAPE_DEFINITION_REPRESENTATION(#7714,#7720);
 #7714 = PRODUCT_DEFINITION_SHAPE('','',#7715);
 #7715 = PRODUCT_DEFINITION('design','',#7716,#7719);
 #7716 = PRODUCT_DEFINITION_FORMATION('','',#7717);
 #7717 = PRODUCT(
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё РІРІРѕРґР° 
-РіР°Р·Р°, 8 РјРј (N6 / T2)',
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё РІРІРѕРґР° 
-РіР°Р·Р°, 8 РјРј (N6 / T2)','',(#7718));
+'Штуцер крышки ввода 
+газа, 8 мм (N6 / T2)',
+'Штуцер крышки ввода 
+газа, 8 мм (N6 / T2)','',(#7718));
 #7718 = PRODUCT_CONTEXT('',#2,'mechanical');
 #7719 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #7720 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#7721),#7819);
@@ -9050,18 +9050,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #7827 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #7828);
 #7828 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('10',
-'РЁС‚СѓС†РµСЂ РєСЂС‹С€РєРё РІРІРѕРґР° 
-РіР°Р·Р°, 8 РјРј (N6 / T2)','',#63,#7715,$);
+'Штуцер крышки ввода 
+газа, 8 мм (N6 / T2)','',#63,#7715,$);
 #7829 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#7717));
 #7830 = SHAPE_DEFINITION_REPRESENTATION(#7831,#7837);
 #7831 = PRODUCT_DEFINITION_SHAPE('','',#7832);
 #7832 = PRODUCT_DEFINITION('design','',#7833,#7836);
 #7833 = PRODUCT_DEFINITION_FORMATION('','',#7834);
 #7834 = PRODUCT(
-'РЁС‚СѓС†РµСЂ РїСЂРёРІРѕРґР° 
-РјРµС€Р°Р»РєРё DN133 (M)',
-'РЁС‚СѓС†РµСЂ РїСЂРёРІРѕРґР° 
-РјРµС€Р°Р»РєРё DN133 (M)','',(#7835));
+'Штуцер привода 
+мешалки DN133 (M)',
+'Штуцер привода 
+мешалки DN133 (M)','',(#7835));
 #7835 = PRODUCT_CONTEXT('',#2,'mechanical');
 #7836 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #7837 = SHAPE_REPRESENTATION('',(#11,#7838,#7936),#8034);
@@ -9308,18 +9308,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #8042 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #8043);
 #8043 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('11',
-'РЁС‚СѓС†РµСЂ РїСЂРёРІРѕРґР° 
-РјРµС€Р°Р»РєРё DN133 (M)','',#63,#7832,$);
+'Штуцер привода 
+мешалки DN133 (M)','',#63,#7832,$);
 #8044 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#7834));
 #8045 = SHAPE_DEFINITION_REPRESENTATION(#8046,#8052);
 #8046 = PRODUCT_DEFINITION_SHAPE('','',#8047);
 #8047 = PRODUCT_DEFINITION('design','',#8048,#8051);
 #8048 = PRODUCT_DEFINITION_FORMATION('','',#8049);
 #8049 = PRODUCT(
-'Р¤РѕРЅР°СЂСЊ (СЃС‚РѕР№РєР°) 
-РїСЂРёРІРѕРґР° РјРµС€Р°Р»РєРё',
-'Р¤РѕРЅР°СЂСЊ (СЃС‚РѕР№РєР°) 
-РїСЂРёРІРѕРґР° РјРµС€Р°Р»РєРё','',(#8050));
+'Фонарь (стойка) 
+привода мешалки',
+'Фонарь (стойка) 
+привода мешалки','',(#8050));
 #8050 = PRODUCT_CONTEXT('',#2,'mechanical');
 #8051 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #8052 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#8053),#8151);
@@ -9452,8 +9452,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #8159 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #8160);
 #8160 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('12',
-'Р¤РѕРЅР°СЂСЊ (СЃС‚РѕР№РєР°) 
-РїСЂРёРІРѕРґР° РјРµС€Р°Р»РєРё','',#63,#8047,
+'Фонарь (стойка) 
+привода мешалки','',#63,#8047,
   $);
 #8161 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#8049));
 #8162 = SHAPE_DEFINITION_REPRESENTATION(#8163,#8169);
@@ -9461,8 +9461,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #8164 = PRODUCT_DEFINITION('design','',#8165,#8168);
 #8165 = PRODUCT_DEFINITION_FORMATION('','',#8166);
 #8166 = PRODUCT(
-  'РњРѕС‚РѕСЂ РјРµС€Р°Р»РєРё WB1800-C',
-  'РњРѕС‚РѕСЂ РјРµС€Р°Р»РєРё WB1800-C','',(#8167
+  'Мотор мешалки WB1800-C',
+  'Мотор мешалки WB1800-C','',(#8167
     ));
 #8167 = PRODUCT_CONTEXT('',#2,'mechanical');
 #8168 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -9704,7 +9704,7 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #8374 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #8375);
 #8375 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('13',
-  'РњРѕС‚РѕСЂ РјРµС€Р°Р»РєРё WB1800-C','',#63,
+  'Мотор мешалки WB1800-C','',#63,
   #8164,$);
 #8376 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#8166));
 #8377 = SHAPE_DEFINITION_REPRESENTATION(#8378,#8384);
@@ -9712,10 +9712,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #8379 = PRODUCT_DEFINITION('design','',#8380,#8383);
 #8380 = PRODUCT_DEFINITION_FORMATION('','',#8381);
 #8381 = PRODUCT(
-'РњРµС€Р°Р»РєР° Р»РѕРїР°СЃС‚РЅР°СЏ СЃ 
-РІР°Р»РѕРј D26',
-'РњРµС€Р°Р»РєР° Р»РѕРїР°СЃС‚РЅР°СЏ СЃ 
-РІР°Р»РѕРј D26','',(#8382));
+'Мешалка лопастная с 
+валом D26',
+'Мешалка лопастная с 
+валом D26','',(#8382));
 #8382 = PRODUCT_CONTEXT('',#2,'mechanical');
 #8383 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #8384 = SHAPE_REPRESENTATION('',(#11,#8385,#8483,#8813,#9143,#9473),
@@ -11144,22 +11144,22 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #9579 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #9580);
 #9580 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('14',
-'РњРµС€Р°Р»РєР° Р»РѕРїР°СЃС‚РЅР°СЏ СЃ 
-РІР°Р»РѕРј D26','',#63,#8379,$);
+'Мешалка лопастная с 
+валом D26','',#63,#8379,$);
 #9581 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#8381));
 #9582 = SHAPE_DEFINITION_REPRESENTATION(#9583,#9589);
 #9583 = PRODUCT_DEFINITION_SHAPE('','',#9584);
 #9584 = PRODUCT_DEFINITION('design','',#9585,#9588);
 #9585 = PRODUCT_DEFINITION_FORMATION('','',#9586);
 #9586 = PRODUCT(
-'РџР°С‚СЂСѓР±РѕРє СЂСѓР±Р°С€РєРё вЂ” 
-РІС‹С…РѕРґ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ, 
-РєР»Р°РјРї DN25 (N7)',
-'РџР°С‚СЂСѓР±РѕРє СЂСѓР±Р°С€РєРё вЂ” 
-РІС‹С…РѕРґ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ, 
-РєР»Р°РјРї DN25 (N7)','',(#9587));
+'Патрубок рубашки — 
+выход 
+теплоносителя, 
+кламп DN25 (N7)',
+'Патрубок рубашки — 
+выход 
+теплоносителя, 
+кламп DN25 (N7)','',(#9587));
 #9587 = PRODUCT_CONTEXT('',#2,'mechanical');
 #9588 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #9589 = SHAPE_REPRESENTATION('',(#11,#9590,#9688),#9786);
@@ -11400,22 +11400,22 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #9794 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #9795);
 #9795 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('15',
-'РџР°С‚СЂСѓР±РѕРє СЂСѓР±Р°С€РєРё вЂ” 
-РІС‹С…РѕРґ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ, 
-РєР»Р°РјРї DN25 (N7)','',#63,#9584,$);
+'Патрубок рубашки — 
+выход 
+теплоносителя, 
+кламп DN25 (N7)','',#63,#9584,$);
 #9796 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#9586));
 #9797 = SHAPE_DEFINITION_REPRESENTATION(#9798,#9804);
 #9798 = PRODUCT_DEFINITION_SHAPE('','',#9799);
 #9799 = PRODUCT_DEFINITION('design','',#9800,#9803);
 #9800 = PRODUCT_DEFINITION_FORMATION('','',#9801);
 #9801 = PRODUCT(
-'РџР°С‚СЂСѓР±РѕРє СЂСѓР±Р°С€РєРё вЂ” 
-РІС…РѕРґ С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ, 
-РєР»Р°РјРї DN25 (N8)',
-'РџР°С‚СЂСѓР±РѕРє СЂСѓР±Р°С€РєРё вЂ” 
-РІС…РѕРґ С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ, 
-РєР»Р°РјРї DN25 (N8)','',(#9802));
+'Патрубок рубашки — 
+вход теплоносителя, 
+кламп DN25 (N8)',
+'Патрубок рубашки — 
+вход теплоносителя, 
+кламп DN25 (N8)','',(#9802));
 #9802 = PRODUCT_CONTEXT('',#2,'mechanical');
 #9803 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #9804 = SHAPE_REPRESENTATION('',(#11,#9805,#9903),#10001);
@@ -11657,21 +11657,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #10009 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #10010);
 #10010 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('16',
-'РџР°С‚СЂСѓР±РѕРє СЂСѓР±Р°С€РєРё вЂ” 
-РІС…РѕРґ С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ, 
-РєР»Р°РјРї DN25 (N8)','',#63,#9799,$);
+'Патрубок рубашки — 
+вход теплоносителя, 
+кламп DN25 (N8)','',#63,#9799,$);
 #10011 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#9801));
 #10012 = SHAPE_DEFINITION_REPRESENTATION(#10013,#10019);
 #10013 = PRODUCT_DEFINITION_SHAPE('','',#10014);
 #10014 = PRODUCT_DEFINITION('design','',#10015,#10018);
 #10015 = PRODUCT_DEFINITION_FORMATION('','',#10016);
 #10016 = PRODUCT(
-'Р¦Р°РїС„С‹ 
-РѕРїСЂРѕРєРёРґС‹РІР°РЅРёСЏ 
-СЂРµР°РєС‚РѕСЂР°',
-'Р¦Р°РїС„С‹ 
-РѕРїСЂРѕРєРёРґС‹РІР°РЅРёСЏ 
-СЂРµР°РєС‚РѕСЂР°','',(#10017));
+'Цапфы 
+опрокидывания 
+реактора',
+'Цапфы 
+опрокидывания 
+реактора','',(#10017));
 #10017 = PRODUCT_CONTEXT('',#2,'mechanical');
 #10018 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #10019 = SHAPE_REPRESENTATION('',(#11,#10020,#10118),#10216);
@@ -11913,21 +11913,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #10224 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #10225);
 #10225 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('17',
-'Р¦Р°РїС„С‹ 
-РѕРїСЂРѕРєРёРґС‹РІР°РЅРёСЏ 
-СЂРµР°РєС‚РѕСЂР°','',#63,#10014,$);
+'Цапфы 
+опрокидывания 
+реактора','',#63,#10014,$);
 #10226 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#10016));
 #10227 = SHAPE_DEFINITION_REPRESENTATION(#10228,#10234);
 #10228 = PRODUCT_DEFINITION_SHAPE('','',#10229);
 #10229 = PRODUCT_DEFINITION('design','',#10230,#10233);
 #10230 = PRODUCT_DEFINITION_FORMATION('','',#10231);
 #10231 = PRODUCT(
-'Р РµРґСѓРєС‚РѕСЂ 
-РѕРїСЂРѕРєРёРґС‹РІР°РЅРёСЏ 
-СЂРµР°РєС‚РѕСЂР°',
-'Р РµРґСѓРєС‚РѕСЂ 
-РѕРїСЂРѕРєРёРґС‹РІР°РЅРёСЏ 
-СЂРµР°РєС‚РѕСЂР°','',(#10232));
+'Редуктор 
+опрокидывания 
+реактора',
+'Редуктор 
+опрокидывания 
+реактора','',(#10232));
 #10232 = PRODUCT_CONTEXT('',#2,'mechanical');
 #10233 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #10234 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#10235),#10565);
@@ -12327,19 +12327,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #10573 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #10574);
 #10574 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('18',
-'Р РµРґСѓРєС‚РѕСЂ 
-РѕРїСЂРѕРєРёРґС‹РІР°РЅРёСЏ 
-СЂРµР°РєС‚РѕСЂР°','',#63,#10229,$);
+'Редуктор 
+опрокидывания 
+реактора','',#63,#10229,$);
 #10575 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#10231));
 #10576 = SHAPE_DEFINITION_REPRESENTATION(#10577,#10583);
 #10577 = PRODUCT_DEFINITION_SHAPE('','',#10578);
 #10578 = PRODUCT_DEFINITION('design','',#10579,#10582);
 #10579 = PRODUCT_DEFINITION_FORMATION('','',#10580);
 #10580 = PRODUCT(
-'РќРёР¶РЅРёР№ СЃР»РёРІРЅРѕР№ 
-РїР°С‚СЂСѓР±РѕРє DN38 (L)',
-'РќРёР¶РЅРёР№ СЃР»РёРІРЅРѕР№ 
-РїР°С‚СЂСѓР±РѕРє DN38 (L)','',(#10581));
+'Нижний сливной 
+патрубок DN38 (L)',
+'Нижний сливной 
+патрубок DN38 (L)','',(#10581));
 #10581 = PRODUCT_CONTEXT('',#2,'mechanical');
 #10582 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #10583 = SHAPE_REPRESENTATION('',(#11,#10584,#10682),#10780);
@@ -12581,18 +12581,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #10788 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #10789);
 #10789 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('19',
-'РќРёР¶РЅРёР№ СЃР»РёРІРЅРѕР№ 
-РїР°С‚СЂСѓР±РѕРє DN38 (L)','',#63,#10578,$);
+'Нижний сливной 
+патрубок DN38 (L)','',#63,#10578,$);
 #10790 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#10580));
 #10791 = SHAPE_DEFINITION_REPRESENTATION(#10792,#10798);
 #10792 = PRODUCT_DEFINITION_SHAPE('','',#10793);
 #10793 = PRODUCT_DEFINITION('design','',#10794,#10797);
 #10794 = PRODUCT_DEFINITION_FORMATION('','',#10795);
 #10795 = PRODUCT(
-'Р Р°РјР° СЂРµР°РєС‚РѕСЂР° Рё 
-С‚РµР»РµР¶РєР° СѓРїСЂР°РІР»РµРЅРёСЏ',
-'Р Р°РјР° СЂРµР°РєС‚РѕСЂР° Рё 
-С‚РµР»РµР¶РєР° СѓРїСЂР°РІР»РµРЅРёСЏ',
+'Рама реактора и 
+тележка управления',
+'Рама реактора и 
+тележка управления',
   '',(#10796));
 #10796 = PRODUCT_CONTEXT('',#2,'mechanical');
 #10797 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -12633,10 +12633,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #10824 = PRODUCT_DEFINITION('design','',#10825,#10828);
 #10825 = PRODUCT_DEFINITION_FORMATION('','',#10826);
 #10826 = PRODUCT(
-'Р Р°РјР°-СЃС‚РѕР№РєР° 
-СЂРµР°РєС‚РѕСЂР° Wiggens',
-'Р Р°РјР°-СЃС‚РѕР№РєР° 
-СЂРµР°РєС‚РѕСЂР° Wiggens','',(#10827));
+'Рама-стойка 
+реактора Wiggens',
+'Рама-стойка 
+реактора Wiggens','',(#10827));
 #10827 = PRODUCT_CONTEXT('',#2,'mechanical');
 #10828 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #10829 = SHAPE_REPRESENTATION('',(#11,#10830,#11160,#11490,#11820,#12150
@@ -24964,18 +24964,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #21580 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #21581);
 #21581 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('21',
-'Р Р°РјР°-СЃС‚РѕР№РєР° 
-СЂРµР°РєС‚РѕСЂР° Wiggens','',#10793,#10824,$);
+'Рама-стойка 
+реактора Wiggens','',#10793,#10824,$);
 #21582 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#10826));
 #21583 = SHAPE_DEFINITION_REPRESENTATION(#21584,#21590);
 #21584 = PRODUCT_DEFINITION_SHAPE('','',#21585);
 #21585 = PRODUCT_DEFINITION('design','',#21586,#21589);
 #21586 = PRODUCT_DEFINITION_FORMATION('','',#21587);
 #21587 = PRODUCT(
-'РўРµР»РµР¶РєР° Р±Р»РѕРєР° 
-СѓРїСЂР°РІР»РµРЅРёСЏ',
-'РўРµР»РµР¶РєР° Р±Р»РѕРєР° 
-СѓРїСЂР°РІР»РµРЅРёСЏ','',(#21588));
+'Тележка блока 
+управления',
+'Тележка блока 
+управления','',(#21588));
 #21588 = PRODUCT_CONTEXT('',#2,'mechanical');
 #21589 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #21590 = SHAPE_REPRESENTATION('',(#11,#21591,#21921,#22251,#22581,#22911
@@ -28778,18 +28778,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #24899 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #24900);
 #24900 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('22',
-'РўРµР»РµР¶РєР° Р±Р»РѕРєР° 
-СѓРїСЂР°РІР»РµРЅРёСЏ','',#10793,#21585,$);
+'Тележка блока 
+управления','',#10793,#21585,$);
 #24901 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#21587));
 #24902 = SHAPE_DEFINITION_REPRESENTATION(#24903,#24909);
 #24903 = PRODUCT_DEFINITION_SHAPE('','',#24904);
 #24904 = PRODUCT_DEFINITION('design','',#24905,#24908);
 #24905 = PRODUCT_DEFINITION_FORMATION('','',#24906);
 #24906 = PRODUCT(
-'Р‘Р»РѕРє СѓРїСЂР°РІР»РµРЅРёСЏ 
-СЂРµР°РєС‚РѕСЂР°',
-'Р‘Р»РѕРє СѓРїСЂР°РІР»РµРЅРёСЏ 
-СЂРµР°РєС‚РѕСЂР°','',(#24907));
+'Блок управления 
+реактора',
+'Блок управления 
+реактора','',(#24907));
 #24907 = PRODUCT_CONTEXT('',#2,'mechanical');
 #24908 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #24909 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#24910),#25240);
@@ -29189,18 +29189,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #25248 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #25249);
 #25249 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('23',
-'Р‘Р»РѕРє СѓРїСЂР°РІР»РµРЅРёСЏ 
-СЂРµР°РєС‚РѕСЂР°','',#10793,#24904,$);
+'Блок управления 
+реактора','',#10793,#24904,$);
 #25250 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#24906));
 #25251 = SHAPE_DEFINITION_REPRESENTATION(#25252,#25258);
 #25252 = PRODUCT_DEFINITION_SHAPE('','',#25253);
 #25253 = PRODUCT_DEFINITION('design','',#25254,#25257);
 #25254 = PRODUCT_DEFINITION_FORMATION('','',#25255);
 #25255 = PRODUCT(
-'РљРѕРЅРґРµРЅСЃР°С‚РѕСЂ 
-Р·РјРµРµРІРёРєРѕРІС‹Р№ (E-1)',
-'РљРѕРЅРґРµРЅСЃР°С‚РѕСЂ 
-Р·РјРµРµРІРёРєРѕРІС‹Р№ (E-1)','',(#25256));
+'Конденсатор 
+змеевиковый (E-1)',
+'Конденсатор 
+змеевиковый (E-1)','',(#25256));
 #25256 = PRODUCT_CONTEXT('',#2,'mechanical');
 #25257 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #25258 = SHAPE_REPRESENTATION('',(#11,#25259,#25263,#25267,#25271,#25275
@@ -29249,12 +29249,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #25292 = PRODUCT_DEFINITION('design','',#25293,#25296);
 #25293 = PRODUCT_DEFINITION_FORMATION('','',#25294);
 #25294 = PRODUCT(
-'РљРѕРЅРґРµРЅСЃР°С‚РѕСЂ вЂ” 
-РєРѕР¶СѓС… DN65 (3") РґР»РёРЅРѕР№ 500 
-РјРј (E-1)',
-'РљРѕРЅРґРµРЅСЃР°С‚РѕСЂ вЂ” 
-РєРѕР¶СѓС… DN65 (3") РґР»РёРЅРѕР№ 500 
-РјРј (E-1)','',(#25295));
+'Конденсатор — 
+кожух DN65 (3") длиной 500 
+мм (E-1)',
+'Конденсатор — 
+кожух DN65 (3") длиной 500 
+мм (E-1)','',(#25295));
 #25295 = PRODUCT_CONTEXT('',#2,'mechanical');
 #25296 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #25297 = SHAPE_REPRESENTATION('',(#11,#25298,#25396,#25494,#25592,#25690
@@ -30048,22 +30048,22 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #25992 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #25993);
 #25993 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('25',
-'РљРѕРЅРґРµРЅСЃР°С‚РѕСЂ вЂ” 
-РєРѕР¶СѓС… DN65 (3") РґР»РёРЅРѕР№ 500 
-РјРј (E-1)','',#25253,#25292,$);
+'Конденсатор — 
+кожух DN65 (3") длиной 500 
+мм (E-1)','',#25253,#25292,$);
 #25994 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#25294));
 #25995 = SHAPE_DEFINITION_REPRESENTATION(#25996,#26002);
 #25996 = PRODUCT_DEFINITION_SHAPE('','',#25997);
 #25997 = PRODUCT_DEFINITION('design','',#25998,#26001);
 #25998 = PRODUCT_DEFINITION_FORMATION('','',#25999);
 #25999 = PRODUCT(
-'РљРѕРЅРґРµРЅСЃР°С‚РѕСЂ вЂ” 
-РІС‹РІРѕРґС‹ Р·РјРµРµРІРёРєР° РїРѕРґ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЊ, 12 РјРј (E-1)'
+'Конденсатор — 
+выводы змеевика под 
+теплоноситель, 12 мм (E-1)'
   ,
-'РљРѕРЅРґРµРЅСЃР°С‚РѕСЂ вЂ” 
-РІС‹РІРѕРґС‹ Р·РјРµРµРІРёРєР° РїРѕРґ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЊ, 12 РјРј (E-1)'
+'Конденсатор — 
+выводы змеевика под 
+теплоноситель, 12 мм (E-1)'
   ,'',(#26000));
 #26000 = PRODUCT_CONTEXT('',#2,'mechanical');
 #26001 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -30306,9 +30306,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #26207 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #26208);
 #26208 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('26',
-'РљРѕРЅРґРµРЅСЃР°С‚РѕСЂ вЂ” 
-РІС‹РІРѕРґС‹ Р·РјРµРµРІРёРєР° РїРѕРґ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЊ, 12 РјРј (E-1)'
+'Конденсатор — 
+выводы змеевика под 
+теплоноситель, 12 мм (E-1)'
   ,'',#25253,#25997,$);
 #26209 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#25999));
 #26210 = SHAPE_DEFINITION_REPRESENTATION(#26211,#26217);
@@ -30316,12 +30316,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #26212 = PRODUCT_DEFINITION('design','',#26213,#26216);
 #26213 = PRODUCT_DEFINITION_FORMATION('','',#26214);
 #26214 = PRODUCT(
-'РљРѕРЅРґРµРЅСЃР°С‚РѕСЂ вЂ” 
-Р±РѕРєРѕРІРѕР№ РѕС‚РІРѕРґ РіР°Р·Р°, 
-РєР»Р°РјРї DN15 (E-1)',
-'РљРѕРЅРґРµРЅСЃР°С‚РѕСЂ вЂ” 
-Р±РѕРєРѕРІРѕР№ РѕС‚РІРѕРґ РіР°Р·Р°, 
-РєР»Р°РјРї DN15 (E-1)','',(#26215));
+'Конденсатор — 
+боковой отвод газа, 
+кламп DN15 (E-1)',
+'Конденсатор — 
+боковой отвод газа, 
+кламп DN15 (E-1)','',(#26215));
 #26215 = PRODUCT_CONTEXT('',#2,'mechanical');
 #26216 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #26217 = SHAPE_REPRESENTATION('',(#11,#26218,#26316,#26414),#26512);
@@ -30673,21 +30673,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #26520 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #26521);
 #26521 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('27',
-'РљРѕРЅРґРµРЅСЃР°С‚РѕСЂ вЂ” 
-Р±РѕРєРѕРІРѕР№ РѕС‚РІРѕРґ РіР°Р·Р°, 
-РєР»Р°РјРї DN15 (E-1)','',#25253,#26212,$);
+'Конденсатор — 
+боковой отвод газа, 
+кламп DN15 (E-1)','',#25253,#26212,$);
 #26522 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#26214));
 #26523 = SHAPE_DEFINITION_REPRESENTATION(#26524,#26530);
 #26524 = PRODUCT_DEFINITION_SHAPE('','',#26525);
 #26525 = PRODUCT_DEFINITION('design','',#26526,#26529);
 #26526 = PRODUCT_DEFINITION_FORMATION('','',#26527);
 #26527 = PRODUCT(
-'РџРµСЂРµС…РѕРґРЅРёРє РєР»Р°РјРї DN15 
--> С‘Р»РѕС‡РєР° РЅР° РѕС‚РІРѕРґРµ 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР°',
-'РџРµСЂРµС…РѕРґРЅРёРє РєР»Р°РјРї DN15 
--> С‘Р»РѕС‡РєР° РЅР° РѕС‚РІРѕРґРµ 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР°','',(#26528));
+'Переходник кламп DN15 
+-> ёлочка на отводе 
+конденсатора',
+'Переходник кламп DN15 
+-> ёлочка на отводе 
+конденсатора','',(#26528));
 #26528 = PRODUCT_CONTEXT('',#2,'mechanical');
 #26529 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #26530 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#26531),#26629);
@@ -30820,21 +30820,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #26637 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #26638);
 #26638 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('28',
-'РџРµСЂРµС…РѕРґРЅРёРє РєР»Р°РјРї DN15 
--> С‘Р»РѕС‡РєР° РЅР° РѕС‚РІРѕРґРµ 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР°','',#25253,#26525,$);
+'Переходник кламп DN15 
+-> ёлочка на отводе 
+конденсатора','',#25253,#26525,$);
 #26639 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#26527));
 #26640 = SHAPE_DEFINITION_REPRESENTATION(#26641,#26647);
 #26641 = PRODUCT_DEFINITION_SHAPE('','',#26642);
 #26642 = PRODUCT_DEFINITION('design','',#26643,#26646);
 #26643 = PRODUCT_DEFINITION_FORMATION('','',#26644);
 #26644 = PRODUCT(
-'РўРµРїР»РѕРёР·РѕР»СЏС†РёСЏ 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР°, 
-РєР°СѓС‡СѓРє 13-19 РјРј',
-'РўРµРїР»РѕРёР·РѕР»СЏС†РёСЏ 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР°, 
-РєР°СѓС‡СѓРє 13-19 РјРј','',(#26645));
+'Теплоизоляция 
+конденсатора, 
+каучук 13-19 мм',
+'Теплоизоляция 
+конденсатора, 
+каучук 13-19 мм','',(#26645));
 #26645 = PRODUCT_CONTEXT('',#2,'mechanical');
 #26646 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #26647 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#26648),#26830);
@@ -31062,25 +31062,25 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #26838 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #26839);
 #26839 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('29',
-'РўРµРїР»РѕРёР·РѕР»СЏС†РёСЏ 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР°, 
-РєР°СѓС‡СѓРє 13-19 РјРј','',#25253,#26642,$);
+'Теплоизоляция 
+конденсатора, 
+каучук 13-19 мм','',#25253,#26642,$);
 #26840 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#26644));
 #26841 = SHAPE_DEFINITION_REPRESENTATION(#26842,#26848);
 #26842 = PRODUCT_DEFINITION_SHAPE('','',#26843);
 #26843 = PRODUCT_DEFINITION('design','',#26844,#26847);
 #26844 = PRODUCT_DEFINITION_FORMATION('','',#26845);
 #26845 = PRODUCT(
-'Р“СЂРµР±С‘РЅРєР°: С€РїСѓРЅС‚, 
-Р°РІР°СЂРёР№РЅС‹Р№ СЃР±СЂРѕСЃ, 
-Р°СЂРіРѕРЅ, РІР°РєСѓСѓРј, 
-Р°С‚РјРѕСЃС„РµСЂР°; Р±Р°СЂР±РѕС‚С‘СЂ, 
-Р±СѓС„РµСЂ, СЃРєСЂСѓР±Р±РµСЂ',
-'Р“СЂРµР±С‘РЅРєР°: С€РїСѓРЅС‚, 
-Р°РІР°СЂРёР№РЅС‹Р№ СЃР±СЂРѕСЃ, 
-Р°СЂРіРѕРЅ, РІР°РєСѓСѓРј, 
-Р°С‚РјРѕСЃС„РµСЂР°; Р±Р°СЂР±РѕС‚С‘СЂ, 
-Р±СѓС„РµСЂ, СЃРєСЂСѓР±Р±РµСЂ','',(#26846));
+'Гребёнка: шпунт, 
+аварийный сброс, 
+аргон, вакуум, 
+атмосфера; барботёр, 
+буфер, скруббер',
+'Гребёнка: шпунт, 
+аварийный сброс, 
+аргон, вакуум, 
+атмосфера; барботёр, 
+буфер, скруббер','',(#26846));
 #26846 = PRODUCT_CONTEXT('',#2,'mechanical');
 #26847 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #26848 = SHAPE_REPRESENTATION('',(#11,#26849,#26853,#26857,#26861,#26865
@@ -31268,12 +31268,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #27018 = PRODUCT_DEFINITION('design','',#27019,#27022);
 #27019 = PRODUCT_DEFINITION_FORMATION('','',#27020);
 #27020 = PRODUCT(
-'Р’С…РѕРґ РіСЂРµР±С‘РЅРєРё: 
-РїРµСЂРµС…РѕРґРЅРёРє С‘Р»РѕС‡РєР° 
--> РєР»Р°РјРї DN15',
-'Р’С…РѕРґ РіСЂРµР±С‘РЅРєРё: 
-РїРµСЂРµС…РѕРґРЅРёРє С‘Р»РѕС‡РєР° 
--> РєР»Р°РјРї DN15','',(#27021));
+'Вход гребёнки: 
+переходник ёлочка 
+-> кламп DN15',
+'Вход гребёнки: 
+переходник ёлочка 
+-> кламп DN15','',(#27021));
 #27021 = PRODUCT_CONTEXT('',#2,'mechanical');
 #27022 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #27023 = SHAPE_REPRESENTATION('',(#11,#27024,#27122,#27220),#27318);
@@ -31626,21 +31626,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #27326 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #27327);
 #27327 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('31',
-'Р’С…РѕРґ РіСЂРµР±С‘РЅРєРё: 
-РїРµСЂРµС…РѕРґРЅРёРє С‘Р»РѕС‡РєР° 
--> РєР»Р°РјРї DN15','',#26843,#27018,$);
+'Вход гребёнки: 
+переходник ёлочка 
+-> кламп DN15','',#26843,#27018,$);
 #27328 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#27020));
 #27329 = SHAPE_DEFINITION_REPRESENTATION(#27330,#27336);
 #27330 = PRODUCT_DEFINITION_SHAPE('','',#27331);
 #27331 = PRODUCT_DEFINITION('design','',#27332,#27335);
 #27332 = PRODUCT_DEFINITION_FORMATION('','',#27333);
 #27333 = PRODUCT(
-'РЁР»Р°РЅРі PTFE РѕС‚ 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР° Рє 
-РіСЂРµР±С‘РЅРєРµ',
-'РЁР»Р°РЅРі PTFE РѕС‚ 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР° Рє 
-РіСЂРµР±С‘РЅРєРµ','',(#27334));
+'Шланг PTFE от 
+конденсатора к 
+гребёнке',
+'Шланг PTFE от 
+конденсатора к 
+гребёнке','',(#27334));
 #27334 = PRODUCT_CONTEXT('',#2,'mechanical');
 #27335 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #27336 = SHAPE_REPRESENTATION('',(#11,#27337,#27435,#27533,#27631,#27729
@@ -32261,21 +32261,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #27883 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #27884);
 #27884 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('32',
-'РЁР»Р°РЅРі PTFE РѕС‚ 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР° Рє 
-РіСЂРµР±С‘РЅРєРµ','',#26843,#27331,$);
+'Шланг PTFE от 
+конденсатора к 
+гребёнке','',#26843,#27331,$);
 #27885 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#27333));
 #27886 = SHAPE_DEFINITION_REPRESENTATION(#27887,#27893);
 #27887 = PRODUCT_DEFINITION_SHAPE('','',#27888);
 #27888 = PRODUCT_DEFINITION('design','',#27889,#27892);
 #27889 = PRODUCT_DEFINITION_FORMATION('','',#27890);
 #27890 = PRODUCT(
-'РљРѕР»Р»РµРєС‚РѕСЂ РіСЂРµР±С‘РЅРєРё 
-DN15 (С‚СЂРѕР№РЅРёРєРё РЅР° 
-РєР»Р°РјРїР°С…)',
-'РљРѕР»Р»РµРєС‚РѕСЂ РіСЂРµР±С‘РЅРєРё 
-DN15 (С‚СЂРѕР№РЅРёРєРё РЅР° 
-РєР»Р°РјРїР°С…)','',(#27891));
+'Коллектор гребёнки 
+DN15 (тройники на 
+клампах)',
+'Коллектор гребёнки 
+DN15 (тройники на 
+клампах)','',(#27891));
 #27891 = PRODUCT_CONTEXT('',#2,'mechanical');
 #27892 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #27893 = SHAPE_REPRESENTATION('',(#11,#27894,#27992),#28004);
@@ -32419,21 +32419,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #28012 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #28013);
 #28013 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('33',
-'РљРѕР»Р»РµРєС‚РѕСЂ РіСЂРµР±С‘РЅРєРё 
-DN15 (С‚СЂРѕР№РЅРёРєРё РЅР° 
-РєР»Р°РјРїР°С…)','',#26843,#27888,$);
+'Коллектор гребёнки 
+DN15 (тройники на 
+клампах)','',#26843,#27888,$);
 #28014 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#27890));
 #28015 = SHAPE_DEFINITION_REPRESENTATION(#28016,#28022);
 #28016 = PRODUCT_DEFINITION_SHAPE('','',#28017);
 #28017 = PRODUCT_DEFINITION('design','',#28018,#28021);
 #28018 = PRODUCT_DEFINITION_FORMATION('','',#28019);
 #28019 = PRODUCT(
-'РҐРѕРјСѓС‚С‹ РєР»Р°РјРїРѕРІС‹Рµ DN15 
-РєРѕР»Р»РµРєС‚РѕСЂР° 
-РіСЂРµР±С‘РЅРєРё',
-'РҐРѕРјСѓС‚С‹ РєР»Р°РјРїРѕРІС‹Рµ DN15 
-РєРѕР»Р»РµРєС‚РѕСЂР° 
-РіСЂРµР±С‘РЅРєРё','',(#28020));
+'Хомуты кламповые DN15 
+коллектора 
+гребёнки',
+'Хомуты кламповые DN15 
+коллектора 
+гребёнки','',(#28020));
 #28020 = PRODUCT_CONTEXT('',#2,'mechanical');
 #28021 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #28022 = SHAPE_REPRESENTATION('',(#11,#28023,#28121,#28219,#28317,#28415
@@ -33556,19 +33556,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #29011 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #29012);
 #29012 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('34',
-'РҐРѕРјСѓС‚С‹ РєР»Р°РјРїРѕРІС‹Рµ DN15 
-РєРѕР»Р»РµРєС‚РѕСЂР° 
-РіСЂРµР±С‘РЅРєРё','',#26843,#28017,$);
+'Хомуты кламповые DN15 
+коллектора 
+гребёнки','',#26843,#28017,$);
 #29013 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#28019));
 #29014 = SHAPE_DEFINITION_REPRESENTATION(#29015,#29021);
 #29015 = PRODUCT_DEFINITION_SHAPE('','',#29016);
 #29016 = PRODUCT_DEFINITION('design','',#29017,#29020);
 #29017 = PRODUCT_DEFINITION_FORMATION('','',#29018);
 #29018 = PRODUCT(
-'РўСЂРѕР№РЅРёРє DN15 РїРѕРґ 
-РјР°РЅРѕРјРµС‚СЂ РіСЂРµР±С‘РЅРєРё',
-'РўСЂРѕР№РЅРёРє DN15 РїРѕРґ 
-РјР°РЅРѕРјРµС‚СЂ РіСЂРµР±С‘РЅРєРё','',(
+'Тройник DN15 под 
+манометр гребёнки',
+'Тройник DN15 под 
+манометр гребёнки','',(
     #29019));
 #29019 = PRODUCT_CONTEXT('',#2,'mechanical');
 #29020 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -33921,8 +33921,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #29324 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #29325);
 #29325 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('35',
-'РўСЂРѕР№РЅРёРє DN15 РїРѕРґ 
-РјР°РЅРѕРјРµС‚СЂ РіСЂРµР±С‘РЅРєРё','',
+'Тройник DN15 под 
+манометр гребёнки','',
   #26843,#29016,$);
 #29326 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#29018));
 #29327 = SHAPE_DEFINITION_REPRESENTATION(#29328,#29334);
@@ -33930,10 +33930,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #29329 = PRODUCT_DEFINITION('design','',#29330,#29333);
 #29330 = PRODUCT_DEFINITION_FORMATION('','',#29331);
 #29331 = PRODUCT(
-'РњР°РЅРѕРІР°РєСѓСѓРјРјРµС‚СЂ 
-РіСЂРµР±С‘РЅРєРё 0-250 РјР±Р°СЂ (PI-4)',
-'РњР°РЅРѕРІР°РєСѓСѓРјРјРµС‚СЂ 
-РіСЂРµР±С‘РЅРєРё 0-250 РјР±Р°СЂ (PI-4)','',
+'Мановакуумметр 
+гребёнки 0-250 мбар (PI-4)',
+'Мановакуумметр 
+гребёнки 0-250 мбар (PI-4)','',
   (#29332));
 #29332 = PRODUCT_CONTEXT('',#2,'mechanical');
 #29333 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -34286,8 +34286,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #29637 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #29638);
 #29638 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('36',
-'РњР°РЅРѕРІР°РєСѓСѓРјРјРµС‚СЂ 
-РіСЂРµР±С‘РЅРєРё 0-250 РјР±Р°СЂ (PI-4)','',
+'Мановакуумметр 
+гребёнки 0-250 мбар (PI-4)','',
   #26843,#29329,$);
 #29639 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#29331));
 #29640 = SHAPE_DEFINITION_REPRESENTATION(#29641,#29647);
@@ -34295,10 +34295,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #29642 = PRODUCT_DEFINITION('design','',#29643,#29646);
 #29643 = PRODUCT_DEFINITION_FORMATION('','',#29644);
 #29644 = PRODUCT(
-'РўСЂРѕР№РЅРёРє DN15 РІРµС‚РєРё 
-Р°СЂРіРѕРЅР°',
-'РўСЂРѕР№РЅРёРє DN15 РІРµС‚РєРё 
-Р°СЂРіРѕРЅР°','',(#29645));
+'Тройник DN15 ветки 
+аргона',
+'Тройник DN15 ветки 
+аргона','',(#29645));
 #29645 = PRODUCT_CONTEXT('',#2,'mechanical');
 #29646 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #29647 = SHAPE_REPRESENTATION('',(#11,#29648,#29746,#29844),#29942);
@@ -34650,20 +34650,20 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #29950 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #29951);
 #29951 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('37',
-'РўСЂРѕР№РЅРёРє DN15 РІРµС‚РєРё 
-Р°СЂРіРѕРЅР°','',#26843,#29642,$);
+'Тройник DN15 ветки 
+аргона','',#26843,#29642,$);
 #29952 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#29644));
 #29953 = SHAPE_DEFINITION_REPRESENTATION(#29954,#29960);
 #29954 = PRODUCT_DEFINITION_SHAPE('','',#29955);
 #29955 = PRODUCT_DEFINITION('design','',#29956,#29959);
 #29956 = PRODUCT_DEFINITION_FORMATION('','',#29957);
 #29957 = PRODUCT(
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 вЂ” РІРІРѕРґ Р°СЂРіРѕРЅР° РІ 
-РіСЂРµР±С‘РЅРєСѓ (AV-1)',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 вЂ” РІРІРѕРґ Р°СЂРіРѕРЅР° РІ 
-РіСЂРµР±С‘РЅРєСѓ (AV-1)','',(#29958));
+'Кран шаровой кламп 
+DN15 — ввод аргона в 
+гребёнку (AV-1)',
+'Кран шаровой кламп 
+DN15 — ввод аргона в 
+гребёнку (AV-1)','',(#29958));
 #29958 = PRODUCT_CONTEXT('',#2,'mechanical');
 #29959 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #29960 = SHAPE_REPRESENTATION('',(#11,#29961,#30059,#30071,#30169),
@@ -35028,19 +35028,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #30275 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #30276);
 #30276 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('38',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 вЂ” РІРІРѕРґ Р°СЂРіРѕРЅР° РІ 
-РіСЂРµР±С‘РЅРєСѓ (AV-1)','',#26843,#29955,$);
+'Кран шаровой кламп 
+DN15 — ввод аргона в 
+гребёнку (AV-1)','',#26843,#29955,$);
 #30277 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#29957));
 #30278 = SHAPE_DEFINITION_REPRESENTATION(#30279,#30285);
 #30279 = PRODUCT_DEFINITION_SHAPE('','',#30280);
 #30280 = PRODUCT_DEFINITION('design','',#30281,#30284);
 #30281 = PRODUCT_DEFINITION_FORMATION('','',#30282);
 #30282 = PRODUCT(
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ РєСЂР°РЅРѕРј 
-Р°СЂРіРѕРЅР°',
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ РєСЂР°РЅРѕРј 
-Р°СЂРіРѕРЅР°','',(#30283));
+'Хомут DN15 над краном 
+аргона',
+'Хомут DN15 над краном 
+аргона','',(#30283));
 #30283 = PRODUCT_CONTEXT('',#2,'mechanical');
 #30284 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #30285 = SHAPE_REPRESENTATION('',(#11,#30286,#30384),#30482);
@@ -35282,22 +35282,22 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #30490 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #30491);
 #30491 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('39',
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ РєСЂР°РЅРѕРј 
-Р°СЂРіРѕРЅР°','',#26843,#30280,$);
+'Хомут DN15 над краном 
+аргона','',#26843,#30280,$);
 #30492 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#30282));
 #30493 = SHAPE_DEFINITION_REPRESENTATION(#30494,#30500);
 #30494 = PRODUCT_DEFINITION_SHAPE('','',#30495);
 #30495 = PRODUCT_DEFINITION('design','',#30496,#30499);
 #30496 = PRODUCT_DEFINITION_FORMATION('','',#30497);
 #30497 = PRODUCT(
-'РџРµСЂРµС…РѕРґРЅРёРє РєР»Р°РјРї DN15 
--> СЂРµР·СЊР±Р° G1/2" -> 
-С‚СЂСѓР±РєР° 1/4" (РІРІРѕРґ 
-Р°СЂРіРѕРЅР°)',
-'РџРµСЂРµС…РѕРґРЅРёРє РєР»Р°РјРї DN15 
--> СЂРµР·СЊР±Р° G1/2" -> 
-С‚СЂСѓР±РєР° 1/4" (РІРІРѕРґ 
-Р°СЂРіРѕРЅР°)','',(#30498));
+'Переходник кламп DN15 
+-> резьба G1/2" -> 
+трубка 1/4" (ввод 
+аргона)',
+'Переходник кламп DN15 
+-> резьба G1/2" -> 
+трубка 1/4" (ввод 
+аргона)','',(#30498));
 #30498 = PRODUCT_CONTEXT('',#2,'mechanical');
 #30499 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #30500 = SHAPE_REPRESENTATION('',(#11,#30501,#30599),#30697);
@@ -35539,20 +35539,20 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #30705 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #30706);
 #30706 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('40',
-'РџРµСЂРµС…РѕРґРЅРёРє РєР»Р°РјРї DN15 
--> СЂРµР·СЊР±Р° G1/2" -> 
-С‚СЂСѓР±РєР° 1/4" (РІРІРѕРґ 
-Р°СЂРіРѕРЅР°)','',#26843,#30495,$);
+'Переходник кламп DN15 
+-> резьба G1/2" -> 
+трубка 1/4" (ввод 
+аргона)','',#26843,#30495,$);
 #30707 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#30497));
 #30708 = SHAPE_DEFINITION_REPRESENTATION(#30709,#30715);
 #30709 = PRODUCT_DEFINITION_SHAPE('','',#30710);
 #30710 = PRODUCT_DEFINITION('design','',#30711,#30714);
 #30711 = PRODUCT_DEFINITION_FORMATION('','',#30712);
 #30712 = PRODUCT(
-'РўСЂРѕР№РЅРёРє DN15 РІРµС‚РєРё 
-С€РїСѓРЅС‚-Р°РїРїР°СЂР°С‚Р°',
-'РўСЂРѕР№РЅРёРє DN15 РІРµС‚РєРё 
-С€РїСѓРЅС‚-Р°РїРїР°СЂР°С‚Р°','',(#30713));
+'Тройник DN15 ветки 
+шпунт-аппарата',
+'Тройник DN15 ветки 
+шпунт-аппарата','',(#30713));
 #30713 = PRODUCT_CONTEXT('',#2,'mechanical');
 #30714 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #30715 = SHAPE_REPRESENTATION('',(#11,#30716,#30814,#30912),#31010);
@@ -35904,8 +35904,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #31018 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #31019);
 #31019 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('41',
-'РўСЂРѕР№РЅРёРє DN15 РІРµС‚РєРё 
-С€РїСѓРЅС‚-Р°РїРїР°СЂР°С‚Р°','',#26843,#30710,
+'Тройник DN15 ветки 
+шпунт-аппарата','',#26843,#30710,
   $);
 #31020 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#30712));
 #31021 = SHAPE_DEFINITION_REPRESENTATION(#31022,#31028);
@@ -35913,12 +35913,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #31023 = PRODUCT_DEFINITION('design','',#31024,#31027);
 #31024 = PRODUCT_DEFINITION_FORMATION('','',#31025);
 #31025 = PRODUCT(
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 РїРµСЂРµРґ 
-С€РїСѓРЅС‚-Р°РїРїР°СЂР°С‚РѕРј (SV-1)',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 РїРµСЂРµРґ 
-С€РїСѓРЅС‚-Р°РїРїР°СЂР°С‚РѕРј (SV-1)','',(
+'Кран шаровой кламп 
+DN15 перед 
+шпунт-аппаратом (SV-1)',
+'Кран шаровой кламп 
+DN15 перед 
+шпунт-аппаратом (SV-1)','',(
     #31026));
 #31026 = PRODUCT_CONTEXT('',#2,'mechanical');
 #31027 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -36284,9 +36284,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #31343 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #31344);
 #31344 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('42',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 РїРµСЂРµРґ 
-С€РїСѓРЅС‚-Р°РїРїР°СЂР°С‚РѕРј (SV-1)','',
+'Кран шаровой кламп 
+DN15 перед 
+шпунт-аппаратом (SV-1)','',
   #26843,#31023,$);
 #31345 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#31025));
 #31346 = SHAPE_DEFINITION_REPRESENTATION(#31347,#31353);
@@ -36294,10 +36294,10 @@ DN15 РїРµСЂРµРґ
 #31348 = PRODUCT_DEFINITION('design','',#31349,#31352);
 #31349 = PRODUCT_DEFINITION_FORMATION('','',#31350);
 #31350 = PRODUCT(
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ РєСЂР°РЅРѕРј 
-С€РїСѓРЅС‚-Р°РїРїР°СЂР°С‚Р°',
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ РєСЂР°РЅРѕРј 
-С€РїСѓРЅС‚-Р°РїРїР°СЂР°С‚Р°','',(#31351));
+'Хомут DN15 над краном 
+шпунт-аппарата',
+'Хомут DN15 над краном 
+шпунт-аппарата','',(#31351));
 #31351 = PRODUCT_CONTEXT('',#2,'mechanical');
 #31352 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #31353 = SHAPE_REPRESENTATION('',(#11,#31354,#31452),#31550);
@@ -36539,8 +36539,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #31558 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #31559);
 #31559 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('43',
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ РєСЂР°РЅРѕРј 
-С€РїСѓРЅС‚-Р°РїРїР°СЂР°С‚Р°','',#26843,#31348,
+'Хомут DN15 над краном 
+шпунт-аппарата','',#26843,#31348,
   $);
 #31560 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#31350));
 #31561 = SHAPE_DEFINITION_REPRESENTATION(#31562,#31568);
@@ -36548,13 +36548,13 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #31563 = PRODUCT_DEFINITION('design','',#31564,#31567);
 #31564 = PRODUCT_DEFINITION_FORMATION('','',#31565);
 #31565 = PRODUCT(
-'РљР»Р°РїР°РЅ РѕР±СЂР°С‚РЅС‹Р№ 
-РєР»Р°РјРї DN15, РѕС‚РєСЂС‹С‚РёРµ <= 30 
-РјР±Р°СЂ, РїРµСЂРµРґ С€РїСѓРЅС‚РѕРј 
+'Клапан обратный 
+кламп DN15, открытие <= 30 
+мбар, перед шпунтом 
 (NRV-1)',
-'РљР»Р°РїР°РЅ РѕР±СЂР°С‚РЅС‹Р№ 
-РєР»Р°РјРї DN15, РѕС‚РєСЂС‹С‚РёРµ <= 30 
-РјР±Р°СЂ, РїРµСЂРµРґ С€РїСѓРЅС‚РѕРј 
+'Клапан обратный 
+кламп DN15, открытие <= 30 
+мбар, перед шпунтом 
 (NRV-1)','',(#31566));
 #31566 = PRODUCT_CONTEXT('',#2,'mechanical');
 #31567 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -36797,9 +36797,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #31773 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #31774);
 #31774 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('44',
-'РљР»Р°РїР°РЅ РѕР±СЂР°С‚РЅС‹Р№ 
-РєР»Р°РјРї DN15, РѕС‚РєСЂС‹С‚РёРµ <= 30 
-РјР±Р°СЂ, РїРµСЂРµРґ С€РїСѓРЅС‚РѕРј 
+'Клапан обратный 
+кламп DN15, открытие <= 30 
+мбар, перед шпунтом 
 (NRV-1)','',#26843,#31563,$);
 #31775 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#31565));
 #31776 = SHAPE_DEFINITION_REPRESENTATION(#31777,#31783);
@@ -36807,10 +36807,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #31778 = PRODUCT_DEFINITION('design','',#31779,#31782);
 #31779 = PRODUCT_DEFINITION_FORMATION('','',#31780);
 #31780 = PRODUCT(
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ 
-РѕР±СЂР°С‚РЅС‹Рј РєР»Р°РїР°РЅРѕРј',
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ 
-РѕР±СЂР°С‚РЅС‹Рј РєР»Р°РїР°РЅРѕРј','',(
+'Хомут DN15 над 
+обратным клапаном',
+'Хомут DN15 над 
+обратным клапаном','',(
     #31781));
 #31781 = PRODUCT_CONTEXT('',#2,'mechanical');
 #31782 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -37053,8 +37053,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #31988 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #31989);
 #31989 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('45',
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ 
-РѕР±СЂР°С‚РЅС‹Рј РєР»Р°РїР°РЅРѕРј','',
+'Хомут DN15 над 
+обратным клапаном','',
   #26843,#31778,$);
 #31990 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#31780));
 #31991 = SHAPE_DEFINITION_REPRESENTATION(#31992,#31998);
@@ -37062,12 +37062,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #31993 = PRODUCT_DEFINITION('design','',#31994,#31997);
 #31994 = PRODUCT_DEFINITION_FORMATION('','',#31995);
 #31995 = PRODUCT(
-'РџРµСЂРµС…РѕРґ РєР»Р°РјРїРѕРІС‹Р№ DN15 
--> DN25 РїРѕРґ 
-С€РїСѓРЅС‚-Р°РїРїР°СЂР°С‚',
-'РџРµСЂРµС…РѕРґ РєР»Р°РјРїРѕРІС‹Р№ DN15 
--> DN25 РїРѕРґ 
-С€РїСѓРЅС‚-Р°РїРїР°СЂР°С‚','',(#31996));
+'Переход кламповый DN15 
+-> DN25 под 
+шпунт-аппарат',
+'Переход кламповый DN15 
+-> DN25 под 
+шпунт-аппарат','',(#31996));
 #31996 = PRODUCT_CONTEXT('',#2,'mechanical');
 #31997 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #31998 = SHAPE_REPRESENTATION('',(#11,#31999,#32097,#32195),#32293);
@@ -37420,23 +37420,23 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #32301 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #32302);
 #32302 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('46',
-'РџРµСЂРµС…РѕРґ РєР»Р°РјРїРѕРІС‹Р№ DN15 
--> DN25 РїРѕРґ 
-С€РїСѓРЅС‚-Р°РїРїР°СЂР°С‚','',#26843,#31993,$);
+'Переход кламповый DN15 
+-> DN25 под 
+шпунт-аппарат','',#26843,#31993,$);
 #32303 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#31995));
 #32304 = SHAPE_DEFINITION_REPRESENTATION(#32305,#32311);
 #32305 = PRODUCT_DEFINITION_SHAPE('','',#32306);
 #32306 = PRODUCT_DEFINITION('design','',#32307,#32310);
 #32307 = PRODUCT_DEFINITION_FORMATION('','',#32308);
 #32308 = PRODUCT(
-'РЁРїСѓРЅС‚-Р°РїРїР°СЂР°С‚ СЃ 
-РјР°РЅРѕРјРµС‚СЂРѕРј, DN25 вЂ” 
-СЂР°Р±РѕС‡РёР№ СЂРµРіСѓР»СЏС‚РѕСЂ 
-РґР°РІР»РµРЅРёСЏ (PCV-1)',
-'РЁРїСѓРЅС‚-Р°РїРїР°СЂР°С‚ СЃ 
-РјР°РЅРѕРјРµС‚СЂРѕРј, DN25 вЂ” 
-СЂР°Р±РѕС‡РёР№ СЂРµРіСѓР»СЏС‚РѕСЂ 
-РґР°РІР»РµРЅРёСЏ (PCV-1)','',(#32309));
+'Шпунт-аппарат с 
+манометром, DN25 — 
+рабочий регулятор 
+давления (PCV-1)',
+'Шпунт-аппарат с 
+манометром, DN25 — 
+рабочий регулятор 
+давления (PCV-1)','',(#32309));
 #32309 = PRODUCT_CONTEXT('',#2,'mechanical');
 #32310 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #32311 = SHAPE_REPRESENTATION('',(#11,#32312,#32410,#32508,#32606,#32704
@@ -38009,20 +38009,20 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #32810 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #32811);
 #32811 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('47',
-'РЁРїСѓРЅС‚-Р°РїРїР°СЂР°С‚ СЃ 
-РјР°РЅРѕРјРµС‚СЂРѕРј, DN25 вЂ” 
-СЂР°Р±РѕС‡РёР№ СЂРµРіСѓР»СЏС‚РѕСЂ 
-РґР°РІР»РµРЅРёСЏ (PCV-1)','',#26843,#32306,$);
+'Шпунт-аппарат с 
+манометром, DN25 — 
+рабочий регулятор 
+давления (PCV-1)','',#26843,#32306,$);
 #32812 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#32308));
 #32813 = SHAPE_DEFINITION_REPRESENTATION(#32814,#32820);
 #32814 = PRODUCT_DEFINITION_SHAPE('','',#32815);
 #32815 = PRODUCT_DEFINITION('design','',#32816,#32819);
 #32816 = PRODUCT_DEFINITION_FORMATION('','',#32817);
 #32817 = PRODUCT(
-'РўСЂРѕР№РЅРёРє DN15 РІРµС‚РєРё 
-Р°РІР°СЂРёР№РЅРѕРіРѕ РєР»Р°РїР°РЅР°',
-'РўСЂРѕР№РЅРёРє DN15 РІРµС‚РєРё 
-Р°РІР°СЂРёР№РЅРѕРіРѕ РєР»Р°РїР°РЅР°',
+'Тройник DN15 ветки 
+аварийного клапана',
+'Тройник DN15 ветки 
+аварийного клапана',
   '',(#32818));
 #32818 = PRODUCT_CONTEXT('',#2,'mechanical');
 #32819 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -38375,8 +38375,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #33123 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #33124);
 #33124 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('48',
-'РўСЂРѕР№РЅРёРє DN15 РІРµС‚РєРё 
-Р°РІР°СЂРёР№РЅРѕРіРѕ РєР»Р°РїР°РЅР°',
+'Тройник DN15 ветки 
+аварийного клапана',
   '',#26843,#32815,$);
 #33125 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#32817));
 #33126 = SHAPE_DEFINITION_REPRESENTATION(#33127,#33133);
@@ -38384,14 +38384,14 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #33128 = PRODUCT_DEFINITION('design','',#33129,#33132);
 #33129 = PRODUCT_DEFINITION_FORMATION('','',#33130);
 #33130 = PRODUCT(
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 РїРµСЂРµРґ Р°РІР°СЂРёР№РЅС‹Рј 
-РєР»Р°РїР°РЅРѕРј, 
-РѕРїР»РѕРјР±РёСЂРѕРІР°РЅ (SV-2)',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 РїРµСЂРµРґ Р°РІР°СЂРёР№РЅС‹Рј 
-РєР»Р°РїР°РЅРѕРј, 
-РѕРїР»РѕРјР±РёСЂРѕРІР°РЅ (SV-2)','',(#33131));
+'Кран шаровой кламп 
+DN15 перед аварийным 
+клапаном, 
+опломбирован (SV-2)',
+'Кран шаровой кламп 
+DN15 перед аварийным 
+клапаном, 
+опломбирован (SV-2)','',(#33131));
 #33131 = PRODUCT_CONTEXT('',#2,'mechanical');
 #33132 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #33133 = SHAPE_REPRESENTATION('',(#11,#33134,#33232,#33244,#33342),
@@ -38756,10 +38756,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #33448 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #33449);
 #33449 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('49',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 РїРµСЂРµРґ Р°РІР°СЂРёР№РЅС‹Рј 
-РєР»Р°РїР°РЅРѕРј, 
-РѕРїР»РѕРјР±РёСЂРѕРІР°РЅ (SV-2)','',#26843,
+'Кран шаровой кламп 
+DN15 перед аварийным 
+клапаном, 
+опломбирован (SV-2)','',#26843,
   #33128,$);
 #33450 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#33130));
 #33451 = SHAPE_DEFINITION_REPRESENTATION(#33452,#33458);
@@ -38767,10 +38767,10 @@ DN15 РїРµСЂРµРґ Р°РІР°СЂРёР№РЅС‹Рј
 #33453 = PRODUCT_DEFINITION('design','',#33454,#33457);
 #33454 = PRODUCT_DEFINITION_FORMATION('','',#33455);
 #33455 = PRODUCT(
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ РєСЂР°РЅРѕРј 
-Р°РІР°СЂРёР№РЅРѕРіРѕ РєР»Р°РїР°РЅР°',
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ РєСЂР°РЅРѕРј 
-Р°РІР°СЂРёР№РЅРѕРіРѕ РєР»Р°РїР°РЅР°',
+'Хомут DN15 над краном 
+аварийного клапана',
+'Хомут DN15 над краном 
+аварийного клапана',
   '',(#33456));
 #33456 = PRODUCT_CONTEXT('',#2,'mechanical');
 #33457 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -39013,8 +39013,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #33663 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #33664);
 #33664 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('50',
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ РєСЂР°РЅРѕРј 
-Р°РІР°СЂРёР№РЅРѕРіРѕ РєР»Р°РїР°РЅР°',
+'Хомут DN15 над краном 
+аварийного клапана',
   '',#26843,#33453,$);
 #33665 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#33455));
 #33666 = SHAPE_DEFINITION_REPRESENTATION(#33667,#33673);
@@ -39022,12 +39022,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #33668 = PRODUCT_DEFINITION('design','',#33669,#33672);
 #33669 = PRODUCT_DEFINITION_FORMATION('','',#33670);
 #33670 = PRODUCT(
-'РљР»Р°РїР°РЅ 
-РїСЂРµРґРѕС…СЂР°РЅРёС‚РµР»СЊРЅС‹Р№ 
-Р°РІР°СЂРёР№РЅС‹Р№ 200 РјР±Р°СЂ (PSV-1)',
-'РљР»Р°РїР°РЅ 
-РїСЂРµРґРѕС…СЂР°РЅРёС‚РµР»СЊРЅС‹Р№ 
-Р°РІР°СЂРёР№РЅС‹Р№ 200 РјР±Р°СЂ (PSV-1)','',(
+'Клапан 
+предохранительный 
+аварийный 200 мбар (PSV-1)',
+'Клапан 
+предохранительный 
+аварийный 200 мбар (PSV-1)','',(
     #33671));
 #33671 = PRODUCT_CONTEXT('',#2,'mechanical');
 #33672 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -39270,9 +39270,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #33878 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #33879);
 #33879 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('51',
-'РљР»Р°РїР°РЅ 
-РїСЂРµРґРѕС…СЂР°РЅРёС‚РµР»СЊРЅС‹Р№ 
-Р°РІР°СЂРёР№РЅС‹Р№ 200 РјР±Р°СЂ (PSV-1)','',
+'Клапан 
+предохранительный 
+аварийный 200 мбар (PSV-1)','',
   #26843,#33668,$);
 #33880 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#33670));
 #33881 = SHAPE_DEFINITION_REPRESENTATION(#33882,#33888);
@@ -39280,10 +39280,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #33883 = PRODUCT_DEFINITION('design','',#33884,#33887);
 #33884 = PRODUCT_DEFINITION_FORMATION('','',#33885);
 #33885 = PRODUCT(
-'РўСЂРѕР№РЅРёРє DN15 РІРµС‚РєРё 
-СЃР±СЂРѕСЃР° РЅР° Р°С‚РјРѕСЃС„РµСЂСѓ',
-'РўСЂРѕР№РЅРёРє DN15 РІРµС‚РєРё 
-СЃР±СЂРѕСЃР° РЅР° Р°С‚РјРѕСЃС„РµСЂСѓ',
+'Тройник DN15 ветки 
+сброса на атмосферу',
+'Тройник DN15 ветки 
+сброса на атмосферу',
   '',(#33886));
 #33886 = PRODUCT_CONTEXT('',#2,'mechanical');
 #33887 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -39636,8 +39636,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #34191 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #34192);
 #34192 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('52',
-'РўСЂРѕР№РЅРёРє DN15 РІРµС‚РєРё 
-СЃР±СЂРѕСЃР° РЅР° Р°С‚РјРѕСЃС„РµСЂСѓ',
+'Тройник DN15 ветки 
+сброса на атмосферу',
   '',#26843,#33883,$);
 #34193 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#33885));
 #34194 = SHAPE_DEFINITION_REPRESENTATION(#34195,#34201);
@@ -39645,12 +39645,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #34196 = PRODUCT_DEFINITION('design','',#34197,#34200);
 #34197 = PRODUCT_DEFINITION_FORMATION('','',#34198);
 #34198 = PRODUCT(
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 вЂ” СЃР±СЂРѕСЃ РЅР° 
-Р°С‚РјРѕСЃС„РµСЂСѓ (SV-3)',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 вЂ” СЃР±СЂРѕСЃ РЅР° 
-Р°С‚РјРѕСЃС„РµСЂСѓ (SV-3)','',(#34199));
+'Кран шаровой кламп 
+DN15 — сброс на 
+атмосферу (SV-3)',
+'Кран шаровой кламп 
+DN15 — сброс на 
+атмосферу (SV-3)','',(#34199));
 #34199 = PRODUCT_CONTEXT('',#2,'mechanical');
 #34200 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #34201 = SHAPE_REPRESENTATION('',(#11,#34202,#34300,#34312,#34410),
@@ -40015,19 +40015,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #34516 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #34517);
 #34517 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('53',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 вЂ” СЃР±СЂРѕСЃ РЅР° 
-Р°С‚РјРѕСЃС„РµСЂСѓ (SV-3)','',#26843,#34196,$);
+'Кран шаровой кламп 
+DN15 — сброс на 
+атмосферу (SV-3)','',#26843,#34196,$);
 #34518 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#34198));
 #34519 = SHAPE_DEFINITION_REPRESENTATION(#34520,#34526);
 #34520 = PRODUCT_DEFINITION_SHAPE('','',#34521);
 #34521 = PRODUCT_DEFINITION('design','',#34522,#34525);
 #34522 = PRODUCT_DEFINITION_FORMATION('','',#34523);
 #34523 = PRODUCT(
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ РєСЂР°РЅРѕРј 
-СЃР±СЂРѕСЃР° РЅР° Р°С‚РјРѕСЃС„РµСЂСѓ',
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ РєСЂР°РЅРѕРј 
-СЃР±СЂРѕСЃР° РЅР° Р°С‚РјРѕСЃС„РµСЂСѓ',
+'Хомут DN15 над краном 
+сброса на атмосферу',
+'Хомут DN15 над краном 
+сброса на атмосферу',
   '',(#34524));
 #34524 = PRODUCT_CONTEXT('',#2,'mechanical');
 #34525 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -40270,8 +40270,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #34731 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #34732);
 #34732 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('54',
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ РєСЂР°РЅРѕРј 
-СЃР±СЂРѕСЃР° РЅР° Р°С‚РјРѕСЃС„РµСЂСѓ',
+'Хомут DN15 над краном 
+сброса на атмосферу',
   '',#26843,#34521,$);
 #34733 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#34523));
 #34734 = SHAPE_DEFINITION_REPRESENTATION(#34735,#34741);
@@ -40279,12 +40279,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #34736 = PRODUCT_DEFINITION('design','',#34737,#34740);
 #34737 = PRODUCT_DEFINITION_FORMATION('','',#34738);
 #34738 = PRODUCT(
-'РџРµСЂРµС…РѕРґРЅРёРє РєР»Р°РјРї DN15 
--> С‘Р»РѕС‡РєР° (СЃР±СЂРѕСЃ РЅР° 
-Р°С‚РјРѕСЃС„РµСЂСѓ)',
-'РџРµСЂРµС…РѕРґРЅРёРє РєР»Р°РјРї DN15 
--> С‘Р»РѕС‡РєР° (СЃР±СЂРѕСЃ РЅР° 
-Р°С‚РјРѕСЃС„РµСЂСѓ)','',(#34739));
+'Переходник кламп DN15 
+-> ёлочка (сброс на 
+атмосферу)',
+'Переходник кламп DN15 
+-> ёлочка (сброс на 
+атмосферу)','',(#34739));
 #34739 = PRODUCT_CONTEXT('',#2,'mechanical');
 #34740 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #34741 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#34742),#34840);
@@ -40417,19 +40417,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #34848 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #34849);
 #34849 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('55',
-'РџРµСЂРµС…РѕРґРЅРёРє РєР»Р°РјРї DN15 
--> С‘Р»РѕС‡РєР° (СЃР±СЂРѕСЃ РЅР° 
-Р°С‚РјРѕСЃС„РµСЂСѓ)','',#26843,#34736,$);
+'Переходник кламп DN15 
+-> ёлочка (сброс на 
+атмосферу)','',#26843,#34736,$);
 #34850 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#34738));
 #34851 = SHAPE_DEFINITION_REPRESENTATION(#34852,#34858);
 #34852 = PRODUCT_DEFINITION_SHAPE('','',#34853);
 #34853 = PRODUCT_DEFINITION('design','',#34854,#34857);
 #34854 = PRODUCT_DEFINITION_FORMATION('','',#34855);
 #34855 = PRODUCT(
-'РЁР»Р°РЅРі СЃР±СЂРѕСЃР° РЅР° 
-Р°С‚РјРѕСЃС„РµСЂСѓ РІ РІС‹С‚СЏР¶РєСѓ',
-'РЁР»Р°РЅРі СЃР±СЂРѕСЃР° РЅР° 
-Р°С‚РјРѕСЃС„РµСЂСѓ РІ РІС‹С‚СЏР¶РєСѓ',
+'Шланг сброса на 
+атмосферу в вытяжку',
+'Шланг сброса на 
+атмосферу в вытяжку',
   '',(#34856));
 #34856 = PRODUCT_CONTEXT('',#2,'mechanical');
 #34857 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -40562,8 +40562,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #34965 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #34966);
 #34966 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('56',
-'РЁР»Р°РЅРі СЃР±СЂРѕСЃР° РЅР° 
-Р°С‚РјРѕСЃС„РµСЂСѓ РІ РІС‹С‚СЏР¶РєСѓ',
+'Шланг сброса на 
+атмосферу в вытяжку',
   '',#26843,#34853,$);
 #34967 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#34855));
 #34968 = SHAPE_DEFINITION_REPRESENTATION(#34969,#34975);
@@ -40571,12 +40571,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #34970 = PRODUCT_DEFINITION('design','',#34971,#34974);
 #34971 = PRODUCT_DEFINITION_FORMATION('','',#34972);
 #34972 = PRODUCT(
-'РћС‚РІРѕРґ 90В° DN15 РЅР° РєРѕРЅС†Рµ 
-РєРѕР»Р»РµРєС‚РѕСЂР° (РІРµС‚РєР° 
-РІР°РєСѓСѓРјР°)',
-'РћС‚РІРѕРґ 90В° DN15 РЅР° РєРѕРЅС†Рµ 
-РєРѕР»Р»РµРєС‚РѕСЂР° (РІРµС‚РєР° 
-РІР°РєСѓСѓРјР°)','',(#34973));
+'Отвод 90° DN15 на конце 
+коллектора (ветка 
+вакуума)',
+'Отвод 90° DN15 на конце 
+коллектора (ветка 
+вакуума)','',(#34973));
 #34973 = PRODUCT_CONTEXT('',#2,'mechanical');
 #34974 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #34975 = SHAPE_REPRESENTATION('',(#11,#34976,#35074,#35172),#35270);
@@ -40928,19 +40928,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #35278 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #35279);
 #35279 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('57',
-'РћС‚РІРѕРґ 90В° DN15 РЅР° РєРѕРЅС†Рµ 
-РєРѕР»Р»РµРєС‚РѕСЂР° (РІРµС‚РєР° 
-РІР°РєСѓСѓРјР°)','',#26843,#34970,$);
+'Отвод 90° DN15 на конце 
+коллектора (ветка 
+вакуума)','',#26843,#34970,$);
 #35280 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#34972));
 #35281 = SHAPE_DEFINITION_REPRESENTATION(#35282,#35288);
 #35282 = PRODUCT_DEFINITION_SHAPE('','',#35283);
 #35283 = PRODUCT_DEFINITION('design','',#35284,#35287);
 #35284 = PRODUCT_DEFINITION_FORMATION('','',#35285);
 #35285 = PRODUCT(
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 вЂ” РІР°РєСѓСѓРј (VV-1)',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 вЂ” РІР°РєСѓСѓРј (VV-1)','',(#35286));
+'Кран шаровой кламп 
+DN15 — вакуум (VV-1)',
+'Кран шаровой кламп 
+DN15 — вакуум (VV-1)','',(#35286));
 #35286 = PRODUCT_CONTEXT('',#2,'mechanical');
 #35287 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #35288 = SHAPE_REPRESENTATION('',(#11,#35289,#35387,#35399,#35497),
@@ -41305,18 +41305,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #35603 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #35604);
 #35604 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('58',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 вЂ” РІР°РєСѓСѓРј (VV-1)','',#26843,#35283,$);
+'Кран шаровой кламп 
+DN15 — вакуум (VV-1)','',#26843,#35283,$);
 #35605 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#35285));
 #35606 = SHAPE_DEFINITION_REPRESENTATION(#35607,#35613);
 #35607 = PRODUCT_DEFINITION_SHAPE('','',#35608);
 #35608 = PRODUCT_DEFINITION('design','',#35609,#35612);
 #35609 = PRODUCT_DEFINITION_FORMATION('','',#35610);
 #35610 = PRODUCT(
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ РєСЂР°РЅРѕРј 
-РІР°РєСѓСѓРјР°',
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ РєСЂР°РЅРѕРј 
-РІР°РєСѓСѓРјР°','',(#35611));
+'Хомут DN15 над краном 
+вакуума',
+'Хомут DN15 над краном 
+вакуума','',(#35611));
 #35611 = PRODUCT_CONTEXT('',#2,'mechanical');
 #35612 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #35613 = SHAPE_REPRESENTATION('',(#11,#35614,#35712),#35810);
@@ -41558,20 +41558,20 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #35818 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #35819);
 #35819 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('59',
-'РҐРѕРјСѓС‚ DN15 РЅР°Рґ РєСЂР°РЅРѕРј 
-РІР°РєСѓСѓРјР°','',#26843,#35608,$);
+'Хомут DN15 над краном 
+вакуума','',#26843,#35608,$);
 #35820 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#35610));
 #35821 = SHAPE_DEFINITION_REPRESENTATION(#35822,#35828);
 #35822 = PRODUCT_DEFINITION_SHAPE('','',#35823);
 #35823 = PRODUCT_DEFINITION('design','',#35824,#35827);
 #35824 = PRODUCT_DEFINITION_FORMATION('','',#35825);
 #35825 = PRODUCT(
-'РџРµСЂРµС…РѕРґРЅРёРє РєР»Р°РјРї DN15 
--> С‘Р»РѕС‡РєР° РїРѕРґ 
-РІР°РєСѓСѓРјРЅС‹Р№ С€Р»Р°РЅРі',
-'РџРµСЂРµС…РѕРґРЅРёРє РєР»Р°РјРї DN15 
--> С‘Р»РѕС‡РєР° РїРѕРґ 
-РІР°РєСѓСѓРјРЅС‹Р№ С€Р»Р°РЅРі','',(#35826));
+'Переходник кламп DN15 
+-> ёлочка под 
+вакуумный шланг',
+'Переходник кламп DN15 
+-> ёлочка под 
+вакуумный шланг','',(#35826));
 #35826 = PRODUCT_CONTEXT('',#2,'mechanical');
 #35827 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #35828 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#35829),#35927);
@@ -41704,9 +41704,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #35935 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #35936);
 #35936 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('60',
-'РџРµСЂРµС…РѕРґРЅРёРє РєР»Р°РјРї DN15 
--> С‘Р»РѕС‡РєР° РїРѕРґ 
-РІР°РєСѓСѓРјРЅС‹Р№ С€Р»Р°РЅРі','',#26843,
+'Переходник кламп DN15 
+-> ёлочка под 
+вакуумный шланг','',#26843,
   #35823,$);
 #35937 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#35825));
 #35938 = SHAPE_DEFINITION_REPRESENTATION(#35939,#35945);
@@ -41714,12 +41714,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #35940 = PRODUCT_DEFINITION('design','',#35941,#35944);
 #35941 = PRODUCT_DEFINITION_FORMATION('','',#35942);
 #35942 = PRODUCT(
-'РЈРіРѕР»РєРё Рё РєРѕРЅСЃРѕР»Рё 
-РєСЂРµРїР»РµРЅРёСЏ РіСЂРµР±С‘РЅРєРё 
-Рє СЂР°РјРµ',
-'РЈРіРѕР»РєРё Рё РєРѕРЅСЃРѕР»Рё 
-РєСЂРµРїР»РµРЅРёСЏ РіСЂРµР±С‘РЅРєРё 
-Рє СЂР°РјРµ','',(#35943));
+'Уголки и консоли 
+крепления гребёнки 
+к раме',
+'Уголки и консоли 
+крепления гребёнки 
+к раме','',(#35943));
 #35943 = PRODUCT_CONTEXT('',#2,'mechanical');
 #35944 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #35945 = SHAPE_REPRESENTATION('',(#11,#35946,#36276,#36606,#36936,#37266
@@ -44422,23 +44422,23 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #38298 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #38299);
 #38299 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('61',
-'РЈРіРѕР»РєРё Рё РєРѕРЅСЃРѕР»Рё 
-РєСЂРµРїР»РµРЅРёСЏ РіСЂРµР±С‘РЅРєРё 
-Рє СЂР°РјРµ','',#26843,#35940,$);
+'Уголки и консоли 
+крепления гребёнки 
+к раме','',#26843,#35940,$);
 #38300 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#35942));
 #38301 = SHAPE_DEFINITION_REPRESENTATION(#38302,#38308);
 #38302 = PRODUCT_DEFINITION_SHAPE('','',#38303);
 #38303 = PRODUCT_DEFINITION('design','',#38304,#38307);
 #38304 = PRODUCT_DEFINITION_FORMATION('','',#38305);
 #38305 = PRODUCT(
-'РўСЂСѓР±РєР° СЃР±СЂРѕСЃР° РѕС‚ 
-С€РїСѓРЅС‚-Р°РїРїР°СЂР°С‚Р° Рё 
-Р°РІР°СЂРёР№РЅРѕРіРѕ РєР»Р°РїР°РЅР° 
-Рє Р±Р°СЂР±РѕС‚С‘СЂСѓ',
-'РўСЂСѓР±РєР° СЃР±СЂРѕСЃР° РѕС‚ 
-С€РїСѓРЅС‚-Р°РїРїР°СЂР°С‚Р° Рё 
-Р°РІР°СЂРёР№РЅРѕРіРѕ РєР»Р°РїР°РЅР° 
-Рє Р±Р°СЂР±РѕС‚С‘СЂСѓ','',(#38306));
+'Трубка сброса от 
+шпунт-аппарата и 
+аварийного клапана 
+к барботёру',
+'Трубка сброса от 
+шпунт-аппарата и 
+аварийного клапана 
+к барботёру','',(#38306));
 #38306 = PRODUCT_CONTEXT('',#2,'mechanical');
 #38307 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #38308 = SHAPE_REPRESENTATION('',(#11,#38309,#38407,#38505,#38603,#38701
@@ -45047,22 +45047,22 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #38843 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #38844);
 #38844 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('62',
-'РўСЂСѓР±РєР° СЃР±СЂРѕСЃР° РѕС‚ 
-С€РїСѓРЅС‚-Р°РїРїР°СЂР°С‚Р° Рё 
-Р°РІР°СЂРёР№РЅРѕРіРѕ РєР»Р°РїР°РЅР° 
-Рє Р±Р°СЂР±РѕС‚С‘СЂСѓ','',#26843,#38303,$);
+'Трубка сброса от 
+шпунт-аппарата и 
+аварийного клапана 
+к барботёру','',#26843,#38303,$);
 #38845 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#38305));
 #38846 = SHAPE_DEFINITION_REPRESENTATION(#38847,#38853);
 #38847 = PRODUCT_DEFINITION_SHAPE('','',#38848);
 #38848 = PRODUCT_DEFINITION('design','',#38849,#38852);
 #38849 = PRODUCT_DEFINITION_FORMATION('','',#38850);
 #38850 = PRODUCT(
-'Р‘Р°СЂР±РѕС‚С‘СЂ-РёРЅРґРёРєР°С‚РѕСЂ 
-СЃ РјР°СЃР»РѕРј, РїСѓР·С‹СЂСЊРєРё 
-РІРёРґРЅС‹ (BU-1)',
-'Р‘Р°СЂР±РѕС‚С‘СЂ-РёРЅРґРёРєР°С‚РѕСЂ 
-СЃ РјР°СЃР»РѕРј, РїСѓР·С‹СЂСЊРєРё 
-РІРёРґРЅС‹ (BU-1)','',(#38851));
+'Барботёр-индикатор 
+с маслом, пузырьки 
+видны (BU-1)',
+'Барботёр-индикатор 
+с маслом, пузырьки 
+видны (BU-1)','',(#38851));
 #38851 = PRODUCT_CONTEXT('',#2,'mechanical');
 #38852 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #38853 = SHAPE_REPRESENTATION('',(#11,#38854,#38952),#39050);
@@ -45304,19 +45304,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #39058 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #39059);
 #39059 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('63',
-'Р‘Р°СЂР±РѕС‚С‘СЂ-РёРЅРґРёРєР°С‚РѕСЂ 
-СЃ РјР°СЃР»РѕРј, РїСѓР·С‹СЂСЊРєРё 
-РІРёРґРЅС‹ (BU-1)','',#26843,#38848,$);
+'Барботёр-индикатор 
+с маслом, пузырьки 
+видны (BU-1)','',#26843,#38848,$);
 #39060 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#38850));
 #39061 = SHAPE_DEFINITION_REPRESENTATION(#39062,#39068);
 #39062 = PRODUCT_DEFINITION_SHAPE('','',#39063);
 #39063 = PRODUCT_DEFINITION('design','',#39064,#39067);
 #39064 = PRODUCT_DEFINITION_FORMATION('','',#39065);
 #39065 = PRODUCT(
-'РџРѕРґСЃС‚Р°РІРєР° 
-Р±Р°СЂР±РѕС‚С‘СЂР°',
-'РџРѕРґСЃС‚Р°РІРєР° 
-Р±Р°СЂР±РѕС‚С‘СЂР°','',(#39066));
+'Подставка 
+барботёра',
+'Подставка 
+барботёра','',(#39066));
 #39066 = PRODUCT_CONTEXT('',#2,'mechanical');
 #39067 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #39068 = SHAPE_REPRESENTATION('',(#11,#39069,#39399),#39497);
@@ -45826,18 +45826,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #39505 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #39506);
 #39506 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('64',
-'РџРѕРґСЃС‚Р°РІРєР° 
-Р±Р°СЂР±РѕС‚С‘СЂР°','',#26843,#39063,$);
+'Подставка 
+барботёра','',#26843,#39063,$);
 #39507 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#39065));
 #39508 = SHAPE_DEFINITION_REPRESENTATION(#39509,#39515);
 #39509 = PRODUCT_DEFINITION_SHAPE('','',#39510);
 #39510 = PRODUCT_DEFINITION('design','',#39511,#39514);
 #39511 = PRODUCT_DEFINITION_FORMATION('','',#39512);
 #39512 = PRODUCT(
-'Р‘СѓС„РµСЂРЅР°СЏ С‘РјРєРѕСЃС‚СЊ РѕС‚ 
-РїРѕРґСЃРѕСЃР° DN100, 300 РјРј (T-1)',
-'Р‘СѓС„РµСЂРЅР°СЏ С‘РјРєРѕСЃС‚СЊ РѕС‚ 
-РїРѕРґСЃРѕСЃР° DN100, 300 РјРј (T-1)','',(#39513));
+'Буферная ёмкость от 
+подсоса DN100, 300 мм (T-1)',
+'Буферная ёмкость от 
+подсоса DN100, 300 мм (T-1)','',(#39513));
 #39513 = PRODUCT_CONTEXT('',#2,'mechanical');
 #39514 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #39515 = SHAPE_REPRESENTATION('',(#11,#39516,#39614,#39712,#39810),
@@ -46300,8 +46300,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #39916 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #39917);
 #39917 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('65',
-'Р‘СѓС„РµСЂРЅР°СЏ С‘РјРєРѕСЃС‚СЊ РѕС‚ 
-РїРѕРґСЃРѕСЃР° DN100, 300 РјРј (T-1)','',#26843,#39510
+'Буферная ёмкость от 
+подсоса DN100, 300 мм (T-1)','',#26843,#39510
   ,$);
 #39918 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#39512));
 #39919 = SHAPE_DEFINITION_REPRESENTATION(#39920,#39926);
@@ -46309,10 +46309,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #39921 = PRODUCT_DEFINITION('design','',#39922,#39925);
 #39922 = PRODUCT_DEFINITION_FORMATION('','',#39923);
 #39923 = PRODUCT(
-'РџРѕРґСЃС‚Р°РІРєР° Р±СѓС„РµСЂРЅРѕР№ 
-С‘РјРєРѕСЃС‚Рё',
-'РџРѕРґСЃС‚Р°РІРєР° Р±СѓС„РµСЂРЅРѕР№ 
-С‘РјРєРѕСЃС‚Рё','',(#39924));
+'Подставка буферной 
+ёмкости',
+'Подставка буферной 
+ёмкости','',(#39924));
 #39924 = PRODUCT_CONTEXT('',#2,'mechanical');
 #39925 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #39926 = SHAPE_REPRESENTATION('',(#11,#39927,#40257),#40355);
@@ -46822,18 +46822,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #40363 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #40364);
 #40364 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('66',
-'РџРѕРґСЃС‚Р°РІРєР° Р±СѓС„РµСЂРЅРѕР№ 
-С‘РјРєРѕСЃС‚Рё','',#26843,#39921,$);
+'Подставка буферной 
+ёмкости','',#26843,#39921,$);
 #40365 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#39923));
 #40366 = SHAPE_DEFINITION_REPRESENTATION(#40367,#40373);
 #40367 = PRODUCT_DEFINITION_SHAPE('','',#40368);
 #40368 = PRODUCT_DEFINITION('design','',#40369,#40372);
 #40369 = PRODUCT_DEFINITION_FORMATION('','',#40370);
 #40370 = PRODUCT(
-'РўСЂСѓР±РєР° РѕС‚ Р±Р°СЂР±РѕС‚С‘СЂР° 
-Рє Р±СѓС„РµСЂРЅРѕР№ С‘РјРєРѕСЃС‚Рё',
-'РўСЂСѓР±РєР° РѕС‚ Р±Р°СЂР±РѕС‚С‘СЂР° 
-Рє Р±СѓС„РµСЂРЅРѕР№ С‘РјРєРѕСЃС‚Рё','',(
+'Трубка от барботёра 
+к буферной ёмкости',
+'Трубка от барботёра 
+к буферной ёмкости','',(
     #40371));
 #40371 = PRODUCT_CONTEXT('',#2,'mechanical');
 #40372 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -47211,8 +47211,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #40700 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #40701);
 #40701 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('67',
-'РўСЂСѓР±РєР° РѕС‚ Р±Р°СЂР±РѕС‚С‘СЂР° 
-Рє Р±СѓС„РµСЂРЅРѕР№ С‘РјРєРѕСЃС‚Рё','',
+'Трубка от барботёра 
+к буферной ёмкости','',
   #26843,#40368,$);
 #40702 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#40370));
 #40703 = SHAPE_DEFINITION_REPRESENTATION(#40704,#40710);
@@ -47220,10 +47220,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #40705 = PRODUCT_DEFINITION('design','',#40706,#40709);
 #40706 = PRODUCT_DEFINITION_FORMATION('','',#40707);
 #40707 = PRODUCT(
-'РЎРєСЂСѓР±Р±РµСЂ 20 Р», СЂР°СЃС‚РІРѕСЂ 
-Р»РёРјРѕРЅРЅРѕР№ РєРёСЃР»РѕС‚С‹ (S-1)',
-'РЎРєСЂСѓР±Р±РµСЂ 20 Р», СЂР°СЃС‚РІРѕСЂ 
-Р»РёРјРѕРЅРЅРѕР№ РєРёСЃР»РѕС‚С‹ (S-1)','',
+'Скруббер 20 л, раствор 
+лимонной кислоты (S-1)',
+'Скруббер 20 л, раствор 
+лимонной кислоты (S-1)','',
   (#40708));
 #40708 = PRODUCT_CONTEXT('',#2,'mechanical');
 #40709 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -47734,8 +47734,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #41147 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #41148);
 #41148 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('68',
-'РЎРєСЂСѓР±Р±РµСЂ 20 Р», СЂР°СЃС‚РІРѕСЂ 
-Р»РёРјРѕРЅРЅРѕР№ РєРёСЃР»РѕС‚С‹ (S-1)','',
+'Скруббер 20 л, раствор 
+лимонной кислоты (S-1)','',
   #26843,#40705,$);
 #41149 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#40707));
 #41150 = SHAPE_DEFINITION_REPRESENTATION(#41151,#41157);
@@ -47743,10 +47743,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #41152 = PRODUCT_DEFINITION('design','',#41153,#41156);
 #41153 = PRODUCT_DEFINITION_FORMATION('','',#41154);
 #41154 = PRODUCT(
-'РўСЂСѓР±РєР° РѕС‚ Р±СѓС„РµСЂРЅРѕР№ 
-С‘РјРєРѕСЃС‚Рё РІ СЃРєСЂСѓР±Р±РµСЂ',
-'РўСЂСѓР±РєР° РѕС‚ Р±СѓС„РµСЂРЅРѕР№ 
-С‘РјРєРѕСЃС‚Рё РІ СЃРєСЂСѓР±Р±РµСЂ','',(
+'Трубка от буферной 
+ёмкости в скруббер',
+'Трубка от буферной 
+ёмкости в скруббер','',(
     #41155));
 #41155 = PRODUCT_CONTEXT('',#2,'mechanical');
 #41156 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -48124,8 +48124,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #41484 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #41485);
 #41485 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('69',
-'РўСЂСѓР±РєР° РѕС‚ Р±СѓС„РµСЂРЅРѕР№ 
-С‘РјРєРѕСЃС‚Рё РІ СЃРєСЂСѓР±Р±РµСЂ','',
+'Трубка от буферной 
+ёмкости в скруббер','',
   #26843,#41152,$);
 #41486 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#41154));
 #41487 = SHAPE_DEFINITION_REPRESENTATION(#41488,#41494);
@@ -48133,16 +48133,16 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #41489 = PRODUCT_DEFINITION('design','',#41490,#41493);
 #41490 = PRODUCT_DEFINITION_FORMATION('','',#41491);
 #41491 = PRODUCT(
-'РЈР·Р»С‹ РєСЂС‹С€РєРё 
-СЂРµР°РєС‚РѕСЂР°: 
-С‚РµСЂРјРѕРіРёР»СЊР·Р°, 
-РґРѕР·РёСЂРѕРІР°РЅРёРµ, СЂРµР·РµСЂРІ, 
-РјР°РЅРѕРјРµС‚СЂ, РІРІРѕРґ РіР°Р·Р°',
-'РЈР·Р»С‹ РєСЂС‹С€РєРё 
-СЂРµР°РєС‚РѕСЂР°: 
-С‚РµСЂРјРѕРіРёР»СЊР·Р°, 
-РґРѕР·РёСЂРѕРІР°РЅРёРµ, СЂРµР·РµСЂРІ, 
-РјР°РЅРѕРјРµС‚СЂ, РІРІРѕРґ РіР°Р·Р°','',
+'Узлы крышки 
+реактора: 
+термогильза, 
+дозирование, резерв, 
+манометр, ввод газа',
+'Узлы крышки 
+реактора: 
+термогильза, 
+дозирование, резерв, 
+манометр, ввод газа','',
   (#41492));
 #41492 = PRODUCT_CONTEXT('',#2,'mechanical');
 #41493 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -48216,9 +48216,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #41552 = PRODUCT_DEFINITION('design','',#41553,#41556);
 #41553 = PRODUCT_DEFINITION_FORMATION('','',#41554);
 #41554 = PRODUCT(
-'РҐРѕРјСѓС‚ DN25 С‚РµСЂРјРѕРіРёР»СЊР·С‹'
+'Хомут DN25 термогильзы'
   ,
-'РҐРѕРјСѓС‚ DN25 С‚РµСЂРјРѕРіРёР»СЊР·С‹'
+'Хомут DN25 термогильзы'
   ,'',(#41555));
 #41555 = PRODUCT_CONTEXT('',#2,'mechanical');
 #41556 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -48461,7 +48461,7 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #41762 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #41763);
 #41763 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('71',
-'РҐРѕРјСѓС‚ DN25 С‚РµСЂРјРѕРіРёР»СЊР·С‹'
+'Хомут DN25 термогильзы'
   ,'',#41489,#41552,$);
 #41764 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#41554));
 #41765 = SHAPE_DEFINITION_REPRESENTATION(#41766,#41772);
@@ -48469,10 +48469,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #41767 = PRODUCT_DEFINITION('design','',#41768,#41771);
 #41768 = PRODUCT_DEFINITION_FORMATION('','',#41769);
 #41769 = PRODUCT(
-'Р—Р°РіР»СѓС€РєР° DN25 СЃ 
-С‚РµСЂРјРѕРіРёР»СЊР·РѕР№ D8x500 (P2)',
-'Р—Р°РіР»СѓС€РєР° DN25 СЃ 
-С‚РµСЂРјРѕРіРёР»СЊР·РѕР№ D8x500 (P2)','',(
+'Заглушка DN25 с 
+термогильзой D8x500 (P2)',
+'Заглушка DN25 с 
+термогильзой D8x500 (P2)','',(
     #41770));
 #41770 = PRODUCT_CONTEXT('',#2,'mechanical');
 #41771 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -48715,8 +48715,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #41977 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #41978);
 #41978 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('72',
-'Р—Р°РіР»СѓС€РєР° DN25 СЃ 
-С‚РµСЂРјРѕРіРёР»СЊР·РѕР№ D8x500 (P2)','',
+'Заглушка DN25 с 
+термогильзой D8x500 (P2)','',
   #41489,#41767,$);
 #41979 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#41769));
 #41980 = SHAPE_DEFINITION_REPRESENTATION(#41981,#41987);
@@ -48724,10 +48724,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #41982 = PRODUCT_DEFINITION('design','',#41983,#41986);
 #41983 = PRODUCT_DEFINITION_FORMATION('','',#41984);
 #41984 = PRODUCT(
-'Р”Р°С‚С‡РёРє С‚РµРјРїРµСЂР°С‚СѓСЂС‹ 
-Pt100 РІ С‚РµСЂРјРѕРіРёР»СЊР·Рµ (TI)',
-'Р”Р°С‚С‡РёРє С‚РµРјРїРµСЂР°С‚СѓСЂС‹ 
-Pt100 РІ С‚РµСЂРјРѕРіРёР»СЊР·Рµ (TI)','',(#41985
+'Датчик температуры 
+Pt100 в термогильзе (TI)',
+'Датчик температуры 
+Pt100 в термогильзе (TI)','',(#41985
     ));
 #41985 = PRODUCT_CONTEXT('',#2,'mechanical');
 #41986 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -48860,8 +48860,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #42094 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #42095);
 #42095 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('73',
-'Р”Р°С‚С‡РёРє С‚РµРјРїРµСЂР°С‚СѓСЂС‹ 
-Pt100 РІ С‚РµСЂРјРѕРіРёР»СЊР·Рµ (TI)','',#41489,
+'Датчик температуры 
+Pt100 в термогильзе (TI)','',#41489,
   #41982,$);
 #42096 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#41984));
 #42097 = SHAPE_DEFINITION_REPRESENTATION(#42098,#42104);
@@ -48869,12 +48869,12 @@ Pt100 РІ С‚РµСЂРјРѕРіРёР»СЊР·Рµ (TI)','',#41489,
 #42099 = PRODUCT_DEFINITION('design','',#42100,#42103);
 #42100 = PRODUCT_DEFINITION_FORMATION('','',#42101);
 #42101 = PRODUCT(
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 РЅР° СѓР·Р»Рµ 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ (V-P3)',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 РЅР° СѓР·Р»Рµ 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ (V-P3)','',(#42102));
+'Кран шаровой кламп 
+DN15 на узле 
+дозирования (V-P3)',
+'Кран шаровой кламп 
+DN15 на узле 
+дозирования (V-P3)','',(#42102));
 #42102 = PRODUCT_CONTEXT('',#2,'mechanical');
 #42103 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #42104 = SHAPE_REPRESENTATION('',(#11,#42105,#42203,#42215,#42313),
@@ -49239,9 +49239,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #42419 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #42420);
 #42420 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('74',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ РєР»Р°РјРї 
-DN15 РЅР° СѓР·Р»Рµ 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ (V-P3)','',#41489,#42099,$
+'Кран шаровой кламп 
+DN15 на узле 
+дозирования (V-P3)','',#41489,#42099,$
   );
 #42421 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#42101));
 #42422 = SHAPE_DEFINITION_REPRESENTATION(#42423,#42429);
@@ -49249,14 +49249,14 @@ DN15 РЅР° СѓР·Р»Рµ
 #42424 = PRODUCT_DEFINITION('design','',#42425,#42428);
 #42425 = PRODUCT_DEFINITION_FORMATION('','',#42426);
 #42426 = PRODUCT(
-'РЈР·РµР» РґРѕР·РёСЂРѕРІР°РЅРёСЏ: 
-РїРµСЂРµС…РѕРґ DN25/DN15, С‚СЂРѕР№РЅРёРє 
-СЃ СЃРµРїС‚РѕР№, Р·Р°РіР»СѓС€РєР° СЃ 
-РІРІРѕРґРѕРј 1/4" (P3)',
-'РЈР·РµР» РґРѕР·РёСЂРѕРІР°РЅРёСЏ: 
-РїРµСЂРµС…РѕРґ DN25/DN15, С‚СЂРѕР№РЅРёРє 
-СЃ СЃРµРїС‚РѕР№, Р·Р°РіР»СѓС€РєР° СЃ 
-РІРІРѕРґРѕРј 1/4" (P3)','',(#42427));
+'Узел дозирования: 
+переход DN25/DN15, тройник 
+с септой, заглушка с 
+вводом 1/4" (P3)',
+'Узел дозирования: 
+переход DN25/DN15, тройник 
+с септой, заглушка с 
+вводом 1/4" (P3)','',(#42427));
 #42427 = PRODUCT_CONTEXT('',#2,'mechanical');
 #42428 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #42429 = SHAPE_REPRESENTATION('',(#11,#42430,#42528,#42626,#42724,#42822
@@ -50489,20 +50489,20 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #43516 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #43517);
 #43517 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('75',
-'РЈР·РµР» РґРѕР·РёСЂРѕРІР°РЅРёСЏ: 
-РїРµСЂРµС…РѕРґ DN25/DN15, С‚СЂРѕР№РЅРёРє 
-СЃ СЃРµРїС‚РѕР№, Р·Р°РіР»СѓС€РєР° СЃ 
-РІРІРѕРґРѕРј 1/4" (P3)','',#41489,#42424,$);
+'Узел дозирования: 
+переход DN25/DN15, тройник 
+с септой, заглушка с 
+вводом 1/4" (P3)','',#41489,#42424,$);
 #43518 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#42426));
 #43519 = SHAPE_DEFINITION_REPRESENTATION(#43520,#43526);
 #43520 = PRODUCT_DEFINITION_SHAPE('','',#43521);
 #43521 = PRODUCT_DEFINITION('design','',#43522,#43525);
 #43522 = PRODUCT_DEFINITION_FORMATION('','',#43523);
 #43523 = PRODUCT(
-'РўСЂСѓР±РєР° РґРѕР·РёСЂРѕРІР°РЅРёСЏ 
-PTFE 1/4" РІ СЂРµР°РєС‚РѕСЂ',
-'РўСЂСѓР±РєР° РґРѕР·РёСЂРѕРІР°РЅРёСЏ 
-PTFE 1/4" РІ СЂРµР°РєС‚РѕСЂ','',(#43524));
+'Трубка дозирования 
+PTFE 1/4" в реактор',
+'Трубка дозирования 
+PTFE 1/4" в реактор','',(#43524));
 #43524 = PRODUCT_CONTEXT('',#2,'mechanical');
 #43525 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #43526 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#43527),#43625);
@@ -50634,20 +50634,20 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #43633 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #43634);
 #43634 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('76',
-'РўСЂСѓР±РєР° РґРѕР·РёСЂРѕРІР°РЅРёСЏ 
-PTFE 1/4" РІ СЂРµР°РєС‚РѕСЂ','',#41489,#43521,$);
+'Трубка дозирования 
+PTFE 1/4" в реактор','',#41489,#43521,$);
 #43635 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#43523));
 #43636 = SHAPE_DEFINITION_REPRESENTATION(#43637,#43643);
 #43637 = PRODUCT_DEFINITION_SHAPE('','',#43638);
 #43638 = PRODUCT_DEFINITION('design','',#43639,#43642);
 #43639 = PRODUCT_DEFINITION_FORMATION('','',#43640);
 #43640 = PRODUCT(
-'РЎС‚РѕСЏРє СЂРµР·РµСЂРІРЅРѕРіРѕ 
-С€С‚СѓС†РµСЂР° СЃ РіР»СѓС…РѕР№ 
-Р·Р°РіР»СѓС€РєРѕР№ DN25 (P4)',
-'РЎС‚РѕСЏРє СЂРµР·РµСЂРІРЅРѕРіРѕ 
-С€С‚СѓС†РµСЂР° СЃ РіР»СѓС…РѕР№ 
-Р·Р°РіР»СѓС€РєРѕР№ DN25 (P4)','',(#43641));
+'Стояк резервного 
+штуцера с глухой 
+заглушкой DN25 (P4)',
+'Стояк резервного 
+штуцера с глухой 
+заглушкой DN25 (P4)','',(#43641));
 #43641 = PRODUCT_CONTEXT('',#2,'mechanical');
 #43642 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #43643 = SHAPE_REPRESENTATION('',(#11,#43644,#43742,#43840,#43938,#44036
@@ -51440,21 +51440,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #44338 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #44339);
 #44339 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('77',
-'РЎС‚РѕСЏРє СЂРµР·РµСЂРІРЅРѕРіРѕ 
-С€С‚СѓС†РµСЂР° СЃ РіР»СѓС…РѕР№ 
-Р·Р°РіР»СѓС€РєРѕР№ DN25 (P4)','',#41489,#43638,$);
+'Стояк резервного 
+штуцера с глухой 
+заглушкой DN25 (P4)','',#41489,#43638,$);
 #44340 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#43640));
 #44341 = SHAPE_DEFINITION_REPRESENTATION(#44342,#44348);
 #44342 = PRODUCT_DEFINITION_SHAPE('','',#44343);
 #44343 = PRODUCT_DEFINITION('design','',#44344,#44347);
 #44344 = PRODUCT_DEFINITION_FORMATION('','',#44345);
 #44345 = PRODUCT(
-'РЎРјРѕС‚СЂРѕРІРѕР№ С„РѕРЅР°СЂСЊ 
-СЃС‚РѕСЏРєР° 
-(СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёР№)',
-'РЎРјРѕС‚СЂРѕРІРѕР№ С„РѕРЅР°СЂСЊ 
-СЃС‚РѕСЏРєР° 
-(СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёР№)','',(#44346));
+'Смотровой фонарь 
+стояка 
+(существующий)',
+'Смотровой фонарь 
+стояка 
+(существующий)','',(#44346));
 #44346 = PRODUCT_CONTEXT('',#2,'mechanical');
 #44347 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #44348 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#44349),#44447);
@@ -51586,19 +51586,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #44455 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #44456);
 #44456 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('78',
-'РЎРјРѕС‚СЂРѕРІРѕР№ С„РѕРЅР°СЂСЊ 
-СЃС‚РѕСЏРєР° 
-(СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёР№)','',#41489,#44343,$);
+'Смотровой фонарь 
+стояка 
+(существующий)','',#41489,#44343,$);
 #44457 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#44345));
 #44458 = SHAPE_DEFINITION_REPRESENTATION(#44459,#44465);
 #44459 = PRODUCT_DEFINITION_SHAPE('','',#44460);
 #44460 = PRODUCT_DEFINITION('design','',#44461,#44464);
 #44461 = PRODUCT_DEFINITION_FORMATION('','',#44462);
 #44462 = PRODUCT(
-'РњР°РЅРѕРІР°РєСѓСѓРјРјРµС‚СЂ 
-СЂРµР°РєС‚РѕСЂР° (PI-1)',
-'РњР°РЅРѕРІР°РєСѓСѓРјРјРµС‚СЂ 
-СЂРµР°РєС‚РѕСЂР° (PI-1)','',(#44463));
+'Мановакуумметр 
+реактора (PI-1)',
+'Мановакуумметр 
+реактора (PI-1)','',(#44463));
 #44463 = PRODUCT_CONTEXT('',#2,'mechanical');
 #44464 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #44465 = SHAPE_REPRESENTATION('',(#11,#44466,#44564,#44662),#44760);
@@ -51950,18 +51950,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #44768 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #44769);
 #44769 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('79',
-'РњР°РЅРѕРІР°РєСѓСѓРјРјРµС‚СЂ 
-СЂРµР°РєС‚РѕСЂР° (PI-1)','',#41489,#44460,$);
+'Мановакуумметр 
+реактора (PI-1)','',#41489,#44460,$);
 #44770 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#44462));
 #44771 = SHAPE_DEFINITION_REPRESENTATION(#44772,#44778);
 #44772 = PRODUCT_DEFINITION_SHAPE('','',#44773);
 #44773 = PRODUCT_DEFINITION('design','',#44774,#44777);
 #44774 = PRODUCT_DEFINITION_FORMATION('','',#44775);
 #44775 = PRODUCT(
-'Р’РµРЅС‚РёР»СЊ РёРіРѕР»СЊС‡Р°С‚С‹Р№ 
-РІРІРѕРґР° РіР°Р·Р° (T2)',
-'Р’РµРЅС‚РёР»СЊ РёРіРѕР»СЊС‡Р°С‚С‹Р№ 
-РІРІРѕРґР° РіР°Р·Р° (T2)','',(#44776));
+'Вентиль игольчатый 
+ввода газа (T2)',
+'Вентиль игольчатый 
+ввода газа (T2)','',(#44776));
 #44776 = PRODUCT_CONTEXT('',#2,'mechanical');
 #44777 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #44778 = SHAPE_REPRESENTATION('',(#11,#44779,#44877,#44975),#45073);
@@ -52313,21 +52313,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #45081 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #45082);
 #45082 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('80',
-'Р’РµРЅС‚РёР»СЊ РёРіРѕР»СЊС‡Р°С‚С‹Р№ 
-РІРІРѕРґР° РіР°Р·Р° (T2)','',#41489,#44773,$);
+'Вентиль игольчатый 
+ввода газа (T2)','',#41489,#44773,$);
 #45083 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#44775));
 #45084 = SHAPE_DEFINITION_REPRESENTATION(#45085,#45091);
 #45085 = PRODUCT_DEFINITION_SHAPE('','',#45086);
 #45086 = PRODUCT_DEFINITION('design','',#45087,#45090);
 #45087 = PRODUCT_DEFINITION_FORMATION('','',#45088);
 #45088 = PRODUCT(
-'РџРѕРіСЂСѓР¶РЅР°СЏ С‚СЂСѓР±РєР° 
-1/4" РІРІРѕРґР° 
-РјРµС‚РёР»Р°РјРёРЅР° Рё Р°СЂРіРѕРЅР° 
+'Погружная трубка 
+1/4" ввода 
+метиламина и аргона 
 (T2)',
-'РџРѕРіСЂСѓР¶РЅР°СЏ С‚СЂСѓР±РєР° 
-1/4" РІРІРѕРґР° 
-РјРµС‚РёР»Р°РјРёРЅР° Рё Р°СЂРіРѕРЅР° 
+'Погружная трубка 
+1/4" ввода 
+метиламина и аргона 
 (T2)','',(#45089));
 #45089 = PRODUCT_CONTEXT('',#2,'mechanical');
 #45090 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -52460,9 +52460,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #45198 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #45199);
 #45199 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('81',
-'РџРѕРіСЂСѓР¶РЅР°СЏ С‚СЂСѓР±РєР° 
-1/4" РІРІРѕРґР° 
-РјРµС‚РёР»Р°РјРёРЅР° Рё Р°СЂРіРѕРЅР° 
+'Погружная трубка 
+1/4" ввода 
+метиламина и аргона 
 (T2)','',#41489,#45086,$);
 #45200 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#45088));
 #45201 = SHAPE_DEFINITION_REPRESENTATION(#45202,#45208);
@@ -52470,12 +52470,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #45203 = PRODUCT_DEFINITION('design','',#45204,#45207);
 #45204 = PRODUCT_DEFINITION_FORMATION('','',#45205);
 #45205 = PRODUCT(
-'Р“РµРЅРµСЂР°С‚РѕСЂ 
-РјРµС‚РёР»Р°РјРёРЅР° Рё 
-РєРѕР»РѕРЅРЅС‹ РѕСЃСѓС€РєРё',
-'Р“РµРЅРµСЂР°С‚РѕСЂ 
-РјРµС‚РёР»Р°РјРёРЅР° Рё 
-РєРѕР»РѕРЅРЅС‹ РѕСЃСѓС€РєРё','',(#45206));
+'Генератор 
+метиламина и 
+колонны осушки',
+'Генератор 
+метиламина и 
+колонны осушки','',(#45206));
 #45206 = PRODUCT_CONTEXT('',#2,'mechanical');
 #45207 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #45208 = SHAPE_REPRESENTATION('',(#11,#45209,#45213,#45217,#45221,#45225
@@ -52593,10 +52593,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #45310 = PRODUCT_DEFINITION('design','',#45311,#45314);
 #45311 = PRODUCT_DEFINITION_FORMATION('','',#45312);
 #45312 = PRODUCT(
-'Р’РµСЃС‹ 60 РєРі РїРѕРґ 
-РіРµРЅРµСЂР°С‚РѕСЂРѕРј (W-2)',
-'Р’РµСЃС‹ 60 РєРі РїРѕРґ 
-РіРµРЅРµСЂР°С‚РѕСЂРѕРј (W-2)','',(#45313));
+'Весы 60 кг под 
+генератором (W-2)',
+'Весы 60 кг под 
+генератором (W-2)','',(#45313));
 #45313 = PRODUCT_CONTEXT('',#2,'mechanical');
 #45314 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #45315 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#45316),#45646);
@@ -52996,20 +52996,20 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #45654 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #45655);
 #45655 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('83',
-'Р’РµСЃС‹ 60 РєРі РїРѕРґ 
-РіРµРЅРµСЂР°С‚РѕСЂРѕРј (W-2)','',#45203,#45310,$);
+'Весы 60 кг под 
+генератором (W-2)','',#45203,#45310,$);
 #45656 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#45312));
 #45657 = SHAPE_DEFINITION_REPRESENTATION(#45658,#45664);
 #45658 = PRODUCT_DEFINITION_SHAPE('','',#45659);
 #45659 = PRODUCT_DEFINITION('design','',#45660,#45663);
 #45660 = PRODUCT_DEFINITION_FORMATION('','',#45661);
 #45661 = PRODUCT(
-'Р’Р°РЅРЅР° СЃ С…РѕР»РѕРґРЅРѕР№ 
-РІРѕРґРѕР№/Р»СЊРґРѕРј РґР»СЏ 
-РіРµРЅРµСЂР°С‚РѕСЂР°',
-'Р’Р°РЅРЅР° СЃ С…РѕР»РѕРґРЅРѕР№ 
-РІРѕРґРѕР№/Р»СЊРґРѕРј РґР»СЏ 
-РіРµРЅРµСЂР°С‚РѕСЂР°','',(#45662));
+'Ванна с холодной 
+водой/льдом для 
+генератора',
+'Ванна с холодной 
+водой/льдом для 
+генератора','',(#45662));
 #45662 = PRODUCT_CONTEXT('',#2,'mechanical');
 #45663 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #45664 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#45665),#46309);
@@ -53780,21 +53780,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #46317 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #46318);
 #46318 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('84',
-'Р’Р°РЅРЅР° СЃ С…РѕР»РѕРґРЅРѕР№ 
-РІРѕРґРѕР№/Р»СЊРґРѕРј РґР»СЏ 
-РіРµРЅРµСЂР°С‚РѕСЂР°','',#45203,#45659,$);
+'Ванна с холодной 
+водой/льдом для 
+генератора','',#45203,#45659,$);
 #46319 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#45661));
 #46320 = SHAPE_DEFINITION_REPRESENTATION(#46321,#46327);
 #46321 = PRODUCT_DEFINITION_SHAPE('','',#46322);
 #46322 = PRODUCT_DEFINITION('design','',#46323,#46326);
 #46323 = PRODUCT_DEFINITION_FORMATION('','',#46324);
 #46324 = PRODUCT(
-'Р“РµРЅРµСЂР°С‚РѕСЂ 
-РјРµС‚РёР»Р°РјРёРЅР° вЂ” Р±Р°Рє Atmaler 
-Р‘Рљ-40 (G-1)',
-'Р“РµРЅРµСЂР°С‚РѕСЂ 
-РјРµС‚РёР»Р°РјРёРЅР° вЂ” Р±Р°Рє Atmaler 
-Р‘Рљ-40 (G-1)','',(#46325));
+'Генератор 
+метиламина — бак Atmaler 
+БК-40 (G-1)',
+'Генератор 
+метиламина — бак Atmaler 
+БК-40 (G-1)','',(#46325));
 #46325 = PRODUCT_CONTEXT('',#2,'mechanical');
 #46326 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #46327 = SHAPE_REPRESENTATION('',(#11,#46328,#46426),#46524);
@@ -54036,19 +54036,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #46532 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #46533);
 #46533 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('85',
-'Р“РµРЅРµСЂР°С‚РѕСЂ 
-РјРµС‚РёР»Р°РјРёРЅР° вЂ” Р±Р°Рє Atmaler 
-Р‘Рљ-40 (G-1)','',#45203,#46322,$);
+'Генератор 
+метиламина — бак Atmaler 
+БК-40 (G-1)','',#45203,#46322,$);
 #46534 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#46324));
 #46535 = SHAPE_DEFINITION_REPRESENTATION(#46536,#46542);
 #46536 = PRODUCT_DEFINITION_SHAPE('','',#46537);
 #46537 = PRODUCT_DEFINITION('design','',#46538,#46541);
 #46538 = PRODUCT_DEFINITION_FORMATION('','',#46539);
 #46539 = PRODUCT(
-'РЁС‚СѓС†РµСЂС‹ Рё РјР°РЅРѕРјРµС‚СЂ 
-РіРµРЅРµСЂР°С‚РѕСЂР° (PI-3)',
-'РЁС‚СѓС†РµСЂС‹ Рё РјР°РЅРѕРјРµС‚СЂ 
-РіРµРЅРµСЂР°С‚РѕСЂР° (PI-3)','',(#46540));
+'Штуцеры и манометр 
+генератора (PI-3)',
+'Штуцеры и манометр 
+генератора (PI-3)','',(#46540));
 #46540 = PRODUCT_CONTEXT('',#2,'mechanical');
 #46541 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #46542 = SHAPE_REPRESENTATION('',(#11,#46543,#46641,#46739,#46837),
@@ -54511,18 +54511,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #46943 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #46944);
 #46944 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('86',
-'РЁС‚СѓС†РµСЂС‹ Рё РјР°РЅРѕРјРµС‚СЂ 
-РіРµРЅРµСЂР°С‚РѕСЂР° (PI-3)','',#45203,#46537,$);
+'Штуцеры и манометр 
+генератора (PI-3)','',#45203,#46537,$);
 #46945 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#46539));
 #46946 = SHAPE_DEFINITION_REPRESENTATION(#46947,#46953);
 #46947 = PRODUCT_DEFINITION_SHAPE('','',#46948);
 #46948 = PRODUCT_DEFINITION('design','',#46949,#46952);
 #46949 = PRODUCT_DEFINITION_FORMATION('','',#46950);
 #46950 = PRODUCT(
-'РЁС‚Р°С‚РёРІ РєРѕР»РѕРЅРЅ 
-РѕСЃСѓС€РєРё',
-'РЁС‚Р°С‚РёРІ РєРѕР»РѕРЅРЅ 
-РѕСЃСѓС€РєРё','',(#46951));
+'Штатив колонн 
+осушки',
+'Штатив колонн 
+осушки','',(#46951));
 #46951 = PRODUCT_CONTEXT('',#2,'mechanical');
 #46952 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #46953 = SHAPE_REPRESENTATION('',(#11,#46954,#47284),#47382);
@@ -55032,18 +55032,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #47390 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #47391);
 #47391 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('87',
-'РЁС‚Р°С‚РёРІ РєРѕР»РѕРЅРЅ 
-РѕСЃСѓС€РєРё','',#45203,#46948,$);
+'Штатив колонн 
+осушки','',#45203,#46948,$);
 #47392 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#46950));
 #47393 = SHAPE_DEFINITION_REPRESENTATION(#47394,#47400);
 #47394 = PRODUCT_DEFINITION_SHAPE('','',#47395);
 #47395 = PRODUCT_DEFINITION('design','',#47396,#47399);
 #47396 = PRODUCT_DEFINITION_FORMATION('','',#47397);
 #47397 = PRODUCT(
-'РљР°РїР»РµРѕС‚Р±РѕР№РЅРёРє, 
-РїР°С‚СЂСѓР±РѕРє DN65 x 300 (K-1)',
-'РљР°РїР»РµРѕС‚Р±РѕР№РЅРёРє, 
-РїР°С‚СЂСѓР±РѕРє DN65 x 300 (K-1)','',(#47398));
+'Каплеотбойник, 
+патрубок DN65 x 300 (K-1)',
+'Каплеотбойник, 
+патрубок DN65 x 300 (K-1)','',(#47398));
 #47398 = PRODUCT_CONTEXT('',#2,'mechanical');
 #47399 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #47400 = SHAPE_REPRESENTATION('',(#11,#47401,#47499,#47597,#47695,#47793
@@ -55618,8 +55618,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #47899 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #47900);
 #47900 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('88',
-'РљР°РїР»РµРѕС‚Р±РѕР№РЅРёРє, 
-РїР°С‚СЂСѓР±РѕРє DN65 x 300 (K-1)','',#45203,#47395,$
+'Каплеотбойник, 
+патрубок DN65 x 300 (K-1)','',#45203,#47395,$
   );
 #47901 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#47397));
 #47902 = SHAPE_DEFINITION_REPRESENTATION(#47903,#47909);
@@ -55627,10 +55627,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #47904 = PRODUCT_DEFINITION('design','',#47905,#47908);
 #47905 = PRODUCT_DEFINITION_FORMATION('','',#47906);
 #47906 = PRODUCT(
-'Р”РµСЂР¶Р°С‚РµР»СЊ 
-РєР°РїР»РµРѕС‚Р±РѕР№РЅРёРєР°',
-'Р”РµСЂР¶Р°С‚РµР»СЊ 
-РєР°РїР»РµРѕС‚Р±РѕР№РЅРёРєР°','',(#47907));
+'Держатель 
+каплеотбойника',
+'Держатель 
+каплеотбойника','',(#47907));
 #47907 = PRODUCT_CONTEXT('',#2,'mechanical');
 #47908 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #47909 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#47910),#48240);
@@ -56030,8 +56030,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #48248 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #48249);
 #48249 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('89',
-'Р”РµСЂР¶Р°С‚РµР»СЊ 
-РєР°РїР»РµРѕС‚Р±РѕР№РЅРёРєР°','',#45203,
+'Держатель 
+каплеотбойника','',#45203,
   #47904,$);
 #48250 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#47906));
 #48251 = SHAPE_DEFINITION_REPRESENTATION(#48252,#48258);
@@ -56039,10 +56039,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #48253 = PRODUCT_DEFINITION('design','',#48254,#48257);
 #48254 = PRODUCT_DEFINITION_FORMATION('','',#48255);
 #48255 = PRODUCT(
-'РљРѕР»РѕРЅРЅР° РѕСЃСѓС€РєРё СЃ 
-СЃРёС‚Р°РјРё 3A, DN65 x 600 (C-1)',
-'РљРѕР»РѕРЅРЅР° РѕСЃСѓС€РєРё СЃ 
-СЃРёС‚Р°РјРё 3A, DN65 x 600 (C-1)','',(#48256));
+'Колонна осушки с 
+ситами 3A, DN65 x 600 (C-1)',
+'Колонна осушки с 
+ситами 3A, DN65 x 600 (C-1)','',(#48256));
 #48256 = PRODUCT_CONTEXT('',#2,'mechanical');
 #48257 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #48258 = SHAPE_REPRESENTATION('',(#11,#48259,#48357,#48455,#48553,#48651
@@ -56617,18 +56617,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #48757 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #48758);
 #48758 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('90',
-'РљРѕР»РѕРЅРЅР° РѕСЃСѓС€РєРё СЃ 
-СЃРёС‚Р°РјРё 3A, DN65 x 600 (C-1)','',#45203,#48253,$);
+'Колонна осушки с 
+ситами 3A, DN65 x 600 (C-1)','',#45203,#48253,$);
 #48759 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#48255));
 #48760 = SHAPE_DEFINITION_REPRESENTATION(#48761,#48767);
 #48761 = PRODUCT_DEFINITION_SHAPE('','',#48762);
 #48762 = PRODUCT_DEFINITION('design','',#48763,#48766);
 #48763 = PRODUCT_DEFINITION_FORMATION('','',#48764);
 #48764 = PRODUCT(
-'Р”РµСЂР¶Р°С‚РµР»СЊ РєРѕР»РѕРЅРЅС‹ СЃ 
-СЃРёС‚Р°РјРё',
-'Р”РµСЂР¶Р°С‚РµР»СЊ РєРѕР»РѕРЅРЅС‹ СЃ 
-СЃРёС‚Р°РјРё','',(#48765));
+'Держатель колонны с 
+ситами',
+'Держатель колонны с 
+ситами','',(#48765));
 #48765 = PRODUCT_CONTEXT('',#2,'mechanical');
 #48766 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #48767 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#48768),#49098);
@@ -57028,17 +57028,17 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #49106 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #49107);
 #49107 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('91',
-'Р”РµСЂР¶Р°С‚РµР»СЊ РєРѕР»РѕРЅРЅС‹ СЃ 
-СЃРёС‚Р°РјРё','',#45203,#48762,$);
+'Держатель колонны с 
+ситами','',#45203,#48762,$);
 #49108 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#48764));
 #49109 = SHAPE_DEFINITION_REPRESENTATION(#49110,#49116);
 #49110 = PRODUCT_DEFINITION_SHAPE('','',#49111);
 #49111 = PRODUCT_DEFINITION('design','',#49112,#49115);
 #49112 = PRODUCT_DEFINITION_FORMATION('','',#49113);
 #49113 = PRODUCT(
-'РљРѕР»РѕРЅРЅР° РѕСЃСѓС€РєРё СЃ NaOH, DN65 
+'Колонна осушки с NaOH, DN65 
 x 600 (C-2)',
-'РљРѕР»РѕРЅРЅР° РѕСЃСѓС€РєРё СЃ NaOH, DN65 
+'Колонна осушки с NaOH, DN65 
 x 600 (C-2)','',(#49114));
 #49114 = PRODUCT_CONTEXT('',#2,'mechanical');
 #49115 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -57614,7 +57614,7 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #49615 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #49616);
 #49616 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('92',
-'РљРѕР»РѕРЅРЅР° РѕСЃСѓС€РєРё СЃ NaOH, DN65 
+'Колонна осушки с NaOH, DN65 
 x 600 (C-2)','',#45203,#49111,$);
 #49617 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#49113));
 #49618 = SHAPE_DEFINITION_REPRESENTATION(#49619,#49625);
@@ -57622,9 +57622,9 @@ x 600 (C-2)','',#45203,#49111,$);
 #49620 = PRODUCT_DEFINITION('design','',#49621,#49624);
 #49621 = PRODUCT_DEFINITION_FORMATION('','',#49622);
 #49622 = PRODUCT(
-'Р”РµСЂР¶Р°С‚РµР»СЊ РєРѕР»РѕРЅРЅС‹ СЃ 
+'Держатель колонны с 
 NaOH',
-'Р”РµСЂР¶Р°С‚РµР»СЊ РєРѕР»РѕРЅРЅС‹ СЃ 
+'Держатель колонны с 
 NaOH','',(#49623));
 #49623 = PRODUCT_CONTEXT('',#2,'mechanical');
 #49624 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -58025,7 +58025,7 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #49964 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #49965);
 #49965 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('93',
-'Р”РµСЂР¶Р°С‚РµР»СЊ РєРѕР»РѕРЅРЅС‹ СЃ 
+'Держатель колонны с 
 NaOH','',#45203,#49620,$);
 #49966 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#49622));
 #49967 = SHAPE_DEFINITION_REPRESENTATION(#49968,#49974);
@@ -58033,12 +58033,12 @@ NaOH','',#45203,#49620,$);
 #49969 = PRODUCT_DEFINITION('design','',#49970,#49973);
 #49970 = PRODUCT_DEFINITION_FORMATION('','',#49971);
 #49971 = PRODUCT(
-'РўСЂСѓР±РєР° РіР°Р·Р°: 
-РіРµРЅРµСЂР°С‚РѕСЂ -> 
-РєР°РїР»РµРѕС‚Р±РѕР№РЅРёРє',
-'РўСЂСѓР±РєР° РіР°Р·Р°: 
-РіРµРЅРµСЂР°С‚РѕСЂ -> 
-РєР°РїР»РµРѕС‚Р±РѕР№РЅРёРє','',(#49972));
+'Трубка газа: 
+генератор -> 
+каплеотбойник',
+'Трубка газа: 
+генератор -> 
+каплеотбойник','',(#49972));
 #49972 = PRODUCT_CONTEXT('',#2,'mechanical');
 #49973 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #49974 = SHAPE_REPRESENTATION('',(#11,#49975,#50073,#50171,#50269,#50281
@@ -58427,9 +58427,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #50313 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #50314);
 #50314 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('94',
-'РўСЂСѓР±РєР° РіР°Р·Р°: 
-РіРµРЅРµСЂР°С‚РѕСЂ -> 
-РєР°РїР»РµРѕС‚Р±РѕР№РЅРёРє','',#45203,#49969,$
+'Трубка газа: 
+генератор -> 
+каплеотбойник','',#45203,#49969,$
   );
 #50315 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#49971));
 #50316 = SHAPE_DEFINITION_REPRESENTATION(#50317,#50323);
@@ -58437,12 +58437,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #50318 = PRODUCT_DEFINITION('design','',#50319,#50322);
 #50319 = PRODUCT_DEFINITION_FORMATION('','',#50320);
 #50320 = PRODUCT(
-'РўСЂСѓР±РєР° РіР°Р·Р°: 
-РєР°РїР»РµРѕС‚Р±РѕР№РЅРёРє -> 
-РєРѕР»РѕРЅРЅР° СЃ СЃРёС‚Р°РјРё',
-'РўСЂСѓР±РєР° РіР°Р·Р°: 
-РєР°РїР»РµРѕС‚Р±РѕР№РЅРёРє -> 
-РєРѕР»РѕРЅРЅР° СЃ СЃРёС‚Р°РјРё','',(#50321)
+'Трубка газа: 
+каплеотбойник -> 
+колонна с ситами',
+'Трубка газа: 
+каплеотбойник -> 
+колонна с ситами','',(#50321)
   );
 #50321 = PRODUCT_CONTEXT('',#2,'mechanical');
 #50322 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -59186,9 +59186,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #50980 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #50981);
 #50981 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('95',
-'РўСЂСѓР±РєР° РіР°Р·Р°: 
-РєР°РїР»РµРѕС‚Р±РѕР№РЅРёРє -> 
-РєРѕР»РѕРЅРЅР° СЃ СЃРёС‚Р°РјРё','',#45203,
+'Трубка газа: 
+каплеотбойник -> 
+колонна с ситами','',#45203,
   #50318,$);
 #50982 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#50320));
 #50983 = SHAPE_DEFINITION_REPRESENTATION(#50984,#50990);
@@ -59196,12 +59196,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #50985 = PRODUCT_DEFINITION('design','',#50986,#50989);
 #50986 = PRODUCT_DEFINITION_FORMATION('','',#50987);
 #50987 = PRODUCT(
-'РўСЂСѓР±РєР° РіР°Р·Р°: 
-РєРѕР»РѕРЅРЅР° СЃ СЃРёС‚Р°РјРё -> 
-РєРѕР»РѕРЅРЅР° СЃ NaOH',
-'РўСЂСѓР±РєР° РіР°Р·Р°: 
-РєРѕР»РѕРЅРЅР° СЃ СЃРёС‚Р°РјРё -> 
-РєРѕР»РѕРЅРЅР° СЃ NaOH','',(#50988));
+'Трубка газа: 
+колонна с ситами -> 
+колонна с NaOH',
+'Трубка газа: 
+колонна с ситами -> 
+колонна с NaOH','',(#50988));
 #50988 = PRODUCT_CONTEXT('',#2,'mechanical');
 #50989 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #50990 = SHAPE_REPRESENTATION('',(#11,#50991,#51089,#51187,#51285,#51383
@@ -59944,21 +59944,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #51647 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #51648);
 #51648 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('96',
-'РўСЂСѓР±РєР° РіР°Р·Р°: 
-РєРѕР»РѕРЅРЅР° СЃ СЃРёС‚Р°РјРё -> 
-РєРѕР»РѕРЅРЅР° СЃ NaOH','',#45203,#50985,$);
+'Трубка газа: 
+колонна с ситами -> 
+колонна с NaOH','',#45203,#50985,$);
 #51649 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#50987));
 #51650 = SHAPE_DEFINITION_REPRESENTATION(#51651,#51657);
 #51651 = PRODUCT_DEFINITION_SHAPE('','',#51652);
 #51652 = PRODUCT_DEFINITION('design','',#51653,#51656);
 #51653 = PRODUCT_DEFINITION_FORMATION('','',#51654);
 #51654 = PRODUCT(
-'РўСЂСѓР±РєР° РіР°Р·Р° 
-РјРµС‚РёР»Р°РјРёРЅР°: РєРѕР»РѕРЅРЅР° 
-СЃ NaOH -> СЂРµР°РєС‚РѕСЂ (T2)',
-'РўСЂСѓР±РєР° РіР°Р·Р° 
-РјРµС‚РёР»Р°РјРёРЅР°: РєРѕР»РѕРЅРЅР° 
-СЃ NaOH -> СЂРµР°РєС‚РѕСЂ (T2)','',(#51655));
+'Трубка газа 
+метиламина: колонна 
+с NaOH -> реактор (T2)',
+'Трубка газа 
+метиламина: колонна 
+с NaOH -> реактор (T2)','',(#51655));
 #51655 = PRODUCT_CONTEXT('',#2,'mechanical');
 #51656 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #51657 = SHAPE_REPRESENTATION('',(#11,#51658,#51756,#51854,#51952,#52050
@@ -60579,21 +60579,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #52204 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #52205);
 #52205 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('97',
-'РўСЂСѓР±РєР° РіР°Р·Р° 
-РјРµС‚РёР»Р°РјРёРЅР°: РєРѕР»РѕРЅРЅР° 
-СЃ NaOH -> СЂРµР°РєС‚РѕСЂ (T2)','',#45203,#51652,$);
+'Трубка газа 
+метиламина: колонна 
+с NaOH -> реактор (T2)','',#45203,#51652,$);
 #52206 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#51654));
 #52207 = SHAPE_DEFINITION_REPRESENTATION(#52208,#52214);
 #52208 = PRODUCT_DEFINITION_SHAPE('','',#52209);
 #52209 = PRODUCT_DEFINITION('design','',#52210,#52213);
 #52210 = PRODUCT_DEFINITION_FORMATION('','',#52211);
 #52211 = PRODUCT(
-'РљР»Р°РїР°РЅ РѕР±СЂР°С‚РЅС‹Р№ РЅР° 
-РІС…РѕРґРµ РіР°Р·Р° РІ 
-СЂРµР°РєС‚РѕСЂ, <= 30 РјР±Р°СЂ (NRV-3)',
-'РљР»Р°РїР°РЅ РѕР±СЂР°С‚РЅС‹Р№ РЅР° 
-РІС…РѕРґРµ РіР°Р·Р° РІ 
-СЂРµР°РєС‚РѕСЂ, <= 30 РјР±Р°СЂ (NRV-3)','',(
+'Клапан обратный на 
+входе газа в 
+реактор, <= 30 мбар (NRV-3)',
+'Клапан обратный на 
+входе газа в 
+реактор, <= 30 мбар (NRV-3)','',(
     #52212));
 #52212 = PRODUCT_CONTEXT('',#2,'mechanical');
 #52213 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -60836,9 +60836,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #52419 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #52420);
 #52420 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('98',
-'РљР»Р°РїР°РЅ РѕР±СЂР°С‚РЅС‹Р№ РЅР° 
-РІС…РѕРґРµ РіР°Р·Р° РІ 
-СЂРµР°РєС‚РѕСЂ, <= 30 РјР±Р°СЂ (NRV-3)','',
+'Клапан обратный на 
+входе газа в 
+реактор, <= 30 мбар (NRV-3)','',
   #45203,#52209,$);
 #52421 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#52211));
 #52422 = SHAPE_DEFINITION_REPRESENTATION(#52423,#52429);
@@ -60846,12 +60846,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #52424 = PRODUCT_DEFINITION('design','',#52425,#52428);
 #52425 = PRODUCT_DEFINITION_FORMATION('','',#52426);
 #52426 = PRODUCT(
-'Р’РµСЃС‹ 30 РєРі РїРѕРґ 
-РєР°РЅРёСЃС‚СЂРѕР№ 
-РјРµС‚РёР»Р°РјРёРЅР° (W-1)',
-'Р’РµСЃС‹ 30 РєРі РїРѕРґ 
-РєР°РЅРёСЃС‚СЂРѕР№ 
-РјРµС‚РёР»Р°РјРёРЅР° (W-1)','',(#52427));
+'Весы 30 кг под 
+канистрой 
+метиламина (W-1)',
+'Весы 30 кг под 
+канистрой 
+метиламина (W-1)','',(#52427));
 #52427 = PRODUCT_CONTEXT('',#2,'mechanical');
 #52428 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #52429 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#52430),#52760);
@@ -61251,19 +61251,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #52768 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #52769);
 #52769 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('99',
-'Р’РµСЃС‹ 30 РєРі РїРѕРґ 
-РєР°РЅРёСЃС‚СЂРѕР№ 
-РјРµС‚РёР»Р°РјРёРЅР° (W-1)','',#45203,#52424,$);
+'Весы 30 кг под 
+канистрой 
+метиламина (W-1)','',#45203,#52424,$);
 #52770 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#52426));
 #52771 = SHAPE_DEFINITION_REPRESENTATION(#52772,#52778);
 #52772 = PRODUCT_DEFINITION_SHAPE('','',#52773);
 #52773 = PRODUCT_DEFINITION('design','',#52774,#52777);
 #52774 = PRODUCT_DEFINITION_FORMATION('','',#52775);
 #52775 = PRODUCT(
-'РљР°РЅРёСЃС‚СЂР° 38% РІРѕРґРЅРѕРіРѕ 
-РјРµС‚РёР»Р°РјРёРЅР° (V-1)',
-'РљР°РЅРёСЃС‚СЂР° 38% РІРѕРґРЅРѕРіРѕ 
-РјРµС‚РёР»Р°РјРёРЅР° (V-1)','',(#52776));
+'Канистра 38% водного 
+метиламина (V-1)',
+'Канистра 38% водного 
+метиламина (V-1)','',(#52776));
 #52776 = PRODUCT_CONTEXT('',#2,'mechanical');
 #52777 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #52778 = SHAPE_REPRESENTATION('',(#11,#52779,#53109),#53207);
@@ -61773,21 +61773,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #53215 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #53216);
 #53216 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('100',
-'РљР°РЅРёСЃС‚СЂР° 38% РІРѕРґРЅРѕРіРѕ 
-РјРµС‚РёР»Р°РјРёРЅР° (V-1)','',#45203,#52773,$);
+'Канистра 38% водного 
+метиламина (V-1)','',#45203,#52773,$);
 #53217 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#52775));
 #53218 = SHAPE_DEFINITION_REPRESENTATION(#53219,#53225);
 #53219 = PRODUCT_DEFINITION_SHAPE('','',#53220);
 #53220 = PRODUCT_DEFINITION('design','',#53221,#53224);
 #53221 = PRODUCT_DEFINITION_FORMATION('','',#53222);
 #53222 = PRODUCT(
-'РќР°СЃРѕСЃ РјРµРјР±СЂР°РЅРЅС‹Р№ 
-РїРЅРµРІРјР°С‚РёС‡РµСЃРєРёР№ вЂ” 
-РїРѕРґР°С‡Р° РјРµС‚РёР»Р°РјРёРЅР° (P-1)'
+'Насос мембранный 
+пневматический — 
+подача метиламина (P-1)'
   ,
-'РќР°СЃРѕСЃ РјРµРјР±СЂР°РЅРЅС‹Р№ 
-РїРЅРµРІРјР°С‚РёС‡РµСЃРєРёР№ вЂ” 
-РїРѕРґР°С‡Р° РјРµС‚РёР»Р°РјРёРЅР° (P-1)'
+'Насос мембранный 
+пневматический — 
+подача метиламина (P-1)'
   ,'',(#53223));
 #53223 = PRODUCT_CONTEXT('',#2,'mechanical');
 #53224 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -63653,9 +63653,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #54848 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #54849);
 #54849 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('101',
-'РќР°СЃРѕСЃ РјРµРјР±СЂР°РЅРЅС‹Р№ 
-РїРЅРµРІРјР°С‚РёС‡РµСЃРєРёР№ вЂ” 
-РїРѕРґР°С‡Р° РјРµС‚РёР»Р°РјРёРЅР° (P-1)'
+'Насос мембранный 
+пневматический — 
+подача метиламина (P-1)'
   ,'',#45203,#53220,$);
 #54850 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#53222));
 #54851 = SHAPE_DEFINITION_REPRESENTATION(#54852,#54858);
@@ -63663,10 +63663,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #54853 = PRODUCT_DEFINITION('design','',#54854,#54857);
 #54854 = PRODUCT_DEFINITION_FORMATION('','',#54855);
 #54855 = PRODUCT(
-'РўСЂСѓР±РєР° РІСЃР°СЃР° РЅР°СЃРѕСЃР° 
-РјРµС‚РёР»Р°РјРёРЅР°',
-'РўСЂСѓР±РєР° РІСЃР°СЃР° РЅР°СЃРѕСЃР° 
-РјРµС‚РёР»Р°РјРёРЅР°','',(#54856));
+'Трубка всаса насоса 
+метиламина',
+'Трубка всаса насоса 
+метиламина','',(#54856));
 #54856 = PRODUCT_CONTEXT('',#2,'mechanical');
 #54857 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #54858 = SHAPE_REPRESENTATION('',(#11,#54859,#54957,#55055,#55153,#55251
@@ -64165,20 +64165,20 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #55295 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #55296);
 #55296 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('102',
-'РўСЂСѓР±РєР° РІСЃР°СЃР° РЅР°СЃРѕСЃР° 
-РјРµС‚РёР»Р°РјРёРЅР°','',#45203,#54853,$);
+'Трубка всаса насоса 
+метиламина','',#45203,#54853,$);
 #55297 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#54855));
 #55298 = SHAPE_DEFINITION_REPRESENTATION(#55299,#55305);
 #55299 = PRODUCT_DEFINITION_SHAPE('','',#55300);
 #55300 = PRODUCT_DEFINITION('design','',#55301,#55304);
 #55301 = PRODUCT_DEFINITION_FORMATION('','',#55302);
 #55302 = PRODUCT(
-'РўСЂСѓР±РєР° РїРѕРґР°С‡Рё 
-РјРµС‚РёР»Р°РјРёРЅР° РІ 
-РіРµРЅРµСЂР°С‚РѕСЂ',
-'РўСЂСѓР±РєР° РїРѕРґР°С‡Рё 
-РјРµС‚РёР»Р°РјРёРЅР° РІ 
-РіРµРЅРµСЂР°С‚РѕСЂ','',(#55303));
+'Трубка подачи 
+метиламина в 
+генератор',
+'Трубка подачи 
+метиламина в 
+генератор','',(#55303));
 #55303 = PRODUCT_CONTEXT('',#2,'mechanical');
 #55304 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #55305 = SHAPE_REPRESENTATION('',(#11,#55306,#55404,#55502,#55600,#55698
@@ -64689,21 +64689,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #55754 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #55755);
 #55755 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('103',
-'РўСЂСѓР±РєР° РїРѕРґР°С‡Рё 
-РјРµС‚РёР»Р°РјРёРЅР° РІ 
-РіРµРЅРµСЂР°С‚РѕСЂ','',#45203,#55300,$);
+'Трубка подачи 
+метиламина в 
+генератор','',#45203,#55300,$);
 #55756 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#55302));
 #55757 = SHAPE_DEFINITION_REPRESENTATION(#55758,#55764);
 #55758 = PRODUCT_DEFINITION_SHAPE('','',#55759);
 #55759 = PRODUCT_DEFINITION('design','',#55760,#55763);
 #55760 = PRODUCT_DEFINITION_FORMATION('','',#55761);
 #55761 = PRODUCT(
-'Р’РµРЅС‚РёР»СЊ РёРіРѕР»СЊС‡Р°С‚С‹Р№ 
-Рё РѕР±СЂР°С‚РЅС‹Р№ РєР»Р°РїР°РЅ РЅР° 
-РїРѕРґР°С‡Рµ РјРµС‚РёР»Р°РјРёРЅР°',
-'Р’РµРЅС‚РёР»СЊ РёРіРѕР»СЊС‡Р°С‚С‹Р№ 
-Рё РѕР±СЂР°С‚РЅС‹Р№ РєР»Р°РїР°РЅ РЅР° 
-РїРѕРґР°С‡Рµ РјРµС‚РёР»Р°РјРёРЅР°','',(
+'Вентиль игольчатый 
+и обратный клапан на 
+подаче метиламина',
+'Вентиль игольчатый 
+и обратный клапан на 
+подаче метиламина','',(
     #55762));
 #55762 = PRODUCT_CONTEXT('',#2,'mechanical');
 #55763 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -64946,17 +64946,17 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #55969 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #55970);
 #55970 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('104',
-'Р’РµРЅС‚РёР»СЊ РёРіРѕР»СЊС‡Р°С‚С‹Р№ 
-Рё РѕР±СЂР°С‚РЅС‹Р№ РєР»Р°РїР°РЅ РЅР° 
-РїРѕРґР°С‡Рµ РјРµС‚РёР»Р°РјРёРЅР°','',
+'Вентиль игольчатый 
+и обратный клапан на 
+подаче метиламина','',
   #45203,#55759,$);
 #55971 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#55761));
 #55972 = SHAPE_DEFINITION_REPRESENTATION(#55973,#55979);
 #55973 = PRODUCT_DEFINITION_SHAPE('','',#55974);
 #55974 = PRODUCT_DEFINITION('design','',#55975,#55978);
 #55975 = PRODUCT_DEFINITION_FORMATION('','',#55976);
-#55976 = PRODUCT('РђСЂРіРѕРЅ Рё РІР°РєСѓСѓРј',
-  'РђСЂРіРѕРЅ Рё РІР°РєСѓСѓРј','',(#55977));
+#55976 = PRODUCT('Аргон и вакуум',
+  'Аргон и вакуум','',(#55977));
 #55977 = PRODUCT_CONTEXT('',#2,'mechanical');
 #55978 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #55979 = SHAPE_REPRESENTATION('',(#11,#55980,#55984,#55988,#55992,#55996
@@ -65079,8 +65079,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #56085 = PRODUCT_DEFINITION('design','',#56086,#56089);
 #56086 = PRODUCT_DEFINITION_FORMATION('','',#56087);
 #56087 = PRODUCT(
-  'Р‘Р°Р»Р»РѕРЅ Р°СЂРіРѕРЅР° 40 Р» (AR-1)',
-  'Р‘Р°Р»Р»РѕРЅ Р°СЂРіРѕРЅР° 40 Р» (AR-1)','',
+  'Баллон аргона 40 л (AR-1)',
+  'Баллон аргона 40 л (AR-1)','',
   (#56088));
 #56088 = PRODUCT_CONTEXT('',#2,'mechanical');
 #56089 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -65335,7 +65335,7 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #56307 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #56308);
 #56308 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('106',
-  'Р‘Р°Р»Р»РѕРЅ Р°СЂРіРѕРЅР° 40 Р» (AR-1)','',
+  'Баллон аргона 40 л (AR-1)','',
   #55974,#56085,$);
 #56309 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#56087));
 #56310 = SHAPE_DEFINITION_REPRESENTATION(#56311,#56317);
@@ -65343,10 +65343,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #56312 = PRODUCT_DEFINITION('design','',#56313,#56316);
 #56313 = PRODUCT_DEFINITION_FORMATION('','',#56314);
 #56314 = PRODUCT(
-'Р РµРґСѓРєС‚РѕСЂ Р±Р°Р»Р»РѕРЅРЅС‹Р№ 
-Р°СЂРіРѕРЅР° (PR-1)',
-'Р РµРґСѓРєС‚РѕСЂ Р±Р°Р»Р»РѕРЅРЅС‹Р№ 
-Р°СЂРіРѕРЅР° (PR-1)','',(#56315));
+'Редуктор баллонный 
+аргона (PR-1)',
+'Редуктор баллонный 
+аргона (PR-1)','',(#56315));
 #56315 = PRODUCT_CONTEXT('',#2,'mechanical');
 #56316 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #56317 = SHAPE_REPRESENTATION('',(#11,#56318,#56648,#56746,#56844,#56942
@@ -66187,18 +66187,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #57048 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #57049);
 #57049 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('107',
-'Р РµРґСѓРєС‚РѕСЂ Р±Р°Р»Р»РѕРЅРЅС‹Р№ 
-Р°СЂРіРѕРЅР° (PR-1)','',#55974,#56312,$);
+'Редуктор баллонный 
+аргона (PR-1)','',#55974,#56312,$);
 #57050 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#56314));
 #57051 = SHAPE_DEFINITION_REPRESENTATION(#57052,#57058);
 #57052 = PRODUCT_DEFINITION_SHAPE('','',#57053);
 #57053 = PRODUCT_DEFINITION('design','',#57054,#57057);
 #57054 = PRODUCT_DEFINITION_FORMATION('','',#57055);
 #57055 = PRODUCT(
-'РџР°РЅРµР»СЊ Р°СЂРіРѕРЅР° РЅР° 
-СЂР°РјРµ',
-'РџР°РЅРµР»СЊ Р°СЂРіРѕРЅР° РЅР° 
-СЂР°РјРµ','',(#57056));
+'Панель аргона на 
+раме',
+'Панель аргона на 
+раме','',(#57056));
 #57056 = PRODUCT_CONTEXT('',#2,'mechanical');
 #57057 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #57058 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#57059),#57389);
@@ -66598,20 +66598,20 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #57397 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #57398);
 #57398 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('108',
-'РџР°РЅРµР»СЊ Р°СЂРіРѕРЅР° РЅР° 
-СЂР°РјРµ','',#55974,#57053,$);
+'Панель аргона на 
+раме','',#55974,#57053,$);
 #57399 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#57055));
 #57400 = SHAPE_DEFINITION_REPRESENTATION(#57401,#57407);
 #57401 = PRODUCT_DEFINITION_SHAPE('','',#57402);
 #57402 = PRODUCT_DEFINITION('design','',#57403,#57406);
 #57403 = PRODUCT_DEFINITION_FORMATION('','',#57404);
 #57404 = PRODUCT(
-'Р РµРіСѓР»СЏС‚РѕСЂ РЅРёР·РєРѕРіРѕ 
-РґР°РІР»РµРЅРёСЏ Р°СЂРіРѕРЅР° +20...30 
-РјР±Р°СЂ (PR-2)',
-'Р РµРіСѓР»СЏС‚РѕСЂ РЅРёР·РєРѕРіРѕ 
-РґР°РІР»РµРЅРёСЏ Р°СЂРіРѕРЅР° +20...30 
-РјР±Р°СЂ (PR-2)','',(#57405));
+'Регулятор низкого 
+давления аргона +20...30 
+мбар (PR-2)',
+'Регулятор низкого 
+давления аргона +20...30 
+мбар (PR-2)','',(#57405));
 #57405 = PRODUCT_CONTEXT('',#2,'mechanical');
 #57406 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #57407 = SHAPE_REPRESENTATION('',(#11,#57408,#57738,#57836),#57934);
@@ -67231,19 +67231,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #57942 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #57943);
 #57943 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('109',
-'Р РµРіСѓР»СЏС‚РѕСЂ РЅРёР·РєРѕРіРѕ 
-РґР°РІР»РµРЅРёСЏ Р°СЂРіРѕРЅР° +20...30 
-РјР±Р°СЂ (PR-2)','',#55974,#57402,$);
+'Регулятор низкого 
+давления аргона +20...30 
+мбар (PR-2)','',#55974,#57402,$);
 #57944 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#57404));
 #57945 = SHAPE_DEFINITION_REPRESENTATION(#57946,#57952);
 #57946 = PRODUCT_DEFINITION_SHAPE('','',#57947);
 #57947 = PRODUCT_DEFINITION('design','',#57948,#57951);
 #57948 = PRODUCT_DEFINITION_FORMATION('','',#57949);
 #57949 = PRODUCT(
-'Р РѕС‚Р°РјРµС‚СЂ Р°СЂРіРѕРЅР° 0,5-15 
-Р»/РјРёРЅ (FI-1)',
-'Р РѕС‚Р°РјРµС‚СЂ Р°СЂРіРѕРЅР° 0,5-15 
-Р»/РјРёРЅ (FI-1)','',(#57950));
+'Ротаметр аргона 0,5-15 
+л/мин (FI-1)',
+'Ротаметр аргона 0,5-15 
+л/мин (FI-1)','',(#57950));
 #57950 = PRODUCT_CONTEXT('',#2,'mechanical');
 #57951 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #57952 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#57953),#58051);
@@ -67375,19 +67375,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #58059 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #58060);
 #58060 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('110',
-'Р РѕС‚Р°РјРµС‚СЂ Р°СЂРіРѕРЅР° 0,5-15 
-Р»/РјРёРЅ (FI-1)','',#55974,#57947,$);
+'Ротаметр аргона 0,5-15 
+л/мин (FI-1)','',#55974,#57947,$);
 #58061 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#57949));
 #58062 = SHAPE_DEFINITION_REPRESENTATION(#58063,#58069);
 #58063 = PRODUCT_DEFINITION_SHAPE('','',#58064);
 #58064 = PRODUCT_DEFINITION('design','',#58065,#58068);
 #58065 = PRODUCT_DEFINITION_FORMATION('','',#58066);
 #58066 = PRODUCT(
-'Р Р°Р·РґР°С‚РѕС‡РЅС‹Р№ 
-РєРѕР»Р»РµРєС‚РѕСЂ Р°СЂРіРѕРЅР° 
+'Раздаточный 
+коллектор аргона 
 1/4"',
-'Р Р°Р·РґР°С‚РѕС‡РЅС‹Р№ 
-РєРѕР»Р»РµРєС‚РѕСЂ Р°СЂРіРѕРЅР° 
+'Раздаточный 
+коллектор аргона 
 1/4"','',(#58067));
 #58067 = PRODUCT_CONTEXT('',#2,'mechanical');
 #58068 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -67520,8 +67520,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #58176 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #58177);
 #58177 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('111',
-'Р Р°Р·РґР°С‚РѕС‡РЅС‹Р№ 
-РєРѕР»Р»РµРєС‚РѕСЂ Р°СЂРіРѕРЅР° 
+'Раздаточный 
+коллектор аргона 
 1/4"','',#55974,#58064,$);
 #58178 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#58066));
 #58179 = SHAPE_DEFINITION_REPRESENTATION(#58180,#58186);
@@ -67529,12 +67529,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #58181 = PRODUCT_DEFINITION('design','',#58182,#58185);
 #58182 = PRODUCT_DEFINITION_FORMATION('','',#58183);
 #58183 = PRODUCT(
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° РѕС‚ 
-Р±Р°Р»Р»РѕРЅР° Рє 
-СЂРµРіСѓР»СЏС‚РѕСЂСѓ',
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° РѕС‚ 
-Р±Р°Р»Р»РѕРЅР° Рє 
-СЂРµРіСѓР»СЏС‚РѕСЂСѓ','',(#58184));
+'Трубка аргона от 
+баллона к 
+регулятору',
+'Трубка аргона от 
+баллона к 
+регулятору','',(#58184));
 #58184 = PRODUCT_CONTEXT('',#2,'mechanical');
 #58185 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #58186 = SHAPE_REPRESENTATION('',(#11,#58187,#58285,#58383,#58481,#58579
@@ -68033,21 +68033,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #58623 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #58624);
 #58624 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('112',
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° РѕС‚ 
-Р±Р°Р»Р»РѕРЅР° Рє 
-СЂРµРіСѓР»СЏС‚РѕСЂСѓ','',#55974,#58181,$);
+'Трубка аргона от 
+баллона к 
+регулятору','',#55974,#58181,$);
 #58625 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#58183));
 #58626 = SHAPE_DEFINITION_REPRESENTATION(#58627,#58633);
 #58627 = PRODUCT_DEFINITION_SHAPE('','',#58628);
 #58628 = PRODUCT_DEFINITION('design','',#58629,#58632);
 #58629 = PRODUCT_DEFINITION_FORMATION('','',#58630);
 #58630 = PRODUCT(
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° РѕС‚ 
-СЂРµРіСѓР»СЏС‚РѕСЂР° Рє 
-СЂРѕС‚Р°РјРµС‚СЂСѓ',
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° РѕС‚ 
-СЂРµРіСѓР»СЏС‚РѕСЂР° Рє 
-СЂРѕС‚Р°РјРµС‚СЂСѓ','',(#58631));
+'Трубка аргона от 
+регулятора к 
+ротаметру',
+'Трубка аргона от 
+регулятора к 
+ротаметру','',(#58631));
 #58631 = PRODUCT_CONTEXT('',#2,'mechanical');
 #58632 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #58633 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#58634),#58732);
@@ -68179,19 +68179,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #58740 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #58741);
 #58741 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('113',
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° РѕС‚ 
-СЂРµРіСѓР»СЏС‚РѕСЂР° Рє 
-СЂРѕС‚Р°РјРµС‚СЂСѓ','',#55974,#58628,$);
+'Трубка аргона от 
+регулятора к 
+ротаметру','',#55974,#58628,$);
 #58742 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#58630));
 #58743 = SHAPE_DEFINITION_REPRESENTATION(#58744,#58750);
 #58744 = PRODUCT_DEFINITION_SHAPE('','',#58745);
 #58745 = PRODUCT_DEFINITION('design','',#58746,#58749);
 #58746 = PRODUCT_DEFINITION_FORMATION('','',#58747);
 #58747 = PRODUCT(
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" вЂ” 
-Р°СЂРіРѕРЅ РЅР° РіСЂРµР±С‘РЅРєСѓ (A1)',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" вЂ” 
-Р°СЂРіРѕРЅ РЅР° РіСЂРµР±С‘РЅРєСѓ (A1)','',
+'Кран шаровой 1/4" — 
+аргон на гребёнку (A1)',
+'Кран шаровой 1/4" — 
+аргон на гребёнку (A1)','',
   (#58748));
 #58748 = PRODUCT_CONTEXT('',#2,'mechanical');
 #58749 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -68557,8 +68557,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #59065 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #59066);
 #59066 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('114',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" вЂ” 
-Р°СЂРіРѕРЅ РЅР° РіСЂРµР±С‘РЅРєСѓ (A1)','',
+'Кран шаровой 1/4" — 
+аргон на гребёнку (A1)','',
   #55974,#58745,$);
 #59067 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#58747));
 #59068 = SHAPE_DEFINITION_REPRESENTATION(#59069,#59075);
@@ -68566,10 +68566,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #59070 = PRODUCT_DEFINITION('design','',#59071,#59074);
 #59071 = PRODUCT_DEFINITION_FORMATION('','',#59072);
 #59072 = PRODUCT(
-'РћС‚РІРѕРґ СЂР°Р·РґР°С‚РѕС‡РЅРѕРіРѕ 
-РєРѕР»Р»РµРєС‚РѕСЂР° Рє РєСЂР°РЅСѓ A1',
-'РћС‚РІРѕРґ СЂР°Р·РґР°С‚РѕС‡РЅРѕРіРѕ 
-РєРѕР»Р»РµРєС‚РѕСЂР° Рє РєСЂР°РЅСѓ A1',
+'Отвод раздаточного 
+коллектора к крану A1',
+'Отвод раздаточного 
+коллектора к крану A1',
   '',(#59073));
 #59073 = PRODUCT_CONTEXT('',#2,'mechanical');
 #59074 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -68702,8 +68702,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #59182 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #59183);
 #59183 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('115',
-'РћС‚РІРѕРґ СЂР°Р·РґР°С‚РѕС‡РЅРѕРіРѕ 
-РєРѕР»Р»РµРєС‚РѕСЂР° Рє РєСЂР°РЅСѓ A1',
+'Отвод раздаточного 
+коллектора к крану A1',
   '',#55974,#59070,$);
 #59184 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#59072));
 #59185 = SHAPE_DEFINITION_REPRESENTATION(#59186,#59192);
@@ -68711,11 +68711,11 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #59187 = PRODUCT_DEFINITION('design','',#59188,#59191);
 #59188 = PRODUCT_DEFINITION_FORMATION('','',#59189);
 #59189 = PRODUCT(
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" вЂ” 
-Р°СЂРіРѕРЅ РЅР° РіРµРЅРµСЂР°С‚РѕСЂ (A2)'
+'Кран шаровой 1/4" — 
+аргон на генератор (A2)'
   ,
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" вЂ” 
-Р°СЂРіРѕРЅ РЅР° РіРµРЅРµСЂР°С‚РѕСЂ (A2)'
+'Кран шаровой 1/4" — 
+аргон на генератор (A2)'
   ,'',(#59190));
 #59190 = PRODUCT_CONTEXT('',#2,'mechanical');
 #59191 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -69081,8 +69081,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #59507 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #59508);
 #59508 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('116',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" вЂ” 
-Р°СЂРіРѕРЅ РЅР° РіРµРЅРµСЂР°С‚РѕСЂ (A2)'
+'Кран шаровой 1/4" — 
+аргон на генератор (A2)'
   ,'',#55974,#59187,$);
 #59509 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#59189));
 #59510 = SHAPE_DEFINITION_REPRESENTATION(#59511,#59517);
@@ -69090,10 +69090,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #59512 = PRODUCT_DEFINITION('design','',#59513,#59516);
 #59513 = PRODUCT_DEFINITION_FORMATION('','',#59514);
 #59514 = PRODUCT(
-'РћС‚РІРѕРґ СЂР°Р·РґР°С‚РѕС‡РЅРѕРіРѕ 
-РєРѕР»Р»РµРєС‚РѕСЂР° Рє РєСЂР°РЅСѓ A2',
-'РћС‚РІРѕРґ СЂР°Р·РґР°С‚РѕС‡РЅРѕРіРѕ 
-РєРѕР»Р»РµРєС‚РѕСЂР° Рє РєСЂР°РЅСѓ A2',
+'Отвод раздаточного 
+коллектора к крану A2',
+'Отвод раздаточного 
+коллектора к крану A2',
   '',(#59515));
 #59515 = PRODUCT_CONTEXT('',#2,'mechanical');
 #59516 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -69226,8 +69226,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #59624 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #59625);
 #59625 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('117',
-'РћС‚РІРѕРґ СЂР°Р·РґР°С‚РѕС‡РЅРѕРіРѕ 
-РєРѕР»Р»РµРєС‚РѕСЂР° Рє РєСЂР°РЅСѓ A2',
+'Отвод раздаточного 
+коллектора к крану A2',
   '',#55974,#59512,$);
 #59626 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#59514));
 #59627 = SHAPE_DEFINITION_REPRESENTATION(#59628,#59634);
@@ -69235,10 +69235,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #59629 = PRODUCT_DEFINITION('design','',#59630,#59633);
 #59630 = PRODUCT_DEFINITION_FORMATION('','',#59631);
 #59631 = PRODUCT(
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" вЂ” 
-Р°СЂРіРѕРЅ РІ С‚Р°СЂСѓ MeSiCl3 / PDMS-OH (A3)',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" вЂ” 
-Р°СЂРіРѕРЅ РІ С‚Р°СЂСѓ MeSiCl3 / PDMS-OH (A3)',
+'Кран шаровой 1/4" — 
+аргон в тару MeSiCl3 / PDMS-OH (A3)',
+'Кран шаровой 1/4" — 
+аргон в тару MeSiCl3 / PDMS-OH (A3)',
   '',(#59632));
 #59632 = PRODUCT_CONTEXT('',#2,'mechanical');
 #59633 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -69604,8 +69604,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #59949 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #59950);
 #59950 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('118',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" вЂ” 
-Р°СЂРіРѕРЅ РІ С‚Р°СЂСѓ MeSiCl3 / PDMS-OH (A3)',
+'Кран шаровой 1/4" — 
+аргон в тару MeSiCl3 / PDMS-OH (A3)',
   '',#55974,#59629,$);
 #59951 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#59631));
 #59952 = SHAPE_DEFINITION_REPRESENTATION(#59953,#59959);
@@ -69613,10 +69613,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #59954 = PRODUCT_DEFINITION('design','',#59955,#59958);
 #59955 = PRODUCT_DEFINITION_FORMATION('','',#59956);
 #59956 = PRODUCT(
-'РћС‚РІРѕРґ СЂР°Р·РґР°С‚РѕС‡РЅРѕРіРѕ 
-РєРѕР»Р»РµРєС‚РѕСЂР° Рє РєСЂР°РЅСѓ A3',
-'РћС‚РІРѕРґ СЂР°Р·РґР°С‚РѕС‡РЅРѕРіРѕ 
-РєРѕР»Р»РµРєС‚РѕСЂР° Рє РєСЂР°РЅСѓ A3',
+'Отвод раздаточного 
+коллектора к крану A3',
+'Отвод раздаточного 
+коллектора к крану A3',
   '',(#59957));
 #59957 = PRODUCT_CONTEXT('',#2,'mechanical');
 #59958 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -69749,8 +69749,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #60066 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #60067);
 #60067 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('119',
-'РћС‚РІРѕРґ СЂР°Р·РґР°С‚РѕС‡РЅРѕРіРѕ 
-РєРѕР»Р»РµРєС‚РѕСЂР° Рє РєСЂР°РЅСѓ A3',
+'Отвод раздаточного 
+коллектора к крану A3',
   '',#55974,#59954,$);
 #60068 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#59956));
 #60069 = SHAPE_DEFINITION_REPRESENTATION(#60070,#60076);
@@ -69758,10 +69758,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #60071 = PRODUCT_DEFINITION('design','',#60072,#60075);
 #60072 = PRODUCT_DEFINITION_FORMATION('','',#60073);
 #60073 = PRODUCT(
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" вЂ” 
-Р°СЂРіРѕРЅ РЅР° РЅСѓС‚С‡ (A4)',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" вЂ” 
-Р°СЂРіРѕРЅ РЅР° РЅСѓС‚С‡ (A4)','',(#60074));
+'Кран шаровой 1/4" — 
+аргон на нутч (A4)',
+'Кран шаровой 1/4" — 
+аргон на нутч (A4)','',(#60074));
 #60074 = PRODUCT_CONTEXT('',#2,'mechanical');
 #60075 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #60076 = SHAPE_REPRESENTATION('',(#11,#60077,#60175,#60187,#60285),
@@ -70126,8 +70126,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #60391 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #60392);
 #60392 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('120',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" вЂ” 
-Р°СЂРіРѕРЅ РЅР° РЅСѓС‚С‡ (A4)','',#55974,#60071,$
+'Кран шаровой 1/4" — 
+аргон на нутч (A4)','',#55974,#60071,$
   );
 #60393 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#60073));
 #60394 = SHAPE_DEFINITION_REPRESENTATION(#60395,#60401);
@@ -70135,10 +70135,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #60396 = PRODUCT_DEFINITION('design','',#60397,#60400);
 #60397 = PRODUCT_DEFINITION_FORMATION('','',#60398);
 #60398 = PRODUCT(
-'РћС‚РІРѕРґ СЂР°Р·РґР°С‚РѕС‡РЅРѕРіРѕ 
-РєРѕР»Р»РµРєС‚РѕСЂР° Рє РєСЂР°РЅСѓ A4',
-'РћС‚РІРѕРґ СЂР°Р·РґР°С‚РѕС‡РЅРѕРіРѕ 
-РєРѕР»Р»РµРєС‚РѕСЂР° Рє РєСЂР°РЅСѓ A4',
+'Отвод раздаточного 
+коллектора к крану A4',
+'Отвод раздаточного 
+коллектора к крану A4',
   '',(#60399));
 #60399 = PRODUCT_CONTEXT('',#2,'mechanical');
 #60400 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -70271,8 +70271,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #60508 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #60509);
 #60509 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('121',
-'РћС‚РІРѕРґ СЂР°Р·РґР°С‚РѕС‡РЅРѕРіРѕ 
-РєРѕР»Р»РµРєС‚РѕСЂР° Рє РєСЂР°РЅСѓ A4',
+'Отвод раздаточного 
+коллектора к крану A4',
   '',#55974,#60396,$);
 #60510 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#60398));
 #60511 = SHAPE_DEFINITION_REPRESENTATION(#60512,#60518);
@@ -70280,10 +70280,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #60513 = PRODUCT_DEFINITION('design','',#60514,#60517);
 #60514 = PRODUCT_DEFINITION_FORMATION('','',#60515);
 #60515 = PRODUCT(
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° 1/4" Рє 
-РіСЂРµР±С‘РЅРєРµ (РєСЂР°РЅ AV-1)',
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° 1/4" Рє 
-РіСЂРµР±С‘РЅРєРµ (РєСЂР°РЅ AV-1)','',(#60516));
+'Трубка аргона 1/4" к 
+гребёнке (кран AV-1)',
+'Трубка аргона 1/4" к 
+гребёнке (кран AV-1)','',(#60516));
 #60516 = PRODUCT_CONTEXT('',#2,'mechanical');
 #60517 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #60518 = SHAPE_REPRESENTATION('',(#11,#60519,#60617,#60715,#60813,#60911
@@ -70904,8 +70904,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #61065 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #61066);
 #61066 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('122',
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° 1/4" Рє 
-РіСЂРµР±С‘РЅРєРµ (РєСЂР°РЅ AV-1)','',#55974,
+'Трубка аргона 1/4" к 
+гребёнке (кран AV-1)','',#55974,
   #60513,$);
 #61067 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#60515));
 #61068 = SHAPE_DEFINITION_REPRESENTATION(#61069,#61075);
@@ -70913,12 +70913,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #61070 = PRODUCT_DEFINITION('design','',#61071,#61074);
 #61071 = PRODUCT_DEFINITION_FORMATION('','',#61072);
 #61072 = PRODUCT(
-'РљР»Р°РїР°РЅ РѕР±СЂР°С‚РЅС‹Р№ 1/4" 
-РЅР° Р»РёРЅРёРё Р°СЂРіРѕРЅР° Рє 
-РіСЂРµР±С‘РЅРєРµ',
-'РљР»Р°РїР°РЅ РѕР±СЂР°С‚РЅС‹Р№ 1/4" 
-РЅР° Р»РёРЅРёРё Р°СЂРіРѕРЅР° Рє 
-РіСЂРµР±С‘РЅРєРµ','',(#61073));
+'Клапан обратный 1/4" 
+на линии аргона к 
+гребёнке',
+'Клапан обратный 1/4" 
+на линии аргона к 
+гребёнке','',(#61073));
 #61073 = PRODUCT_CONTEXT('',#2,'mechanical');
 #61074 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #61075 = SHAPE_REPRESENTATION('',(#11,#61076,#61174),#61272);
@@ -71160,19 +71160,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #61280 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #61281);
 #61281 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('123',
-'РљР»Р°РїР°РЅ РѕР±СЂР°С‚РЅС‹Р№ 1/4" 
-РЅР° Р»РёРЅРёРё Р°СЂРіРѕРЅР° Рє 
-РіСЂРµР±С‘РЅРєРµ','',#55974,#61070,$);
+'Клапан обратный 1/4" 
+на линии аргона к 
+гребёнке','',#55974,#61070,$);
 #61282 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#61072));
 #61283 = SHAPE_DEFINITION_REPRESENTATION(#61284,#61290);
 #61284 = PRODUCT_DEFINITION_SHAPE('','',#61285);
 #61285 = PRODUCT_DEFINITION('design','',#61286,#61289);
 #61286 = PRODUCT_DEFINITION_FORMATION('','',#61287);
 #61287 = PRODUCT(
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° 1/4" Рє 
-РіРµРЅРµСЂР°С‚РѕСЂСѓ',
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° 1/4" Рє 
-РіРµРЅРµСЂР°С‚РѕСЂСѓ','',(#61288));
+'Трубка аргона 1/4" к 
+генератору',
+'Трубка аргона 1/4" к 
+генератору','',(#61288));
 #61288 = PRODUCT_CONTEXT('',#2,'mechanical');
 #61289 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #61290 = SHAPE_REPRESENTATION('',(#11,#61291,#61389,#61487,#61585,#61683
@@ -71671,18 +71671,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #61727 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #61728);
 #61728 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('124',
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° 1/4" Рє 
-РіРµРЅРµСЂР°С‚РѕСЂСѓ','',#55974,#61285,$);
+'Трубка аргона 1/4" к 
+генератору','',#55974,#61285,$);
 #61729 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#61287));
 #61730 = SHAPE_DEFINITION_REPRESENTATION(#61731,#61737);
 #61731 = PRODUCT_DEFINITION_SHAPE('','',#61732);
 #61732 = PRODUCT_DEFINITION('design','',#61733,#61736);
 #61733 = PRODUCT_DEFINITION_FORMATION('','',#61734);
 #61734 = PRODUCT(
-'РЁС‚СѓС†РµСЂ РІРІРѕРґР° Р°СЂРіРѕРЅР° 
-РІ РіРµРЅРµСЂР°С‚РѕСЂ',
-'РЁС‚СѓС†РµСЂ РІРІРѕРґР° Р°СЂРіРѕРЅР° 
-РІ РіРµРЅРµСЂР°С‚РѕСЂ','',(#61735));
+'Штуцер ввода аргона 
+в генератор',
+'Штуцер ввода аргона 
+в генератор','',(#61735));
 #61735 = PRODUCT_CONTEXT('',#2,'mechanical');
 #61736 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #61737 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#61738),#61836);
@@ -71814,20 +71814,20 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #61844 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #61845);
 #61845 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('125',
-'РЁС‚СѓС†РµСЂ РІРІРѕРґР° Р°СЂРіРѕРЅР° 
-РІ РіРµРЅРµСЂР°С‚РѕСЂ','',#55974,#61732,$);
+'Штуцер ввода аргона 
+в генератор','',#55974,#61732,$);
 #61846 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#61734));
 #61847 = SHAPE_DEFINITION_REPRESENTATION(#61848,#61854);
 #61848 = PRODUCT_DEFINITION_SHAPE('','',#61849);
 #61849 = PRODUCT_DEFINITION('design','',#61850,#61853);
 #61850 = PRODUCT_DEFINITION_FORMATION('','',#61851);
 #61851 = PRODUCT(
-'РќР°СЃРѕСЃ РІР°РєСѓСѓРјРЅС‹Р№ 
-РјРµРјР±СЂР°РЅРЅС‹Р№ 
-С…РёРјРёС‡РµСЃРєРёР№ (VP-1)',
-'РќР°СЃРѕСЃ РІР°РєСѓСѓРјРЅС‹Р№ 
-РјРµРјР±СЂР°РЅРЅС‹Р№ 
-С…РёРјРёС‡РµСЃРєРёР№ (VP-1)','',(#61852));
+'Насос вакуумный 
+мембранный 
+химический (VP-1)',
+'Насос вакуумный 
+мембранный 
+химический (VP-1)','',(#61852));
 #61852 = PRODUCT_CONTEXT('',#2,'mechanical');
 #61853 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #61854 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#61855),#62185);
@@ -72227,21 +72227,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #62193 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #62194);
 #62194 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('126',
-'РќР°СЃРѕСЃ РІР°РєСѓСѓРјРЅС‹Р№ 
-РјРµРјР±СЂР°РЅРЅС‹Р№ 
-С…РёРјРёС‡РµСЃРєРёР№ (VP-1)','',#55974,#61849,$);
+'Насос вакуумный 
+мембранный 
+химический (VP-1)','',#55974,#61849,$);
 #62195 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#61851));
 #62196 = SHAPE_DEFINITION_REPRESENTATION(#62197,#62203);
 #62197 = PRODUCT_DEFINITION_SHAPE('','',#62198);
 #62198 = PRODUCT_DEFINITION('design','',#62199,#62202);
 #62199 = PRODUCT_DEFINITION_FORMATION('','',#62200);
 #62200 = PRODUCT(
-'РЎРєР»СЏРЅРєР°-СЃРµРїР°СЂР°С‚РѕСЂ 
-РїРµСЂРµРґ РІР°РєСѓСѓРјРЅС‹Рј 
-РЅР°СЃРѕСЃРѕРј (CT-1)',
-'РЎРєР»СЏРЅРєР°-СЃРµРїР°СЂР°С‚РѕСЂ 
-РїРµСЂРµРґ РІР°РєСѓСѓРјРЅС‹Рј 
-РЅР°СЃРѕСЃРѕРј (CT-1)','',(#62201));
+'Склянка-сепаратор 
+перед вакуумным 
+насосом (CT-1)',
+'Склянка-сепаратор 
+перед вакуумным 
+насосом (CT-1)','',(#62201));
 #62201 = PRODUCT_CONTEXT('',#2,'mechanical');
 #62202 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #62203 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#62204),#62302);
@@ -72373,21 +72373,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #62310 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #62311);
 #62311 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('127',
-'РЎРєР»СЏРЅРєР°-СЃРµРїР°СЂР°С‚РѕСЂ 
-РїРµСЂРµРґ РІР°РєСѓСѓРјРЅС‹Рј 
-РЅР°СЃРѕСЃРѕРј (CT-1)','',#55974,#62198,$);
+'Склянка-сепаратор 
+перед вакуумным 
+насосом (CT-1)','',#55974,#62198,$);
 #62312 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#62200));
 #62313 = SHAPE_DEFINITION_REPRESENTATION(#62314,#62320);
 #62314 = PRODUCT_DEFINITION_SHAPE('','',#62315);
 #62315 = PRODUCT_DEFINITION('design','',#62316,#62319);
 #62316 = PRODUCT_DEFINITION_FORMATION('','',#62317);
 #62317 = PRODUCT(
-'Р’Р°РєСѓСѓРјРЅС‹Р№ С€Р»Р°РЅРі РѕС‚ 
-РіСЂРµР±С‘РЅРєРё Рє 
-СЃРµРїР°СЂР°С‚РѕСЂСѓ',
-'Р’Р°РєСѓСѓРјРЅС‹Р№ С€Р»Р°РЅРі РѕС‚ 
-РіСЂРµР±С‘РЅРєРё Рє 
-СЃРµРїР°СЂР°С‚РѕСЂСѓ','',(#62318));
+'Вакуумный шланг от 
+гребёнки к 
+сепаратору',
+'Вакуумный шланг от 
+гребёнки к 
+сепаратору','',(#62318));
 #62318 = PRODUCT_CONTEXT('',#2,'mechanical');
 #62319 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #62320 = SHAPE_REPRESENTATION('',(#11,#62321,#62419,#62517,#62615,#62713
@@ -72886,19 +72886,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #62757 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #62758);
 #62758 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('128',
-'Р’Р°РєСѓСѓРјРЅС‹Р№ С€Р»Р°РЅРі РѕС‚ 
-РіСЂРµР±С‘РЅРєРё Рє 
-СЃРµРїР°СЂР°С‚РѕСЂСѓ','',#55974,#62315,$);
+'Вакуумный шланг от 
+гребёнки к 
+сепаратору','',#55974,#62315,$);
 #62759 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#62317));
 #62760 = SHAPE_DEFINITION_REPRESENTATION(#62761,#62767);
 #62761 = PRODUCT_DEFINITION_SHAPE('','',#62762);
 #62762 = PRODUCT_DEFINITION('design','',#62763,#62766);
 #62763 = PRODUCT_DEFINITION_FORMATION('','',#62764);
 #62764 = PRODUCT(
-'Р”РѕР·РёСЂРѕРІР°РЅРёРµ MeSiCl3 / PDMS-OH 
-РЅР°СЃРѕСЃРѕРј',
-'Р”РѕР·РёСЂРѕРІР°РЅРёРµ MeSiCl3 / PDMS-OH 
-РЅР°СЃРѕСЃРѕРј','',(#62765));
+'Дозирование MeSiCl3 / PDMS-OH 
+насосом',
+'Дозирование MeSiCl3 / PDMS-OH 
+насосом','',(#62765));
 #62765 = PRODUCT_CONTEXT('',#2,'mechanical');
 #62766 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #62767 = SHAPE_REPRESENTATION('',(#11,#62768,#62772,#62776,#62780,#62784
@@ -72979,10 +72979,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #62833 = PRODUCT_DEFINITION('design','',#62834,#62837);
 #62834 = PRODUCT_DEFINITION_FORMATION('','',#62835);
 #62835 = PRODUCT(
-'РўРµР»РµР¶РєР° 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ',
-'РўРµР»РµР¶РєР° 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ','',(#62836));
+'Тележка 
+дозирования',
+'Тележка 
+дозирования','',(#62836));
 #62836 = PRODUCT_CONTEXT('',#2,'mechanical');
 #62837 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #62838 = SHAPE_REPRESENTATION('',(#11,#62839,#63169,#63499,#63829,#64159
@@ -75273,17 +75273,17 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #64827 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #64828);
 #64828 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('130',
-'РўРµР»РµР¶РєР° 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ','',#62762,#62833,$);
+'Тележка 
+дозирования','',#62762,#62833,$);
 #64829 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#62835));
 #64830 = SHAPE_DEFINITION_REPRESENTATION(#64831,#64837);
 #64831 = PRODUCT_DEFINITION_SHAPE('','',#64832);
 #64832 = PRODUCT_DEFINITION('design','',#64833,#64836);
 #64833 = PRODUCT_DEFINITION_FORMATION('','',#64834);
 #64834 = PRODUCT(
-'Р’РµСЃС‹ 15 РєРі РїРѕРґ С‚Р°СЂРѕР№ 
+'Весы 15 кг под тарой 
 MeSiCl3 / PDMS-OH (W-4)',
-'Р’РµСЃС‹ 15 РєРі РїРѕРґ С‚Р°СЂРѕР№ 
+'Весы 15 кг под тарой 
 MeSiCl3 / PDMS-OH (W-4)','',(#64835));
 #64835 = PRODUCT_CONTEXT('',#2,'mechanical');
 #64836 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -75684,7 +75684,7 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #65176 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #65177);
 #65177 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('131',
-'Р’РµСЃС‹ 15 РєРі РїРѕРґ С‚Р°СЂРѕР№ 
+'Весы 15 кг под тарой 
 MeSiCl3 / PDMS-OH (W-4)','',#62762,#64832,$);
 #65178 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#64834));
 #65179 = SHAPE_DEFINITION_REPRESENTATION(#65180,#65186);
@@ -75692,8 +75692,8 @@ MeSiCl3 / PDMS-OH (W-4)','',#62762,#64832,$);
 #65181 = PRODUCT_DEFINITION('design','',#65182,#65185);
 #65182 = PRODUCT_DEFINITION_FORMATION('','',#65183);
 #65183 = PRODUCT(
-  'РџРѕРґРґРѕРЅ РїРѕРґ С‚Р°СЂСѓ',
-  'РџРѕРґРґРѕРЅ РїРѕРґ С‚Р°СЂСѓ','',(#65184));
+  'Поддон под тару',
+  'Поддон под тару','',(#65184));
 #65184 = PRODUCT_CONTEXT('',#2,'mechanical');
 #65185 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #65186 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#65187),#65831);
@@ -76464,7 +76464,7 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #65839 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #65840);
 #65840 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('132',
-  'РџРѕРґРґРѕРЅ РїРѕРґ С‚Р°СЂСѓ','',#62762,
+  'Поддон под тару','',#62762,
   #65181,$);
 #65841 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#65183));
 #65842 = SHAPE_DEFINITION_REPRESENTATION(#65843,#65849);
@@ -76472,9 +76472,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #65844 = PRODUCT_DEFINITION('design','',#65845,#65848);
 #65845 = PRODUCT_DEFINITION_FORMATION('','',#65846);
 #65846 = PRODUCT(
-'РўР°СЂР° РїРѕСЃС‚Р°РІС‰РёРєР° MeSiCl3 
+'Тара поставщика MeSiCl3 
 / PDMS-OH',
-'РўР°СЂР° РїРѕСЃС‚Р°РІС‰РёРєР° MeSiCl3 
+'Тара поставщика MeSiCl3 
 / PDMS-OH','',(#65847));
 #65847 = PRODUCT_CONTEXT('',#2,'mechanical');
 #65848 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -76828,7 +76828,7 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #66152 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #66153);
 #66153 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('133',
-'РўР°СЂР° РїРѕСЃС‚Р°РІС‰РёРєР° MeSiCl3 
+'Тара поставщика MeSiCl3 
 / PDMS-OH','',#62762,#65844,$);
 #66154 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#65846));
 #66155 = SHAPE_DEFINITION_REPRESENTATION(#66156,#66162);
@@ -76836,12 +76836,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #66157 = PRODUCT_DEFINITION('design','',#66158,#66161);
 #66158 = PRODUCT_DEFINITION_FORMATION('','',#66159);
 #66159 = PRODUCT(
-'РљСЂС‹С€РєР°-РїРµСЂРµС…РѕРґРЅРёРє PTFE 
-РЅР° С‚Р°СЂСѓ: Р°СЂРіРѕРЅ + 
-Р·Р°Р±РѕСЂРЅР°СЏ С‚СЂСѓР±РєР°',
-'РљСЂС‹С€РєР°-РїРµСЂРµС…РѕРґРЅРёРє PTFE 
-РЅР° С‚Р°СЂСѓ: Р°СЂРіРѕРЅ + 
-Р·Р°Р±РѕСЂРЅР°СЏ С‚СЂСѓР±РєР°','',(#66160));
+'Крышка-переходник PTFE 
+на тару: аргон + 
+заборная трубка',
+'Крышка-переходник PTFE 
+на тару: аргон + 
+заборная трубка','',(#66160));
 #66160 = PRODUCT_CONTEXT('',#2,'mechanical');
 #66161 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #66162 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#66163),#66261);
@@ -76973,9 +76973,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #66269 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #66270);
 #66270 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('134',
-'РљСЂС‹С€РєР°-РїРµСЂРµС…РѕРґРЅРёРє PTFE 
-РЅР° С‚Р°СЂСѓ: Р°СЂРіРѕРЅ + 
-Р·Р°Р±РѕСЂРЅР°СЏ С‚СЂСѓР±РєР°','',#62762,
+'Крышка-переходник PTFE 
+на тару: аргон + 
+заборная трубка','',#62762,
   #66157,$);
 #66271 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#66159));
 #66272 = SHAPE_DEFINITION_REPRESENTATION(#66273,#66279);
@@ -76983,10 +76983,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #66274 = PRODUCT_DEFINITION('design','',#66275,#66278);
 #66275 = PRODUCT_DEFINITION_FORMATION('','',#66276);
 #66276 = PRODUCT(
-'Р—Р°Р±РѕСЂРЅР°СЏ С‚СЂСѓР±РєР° PTFE 
-РґРѕ РґРЅР° С‚Р°СЂС‹',
-'Р—Р°Р±РѕСЂРЅР°СЏ С‚СЂСѓР±РєР° PTFE 
-РґРѕ РґРЅР° С‚Р°СЂС‹','',(#66277));
+'Заборная трубка PTFE 
+до дна тары',
+'Заборная трубка PTFE 
+до дна тары','',(#66277));
 #66277 = PRODUCT_CONTEXT('',#2,'mechanical');
 #66278 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #66279 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#66280),#66378);
@@ -77118,21 +77118,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #66386 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #66387);
 #66387 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('135',
-'Р—Р°Р±РѕСЂРЅР°СЏ С‚СЂСѓР±РєР° PTFE 
-РґРѕ РґРЅР° С‚Р°СЂС‹','',#62762,#66274,$);
+'Заборная трубка PTFE 
+до дна тары','',#62762,#66274,$);
 #66388 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#66276));
 #66389 = SHAPE_DEFINITION_REPRESENTATION(#66390,#66396);
 #66390 = PRODUCT_DEFINITION_SHAPE('','',#66391);
 #66391 = PRODUCT_DEFINITION('design','',#66392,#66395);
 #66392 = PRODUCT_DEFINITION_FORMATION('','',#66393);
 #66393 = PRODUCT(
-'РќР°СЃРѕСЃ РјРµРјР±СЂР°РЅРЅС‹Р№ 
-РїРЅРµРІРјР°С‚РёС‡РµСЃРєРёР№ вЂ” 
-РґРѕР·РёСЂРѕРІР°РЅРёРµ MeSiCl3 / PDMS-OH 
+'Насос мембранный 
+пневматический — 
+дозирование MeSiCl3 / PDMS-OH 
 (P-3)',
-'РќР°СЃРѕСЃ РјРµРјР±СЂР°РЅРЅС‹Р№ 
-РїРЅРµРІРјР°С‚РёС‡РµСЃРєРёР№ вЂ” 
-РґРѕР·РёСЂРѕРІР°РЅРёРµ MeSiCl3 / PDMS-OH 
+'Насос мембранный 
+пневматический — 
+дозирование MeSiCl3 / PDMS-OH 
 (P-3)','',(#66394));
 #66394 = PRODUCT_CONTEXT('',#2,'mechanical');
 #66395 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -78998,9 +78998,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #68019 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #68020);
 #68020 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('136',
-'РќР°СЃРѕСЃ РјРµРјР±СЂР°РЅРЅС‹Р№ 
-РїРЅРµРІРјР°С‚РёС‡РµСЃРєРёР№ вЂ” 
-РґРѕР·РёСЂРѕРІР°РЅРёРµ MeSiCl3 / PDMS-OH 
+'Насос мембранный 
+пневматический — 
+дозирование MeSiCl3 / PDMS-OH 
 (P-3)','',#62762,#66391,$);
 #68021 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#66393));
 #68022 = SHAPE_DEFINITION_REPRESENTATION(#68023,#68029);
@@ -79008,12 +79008,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #68024 = PRODUCT_DEFINITION('design','',#68025,#68028);
 #68025 = PRODUCT_DEFINITION_FORMATION('','',#68026);
 #68026 = PRODUCT(
-'РўСЂСѓР±РєР° РІСЃР°СЃР° РѕС‚ 
-С‚Р°СЂС‹ Рє РЅР°СЃРѕСЃСѓ 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ',
-'РўСЂСѓР±РєР° РІСЃР°СЃР° РѕС‚ 
-С‚Р°СЂС‹ Рє РЅР°СЃРѕСЃСѓ 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ','',(#68027));
+'Трубка всаса от 
+тары к насосу 
+дозирования',
+'Трубка всаса от 
+тары к насосу 
+дозирования','',(#68027));
 #68027 = PRODUCT_CONTEXT('',#2,'mechanical');
 #68028 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #68029 = SHAPE_REPRESENTATION('',(#11,#68030,#68128,#68226,#68324,#68422
@@ -79512,21 +79512,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #68466 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #68467);
 #68467 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('137',
-'РўСЂСѓР±РєР° РІСЃР°СЃР° РѕС‚ 
-С‚Р°СЂС‹ Рє РЅР°СЃРѕСЃСѓ 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ','',#62762,#68024,$);
+'Трубка всаса от 
+тары к насосу 
+дозирования','',#62762,#68024,$);
 #68468 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#68026));
 #68469 = SHAPE_DEFINITION_REPRESENTATION(#68470,#68476);
 #68470 = PRODUCT_DEFINITION_SHAPE('','',#68471);
 #68471 = PRODUCT_DEFINITION('design','',#68472,#68475);
 #68472 = PRODUCT_DEFINITION_FORMATION('','',#68473);
 #68473 = PRODUCT(
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" РЅР° 
-РІСЃР°СЃРµ РЅР°СЃРѕСЃР° 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ (V-B1)',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" РЅР° 
-РІСЃР°СЃРµ РЅР°СЃРѕСЃР° 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ (V-B1)','',(#68474));
+'Кран шаровой 1/4" на 
+всасе насоса 
+дозирования (V-B1)',
+'Кран шаровой 1/4" на 
+всасе насоса 
+дозирования (V-B1)','',(#68474));
 #68474 = PRODUCT_CONTEXT('',#2,'mechanical');
 #68475 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #68476 = SHAPE_REPRESENTATION('',(#11,#68477,#68575,#68587,#68685),
@@ -79891,9 +79891,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #68791 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #68792);
 #68792 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('138',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" РЅР° 
-РІСЃР°СЃРµ РЅР°СЃРѕСЃР° 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ (V-B1)','',#62762,#68471,$
+'Кран шаровой 1/4" на 
+всасе насоса 
+дозирования (V-B1)','',#62762,#68471,$
   );
 #68793 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#68473));
 #68794 = SHAPE_DEFINITION_REPRESENTATION(#68795,#68801);
@@ -79901,12 +79901,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #68796 = PRODUCT_DEFINITION('design','',#68797,#68800);
 #68797 = PRODUCT_DEFINITION_FORMATION('','',#68798);
 #68798 = PRODUCT(
-'РўСЂСѓР±РєР° PTFE 1/4" РѕС‚ 
-РЅР°СЃРѕСЃР° РґРѕР·РёСЂРѕРІР°РЅРёСЏ 
-РІ СЂРµР°РєС‚РѕСЂ',
-'РўСЂСѓР±РєР° PTFE 1/4" РѕС‚ 
-РЅР°СЃРѕСЃР° РґРѕР·РёСЂРѕРІР°РЅРёСЏ 
-РІ СЂРµР°РєС‚РѕСЂ','',(#68799));
+'Трубка PTFE 1/4" от 
+насоса дозирования 
+в реактор',
+'Трубка PTFE 1/4" от 
+насоса дозирования 
+в реактор','',(#68799));
 #68799 = PRODUCT_CONTEXT('',#2,'mechanical');
 #68800 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #68801 = SHAPE_REPRESENTATION('',(#11,#68802,#68900,#68998,#69096,#69194
@@ -80527,21 +80527,21 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #69348 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #69349);
 #69349 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('139',
-'РўСЂСѓР±РєР° PTFE 1/4" РѕС‚ 
-РЅР°СЃРѕСЃР° РґРѕР·РёСЂРѕРІР°РЅРёСЏ 
-РІ СЂРµР°РєС‚РѕСЂ','',#62762,#68796,$);
+'Трубка PTFE 1/4" от 
+насоса дозирования 
+в реактор','',#62762,#68796,$);
 #69350 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#68798));
 #69351 = SHAPE_DEFINITION_REPRESENTATION(#69352,#69358);
 #69352 = PRODUCT_DEFINITION_SHAPE('','',#69353);
 #69353 = PRODUCT_DEFINITION('design','',#69354,#69357);
 #69354 = PRODUCT_DEFINITION_FORMATION('','',#69355);
 #69355 = PRODUCT(
-'Р’РµРЅС‚РёР»СЊ РёРіРѕР»СЊС‡Р°С‚С‹Р№ 
-СЂРµРіСѓР»РёСЂРѕРІРєРё 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ (FV-1)',
-'Р’РµРЅС‚РёР»СЊ РёРіРѕР»СЊС‡Р°С‚С‹Р№ 
-СЂРµРіСѓР»РёСЂРѕРІРєРё 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ (FV-1)','',(#69356));
+'Вентиль игольчатый 
+регулировки 
+дозирования (FV-1)',
+'Вентиль игольчатый 
+регулировки 
+дозирования (FV-1)','',(#69356));
 #69356 = PRODUCT_CONTEXT('',#2,'mechanical');
 #69357 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #69358 = SHAPE_REPRESENTATION('',(#11,#69359,#69689),#69787);
@@ -81051,9 +81051,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #69795 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #69796);
 #69796 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('140',
-'Р’РµРЅС‚РёР»СЊ РёРіРѕР»СЊС‡Р°С‚С‹Р№ 
-СЂРµРіСѓР»РёСЂРѕРІРєРё 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ (FV-1)','',#62762,#69353,$
+'Вентиль игольчатый 
+регулировки 
+дозирования (FV-1)','',#62762,#69353,$
   );
 #69797 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#69355));
 #69798 = SHAPE_DEFINITION_REPRESENTATION(#69799,#69805);
@@ -81061,12 +81061,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #69800 = PRODUCT_DEFINITION('design','',#69801,#69804);
 #69801 = PRODUCT_DEFINITION_FORMATION('','',#69802);
 #69802 = PRODUCT(
-'РљР»Р°РїР°РЅ РѕР±СЂР°С‚РЅС‹Р№ 1/4" 
-РЅР° Р»РёРЅРёРё 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ (NRV-4)',
-'РљР»Р°РїР°РЅ РѕР±СЂР°С‚РЅС‹Р№ 1/4" 
-РЅР° Р»РёРЅРёРё 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ (NRV-4)','',(#69803));
+'Клапан обратный 1/4" 
+на линии 
+дозирования (NRV-4)',
+'Клапан обратный 1/4" 
+на линии 
+дозирования (NRV-4)','',(#69803));
 #69803 = PRODUCT_CONTEXT('',#2,'mechanical');
 #69804 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #69805 = SHAPE_REPRESENTATION('',(#11,#69806,#69904),#70002);
@@ -81308,9 +81308,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #70010 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #70011);
 #70011 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('141',
-'РљР»Р°РїР°РЅ РѕР±СЂР°С‚РЅС‹Р№ 1/4" 
-РЅР° Р»РёРЅРёРё 
-РґРѕР·РёСЂРѕРІР°РЅРёСЏ (NRV-4)','',#62762,#69800,$
+'Клапан обратный 1/4" 
+на линии 
+дозирования (NRV-4)','',#62762,#69800,$
   );
 #70012 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#69802));
 #70013 = SHAPE_DEFINITION_REPRESENTATION(#70014,#70020);
@@ -81318,10 +81318,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #70015 = PRODUCT_DEFINITION('design','',#70016,#70019);
 #70016 = PRODUCT_DEFINITION_FORMATION('','',#70017);
 #70017 = PRODUCT(
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° 1/4" Рє 
-С‚Р°СЂРµ MeSiCl3 / PDMS-OH',
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° 1/4" Рє 
-С‚Р°СЂРµ MeSiCl3 / PDMS-OH','',(#70018));
+'Трубка аргона 1/4" к 
+таре MeSiCl3 / PDMS-OH',
+'Трубка аргона 1/4" к 
+таре MeSiCl3 / PDMS-OH','',(#70018));
 #70018 = PRODUCT_CONTEXT('',#2,'mechanical');
 #70019 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #70020 = SHAPE_REPRESENTATION('',(#11,#70021,#70119,#70217,#70315,#70413
@@ -81820,18 +81820,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #70457 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #70458);
 #70458 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('142',
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° 1/4" Рє 
-С‚Р°СЂРµ MeSiCl3 / PDMS-OH','',#62762,#70015,$);
+'Трубка аргона 1/4" к 
+таре MeSiCl3 / PDMS-OH','',#62762,#70015,$);
 #70459 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#70017));
 #70460 = SHAPE_DEFINITION_REPRESENTATION(#70461,#70467);
 #70461 = PRODUCT_DEFINITION_SHAPE('','',#70462);
 #70462 = PRODUCT_DEFINITION('design','',#70463,#70466);
 #70463 = PRODUCT_DEFINITION_FORMATION('','',#70464);
 #70464 = PRODUCT(
-'Р’С‹РіСЂСѓР·РєР°, 
-С„РёР»СЊС‚СЂР°С†РёСЏ, С„Р°СЃРѕРІРєР°',
-'Р’С‹РіСЂСѓР·РєР°, 
-С„РёР»СЊС‚СЂР°С†РёСЏ, С„Р°СЃРѕРІРєР°',
+'Выгрузка, 
+фильтрация, фасовка',
+'Выгрузка, 
+фильтрация, фасовка',
   '',(#70465));
 #70465 = PRODUCT_CONTEXT('',#2,'mechanical');
 #70466 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -81946,9 +81946,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #70565 = PRODUCT_DEFINITION('design','',#70566,#70569);
 #70566 = PRODUCT_DEFINITION_FORMATION('','',#70567);
 #70567 = PRODUCT(
-'РљСЂР°РЅ РЅРёР¶РЅРµРіРѕ СЃР»РёРІР° 
+'Кран нижнего слива 
 Swagelok (BV-1)',
-'РљСЂР°РЅ РЅРёР¶РЅРµРіРѕ СЃР»РёРІР° 
+'Кран нижнего слива 
 Swagelok (BV-1)','',(#70568));
 #70568 = PRODUCT_CONTEXT('',#2,'mechanical');
 #70569 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -82315,7 +82315,7 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #70885 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #70886);
 #70886 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('144',
-'РљСЂР°РЅ РЅРёР¶РЅРµРіРѕ СЃР»РёРІР° 
+'Кран нижнего слива 
 Swagelok (BV-1)','',#70462,#70565,$);
 #70887 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#70567));
 #70888 = SHAPE_DEFINITION_REPRESENTATION(#70889,#70895);
@@ -82323,12 +82323,12 @@ Swagelok (BV-1)','',#70462,#70565,$);
 #70890 = PRODUCT_DEFINITION('design','',#70891,#70894);
 #70891 = PRODUCT_DEFINITION_FORMATION('','',#70892);
 #70892 = PRODUCT(
-'РўСЂРѕР№РЅРёРє DN38 СЃ РѕС‚РІРѕРґРѕРј 
-РЅР° РІС‹РіСЂСѓР·РєСѓ Рё РѕС‚Р±РѕСЂ 
-РїСЂРѕР±',
-'РўСЂРѕР№РЅРёРє DN38 СЃ РѕС‚РІРѕРґРѕРј 
-РЅР° РІС‹РіСЂСѓР·РєСѓ Рё РѕС‚Р±РѕСЂ 
-РїСЂРѕР±','',(#70893));
+'Тройник DN38 с отводом 
+на выгрузку и отбор 
+проб',
+'Тройник DN38 с отводом 
+на выгрузку и отбор 
+проб','',(#70893));
 #70893 = PRODUCT_CONTEXT('',#2,'mechanical');
 #70894 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #70895 = SHAPE_REPRESENTATION('',(#11,#70896,#70994,#71092,#71190,#71288
@@ -83684,18 +83684,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #72092 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #72093);
 #72093 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('145',
-'РўСЂРѕР№РЅРёРє DN38 СЃ РѕС‚РІРѕРґРѕРј 
-РЅР° РІС‹РіСЂСѓР·РєСѓ Рё РѕС‚Р±РѕСЂ 
-РїСЂРѕР±','',#70462,#70890,$);
+'Тройник DN38 с отводом 
+на выгрузку и отбор 
+проб','',#70462,#70890,$);
 #72094 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#70892));
 #72095 = SHAPE_DEFINITION_REPRESENTATION(#72096,#72102);
 #72096 = PRODUCT_DEFINITION_SHAPE('','',#72097);
 #72097 = PRODUCT_DEFINITION('design','',#72098,#72101);
 #72098 = PRODUCT_DEFINITION_FORMATION('','',#72099);
 #72099 = PRODUCT(
-'РљСЂР°РЅ РѕС‚Р±РѕСЂР° РїСЂРѕР± DN15 (SP-1)'
+'Кран отбора проб DN15 (SP-1)'
   ,
-'РљСЂР°РЅ РѕС‚Р±РѕСЂР° РїСЂРѕР± DN15 (SP-1)'
+'Кран отбора проб DN15 (SP-1)'
   ,'',(#72100));
 #72100 = PRODUCT_CONTEXT('',#2,'mechanical');
 #72101 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -84061,7 +84061,7 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #72417 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #72418);
 #72418 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('146',
-'РљСЂР°РЅ РѕС‚Р±РѕСЂР° РїСЂРѕР± DN15 (SP-1)'
+'Кран отбора проб DN15 (SP-1)'
   ,'',#70462,#72097,$);
 #72419 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#72099));
 #72420 = SHAPE_DEFINITION_REPRESENTATION(#72421,#72427);
@@ -84069,13 +84069,13 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #72422 = PRODUCT_DEFINITION('design','',#72423,#72426);
 #72423 = PRODUCT_DEFINITION_FORMATION('','',#72424);
 #72424 = PRODUCT(
-'РќР°СЃРѕСЃ РјРµРјР±СЂР°РЅРЅС‹Р№ 
-РїРЅРµРІРјР°С‚РёС‡РµСЃРєРёР№ вЂ” 
-РІС‹РіСЂСѓР·РєР° РїСЂРѕРґСѓРєС‚Р° (P-2)'
+'Насос мембранный 
+пневматический — 
+выгрузка продукта (P-2)'
   ,
-'РќР°СЃРѕСЃ РјРµРјР±СЂР°РЅРЅС‹Р№ 
-РїРЅРµРІРјР°С‚РёС‡РµСЃРєРёР№ вЂ” 
-РІС‹РіСЂСѓР·РєР° РїСЂРѕРґСѓРєС‚Р° (P-2)'
+'Насос мембранный 
+пневматический — 
+выгрузка продукта (P-2)'
   ,'',(#72425));
 #72425 = PRODUCT_CONTEXT('',#2,'mechanical');
 #72426 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -85941,9 +85941,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #74050 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #74051);
 #74051 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('147',
-'РќР°СЃРѕСЃ РјРµРјР±СЂР°РЅРЅС‹Р№ 
-РїРЅРµРІРјР°С‚РёС‡РµСЃРєРёР№ вЂ” 
-РІС‹РіСЂСѓР·РєР° РїСЂРѕРґСѓРєС‚Р° (P-2)'
+'Насос мембранный 
+пневматический — 
+выгрузка продукта (P-2)'
   ,'',#70462,#72422,$);
 #74052 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#72424));
 #74053 = SHAPE_DEFINITION_REPRESENTATION(#74054,#74060);
@@ -85951,12 +85951,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #74055 = PRODUCT_DEFINITION('design','',#74056,#74059);
 #74056 = PRODUCT_DEFINITION_FORMATION('','',#74057);
 #74057 = PRODUCT(
-'Р СѓРєР°РІ PTFE РѕС‚ СЃР»РёРІР° 
-СЂРµР°РєС‚РѕСЂР° Рє РЅР°СЃРѕСЃСѓ 
-РІС‹РіСЂСѓР·РєРё',
-'Р СѓРєР°РІ PTFE РѕС‚ СЃР»РёРІР° 
-СЂРµР°РєС‚РѕСЂР° Рє РЅР°СЃРѕСЃСѓ 
-РІС‹РіСЂСѓР·РєРё','',(#74058));
+'Рукав PTFE от слива 
+реактора к насосу 
+выгрузки',
+'Рукав PTFE от слива 
+реактора к насосу 
+выгрузки','',(#74058));
 #74058 = PRODUCT_CONTEXT('',#2,'mechanical');
 #74059 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #74060 = SHAPE_REPRESENTATION('',(#11,#74061,#74159,#74257,#74355,#74453
@@ -86462,19 +86462,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #74497 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #74498);
 #74498 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('148',
-'Р СѓРєР°РІ PTFE РѕС‚ СЃР»РёРІР° 
-СЂРµР°РєС‚РѕСЂР° Рє РЅР°СЃРѕСЃСѓ 
-РІС‹РіСЂСѓР·РєРё','',#70462,#74055,$);
+'Рукав PTFE от слива 
+реактора к насосу 
+выгрузки','',#70462,#74055,$);
 #74499 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#74057));
 #74500 = SHAPE_DEFINITION_REPRESENTATION(#74501,#74507);
 #74501 = PRODUCT_DEFINITION_SHAPE('','',#74502);
 #74502 = PRODUCT_DEFINITION('design','',#74503,#74506);
 #74503 = PRODUCT_DEFINITION_FORMATION('','',#74504);
 #74504 = PRODUCT(
-'РќСѓС‚С‡-С„РёР»СЊС‚СЂ РїРѕРґ 
-Р°СЂРіРѕРЅРѕРј (F-1)',
-'РќСѓС‚С‡-С„РёР»СЊС‚СЂ РїРѕРґ 
-Р°СЂРіРѕРЅРѕРј (F-1)','',(#74505));
+'Нутч-фильтр под 
+аргоном (F-1)',
+'Нутч-фильтр под 
+аргоном (F-1)','',(#74505));
 #74505 = PRODUCT_CONTEXT('',#2,'mechanical');
 #74506 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #74507 = SHAPE_REPRESENTATION('',(#11,#74508,#74606,#74704,#74802),
@@ -86938,16 +86938,16 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #74908 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #74909);
 #74909 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('149',
-'РќСѓС‚С‡-С„РёР»СЊС‚СЂ РїРѕРґ 
-Р°СЂРіРѕРЅРѕРј (F-1)','',#70462,#74502,$);
+'Нутч-фильтр под 
+аргоном (F-1)','',#70462,#74502,$);
 #74910 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#74504));
 #74911 = SHAPE_DEFINITION_REPRESENTATION(#74912,#74918);
 #74912 = PRODUCT_DEFINITION_SHAPE('','',#74913);
 #74913 = PRODUCT_DEFINITION('design','',#74914,#74917);
 #74914 = PRODUCT_DEFINITION_FORMATION('','',#74915);
 #74915 = PRODUCT(
-  'РћРїРѕСЂР° РЅСѓС‚С‡-С„РёР»СЊС‚СЂР°',
-  'РћРїРѕСЂР° РЅСѓС‚С‡-С„РёР»СЊС‚СЂР°',
+  'Опора нутч-фильтра',
+  'Опора нутч-фильтра',
   '',(#74916));
 #74916 = PRODUCT_CONTEXT('',#2,'mechanical');
 #74917 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -87507,7 +87507,7 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #75403 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #75404);
 #75404 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('150',
-  'РћРїРѕСЂР° РЅСѓС‚С‡-С„РёР»СЊС‚СЂР°',
+  'Опора нутч-фильтра',
   '',#70462,#74913,$);
 #75405 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#74915));
 #75406 = SHAPE_DEFINITION_REPRESENTATION(#75407,#75413);
@@ -87515,10 +87515,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #75408 = PRODUCT_DEFINITION('design','',#75409,#75412);
 #75409 = PRODUCT_DEFINITION_FORMATION('','',#75410);
 #75410 = PRODUCT(
-'РЁС‚СѓС†РµСЂС‹ РєСЂС‹С€РєРё 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂР°',
-'РЁС‚СѓС†РµСЂС‹ РєСЂС‹С€РєРё 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂР°','',(#75411));
+'Штуцеры крышки 
+нутч-фильтра',
+'Штуцеры крышки 
+нутч-фильтра','',(#75411));
 #75411 = PRODUCT_CONTEXT('',#2,'mechanical');
 #75412 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #75413 = SHAPE_REPRESENTATION('',(#11,#75414,#75512,#75610,#75708),
@@ -87981,18 +87981,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #75814 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #75815);
 #75815 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('151',
-'РЁС‚СѓС†РµСЂС‹ РєСЂС‹С€РєРё 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂР°','',#70462,#75408,$);
+'Штуцеры крышки 
+нутч-фильтра','',#70462,#75408,$);
 #75816 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#75410));
 #75817 = SHAPE_DEFINITION_REPRESENTATION(#75818,#75824);
 #75818 = PRODUCT_DEFINITION_SHAPE('','',#75819);
 #75819 = PRODUCT_DEFINITION('design','',#75820,#75823);
 #75820 = PRODUCT_DEFINITION_FORMATION('','',#75821);
 #75821 = PRODUCT(
-'РњР°РЅРѕРІР°РєСѓСѓРјРјРµС‚СЂ 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂР° (PI-5)',
-'РњР°РЅРѕРІР°РєСѓСѓРјРјРµС‚СЂ 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂР° (PI-5)','',(#75822));
+'Мановакуумметр 
+нутч-фильтра (PI-5)',
+'Мановакуумметр 
+нутч-фильтра (PI-5)','',(#75822));
 #75822 = PRODUCT_CONTEXT('',#2,'mechanical');
 #75823 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #75824 = SHAPE_REPRESENTATION('',(#11,#75825,#75923),#76021);
@@ -88234,8 +88234,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #76029 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #76030);
 #76030 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('152',
-'РњР°РЅРѕРІР°РєСѓСѓРјРјРµС‚СЂ 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂР° (PI-5)','',#70462,#75819,$
+'Мановакуумметр 
+нутч-фильтра (PI-5)','',#70462,#75819,$
   );
 #76031 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#75821));
 #76032 = SHAPE_DEFINITION_REPRESENTATION(#76033,#76039);
@@ -88243,10 +88243,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #76034 = PRODUCT_DEFINITION('design','',#76035,#76038);
 #76035 = PRODUCT_DEFINITION_FORMATION('','',#76036);
 #76036 = PRODUCT(
-'РљР»Р°РїР°РЅ СЃР±СЂРѕСЃРЅРѕР№ 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂР° 0,3 Р±Р°СЂ (PSV-4)',
-'РљР»Р°РїР°РЅ СЃР±СЂРѕСЃРЅРѕР№ 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂР° 0,3 Р±Р°СЂ (PSV-4)',
+'Клапан сбросной 
+нутч-фильтра 0,3 бар (PSV-4)',
+'Клапан сбросной 
+нутч-фильтра 0,3 бар (PSV-4)',
   '',(#76037));
 #76037 = PRODUCT_CONTEXT('',#2,'mechanical');
 #76038 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -88379,8 +88379,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #76146 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #76147);
 #76147 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('153',
-'РљР»Р°РїР°РЅ СЃР±СЂРѕСЃРЅРѕР№ 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂР° 0,3 Р±Р°СЂ (PSV-4)',
+'Клапан сбросной 
+нутч-фильтра 0,3 бар (PSV-4)',
   '',#70462,#76034,$);
 #76148 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#76036));
 #76149 = SHAPE_DEFINITION_REPRESENTATION(#76150,#76156);
@@ -88388,12 +88388,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #76151 = PRODUCT_DEFINITION('design','',#76152,#76155);
 #76152 = PRODUCT_DEFINITION_FORMATION('','',#76153);
 #76153 = PRODUCT(
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" 
-РІР°РєСѓСѓРјР° 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂР° (VV-2)',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" 
-РІР°РєСѓСѓРјР° 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂР° (VV-2)','',(#76154));
+'Кран шаровой 1/4" 
+вакуума 
+нутч-фильтра (VV-2)',
+'Кран шаровой 1/4" 
+вакуума 
+нутч-фильтра (VV-2)','',(#76154));
 #76154 = PRODUCT_CONTEXT('',#2,'mechanical');
 #76155 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #76156 = SHAPE_REPRESENTATION('',(#11,#76157,#76255,#76267,#76365),
@@ -88758,9 +88758,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #76471 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #76472);
 #76472 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('154',
-'РљСЂР°РЅ С€Р°СЂРѕРІРѕР№ 1/4" 
-РІР°РєСѓСѓРјР° 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂР° (VV-2)','',#70462,#76151,$
+'Кран шаровой 1/4" 
+вакуума 
+нутч-фильтра (VV-2)','',#70462,#76151,$
   );
 #76473 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#76153));
 #76474 = SHAPE_DEFINITION_REPRESENTATION(#76475,#76481);
@@ -88768,12 +88768,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #76476 = PRODUCT_DEFINITION('design','',#76477,#76480);
 #76477 = PRODUCT_DEFINITION_FORMATION('','',#76478);
 #76478 = PRODUCT(
-'РљСЂР°РЅ 1/4" Рё РѕР±СЂР°С‚РЅС‹Р№ 
-РєР»Р°РїР°РЅ Р°СЂРіРѕРЅР° РЅР° 
-РЅСѓС‚С‡ (V-F1, NRV-5)',
-'РљСЂР°РЅ 1/4" Рё РѕР±СЂР°С‚РЅС‹Р№ 
-РєР»Р°РїР°РЅ Р°СЂРіРѕРЅР° РЅР° 
-РЅСѓС‚С‡ (V-F1, NRV-5)','',(#76479));
+'Кран 1/4" и обратный 
+клапан аргона на 
+нутч (V-F1, NRV-5)',
+'Кран 1/4" и обратный 
+клапан аргона на 
+нутч (V-F1, NRV-5)','',(#76479));
 #76479 = PRODUCT_CONTEXT('',#2,'mechanical');
 #76480 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #76481 = SHAPE_REPRESENTATION('',(#11,#76482,#76580,#76592,#76690,#76788
@@ -89358,19 +89358,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #76992 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #76993);
 #76993 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('155',
-'РљСЂР°РЅ 1/4" Рё РѕР±СЂР°С‚РЅС‹Р№ 
-РєР»Р°РїР°РЅ Р°СЂРіРѕРЅР° РЅР° 
-РЅСѓС‚С‡ (V-F1, NRV-5)','',#70462,#76476,$);
+'Кран 1/4" и обратный 
+клапан аргона на 
+нутч (V-F1, NRV-5)','',#70462,#76476,$);
 #76994 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#76478));
 #76995 = SHAPE_DEFINITION_REPRESENTATION(#76996,#77002);
 #76996 = PRODUCT_DEFINITION_SHAPE('','',#76997);
 #76997 = PRODUCT_DEFINITION('design','',#76998,#77001);
 #76998 = PRODUCT_DEFINITION_FORMATION('','',#76999);
 #76999 = PRODUCT(
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° 1/4" Рє 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂСѓ',
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° 1/4" Рє 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂСѓ','',(#77000));
+'Трубка аргона 1/4" к 
+нутч-фильтру',
+'Трубка аргона 1/4" к 
+нутч-фильтру','',(#77000));
 #77000 = PRODUCT_CONTEXT('',#2,'mechanical');
 #77001 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #77002 = SHAPE_REPRESENTATION('',(#11,#77003,#77101,#77199,#77297,#77395
@@ -90235,20 +90235,20 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #77769 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #77770);
 #77770 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('156',
-'РўСЂСѓР±РєР° Р°СЂРіРѕРЅР° 1/4" Рє 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂСѓ','',#70462,#76997,$);
+'Трубка аргона 1/4" к 
+нутч-фильтру','',#70462,#76997,$);
 #77771 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#76999));
 #77772 = SHAPE_DEFINITION_REPRESENTATION(#77773,#77779);
 #77773 = PRODUCT_DEFINITION_SHAPE('','',#77774);
 #77774 = PRODUCT_DEFINITION('design','',#77775,#77778);
 #77775 = PRODUCT_DEFINITION_FORMATION('','',#77776);
 #77776 = PRODUCT(
-'РўСЂСѓР±РєР° СЃР±СЂРѕСЃР° 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂР° РІ 
-Р±СѓС„РµСЂРЅСѓСЋ С‘РјРєРѕСЃС‚СЊ',
-'РўСЂСѓР±РєР° СЃР±СЂРѕСЃР° 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂР° РІ 
-Р±СѓС„РµСЂРЅСѓСЋ С‘РјРєРѕСЃС‚СЊ','',(
+'Трубка сброса 
+нутч-фильтра в 
+буферную ёмкость',
+'Трубка сброса 
+нутч-фильтра в 
+буферную ёмкость','',(
     #77777));
 #77777 = PRODUCT_CONTEXT('',#2,'mechanical');
 #77778 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -90992,9 +90992,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #78436 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #78437);
 #78437 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('157',
-'РўСЂСѓР±РєР° СЃР±СЂРѕСЃР° 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂР° РІ 
-Р±СѓС„РµСЂРЅСѓСЋ С‘РјРєРѕСЃС‚СЊ','',#70462
+'Трубка сброса 
+нутч-фильтра в 
+буферную ёмкость','',#70462
   ,#77774,$);
 #78438 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#77776));
 #78439 = SHAPE_DEFINITION_REPRESENTATION(#78440,#78446);
@@ -91002,12 +91002,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #78441 = PRODUCT_DEFINITION('design','',#78442,#78445);
 #78442 = PRODUCT_DEFINITION_FORMATION('','',#78443);
 #78443 = PRODUCT(
-'Р СѓРєР°РІ PTFE РѕС‚ РЅР°СЃРѕСЃР° 
-РІС‹РіСЂСѓР·РєРё РІ 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂ',
-'Р СѓРєР°РІ PTFE РѕС‚ РЅР°СЃРѕСЃР° 
-РІС‹РіСЂСѓР·РєРё РІ 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂ','',(#78444));
+'Рукав PTFE от насоса 
+выгрузки в 
+нутч-фильтр',
+'Рукав PTFE от насоса 
+выгрузки в 
+нутч-фильтр','',(#78444));
 #78444 = PRODUCT_CONTEXT('',#2,'mechanical');
 #78445 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #78446 = SHAPE_REPRESENTATION('',(#11,#78447,#78545,#78643,#78741,#78753
@@ -91385,19 +91385,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #78773 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #78774);
 #78774 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('158',
-'Р СѓРєР°РІ PTFE РѕС‚ РЅР°СЃРѕСЃР° 
-РІС‹РіСЂСѓР·РєРё РІ 
-РЅСѓС‚С‡-С„РёР»СЊС‚СЂ','',#70462,#78441,$);
+'Рукав PTFE от насоса 
+выгрузки в 
+нутч-фильтр','',#70462,#78441,$);
 #78775 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#78443));
 #78776 = SHAPE_DEFINITION_REPRESENTATION(#78777,#78783);
 #78777 = PRODUCT_DEFINITION_SHAPE('','',#78778);
 #78778 = PRODUCT_DEFINITION('design','',#78779,#78782);
 #78779 = PRODUCT_DEFINITION_FORMATION('','',#78780);
 #78780 = PRODUCT(
-'РљРѕСЂРїСѓСЃ РїР°С‚СЂРѕРЅРЅРѕРіРѕ 
-С„РёР»СЊС‚СЂР° 10" (F-2)',
-'РљРѕСЂРїСѓСЃ РїР°С‚СЂРѕРЅРЅРѕРіРѕ 
-С„РёР»СЊС‚СЂР° 10" (F-2)','',(#78781));
+'Корпус патронного 
+фильтра 10" (F-2)',
+'Корпус патронного 
+фильтра 10" (F-2)','',(#78781));
 #78781 = PRODUCT_CONTEXT('',#2,'mechanical');
 #78782 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #78783 = SHAPE_REPRESENTATION('',(#11,#78784,#78882,#78980,#79078,#79176
@@ -92300,18 +92300,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #79576 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #79577);
 #79577 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('159',
-'РљРѕСЂРїСѓСЃ РїР°С‚СЂРѕРЅРЅРѕРіРѕ 
-С„РёР»СЊС‚СЂР° 10" (F-2)','',#70462,#78778,$);
+'Корпус патронного 
+фильтра 10" (F-2)','',#70462,#78778,$);
 #79578 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#78780));
 #79579 = SHAPE_DEFINITION_REPRESENTATION(#79580,#79586);
 #79580 = PRODUCT_DEFINITION_SHAPE('','',#79581);
 #79581 = PRODUCT_DEFINITION('design','',#79582,#79585);
 #79582 = PRODUCT_DEFINITION_FORMATION('','',#79583);
 #79583 = PRODUCT(
-'РћРїРѕСЂР° РїР°С‚СЂРѕРЅРЅРѕРіРѕ 
-С„РёР»СЊС‚СЂР°',
-'РћРїРѕСЂР° РїР°С‚СЂРѕРЅРЅРѕРіРѕ 
-С„РёР»СЊС‚СЂР°','',(#79584));
+'Опора патронного 
+фильтра',
+'Опора патронного 
+фильтра','',(#79584));
 #79584 = PRODUCT_CONTEXT('',#2,'mechanical');
 #79585 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #79586 = SHAPE_REPRESENTATION('',(#11,#79587,#79917),#80015);
@@ -92821,20 +92821,20 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #80023 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #80024);
 #80024 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('160',
-'РћРїРѕСЂР° РїР°С‚СЂРѕРЅРЅРѕРіРѕ 
-С„РёР»СЊС‚СЂР°','',#70462,#79581,$);
+'Опора патронного 
+фильтра','',#70462,#79581,$);
 #80025 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#79583));
 #80026 = SHAPE_DEFINITION_REPRESENTATION(#80027,#80033);
 #80027 = PRODUCT_DEFINITION_SHAPE('','',#80028);
 #80028 = PRODUCT_DEFINITION('design','',#80029,#80032);
 #80029 = PRODUCT_DEFINITION_FORMATION('','',#80030);
 #80030 = PRODUCT(
-'Р СѓРєР°РІ С„РёР»СЊС‚СЂР°С‚Р° РѕС‚ 
-РЅСѓС‚С‡Р° Рє РїР°С‚СЂРѕРЅРЅРѕРјСѓ 
-С„РёР»СЊС‚СЂСѓ',
-'Р СѓРєР°РІ С„РёР»СЊС‚СЂР°С‚Р° РѕС‚ 
-РЅСѓС‚С‡Р° Рє РїР°С‚СЂРѕРЅРЅРѕРјСѓ 
-С„РёР»СЊС‚СЂСѓ','',(#80031));
+'Рукав фильтрата от 
+нутча к патронному 
+фильтру',
+'Рукав фильтрата от 
+нутча к патронному 
+фильтру','',(#80031));
 #80031 = PRODUCT_CONTEXT('',#2,'mechanical');
 #80032 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #80033 = SHAPE_REPRESENTATION('',(#11,#80034,#80132,#80230,#80328,#80426
@@ -93455,19 +93455,19 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #80580 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #80581);
 #80581 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('161',
-'Р СѓРєР°РІ С„РёР»СЊС‚СЂР°С‚Р° РѕС‚ 
-РЅСѓС‚С‡Р° Рє РїР°С‚СЂРѕРЅРЅРѕРјСѓ 
-С„РёР»СЊС‚СЂСѓ','',#70462,#80028,$);
+'Рукав фильтрата от 
+нутча к патронному 
+фильтру','',#70462,#80028,$);
 #80582 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#80030));
 #80583 = SHAPE_DEFINITION_REPRESENTATION(#80584,#80590);
 #80584 = PRODUCT_DEFINITION_SHAPE('','',#80585);
 #80585 = PRODUCT_DEFINITION('design','',#80586,#80589);
 #80586 = PRODUCT_DEFINITION_FORMATION('','',#80587);
 #80587 = PRODUCT(
-'Р’РµСЃС‹ РїРѕРґ РєР°РЅРёСЃС‚СЂРѕР№ 
-РїСЂРѕРґСѓРєС‚Р° (W-3)',
-'Р’РµСЃС‹ РїРѕРґ РєР°РЅРёСЃС‚СЂРѕР№ 
-РїСЂРѕРґСѓРєС‚Р° (W-3)','',(#80588));
+'Весы под канистрой 
+продукта (W-3)',
+'Весы под канистрой 
+продукта (W-3)','',(#80588));
 #80588 = PRODUCT_CONTEXT('',#2,'mechanical');
 #80589 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #80590 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#80591),#80921);
@@ -93867,18 +93867,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #80929 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #80930);
 #80930 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('162',
-'Р’РµСЃС‹ РїРѕРґ РєР°РЅРёСЃС‚СЂРѕР№ 
-РїСЂРѕРґСѓРєС‚Р° (W-3)','',#70462,#80585,$);
+'Весы под канистрой 
+продукта (W-3)','',#70462,#80585,$);
 #80931 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#80587));
 #80932 = SHAPE_DEFINITION_REPRESENTATION(#80933,#80939);
 #80933 = PRODUCT_DEFINITION_SHAPE('','',#80934);
 #80934 = PRODUCT_DEFINITION('design','',#80935,#80938);
 #80935 = PRODUCT_DEFINITION_FORMATION('','',#80936);
 #80936 = PRODUCT(
-'РљР°РЅРёСЃС‚СЂР° РїСЂРѕРґСѓРєС‚Р° 20 
-Р»',
-'РљР°РЅРёСЃС‚СЂР° РїСЂРѕРґСѓРєС‚Р° 20 
-Р»','',(#80937));
+'Канистра продукта 20 
+л',
+'Канистра продукта 20 
+л','',(#80937));
 #80937 = PRODUCT_CONTEXT('',#2,'mechanical');
 #80938 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #80939 = SHAPE_REPRESENTATION('',(#11,#80940,#81270),#81368);
@@ -94388,18 +94388,18 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #81376 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #81377);
 #81377 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('163',
-'РљР°РЅРёСЃС‚СЂР° РїСЂРѕРґСѓРєС‚Р° 20 
-Р»','',#70462,#80934,$);
+'Канистра продукта 20 
+л','',#70462,#80934,$);
 #81378 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#80936));
 #81379 = SHAPE_DEFINITION_REPRESENTATION(#81380,#81386);
 #81380 = PRODUCT_DEFINITION_SHAPE('','',#81381);
 #81381 = PRODUCT_DEFINITION('design','',#81382,#81385);
 #81382 = PRODUCT_DEFINITION_FORMATION('','',#81383);
 #81383 = PRODUCT(
-'РўСЂСѓР±РєР° РЅР°Р»РёРІР° 
-РїСЂРѕРґСѓРєС‚Р° РІ РєР°РЅРёСЃС‚СЂСѓ',
-'РўСЂСѓР±РєР° РЅР°Р»РёРІР° 
-РїСЂРѕРґСѓРєС‚Р° РІ РєР°РЅРёСЃС‚СЂСѓ',
+'Трубка налива 
+продукта в канистру',
+'Трубка налива 
+продукта в канистру',
   '',(#81384));
 #81384 = PRODUCT_CONTEXT('',#2,'mechanical');
 #81385 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
@@ -94667,8 +94667,8 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #81615 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #81616);
 #81616 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('164',
-'РўСЂСѓР±РєР° РЅР°Р»РёРІР° 
-РїСЂРѕРґСѓРєС‚Р° РІ РєР°РЅРёСЃС‚СЂСѓ',
+'Трубка налива 
+продукта в канистру',
   '',#70462,#81381,$);
 #81617 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#81383));
 #81618 = SHAPE_DEFINITION_REPRESENTATION(#81619,#81625);
@@ -94676,10 +94676,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #81620 = PRODUCT_DEFINITION('design','',#81621,#81624);
 #81621 = PRODUCT_DEFINITION_FORMATION('','',#81622);
 #81622 = PRODUCT(
-'Р§РёР»Р»РµСЂ Рё СЂСѓРєР°РІР° 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ',
-'Р§РёР»Р»РµСЂ Рё СЂСѓРєР°РІР° 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ','',(#81623));
+'Чиллер и рукава 
+теплоносителя',
+'Чиллер и рукава 
+теплоносителя','',(#81623));
 #81623 = PRODUCT_CONTEXT('',#2,'mechanical');
 #81624 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #81625 = SHAPE_REPRESENTATION('',(#11,#81626,#81630,#81634,#81638,#81642
@@ -94736,12 +94736,12 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #81667 = PRODUCT_DEFINITION('design','',#81668,#81671);
 #81668 = PRODUCT_DEFINITION_FORMATION('','',#81669);
 #81669 = PRODUCT(
-'Р§РёР»Р»РµСЂ вЂ” С‚РµСЂРјРѕСЃС‚Р°С‚ 
-СЂРµР°РєС‚РѕСЂР° Рё 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР° (TC-1)',
-'Р§РёР»Р»РµСЂ вЂ” С‚РµСЂРјРѕСЃС‚Р°С‚ 
-СЂРµР°РєС‚РѕСЂР° Рё 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР° (TC-1)','',(#81670));
+'Чиллер — термостат 
+реактора и 
+конденсатора (TC-1)',
+'Чиллер — термостат 
+реактора и 
+конденсатора (TC-1)','',(#81670));
 #81670 = PRODUCT_CONTEXT('',#2,'mechanical');
 #81671 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #81672 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#81673),#82003);
@@ -95141,9 +95141,9 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #82011 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #82012);
 #82012 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('166',
-'Р§РёР»Р»РµСЂ вЂ” С‚РµСЂРјРѕСЃС‚Р°С‚ 
-СЂРµР°РєС‚РѕСЂР° Рё 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР° (TC-1)','',#81620,
+'Чиллер — термостат 
+реактора и 
+конденсатора (TC-1)','',#81620,
   #81667,$);
 #82013 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#81669));
 #82014 = SHAPE_DEFINITION_REPRESENTATION(#82015,#82021);
@@ -95151,10 +95151,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #82016 = PRODUCT_DEFINITION('design','',#82017,#82020);
 #82017 = PRODUCT_DEFINITION_FORMATION('','',#82018);
 #82018 = PRODUCT(
-'РџР°РЅРµР»СЊ СѓРїСЂР°РІР»РµРЅРёСЏ 
-С‡РёР»Р»РµСЂР°',
-'РџР°РЅРµР»СЊ СѓРїСЂР°РІР»РµРЅРёСЏ 
-С‡РёР»Р»РµСЂР°','',(#82019));
+'Панель управления 
+чиллера',
+'Панель управления 
+чиллера','',(#82019));
 #82019 = PRODUCT_CONTEXT('',#2,'mechanical');
 #82020 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #82021 = ADVANCED_BREP_SHAPE_REPRESENTATION('',(#11,#82022),#82352);
@@ -95554,22 +95554,22 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #82360 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #82361);
 #82361 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('167',
-'РџР°РЅРµР»СЊ СѓРїСЂР°РІР»РµРЅРёСЏ 
-С‡РёР»Р»РµСЂР°','',#81620,#82016,$);
+'Панель управления 
+чиллера','',#81620,#82016,$);
 #82362 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#82018));
 #82363 = SHAPE_DEFINITION_REPRESENTATION(#82364,#82370);
 #82364 = PRODUCT_DEFINITION_SHAPE('','',#82365);
 #82365 = PRODUCT_DEFINITION('design','',#82366,#82369);
 #82366 = PRODUCT_DEFINITION_FORMATION('','',#82367);
 #82367 = PRODUCT(
-'Р СѓРєР°РІ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ: 
-С‡РёР»Р»РµСЂ -> СЂСѓР±Р°С€РєР° 
-(РІС…РѕРґ N8)',
-'Р СѓРєР°РІ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ: 
-С‡РёР»Р»РµСЂ -> СЂСѓР±Р°С€РєР° 
-(РІС…РѕРґ N8)','',(#82368));
+'Рукав 
+теплоносителя: 
+чиллер -> рубашка 
+(вход N8)',
+'Рукав 
+теплоносителя: 
+чиллер -> рубашка 
+(вход N8)','',(#82368));
 #82368 = PRODUCT_CONTEXT('',#2,'mechanical');
 #82369 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #82370 = SHAPE_REPRESENTATION('',(#11,#82371,#82469,#82567,#82665,#82763
@@ -96190,24 +96190,24 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #82917 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #82918);
 #82918 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('168',
-'Р СѓРєР°РІ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ: 
-С‡РёР»Р»РµСЂ -> СЂСѓР±Р°С€РєР° 
-(РІС…РѕРґ N8)','',#81620,#82365,$);
+'Рукав 
+теплоносителя: 
+чиллер -> рубашка 
+(вход N8)','',#81620,#82365,$);
 #82919 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#82367));
 #82920 = SHAPE_DEFINITION_REPRESENTATION(#82921,#82927);
 #82921 = PRODUCT_DEFINITION_SHAPE('','',#82922);
 #82922 = PRODUCT_DEFINITION('design','',#82923,#82926);
 #82923 = PRODUCT_DEFINITION_FORMATION('','',#82924);
 #82924 = PRODUCT(
-'Р СѓРєР°РІ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ: 
-СЂСѓР±Р°С€РєР° (РІС‹С…РѕРґ N7) -> 
-С‡РёР»Р»РµСЂ',
-'Р СѓРєР°РІ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ: 
-СЂСѓР±Р°С€РєР° (РІС‹С…РѕРґ N7) -> 
-С‡РёР»Р»РµСЂ','',(#82925));
+'Рукав 
+теплоносителя: 
+рубашка (выход N7) -> 
+чиллер',
+'Рукав 
+теплоносителя: 
+рубашка (выход N7) -> 
+чиллер','',(#82925));
 #82925 = PRODUCT_CONTEXT('',#2,'mechanical');
 #82926 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #82927 = SHAPE_REPRESENTATION('',(#11,#82928,#83026,#83124,#83222,#83320
@@ -96828,24 +96828,24 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #83474 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #83475);
 #83475 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('169',
-'Р СѓРєР°РІ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ: 
-СЂСѓР±Р°С€РєР° (РІС‹С…РѕРґ N7) -> 
-С‡РёР»Р»РµСЂ','',#81620,#82922,$);
+'Рукав 
+теплоносителя: 
+рубашка (выход N7) -> 
+чиллер','',#81620,#82922,$);
 #83476 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#82924));
 #83477 = SHAPE_DEFINITION_REPRESENTATION(#83478,#83484);
 #83478 = PRODUCT_DEFINITION_SHAPE('','',#83479);
 #83479 = PRODUCT_DEFINITION('design','',#83480,#83483);
 #83480 = PRODUCT_DEFINITION_FORMATION('','',#83481);
 #83481 = PRODUCT(
-'Р СѓРєР°РІ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ: 
-С‡РёР»Р»РµСЂ -> Р·РјРµРµРІРёРє 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР°',
-'Р СѓРєР°РІ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ: 
-С‡РёР»Р»РµСЂ -> Р·РјРµРµРІРёРє 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР°','',(#83482));
+'Рукав 
+теплоносителя: 
+чиллер -> змеевик 
+конденсатора',
+'Рукав 
+теплоносителя: 
+чиллер -> змеевик 
+конденсатора','',(#83482));
 #83482 = PRODUCT_CONTEXT('',#2,'mechanical');
 #83483 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #83484 = SHAPE_REPRESENTATION('',(#11,#83485,#83583,#83681,#83779,#83877
@@ -97344,26 +97344,26 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #83921 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #83922);
 #83922 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('170',
-'Р СѓРєР°РІ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ: 
-С‡РёР»Р»РµСЂ -> Р·РјРµРµРІРёРє 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР°','',#81620,#83479,$);
+'Рукав 
+теплоносителя: 
+чиллер -> змеевик 
+конденсатора','',#81620,#83479,$);
 #83923 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#83481));
 #83924 = SHAPE_DEFINITION_REPRESENTATION(#83925,#83931);
 #83925 = PRODUCT_DEFINITION_SHAPE('','',#83926);
 #83926 = PRODUCT_DEFINITION('design','',#83927,#83930);
 #83927 = PRODUCT_DEFINITION_FORMATION('','',#83928);
 #83928 = PRODUCT(
-'Р СѓРєР°РІ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ: 
-Р·РјРµРµРІРёРє 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР° -> 
-С‡РёР»Р»РµСЂ',
-'Р СѓРєР°РІ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ: 
-Р·РјРµРµРІРёРє 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР° -> 
-С‡РёР»Р»РµСЂ','',(#83929));
+'Рукав 
+теплоносителя: 
+змеевик 
+конденсатора -> 
+чиллер',
+'Рукав 
+теплоносителя: 
+змеевик 
+конденсатора -> 
+чиллер','',(#83929));
 #83929 = PRODUCT_CONTEXT('',#2,'mechanical');
 #83930 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #83931 = SHAPE_REPRESENTATION('',(#11,#83932,#84030,#84128,#84226,#84324
@@ -97862,25 +97862,25 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #84368 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #84369);
 #84369 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('171',
-'Р СѓРєР°РІ 
-С‚РµРїР»РѕРЅРѕСЃРёС‚РµР»СЏ: 
-Р·РјРµРµРІРёРє 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР° -> 
-С‡РёР»Р»РµСЂ','',#81620,#83926,$);
+'Рукав 
+теплоносителя: 
+змеевик 
+конденсатора -> 
+чиллер','',#81620,#83926,$);
 #84370 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#83928));
 #84371 = SHAPE_DEFINITION_REPRESENTATION(#84372,#84378);
 #84372 = PRODUCT_DEFINITION_SHAPE('','',#84373);
 #84373 = PRODUCT_DEFINITION('design','',#84374,#84377);
 #84374 = PRODUCT_DEFINITION_FORMATION('','',#84375);
 #84375 = PRODUCT(
-'РљСЂР°РЅС‹ С‚СЂС‘С…С…РѕРґРѕРІС‹Рµ 
-РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР° РЅР° 
-Р»РµРґСЏРЅСѓСЋ РІРѕРґСѓ (X1, X2)',
-'РљСЂР°РЅС‹ С‚СЂС‘С…С…РѕРґРѕРІС‹Рµ 
-РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР° РЅР° 
-Р»РµРґСЏРЅСѓСЋ РІРѕРґСѓ (X1, X2)','',(#84376));
+'Краны трёхходовые 
+переключения 
+конденсатора на 
+ледяную воду (X1, X2)',
+'Краны трёхходовые 
+переключения 
+конденсатора на 
+ледяную воду (X1, X2)','',(#84376));
 #84376 = PRODUCT_CONTEXT('',#2,'mechanical');
 #84377 = PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 #84378 = SHAPE_REPRESENTATION('',(#11,#84379,#84709),#85039);
@@ -98658,10 +98658,10 @@ SHAPE_REPRESENTATION_RELATIONSHIP() );
 #85047 = PRODUCT_DEFINITION_SHAPE('Placement','Placement of an item',
   #85048);
 #85048 = NEXT_ASSEMBLY_USAGE_OCCURRENCE('172',
-'РљСЂР°РЅС‹ С‚СЂС‘С…С…РѕРґРѕРІС‹Рµ 
-РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ 
-РєРѕРЅРґРµРЅСЃР°С‚РѕСЂР° РЅР° 
-Р»РµРґСЏРЅСѓСЋ РІРѕРґСѓ (X1, X2)','',#81620,#84373
+'Краны трёхходовые 
+переключения 
+конденсатора на 
+ледяную воду (X1, X2)','',#81620,#84373
   ,$);
 #85049 = PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#84375));
 #85050 = MECHANICAL_DESIGN_GEOMETRIC_PRESENTATION_REPRESENTATION('',(

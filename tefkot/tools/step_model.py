@@ -789,19 +789,24 @@ def glb_to_gltf_json(src, dst):
         json.dump(js, f, ensure_ascii=False, separators=(',', ':'))
 
 
+# символы, которых нет в Windows-1251, — заменяем, чтобы названия читались в любом CAD
+ASCII_FIX = {'₂': '2', '₃': '3', '″': '"', '¼': '1/4', '½': '1/2', '≤': '<=', '≥': '>=', '→': '->', 'Ø': 'D', '×': 'x',
+             '…': '...', '−': '-', '–': '-'}
+
+
 def fix_step_names(path):
-    """OCCT пишет имена в STEP дважды закодированным UTF-8. Перекодируем в стандартный
-    для STEP вид \\X2\\hhhh\\X0\\ (ISO 10303-21), его читают КОМПАС, SolidWorks, FreeCAD."""
-    import re
+    """OCCT пишет имена дважды закодированным UTF-8. Пишем два варианта файла:
+    основной — имена в UTF-8 (КОМПАС v20+, FreeCAD), и ...-cp1251.step — имена в Windows-1251.
+    Стандартная запись \\X2\\…\\X0\\ КОМПАС не расшифровывает."""
     raw = open(path, 'rb').read().decode('utf-8')
     try:
         txt = raw.encode('latin-1').decode('utf-8')
     except (UnicodeEncodeError, UnicodeDecodeError):
         txt = raw
-    def enc(m):
-        return '\\X2\\' + ''.join('%04X' % ord(c) for c in m.group(0)) + '\\X0\\'
-    txt = re.sub(r'[^\x00-\x7f]+', enc, txt)
-    open(path, 'w', encoding='ascii').write(txt)
+    for k, v in ASCII_FIX.items():
+        txt = txt.replace(k, v)
+    open(path, 'w', encoding='utf-8', newline='\n').write(txt)
+    open(path.replace('.step', '-cp1251.step'), 'w', encoding='cp1251', newline='\n').write(txt)
 
 
 def build():
