@@ -265,4 +265,18 @@
 <text x="250.00" y="151.10" font-size="2.0" text-anchor="start" fill="#111111">   Загрузка — снять верхний хомут, засыпать, закрыть.</text>
 <text x="250.00" y="154.50" font-size="2.0" text-anchor="start" fill="#111111">7. Газ снизу вверх. Межколонные линии — трубка PTFE</text>
 <text x="250.00" y="157.90" font-size="2.0" text-anchor="start" fill="#111111">   10×12, переходник DN15 → G½″ нар. + обжим 12 мм.</text>
+<text x="63.10" y="96.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
+<text x="67.30" y="76.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
+<text x="85.90" y="79.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="63.10" y="65.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
+<text x="109.90" y="97.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="109.90" y="81.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="132.68" y="80.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
+<text x="161.40" y="73.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="132.68" y="200.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
+<text x="138.60" y="207.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
+<text x="177.68" y="80.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
+<text x="206.40" y="73.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="177.68" y="200.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
+<text x="183.60" y="207.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
 </svg>

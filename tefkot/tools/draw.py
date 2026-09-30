@@ -14,6 +14,7 @@ class Sheet:
         self.items = []
         self.symbols = []      # для проверки стыков: (вид, x, y, ось, полудлина, i0, i1)
         self.nocheck = set()   # линии, не являющиеся трубопроводом (пол, мешалка, болты…)
+        self.pending_sizes = []  # подписи размера у номеров клампов, ставятся в конце (place.py)
 
     def _sym(self, kind, x, y, axis, half, i0):
         self.symbols.append((kind, x, y, axis, half, i0, len(self.items)))
@@ -105,7 +106,7 @@ class Sheet:
     def axis(self, x1, y1, x2, y2):
         self.line(x1, y1, x2, y2, lw=0.18, dash='axis', color=GREY)
 
-    def clamp(self, x, y, orient='h', tag=None, tag_side=1, w=None):
+    def clamp(self, x, y, orient='h', tag=None, tag_side=1, w=None, size=None):
         """Кламповое соединение: две ферулы + хомут. orient — направление трубы.
         w — полуширина ферулы (для крупных аппаратных клампов на вертикальной оси)."""
         i0 = len(self.items)
@@ -118,6 +119,8 @@ class Sheet:
             if tag:
                 ty = y - hw - 4 if tag_side > 0 else y + hw + 6.5
                 self.jtag(x, ty, tag)
+                if size:
+                    self.pending_sizes.append((x, ty, size))
         else:
             hw = w or 3.2
             self.rect(x - hw, y - 1.4, 2 * hw, 1.1, lw=0.3, fill='#ffffff')
@@ -127,6 +130,8 @@ class Sheet:
             if tag:
                 tx = x + hw + 4.8 if tag_side > 0 else x - hw - 4.8
                 self.jtag(tx, y, tag)
+                if size:
+                    self.pending_sizes.append((tx, y, size))
         self._sym('flange' if (w and orient == 'v') else 'clamp', x, y, orient, 1.8, i0)
 
     def jtag(self, x, y, tag):

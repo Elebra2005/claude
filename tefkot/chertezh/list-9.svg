@@ -120,10 +120,10 @@
 <text x="57.00" y="123.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Предохранительный клапан</text>
 <text x="107.00" y="121.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">PSV: сброс при превышении</text>
 <text x="107.00" y="125.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">уставки, выход трубкой</text>
-<path d="M222.00,22.00 L412.00,22.00 L412.00,128.00 L222.00,128.00 Z" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M222.00,22.00 L412.00,22.00 L412.00,117.00 L222.00,117.00 Z" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M222.00,22.00 L412.00,22.00 L412.00,29.00 L222.00,29.00 Z" fill="#eef1f2" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M252.00,22.00 L252.00,128.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M302.00,22.00 L302.00,128.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M252.00,22.00 L252.00,117.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M302.00,22.00 L302.00,117.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <text x="224.00" y="26.80" font-size="2.4" text-anchor="start" fill="#111111" font-weight="bold">Обозначение</text>
 <text x="254.00" y="26.80" font-size="2.4" text-anchor="start" fill="#111111" font-weight="bold">Наименование</text>
 <text x="304.00" y="26.80" font-size="2.4" text-anchor="start" fill="#111111" font-weight="bold">Пояснение</text>
@@ -134,60 +134,52 @@
 <text x="304.00" y="33.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">переход с клампа</text>
 <text x="304.00" y="37.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">на шланг</text>
 <path d="M222.00,40.00 L412.00,40.00" fill="none" stroke="#8a9499" stroke-width="0.2" stroke-linejoin="round"/>
-<path d="M223.00,45.50 L234.00,45.50" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
-<path d="M240.00,45.50 L251.00,45.50" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
-<circle cx="237.00" cy="45.50" r="3.00" fill="#ffffff" stroke="#111111" stroke-width="0.4"/>
-<path d="M237.00,48.50 L237.00,53.50" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
-<text x="254.00" y="46.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Кран трёхходовой</text>
-<text x="304.00" y="44.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">X1, X2: переключение</text>
-<text x="304.00" y="48.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">теплоносителя</text>
+<path d="M223.00,45.50 L243.00,45.50" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M245.20,45.50 L243.00,46.40 L243.00,44.60 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
+<text x="254.00" y="46.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Продолжение линии</text>
+<text x="304.00" y="44.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">на другом листе или</text>
+<text x="304.00" y="48.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">выход в вытяжку</text>
 <path d="M222.00,51.00 L412.00,51.00" fill="none" stroke="#8a9499" stroke-width="0.2" stroke-linejoin="round"/>
-<path d="M223.00,56.50 L243.00,56.50" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M245.20,56.50 L243.00,57.40 L243.00,55.60 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="254.00" y="57.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Продолжение линии</text>
-<text x="304.00" y="55.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">на другом листе или</text>
-<text x="304.00" y="59.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">выход в вытяжку</text>
+<path d="M230.00,53.00 L244.00,53.00 L244.00,61.00 L230.00,61.00 Z" fill="#f4f8fb" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M231.00,57.50 L243.00,57.50" fill="none" stroke="#1f5fa8" stroke-width="0.2" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M235.00,51.50 L235.00,60.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<text x="254.00" y="57.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Погружная трубка</text>
+<text x="304.00" y="55.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">вход газа или жидкости</text>
+<text x="304.00" y="59.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">ниже уровня в аппарате</text>
 <path d="M222.00,62.00 L412.00,62.00" fill="none" stroke="#8a9499" stroke-width="0.2" stroke-linejoin="round"/>
-<path d="M230.00,64.00 L244.00,64.00 L244.00,72.00 L230.00,72.00 Z" fill="#f4f8fb" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M231.00,68.50 L243.00,68.50" fill="none" stroke="#1f5fa8" stroke-width="0.2" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M235.00,62.50 L235.00,71.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<text x="254.00" y="68.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Погружная трубка</text>
-<text x="304.00" y="66.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">вход газа или жидкости</text>
-<text x="304.00" y="70.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">ниже уровня в аппарате</text>
+<path d="M232.00,63.00 L242.00,63.00 L242.00,72.00 L232.00,72.00 Z" fill="#f7f7f7" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
+<path d="M232.00,69.50 L243.00,70.50" fill="none" stroke="#111111" stroke-width="0.25" stroke-dasharray="0.6 1" stroke-linejoin="round"/>
+<text x="254.00" y="68.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Сетчатая прокладка</text>
+<text x="304.00" y="66.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">пунктир — опора засыпки</text>
+<text x="304.00" y="70.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">в колонне</text>
 <path d="M222.00,73.00 L412.00,73.00" fill="none" stroke="#8a9499" stroke-width="0.2" stroke-linejoin="round"/>
-<path d="M232.00,74.00 L242.00,74.00 L242.00,83.00 L232.00,83.00 Z" fill="#f7f7f7" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
-<path d="M232.00,80.50 L243.00,81.50" fill="none" stroke="#111111" stroke-width="0.25" stroke-dasharray="0.6 1" stroke-linejoin="round"/>
-<text x="254.00" y="79.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Сетчатая прокладка</text>
-<text x="304.00" y="77.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">пунктир — опора засыпки</text>
-<text x="304.00" y="81.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">в колонне</text>
+<path d="M225.00,78.50 L234.60,78.50 L235.90,76.30 L238.10,76.30 L239.40,78.50 L249.00,78.50" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M237.00,74.00 L237.00,83.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<text x="254.00" y="79.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Пересечение без соединения</text>
+<text x="304.00" y="77.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">мостик — линии</text>
+<text x="304.00" y="81.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">не соединены</text>
 <path d="M222.00,84.00 L412.00,84.00" fill="none" stroke="#8a9499" stroke-width="0.2" stroke-linejoin="round"/>
-<path d="M225.00,89.50 L234.60,89.50 L235.90,87.30 L238.10,87.30 L239.40,89.50 L249.00,89.50" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M237.00,85.00 L237.00,94.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<text x="254.00" y="90.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Пересечение без соединения</text>
-<text x="304.00" y="88.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">мостик — линии</text>
-<text x="304.00" y="92.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">не соединены</text>
+<path d="M223.00,89.50 L247.00,89.50" fill="none" stroke="#2e7d32" stroke-width="0.4" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M247.00,89.50 L247.00,92.50" fill="none" stroke="#2e7d32" stroke-width="0.4" stroke-linejoin="round"/>
+<path d="M244.00,92.50 L250.00,92.50" fill="none" stroke="#2e7d32" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M245.00,93.80 L249.00,93.80" fill="none" stroke="#2e7d32" stroke-width="0.4" stroke-linejoin="round"/>
+<path d="M246.00,95.10 L248.00,95.10" fill="none" stroke="#2e7d32" stroke-width="0.3" stroke-linejoin="round"/>
+<text x="254.00" y="90.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Шина заземления</text>
+<text x="304.00" y="88.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">все аппараты, насосы,</text>
+<text x="304.00" y="92.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">канистры и бочки</text>
 <path d="M222.00,95.00 L412.00,95.00" fill="none" stroke="#8a9499" stroke-width="0.2" stroke-linejoin="round"/>
-<path d="M223.00,100.50 L247.00,100.50" fill="none" stroke="#2e7d32" stroke-width="0.4" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M247.00,100.50 L247.00,103.50" fill="none" stroke="#2e7d32" stroke-width="0.4" stroke-linejoin="round"/>
-<path d="M244.00,103.50 L250.00,103.50" fill="none" stroke="#2e7d32" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M245.00,104.80 L249.00,104.80" fill="none" stroke="#2e7d32" stroke-width="0.4" stroke-linejoin="round"/>
-<path d="M246.00,106.10 L248.00,106.10" fill="none" stroke="#2e7d32" stroke-width="0.3" stroke-linejoin="round"/>
-<text x="254.00" y="101.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Шина заземления</text>
-<text x="304.00" y="99.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">все аппараты, насосы,</text>
-<text x="304.00" y="103.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">канистры и бочки</text>
+<path d="M225.00,102.50 L225.00,104.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<path d="M249.00,102.50 L249.00,104.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<path d="M225.00,102.50 L249.00,102.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<path d="M225.00,102.50 L227.20,101.70 L227.20,103.30 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
+<path d="M249.00,102.50 L246.80,103.30 L246.80,101.70 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
+<text x="237.00" y="101.70" font-size="2.2" text-anchor="middle" fill="#111111">600</text>
+<text x="254.00" y="101.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Размер</text>
+<text x="304.00" y="101.40" font-size="2.1" text-anchor="start" fill="#2f3a3e">в миллиметрах</text>
 <path d="M222.00,106.00 L412.00,106.00" fill="none" stroke="#8a9499" stroke-width="0.2" stroke-linejoin="round"/>
-<path d="M225.00,113.50 L225.00,115.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M249.00,113.50 L249.00,115.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M225.00,113.50 L249.00,113.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M225.00,113.50 L227.20,112.70 L227.20,114.30 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<path d="M249.00,113.50 L246.80,114.30 L246.80,112.70 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="237.00" y="112.70" font-size="2.2" text-anchor="middle" fill="#111111">600</text>
-<text x="254.00" y="112.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Размер</text>
-<text x="304.00" y="112.40" font-size="2.1" text-anchor="start" fill="#2f3a3e">в миллиметрах</text>
-<path d="M222.00,117.00 L412.00,117.00" fill="none" stroke="#8a9499" stroke-width="0.2" stroke-linejoin="round"/>
-<text x="237.00" y="123.50" font-size="2.6" text-anchor="middle" fill="#c62828">L = ?</text>
-<text x="254.00" y="123.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Красный текст с «?»</text>
-<text x="304.00" y="121.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">размер или параметр</text>
-<text x="304.00" y="125.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">замерить / уточнить</text>
+<text x="237.00" y="112.50" font-size="2.6" text-anchor="middle" fill="#c62828">L = ?</text>
+<text x="254.00" y="112.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Красный текст с «?»</text>
+<text x="304.00" y="110.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">размер или параметр</text>
+<text x="304.00" y="114.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">замерить / уточнить</text>
 <text x="25.00" y="250.00" font-size="2.2" text-anchor="start" fill="#666666">Позиции (R-1, G-1, P-2, SV-1 …) — перечень позиций на листе 1; размеры клампов по DN: DN15 — ферула 25 мм, DN25 и DN38 — 50,5, DN65 — 91.</text>
 </svg>

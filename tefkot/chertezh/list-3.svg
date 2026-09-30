@@ -258,12 +258,21 @@
 <text x="300.00" y="29.10" font-size="2.1" text-anchor="start" fill="#111111">   пищевая полировка внутр. поверхности.</text>
 <text x="300.00" y="32.70" font-size="2.1" text-anchor="start" fill="#111111">2. Змеевик E-1: опрессовка 3 бар (теплонос.).</text>
 <text x="300.00" y="36.30" font-size="2.1" text-anchor="start" fill="#111111">3. E-1 вертикально: конденсат стекает в R-1.</text>
-<text x="300.00" y="39.90" font-size="2.1" text-anchor="start" fill="#111111">4. Теплоноситель E-1: от TC-1 (−25 °C);</text>
-<text x="300.00" y="43.50" font-size="2.1" text-anchor="start" fill="#111111">   на стадии 7 — ледяная вода IW-1.</text>
+<text x="300.00" y="39.90" font-size="2.1" text-anchor="start" fill="#111111">4. Теплоноситель E-1: от TC-1 параллельно</text>
+<text x="300.00" y="43.50" font-size="2.1" text-anchor="start" fill="#111111">   рубашке (−25 °C; стадия 7: +10 °C).</text>
 <text x="300.00" y="47.10" font-size="2.1" text-anchor="start" fill="#111111">5. Строительные длины кранов, тройников,</text>
 <text x="300.00" y="50.70" font-size="2.1" text-anchor="start" fill="#c62828">   переходов — по каталогу Гросснер (?).</text>
 <text x="300.00" y="54.30" font-size="2.1" text-anchor="start" fill="#111111">6. Все прокладки кламп — PTFE.</text>
 <text x="300.00" y="57.90" font-size="2.1" text-anchor="start" fill="#111111">7. MeSiCl₃ / PDMS-OH — насосом P-3 прямо</text>
 <text x="300.00" y="61.50" font-size="2.1" text-anchor="start" fill="#111111">   из тары на W-4; объём замещается Ar (A3).</text>
 <text x="300.00" y="65.10" font-size="2.1" text-anchor="start" fill="#111111">   Расход по W-4, темп — по TI (≤ −10 °C).</text>
+<text x="38.63" y="34.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
+<text x="89.10" y="59.63" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="236.40" y="225.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN25</text>
+<text x="236.40" y="214.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="236.40" y="198.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="238.40" y="179.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="217.00" y="179.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN15</text>
+<text x="271.80" y="131.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN25</text>
+<text x="356.40" y="148.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN25</text>
 </svg>

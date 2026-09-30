@@ -257,4 +257,20 @@
 <text x="290.00" y="32.50" font-size="2.0" text-anchor="start" fill="#c62828">2. Присоединение P-2 (G? ) и F-1 — уточнить.</text>
 <text x="290.00" y="36.00" font-size="2.0" text-anchor="start" fill="#111111">3. Скорость в трубках ≤1 м/с.</text>
 <text x="290.00" y="39.50" font-size="2.0" text-anchor="start" fill="#111111">4. Все прокладки — PTFE.</text>
+<text x="58.60" y="61.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN38</text>
+<text x="81.60" y="67.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN38</text>
+<text x="95.00" y="63.20" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN15</text>
+<text x="114.40" y="67.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="58.60" y="91.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN38</text>
+<text x="58.60" y="101.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
+<text x="60.60" y="121.30" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
+<text x="46.60" y="121.30" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
+<text x="81.40" y="118.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="117.60" y="123.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
+<text x="154.40" y="123.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="197.60" y="89.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15?</text>
+<text x="218.60" y="139.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN?</text>
+<text x="218.60" y="153.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN?</text>
+<text x="277.60" y="155.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15?</text>
+<text x="312.40" y="143.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15?</text>
 </svg>

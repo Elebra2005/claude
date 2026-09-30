@@ -140,7 +140,7 @@
 <path d="M228.56,83.48 L228.56,78.84 L222.18,78.84" fill="none" stroke="#0f8a8a" stroke-width="0.638" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M233.78,83.48 L233.78,74.20 L222.18,74.20" fill="none" stroke="#0f8a8a" stroke-width="0.638" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <text x="221.02" y="75.36" font-size="3.045" text-anchor="end" fill="#5d666d">→ чиллер</text>
-<text x="221.02" y="80.00" font-size="3.045" text-anchor="end" fill="#5d666d">от чиллера / ледяной воды</text>
+<text x="221.02" y="80.00" font-size="3.045" text-anchor="end" fill="#5d666d">от чиллера</text>
 <text x="227.40" y="129.88" font-size="2.4359999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">Конденсатор</text>
 <text x="182.16" y="65.50" font-size="3.045" text-anchor="start" fill="#5d666d">змеевик: −25 °C / ст.7 +5 °C</text>
 <path d="M259.88,90.44 L276.12,90.44 L276.12,109.58 L259.88,109.58 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>

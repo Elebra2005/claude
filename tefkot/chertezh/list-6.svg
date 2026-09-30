@@ -33,12 +33,10 @@
 <path d="M127.60,145.00 L150.00,145.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
 <path d="M100.00,158.00 L137.40,158.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
 <path d="M142.60,158.00 L177.00,158.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
-<path d="M183.00,158.00 L213.00,158.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
+<path d="M177.00,158.00 L213.00,158.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
 <path d="M100.00,172.00 L100.00,190.00 L150.00,190.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
 <path d="M100.00,172.00 L177.00,172.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
-<path d="M183.00,172.00 L215.00,172.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
-<path d="M180.00,155.00 L180.00,140.00 L240.00,140.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M180.00,175.00 L180.00,205.00 L240.00,205.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M177.00,172.00 L215.00,172.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
 <path d="M0.20,0.20 L419.80,0.20 L419.80,296.80 L0.20,296.80 Z" fill="none" stroke="#bbbbbb" stroke-width="0.1" stroke-linejoin="round"/>
 <path d="M20.00,5.00 L415.00,5.00 L415.00,292.00 L20.00,292.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <path d="M230.00,237.00 L415.00,237.00 L415.00,292.00 L230.00,292.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
@@ -140,7 +138,7 @@
 <path d="M380.00,25.80 L380.90,28.00 L379.10,28.00 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="384.00" y="27.00" font-size="1.9" text-anchor="start" fill="#111111">выхлоп в вытяжку</text>
 <text x="330.00" y="50.00" font-size="1.9" text-anchor="start" fill="#c62828">рукав вакуумный армир. ID ?, L=?</text>
-<text x="25.00" y="130.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">ТЕПЛОНОСИТЕЛЬ: TC-1 → рубашка R-1 ∥ E-1; стадия 7: E-1 на IW-1, б/м</text>
+<text x="25.00" y="130.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">ТЕПЛОНОСИТЕЛЬ: один чиллер TC-1 → рубашка R-1 ∥ E-1, б/м</text>
 <path d="M28.00,150.00 L68.00,150.00 L68.00,180.00 L28.00,180.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
 <text x="32.00" y="160.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">TC-1</text>
 <text x="32.00" y="165.00" font-size="2.0" text-anchor="start" fill="#111111">чиллер</text>
@@ -157,22 +155,11 @@
 <path d="M140.00,158.00 L140.00,154.62" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M138.50,154.62 L141.50,154.62" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <text x="135.00" y="153.00" font-size="2.0" text-anchor="start" fill="#111111" font-weight="bold">CV-E</text>
-<circle cx="180.00" cy="158.00" r="3.00" fill="#ffffff" stroke="#111111" stroke-width="0.4"/>
-<text x="176.00" y="152.00" font-size="2.0" text-anchor="start" fill="#111111" font-weight="bold">X1</text>
 <path d="M215.20,158.00 L213.00,158.90 L213.00,157.10 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="186.00" y="163.00" font-size="1.9" text-anchor="start" fill="#111111">на E-1 вход</text>
 <text x="152.00" y="191.00" font-size="1.9" text-anchor="start" fill="#111111">← рубашка R-1, JO</text>
-<circle cx="180.00" cy="172.00" r="3.00" fill="#ffffff" stroke="#111111" stroke-width="0.4"/>
-<text x="176.00" y="179.00" font-size="2.0" text-anchor="start" fill="#111111" font-weight="bold">X2</text>
 <text x="216.00" y="173.00" font-size="1.9" text-anchor="start" fill="#111111">← E-1 выход</text>
-<path d="M180.00,161.00 L180.00,169.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M240.00,132.00 L270.00,132.00 L270.00,212.00 L240.00,212.00 Z" fill="none" stroke="#111111" stroke-width="0.5" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<text x="242.00" y="138.00" font-size="2.4" text-anchor="start" fill="#111111" font-weight="bold">IW-1</text>
-<text x="242.00" y="143.00" font-size="1.8" text-anchor="start" fill="#111111">бак 20–30 л,</text>
-<text x="242.00" y="147.00" font-size="1.8" text-anchor="start" fill="#111111">вода + лёд,</text>
-<text x="242.00" y="151.00" font-size="1.8" text-anchor="start" fill="#111111">погр. насос</text>
-<text x="242.00" y="155.00" font-size="1.8" text-anchor="start" fill="#111111">10–15 л/мин</text>
-<text x="100.00" y="214.00" font-size="2.0" text-anchor="start" fill="#111111">X1, X2 — краны 3-ходовые ½″: стадии 1–6 → TC-1; стадия 7 → IW-1</text>
+<text x="100.00" y="214.00" font-size="2.0" text-anchor="start" fill="#111111">рубашка и E-1 всегда на одной температуре: стадии 1–6 −25 °C, стадия 7 +10 °C</text>
 <text x="100.00" y="218.00" font-size="2.0" text-anchor="start" fill="#c62828">рукава EPDM армир. ID ? в изоляции 13 мм; ёлочки + 2 хомута нерж. на соединение</text>
 <text x="100.00" y="222.00" font-size="2.0" text-anchor="start" fill="#c62828">тройники с ёлочками ID ? — 4 шт.; длины рукавов L=?</text>
 <text x="290.00" y="80.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">Примечания</text>
