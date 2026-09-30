@@ -285,23 +285,11 @@
 <path d="M275.54,217.46 L279.60,217.46 L279.60,222.10 L275.54,222.10 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M277.57,217.46 L277.57,215.14" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <text x="276.41" y="214.27" font-size="3.045" text-anchor="end" fill="#1d2226">PSV-4 → T-1</text>
-<path d="M282.50,251.10 L282.50,256.90" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
-<path d="M275.25,256.90 L289.75,256.90 L289.75,271.40 L275.25,271.40 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<path d="M287.14,256.90 L287.14,269.66" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
-<text x="273.22" y="263.86" font-size="3.4799999999999995" text-anchor="end" fill="#1d2226" font-weight="bold">V-2</text>
-<text x="273.22" y="267.92" font-size="3.045" text-anchor="end" fill="#5d666d">приёмник 30 л</text>
-<path d="M277.86,256.90 L277.86,254.00 L271.48,254.00" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
-<path d="M271.48,254.00 L273.88,253.00 L273.88,255.00 Z" fill="#1d2226" stroke="#1d2226" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="269.74" y="255.16" font-size="3.045" text-anchor="end" fill="#5d666d">газ → T-1</text>
-<path d="M287.14,256.90 L287.14,254.00 L292.36,254.00 L292.36,271.11 L294.10,271.11" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
-<path d="M294.10,267.34 L306.86,267.34 L306.86,274.88 L294.10,274.88 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<text x="295.84" y="272.56" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">P-2</text>
-<text x="294.10" y="278.94" font-size="3.045" text-anchor="start" fill="#5d666d">тот же, фасовка</text>
-<path d="M306.86,271.11 L308.60,271.11" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M282.50,251.10 L282.50,262.70 L308.60,262.70" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
 <path d="M308.60,251.10 L320.20,251.10 L320.20,274.30 L308.60,274.30 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="306.86" y="249.36" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">F-2</text>
-<text x="321.94" y="259.80" font-size="3.045" text-anchor="start" fill="#5d666d">патрон 10″</text>
-<text x="321.94" y="263.28" font-size="3.045" text-anchor="start" fill="#5d666d">5…0,05 мкм</text>
+<text x="321.94" y="259.80" font-size="3.045" text-anchor="start" fill="#5d666d">10″ патрон</text>
+<text x="321.94" y="263.28" font-size="3.045" text-anchor="start" fill="#5d666d">5/2/0,2/0,05 мкм</text>
 <path d="M314.40,251.10 L314.40,245.30 L355.00,245.30 L355.00,254.00" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
 <path d="M349.20,254.00 L361.96,254.00 L361.96,271.40 L349.20,271.40 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M365.44,254.00 L378.20,254.00 L378.20,271.40 L365.44,271.40 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
