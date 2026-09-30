@@ -73,8 +73,8 @@
 <text x="38.32" y="173.38" font-size="3.045" text-anchor="start" fill="#5d666d">50–60 мл/мин</text>
 <path d="M52.24,155.98 L57.75,155.98 L57.75,140.32" fill="none" stroke="#a07a12" stroke-width="0.638" stroke-linejoin="round"/>
 <path d="M57.75,135.68 L57.75,117.70 L74.28,117.70 L74.28,126.40" fill="none" stroke="#a07a12" stroke-width="0.638" stroke-linejoin="round"/>
-<path d="M56.01,135.68 L57.75,139.74 L59.49,135.68 Z" fill="#1d2226" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
-<path d="M55.72,140.32 L59.78,140.32" fill="none" stroke="#1d2226" stroke-width="0.58" stroke-linejoin="round"/>
+<path d="M56.01,140.32 L57.75,136.26 L59.49,140.32 Z" fill="#1d2226" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
+<path d="M55.72,135.68 L59.78,135.68" fill="none" stroke="#1d2226" stroke-width="0.58" stroke-linejoin="round"/>
 <path d="M60.94,149.60 L101.54,149.60 L101.54,189.04 L60.94,189.04 Z" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
 <text x="62.68" y="187.30" font-size="3.045" text-anchor="start" fill="#5d666d">ванна с водой</text>
 <path d="M66.74,126.40 L95.74,126.40 L95.74,178.60 L66.74,178.60 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
