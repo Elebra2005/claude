@@ -96,14 +96,14 @@
 <text x="76.60" y="116.54" font-size="3.045" text-anchor="start" fill="#1d2226">PI-3</text>
 <path d="M102.70,109.00 L102.70,117.70 L94.00,117.70 L94.00,126.40" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
 <path d="M95.74,132.20 L111.40,132.20 L111.40,124.66" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
-<path d="M111.40,119.44 L111.40,97.98 L124.74,97.98 L124.74,172.80 L127.64,172.80" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
+<path d="M111.40,119.44 L111.40,97.98 L124.16,97.98 L124.16,183.24 L134.02,183.24 L134.02,178.60" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M109.66,119.44 L113.14,124.66 L109.66,124.66 L113.14,119.44 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="113.72" y="123.50" font-size="3.045" text-anchor="start" fill="#5d666d">V-G1</text>
 <path d="M127.64,109.00 L140.40,109.00 L140.40,178.60 L127.64,178.60 Z" fill="#eef3f5" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="131.12" y="143.80" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">C-1</text>
-<text x="128.22" y="183.24" font-size="3.045" text-anchor="start" fill="#5d666d">сита 3A</text>
-<text x="128.22" y="186.72" font-size="3.045" text-anchor="start" fill="#5d666d">3″×600</text>
-<path d="M134.02,109.00 L134.02,103.20 L147.36,103.20 L147.36,184.40 L152.00,184.40 L152.00,178.60" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
+<text x="127.64" y="191.36" font-size="3.045" text-anchor="start" fill="#5d666d">сита 3A</text>
+<text x="127.64" y="194.84" font-size="3.045" text-anchor="start" fill="#5d666d">3″×600</text>
+<path d="M134.02,109.00 L134.02,103.20 L143.01,103.20 L143.01,183.24 L152.00,183.24 L152.00,178.60" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M145.62,109.00 L158.38,109.00 L158.38,178.60 L145.62,178.60 Z" fill="#eef3f5" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="149.10" y="143.80" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">C-2</text>
 <text x="145.62" y="191.36" font-size="3.045" text-anchor="start" fill="#5d666d">NaOH/KOH</text>
@@ -221,28 +221,34 @@
 <path d="M391.25,33.60 L402.85,33.60 L402.85,45.20 L391.25,45.20 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="397.05" y="40.85" font-size="3.4799999999999995" text-anchor="middle" fill="#1d2226" font-weight="bold">CT-1</text>
 <path d="M391.25,39.40 L381.39,39.40" fill="none" stroke="#6b6f73" stroke-width="0.638" stroke-dasharray="0.6 1" stroke-linejoin="round"/>
+<path d="M371.53,39.40 L365.44,39.40" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
+<path d="M365.44,39.40 L367.84,38.40 L367.84,40.40 Z" fill="#1d2226" stroke="#1d2226" stroke-width="0.1" stroke-linejoin="round"/>
+<text x="363.70" y="38.24" font-size="3.045" text-anchor="end" fill="#5d666d">выхлоп</text>
+<text x="363.70" y="42.30" font-size="3.045" text-anchor="end" fill="#5d666d">→ вытяжка</text>
 <circle cx="376.46" cy="39.40" r="4.93" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
 <path d="M372.98,39.40 L379.94,39.40" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
 <path d="M376.46,35.92 L376.46,42.88" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
 <text x="376.46" y="50.42" font-size="3.4799999999999995" text-anchor="middle" fill="#1d2226" font-weight="bold">VP-1</text>
-<path d="M340.50,109.00 L398.50,109.00 L398.50,126.40" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
+<path d="M340.50,109.00 L395.60,109.00 L395.60,139.16" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <text x="343.40" y="114.22" font-size="3.045" text-anchor="start" fill="#5d666d">коллектор сбросов</text>
 <path d="M391.54,126.40 L405.46,126.40 L405.46,142.64 L391.54,142.64 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M392.70,135.68 L404.30,135.68" fill="none" stroke="#2f6b3a" stroke-width="0.348" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M395.60,126.40 L395.60,139.16" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <text x="349.20" y="133.36" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">BU-1</text>
 <text x="349.20" y="137.42" font-size="3.045" text-anchor="start" fill="#5d666d">барботёр-индикатор</text>
-<path d="M398.50,142.64 L398.50,149.60 L384.00,149.60 L384.00,154.24" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
+<path d="M401.98,126.40 L401.98,122.34 L411.26,122.34 L411.26,150.76 L381.68,150.76 L381.68,154.24" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M377.04,154.24 L390.96,154.24 L390.96,170.48 L377.04,170.48 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="357.32" y="162.36" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">T-1</text>
 <text x="349.20" y="166.42" font-size="3.045" text-anchor="start" fill="#5d666d">буфер ≥3 л</text>
-<path d="M384.00,170.48 L384.00,178.60 L394.44,178.60 L394.44,183.24" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
+<path d="M390.96,157.72 L395.60,157.72 L395.60,195.42" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M381.10,183.24 L407.20,183.24 L407.20,199.48 L381.10,199.48 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M382.26,188.46 L406.04,188.46" fill="none" stroke="#2f6b3a" stroke-width="0.348" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M395.60,183.24 L395.60,195.42" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <text x="356.74" y="190.78" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">S-1</text>
 <text x="379.94" y="194.84" font-size="3.045" text-anchor="end" fill="#5d666d">скруббер 20 л, лимонная к-та</text>
 <path d="M404.30,183.24 L404.30,177.44 L408.36,177.44" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M408.36,177.44 L405.96,178.44 L405.96,176.44 Z" fill="#1d2226" stroke="#1d2226" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="395.02" y="175.12" font-size="3.045" text-anchor="start" fill="#5d666d">в вытяжку</text>
+<text x="397.34" y="174.54" font-size="3.045" text-anchor="start" fill="#5d666d">в вытяжку</text>
 <text x="331.80" y="150.76" font-size="3.045" text-anchor="end" fill="#1d2226">PSV-3 от G-1 →</text>
 <path d="M332.96,149.60 L372.40,149.60 L372.40,158.30 L377.04,158.30" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <text x="331.80" y="155.40" font-size="3.045" text-anchor="end" fill="#1d2226">PSV-4 от F-1 →</text>

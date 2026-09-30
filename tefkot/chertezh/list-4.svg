@@ -31,7 +31,7 @@
 <path d="M260.00,115.00 L260.00,96.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M125.00,45.00 L340.00,45.00 L340.00,110.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M348.00,110.00 L348.00,100.00 L378.00,100.00 L378.00,150.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M376.00,172.00 L376.00,190.00 L392.00,190.00 L392.00,198.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M381.00,154.00 L390.00,154.00 L390.00,198.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M400.00,198.00 L400.00,190.00 L408.00,190.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M250.00,200.00 L360.00,200.00 L360.00,160.00 L365.00,160.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M250.00,210.00 L340.00,210.00 L340.00,200.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
@@ -252,16 +252,18 @@
 <text x="127.00" y="43.50" font-size="2.0" text-anchor="start" fill="#111111">сбросы PCV-1 и PSV-1 → BU-1, трубка PTFE 10×12</text>
 <path d="M335.00,110.00 L353.00,110.00 L353.00,132.00 L335.00,132.00 Z" fill="#f4f8fb" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M336.00,124.00 L352.00,124.00" fill="none" stroke="#1f5fa8" stroke-width="0.2" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M340.00,110.00 L340.00,129.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <text x="355.00" y="116.00" font-size="2.2" text-anchor="start" fill="#111111" font-weight="bold">BU-1 барботёр</text>
 <text x="355.00" y="120.00" font-size="1.9" text-anchor="start" fill="#111111">масло ПМС-50, 1–2 см</text>
 <path d="M365.00,150.00 L381.00,150.00 L381.00,172.00 L365.00,172.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<text x="383.00" y="158.00" font-size="2.2" text-anchor="start" fill="#111111" font-weight="bold">T-1 буфер</text>
-<text x="383.00" y="162.00" font-size="1.9" text-anchor="start" fill="#111111">≥3 л, пустой</text>
+<text x="396.00" y="158.00" font-size="2.2" text-anchor="start" fill="#111111" font-weight="bold">T-1 буфер</text>
+<text x="396.00" y="162.00" font-size="1.9" text-anchor="start" fill="#111111">≥3 л, пустой</text>
 <path d="M380.00,198.00 L406.00,198.00 L406.00,230.00 L380.00,230.00 Z" fill="#f4f8fb" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M381.00,210.00 L405.00,210.00" fill="none" stroke="#1f5fa8" stroke-width="0.2" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <text x="350.00" y="204.00" font-size="2.2" text-anchor="start" fill="#111111" font-weight="bold">S-1 скруббер 20 л</text>
 <text x="350.00" y="208.00" font-size="1.9" text-anchor="start" fill="#111111">лимонная к-та 2,5 кг/12 л</text>
 <text x="350.00" y="212.00" font-size="1.9" text-anchor="start" fill="#111111">+ фенолфталеин</text>
+<path d="M390.00,198.00 L390.00,224.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M410.20,190.00 L408.00,190.90 L408.00,189.10 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="396.00" y="186.00" font-size="1.9" text-anchor="start" fill="#111111">в вытяжку</text>
 <text x="250.00" y="198.00" font-size="2.0" text-anchor="start" fill="#111111">от PSV-3 генератора (лист 5)</text>

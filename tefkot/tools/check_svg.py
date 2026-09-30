@@ -89,6 +89,23 @@ def near_label(p):
             return True
     return False
 pr = [p for p in pr if not (p.startswith('висит конец') and near_label(p))]
+
+# линия, проходящая сквозь аппарат (не входящая в него концом), — ошибка трассировки
+LINES = set(LW)
+for el in root:
+    if el.tag.split('}')[-1] != 'path' or (el.get('class') or '') not in LINES or 'dasharray:none' in (el.get('style') or ''):   # змеевик внутри E-1 — не трасса
+        continue
+    for sp in parse_path(el.get('d'))[0]:
+        for vx0, vy0, vx1, vy1 in sh.vessels:
+            inside = lambda p: vx0 + 1 < p[0] < vx1 - 1 and vy0 + 1 < p[1] < vy1 - 1
+            if inside(sp[0]) or inside(sp[-1]):
+                continue
+            for (x1, y1), (x2, y2) in zip(sp, sp[1:]):
+                n = max(2, int(max(abs(x2 - x1), abs(y2 - y1)) / 2))
+                hits = sum(inside((x1 + (x2 - x1) * k / n, y1 + (y2 - y1) * k / n)) for k in range(n + 1))
+                if hits >= 2:
+                    pr.append(f'линия {el.get("class")} проходит сквозь аппарат ({vx0:.0f},{vy0:.0f}): отрезок ({x1:.0f},{y1:.0f})–({x2:.0f},{y2:.0f})')
+                    break
 print(len(pr))
 for p in pr:
     print(' ', p)
