@@ -146,10 +146,12 @@ NAMES = {
 'VP-1_vacuum_pump': 'Насос вакуумный мембранный химический (VP-1)',
 'vacuum_line': 'Вакуумный шланг от гребёнки к сепаратору',
 # --- дозирование
-'trolley': 'Тележка дозирования',
+'trolley': 'Тележка дозирования: MeSiCl₃ на весах, PDMS-OH рядом, насос P-3 внизу',
 'W-4_scale_15kg': 'Весы 15 кг под тарой MeSiCl₃ / PDMS-OH (W-4)',
 'tray': 'Поддон под тару',
-'container': 'Тара поставщика MeSiCl₃ / PDMS-OH',
+'container_MeSiCl3': 'Бутыль MeSiCl₃ 2,5 л (тара поставщика) на весах W-4 — в работе',
+'container_PDMS-OH': 'Тара PDMS-OH 5 л — ждёт; крышку-переходник переставляют на неё после MeSiCl₃',
+'PDMS-OH_cap': 'Крышка поставщика на таре PDMS-OH',
 'cap_adapter': 'Крышка-переходник PTFE на тару: аргон + заборная трубка',
 'dip_tube': 'Заборная трубка PTFE до дна тары',
 'P-3_AODD': 'Насос мембранный пневматический — дозирование MeSiCl₃ / PDMS-OH (P-3)',
@@ -170,7 +172,7 @@ NAMES = {
 'V-S1': 'Кран DN15 на линии бочки растворителя (V-S1)',
 'V-S1_clamp': 'Хомут кламп DN15 — рукав бочки к крану V-S1',
 'drain_elbow_DN15': 'Отвод 90° DN15 под тройником — на рукав к P-2',
-'solvent_drum': 'Бочка растворителя 200 л',
+'solvent_drum': 'Бочка растворителя 30 л (петролейный эфир)',
 'V-S1_to_drum_hose': 'Рукав PTFE от крана V-S1 в бочку растворителя',
 'P-2_AODD': 'Насос мембранный пневматический — выгрузка продукта (P-2)',
 'BV-1_to_P-2_hose': 'Рукав PTFE от слива реактора к насосу выгрузки',
@@ -659,18 +661,22 @@ def dosing(p3_top, ar_outs):
     g = 'Dosing_P-3'
     tx, ty = -560, -560                     # тележка
     parts = []
+    y0 = ty - 620                           # тележка вытянута к фронту: вторая позиция — тара PDMS-OH
     for x in (tx - 200, tx + 200):
-        for y in (ty - 200, ty + 200):
+        for y in (y0 + 15, ty + 200):
             parts.append(cbox((x, y, 450), 25, 25, 900))
-    parts += [box(tx - 215, ty - 215, 900, tx + 215, ty + 215, 915), box(tx - 215, ty - 215, 280, tx + 215, ty + 215, 295)]
+    parts += [box(tx - 215, y0, 900, tx + 215, ty + 215, 915), box(tx - 215, y0, 280, tx + 215, ty + 215, 295)]
     add(g, 'trolley', parts, 'frame')
     add(g, 'W-4_scale_15kg', [box(tx - 160, ty - 160, 915, tx + 160, ty + 160, 965)], 'dark')
     add(g, 'tray', [box(tx - 110, ty - 110, 965, tx + 110, ty + 110, 1025).cut(box(tx - 104, ty - 104, 971, tx + 104, ty + 104, 1030))], 'poly')
     z0 = 971                                   # тара поставщика (бутыль 2,5 л — размеры уточнить)
     zc = z0 + 330
-    add(g, 'container', [cyl((tx, ty, z0), (tx, ty, z0 + 250), 140), cone((tx, ty, z0 + 250), (tx, ty, z0 + 300), 140, 50),
+    add(g, 'container_MeSiCl3', [cyl((tx, ty, z0), (tx, ty, z0 + 250), 140), cone((tx, ty, z0 + 250), (tx, ty, z0 + 300), 140, 50),
                          cyl((tx, ty, z0 + 300), (tx, ty, zc - 20), 50)], 'glass')
     add(g, 'cap_adapter', [cyl((tx, ty, zc - 20), (tx, ty, zc), 60)], 'ptfe')
+    py = ty - 400                              # тара PDMS-OH (2 118 г) — канистра 5 л, размеры уточнить
+    add(g, 'container_PDMS-OH', [cbox((tx, py, 915 + 140), 170, 170, 280), cyl((tx + 40, py, 1195), (tx + 40, py, 1225), 50)], 'white')
+    add(g, 'PDMS-OH_cap', [cyl((tx + 40, py, 1225), (tx + 40, py, 1245), 60)], 'red')
     add(g, 'dip_tube', [cyl((tx + 12, ty, zc + 40), (tx + 12, ty, z0 + 8), 8)], 'ptfe')
     suc, dis = pump((tx, ty, 295), 'P-3_AODD', g)
     add(g, 'container_to_P-3', run([(tx + 12, ty, zc + 40), (tx + 12, ty, zc + 70), (tx - 250, ty, zc + 70), (tx - 250, ty, suc[2]), (suc[0] - 100, ty, suc[2])], 8), 'ptfe')
@@ -709,9 +715,9 @@ def discharge(zap, ar_outs):
     suc, dis = pump((300, -850, 0), 'P-2_AODD', g)
     add(g, 'BV-1_to_P-2_hose', run([(0, -66, 240), (0, -330, 240), (0, -600, 150), (0, -850, 32), (suc[0] - 100, -850, 32)], 32), 'ptfe')
     # бочка растворителя 200 л и рукав от V-S1
-    bx, by = -500, -950
-    add(g, 'solvent_drum', [cyl((bx, by, 0), (bx, by, 880), 585), cyl((bx + 150, by, 880), (bx + 150, by, 900), 60)], 'blue')
-    add(g, 'V-S1_to_drum_hose', run([(-118, 0, 305), (-300, 0, 305), (-300, by + 150, 305), (bx + 150, by + 150, 305), (bx + 150, by, 960), (bx + 150, by, 900)], 32), 'ptfe')
+    bx, by = -150, -1150                       # бочка 30 л: Ø320 × 480 (15 л на загрузку + 6 л промывок)
+    add(g, 'solvent_drum', [cyl((bx, by, 0), (bx, by, 480), 320), cyl((bx + 90, by, 480), (bx + 90, by, 500), 50)], 'blue')
+    add(g, 'V-S1_to_drum_hose', run([(-118, 0, 305), (-300, 0, 305), (-300, by + 250, 305), (bx + 90, by + 250, 305), (bx + 90, by, 600), (bx + 90, by, 500)], 32), 'ptfe')
     # нутч F-1 под аргоном
     fx, fy = 780, -900
     parts = [cyl((fx, fy, 520), (fx, fy, 870), 360), cone((fx, fy, 520), (fx, fy, 420), 360, 50), cyl((fx, fy, 420), (fx, fy, 380), 38)]
