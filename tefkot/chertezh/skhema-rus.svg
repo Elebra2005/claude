@@ -31,8 +31,11 @@
 <path d="M100.96,67.53 L102.70,71.59 L104.44,67.53 Z" fill="#1d2226" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <path d="M100.67,72.17 L104.73,72.17" fill="none" stroke="#1d2226" stroke-width="0.58" stroke-linejoin="round"/>
 <path d="M128.80,48.68 L128.80,54.19" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
-<path d="M128.80,59.41 L128.80,65.50" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
+<path d="M128.80,59.41 L128.80,60.86" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
+<path d="M128.80,65.50 L128.80,67.82" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
 <path d="M127.06,54.19 L130.54,59.41 L127.06,59.41 L130.54,54.19 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
+<path d="M127.06,60.86 L128.80,64.92 L130.54,60.86 Z" fill="#1d2226" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
+<path d="M126.77,65.50 L130.83,65.50" fill="none" stroke="#1d2226" stroke-width="0.58" stroke-linejoin="round"/>
 <text x="131.12" y="57.96" font-size="2.436" text-anchor="start" fill="#1d2226">Кр. аргона 3</text>
 <text x="118.36" y="70.14" font-size="3.045" text-anchor="start" fill="#5d666d">→ тара</text>
 <path d="M152.00,48.68 L152.00,54.19" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
@@ -183,13 +186,16 @@
 <text x="317.30" y="87.54" font-size="3.4799999999999995" text-anchor="end" fill="#1d2226" font-weight="bold">Шпунт-аппарат</text>
 <text x="317.30" y="91.60" font-size="3.045" text-anchor="end" fill="#5d666d">50–80 мбар</text>
 <text x="323.10" y="97.98" font-size="3.045" text-anchor="middle" fill="#5d666d">выпуск в вытяжку</text>
-<path d="M340.50,62.60 L340.50,77.68" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
+<path d="M340.50,62.60 L340.50,68.11" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
+<path d="M338.76,68.11 L342.24,73.33 L338.76,73.33 L342.24,68.11 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
+<text x="342.82" y="71.88" font-size="2.1923999999999997" text-anchor="start" fill="#1d2226">Кран авар.</text>
+<path d="M340.50,73.33 L340.50,77.68" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M340.50,82.32 L340.50,109.00" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M338.76,77.68 L340.50,81.74 L342.24,77.68 Z" fill="#1d2226" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <path d="M338.47,82.32 L342.53,82.32" fill="none" stroke="#1d2226" stroke-width="0.58" stroke-linejoin="round"/>
 <text x="342.82" y="81.16" font-size="2.9579999999999997" text-anchor="start" fill="#1d2226" font-weight="bold">Авар. клапан</text>
 <text x="342.82" y="85.22" font-size="3.045" text-anchor="start" fill="#5d666d">≈0,2 бар,</text>
-<text x="342.82" y="88.70" font-size="3.045" text-anchor="start" fill="#5d666d">без крана</text>
+<text x="342.82" y="88.70" font-size="3.045" text-anchor="start" fill="#1d2226">кран открыт!</text>
 <path d="M365.15,62.60 L365.15,68.11" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M363.41,68.11 L366.89,73.33 L363.41,73.33 L366.89,68.11 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="367.47" y="71.88" font-size="2.436" text-anchor="start" fill="#1d2226">Кран вакуума</text>

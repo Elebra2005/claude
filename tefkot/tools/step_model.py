@@ -70,8 +70,10 @@ NAMES = {
 'SV-1_tee': 'Тройник DN15 ветки шпунт-аппарата',
 'SV-1': 'Кран шаровой кламп DN15 перед шпунт-аппаратом (SV-1)',
 'SV-1_joint': 'Хомут DN15 над краном шпунт-аппарата',
-'NRV-1': 'Клапан обратный пружинный кламп DN15, ≈0,2 бар — аварийный сброс без крана (NRV-1)',
-'NRV-1_tee': 'Тройник DN15 ветки аварийного обратного клапана',
+'NRV-1': 'Клапан обратный пружинный кламп DN15, ≈0,2 бар — аварийный сброс (NRV-1)',
+'SV-2_tee': 'Тройник DN15 ветки аварийного обратного клапана',
+'SV-2': 'Кран шаровой кламп DN15 под аварийным клапаном, всегда открыт (SV-2)',
+'SV-2_joint': 'Хомут DN15 над краном аварийного клапана',
 'NRV-1_joint': 'Хомут DN15 над обратным клапаном',
 'reducer_DN15_DN25': 'Переход кламповый DN15 → DN25 под шпунт-аппарат',
 'PCV-1_spunding': 'Шпунт-аппарат с манометром, DN25 — рабочий регулятор давления (PCV-1)',
@@ -138,6 +140,7 @@ NAMES = {
 'A4_drop': 'Отвод раздаточного коллектора к крану A4',
 'A1_to_AV-1': 'Трубка аргона ¼″ к гребёнке (кран AV-1)',
 'NRV_A1': 'Клапан обратный ¼″ на линии аргона к гребёнке',
+'NRV_A3': 'Клапан обратный ¼″ на линии аргона к таре MeSiCl₃ / PDMS-OH',
 'A2_to_G-1': 'Трубка аргона ¼″ к генератору',
 'G-1_Ar_inlet': 'Штуцер ввода аргона в генератор',
 'VP-1_vacuum_pump': 'Насос вакуумный мембранный химический (VP-1)',
@@ -499,12 +502,12 @@ def condenser_and_manifold():
     add(g, 'PCV-1_spunding', [cyl((xx, my, z + 40), (xx, my, z + 134), 60), cyl((xx, my, z + 134), (xx, my, z + 154), D)]
         + gauge((xx + 45, my, z + 94), (1, 0, 0), 63) + [cyl((xx + 30, my, z + 94), (xx + 33, my, z + 94), 10)], 'steel')
     sh_top = (xx, my, z + 154)
-    # 2: NRV-1 пружинный — аварийный сброс, без крана
+    # 2: SV-2 → NRV-1 пружинный — аварийный сброс
     xx = X['NR']
-    add(g, 'NRV-1_tee', [cyl((xx, my, zc), (xx, my, zc + 40), D)] + clampj((xx, my, zc + 40), (0, 0, 1), 25), 'steel')
-    add(g, 'NRV-1', check_valve((xx, my, zc + 75), (0, 0, 1), D), 'steel')
-    add(g, 'NRV-1_joint', clampj((xx, my, zc + 110), (0, 0, 1), 25), 'steel')
-    ps_top = (xx, my, zc + 113)
+    z = branch(xx, 'SV-2')
+    add(g, 'NRV-1', check_valve((xx, my, z + 35), (0, 0, 1), D), 'steel')
+    add(g, 'NRV-1_joint', clampj((xx, my, z + 70), (0, 0, 1), 25), 'steel')
+    ps_top = (xx, my, z + 73)
     # 3: VV-1 → вакуум
     xx = X['VAC']
     z = branch(xx, 'VV-1')
@@ -678,6 +681,7 @@ def dosing(p3_top, ar_outs):
     add(g, 'NRV-4', check_valve((tx + 160, ty, 1000), (0, 0, 1), 10), 'steel')
     # аргон A3 на крышку-переходник тары
     a3 = ar_outs['A3']
+    add(g, 'NRV_A3', check_valve((a3[0], a3[1], (a3[2] + 1760) / 2), (0, 0, 1), 10), 'steel')
     add(g, 'A3_to_container', run([a3, (a3[0], a3[1], 1760), (tx - 12, a3[1], 1760), (tx - 12, ty, 1760), (tx - 12, ty, zc)], 6.35), 'argon')
 
 
@@ -807,6 +811,11 @@ def fix_step_names(path):
     # основной файл — для КОМПАС (читает названия как Windows-1251); копия в UTF-8 — для FreeCAD и др.
     open(path, 'w', encoding='cp1251', newline='\n').write(txt)
     open(path.replace('.step', '-utf8.step'), 'w', encoding='utf-8', newline='\n').write(txt)
+    # архив: при пересылке .step как текста байты Windows-1251 портятся («Ã…»), в zip — нет
+    import zipfile
+    with zipfile.ZipFile(path.replace('.step', '-step.zip'), 'w', zipfile.ZIP_DEFLATED) as z:
+        for f in (path, path.replace('.step', '-utf8.step')):
+            z.write(f, os.path.basename(f))
 
 
 def build():

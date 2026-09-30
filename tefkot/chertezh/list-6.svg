@@ -21,7 +21,8 @@
 <path d="M200.00,44.60 L200.00,53.08" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M200.00,56.92 L200.00,68.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M230.00,30.00 L230.00,39.40" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M230.00,44.60 L230.00,68.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M230.00,44.60 L230.00,53.08" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M230.00,56.92 L230.00,68.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M260.00,30.00 L260.00,39.40" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M260.00,44.60 L260.00,68.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M300.00,40.00 L350.00,40.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
@@ -117,6 +118,9 @@
 <path d="M230.00,42.00 L233.38,42.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M233.38,40.50 L233.38,43.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <text x="234.00" y="41.00" font-size="2.2" text-anchor="start" fill="#111111" font-weight="bold">A3</text>
+<path d="M230.00,56.92 L228.32,53.08 L231.68,53.08 Z" fill="#111111" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M228.08,56.92 L231.92,56.92" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="234.00" y="56.00" font-size="1.8" text-anchor="start" fill="#111111">NRV</text>
 <text x="227.00" y="75.00" font-size="1.8" text-anchor="start" fill="#111111">→ тара MeSiCl₃ (лист 3)</text>
 <text x="227.00" y="79.00" font-size="1.8" text-anchor="start" fill="#c62828">L=?</text>
 <path d="M260.00,70.20 L259.10,68.00 L260.90,68.00 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
