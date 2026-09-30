@@ -88,7 +88,7 @@
 <path d="M40.00,78.50 L40.00,74.34" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M38.50,74.34 L41.50,74.34" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <text x="57.00" y="79.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Кран шаровой</text>
-<text x="107.00" y="77.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">кламп DN15 или ¼″ обжим;</text>
+<text x="107.00" y="77.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">кламп ½″ или ¼″ обжим;</text>
 <text x="107.00" y="81.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">короткая черта — рукоятка</text>
 <path d="M25.00,84.00 L215.00,84.00" fill="none" stroke="#8a9499" stroke-width="0.2" stroke-linejoin="round"/>
 <path d="M26.00,89.50 L37.60,89.50" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
@@ -112,7 +112,7 @@
 <path d="M37.00,108.30 L37.00,114.70 L43.00,113.10 L43.00,109.90 Z" fill="#ffffff" stroke="#111111" stroke-width="0.35" stroke-linejoin="round"/>
 <text x="57.00" y="112.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Переход концентрический</text>
 <text x="107.00" y="110.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">с большего DN на меньший,</text>
-<text x="107.00" y="114.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">напр. DN38 → DN15</text>
+<text x="107.00" y="114.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">напр. DN38 → ½″</text>
 <path d="M25.00,117.00 L215.00,117.00" fill="none" stroke="#8a9499" stroke-width="0.2" stroke-linejoin="round"/>
 <path d="M40.00,127.50 L40.00,125.50" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M37.00,119.50 L43.00,119.50 L43.00,125.50 L37.00,125.50 Z" fill="#ffffff" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
@@ -181,5 +181,5 @@
 <text x="254.00" y="112.40" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">Красный текст с «?»</text>
 <text x="304.00" y="110.80" font-size="2.1" text-anchor="start" fill="#2f3a3e">размер или параметр</text>
 <text x="304.00" y="114.00" font-size="2.1" text-anchor="start" fill="#2f3a3e">замерить / уточнить</text>
-<text x="25.00" y="250.00" font-size="2.2" text-anchor="start" fill="#666666">Позиции (R-1, G-1, P-2, SV-1 …) — перечень позиций на листе 1; размеры клампов по DN: DN15 — ферула 25 мм, DN25 и DN38 — 50,5, DN65 — 91.</text>
+<text x="25.00" y="250.00" font-size="2.2" text-anchor="start" fill="#666666">Позиции (R-1, G-1, P-2, SV-1 …) — перечень позиций на листе 1; размеры клампов по DN: ½″ — ферула 25 мм, DN25 и DN38 — 50,5, DN65 — 91.</text>
 </svg>

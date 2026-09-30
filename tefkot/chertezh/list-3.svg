@@ -189,7 +189,7 @@
 <path d="M222.76,202.80 L227.24,209.20 L222.76,209.20 L227.24,202.80 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M225.00,206.00 L229.16,206.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M229.16,204.50 L229.16,207.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="203.00" y="207.00" font-size="2.0" text-anchor="start" fill="#111111">V-P3 DN15</text>
+<text x="203.00" y="207.00" font-size="2.0" text-anchor="start" fill="#111111">V-P3 ½″</text>
 <path d="M221.80,196.60 L228.20,196.60 L228.20,197.70 L221.80,197.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M221.80,198.30 L228.20,198.30 L228.20,199.40 L221.80,199.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M221.20,196.20 L221.20,199.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -211,7 +211,7 @@
 <circle cx="217.00" cy="175.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="217.00" y="175.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">306</text>
 <path d="M221.80,171.40 L228.20,171.40 L228.20,173.60 L221.80,173.60 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="230.00" y="169.00" font-size="1.9" text-anchor="start" fill="#111111">заглушка DN15 + обжим ¼″</text>
+<text x="230.00" y="169.00" font-size="1.9" text-anchor="start" fill="#111111">заглушка ½″ + обжим ¼″</text>
 <path d="M213.00,232.00 L214.50,232.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <path d="M213.00,171.00 L214.50,171.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <path d="M213.00,232.00 L213.00,171.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -267,12 +267,12 @@
 <text x="300.00" y="61.50" font-size="2.1" text-anchor="start" fill="#111111">   из тары на W-4; объём замещается Ar (A3).</text>
 <text x="300.00" y="65.10" font-size="2.1" text-anchor="start" fill="#111111">   Расход по W-4, темп — по TI (≤ −10 °C).</text>
 <text x="38.63" y="34.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
-<text x="89.10" y="59.63" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="89.10" y="59.63" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
 <text x="236.40" y="225.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN25</text>
-<text x="236.40" y="214.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="236.40" y="198.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="238.40" y="179.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="217.00" y="179.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN15</text>
+<text x="236.40" y="214.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="236.40" y="198.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="238.40" y="179.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="217.00" y="179.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">½″</text>
 <text x="271.80" y="131.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN25</text>
 <text x="356.40" y="148.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN25</text>
 </svg>

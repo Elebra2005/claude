@@ -996,17 +996,17 @@
 <text x="797.00" y="71.92" font-size="1.8" text-anchor="start" fill="#111111">4</text>
 <path d="M712.00,73.10 L806.00,73.10" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="713.00" y="75.62" font-size="1.8" text-anchor="start" fill="#111111">SV-1,2,3, AV-1</text>
-<text x="727.00" y="75.62" font-size="1.8" text-anchor="start" fill="#111111">Кран кламп DN15</text>
+<text x="727.00" y="75.62" font-size="1.8" text-anchor="start" fill="#111111">Кран кламп ½″</text>
 <text x="789.00" y="75.62" font-size="1.8" text-anchor="start" fill="#111111">4</text>
 <text x="797.00" y="75.62" font-size="1.8" text-anchor="start" fill="#111111">4</text>
 <path d="M712.00,76.80 L806.00,76.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="713.00" y="79.32" font-size="1.8" text-anchor="start" fill="#111111">NRV-1</text>
-<text x="727.00" y="79.32" font-size="1.8" text-anchor="start" fill="#111111">Обратный клапан кламп DN15, ≈0,2 бар (над SV-2)</text>
+<text x="727.00" y="79.32" font-size="1.8" text-anchor="start" fill="#111111">Обратный клапан кламп ½″, ≈0,2 бар (над SV-2)</text>
 <text x="789.00" y="79.32" font-size="1.8" text-anchor="start" fill="#111111">1</text>
 <text x="797.00" y="79.32" font-size="1.8" text-anchor="start" fill="#111111">4</text>
 <path d="M712.00,80.50 L806.00,80.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="713.00" y="83.02" font-size="1.8" text-anchor="start" fill="#111111">VV-1</text>
-<text x="727.00" y="83.02" font-size="1.8" text-anchor="start" fill="#111111">Кран кламп DN15 (вакуум)</text>
+<text x="727.00" y="83.02" font-size="1.8" text-anchor="start" fill="#111111">Кран кламп ½″ (вакуум)</text>
 <text x="789.00" y="83.02" font-size="1.8" text-anchor="start" fill="#111111">1</text>
 <text x="797.00" y="83.02" font-size="1.8" text-anchor="start" fill="#111111">4</text>
 <path d="M712.00,84.20 L806.00,84.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -1077,63 +1077,63 @@
 <text x="25.00" y="559.40" font-size="2.1" text-anchor="start" fill="#c62828">2. Все размеры «?» (расстояния между аппаратами, высоты, длины рукавов и трубок, присоединения) — уточнить по месту.</text>
 <text x="25.00" y="563.30" font-size="2.1" text-anchor="start" fill="#111111">3. Прокладки: PTFE — продукт, растворитель, газ; EPDM — только водные/щелочные линии генератора. Хомуты кламповые — нерж.</text>
 <text x="25.00" y="567.20" font-size="2.1" text-anchor="start" fill="#111111">4. Штриховые линии бирюзового цвета — теплоноситель; штриховые чёрные — гибкие рукава; тонкие сплошные — трубки PTFE ¼″/10×12.</text>
-<text x="137.00" y="389.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN15</text>
-<text x="133.60" y="366.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="133.60" y="351.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="121.10" y="386.30" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="166.40" y="385.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="166.40" y="369.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="133.60" y="385.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="133.60" y="366.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="133.60" y="351.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="127.90" y="386.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="166.40" y="385.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="166.40" y="369.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
 <text x="201.08" y="354.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN65</text>
-<text x="226.40" y="343.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="226.40" y="343.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
 <text x="201.08" y="474.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN65</text>
-<text x="203.60" y="477.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
+<text x="203.60" y="477.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
 <text x="236.08" y="354.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN65</text>
-<text x="261.40" y="343.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="261.40" y="343.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
 <text x="236.08" y="474.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN65</text>
-<text x="238.60" y="477.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
+<text x="238.60" y="477.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
 <text x="370.60" y="260.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN25</text>
 <text x="408.00" y="298.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN25</text>
 <text x="423.00" y="298.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN25</text>
 <text x="414.61" y="193.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
-<text x="444.90" y="210.50" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="444.90" y="210.50" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
 <text x="457.40" y="294.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN25</text>
-<text x="457.40" y="285.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="457.40" y="271.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="467.40" y="257.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="454.00" y="260.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN15</text>
+<text x="457.40" y="285.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="457.40" y="271.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="467.40" y="257.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="457.40" y="256.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
 <text x="468.80" y="163.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN25</text>
-<text x="470.00" y="154.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="499.40" y="150.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="520.90" y="150.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="548.40" y="150.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="578.40" y="150.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="493.60" y="131.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="493.60" y="113.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
+<text x="474.60" y="154.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="499.40" y="150.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="520.90" y="150.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="548.40" y="150.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="578.40" y="150.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="493.60" y="131.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="493.60" y="113.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
 <text x="492.40" y="103.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN25</text>
-<text x="518.60" y="131.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="518.60" y="113.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="518.60" y="95.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="548.60" y="131.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="548.60" y="113.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="601.40" y="149.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="601.40" y="167.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="605.40" y="133.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="621.40" y="133.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="518.60" y="131.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="518.60" y="113.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="518.60" y="95.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="548.60" y="131.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="548.60" y="113.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="601.40" y="149.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="601.40" y="167.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="605.40" y="133.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="621.40" y="133.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
 <text x="388.60" y="452.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN38</text>
 <text x="409.00" y="448.20" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN38</text>
-<text x="418.00" y="448.20" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN15</text>
-<text x="435.40" y="452.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="414.60" y="452.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="435.40" y="452.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
 <text x="388.60" y="472.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN38</text>
-<text x="392.00" y="477.40" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN15</text>
-<text x="390.60" y="498.30" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="376.60" y="498.30" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="411.40" y="494.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="483.60" y="510.30" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="516.40" y="510.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="529.60" y="445.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15?</text>
+<text x="392.00" y="477.40" font-size="1.7" text-anchor="middle" fill="#1f5fa8">½″</text>
+<text x="397.40" y="498.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="383.40" y="498.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="411.40" y="494.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="483.60" y="510.30" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="516.40" y="510.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="529.60" y="445.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″?</text>
 <text x="546.60" y="487.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN?</text>
 <text x="569.40" y="499.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN?</text>
-<text x="594.40" y="515.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15?</text>
-<text x="615.40" y="455.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15?</text>
-<text x="630.40" y="455.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15?</text>
+<text x="594.40" y="515.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″?</text>
+<text x="615.40" y="455.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″?</text>
+<text x="630.40" y="455.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″?</text>
 </svg>

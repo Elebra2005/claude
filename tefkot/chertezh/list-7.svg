@@ -149,7 +149,7 @@
 <path d="M73.80,116.20 L73.80,119.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="78.00" cy="118.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="78.00" y="118.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">708</text>
-<text x="76.00" y="127.00" font-size="1.8" text-anchor="start" fill="#c62828">рукав PTFE ¾″ антистат., DN15, L=?</text>
+<text x="76.00" y="127.00" font-size="1.8" text-anchor="start" fill="#c62828">рукав PTFE ¾″ антистат., ½″, L=?</text>
 <path d="M119.60,126.80 L120.70,126.80 L120.70,133.20 L119.60,133.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M121.30,126.80 L122.40,126.80 L122.40,133.20 L121.30,133.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M119.20,126.20 L122.80,126.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -270,19 +270,19 @@
 <text x="290.00" y="39.50" font-size="2.0" text-anchor="start" fill="#111111">4. Все прокладки — PTFE.</text>
 <text x="58.60" y="61.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN38</text>
 <text x="81.60" y="67.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN38</text>
-<text x="95.00" y="63.20" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN15</text>
-<text x="114.40" y="67.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="91.60" y="67.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="114.40" y="67.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
 <text x="58.60" y="91.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN38</text>
-<text x="58.60" y="101.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="60.60" y="121.30" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="46.60" y="121.30" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="81.40" y="118.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="117.60" y="123.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="154.40" y="123.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="197.60" y="89.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15?</text>
+<text x="58.60" y="101.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="60.60" y="121.30" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="53.40" y="121.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="81.40" y="118.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="117.60" y="123.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="154.40" y="123.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="197.60" y="89.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″?</text>
 <text x="218.60" y="139.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN?</text>
 <text x="218.60" y="153.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN?</text>
-<text x="277.60" y="155.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15?</text>
-<text x="305.60" y="143.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15?</text>
-<text x="329.40" y="143.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15?</text>
+<text x="277.60" y="155.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″?</text>
+<text x="305.60" y="143.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″?</text>
+<text x="329.40" y="143.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″?</text>
 </svg>

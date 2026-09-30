@@ -247,7 +247,7 @@
 <text x="250.00" y="66.00" font-size="2.0" text-anchor="start" fill="#111111">переход обжим 12 мм → ¼″ у T2</text>
 <text x="250.00" y="80.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">Доработка бака Atmaler G-1</text>
 <text x="250.00" y="85.50" font-size="2.0" text-anchor="start" fill="#c62828">• снять блок редуктора (латунь); порт G? → переходник</text>
-<text x="250.00" y="88.90" font-size="2.0" text-anchor="start" fill="#c62828">  нерж. G? → DN15; резьбы всех штуцеров — замерить (?)</text>
+<text x="250.00" y="88.90" font-size="2.0" text-anchor="start" fill="#c62828">  нерж. G? → ½″; резьбы всех штуцеров — замерить (?)</text>
 <text x="250.00" y="92.30" font-size="2.0" text-anchor="start" fill="#111111">• латунную ёлочку сифона → нерж. ёлочка</text>
 <text x="250.00" y="95.70" font-size="2.0" text-anchor="start" fill="#111111">• прокладка крышки → EPDM</text>
 <text x="250.00" y="99.10" font-size="2.0" text-anchor="start" fill="#111111">• проверить внутр. покрытие (Zn/Al — недопустимо)</text>
@@ -255,28 +255,28 @@
 <text x="250.00" y="115.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">Колонны C-1, C-2 — из чего собраны (каждая)</text>
 <text x="250.00" y="120.50" font-size="2.0" text-anchor="start" fill="#111111">1. Корпус: царга кламп 3″ (труба 76,2×1,6 AISI 316,</text>
 <text x="250.00" y="123.90" font-size="2.0" text-anchor="start" fill="#111111">   ферулы DN65 с обеих сторон); L=600 (2,5 л).</text>
-<text x="250.00" y="127.30" font-size="2.0" text-anchor="start" fill="#111111">2. Низ и верх: заглушка-переход кламповая DN65 → DN15</text>
-<text x="250.00" y="130.70" font-size="2.0" text-anchor="start" fill="#111111">   (концентрический переход 3″ → ¾″).</text>
+<text x="250.00" y="127.30" font-size="2.0" text-anchor="start" fill="#111111">2. Низ и верх: заглушка-переход кламповая 3″ → ½″</text>
+<text x="250.00" y="130.70" font-size="2.0" text-anchor="start" fill="#111111">   (концентрический переход 3″ → ½″).</text>
 <text x="250.00" y="134.10" font-size="2.0" text-anchor="start" fill="#111111">3. C-1, C-2: между корпусом и нижней (и верхней) заглушкой —</text>
 <text x="250.00" y="137.50" font-size="2.0" text-anchor="start" fill="#111111">   сетчатая прокладка DN65 + диск сетки AISI 316 ≤1 мм.</text>
-<text x="250.00" y="140.90" font-size="2.0" text-anchor="start" fill="#111111">4. Хомуты DN65 — 2 шт., DN15 — 2 шт. на колонну.</text>
+<text x="250.00" y="140.90" font-size="2.0" text-anchor="start" fill="#111111">4. Хомуты DN65 — 2 шт., ½″ — 2 шт. на колонну.</text>
 <text x="250.00" y="144.30" font-size="2.0" text-anchor="start" fill="#111111">5. Крепление: 2 хомута-держателя Ø76 на стойку.</text>
 <text x="250.00" y="147.70" font-size="2.0" text-anchor="start" fill="#111111">6. C-1: сита 3A ≈1,8 кг; C-2: NaOH (KOH) гранулы ≈2,7 кг.</text>
 <text x="250.00" y="151.10" font-size="2.0" text-anchor="start" fill="#111111">   Загрузка — снять верхний хомут, засыпать, закрыть.</text>
 <text x="250.00" y="154.50" font-size="2.0" text-anchor="start" fill="#111111">7. Газ снизу вверх. Межколонные линии — трубка PTFE</text>
-<text x="250.00" y="157.90" font-size="2.0" text-anchor="start" fill="#111111">   10×12, переходник DN15 → G½″ нар. + обжим 12 мм.</text>
-<text x="63.10" y="96.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="67.30" y="76.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="85.90" y="79.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="63.10" y="65.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
-<text x="109.90" y="97.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
-<text x="109.90" y="81.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="250.00" y="157.90" font-size="2.0" text-anchor="start" fill="#111111">   10×12, переходник ½″ → G½″ нар. + обжим 12 мм.</text>
+<text x="63.10" y="96.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="67.30" y="76.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="85.90" y="79.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="63.10" y="65.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="109.90" y="97.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
+<text x="109.90" y="81.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
 <text x="132.68" y="80.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
-<text x="161.40" y="73.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="161.40" y="73.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
 <text x="132.68" y="200.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
-<text x="138.60" y="207.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
+<text x="138.60" y="207.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
 <text x="177.68" y="80.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
-<text x="206.40" y="73.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN15</text>
+<text x="206.40" y="73.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
 <text x="177.68" y="200.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
-<text x="183.60" y="207.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN15</text>
+<text x="183.60" y="207.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
 </svg>
