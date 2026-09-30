@@ -298,7 +298,7 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <!-- 1: SV-1 → переход DN15/DN25 → шпунт PCV-1 -->
 <path class="vent" d="M1090,140 L1090,159"/><path class="vent" d="M1090,177 L1090,210"/><use href="#bvv" x="1090" y="168"/><text class="sm" x="1098" y="172">SV-1</text>
 <rect class="eq" x="1076" y="210" width="28" height="36" rx="3"/><text class="sm" x="1080" y="232">ШП</text><text class="lbl" x="1070" y="226" text-anchor="end">PCV-1</text><text class="sm" x="1070" y="240" text-anchor="end">50–80 мбар</text>
-<path class="vent" d="M1090,246 L1090,300"/>
+<text class="sm" x="1090" y="262" text-anchor="middle">выпуск в вытяжку</text>
 <!-- 2: NRV-1 пружинный — аварийный сброс, без крана (кран — резерв) -->
 <path class="vent" d="M1150,140 L1150,192"/><path class="vent" d="M1150,208 L1150,300"/><use href="#nrvd" x="1150" y="200"/><text class="lbl" x="1158" y="204">NRV-1</text><text class="sm" x="1158" y="218">≈0,2 бар,</text><text class="sm" x="1158" y="230">без крана</text>
 <!-- 3: VV-1 → вакуумный насос VP-1 -->
@@ -315,7 +315,7 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <path class="vent" d="M1349,140 L1362,140" marker-end="url(#arr)"/><text class="sm" x="1352" y="160">vent</text><text class="sm" x="1318" y="174">→ вытяжка</text>
 
 <!-- коллектор сбросов → вытяжка -->
-<path class="vent" d="M1090,300 L1330,300"/><path class="vent" d="M1330,300 L1360,300" marker-end="url(#arr)"/><text class="sm" x="1256" y="318">коллектор сбросов</text><text class="sm" x="1300" y="290">в вытяжку</text>
+<path class="vent" d="M1150,300 L1330,300"/><path class="vent" d="M1330,300 L1360,300" marker-end="url(#arr)"/><text class="sm" x="1256" y="318">коллектор сбросов</text><text class="sm" x="1300" y="290">в вытяжку</text>
 <text class="sm" x="1120" y="444" text-anchor="end">PSV-3 от G-1 →</text><path class="vent" d="M1124,440 L1250,440"/><text class="sm" x="1120" y="460" text-anchor="end">PSV-4 от F-1 →</text><path class="vent" d="M1124,456 L1250,456 L1250,300"/>
 
 <!-- ============ ВЫГРУЗКА ============ -->
@@ -455,7 +455,7 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <div class="tbl"><table>
 <thead><tr><th>Отвод (слева направо)</th><th>Кран</th><th>Устройство</th><th>Уставка, мбар</th><th>Роль</th></tr></thead>
 <tbody>
-<tr><td class="pos">1 · SV-1</td><td>кран кламп DN15, открыт</td><td>Переход DN15 → DN25 (25 → 50,5) → <a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/predohranitelnye-klapany-nerzhaveyuschie/shpunt-apparat/shpunt-apparat-s-manometrom-uglovoj/">PCV-1 шпунт-аппарат</a> с манометром; выход — в коллектор сбросов</td><td>50…80</td><td><b>Рабочий регулятор.</b> Держит давление в реакторе, излишек выпускает. Его манометр показывает давление в гребёнке</td></tr>
+<tr><td class="pos">1 · SV-1</td><td>кран кламп DN15, открыт</td><td>Переход DN15 → DN25 (25 → 50,5) → <a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/predohranitelnye-klapany-nerzhaveyuschie/shpunt-apparat/shpunt-apparat-s-manometrom-uglovoj/">PCV-1 шпунт-аппарат</a> с манометром. <b>Шпунт — конечная точка ветки</b>: газ выходит из него прямо в атмосферу вытяжки, дальше линии нет</td><td>50…80</td><td><b>Рабочий регулятор.</b> Держит давление в реакторе, излишек выпускает. Его манометр показывает давление в гребёнке</td></tr>
 <tr><td class="pos">2 · NRV-1</td><td><b>без крана</b></td><td>Обратный клапан пружинный кламп DN15, по ходу сброса; выход — в коллектор сбросов</td><td>≈200</td><td><b>Аварийный сброс.</b> Крана нет, чтобы никто не мог его перекрыть и реактор не оказался под большим давлением (Бабкин). При вакуумировании клапан сам закрыт давлением</td></tr>
 <tr><td class="pos">3 · VV-1</td><td>кран кламп DN15, закрыт</td><td>Ёлочка → вакуумный шланг → VP-1</td><td>—</td><td>Вакуумирование пустого реактора</td></tr>
 <tr><td class="pos">4 · AV-1</td><td>кран кламп DN15</td><td>Переходник кламп DN15 → G½″ → обжим ¼″, аргон от A1 (через обратный клапан)</td><td>PR-1 0,1–0,2 л/мин</td><td>Подпитка аргоном малым потоком и инертизация</td></tr>
@@ -465,7 +465,7 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 Решение Бабкина: ветку NRV-1 собираем без крана. На вакуумировании проверяем, держит ли клапан вакуум сам: вакуум 25 мбар, натекание не больше 2 мбар/мин. Если держит плохо, ставим под ним кран SV-2 и вешаем на него крупные таблички «ОТКРЫТ! Закрывать только на время вакуумирования». Кран SV-2 заказываем сразу, он лежит в резерве.</div>
 <h3>Коллектор сбросов → вытяжка</h3>
 <ul>
-<li>В коллектор сбросов выведены выходы шпунта PCV-1 и обратного клапана NRV-1, сброс PSV-3 генератора и PSV-4 нутча. Коллектор — трубка PTFE 10×12, конец в вытяжке. Выхлоп вакуумного насоса VP-1 — отдельной трубкой в вытяжку.</li>
+<li>В коллектор сбросов выведены выход обратного клапана NRV-1, сброс PSV-3 генератора и PSV-4 нутча. Шпунт PCV-1 — конечная точка своей ветки, выпускает газ прямо в вытяжку (реактор стоит в вытяжке). Коллектор — трубка PTFE 10×12, конец в вытяжке. Выхлоп вакуумного насоса VP-1 — отдельной трубкой в вытяжку.</li>
 </ul>
 
 <!-- ============ 8 ============ -->

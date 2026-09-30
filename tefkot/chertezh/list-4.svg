@@ -17,7 +17,6 @@
 <path d="M70.00,150.00 L70.00,135.20" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M70.00,128.80 L70.00,121.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M70.00,115.00 L70.00,111.00" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
-<path d="M70.00,91.00 L70.00,45.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M115.00,150.00 L115.00,134.40" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M115.00,129.60 L115.00,121.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M115.00,118.00 L115.00,45.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
@@ -30,7 +29,7 @@
 <path d="M217.00,150.00 L221.80,150.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M228.20,150.00 L235.00,150.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M240.00,150.00 L255.00,150.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M70.00,45.00 L344.00,45.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M115.00,45.00 L344.00,45.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M250.00,200.00 L330.00,200.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M250.00,210.00 L330.00,210.00 L330.00,45.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M0.20,0.20 L419.80,0.20 L419.80,296.80 L0.20,296.80 Z" fill="none" stroke="#bbbbbb" stroke-width="0.1" stroke-linejoin="round"/>
@@ -147,6 +146,8 @@
 <text x="62.00" y="95.00" font-size="2.3" text-anchor="end" fill="#111111" font-weight="bold">PCV-1</text>
 <text x="62.00" y="98.50" font-size="1.9" text-anchor="end" fill="#111111">шпунт</text>
 <text x="62.00" y="102.00" font-size="1.9" text-anchor="end" fill="#111111">50–80 мбар</text>
+<text x="62.00" y="105.50" font-size="1.8" text-anchor="end" fill="#111111">конечная точка:</text>
+<text x="62.00" y="108.50" font-size="1.8" text-anchor="end" fill="#111111">выпуск в вытяжку</text>
 <path d="M111.80,139.60 L118.20,139.60 L118.20,140.70 L111.80,140.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M111.80,141.30 L118.20,141.30 L118.20,142.40 L111.80,142.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M111.20,139.20 L111.20,142.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -227,7 +228,7 @@
 <text x="241.00" y="156.00" font-size="1.9" text-anchor="start" fill="#111111">vent → вытяжка</text>
 <path d="M346.20,45.00 L344.00,45.90 L344.00,44.10 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="350.00" y="45.80" font-size="2.0" text-anchor="start" fill="#111111">в вытяжку</text>
-<text x="72.00" y="43.50" font-size="2.0" text-anchor="start" fill="#111111">коллектор сбросов: PCV-1, NRV-1, PSV-3, PSV-4 → вытяжка, трубка PTFE 10×12</text>
+<text x="117.00" y="43.50" font-size="2.0" text-anchor="start" fill="#111111">коллектор сбросов: NRV-1, PSV-3, PSV-4 → вытяжка, трубка PTFE 10×12</text>
 <text x="250.00" y="198.00" font-size="2.0" text-anchor="start" fill="#111111">от PSV-3 генератора (лист 5)</text>
 <text x="250.00" y="208.50" font-size="2.0" text-anchor="start" fill="#111111">от PSV-4 нутча (лист 7)</text>
 <path d="M70.00,150.00 L70.00,171.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>

@@ -84,7 +84,6 @@
 <path d="M505.00,140.00 L505.00,125.20" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M505.00,118.80 L505.00,111.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M505.00,105.00 L505.00,101.00" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
-<path d="M505.00,81.00 L505.00,50.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M530.00,140.00 L530.00,124.40" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M530.00,119.60 L530.00,111.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M530.00,108.00 L530.00,50.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
@@ -94,7 +93,7 @@
 <path d="M590.00,140.00 L590.00,154.80" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M590.00,161.20 L590.00,171.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M624.00,140.00 L636.00,140.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M505.00,50.00 L672.00,50.00 L672.00,230.00 L677.60,230.00 L678.92,227.84 L680.00,227.60 L681.08,227.84 L682.40,230.00 L752.00,230.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M530.00,50.00 L672.00,50.00 L672.00,230.00 L677.60,230.00 L678.92,227.84 L680.00,227.60 L681.08,227.84 L682.40,230.00 L752.00,230.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M400.00,430.00 L400.00,442.00" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
 <path d="M400.00,454.00 L400.00,470.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M400.00,459.00 L422.60,459.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
@@ -679,6 +678,7 @@
 <text x="501.00" y="93.00" font-size="1.9" text-anchor="start" fill="#111111">ШП</text>
 <text x="497.00" y="85.00" font-size="1.9" text-anchor="end" fill="#111111" font-weight="bold">PCV-1</text>
 <text x="497.00" y="88.50" font-size="1.7" text-anchor="end" fill="#111111">50–80</text>
+<text x="497.00" y="92.00" font-size="1.6" text-anchor="end" fill="#111111">выпуск в вытяжку</text>
 <path d="M526.80,129.60 L533.20,129.60 L533.20,130.70 L526.80,130.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M526.80,131.30 L533.20,131.30 L533.20,132.40 L526.80,132.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M526.20,129.20 L526.20,132.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -756,7 +756,7 @@
 <path d="M638.20,140.00 L636.00,140.90 L636.00,139.10 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="625.00" y="146.00" font-size="1.7" text-anchor="start" fill="#111111">vent</text>
 <path d="M754.20,230.00 L752.00,230.90 L752.00,229.10 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="507.00" y="48.50" font-size="1.8" text-anchor="start" fill="#111111">коллектор сбросов PCV-1, NRV-1 → вытяжка</text>
+<text x="532.00" y="48.50" font-size="1.8" text-anchor="start" fill="#111111">коллектор сбросов NRV-1 → вытяжка</text>
 <path d="M745.00,215.00 L795.00,215.00 L795.00,245.00 L745.00,245.00 Z" fill="none" stroke="#666666" stroke-width="0.3" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <text x="758.00" y="233.00" font-size="1.8" text-anchor="start" fill="#666666">вытяжка</text>
 <text x="686.00" y="421.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">ВЫГРУЗКА И ФИЛЬТРАЦИЯ (лист 7)</text>

@@ -84,7 +84,7 @@ NAMES = {
 'VV-1_joint': 'Хомут DN15 над краном вакуума',
 'VV-1_barb': 'Переходник кламп DN15 → ёлочка под вакуумный шланг',
 'brackets': 'Уголки и консоли крепления гребёнки к раме',
-'vent_line': 'Коллектор сбросов от шпунт-аппарата и обратного клапана NRV-1 в вытяжку',
+'vent_line': 'Коллектор сбросов от обратного клапана NRV-1 в вытяжку',
 # --- узлы крышки
 'P2_joint': 'Хомут DN25 термогильзы',
 'P2_thermowell_8x500': 'Заглушка DN25 с термогильзой Ø8×500 (P2)',
@@ -529,8 +529,7 @@ def condenser_and_manifold():
     # коллектор сбросов PCV-1 и NRV-1 → вверх в вытяжку
     bx, by = 1060, 520
     vz = 1860
-    add(g, 'vent_line', run([sh_top, (sh_top[0], my, vz), (bx, my, vz), (bx, by, vz), (bx, by, 2250)], 12)
-        + run([ps_top, (ps_top[0], my, vz)], 12), 'vent')
+    add(g, 'vent_line', run([ps_top, (ps_top[0], my, vz), (bx, my, vz), (bx, by, vz), (bx, by, 2250)], 12), 'vent')
     return (x, y), zc, {'av_top': av_top, 'vac_top': vac_top}
 
 
