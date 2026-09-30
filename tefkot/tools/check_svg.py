@@ -90,6 +90,11 @@ def near_label(p):
     return False
 pr = [p for p in pr if not (p.startswith('висит конец') and near_label(p))]
 
+# стрелка на составном пути рисуется и на стыках — стрелку ставить только на отдельный последний отрезок
+for el in root:
+    if el.tag.split('}')[-1] == 'path' and el.get('marker-end') and el.get('d', '').count('M') > 1:
+        pr.append(f'стрелка на составном пути: {el.get("d")[:40]}…')
+
 # линия, проходящая сквозь аппарат (не входящая в него концом), — ошибка трассировки
 LINES = set(LW)
 for el in root:
