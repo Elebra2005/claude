@@ -101,9 +101,9 @@
 <path d="M87.50,46.93 L91.70,47.93 L91.70,50.73 L87.50,51.73 Z" fill="#ffffff" stroke="#111111" stroke-width="0.35" stroke-linejoin="round"/>
 <path d="M100.90,49.33 L98.70,50.23 L98.70,48.43 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="104.70" y="50.33" font-size="2.1" text-anchor="start" fill="#111111">шланг на гребёнку (лист 4)</text>
-<path d="M49.30,202.67 L74.70,202.67 L66.23,210.67 L57.77,210.67 Z" fill="#ffffff" stroke="#111111" stroke-width="0.35" stroke-linejoin="round"/>
-<path d="M53.58,210.67 L70.42,210.67 L70.42,212.67 L53.58,212.67 Z" fill="#ffffff" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<text x="76.00" y="213.67" font-size="2.1" text-anchor="start" fill="#111111">переход 3″→1″, ферула DN25 под P1 (N3)</text>
+<path d="M49.30,202.67 L74.70,202.67 L70.47,210.67 L53.53,210.67 Z" fill="#ffffff" stroke="#111111" stroke-width="0.35" stroke-linejoin="round"/>
+<path d="M51.33,210.67 L72.67,210.67 L72.67,212.67 L51.33,212.67 Z" fill="#ffffff" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="76.00" y="213.67" font-size="2.1" text-anchor="start" fill="#111111">переход 3″→2″, ферула 2″ (64) под P1 (N3)</text>
 <text x="62.00" y="220.67" font-size="2.0" text-anchor="middle" fill="#111111">→ R-1, штуцер P1 (соед. 203, лист 2)</text>
 <path d="M49.30,36.00 L29.80,36.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <path d="M49.30,202.67 L29.80,202.67" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -233,10 +233,12 @@
 <text x="293.20" y="169.38" font-size="2.5" text-anchor="start" fill="#111111">500</text>
 <text x="288.00" y="212.00" font-size="1.9" text-anchor="start" fill="#111111">Ø8×1, дно заварено</text>
 <text x="330.00" y="112.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">УЗЕЛ P4 (резерв), б/м</text>
-<path d="M342.00,170.00 L348.00,170.00 L348.00,184.00 L342.00,184.00 Z" fill="#eaf2f8" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<path d="M342.76,173.80 L347.24,180.20 L342.76,180.20 L347.24,173.80 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M345.00,177.00 L349.16,177.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M349.16,175.50 L349.16,178.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <path d="M333.00,206.00 L357.00,206.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
 <text x="333.00" y="210.00" font-size="1.9" text-anchor="start" fill="#111111">крышка R-1</text>
-<text x="350.00" y="178.00" font-size="1.9" text-anchor="start" fill="#111111">смотр. фонарь (сущ.)</text>
+<text x="351.00" y="178.00" font-size="1.9" text-anchor="start" fill="#111111">кран шаровой кламп (сущ.)</text>
 <path d="M341.80,146.60 L348.20,146.60 L348.20,147.70 L341.80,147.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M341.80,148.30 L348.20,148.30 L348.20,149.40 L341.80,149.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M341.20,146.20 L341.20,149.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -244,9 +246,8 @@
 <circle cx="353.00" cy="148.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="353.00" y="148.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">201</text>
 <path d="M341.80,143.00 L348.20,143.00 L348.20,146.00 L341.80,146.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="350.00" y="141.00" font-size="1.9" text-anchor="start" fill="#111111">глухая заглушка DN25</text>
-<text x="350.00" y="137.00" font-size="1.9" text-anchor="start" fill="#111111">аргон — через гребёнку (лист 4)</text>
-<text x="333.00" y="215.00" font-size="1.9" text-anchor="start" fill="#111111">снять дыхательный фильтр</text>
+<text x="350.00" y="141.00" font-size="1.9" text-anchor="start" fill="#111111">PTFE-переходник с заглушкой (сущ.)</text>
+<text x="333.00" y="215.00" font-size="1.9" text-anchor="start" fill="#111111">резервный штуцер</text>
 <text x="300.00" y="20.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">Примечания</text>
 <text x="300.00" y="25.50" font-size="2.1" text-anchor="start" fill="#111111">1. E-1 — сталь AISI 316L; сварка TIG,</text>
 <text x="300.00" y="29.10" font-size="2.1" text-anchor="start" fill="#111111">   пищевая полировка внутр. поверхности.</text>

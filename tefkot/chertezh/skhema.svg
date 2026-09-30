@@ -238,7 +238,7 @@
 <path d="M332.96,154.24 L369.50,154.24 L369.50,164.10 L377.04,164.10" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M210.00,209.34 L210.00,225.00" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
 <path d="M208.26,211.37 L211.74,216.59 L208.26,216.59 L211.74,211.37 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
-<text x="212.32" y="213.40" font-size="3.045" text-anchor="start" fill="#1d2226">BV-1 Swagelok</text>
+<text x="212.32" y="213.40" font-size="3.045" text-anchor="start" fill="#1d2226">BV-1</text>
 <path d="M210.00,225.00 L210.00,236.60 L233.20,236.60" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
 <path d="M208.26,228.19 L211.74,233.41 L208.26,233.41 L211.74,228.19 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="186.80" y="229.64" font-size="3.045" text-anchor="start" fill="#1d2226">SP-1 проба</text>

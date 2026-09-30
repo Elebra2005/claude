@@ -487,7 +487,9 @@
 <path d="M372.00,288.00 L372.00,285.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <circle cx="372.00" cy="282.00" r="3.00" fill="#ffffff" stroke="#111111" stroke-width="0.3"/>
 <text x="372.00" y="282.80" font-size="1.8" text-anchor="middle" fill="#111111">PI-1</text>
-<path d="M379.00,268.00 L385.00,268.00 L385.00,280.00 L379.00,280.00 Z" fill="#eaf2f8" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<path d="M380.32,271.60 L383.68,276.40 L380.32,276.40 L383.68,271.60 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M382.00,274.00 L385.12,274.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M385.12,272.50 L385.12,275.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <path d="M378.80,258.60 L385.20,258.60 L385.20,259.70 L378.80,259.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M378.80,260.30 L385.20,260.30 L385.20,261.40 L378.80,261.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M378.20,258.20 L378.20,261.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>

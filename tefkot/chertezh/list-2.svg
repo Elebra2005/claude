@@ -100,8 +100,10 @@
 <path d="M74.00,55.00 L74.00,52.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <circle cx="74.00" cy="48.50" r="3.50" fill="#ffffff" stroke="#111111" stroke-width="0.3"/>
 <text x="74.00" y="49.30" font-size="1.8" text-anchor="middle" fill="#111111">PI-1</text>
-<path d="M83.00,46.00 L89.00,46.00 L89.00,58.00 L83.00,58.00 Z" fill="#eaf2f8" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="89.50" y="53.00" font-size="1.8" text-anchor="start" fill="#111111">фонарь</text>
+<path d="M83.76,48.80 L88.24,55.20 L83.76,55.20 L88.24,48.80 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M86.00,52.00 L90.16,52.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M90.16,50.50 L90.16,53.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<text x="91.00" y="53.00" font-size="1.8" text-anchor="start" fill="#111111">кран</text>
 <path d="M82.80,38.60 L89.20,38.60 L89.20,39.70 L82.80,39.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M82.80,40.30 L89.20,40.30 L89.20,41.40 L82.80,41.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M82.20,38.20 L82.20,41.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -149,7 +151,7 @@
 <circle cx="177.00" cy="98.00" r="0.50" fill="#111111" stroke="#111111" stroke-width="0.1"/>
 <path d="M99.00,207.00 L111.00,207.00 L111.00,216.00 L99.00,216.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M111.00,211.00 L124.00,209.00" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
-<text x="126.00" y="210.00" font-size="2.1" text-anchor="start" fill="#111111">BV-1 Swagelok</text>
+<text x="126.00" y="210.00" font-size="2.1" text-anchor="start" fill="#111111">BV-1 кран CF3M</text>
 <path d="M101.80,216.60 L108.20,216.60 L108.20,217.70 L101.80,217.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M101.80,218.30 L108.20,218.30 L108.20,219.40 L101.80,219.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M101.20,216.20 L101.20,219.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -265,8 +267,8 @@
 <text x="223.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">P1</text>
 <text x="235.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">N3</text>
 <text x="249.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">конденсатор E-1</text>
-<text x="291.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">кламп Ø50,5</text>
-<text x="327.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">25</text>
+<text x="291.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">кламп 2″ (ф. 64)</text>
+<text x="327.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">2″</text>
 <text x="338.00" y="158.07" font-size="2.1" text-anchor="start" fill="#111111">E-1 (лист 3)</text>
 <path d="M222.00,159.80 L391.00,159.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="163.47" font-size="2.1" text-anchor="start" fill="#111111">P2</text>
@@ -306,7 +308,7 @@
 <path d="M222.00,186.80 L391.00,186.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="190.47" font-size="2.1" text-anchor="start" fill="#111111">M</text>
 <text x="235.00" y="190.47" font-size="2.1" text-anchor="start" fill="#111111">M</text>
-<text x="249.00" y="190.47" font-size="2.1" text-anchor="start" fill="#111111">мешалка WB1800-C</text>
+<text x="249.00" y="190.47" font-size="2.1" text-anchor="start" fill="#111111">мешалка, мотор WB400</text>
 <text x="291.00" y="190.47" font-size="2.1" text-anchor="start" fill="#111111">фланец</text>
 <text x="327.00" y="190.47" font-size="2.1" text-anchor="start" fill="#111111">133</text>
 <text x="338.00" y="190.47" font-size="2.1" text-anchor="start" fill="#111111">существующая, вал Ø26</text>
@@ -351,7 +353,7 @@
 <text x="338.00" y="65.10" font-size="2.1" text-anchor="start" fill="#111111">   продуктом — PTFE. PN всех — 0,5.</text>
 <text x="338.00" y="68.70" font-size="2.1" text-anchor="start" fill="#111111">7. Все штуцеры — трикламп; DN по</text>
 <text x="338.00" y="72.30" font-size="2.1" text-anchor="start" fill="#111111">   DIN 11851 (Wiggens). DN25 и DN38 —</text>
-<text x="338.00" y="75.90" font-size="2.1" text-anchor="start" fill="#111111">   ферула Ø50,5.</text>
+<text x="338.00" y="75.90" font-size="2.1" text-anchor="start" fill="#111111">   ферула Ø50,5; P1 — 2″ (ф. 64, по фото).</text>
 <text x="338.00" y="94.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold"></text>
 <text x="338.00" y="99.50" font-size="1.9" text-anchor="start" fill="#111111">Условные обозначения:</text>
 <text x="338.00" y="102.80" font-size="1.9" text-anchor="start" fill="#111111">⊣⊢ кламповое соединение, № — ведомость (лист 8)</text>
