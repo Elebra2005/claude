@@ -84,7 +84,7 @@
 <path d="M24.00,40.00 L195.00,40.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="43.13" font-size="1.85" text-anchor="start" fill="#111111">205</text>
 <text x="34.00" y="43.13" font-size="1.85" text-anchor="start" fill="#111111">2</text>
-<text x="40.00" y="43.13" font-size="1.85" text-anchor="start" fill="#111111">BV-1 → тройник переходной 50,5×½″ (лист 7)</text>
+<text x="40.00" y="43.13" font-size="1.85" text-anchor="start" fill="#111111">BV-1 → тройник 45° 50,5×½″ (лист 7)</text>
 <text x="158.00" y="43.13" font-size="1.85" text-anchor="start" fill="#111111">DN38 (L)</text>
 <text x="183.00" y="43.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,44.60 L195.00,44.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -318,7 +318,7 @@
 <path d="M24.00,219.40 L195.00,219.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="222.53" font-size="1.85" text-anchor="start" fill="#111111">701</text>
 <text x="34.00" y="222.53" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="40.00" y="222.53" font-size="1.85" text-anchor="start" fill="#111111">тройник переходной 50,5×½″ → кран SP-1</text>
+<text x="40.00" y="222.53" font-size="1.85" text-anchor="start" fill="#111111">тройник 45° 50,5×½″ → кран SP-1</text>
 <text x="158.00" y="222.53" font-size="1.85" text-anchor="start" fill="#111111">½″</text>
 <text x="183.00" y="222.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M33.00,17.00 L33.00,224.00" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
@@ -427,11 +427,11 @@
 <text x="287.00" y="99.13" font-size="1.9" text-anchor="start" fill="#111111">—</text>
 <text x="301.00" y="99.13" font-size="1.9" text-anchor="start" fill="#111111"></text>
 <path d="M222.00,100.60 L342.00,100.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="103.73" font-size="1.9" text-anchor="start" fill="#111111">½″</text>
-<text x="241.00" y="103.73" font-size="1.9" text-anchor="start" fill="#111111">35</text>
-<text x="255.00" y="103.73" font-size="1.9" text-anchor="start" fill="#111111">37</text>
-<text x="273.00" y="103.73" font-size="1.9" text-anchor="start" fill="#111111">31</text>
-<text x="287.00" y="103.73" font-size="1.9" text-anchor="start" fill="#111111">8</text>
+<text x="223.00" y="103.73" font-size="1.9" text-anchor="start" fill="#c62828">½″?</text>
+<text x="241.00" y="103.73" font-size="1.9" text-anchor="start" fill="#111111">2</text>
+<text x="255.00" y="103.73" font-size="1.9" text-anchor="start" fill="#111111">4</text>
+<text x="273.00" y="103.73" font-size="1.9" text-anchor="start" fill="#111111">4</text>
+<text x="287.00" y="103.73" font-size="1.9" text-anchor="start" fill="#111111">—</text>
 <text x="301.00" y="103.73" font-size="1.9" text-anchor="start" fill="#111111"></text>
 <path d="M222.00,105.20 L342.00,105.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="108.33" font-size="1.9" text-anchor="start" fill="#c62828">50,5? (1″)</text>
@@ -441,11 +441,11 @@
 <text x="287.00" y="108.33" font-size="1.9" text-anchor="start" fill="#111111">—</text>
 <text x="301.00" y="108.33" font-size="1.9" text-anchor="start" fill="#111111"></text>
 <path d="M222.00,109.80 L342.00,109.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="112.93" font-size="1.9" text-anchor="start" fill="#c62828">½″?</text>
-<text x="241.00" y="112.93" font-size="1.9" text-anchor="start" fill="#111111">2</text>
-<text x="255.00" y="112.93" font-size="1.9" text-anchor="start" fill="#111111">4</text>
-<text x="273.00" y="112.93" font-size="1.9" text-anchor="start" fill="#111111">4</text>
-<text x="287.00" y="112.93" font-size="1.9" text-anchor="start" fill="#111111">—</text>
+<text x="223.00" y="112.93" font-size="1.9" text-anchor="start" fill="#111111">½″</text>
+<text x="241.00" y="112.93" font-size="1.9" text-anchor="start" fill="#111111">35</text>
+<text x="255.00" y="112.93" font-size="1.9" text-anchor="start" fill="#111111">37</text>
+<text x="273.00" y="112.93" font-size="1.9" text-anchor="start" fill="#111111">31</text>
+<text x="287.00" y="112.93" font-size="1.9" text-anchor="start" fill="#111111">8</text>
 <text x="301.00" y="112.93" font-size="1.9" text-anchor="start" fill="#111111"></text>
 <path d="M222.00,114.40 L342.00,114.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="117.53" font-size="1.9" text-anchor="start" fill="#111111">DN25</text>
