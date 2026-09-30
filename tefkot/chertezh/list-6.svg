@@ -13,7 +13,6 @@
 <path d="M36.00,40.00 L36.00,33.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
 <path d="M39.00,30.00 L52.00,30.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
 <path d="M60.00,30.00 L150.00,30.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M108.00,30.00 L108.00,20.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M150.00,30.00 L270.00,30.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M170.00,30.00 L170.00,39.40" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M170.00,44.60 L170.00,53.08" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
@@ -90,8 +89,6 @@
 <text x="50.00" y="44.00" font-size="1.8" text-anchor="start" fill="#111111">баллона</text>
 <text x="50.00" y="47.50" font-size="1.8" text-anchor="start" fill="#111111">0,2–0,3 бар</text>
 <text x="64.00" y="28.00" font-size="1.8" text-anchor="start" fill="#111111">PTFE 6×8</text>
-<path d="M105.00,14.00 L111.00,14.00 L111.00,20.00 L105.00,20.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="113.00" y="18.00" font-size="1.8" text-anchor="start" fill="#111111">PSV-2 0,5 бар</text>
 <path d="M122.00,24.00 L132.00,24.00 L130.00,36.00 L124.00,36.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <text x="120.00" y="42.00" font-size="2.2" text-anchor="start" fill="#111111" font-weight="bold">PR-1</text>
 <text x="116.00" y="46.00" font-size="1.8" text-anchor="start" fill="#111111">ротаметр + вентиль</text>

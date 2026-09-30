@@ -13,7 +13,6 @@
 <path d="M38.00,60.00 L38.00,55.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
 <path d="M41.00,52.00 L56.00,52.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
 <path d="M64.00,52.00 L136.00,52.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M108.00,52.00 L108.00,44.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M130.00,52.00 L225.00,52.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M150.00,52.00 L150.00,57.60" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M150.00,62.40 L150.00,72.24" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
@@ -274,8 +273,6 @@
 <text x="60.00" y="53.00" font-size="2.2" text-anchor="middle" fill="#111111">R</text>
 <text x="54.00" y="64.00" font-size="1.8" text-anchor="start" fill="#111111">редуктор</text>
 <text x="54.00" y="68.00" font-size="1.8" text-anchor="start" fill="#111111">баллона</text>
-<path d="M105.00,38.00 L111.00,38.00 L111.00,44.00 L105.00,44.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="113.00" y="42.00" font-size="1.9" text-anchor="start" fill="#111111">PSV-2</text>
 <path d="M120.00,46.00 L130.00,46.00 L128.00,58.00 L122.00,58.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <text x="118.00" y="64.00" font-size="2.2" text-anchor="start" fill="#111111" font-weight="bold">PR-1</text>
 <text x="114.00" y="68.00" font-size="1.8" text-anchor="start" fill="#111111">ротаметр</text>
@@ -1058,10 +1055,10 @@
 <text x="789.00" y="127.42" font-size="1.8" text-anchor="start" fill="#111111">1</text>
 <text x="797.00" y="127.42" font-size="1.8" text-anchor="start" fill="#111111">5</text>
 <path d="M712.00,128.60 L806.00,128.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="131.12" font-size="1.8" text-anchor="start" fill="#111111">PSV-2/3</text>
-<text x="727.00" y="131.12" font-size="1.8" text-anchor="start" fill="#111111">Предохр. клапаны Ar / G-1</text>
-<text x="789.00" y="131.12" font-size="1.8" text-anchor="start" fill="#111111">1+1</text>
-<text x="797.00" y="131.12" font-size="1.8" text-anchor="start" fill="#111111">5,6</text>
+<text x="713.00" y="131.12" font-size="1.8" text-anchor="start" fill="#111111">PSV-3</text>
+<text x="727.00" y="131.12" font-size="1.8" text-anchor="start" fill="#111111">Предохр. клапан G-1</text>
+<text x="789.00" y="131.12" font-size="1.8" text-anchor="start" fill="#111111">1</text>
+<text x="797.00" y="131.12" font-size="1.8" text-anchor="start" fill="#111111">5</text>
 <path d="M726.00,25.00 L726.00,132.30" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
 <path d="M788.00,25.00 L788.00,132.30" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
 <path d="M796.00,25.00 L796.00,132.30" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>

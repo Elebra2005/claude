@@ -19,10 +19,6 @@
 <text x="34.84" y="57.96" font-size="3.045" text-anchor="start" fill="#5d666d">редуктор</text>
 <text x="34.84" y="62.02" font-size="3.045" text-anchor="start" fill="#5d666d">баллона</text>
 <path d="M45.28,48.68 L82.98,48.68" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
-<path d="M75.44,48.68 L75.44,41.14" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
-<path d="M72.54,35.34 L78.34,35.34 L78.34,41.14 L72.54,41.14 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<text x="79.50" y="39.40" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">Предохр. клапан</text>
-<text x="79.50" y="42.88" font-size="3.045" text-anchor="start" fill="#5d666d">0,5 бар</text>
 <path d="M82.98,44.62 L89.94,44.62 L88.78,52.74 L84.14,52.74 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="81.82" y="57.96" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">Ротаметр</text>
 <text x="78.34" y="62.02" font-size="3.045" text-anchor="start" fill="#5d666d">ротаметр</text>

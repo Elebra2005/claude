@@ -121,7 +121,7 @@ NAMES = {
 # --- аргон и вакуум
 'AR-1_cylinder_40L': 'Баллон аргона 40 л (AR-1)',
 'PR-1_regulator': 'Редуктор баллона аргона GCE, на минимуме 0,2–0,3 бар',
-'PR-2_FI-1_PSV-2_panel': 'Панель аргона на раме (ротаметр PR-1, клапан PSV-2)',
+'PR-1_argon_panel': 'Панель аргона на раме (ротаметр PR-1)',
 'FI_to_distributor': 'Трубка аргона от ротаметра к раздаточному коллектору',
 'PR-2': 'Регулятор низкого давления аргона +20…30 мбар (PR-2)',
 'FI-1_rotameter': 'Ротаметр аргона с игольчатым вентилем (PR-1)',
@@ -624,7 +624,7 @@ def argon_vacuum(p4_top, zc_e1, e1xy, M):
     add(g, 'AR-1_cylinder_40L', [cyl((ax, ay, 0), (ax, ay, 1300), 230), sph((ax, ay, 1300), 230), cyl((ax, ay, 1400), (ax, ay, 1460), 40)], 'blue')
     add(g, 'PR-1_regulator', [cbox((ax, ay - 40, 1480), 60, 60, 60)] + gauge((ax - 50, ay - 40, 1510), (-1, 0, 0), 50) + gauge((ax + 50, ay - 40, 1510), (1, 0, 0), 50), 'steel')
     dx, dy, dz = -300, 660, 1500            # раздаточная гребёнка на колонне рамы
-    add(g, 'PR-2_FI-1_PSV-2_panel', [box(dx - 250, dy + 30, dz - 120, dx + 250, dy + 45, dz + 120)], 'white')
+    add(g, 'PR-1_argon_panel', [box(dx - 250, dy + 30, dz - 120, dx + 250, dy + 45, dz + 120)], 'white')
     add(g, 'FI-1_rotameter', [cyl((dx - 100, dy, dz - 90), (dx - 100, dy, dz + 90), 30)], 'glass')
     add(g, 'Ar_distributor', [cyl((dx - 50, dy, dz), (dx + 200, dy, dz), 12)], 'steel')
     add(g, 'Ar_supply', run([(ax, ay - 40, 1510), (ax, ay - 40, 1580), (dx - 100, ay - 40, 1580), (dx - 100, dy, 1580), (dx - 100, dy, dz + 90)], 6.35), 'argon')
