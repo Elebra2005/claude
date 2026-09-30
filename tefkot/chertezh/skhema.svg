@@ -101,9 +101,6 @@
 <text x="145.62" y="191.36" font-size="3.045" text-anchor="start" fill="#5d666d">NaOH/KOH</text>
 <text x="145.62" y="194.84" font-size="3.045" text-anchor="start" fill="#5d666d">3″×600</text>
 <path d="M152.00,109.00 L152.00,96.24 L182.16,96.24 L182.16,136.26" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
-<circle cx="165.05" cy="117.70" r="2.90" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
-<path d="M165.05,114.80 L165.05,96.24" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
-<text x="158.96" y="124.66" font-size="3.045" text-anchor="start" fill="#1d2226">PI-2</text>
 <path d="M166.79,94.50 L172.01,97.98 L172.01,94.50 L166.79,97.98 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="167.37" y="102.62" font-size="3.045" text-anchor="start" fill="#5d666d">V-G2</text>
 <path d="M174.04,94.50 L178.10,96.24 L174.04,97.98 Z" fill="#1d2226" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
