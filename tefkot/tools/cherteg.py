@@ -446,18 +446,18 @@ def sheet4():
         s.rect(x - Rc, top, 2 * Rc, dz, lw=0.7, fill='#eef6fb')
         for gx in (x - Rc / 2, x + Rc / 2):
             s.line(gx, top + 1, gx, top + dz - 1, lw=0.2, color=GREY, nc=True)
-        J(s, 5, x, top + dz, 'v', 'K91 (3″)', 'PTFE', f'{name} царга → диоптр 3″', side=-1, w=Rc + 1.5)
+        J(s, 5, x, top + dz, 'v', 'K91 (3″)', 'EPDM', f'{name} царга → диоптр 3″', side=-1, w=Rc + 1.5)
         s.text(x - Rc - 1.5, top + 25, name, 2.6, 'end', bold=True)
         s.text(x, base + 29, fillname, 1.8, 'middle')
         s.text(x, base + 33, 'диоптр 200 + царга 400', 1.8, 'middle')
-        J(s, 5, x, top, 'v', 'K91 (3″)', 'PTFE', f'{name} верх — межкламповый фильтр 3″ + заглушка-переход DN65/½″', side=-1, w=Rc + 1.5)
+        J(s, 5, x, top, 'v', 'K91 (3″)', 'EPDM', f'{name} верх — межкламповый фильтр 3″ + заглушка-переход DN65/½″', side=-1, w=Rc + 1.5)
         s.reducer(x, top - 5, 'v', 3.8, 7.6, 5) if False else s.poly([(x - Rc, top), (x + Rc, top), (x + 1.8, top - 5), (x - 1.8, top - 5)], lw=0.35, closed=True, fill='#ffffff')
-        J(s, 5, x, top - 7, 'v', 'K25', 'PTFE', f'{name} верхний выход ½″', side=1)
-        J(s, 5, x, base, 'v', 'K91 (3″)', 'PTFE', f'{name} низ — межкламповый фильтр 3″ + заглушка-переход DN65/½″', side=-1, w=Rc + 1.5)
+        J(s, 5, x, top - 7, 'v', 'K25', 'EPDM', f'{name} верхний выход ½″', side=1)
+        J(s, 5, x, base, 'v', 'K91 (3″)', 'EPDM', f'{name} низ — межкламповый фильтр 3″ + заглушка-переход DN65/½″', side=-1, w=Rc + 1.5)
         s.poly([(x - Rc, base), (x + Rc, base), (x + 1.8, base + 5), (x - 1.8, base + 5)], lw=0.35, closed=True, fill='#ffffff')
         if True:
             s.line(x - Rc, base - 1, x + Rc, base - 1, lw=0.25, dash='dot')
-        J(s, 5, x, base + 7, 'v', 'K25', 'PTFE', f'{name} нижний вход ½″', side=-1)
+        J(s, 5, x, base + 7, 'v', 'K25', 'EPDM', f'{name} нижний вход ½″', side=-1)
         s.dim(x + Rc, top, x + Rc, base, -5, str(L))
         if prev_top is not None:
             tube(s, [(prev_top[0], prev_top[1] - 9), (prev_top[0], prev_top[1] - 16), ((prev_top[0] + x) / 2, prev_top[1] - 16),
@@ -1045,7 +1045,7 @@ def sheet_assembly():
     notes(s, 25, 550, 'Примечания', [
         '1. Схема в сборе без масштаба; E-1, колонны — в едином условном масштабе ~1:5. Детали — листы 2–7, ведомость клампов — лист 8.',
         '2. Все размеры «?» (расстояния между аппаратами, высоты, длины рукавов и трубок, присоединения) — уточнить по месту.',
-        '3. Прокладки: PTFE — продукт, растворитель, газ; EPDM — только водные/щелочные линии генератора. Хомуты кламповые — нерж.',
+        '3. Прокладки: PTFE — продукт, растворитель, газ; EPDM — генератор G-1, колонны C-1/C-2 и рубашка (нет углеводородов). Хомуты кламповые — нерж.',
         '4. Штриховые линии бирюзового цвета — теплоноситель; штриховые чёрные — гибкие рукава; тонкие сплошные — трубки PTFE ¼″/10×12.'], size=2.1, step=3.9)
     return s
 
