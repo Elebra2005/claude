@@ -14,7 +14,7 @@
 <path d="M79.00,184.00 L87.00,184.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M71.00,64.00 L79.00,64.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
 <path d="M79.00,64.00 L87.00,64.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M62.00,40.00 L62.00,30.00 L100.00,30.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M62.00,38.20 L62.00,30.00 L100.00,30.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M62.00,209.00 L62.00,216.00" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
 <path d="M150.00,74.00 L140.00,78.00 L140.00,150.00 L174.00,150.00 L174.00,78.00 L164.00,74.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <path d="M153.00,60.00 L153.00,36.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
@@ -74,10 +74,16 @@
 <text x="89.00" y="124.00" font-size="1.9" text-anchor="start" fill="#111111">оливы стеклянные → рукав EPDM + хомут</text>
 <path d="M57.00,52.00 L67.00,52.00 L66.00,46.00 L58.00,46.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <text x="55.00" y="50.00" font-size="1.9" text-anchor="end" fill="#c62828">шлиф NS ?</text>
-<path d="M60.40,46.00 L63.60,46.00 L63.10,40.00 L60.90,40.00 Z" fill="#dddddd" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<path d="M58.80,46.00 L65.20,46.00 L65.20,41.80 L58.80,41.80 Z" fill="#dddddd" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<path d="M58.80,38.60 L65.20,38.60 L65.20,39.70 L58.80,39.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M58.80,40.30 L65.20,40.30 L65.20,41.40 L58.80,41.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M58.20,38.20 L58.20,41.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M65.80,38.20 L65.80,41.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="54.00" cy="40.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="54.00" y="40.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">301</text>
 <path d="M102.20,30.00 L100.00,30.90 L100.00,29.10 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="102.00" y="31.00" font-size="2.0" text-anchor="start" fill="#111111">рукав ¾″ на ёлочке (хомут) → штуцер шланговый кламп K25 → вход гребёнки (лист 4)</text>
-<text x="67.00" y="45.00" font-size="1.8" text-anchor="start" fill="#c62828">переходник шлиф NS ? → ёлочка ¾″ (PTFE), не кламп</text>
+<text x="102.00" y="31.00" font-size="2.0" text-anchor="start" fill="#111111">рукав PTFE ¾″ × K25 (обжатые клампы) → вход гребёнки (лист 4)</text>
+<text x="67.00" y="45.00" font-size="1.8" text-anchor="start" fill="#c62828">переходник шлиф NS ? → кламп K25 (PTFE / нерж.)</text>
 <path d="M58.00,196.00 L66.00,196.00 L65.00,203.00 L59.00,203.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M53.60,203.00 L70.40,203.00 L70.40,209.00 L53.60,209.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <text x="73.00" y="202.00" font-size="1.9" text-anchor="start" fill="#c62828">керн NS ? → переходник шлиф / кламп K50,5</text>
@@ -138,7 +144,7 @@
 <path d="M221.20,212.20 L221.20,215.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M228.80,212.20 L228.80,215.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="233.00" cy="214.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="233.00" y="214.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">301</text>
+<text x="233.00" y="214.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">302</text>
 <path d="M222.76,202.80 L227.24,209.20 L222.76,209.20 L227.24,202.80 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M225.00,206.00 L229.16,206.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M229.16,204.50 L229.16,207.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
@@ -148,7 +154,7 @@
 <path d="M221.20,196.20 L221.20,199.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M228.80,196.20 L228.80,199.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="233.00" cy="198.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="233.00" y="198.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">302</text>
+<text x="233.00" y="198.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">303</text>
 <path d="M221.80,194.40 L228.20,194.40 L228.20,196.60 L221.80,196.60 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <text x="230.00" y="192.00" font-size="1.9" text-anchor="start" fill="#111111">заглушка ½″ + обжим ¼″</text>
 <path d="M213.00,232.00 L214.50,232.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -205,6 +211,7 @@
 <text x="300.00" y="57.90" font-size="2.1" text-anchor="start" fill="#111111">7. MeSiCl₃ / PDMS-OH — насосом P-3 прямо</text>
 <text x="300.00" y="61.50" font-size="2.1" text-anchor="start" fill="#111111">   из тары на W-4; объём замещается Ar (A3).</text>
 <text x="300.00" y="65.10" font-size="2.1" text-anchor="start" fill="#111111">   Расход по W-4, темп — по TI.</text>
+<text x="50.60" y="40.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
 <text x="45.40" y="209.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K50,5</text>
 <text x="236.40" y="225.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K50,5</text>
 <text x="236.40" y="214.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>

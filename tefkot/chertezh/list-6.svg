@@ -25,8 +25,12 @@
 <path d="M230.00,56.92 L230.00,68.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M260.00,30.00 L260.00,39.40" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M260.00,44.60 L260.00,68.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M300.00,40.00 L350.00,40.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M325.00,40.00 L325.00,64.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M300.00,40.00 L316.20,40.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M319.80,40.00 L330.20,40.00" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M325.00,40.00 L325.00,46.20" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M325.00,49.80 L325.00,64.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M333.80,40.00 L343.00,40.00" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M348.00,40.00 L350.00,40.00" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
 <path d="M366.00,40.00 L380.00,40.00 L380.00,28.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M68.00,149.00 L150.00,149.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M68.00,161.00 L150.00,161.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
@@ -79,7 +83,7 @@
 <text x="56.00" y="31.00" font-size="2.2" text-anchor="middle" fill="#111111">R</text>
 <text x="50.00" y="40.00" font-size="1.8" text-anchor="start" fill="#111111">редуктор</text>
 <text x="50.00" y="44.00" font-size="1.8" text-anchor="start" fill="#111111">баллона</text>
-<text x="64.00" y="28.00" font-size="1.8" text-anchor="start" fill="#111111">PTFE 6×8</text>
+<text x="64.00" y="28.00" font-size="1.8" text-anchor="start" fill="#111111">PTFE ¼″</text>
 <path d="M122.00,24.00 L132.00,24.00 L130.00,36.00 L124.00,36.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <text x="120.00" y="42.00" font-size="2.2" text-anchor="start" fill="#111111" font-weight="bold">PR-1</text>
 <text x="116.00" y="46.00" font-size="1.8" text-anchor="start" fill="#111111">ротаметр + вентиль</text>
@@ -124,16 +128,35 @@
 <text x="257.00" y="79.00" font-size="1.8" text-anchor="start" fill="#c62828">L=?</text>
 <text x="300.00" y="13.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">ВАКУУМ</text>
 <text x="299.00" y="41.00" font-size="1.9" text-anchor="end" fill="#111111">от VV-1 (лист 4)</text>
+<path d="M316.60,36.80 L317.70,36.80 L317.70,43.20 L316.60,43.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M318.30,36.80 L319.40,36.80 L319.40,43.20 L318.30,43.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M316.20,36.20 L319.80,36.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M316.20,43.80 L319.80,43.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="318.00" cy="32.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="318.00" y="33.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">601</text>
+<path d="M321.80,46.60 L328.20,46.60 L328.20,47.70 L321.80,47.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M321.80,48.30 L328.20,48.30 L328.20,49.40 L321.80,49.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M321.20,46.20 L321.20,49.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M328.80,46.20 L328.80,49.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="317.00" cy="48.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="317.00" y="48.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">602</text>
 <path d="M325.00,66.20 L324.10,64.00 L325.90,64.00 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="322.00" y="70.00" font-size="1.9" text-anchor="end" fill="#111111">тройник на всасе → VV-2 нутча F-1 (лист 7)</text>
+<text x="322.00" y="70.00" font-size="1.9" text-anchor="end" fill="#111111">рукав PTFE ¾″ → VV-2 нутча F-1 (лист 7)</text>
+<path d="M330.60,36.80 L331.70,36.80 L331.70,43.20 L330.60,43.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M332.30,36.80 L333.40,36.80 L333.40,43.20 L332.30,43.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M330.20,36.20 L333.80,36.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M330.20,43.80 L333.80,43.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="332.00" cy="32.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="332.00" y="33.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">603</text>
+<path d="M343.00,38.00 L348.00,38.00 L348.00,42.00 L343.00,42.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <circle cx="358.00" cy="40.00" r="8.00" fill="#ffffff" stroke="#111111" stroke-width="0.5"/>
 <path d="M352.00,40.00 L364.00,40.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M358.00,34.00 L358.00,46.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<text x="350.00" y="54.00" font-size="2.0" text-anchor="start" fill="#111111" font-weight="bold">VP-1 мембр.</text>
-<text x="350.00" y="58.00" font-size="1.9" text-anchor="start" fill="#c62828">присоед. KF? / ёлочка ?</text>
+<text x="352.00" y="52.00" font-size="2.0" text-anchor="start" fill="#111111" font-weight="bold">VP-1 мембр.</text>
+<text x="337.00" y="29.00" font-size="1.7" text-anchor="start" fill="#c62828">K25 → вход VP-1 (KF? / ёлочка?)</text>
 <path d="M380.00,25.80 L380.90,28.00 L379.10,28.00 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="384.00" y="27.00" font-size="1.9" text-anchor="start" fill="#111111">выхлоп в вытяжку</text>
-<text x="330.00" y="50.00" font-size="1.9" text-anchor="start" fill="#c62828">рукав вакуумный армир. ID ?, L=?</text>
+<text x="330.00" y="58.00" font-size="1.9" text-anchor="start" fill="#c62828">рукава PTFE ¾″ × K25, L=?</text>
 <text x="25.00" y="130.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">ТЕПЛОНОСИТЕЛЬ: два чиллера — TC-1 → рубашка R-1, TC-2 → E-1, б/м</text>
 <path d="M28.00,142.00 L68.00,142.00 L68.00,168.00 L28.00,168.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
 <text x="32.00" y="150.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">TC-1</text>
@@ -157,11 +180,14 @@
 <text x="28.00" y="214.00" font-size="2.0" text-anchor="start" fill="#111111">стеклянный змеевик E-1 — у TC-2 насос с малым напором или байпас</text>
 <text x="28.00" y="218.00" font-size="2.0" text-anchor="start" fill="#c62828">рукава EPDM армир. ID ? в изоляции 13 мм; ёлочки + 2 хомута нерж. на соединение; длины L=?</text>
 <text x="290.00" y="80.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">Примечания</text>
-<text x="290.00" y="85.50" font-size="2.0" text-anchor="start" fill="#111111">1. Аргонные линии — трубка PTFE 6×8</text>
+<text x="290.00" y="85.50" font-size="2.0" text-anchor="start" fill="#111111">1. Аргонные линии — трубка PTFE ¼″</text>
 <text x="290.00" y="89.00" font-size="2.0" text-anchor="start" fill="#111111">   или нерж. ¼″, обжимные фитинги.</text>
 <text x="290.00" y="92.50" font-size="2.0" text-anchor="start" fill="#111111">2. Обратные клапаны на A1 и A2 — обязательно.</text>
 <text x="290.00" y="96.00" font-size="2.0" text-anchor="start" fill="#111111">3. PR-1 (ротаметр с вентилем): синтез 0,1–0,2 л/мин, продувки 3–5, выгрузка ~10.</text>
 <text x="290.00" y="99.50" font-size="2.0" text-anchor="start" fill="#c62828">4. Резьбы редукторов/ротаметра — ?</text>
 <text x="290.00" y="103.00" font-size="2.0" text-anchor="start" fill="#111111">5. Вакуум только на пустые сухие</text>
 <text x="290.00" y="106.50" font-size="2.0" text-anchor="start" fill="#111111">   аппараты; выхлоп VP-1 — в вытяжку.</text>
+<text x="321.40" y="33.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="313.60" y="48.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="335.40" y="33.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
 </svg>
