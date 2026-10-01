@@ -94,7 +94,7 @@
 <path d="M128.22,176.86 L139.82,176.86" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="131.12" y="143.80" font-size="2.9579999999999997" text-anchor="start" fill="#1d2226" font-weight="bold">Кол. 1</text>
 <text x="127.64" y="191.36" font-size="3.045" text-anchor="start" fill="#5d666d">сита 3А</text>
-<text x="127.64" y="194.84" font-size="3.045" text-anchor="start" fill="#5d666d">3″ диоптр+царга</text>
+<text x="127.64" y="194.84" font-size="3.045" text-anchor="start" fill="#5d666d">диоптр+царга</text>
 <path d="M134.02,109.00 L134.02,103.20 L143.01,103.20 L143.01,183.24 L152.00,183.24 L152.00,178.60" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M145.62,109.00 L158.38,109.00 L158.38,178.60 L145.62,178.60 Z" fill="#eef3f5" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M145.62,109.00 L158.38,109.00 L158.38,132.20 L145.62,132.20 Z" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
@@ -163,11 +163,9 @@
 <path d="M117.20,242.40 L152.00,242.40 L152.00,262.70 L117.20,262.70 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="120.68" y="249.36" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">Чиллер 1</text>
 <text x="120.68" y="254.00" font-size="3.045" text-anchor="start" fill="#5d666d">рубашка</text>
-<text x="120.68" y="258.06" font-size="3.045" text-anchor="start" fill="#5d666d">−30 °C</text>
 <path d="M117.20,216.30 L152.00,216.30 L152.00,236.60 L117.20,236.60 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="120.68" y="223.26" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">Чиллер 2</text>
 <text x="120.68" y="227.90" font-size="3.045" text-anchor="start" fill="#5d666d">конденсатор</text>
-<text x="120.68" y="231.96" font-size="3.045" text-anchor="start" fill="#5d666d">−30 °C</text>
 <path d="M117.20,222.10 L107.34,222.10" fill="none" stroke="#0f8a8a" stroke-width="0.638" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <text x="106.18" y="223.26" font-size="3.045" text-anchor="end" fill="#5d666d">→ конденсатор</text>
 <path d="M117.20,230.80 L107.34,230.80" fill="none" stroke="#0f8a8a" stroke-width="0.638" stroke-dasharray="3 1.5" stroke-linejoin="round"/>

@@ -132,10 +132,9 @@
 <path d="M76.00,98.00 L76.00,95.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <circle cx="76.00" cy="92.00" r="3.00" fill="#ffffff" stroke="#111111" stroke-width="0.3"/>
 <text x="76.00" y="92.80" font-size="1.8" text-anchor="middle" fill="#111111">P</text>
-<text x="66.00" y="103.00" font-size="2.0" text-anchor="start" fill="#111111">ШП</text>
+<text x="66.00" y="103.00" font-size="2.0" text-anchor="start" fill="#111111">ША</text>
 <text x="62.00" y="95.00" font-size="2.3" text-anchor="end" fill="#111111" font-weight="bold">PCV-1</text>
 <text x="62.00" y="98.50" font-size="1.9" text-anchor="end" fill="#111111">шпунт</text>
-<text x="62.00" y="102.00" font-size="1.9" text-anchor="end" fill="#111111">50–80 мбар</text>
 <text x="62.00" y="105.50" font-size="1.8" text-anchor="end" fill="#111111">конечная точка:</text>
 <text x="62.00" y="108.50" font-size="1.8" text-anchor="end" fill="#111111">выпуск в вытяжку</text>
 <path d="M111.80,139.60 L118.20,139.60 L118.20,140.70 L111.80,140.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
@@ -158,7 +157,6 @@
 <path d="M115.00,111.60 L117.10,116.40 L112.90,116.40 Z" fill="#111111" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M117.40,111.60 L112.60,111.60" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <text x="121.00" y="112.00" font-size="2.3" text-anchor="start" fill="#111111" font-weight="bold">NRV-1</text>
-<text x="121.00" y="115.50" font-size="1.8" text-anchor="start" fill="#111111">≈0,2 бар</text>
 <text x="121.00" y="137.00" font-size="1.8" text-anchor="start" fill="#111111">открыт!</text>
 <path d="M111.80,103.60 L118.20,103.60 L118.20,104.70 L111.80,104.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M111.80,105.30 L118.20,105.30 L118.20,106.40 L111.80,106.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>

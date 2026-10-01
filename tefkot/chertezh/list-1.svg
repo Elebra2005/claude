@@ -273,7 +273,7 @@
 <text x="28.00" y="32.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">АРГОН (лист 6)</text>
 <path d="M30.00,60.00 L46.00,60.00 L46.00,170.00 L30.00,170.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
 <text x="28.00" y="176.00" font-size="2.6" text-anchor="start" fill="#111111" font-weight="bold">AR-1</text>
-<text x="28.00" y="180.00" font-size="2.0" text-anchor="start" fill="#111111">Ar 99,998 %</text>
+<text x="28.00" y="180.00" font-size="2.0" text-anchor="start" fill="#111111">аргон</text>
 <circle cx="38.00" cy="52.00" r="3.00" fill="#ffffff" stroke="#111111" stroke-width="0.4"/>
 <circle cx="60.00" cy="52.00" r="4.00" fill="#ffffff" stroke="#111111" stroke-width="0.5"/>
 <text x="60.00" y="53.00" font-size="2.2" text-anchor="middle" fill="#111111">R</text>
@@ -589,7 +589,6 @@
 <text x="452.00" y="219.00" font-size="1.6" text-anchor="middle" fill="#111111">NRV-4</text>
 <path d="M190.00,500.00 L245.00,500.00 L245.00,520.00 L190.00,520.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
 <text x="193.00" y="509.00" font-size="2.0" text-anchor="start" fill="#111111" font-weight="bold">TC-1 чиллер рубашки</text>
-<text x="193.00" y="514.00" font-size="1.7" text-anchor="start" fill="#111111">≥1 кВт при −25 °C</text>
 <text x="466.00" y="336.00" font-size="1.8" text-anchor="start" fill="#111111">JO</text>
 <text x="330.00" y="416.00" font-size="1.8" text-anchor="start" fill="#111111">JI</text>
 <text x="480.00" y="32.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">ГРЕБЁНКА (лист 4)</text>
@@ -650,7 +649,7 @@
 <path d="M511.00,88.00 L511.00,85.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <circle cx="511.00" cy="82.40" r="2.60" fill="#ffffff" stroke="#111111" stroke-width="0.3"/>
 <text x="511.00" y="83.20" font-size="1.8" text-anchor="middle" fill="#111111">P</text>
-<text x="501.00" y="93.00" font-size="1.9" text-anchor="start" fill="#111111">ШП</text>
+<text x="501.00" y="93.00" font-size="1.9" text-anchor="start" fill="#111111">ША</text>
 <text x="497.00" y="85.00" font-size="1.9" text-anchor="end" fill="#111111" font-weight="bold">PCV-1</text>
 <text x="497.00" y="88.50" font-size="1.7" text-anchor="end" fill="#111111">50–80</text>
 <text x="497.00" y="92.00" font-size="1.6" text-anchor="end" fill="#111111">выпуск в вытяжку</text>
@@ -1072,7 +1071,7 @@
 <text x="797.00" y="75.62" font-size="1.8" text-anchor="start" fill="#111111">4</text>
 <path d="M712.00,76.80 L806.00,76.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="713.00" y="79.32" font-size="1.8" text-anchor="start" fill="#111111">NRV-1</text>
-<text x="727.00" y="79.32" font-size="1.8" text-anchor="start" fill="#111111">Обратный клапан кламп ½″, ≈0,2 бар (над SV-2)</text>
+<text x="727.00" y="79.32" font-size="1.8" text-anchor="start" fill="#111111">Обратный клапан кламп ½″ (над SV-2)</text>
 <text x="789.00" y="79.32" font-size="1.8" text-anchor="start" fill="#111111">1</text>
 <text x="797.00" y="79.32" font-size="1.8" text-anchor="start" fill="#111111">4</text>
 <path d="M712.00,80.50 L806.00,80.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -1122,7 +1121,7 @@
 <text x="797.00" y="112.62" font-size="1.8" text-anchor="start" fill="#111111">7</text>
 <path d="M712.00,113.80 L806.00,113.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="713.00" y="116.32" font-size="1.8" text-anchor="start" fill="#111111">PSV-4</text>
-<text x="727.00" y="116.32" font-size="1.8" text-anchor="start" fill="#111111">Сбросной клапан нутча 0,3 бар</text>
+<text x="727.00" y="116.32" font-size="1.8" text-anchor="start" fill="#111111">Сбросной клапан нутча</text>
 <text x="789.00" y="116.32" font-size="1.8" text-anchor="start" fill="#111111">1</text>
 <text x="797.00" y="116.32" font-size="1.8" text-anchor="start" fill="#111111">7</text>
 <path d="M712.00,117.50 L806.00,117.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -1137,7 +1136,7 @@
 <text x="797.00" y="123.72" font-size="1.8" text-anchor="start" fill="#111111">3,5,7</text>
 <path d="M712.00,124.90 L806.00,124.90" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="713.00" y="127.42" font-size="1.8" text-anchor="start" fill="#111111">NRV-3</text>
-<text x="727.00" y="127.42" font-size="1.8" text-anchor="start" fill="#111111">Обр. клапан ≤30 мбар (вход газа)</text>
+<text x="727.00" y="127.42" font-size="1.8" text-anchor="start" fill="#111111">Обр. клапан (вход газа)</text>
 <text x="789.00" y="127.42" font-size="1.8" text-anchor="start" fill="#111111">1</text>
 <text x="797.00" y="127.42" font-size="1.8" text-anchor="start" fill="#111111">5</text>
 <path d="M712.00,128.60 L806.00,128.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>

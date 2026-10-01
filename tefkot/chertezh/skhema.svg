@@ -12,7 +12,6 @@
 <text x="326.00" y="215.72" font-size="3.19" text-anchor="start" fill="#5d666d">ВЫГРУЗКА, ФИЛЬТРАЦИЯ, ФАСОВКА</text>
 <path d="M18.60,39.40 L30.20,39.40 L30.20,74.20 L18.60,74.20 Z" fill="#eef3f5" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="16.86" y="78.84" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">AR-1</text>
-<text x="15.70" y="82.90" font-size="3.045" text-anchor="start" fill="#5d666d">Ar 99,998</text>
 <path d="M24.40,39.40 L24.40,34.76 L41.80,34.76 L41.80,45.20" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
 <circle cx="41.80" cy="48.68" r="3.48" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
 <text x="39.48" y="49.84" font-size="3.045" text-anchor="start" fill="#5d666d">R</text>
@@ -86,7 +85,6 @@
 <path d="M91.10,126.40 L91.10,117.70 L91.10,109.00" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M88.20,103.20 L94.00,103.20 L94.00,109.00 L88.20,109.00 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="74.28" y="102.04" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">PSV-3</text>
-<text x="75.44" y="107.84" font-size="3.045" text-anchor="start" fill="#5d666d">0,4 бар</text>
 <text x="65.00" y="96.24" font-size="3.045" text-anchor="start" fill="#5d666d">→ в коллектор сбросов</text>
 <circle cx="97.48" cy="122.92" r="2.61" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
 <path d="M97.48,117.70 L97.48,120.31" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
@@ -102,7 +100,7 @@
 <path d="M128.22,176.86 L139.82,176.86" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="131.12" y="143.80" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">C-1</text>
 <text x="127.64" y="191.36" font-size="3.045" text-anchor="start" fill="#5d666d">сита 3A</text>
-<text x="127.64" y="194.84" font-size="3.045" text-anchor="start" fill="#5d666d">3″ диоптр+царга</text>
+<text x="127.64" y="194.84" font-size="3.045" text-anchor="start" fill="#5d666d">диоптр+царга</text>
 <path d="M134.02,109.00 L134.02,103.20 L143.01,103.20 L143.01,183.24 L152.00,183.24 L152.00,178.60" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M145.62,109.00 L158.38,109.00 L158.38,178.60 L145.62,178.60 Z" fill="#eef3f5" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M145.62,109.00 L158.38,109.00 L158.38,132.20 L145.62,132.20 Z" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
@@ -118,7 +116,6 @@
 <path d="M174.04,94.50 L178.10,96.24 L174.04,97.98 Z" fill="#1d2226" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <path d="M178.68,94.21 L178.68,98.27" fill="none" stroke="#1d2226" stroke-width="0.58" stroke-linejoin="round"/>
 <text x="169.40" y="90.44" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">NRV-3</text>
-<text x="169.40" y="86.96" font-size="3.045" text-anchor="start" fill="#5d666d">≤30 мбар</text>
 <path d="M171.14,143.22 L171.14,193.10 L171.53,195.87 L172.69,198.39 L174.64,200.65 L177.36,202.66 L180.85,204.41 L185.13,205.91 L190.18,207.15 L196.01,208.13 L202.62,208.86 L210.00,209.34 L217.38,208.86 L223.99,208.13 L229.82,207.15 L234.87,205.91 L239.14,204.41 L242.64,202.66 L245.36,200.65 L247.31,198.39 L248.47,195.87 L248.86,193.10 L248.86,143.22 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M175.20,138.00 L175.20,191.94 L175.55,194.27 L176.59,196.37 L178.33,198.26 L180.77,199.92 L183.90,201.36 L187.73,202.59 L192.25,203.59 L197.47,204.38 L203.39,204.94 L210.00,205.28 L216.61,204.94 L222.53,204.38 L227.75,203.59 L232.27,202.59 L236.10,201.36 L239.23,199.92 L241.67,198.26 L243.41,196.37 L244.45,194.27 L244.80,191.94 L244.80,138.00 Z" fill="#eef3f5" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M173.46,136.26 L246.54,136.26 L246.54,139.16 L173.46,139.16 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
@@ -148,7 +145,6 @@
 <text x="240.16" y="80.00" font-size="3.045" text-anchor="start" fill="#5d666d">→ TC-2</text>
 <text x="221.02" y="80.00" font-size="3.045" text-anchor="end" fill="#5d666d">от TC-2</text>
 <text x="227.40" y="129.88" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">E-1</text>
-<text x="162.44" y="65.50" font-size="3.045" text-anchor="start" fill="#5d666d">змеевик: −25 °C / ст.7 +5…+10 °C</text>
 <path d="M259.88,90.44 L276.12,90.44 L276.12,109.58 L259.88,109.58 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M265.10,87.54 L270.90,87.54 L270.90,90.44 L265.10,90.44 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="261.62" y="98.56" font-size="3.045" text-anchor="start" fill="#5d666d">MeSiCl₃</text>
@@ -176,11 +172,9 @@
 <path d="M117.20,242.40 L152.00,242.40 L152.00,262.70 L117.20,262.70 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="120.68" y="249.36" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">TC-1</text>
 <text x="120.68" y="254.00" font-size="3.045" text-anchor="start" fill="#5d666d">чиллер рубашки</text>
-<text x="120.68" y="258.06" font-size="3.045" text-anchor="start" fill="#5d666d">−30…+50 °C</text>
 <path d="M117.20,216.30 L152.00,216.30 L152.00,236.60 L117.20,236.60 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="120.68" y="223.26" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">TC-2</text>
 <text x="120.68" y="227.90" font-size="3.045" text-anchor="start" fill="#5d666d">чиллер E-1</text>
-<text x="120.68" y="231.96" font-size="3.045" text-anchor="start" fill="#5d666d">−30…+20 °C</text>
 <path d="M117.20,222.10 L107.34,222.10" fill="none" stroke="#0f8a8a" stroke-width="0.638" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <text x="106.18" y="223.26" font-size="3.045" text-anchor="end" fill="#5d666d">→ E-1 (подача)</text>
 <path d="M117.20,230.80 L107.34,230.80" fill="none" stroke="#0f8a8a" stroke-width="0.638" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
@@ -194,9 +188,8 @@
 <path d="M321.36,68.11 L324.84,73.33 L321.36,73.33 L324.84,68.11 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="325.42" y="71.88" font-size="3.045" text-anchor="start" fill="#1d2226">SV-1</text>
 <path d="M319.04,82.90 L327.16,82.90 L327.16,93.34 L319.04,93.34 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<text x="320.20" y="89.28" font-size="3.045" text-anchor="start" fill="#5d666d">ШП</text>
+<text x="320.20" y="89.28" font-size="3.045" text-anchor="start" fill="#5d666d">ША</text>
 <text x="317.30" y="87.54" font-size="3.4799999999999995" text-anchor="end" fill="#1d2226" font-weight="bold">PCV-1</text>
-<text x="317.30" y="91.60" font-size="3.045" text-anchor="end" fill="#5d666d">50–80 мбар</text>
 <text x="323.10" y="97.98" font-size="3.045" text-anchor="middle" fill="#5d666d">выпуск в вытяжку</text>
 <path d="M340.50,62.60 L340.50,68.11" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M338.76,68.11 L342.24,73.33 L338.76,73.33 L342.24,68.11 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
@@ -206,8 +199,7 @@
 <path d="M338.76,77.68 L340.50,81.74 L342.24,77.68 Z" fill="#1d2226" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <path d="M338.47,82.32 L342.53,82.32" fill="none" stroke="#1d2226" stroke-width="0.58" stroke-linejoin="round"/>
 <text x="342.82" y="81.16" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">NRV-1</text>
-<text x="342.82" y="85.22" font-size="3.045" text-anchor="start" fill="#5d666d">≈0,2 бар,</text>
-<text x="342.82" y="88.70" font-size="3.045" text-anchor="start" fill="#1d2226">SV-2 открыт!</text>
+<text x="342.82" y="85.22" font-size="3.045" text-anchor="start" fill="#1d2226">SV-2 открыт!</text>
 <path d="M365.15,62.60 L365.15,68.11" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M363.41,68.11 L366.89,73.33 L363.41,73.33 L366.89,68.11 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="367.47" y="71.88" font-size="3.045" text-anchor="start" fill="#1d2226">VV-1</text>
@@ -304,7 +296,7 @@
 <path d="M365.44,254.00 L378.20,254.00 L378.20,271.40 L365.44,271.40 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M346.88,272.56 L380.52,272.56 L380.52,274.88 L346.88,274.88 Z" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
 <text x="382.26" y="274.88" font-size="3.045" text-anchor="start" fill="#1d2226">W-3 весы</text>
-<text x="349.20" y="281.26" font-size="3.045" text-anchor="start" fill="#5d666d">канистры с р-лем (заземлены)</text>
+<text x="349.20" y="281.26" font-size="3.045" text-anchor="start" fill="#5d666d">канистры с р-лем</text>
 <path d="M101.54,47.52 L103.86,47.52 L103.86,49.84 L101.54,49.84 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M127.64,47.52 L129.96,47.52 L129.96,49.84 L127.64,49.84 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M150.84,47.52 L153.16,47.52 L153.16,49.84 L150.84,49.84 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
