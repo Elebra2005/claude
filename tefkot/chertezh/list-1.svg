@@ -27,8 +27,8 @@
 <path d="M210.00,70.00 L471.00,70.00 L471.00,139.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M170.00,52.00 L170.00,47.40" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M170.00,42.60 L170.00,38.00 L680.00,38.00 L680.00,227.60 L682.16,228.92 L682.40,230.00 L682.16,231.08 L680.00,232.40 L680.00,398.24" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M680.00,401.76 L680.00,422.00 L612.00,422.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M608.00,422.00 L602.00,422.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M680.00,401.76 L680.00,422.00 L624.00,422.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M620.00,422.00 L614.00,422.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M49.00,430.00 L49.00,420.00 L70.00,420.00 L70.00,440.00 L76.00,440.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M82.00,446.00 L82.00,449.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M88.00,440.00 L95.00,440.00 L95.00,427.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
@@ -104,13 +104,13 @@
 <path d="M510.00,500.00 L511.20,500.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
 <path d="M515.00,500.00 L525.00,500.00 L525.00,404.00 L558.00,404.00 L558.00,406.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M558.00,417.00 L558.00,429.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
-<path d="M558.00,422.00 L602.00,422.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
+<path d="M558.00,422.00 L614.00,422.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
 <path d="M558.00,482.00 L558.00,484.00" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round"/>
-<path d="M582.00,422.00 L582.00,417.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M582.00,412.00 L582.00,398.00 L540.00,398.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M594.00,422.00 L594.00,411.80" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M594.00,408.20 L594.00,392.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M655.00,160.00 L620.00,160.00 L620.00,392.00 L594.00,392.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M587.00,422.00 L587.00,417.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M587.00,412.00 L587.00,398.00 L540.00,398.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M603.00,422.00 L603.00,406.80" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M603.00,403.20 L603.00,392.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M655.00,160.00 L625.00,160.00 L625.00,392.00 L603.00,392.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M558.00,484.00 L558.00,491.00" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round"/>
 <path d="M558.00,495.00 L558.00,500.00" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round"/>
 <path d="M558.00,501.00 L558.00,505.00 L590.00,505.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
@@ -304,10 +304,10 @@
 <path d="M680.00,401.76 L678.46,398.24 L681.54,398.24 Z" fill="#111111" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M678.24,401.76 L681.76,401.76" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <text x="684.00" y="401.00" font-size="1.8" text-anchor="start" fill="#111111">NRV-5</text>
-<path d="M608.00,420.60 L612.00,423.40 L612.00,420.60 L608.00,423.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M610.00,422.00 L610.00,419.40" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M608.50,419.40 L611.50,419.40" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="610.00" y="418.00" font-size="1.6" text-anchor="middle" fill="#111111">V-F1</text>
+<path d="M620.00,420.60 L624.00,423.40 L624.00,420.60 L620.00,423.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M622.00,422.00 L622.00,419.40" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M620.50,419.40 L623.50,419.40" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<text x="622.00" y="426.50" font-size="1.6" text-anchor="middle" fill="#111111">V-F1</text>
 <path d="M24.00,300.00 L324.00,300.00 L324.00,512.00 L24.00,512.00 Z" fill="none" stroke="#666666" stroke-width="0.3" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <text x="205.00" y="306.00" font-size="2.4" text-anchor="start" fill="#111111" font-weight="bold">ЗОНА ВЫТЯЖКИ: генерация и осушка (лист 5)</text>
 <path d="M40.00,430.00 L58.00,430.00 L58.00,480.00 L40.00,480.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -896,35 +896,35 @@
 <path d="M561.20,425.80 L564.80,425.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="563.00" cy="414.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="563.00" y="415.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">715</text>
-<path d="M570.00,422.00 L570.00,419.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<circle cx="570.00" cy="416.80" r="2.20" fill="#ffffff" stroke="#111111" stroke-width="0.3"/>
-<text x="570.00" y="417.60" font-size="1.8" text-anchor="middle" fill="#111111">PI</text>
-<text x="570.00" y="411.50" font-size="1.6" text-anchor="middle" fill="#111111">PI-5</text>
-<path d="M574.60,418.80 L575.70,418.80 L575.70,425.20 L574.60,425.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M576.30,418.80 L577.40,418.80 L577.40,425.20 L576.30,425.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M574.20,418.20 L577.80,418.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M574.20,425.80 L577.80,425.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="576.00" cy="414.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="576.00" y="415.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">716</text>
-<path d="M579.50,412.00 L584.50,412.00 L584.50,417.00 L579.50,417.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="585.50" y="410.00" font-size="1.6" text-anchor="start" fill="#111111">PSV-4</text>
+<path d="M571.00,422.00 L571.00,419.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<circle cx="571.00" cy="416.80" r="2.20" fill="#ffffff" stroke="#111111" stroke-width="0.3"/>
+<text x="571.00" y="417.60" font-size="1.8" text-anchor="middle" fill="#111111">PI</text>
+<text x="571.00" y="411.50" font-size="1.6" text-anchor="middle" fill="#111111">PI-5</text>
+<path d="M577.60,418.80 L578.70,418.80 L578.70,425.20 L577.60,425.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M579.30,418.80 L580.40,418.80 L580.40,425.20 L579.30,425.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M577.20,418.20 L580.80,418.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M577.20,425.80 L580.80,425.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="579.00" cy="414.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="579.00" y="415.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">716</text>
+<path d="M584.50,412.00 L589.50,412.00 L589.50,417.00 L584.50,417.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<text x="590.50" y="410.00" font-size="1.6" text-anchor="start" fill="#111111">PSV-4</text>
 <text x="539.00" y="399.00" font-size="1.7" text-anchor="end" fill="#111111">сброс → коллектор сбросов</text>
-<path d="M586.60,418.80 L587.70,418.80 L587.70,425.20 L586.60,425.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M588.30,418.80 L589.40,418.80 L589.40,425.20 L588.30,425.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M586.20,418.20 L589.80,418.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M586.20,425.80 L589.80,425.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="588.00" cy="414.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="588.00" y="415.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">717</text>
-<path d="M592.74,408.20 L595.26,411.80 L592.74,411.80 L595.26,408.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M594.00,410.00 L596.34,410.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M596.34,408.50 L596.34,411.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="597.00" y="408.00" font-size="1.6" text-anchor="start" fill="#111111">VV-2</text>
-<path d="M598.60,418.80 L599.70,418.80 L599.70,425.20 L598.60,425.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M600.30,418.80 L601.40,418.80 L601.40,425.20 L600.30,425.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M598.20,418.20 L601.80,418.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M598.20,425.80 L601.80,425.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="600.00" cy="414.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="600.00" y="415.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">718</text>
+<path d="M593.60,418.80 L594.70,418.80 L594.70,425.20 L593.60,425.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M595.30,418.80 L596.40,418.80 L596.40,425.20 L595.30,425.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M593.20,418.20 L596.80,418.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M593.20,425.80 L596.80,425.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="595.00" cy="414.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="595.00" y="415.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">717</text>
+<path d="M601.74,403.20 L604.26,406.80 L601.74,406.80 L604.26,403.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M603.00,405.00 L605.34,405.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M605.34,403.50 L605.34,406.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<text x="606.00" y="403.00" font-size="1.6" text-anchor="start" fill="#111111">VV-2</text>
+<path d="M609.60,418.80 L610.70,418.80 L610.70,425.20 L609.60,425.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M611.30,418.80 L612.40,418.80 L612.40,425.20 L611.30,425.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M609.20,418.20 L612.80,418.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M609.20,425.80 L612.80,425.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="611.00" cy="414.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="611.00" y="415.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">718</text>
 <path d="M554.80,485.60 L561.20,485.60 L561.20,486.70 L554.80,486.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M554.80,487.30 L561.20,487.30 L561.20,488.40 L554.80,488.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M554.20,485.20 L554.20,488.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -1137,72 +1137,72 @@
 <text x="25.00" y="559.40" font-size="2.1" text-anchor="start" fill="#c62828">2. Все размеры «?» (расстояния между аппаратами, высоты, длины рукавов и трубок, присоединения) — уточнить по месту.</text>
 <text x="25.00" y="563.30" font-size="2.1" text-anchor="start" fill="#111111">3. Прокладки: PTFE — продукт, растворитель, газ; EPDM — только водные/щелочные линии генератора. Хомуты кламповые — нерж.</text>
 <text x="25.00" y="567.20" font-size="2.1" text-anchor="start" fill="#111111">4. Штриховые линии бирюзового цвета — теплоноситель; штриховые чёрные — гибкие рукава; тонкие сплошные — трубки PTFE ¼″/10×12.</text>
-<text x="133.60" y="385.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="133.60" y="366.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="133.60" y="351.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="127.90" y="386.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="166.40" y="385.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="166.40" y="369.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="201.08" y="394.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN65</text>
-<text x="201.08" y="354.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN65</text>
-<text x="226.40" y="343.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="201.08" y="474.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN65</text>
-<text x="203.60" y="477.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="236.08" y="394.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN65</text>
-<text x="236.08" y="354.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN65</text>
-<text x="261.40" y="343.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="236.08" y="474.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN65</text>
-<text x="238.60" y="477.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="370.60" y="260.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN25</text>
-<text x="408.00" y="298.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN25</text>
-<text x="423.00" y="298.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN25</text>
-<text x="414.61" y="193.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
-<text x="444.90" y="210.50" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="457.40" y="294.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN25</text>
-<text x="457.40" y="285.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="457.40" y="271.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="467.40" y="257.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="457.40" y="256.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="468.80" y="163.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN25</text>
-<text x="474.60" y="154.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="499.40" y="150.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="520.90" y="150.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="548.40" y="150.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="578.40" y="150.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="493.60" y="131.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="493.60" y="113.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="492.40" y="103.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN25</text>
-<text x="518.60" y="131.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="518.60" y="113.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="518.60" y="95.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="548.60" y="131.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="548.60" y="113.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="601.40" y="149.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="601.40" y="167.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="605.40" y="133.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="621.40" y="133.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="388.60" y="452.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN38</text>
-<text x="414.60" y="452.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="435.40" y="452.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="388.60" y="472.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">50,5</text>
-<text x="397.40" y="498.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="383.40" y="498.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="411.40" y="494.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">50,5</text>
-<text x="483.60" y="510.30" font-size="1.7" text-anchor="end" fill="#1f5fa8">50,5</text>
-<text x="516.40" y="510.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">50,5</text>
-<text x="546.60" y="407.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">50,5</text>
-<text x="546.60" y="415.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="546.60" y="431.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="137.00" y="389.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K25</text>
+<text x="133.60" y="366.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="133.60" y="351.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="121.10" y="386.30" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="166.40" y="385.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="166.40" y="369.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="201.08" y="394.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K91</text>
+<text x="201.08" y="354.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K91</text>
+<text x="226.40" y="343.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="201.08" y="474.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K91</text>
+<text x="203.60" y="477.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="236.08" y="394.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K91</text>
+<text x="236.08" y="354.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K91</text>
+<text x="261.40" y="343.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="236.08" y="474.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K91</text>
+<text x="238.60" y="477.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="370.60" y="260.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K50,5</text>
+<text x="408.00" y="298.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K50,5</text>
+<text x="423.00" y="298.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K50,5</text>
+<text x="414.61" y="193.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K91</text>
+<text x="444.90" y="210.50" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="457.40" y="294.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K50,5</text>
+<text x="457.40" y="285.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="457.40" y="271.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="467.40" y="257.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="457.40" y="256.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="468.80" y="163.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K50,5</text>
+<text x="474.60" y="154.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="499.40" y="150.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="520.90" y="150.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="548.40" y="150.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="578.40" y="150.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="493.60" y="131.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="493.60" y="113.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="492.40" y="103.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K50,5</text>
+<text x="518.60" y="131.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="518.60" y="113.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="518.60" y="95.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="548.60" y="131.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="548.60" y="113.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="601.40" y="149.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="601.40" y="167.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="605.40" y="133.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="621.40" y="133.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="388.60" y="452.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K50,5</text>
+<text x="414.60" y="452.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="435.40" y="452.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="388.60" y="472.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K50,5</text>
+<text x="390.60" y="498.30" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="383.40" y="498.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="411.40" y="494.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K50,5</text>
+<text x="483.60" y="510.30" font-size="1.7" text-anchor="end" fill="#1f5fa8">K50,5</text>
+<text x="516.40" y="510.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">K50,5</text>
+<text x="546.60" y="407.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K50,5</text>
+<text x="546.60" y="415.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="546.60" y="431.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
 <text x="541.30" y="438.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K119</text>
 <text x="541.30" y="450.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K119</text>
 <text x="541.30" y="474.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K119</text>
-<text x="563.00" y="411.20" font-size="1.7" text-anchor="middle" fill="#1f5fa8">½″</text>
-<text x="576.00" y="411.20" font-size="1.7" text-anchor="middle" fill="#1f5fa8">½″</text>
-<text x="591.40" y="415.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="603.40" y="415.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="546.60" y="487.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">50,5</text>
-<text x="569.40" y="499.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">50,5</text>
-<text x="594.40" y="515.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">50,5?</text>
-<text x="615.40" y="455.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″?</text>
-<text x="630.40" y="455.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″?</text>
+<text x="563.00" y="411.20" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K25</text>
+<text x="579.00" y="411.20" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K25</text>
+<text x="598.40" y="415.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="614.40" y="415.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="546.60" y="487.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K50,5</text>
+<text x="569.40" y="499.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K50,5</text>
+<text x="594.40" y="515.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">K50,5?</text>
+<text x="615.40" y="455.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25?</text>
+<text x="630.40" y="455.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25?</text>
 </svg>

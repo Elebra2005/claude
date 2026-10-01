@@ -342,9 +342,9 @@
 <text x="338.00" y="20.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">Примечания</text>
 <text x="338.00" y="25.50" font-size="2.1" text-anchor="start" fill="#c62828">1. Размеры «?» — уточнить замером.</text>
 <text x="338.00" y="29.10" font-size="2.1" text-anchor="start" fill="#111111">   Wiggens: H общ. 1140, 414, 410.</text>
-<text x="338.00" y="32.70" font-size="2.1" text-anchor="start" fill="#111111">2. Ø ферулы кламп по DN: ½″ («к25») — 25;</text>
-<text x="338.00" y="36.30" font-size="2.1" text-anchor="start" fill="#111111">   DN25, DN38 — 50,5; DN40 — 64;</text>
-<text x="338.00" y="39.90" font-size="2.1" text-anchor="start" fill="#111111">   DN65 (3″) — 91; DN100 (4″) — 119.</text>
+<text x="338.00" y="32.70" font-size="2.1" text-anchor="start" fill="#111111">2. Клампы по феруле: K25 = ½″ («к25»);</text>
+<text x="338.00" y="36.30" font-size="2.1" text-anchor="start" fill="#111111">   K50,5 = 1″–1½″ (DN25, DN38);</text>
+<text x="338.00" y="39.90" font-size="2.1" text-anchor="start" fill="#111111">   K91 = 3″; K119 = 4″.</text>
 <text x="338.00" y="43.50" font-size="2.1" text-anchor="start" fill="#111111">3. Шильдик: P раб., полный вакуум,</text>
 <text x="338.00" y="47.10" font-size="2.1" text-anchor="start" fill="#111111">   материал корпуса (нужен 316L).</text>
 <text x="338.00" y="50.70" font-size="2.1" text-anchor="start" fill="#111111">4. Проверить тип уплотнения вала.</text>
@@ -360,9 +360,9 @@
 <text x="338.00" y="102.80" font-size="1.9" text-anchor="start" fill="#111111">⊣⊢ кламповое соединение, № — ведомость (лист 8)</text>
 <text x="338.00" y="106.10" font-size="1.9" text-anchor="start" fill="#111111">— — гибкий рукав;  ─ тонкая — трубка ¼″ / 12 мм</text>
 <text x="338.00" y="109.40" font-size="1.9" text-anchor="start" fill="#c62828">красным «?» — уточнить замером / у поставщика</text>
-<text x="74.60" y="40.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN25</text>
-<text x="132.00" y="65.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN25</text>
-<text x="147.00" y="53.40" font-size="1.7" text-anchor="middle" fill="#1f5fa8">DN25</text>
-<text x="164.40" y="61.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">DN25</text>
-<text x="93.60" y="218.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN38</text>
+<text x="74.60" y="40.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K50,5</text>
+<text x="132.00" y="65.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K50,5</text>
+<text x="147.00" y="53.40" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K50,5</text>
+<text x="164.40" y="61.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K50,5</text>
+<text x="93.60" y="218.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K50,5</text>
 </svg>

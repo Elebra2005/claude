@@ -276,26 +276,26 @@
 <text x="250.00" y="127.30" font-size="2.0" text-anchor="start" fill="#111111">2. Низ и верх: заглушка-переход кламповая 3″ → ½″.</text>
 <text x="250.00" y="130.70" font-size="2.0" text-anchor="start" fill="#111111">3. Опора и удержание засыпки: межкламповый фильтр 3″</text>
 <text x="250.00" y="134.10" font-size="2.0" text-anchor="start" fill="#111111">   снизу и сверху (сетка ≤1 мм) — вместо сетчатых прокладок.</text>
-<text x="250.00" y="137.50" font-size="2.0" text-anchor="start" fill="#111111">4. Хомуты DN65 — 3 шт., ½″ — 2 шт. на колонну.</text>
+<text x="250.00" y="137.50" font-size="2.0" text-anchor="start" fill="#111111">4. Хомуты K91 — 3 шт. + 1 на каждый фильтр, K25 — 2 шт.</text>
 <text x="250.00" y="140.90" font-size="2.0" text-anchor="start" fill="#111111">5. Крепление: 2 хомута-держателя Ø76 на стойку.</text>
 <text x="250.00" y="144.30" font-size="2.0" text-anchor="start" fill="#111111">6. C-1: сита 3A ≈1,8 кг; C-2: NaOH (KOH) гранулы ≈2,7 кг.</text>
 <text x="250.00" y="147.70" font-size="2.0" text-anchor="start" fill="#111111">   Загрузка — снять верхний хомут, засыпать, закрыть.</text>
 <text x="250.00" y="151.10" font-size="2.0" text-anchor="start" fill="#111111">7. Газ снизу вверх. Межколонные линии — трубка PTFE</text>
 <text x="250.00" y="154.50" font-size="2.0" text-anchor="start" fill="#111111">   10×12, переходник ½″ → G½″ нар. + обжим 12 мм.</text>
-<text x="63.10" y="96.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="67.30" y="76.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="85.90" y="79.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="63.10" y="65.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="109.90" y="97.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="109.90" y="81.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="132.68" y="120.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
-<text x="132.68" y="80.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
-<text x="161.40" y="73.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="132.68" y="200.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
-<text x="138.60" y="207.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
-<text x="177.68" y="120.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
-<text x="177.68" y="80.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
-<text x="206.40" y="73.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">½″</text>
-<text x="177.68" y="200.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">DN65</text>
-<text x="183.60" y="207.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">½″</text>
+<text x="63.10" y="96.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="67.30" y="76.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="85.90" y="79.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="63.10" y="65.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="109.90" y="97.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="109.90" y="81.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="132.68" y="120.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K91</text>
+<text x="132.68" y="80.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K91</text>
+<text x="161.40" y="73.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="132.68" y="200.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K91</text>
+<text x="138.60" y="207.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="177.68" y="120.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K91</text>
+<text x="177.68" y="80.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K91</text>
+<text x="206.40" y="73.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="177.68" y="200.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K91</text>
+<text x="183.60" y="207.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
 </svg>

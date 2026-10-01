@@ -41,7 +41,7 @@
 <path d="M152.00,48.68 L152.00,54.19" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
 <path d="M152.00,59.41 L152.00,71.30 L239.00,71.30 L239.87,69.56 L241.61,69.56 L242.48,71.30 L297.00,71.30 L297.00,193.68" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
 <path d="M297.00,198.32 L297.00,204.99" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
-<path d="M297.00,210.21 L297.00,220.36 L282.50,220.36 L282.50,225.00" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
+<path d="M297.00,210.21 L297.00,225.00" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
 <path d="M150.26,54.19 L153.74,59.41 L150.26,59.41 L153.74,54.19 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="154.32" y="57.96" font-size="3.045" text-anchor="start" fill="#1d2226">A4</text>
 <path d="M295.26,193.68 L297.00,197.74 L298.74,193.68 Z" fill="#1d2226" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
@@ -99,14 +99,19 @@
 <path d="M109.66,119.44 L113.14,124.66 L109.66,124.66 L113.14,119.44 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="113.72" y="123.50" font-size="3.045" text-anchor="start" fill="#5d666d">V-G1</text>
 <path d="M127.64,109.00 L140.40,109.00 L140.40,178.60 L127.64,178.60 Z" fill="#eef3f5" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M127.64,109.00 L140.40,109.00 L140.40,132.20 L127.64,132.20 Z" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M128.22,110.74 L139.82,110.74" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M128.22,176.86 L139.82,176.86" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="131.12" y="143.80" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">C-1</text>
 <text x="127.64" y="191.36" font-size="3.045" text-anchor="start" fill="#5d666d">сита 3A</text>
-<text x="127.64" y="194.84" font-size="3.045" text-anchor="start" fill="#5d666d">3″×600</text>
+<text x="127.64" y="194.84" font-size="3.045" text-anchor="start" fill="#5d666d">3″ диоптр+царга</text>
 <path d="M134.02,109.00 L134.02,103.20 L143.01,103.20 L143.01,183.24 L152.00,183.24 L152.00,178.60" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M145.62,109.00 L158.38,109.00 L158.38,178.60 L145.62,178.60 Z" fill="#eef3f5" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M145.62,109.00 L158.38,109.00 L158.38,132.20 L145.62,132.20 Z" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M146.20,110.74 L157.80,110.74" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M146.20,176.86 L157.80,176.86" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="149.10" y="143.80" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">C-2</text>
 <text x="145.62" y="191.36" font-size="3.045" text-anchor="start" fill="#5d666d">NaOH/KOH</text>
-<text x="145.62" y="194.84" font-size="3.045" text-anchor="start" fill="#5d666d">3″×600</text>
 <path d="M152.00,109.00 L152.00,96.24 L166.79,96.24" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M172.01,96.24 L174.04,96.24" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M178.68,96.24 L182.16,96.24 L182.16,136.26" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
@@ -202,7 +207,7 @@
 <path d="M365.15,73.33 L365.15,90.15" fill="none" stroke="#37474f" stroke-width="0.8119999999999999" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M365.15,77.10 L406.62,77.10 L406.62,222.68 L308.31,222.68" fill="none" stroke="#37474f" stroke-width="0.8119999999999999" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M303.09,220.94 L308.31,224.42 L308.31,220.94 L303.09,224.42 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
-<path d="M303.09,222.68 L292.65,222.68 L292.65,225.00" fill="none" stroke="#37474f" stroke-width="0.8119999999999999" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M303.09,222.68 L299.90,222.68 L299.90,225.00" fill="none" stroke="#37474f" stroke-width="0.8119999999999999" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <text x="303.38" y="219.78" font-size="3.045" text-anchor="start" fill="#1d2226">VV-2</text>
 <text x="314.40" y="220.94" font-size="3.045" text-anchor="start" fill="#5d666d">вакуум от VP-1</text>
 <text x="366.89" y="80.58" font-size="3.045" text-anchor="start" fill="#5d666d">вакуум:</text>
@@ -252,19 +257,25 @@
 <path d="M233.20,230.80 L249.44,230.80 L249.44,242.40 L233.20,242.40 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="235.52" y="238.05" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">P-2</text>
 <text x="230.88" y="247.04" font-size="3.045" text-anchor="start" fill="#5d666d">мембр. пневм.</text>
-<path d="M249.44,236.60 L268.00,236.60" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
-<path d="M268.00,225.00 L297.00,225.00 L297.00,242.40 L289.75,251.10 L275.25,251.10 L268.00,242.40 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<path d="M269.16,240.08 L295.84,240.08" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
-<text x="276.70" y="231.96" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">F-1</text>
-<text x="272.06" y="237.18" font-size="3.045" text-anchor="start" fill="#5d666d">нутч, Na₂SO₄</text>
-<circle cx="271.48" cy="220.94" r="2.32" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
-<text x="271.48" y="221.81" font-size="3.045" text-anchor="middle" fill="#5d666d">PI</text>
-<path d="M271.48,223.26 L271.48,225.00" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
-<text x="268.00" y="222.10" font-size="3.045" text-anchor="end" fill="#1d2226">PI-5</text>
-<path d="M277.57,225.00 L277.57,222.10" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
-<path d="M275.54,217.46 L279.60,217.46 L279.60,222.10 L275.54,222.10 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<path d="M277.57,217.46 L277.57,215.14" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
-<text x="276.41" y="214.27" font-size="3.045" text-anchor="end" fill="#1d2226">PSV-4 → сбросы</text>
+<path d="M249.44,236.60 L259.30,236.60 L259.30,207.60 L282.50,207.60 L282.50,227.90" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M281.92,227.90 L283.08,227.90 L285.98,230.22 L279.02,230.22 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M279.02,230.22 L285.98,230.22 L285.98,236.02 L279.02,236.02 Z" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M279.02,236.02 L285.98,236.02 L285.98,247.04 L279.02,247.04 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M279.31,245.30 L285.69,245.30" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M279.02,247.04 L285.98,247.04 L283.66,251.10 L281.34,251.10 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<text x="276.70" y="236.60" font-size="3.4799999999999995" text-anchor="end" fill="#1d2226" font-weight="bold">F-1</text>
+<text x="276.70" y="240.66" font-size="3.045" text-anchor="end" fill="#5d666d">нутч K119</text>
+<text x="276.70" y="244.14" font-size="3.045" text-anchor="end" fill="#5d666d">Na₂SO₄</text>
+<path d="M282.50,226.74 L284.24,225.00 L299.90,225.00" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
+<text x="280.76" y="223.26" font-size="3.045" text-anchor="end" fill="#5d666d">45°</text>
+<circle cx="289.75" cy="229.64" r="2.32" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
+<text x="289.75" y="230.51" font-size="3.045" text-anchor="middle" fill="#5d666d">PI</text>
+<path d="M289.75,225.00 L289.75,227.32" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
+<text x="293.23" y="230.80" font-size="3.045" text-anchor="start" fill="#1d2226">PI-5</text>
+<path d="M292.36,225.00 L292.36,222.68" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
+<path d="M290.33,218.04 L294.39,218.04 L294.39,222.68 L290.33,222.68 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M292.36,218.04 L292.36,215.14" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
+<text x="292.36" y="213.40" font-size="3.045" text-anchor="middle" fill="#1d2226">PSV-4</text>
 <path d="M282.50,251.10 L282.50,254.29" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
 <path d="M282.50,259.51 L282.50,262.70 L308.60,262.70" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
 <path d="M280.76,254.29 L284.24,259.51 L280.76,259.51 L284.24,254.29 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>

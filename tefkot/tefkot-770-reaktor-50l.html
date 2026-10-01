@@ -75,6 +75,8 @@ svg .sm{font-size:10.5px;fill:var(--muted)}
 svg .eq{fill:var(--paper);stroke:var(--fg);stroke-width:1.6}
 svg .eqf{fill:var(--note-bg);stroke:var(--fg);stroke-width:1.6}
 svg .thin{fill:none;stroke:var(--muted);stroke-width:1}
+svg .glass{fill:#dcebf5;fill-opacity:.55;stroke:var(--fg);stroke-width:1.6}
+svg .mesh{fill:none;stroke:var(--fg);stroke-width:2;stroke-dasharray:3 2}
 svg .liqlvl{fill:none;stroke:var(--l-liq);stroke-width:1.2;stroke-dasharray:6 4}
 svg .amine{fill:none;stroke:var(--l-amine);stroke-width:2.6}
 svg .aq{fill:none;stroke:var(--l-aq);stroke-width:2.2}
@@ -214,7 +216,7 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <!-- A3 к дозатору -->
 <path class="argon" d="M420,92 L420,111 M420,129 L420,134 M420,150 L420,158"/><use href="#bvv" x="420" y="120"/><use href="#nrvd" x="420" y="142"/><text class="sm" x="428" y="124">A3</text><text class="sm" x="384" y="166">→ тара</text>
 <!-- A4 резерв -->
-<path class="argon" d="M500,92 L500,111 M500,129 L500,170 L800,170 L803,164 L809,164 L812,170 L1000,170 L1000,592 M1000,608 L1000,631 M1000,649 L1000,684 L950,684 L950,700"/><use href="#bvv" x="500" y="120"/><text class="sm" x="508" y="124">A4</text><use href="#nrvd" x="1000" y="600"/><text class="sm" x="1008" y="604">NRV-5</text><use href="#bvv" x="1000" y="640"/><text class="sm" x="1008" y="644">V-F1</text>
+<path class="argon" d="M500,92 L500,111 M500,129 L500,170 L800,170 L803,164 L809,164 L812,170 L1000,170 L1000,592 M1000,608 L1000,631 M1000,649 L1000,700"/><use href="#bvv" x="500" y="120"/><text class="sm" x="508" y="124">A4</text><use href="#nrvd" x="1000" y="600"/><text class="sm" x="1008" y="604">NRV-5</text><use href="#bvv" x="1000" y="640"/><text class="sm" x="1008" y="644">V-F1</text>
 <!-- A1 на гребёнку (кран AV-1, G½″) -->
 <path class="argon" d="M630,92 L651,92 M669,92 L692,92 M708,92 L1290,92 L1290,107 M1290,125 L1290,140"/><use href="#bv" x="660" y="92"/><text class="sm" x="652" y="80">A1</text><use href="#nrv" x="700" y="92"/><text class="sm" x="724" y="84">Ar → гребёнка</text>
 
@@ -241,10 +243,10 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <!-- выход газа -->
 <path class="amine" d="M306,380 L360,380 L360,354 M360,336 L360,262 L404,262 L404,556 L438,556 L438,540"/><use href="#bvv" x="360" y="345"/><text class="sm" x="368" y="350">V-G1</text>
 <!-- C-1 -->
-<rect class="eqf" x="416" y="300" width="44" height="240" rx="3"/><text class="lbl" x="428" y="420">C-1</text><text class="sm" x="416" y="584">сита 3A</text><text class="sm" x="416" y="596">3″×600</text>
+<rect class="eqf" x="416" y="300" width="44" height="240" rx="3"/><rect class="glass" x="416" y="300" width="44" height="80" rx="3"/><path class="mesh" d="M418,306 L458,306 M418,534 L458,534"/><text class="lbl" x="428" y="420">C-1</text><text class="sm" x="416" y="584">сита 3A</text><text class="sm" x="416" y="596">3″ диоптр+царга</text>
 <path class="amine" d="M438,300 L438,280 L469,280 L469,556 L500,556 L500,540"/>
 <!-- C-2 -->
-<rect class="eqf" x="478" y="300" width="44" height="240" rx="3"/><text class="lbl" x="490" y="420">C-2</text><text class="sm" x="478" y="584">NaOH/KOH</text><text class="sm" x="478" y="596">3″×600</text>
+<rect class="eqf" x="478" y="300" width="44" height="240" rx="3"/><rect class="glass" x="478" y="300" width="44" height="80" rx="3"/><path class="mesh" d="M480,306 L520,306 M480,534 L520,534"/><text class="lbl" x="490" y="420">C-2</text><text class="sm" x="478" y="584">NaOH/KOH</text>
 <path class="amine" d="M500,300 L500,256 L551,256 M569,256 L576,256 M592,256 L604,256 L604,394"/>
 <use href="#bv" x="560" y="256"/><text class="sm" x="553" y="278">V-G2</text>
 <use href="#nrv" x="584" y="256"/><text class="lbl" x="560" y="236">NRV-3</text><text class="sm" x="560" y="224">≤30 мбар</text>
@@ -301,7 +303,7 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <path class="vent" d="M1235,140 L1235,159"/><use href="#bvv" x="1235" y="168"/><text class="sm" x="1243" y="172">VV-1</text>
 <path class="vac" d="M1235,177 L1235,235"/>
 <!-- тройник на всасе VP-1 → VV-2 → крышка нутча F-1 -->
-<path class="vac" d="M1235,190 L1378,190 L1378,692 L1039,692"/><use href="#bv" x="1030" y="692"/><path class="vac" d="M1021,692 L985,692 L985,700"/><text class="sm" x="1022" y="682">VV-2</text><text class="sm" x="1060" y="686">вакуум от VP-1</text><text class="sm" x="1241" y="202">вакуум:</text><text class="sm" x="1241" y="214">всас насоса</text>
+<path class="vac" d="M1235,190 L1378,190 L1378,692 L1039,692"/><use href="#bv" x="1030" y="692"/><path class="vac" d="M1021,692 L1010,692 L1010,700"/><text class="sm" x="1022" y="682">VV-2</text><text class="sm" x="1060" y="686">вакуум от VP-1</text><text class="sm" x="1241" y="202">вакуум:</text><text class="sm" x="1241" y="214">всас насоса</text>
 <circle class="eq" cx="1235" cy="252" r="17"/><path class="thin" d="M1223,252 L1247,252 M1235,240 L1235,264"/><text class="lbl" x="1235" y="288" text-anchor="middle">VP-1</text>
 <path class="vent" d="M1252,252 L1269,252" marker-end="url(#arr)"/><text class="sm" x="1277" y="248">выхлоп насоса</text><text class="sm" x="1277" y="260">→ вытяжка</text>
 <!-- 4: AV-1 → аргон ½″ -->
@@ -321,10 +323,15 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <path class="liq" d="M700,740 L640,740 L640,761 M640,779 L640,800"/><use href="#bvv" x="640" y="770"/><text class="sm" x="648" y="774">V-S1</text><text class="sm" x="574" y="820">бочка р-ля →</text><text class="sm" x="574" y="832">загрузка р-ля</text>
 <!-- P-2 AODD -->
 <rect class="eq" x="780" y="720" width="56" height="40" rx="4"/><text class="lbl" x="788" y="745">P-2</text><text class="sm" x="772" y="776">мембр. пневм.</text>
-<path class="liq" d="M836,740 L900,740"/>
+<path class="liq" d="M836,740 L870,740 L870,640 L950,640 L950,710"/>
 <!-- F-1 нутч -->
-<path class="eq" d="M900,700 L1000,700 L1000,760 L975,790 L925,790 L900,760 Z"/><path class="thin" d="M904,752 L996,752"/><text class="lbl" x="930" y="724">F-1</text><text class="sm" x="914" y="742">нутч, Na₂SO₄</text>
-<circle class="eq" cx="912" cy="686" r="8"/><text class="sm" x="912" y="689" text-anchor="middle" font-size="8">PI</text><path class="thin" d="M912,694 L912,700"/><text class="sm" x="900" y="690" text-anchor="end">PI-5</text><path class="vent" d="M933,700 L933,690"/><rect class="eq" x="926" y="674" width="14" height="16"/><path class="vent" d="M933,674 L933,666"/><text class="sm" x="929" y="663" text-anchor="end">PSV-4 → сбросы</text>
+<!-- F-1: сборка K119 на клампах: тройник 45° (прямо — суспензия, вбок — гребёнка газов), переход, диоптр, царга, межкламповый фильтр, переход на V-F2 -->
+<path class="eq" d="M948,710 L952,710 L962,718 L938,718 Z"/><rect class="glass" x="938" y="718" width="24" height="20"/><rect class="eq" x="938" y="738" width="24" height="38"/>
+<path class="mesh" d="M939,770 L961,770"/><path class="eq" d="M938,776 L962,776 L954,790 L946,790 Z"/>
+<text class="lbl" x="930" y="740" text-anchor="end">F-1</text><text class="sm" x="930" y="754" text-anchor="end">нутч K119</text><text class="sm" x="930" y="766" text-anchor="end">Na₂SO₄</text>
+<path class="argon" d="M950,706 L956,700 L1010,700"/><text class="sm" x="944" y="694" text-anchor="end">45°</text>
+<circle class="eq" cx="975" cy="716" r="8"/><text class="sm" x="975" y="719" text-anchor="middle" font-size="8">PI</text><path class="thin" d="M975,700 L975,708"/><text class="sm" x="987" y="720">PI-5</text>
+<path class="vent" d="M984,700 L984,692"/><rect class="eq" x="977" y="676" width="14" height="16"/><path class="vent" d="M984,676 L984,666"/><text class="sm" x="984" y="660" text-anchor="middle">PSV-4</text>
 <path class="liq" d="M950,790 L950,801"/><path class="liq" d="M950,819 L950,830 L1040,830"/><use href="#bvv" x="950" y="810"/><text class="sm" x="958" y="814">V-F2</text>
 <!-- F-2 -->
 <rect class="eq" x="1040" y="790" width="40" height="80" rx="6"/><text class="lbl" x="1034" y="784">F-2</text><text class="sm" x="1086" y="820">патрон 10″</text><text class="sm" x="1086" y="832">5…0,05 мкм</text>
@@ -341,7 +348,7 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <h2 id="s4"><span class="no">4</span>Реактор R-1 и распределение штуцеров</h2>
 <p>Что видно на фото: крышка на откидных болтах с латунными гайками; три кламповых штуцера (два под глухими заглушками, один открыт); Два обжимных штуцера 1/4″ на изогнутых трубках: на одном мановакуумметр WIKA −0,1…+0,5 МПа, на другом игольчатый вентиль. Сзади слева — <b>трёхсоставной шаровой кран на клампах</b>, сверху белый PTFE-переходник с синей заглушкой. Мешалка: мотор WB400, фонарь с белыми PTFE-кольцами, кронштейн на раме. Нижний слив: шаровой кран CF3M (литой 316L) на резьбе → переходник резьба–кламп → отвод 90° с ёлочкой.</p>
 <div class="box warn"><b class="h">Размеры клампов</b>
-По чертежу Wiggens штуцеры DN25/DN38 — ферула Ø50,5. Все клампы в проекте обозначены по DN (ISO 2852 / мини-кламп для ½″). Наружный диаметр ферулы: ½″ (мини-кламп, «к25») — 25 мм, DN25 и DN38 (1½″) — 50,5 мм, 2″ — 64 мм, 2½″ — 77,5 мм, DN65 (3″) — 91 мм, DN100 (4″) — 119 мм. Хомут и прокладка подбираются по диаметру ферулы, поэтому DN25 и DN38 (1½″) используют один и тот же хомут и прокладку.</div>
+По чертежу Wiggens штуцеры DN25/DN38 — ферула Ø50,5. Все клампы в проекте обозначены по DN (ISO 2852 / мини-кламп для ½″). <b>Обозначение клампов — по диаметру ферулы, как у Бабкина: K25, K50,5, K91, K119.</b> Наружный диаметр ферулы: ½″ (мини-кламп, «к25») — 25 мм, DN25 и DN38 (1½″) — 50,5 мм, 2″ — 64 мм, 2½″ — 77,5 мм, DN65 (3″) — 91 мм, DN100 (4″) — 119 мм. Хомут и прокладка подбираются по диаметру ферулы, поэтому DN25 и DN38 (1½″) используют один и тот же хомут и прокладку.</div>
 <div class="box"><b class="h">По чертежу Wiggens 8813650C (Nozzle list)</b>
 Все штуцеры PN 0,5 (бар): <b>M</b> DN133 мешалка (по чертежу мотор WB1800-C, на реакторе стоит WB400; вал Ø26); <b>L</b> DN38 нижний слив; <b>N1</b> DN25 резерв; <b>N2</b> 8 мм манометр; <b>N3</b> DN25 конденсатор; <b>N4</b> DN25 Pt100; <b>N5</b> DN25 pH-датчик M300; <b>N6</b> 8 мм игольчатый вентиль; <b>N7/N8</b> DN25 рубашка. Габариты: корпус Ø450, по откидным болтам Ø640, штуцеры крышки на окружностях Ø230 и Ø320 с шагом 30°, высота до верха мотора ≈1140 мм.<br>
 <b>Присоединения</b>: все штуцеры — трикламп, DN указаны по DIN 11851. Для DN25 и DN38 это ферула Ø50,5: P1–P4, слив и рубашка. Размеры штуцеров принимаем по таблице Wiggens.<br>

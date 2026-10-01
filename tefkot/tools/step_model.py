@@ -562,10 +562,10 @@ def lid_nodes():
     # P3: кран V-P3, тройник с септой, заглушка с обжимом ¼″
     x, y = nxy('N5')
     parts = clampj((x, y, Z_NOZ), (0, 0, 1), 50.5)
-    add(g, 'V-P3', ball_valve((x, y, Z_NOZ + 35), (0, 0, 1), 25.4, lever=(1, 0, 0), L=64), 'steel')
+    add(g, 'V-P3', ball_valve((x, y, Z_NOZ + 35), (0, 0, 1), 19, lever=(1, 0, 0), L=64), 'steel')
     parts += clampj((x, y, Z_NOZ + 70), (0, 0, 1), 50.5)
-    parts.append(cyl((x, y, Z_NOZ + 73), (x, y, Z_NOZ + 150), 25.4))
-    parts.append(cyl((x, y, Z_NOZ + 112), (x + 45, y, Z_NOZ + 112), 25.4))
+    parts.append(cyl((x, y, Z_NOZ + 73), (x, y, Z_NOZ + 150), 19))
+    parts.append(cyl((x, y, Z_NOZ + 112), (x + 45, y, Z_NOZ + 112), 19))
     parts += clampj((x + 48, y, Z_NOZ + 112), (1, 0, 0), 50.5)
     parts += clampj((x, y, Z_NOZ + 153), (0, 0, 1), 50.5)
     parts.append(cyl((x, y, Z_NOZ + 156), (x, y, Z_NOZ + 162), 50.5))
@@ -601,10 +601,10 @@ def generator(t2_top):
     add(g, 'G-1_fittings', [cyl((gx + 60, gy, 560), (gx + 60, gy, 620), 20), cyl((gx - 60, gy, 560), (gx - 60, gy, 600), 20)], 'dark')
     # порт регулятора: тройник → аргон A2 сверху, PSV-3 вбок (сброс в вытяжку), PI-3
     py = gy + 90
-    add(g, 'G-1_port_tee', [cyl((gx, py, 560), (gx, py, 700), 25.4), cyl((gx, py, 640), (gx, py + 60, 640), 25.4),
+    add(g, 'G-1_port_tee', [cyl((gx, py, 560), (gx, py, 700), 19), cyl((gx, py, 640), (gx, py + 60, 640), 19),
                             cyl((gx, py, 670), (gx - 40, py, 670), 12)], 'steel')
     add(g, 'PI-3', gauge((gx - 70, py, 670), (-1, 0, 0), 63), 'dark')
-    add(g, 'PSV-3', [cyl((gx, py + 60, 610), (gx, py + 60, 700), 45), cyl((gx, py + 60, 700), (gx, py + 60, 720), 25.4)], 'yellow')
+    add(g, 'PSV-3', [cyl((gx, py + 60, 610), (gx, py + 60, 700), 45), cyl((gx, py + 60, 700), (gx, py + 60, 720), 19)], 'yellow')
     add(g, 'PSV-3_to_vent', run([(gx, py + 60, 720), (gx, py + 60, 2250)], 8), 'vent')
     # колонны на лабораторном штативе
     sx, sy = -1000, 150
@@ -617,15 +617,15 @@ def generator(t2_top):
         parts += [cyl((sx, cy_, z0 - 2), (sx, cy_, z0 + 2), 91), cyl((sx, cy_, z0 + L - 2), (sx, cy_, z0 + L + 2), 91)]   # межкламповые фильтры
         for zz in (z0, z0 + L):
             parts.append(cyl((sx, cy_, zz - 8), (sx, cy_, zz + 8), 101))
-        parts.append(cone((sx, cy_, z0 - 8), (sx, cy_, z0 - 40), 91, 25.4))
-        parts.append(cone((sx, cy_, z0 + L + 8), (sx, cy_, z0 + L + 40), 91, 25.4))
+        parts.append(cone((sx, cy_, z0 - 8), (sx, cy_, z0 - 40), 91, 19))
+        parts.append(cone((sx, cy_, z0 + L + 8), (sx, cy_, z0 + L + 40), 91, 19))
         add(g, name, parts, col)
         add(g, name + '_sight', [cyl((sx, cy_, z0 + L - 192), (sx, cy_, z0 + L - 8), 80)], 'glass')
         add(g, name + '_clamp_arm', [box(sx, cy_ - 10, z0 + L / 2 - 10, sx + 110, cy_ + 10, z0 + L / 2 + 10)], 'dark')
         tops.append(((sx, cy_, z0 - 40), (sx, cy_, z0 + L + 40)))
     # газовая линия ¼″ PTFE: G-1 → C-1 → C-2 → NRV-3 → T2
     add(g, 'gas_G1_C1', run([(gx + 60, gy, 620), (gx + 60, gy, 700), (gx + 60, tops[0][0][1], 700), (sx, tops[0][0][1], 700), tops[0][0]], 6.35), 'gas')
-    add(g, 'V-G1', ball_valve((gx + 230, tops[0][0][1], 700), (1, 0, 0), 25.4, lever=(0, 0, 1), L=64), 'steel')
+    add(g, 'V-G1', ball_valve((gx + 230, tops[0][0][1], 700), (1, 0, 0), 19, lever=(0, 0, 1), L=64), 'steel')
     for a, b in ((0, 1),):
         ya, yb = tops[a][1][1], tops[b][0][1]
         add(g, f'gas_col{a}_col{b}', run([tops[a][1], (sx, ya, 1560 + 20 * a), (sx - 60 - 20 * a, ya, 1560 + 20 * a), (sx - 60 - 20 * a, ya, 780),
@@ -723,19 +723,19 @@ def discharge(zap, ar_outs):
     # BV-1 → тройник переходной 50,5×½″ (вбок SP-1 → носик) → тройник переходной 50,5×½″
     # (вбок V-S1 → рукав к бочке) → отвод 50,5 → рукав 1″ на P-2
     add(g, 'BV-1_Swagelok', ball_valve((0, 0, 470), (0, 0, 1), 38, lever=(1, 0, 0), L=58), 'steel')
-    parts = clampj((0, 0, 440), (0, 0, 1), 64)
+    parts = clampj((0, 0, 440), (0, 0, 1), 50.5)
     k = 0.7071                                   # отвод пробы под 45° вниз
     def at(t): return (t * k, 0, 405 - t * k)
-    parts += [cyl((0, 0, 437), (0, 0, 370), 50.8), cyl(at(0), at(70), 25.4)]
-    add(g, 'tee_red_sample', parts + clampj((0, 0, 367), (0, 0, 1), 64) + clampj(at(73), (k, 0, -k), 34), 'steel')
-    add(g, 'SP-1', ball_valve(at(108), (k, 0, -k), 25.4, lever=(k, 0, k), L=64), 'steel')
-    add(g, 'SP-1_nose', clampj(at(143), (k, 0, -k), 34) + run([at(146), at(165), (at(165)[0], 0, at(165)[2] - 40)], 25.4), 'steel')
-    parts = [cyl((0, 0, 364), (0, 0, 272), 50.8), cyl((0, 0, 305), (-40, 0, 305), 25.4)]
-    parts += clampj((-43, 0, 305), (1, 0, 0), 34) + clampj((0, 0, 269), (0, 0, 1), 64)
+    parts += [cyl((0, 0, 437), (0, 0, 370), 50.8), cyl(at(0), at(70), 19)]
+    add(g, 'tee_red_sample', parts + clampj((0, 0, 367), (0, 0, 1), 50.5) + clampj(at(73), (k, 0, -k), 25), 'steel')
+    add(g, 'SP-1', ball_valve(at(108), (k, 0, -k), 19, lever=(k, 0, k), L=64), 'steel')
+    add(g, 'SP-1_nose', clampj(at(143), (k, 0, -k), 25) + run([at(146), at(165), (at(165)[0], 0, at(165)[2] - 40)], 19), 'steel')
+    parts = [cyl((0, 0, 364), (0, 0, 272), 50.8), cyl((0, 0, 305), (-40, 0, 305), 19)]
+    parts += clampj((-43, 0, 305), (1, 0, 0), 25) + clampj((0, 0, 269), (0, 0, 1), 50.5)
     add(g, 'tee_red_drum', parts, 'steel')
-    add(g, 'V-S1', ball_valve((-80, 0, 305), (1, 0, 0), 25.4, lever=(0, 0, 1), L=64), 'steel')
-    add(g, 'V-S1_clamp', clampj((-115, 0, 305), (1, 0, 0), 34), 'steel')
-    add(g, 'drain_elbow_50', run([(0, 0, 266), (0, 0, 240), (0, -60, 240)], 50.8) + clampj((0, -63, 240), (0, 1, 0), 64), 'steel')
+    add(g, 'V-S1', ball_valve((-80, 0, 305), (1, 0, 0), 19, lever=(0, 0, 1), L=64), 'steel')
+    add(g, 'V-S1_clamp', clampj((-115, 0, 305), (1, 0, 0), 25), 'steel')
+    add(g, 'drain_elbow_50', run([(0, 0, 266), (0, 0, 240), (0, -60, 240)], 50.8) + clampj((0, -63, 240), (0, 1, 0), 50.5), 'steel')
     suc, dis = pump((300, -850, 0), 'P-2_AODD', g)
     add(g, 'BV-1_to_P-2_hose', run([(0, -66, 240), (0, -330, 240), (0, -600, 150), (0, -850, 32), (suc[0] - 100, -850, 32)], 38), 'ptfe')
     # бочка растворителя 200 л и рукав от V-S1
@@ -749,17 +749,17 @@ def discharge(zap, ar_outs):
     parts += [cyl((fx, fy, zf - 2), (fx, fy, zf + 2), 101.6), cyl((fx, fy, zf + 3), (fx, fy, zs - 3), 101.6)] + clampj((fx, fy, zs), (0, 0, 1), 119)
     add(g, 'F-1_nutsche_DN350', parts, 'steel')
     add(g, 'F-1_sight_glass_K119', [cyl((fx, fy, zs + 3), (fx, fy, zg - 3), 104)], 'glass')
-    add(g, 'F-1_top_reducer', clampj((fx, fy, zg), (0, 0, 1), 119) + [cone((fx, fy, zg + 3), (fx, fy, 1170), 101.6, 25.4)] + clampj((fx, fy, 1173), (0, 0, 1), 34), 'steel')
+    add(g, 'F-1_top_reducer', clampj((fx, fy, zg), (0, 0, 1), 119) + [cone((fx, fy, zg + 3), (fx, fy, 1170), 101.6, 19)] + clampj((fx, fy, 1173), (0, 0, 1), 25), 'steel')
     k = 0.7071
-    add(g, 'F-1_tee45', [cyl((fx, fy, 1176), (fx, fy, 1260), 25.4), cyl((fx, fy, 1200), (fx + 60, fy, 1260), 25.4)] + clampj((fx, fy, 1263), (0, 0, 1), 34), 'steel')
-    add(g, 'F-1_inlet_reducer', [cone((fx, fy, 1266), (fx, fy, 1310), 25.4, 50.8)] + clampj((fx, fy, 1313), (0, 0, 1), 64), 'steel')
+    add(g, 'F-1_tee45', [cyl((fx, fy, 1176), (fx, fy, 1260), 19), cyl((fx, fy, 1200), (fx + 60, fy, 1260), 19)] + clampj((fx, fy, 1263), (0, 0, 1), 25), 'steel')
+    add(g, 'F-1_inlet_reducer', [cone((fx, fy, 1266), (fx, fy, 1310), 19, 50.8)] + clampj((fx, fy, 1313), (0, 0, 1), 50.5), 'steel')
     add(g, 'F-1_stand', [cyl((fx + 80 * math.cos(math.radians(a)), fy + 80 * math.sin(math.radians(a)), 0),
                                (fx + 80 * math.cos(math.radians(a)), fy + 80 * math.sin(math.radians(a)), 620), 20) for a in (90, 210, 330)]
         + [cyl((fx, fy, 600), (fx, fy, 620), 180).cut(cyl((fx, fy, 590), (fx, fy, 630), 104))], 'dark')
     mz = 1260
-    add(g, 'F-1_lid_fittings', [cyl((fx + 60, fy, mz), (fx + 330, fy, mz), 25.4), cyl((fx + 330, fy, mz), (fx + 330, fy, mz + 40), 25.4)]
-        + clampj((fx + 130, fy, mz), (1, 0, 0), 34) + clampj((fx + 190, fy, mz), (1, 0, 0), 34) + clampj((fx + 250, fy, mz), (1, 0, 0), 34)
-        + [cyl((fx + 100, fy, mz), (fx + 100, fy, mz + 25), 12), cyl((fx + 160, fy, mz), (fx + 160, fy, mz + 15), 25.4), cyl((fx + 220, fy, mz), (fx + 220, fy, mz + 20), 25.4)], 'steel')
+    add(g, 'F-1_lid_fittings', [cyl((fx + 60, fy, mz), (fx + 330, fy, mz), 19), cyl((fx + 330, fy, mz), (fx + 330, fy, mz + 40), 19)]
+        + clampj((fx + 130, fy, mz), (1, 0, 0), 25) + clampj((fx + 190, fy, mz), (1, 0, 0), 25) + clampj((fx + 250, fy, mz), (1, 0, 0), 25)
+        + [cyl((fx + 100, fy, mz), (fx + 100, fy, mz + 25), 12), cyl((fx + 160, fy, mz), (fx + 160, fy, mz + 15), 19), cyl((fx + 220, fy, mz), (fx + 220, fy, mz + 20), 19)], 'steel')
     add(g, 'PI-5', gauge((fx + 100, fy, mz + 55), (0, -1, 0), 63), 'white')
     add(g, 'PSV-4_0.3bar', [cyl((fx + 160, fy, mz + 15), (fx + 160, fy, mz + 90), 45)], 'steel')
     add(g, 'VV-2', ball_valve((fx + 220, fy, mz + 50), (0, 0, 1), 10, lever=(1, 0, 0), L=36), 'steel')
@@ -781,7 +781,7 @@ def discharge(zap, ar_outs):
     cx, cy = 1450, -900
     add(g, 'W-3_scale', [box(cx - 200, cy - 200, 0, cx + 200, cy + 200, 70)], 'dark')
     add(g, 'canister_20L', [box(cx - 130, cy - 150, 70, cx + 130, cy + 150, 440), cyl((cx, cy, 440), (cx, cy, 470), 50)], 'poly')
-    add(g, 'V-F3', ball_valve((f2x + 150, f2y, 600), (1, 0, 0), 25.4, lever=(0, 0, 1), L=50), 'steel')
+    add(g, 'V-F3', ball_valve((f2x + 150, f2y, 600), (1, 0, 0), 19, lever=(0, 0, 1), L=50), 'steel')
     add(g, 'F-2_to_canister', run([(f2x + 73, f2y, 600), (cx, f2y, 600), (cx, cy, 600), (cx, cy, 100)], 12), 'steel')
 
 
