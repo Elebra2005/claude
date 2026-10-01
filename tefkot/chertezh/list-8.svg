@@ -89,7 +89,7 @@
 <path d="M24.00,44.60 L195.00,44.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="47.73" font-size="1.85" text-anchor="start" fill="#111111">301</text>
 <text x="34.00" y="47.73" font-size="1.85" text-anchor="start" fill="#111111">3</text>
-<text x="40.00" y="47.73" font-size="1.85" text-anchor="start" fill="#111111">E-1 верх: переходник шлиф/K25 → рукав PTFE ¾″ на гребёнку</text>
+<text x="40.00" y="47.73" font-size="1.85" text-anchor="start" fill="#111111">E-1 верх: переходник шлиф/K25 → штуцер K25×19,05 (рукав на гребёнку)</text>
 <text x="158.00" y="47.73" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
 <text x="183.00" y="47.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,49.20 L195.00,49.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -107,7 +107,7 @@
 <path d="M24.00,58.40 L195.00,58.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">401</text>
 <text x="34.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">вход: рукав PTFE ¾″ от E-1 → отвод 90°</text>
+<text x="40.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">вход: штуцер K25×19,05 (рукав от E-1) → отвод 90°</text>
 <text x="158.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
 <text x="183.00" y="61.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,63.00 L195.00,63.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -179,7 +179,7 @@
 <path d="M24.00,113.60 L195.00,113.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">413</text>
 <text x="34.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">VV-1 → рукав PTFE ¾″ на VP-1</text>
+<text x="40.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">VV-1 → штуцер K25×19,05 (рукав на VP-1)</text>
 <text x="158.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
 <text x="183.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,118.20 L195.00,118.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -203,7 +203,7 @@
 <path d="M24.00,132.00 L195.00,132.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">417</text>
 <text x="34.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">4</text>
-<text x="40.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">SV-3 → рукав PTFE ¾″ (vent)</text>
+<text x="40.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">SV-3 → штуцер K25×19,05 (vent)</text>
 <text x="158.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
 <text x="183.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M24.00,136.60 L195.00,136.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -221,7 +221,7 @@
 <path d="M24.00,145.80 L195.00,145.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="148.93" font-size="1.85" text-anchor="start" fill="#111111">503</text>
 <text x="34.00" y="148.93" font-size="1.85" text-anchor="start" fill="#111111">5</text>
-<text x="40.00" y="148.93" font-size="1.85" text-anchor="start" fill="#111111">NRV-6 → рукав PTFE ¾″ на G-1</text>
+<text x="40.00" y="148.93" font-size="1.85" text-anchor="start" fill="#111111">NRV-6 → штуцер K25×19,05 (рукав на G-1)</text>
 <text x="158.00" y="148.93" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
 <text x="183.00" y="148.93" font-size="1.85" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M24.00,150.40 L195.00,150.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -392,7 +392,7 @@
 <path d="M222.00,67.60 L393.00,67.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">707</text>
 <text x="232.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">тройник → рукав PTFE 1″ (на P-2)</text>
+<text x="238.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">тройник → штуцер K50,5×25,4 (рукав на P-2)</text>
 <text x="356.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">K50,5 (1″)</text>
 <text x="381.00" y="70.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,72.20 L393.00,72.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -482,7 +482,7 @@
 <path d="M222.00,136.60 L393.00,136.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">722</text>
 <text x="232.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">VV-2 → рукав PTFE ¾″ на VP-1</text>
+<text x="238.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">VV-2 → штуцер K25×19,05 (рукав на VP-1)</text>
 <text x="356.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
 <text x="381.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,141.20 L393.00,141.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>

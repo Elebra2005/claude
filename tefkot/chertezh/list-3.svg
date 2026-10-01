@@ -82,7 +82,7 @@
 <circle cx="54.00" cy="40.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="54.00" y="40.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">301</text>
 <path d="M102.20,30.00 L100.00,30.90 L100.00,29.10 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="102.00" y="31.00" font-size="2.0" text-anchor="start" fill="#111111">рукав PTFE ¾″ × K25 (обжатые клампы) → вход гребёнки (лист 4)</text>
+<text x="102.00" y="31.00" font-size="2.0" text-anchor="start" fill="#111111">штуцер K25×19,05 → рукав Innovalloy 62U 19×25 → вход гребёнки (лист 4)</text>
 <text x="67.00" y="45.00" font-size="1.8" text-anchor="start" fill="#c62828">переходник шлиф NS ? → кламп K25 (PTFE / нерж.)</text>
 <path d="M58.00,196.00 L66.00,196.00 L65.00,203.00 L59.00,203.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M53.60,203.00 L70.40,203.00 L70.40,209.00 L53.60,209.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>

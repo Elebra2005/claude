@@ -141,7 +141,7 @@
 <circle cx="317.00" cy="48.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="317.00" y="48.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">602</text>
 <path d="M325.00,66.20 L324.10,64.00 L325.90,64.00 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="322.00" y="70.00" font-size="1.9" text-anchor="end" fill="#111111">рукав PTFE ¾″ → VV-2 нутча F-1 (лист 7)</text>
+<text x="322.00" y="70.00" font-size="1.9" text-anchor="end" fill="#111111">рукав UPE 19×31 → VV-2 нутча F-1 (лист 7)</text>
 <path d="M330.60,36.80 L331.70,36.80 L331.70,43.20 L330.60,43.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M332.30,36.80 L333.40,36.80 L333.40,43.20 L332.30,43.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M330.20,36.20 L333.80,36.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -156,7 +156,7 @@
 <text x="337.00" y="29.00" font-size="1.7" text-anchor="start" fill="#c62828">K25 → вход VP-1 (KF? / ёлочка?)</text>
 <path d="M380.00,25.80 L380.90,28.00 L379.10,28.00 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="384.00" y="27.00" font-size="1.9" text-anchor="start" fill="#111111">выхлоп в вытяжку</text>
-<text x="330.00" y="58.00" font-size="1.9" text-anchor="start" fill="#c62828">рукава PTFE ¾″ × K25, L=?</text>
+<text x="330.00" y="58.00" font-size="1.9" text-anchor="start" fill="#c62828">рукава UPE 19×31 на ёлочках K25, L=?</text>
 <text x="25.00" y="130.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">ТЕПЛОНОСИТЕЛЬ: два чиллера — TC-1 → рубашка R-1, TC-2 → E-1, б/м</text>
 <path d="M28.00,142.00 L68.00,142.00 L68.00,168.00 L28.00,168.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
 <text x="32.00" y="150.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">TC-1</text>
