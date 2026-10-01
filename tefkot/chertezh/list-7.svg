@@ -13,7 +13,7 @@
 <path d="M70.00,44.00 L70.00,59.20" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
 <path d="M70.00,63.00 L70.00,70.00 L75.20,70.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M78.80,70.00 L90.20,70.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
-<path d="M85.00,70.00 L85.00,74.20" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
+<path d="M82.00,70.00 L85.00,73.00 L85.00,74.20" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M85.00,81.80 L85.00,82.20" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
 <path d="M85.00,85.80 L85.00,87.80" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
 <path d="M85.00,94.20 L85.00,96.20" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
@@ -118,6 +118,7 @@
 <path d="M75.20,73.80 L78.80,73.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="77.00" cy="62.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="77.00" y="63.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">701</text>
+<text x="87.00" y="74.00" font-size="1.6" text-anchor="start" fill="#111111">45°</text>
 <path d="M81.80,74.60 L88.20,74.60 L88.20,75.70 L81.80,75.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M81.80,76.30 L88.20,76.30 L88.20,77.40 L81.80,77.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M81.20,74.20 L81.20,77.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
