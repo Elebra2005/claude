@@ -192,7 +192,9 @@ NAMES = {
 'F-1_tee45': 'Тройник кламп 45° ½″ над нутчем: прямо — суспензия, вбок — гребёнка газов',
 'F-1_inlet_reducer': 'Переход кламп 50,5 → ½″ — вход суспензии от P-2',
 'F-1_stand': 'Опора нутч-фильтра',
-'F-1_lid_fittings': 'Гребёнка газов нутча ½″: тройники PI-5, PSV-4, VV-2, аргон A4',
+'F-1_lid_fittings': 'Гребёнка газов нутча ½″ на стойке выше нутча: тройники PI-5, PSV-4, VV-2, аргон A4',
+'F-1_gas_hose': 'Рукав PTFE ¾″ × К25 от бокового отвода тройника 45° к гребёнке нутча',
+'F-1_manifold_stand': 'Стойка с кронштейном гребёнки нутча',
 'PI-5': 'Мановакуумметр нутч-фильтра (PI-5)',
 'PSV-4_0.3bar': 'Клапан сбросной нутч-фильтра 0,3 бар (PSV-4)',
 'VV-2': 'Кран шаровой ¼″ вакуума нутч-фильтра (VV-2)',
@@ -776,16 +778,19 @@ def discharge(zap, ar_outs):
     add(g, 'F-1_stand', [cyl((fx + 80 * math.cos(math.radians(a)), fy + 80 * math.sin(math.radians(a)), 0),
                                (fx + 80 * math.cos(math.radians(a)), fy + 80 * math.sin(math.radians(a)), 620), 20) for a in (90, 210, 330)]
         + [cyl((fx, fy, 600), (fx, fy, 620), 180).cut(cyl((fx, fy, 590), (fx, fy, 630), 104))], 'dark')
-    mz = 1260
-    add(g, 'F-1_lid_fittings', [cyl((fx + 60, fy, mz), (fx + 330, fy, mz), 19), cyl((fx + 330, fy, mz), (fx + 330, fy, mz + 40), 19)]
-        + clampj((fx + 130, fy, mz), (1, 0, 0), 25) + clampj((fx + 190, fy, mz), (1, 0, 0), 25) + clampj((fx + 250, fy, mz), (1, 0, 0), 25)
-        + [cyl((fx + 100, fy, mz), (fx + 100, fy, mz + 25), 12), cyl((fx + 160, fy, mz), (fx + 160, fy, mz + 15), 19), cyl((fx + 220, fy, mz), (fx + 220, fy, mz + 20), 19)], 'steel')
-    add(g, 'PI-5', gauge((fx + 100, fy, mz + 55), (0, -1, 0), 63), 'white')
+    # гребёнка газов нутча — на стойке выше нутча, к боковому отводу тройника 45° рукавом PTFE ¾″ × К25
+    add(g, 'F-1_gas_hose', clampj((fx + 63, fy, 1260), (1, 0, 0), 25) + run([(fx + 66, fy, 1260), (fx + 85, fy, 1260), (fx + 85, fy, 1500), (fx + 97, fy, 1500)], 19), 'ptfe')
+    mz = 1500
+    add(g, 'F-1_lid_fittings', [cyl((fx + 100, fy, mz), (fx + 330, fy, mz), 19), cyl((fx + 330, fy, mz), (fx + 330, fy, mz + 40), 19)]
+        + clampj((fx + 100, fy, mz), (1, 0, 0), 25) + clampj((fx + 130, fy, mz), (1, 0, 0), 25) + clampj((fx + 190, fy, mz), (1, 0, 0), 25) + clampj((fx + 250, fy, mz), (1, 0, 0), 25)
+        + [cyl((fx + 115, fy, mz), (fx + 115, fy, mz + 25), 12), cyl((fx + 160, fy, mz), (fx + 160, fy, mz + 15), 19), cyl((fx + 220, fy, mz), (fx + 220, fy, mz + 20), 19)], 'steel')
+    add(g, 'F-1_manifold_stand', [cyl((fx + 280, fy + 60, 0), (fx + 280, fy + 60, mz - 10), 20), box(fx + 270, fy - 15, mz - 25, fx + 290, fy + 70, mz - 10)], 'dark')
+    add(g, 'PI-5', gauge((fx + 115, fy, mz + 55), (0, -1, 0), 63), 'white')
     add(g, 'PSV-4_0.3bar', [cyl((fx + 160, fy, mz + 15), (fx + 160, fy, mz + 90), 45)], 'steel')
     add(g, 'VV-2', ball_valve((fx + 220, fy, mz + 50), (0, 0, 1), 10, lever=(1, 0, 0), L=36), 'steel')
     add(g, 'V-F1_NRV-5', ball_valve((fx + 330, fy, mz + 70), (0, 0, 1), 10, lever=(1, 0, 0), L=36) + check_valve((fx + 330, fy, mz + 140), (0, 0, -1), 10), 'steel')
     a4 = ar_outs['A4']
-    add(g, 'A4_to_F-1', run([a4, (a4[0], a4[1], 1250), (a4[0], -150, 1250), (-300, -150, 1250), (-300, -1150, 1250), (fx + 330, -1150, 1250), (fx + 330, -1150, 1500), (fx + 330, fy, 1500), (fx + 330, fy, mz + 175)], 6.35), 'argon')
+    add(g, 'A4_to_F-1', run([a4, (a4[0], a4[1], 1250), (a4[0], -150, 1250), (-300, -150, 1250), (-300, -1150, 1250), (fx + 330, -1150, 1250), (fx + 330, -1150, 1800), (fx + 330, fy, 1800), (fx + 330, fy, mz + 175)], 6.35), 'argon')
     add(g, 'PSV-4_to_vent', run([(fx + 160, fy, mz + 90), (fx + 160, fy, 2250)], 8), 'vent')
     add(g, 'P-2_to_F-1_hose', run([(dis[0] + 100, dis[1], dis[2]), (560, -850, 250), (560, -850, 1420), (fx, fy, 1420), (fx, fy, 1316)], 38), 'ptfe')
     # фильтр F-2 10″ и канистра на W-3

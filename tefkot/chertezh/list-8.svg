@@ -12,7 +12,7 @@
 <path d="M397.00,272.00 L397.00,277.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <path d="M24.00,21.60 L195.00,21.60" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M222.00,21.60 L393.00,21.60" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M222.00,151.20 L342.00,151.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M222.00,155.80 L342.00,155.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M0.20,0.20 L419.80,0.20 L419.80,296.80 L0.20,296.80 Z" fill="none" stroke="#bbbbbb" stroke-width="0.1" stroke-linejoin="round"/>
 <path d="M20.00,5.00 L415.00,5.00 L415.00,292.00 L20.00,292.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <path d="M230.00,237.00 L415.00,237.00 L415.00,292.00 L230.00,292.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
@@ -325,7 +325,7 @@
 <path d="M39.00,17.00 L39.00,224.00" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
 <path d="M157.00,17.00 L157.00,224.00" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
 <path d="M182.00,17.00 L182.00,224.00" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M222.00,17.00 L393.00,17.00 L393.00,136.60 L222.00,136.60 Z" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M222.00,17.00 L393.00,17.00 L393.00,141.20 L222.00,141.20 Z" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <text x="223.00" y="20.13" font-size="1.85" text-anchor="start" fill="#111111" font-weight="bold">№</text>
 <text x="232.00" y="20.13" font-size="1.85" text-anchor="start" fill="#111111" font-weight="bold">Л.</text>
 <text x="238.00" y="20.13" font-size="1.85" text-anchor="start" fill="#111111" font-weight="bold">Место</text>
@@ -411,118 +411,124 @@
 <path d="M222.00,81.40 L393.00,81.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">716</text>
 <text x="232.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">тройник 45° → гребёнка нутча</text>
+<text x="238.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">тройник 45° → рукав на гребёнку нутча</text>
 <text x="356.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
 <text x="381.00" y="84.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,86.00 L393.00,86.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">717</text>
 <text x="232.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">гребёнка нутча: PI-5 → PSV-4</text>
+<text x="238.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">рукав → гребёнка нутча (на раме)</text>
 <text x="356.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
 <text x="381.00" y="89.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,90.60 L393.00,90.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">718</text>
 <text x="232.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">гребёнка нутча: PSV-4 → VV-2</text>
+<text x="238.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">гребёнка нутча: PI-5 → PSV-4</text>
 <text x="356.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
 <text x="381.00" y="93.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,95.20 L393.00,95.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">719</text>
 <text x="232.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">гребёнка нутча: VV-2 → кран V-F1 (аргон A4)</text>
+<text x="238.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">гребёнка нутча: PSV-4 → VV-2</text>
 <text x="356.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
 <text x="381.00" y="98.33" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,99.80 L393.00,99.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">720</text>
 <text x="232.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">выход нутча → кран V-F2</text>
+<text x="238.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">гребёнка нутча: VV-2 → кран V-F1 (аргон A4)</text>
 <text x="356.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
 <text x="381.00" y="102.93" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,104.40 L393.00,104.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">721</text>
 <text x="232.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">V-F2 → рукав на P-4</text>
+<text x="238.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">выход нутча → кран V-F2</text>
 <text x="356.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
 <text x="381.00" y="107.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,109.00 L393.00,109.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">722</text>
 <text x="232.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">рукав → P-4 (вход)</text>
+<text x="238.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">V-F2 → рукав на P-4</text>
 <text x="356.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
 <text x="381.00" y="112.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,113.60 L393.00,113.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">723</text>
 <text x="232.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">P-4 воздух: ниппель ⅛″NPT/¼″ + кламп ¼″×К25 → линия воздуха</text>
+<text x="238.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">рукав → P-4 (вход)</text>
 <text x="356.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
-<text x="381.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">EPDM</text>
+<text x="381.00" y="116.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,118.20 L393.00,118.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">724</text>
 <text x="232.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">P-4 выход → рукав на F-2</text>
+<text x="238.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">P-4 воздух: ниппель ⅛″NPT/¼″ + кламп ¼″×К25 → линия воздуха</text>
 <text x="356.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
-<text x="381.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
+<text x="381.00" y="121.33" font-size="1.85" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M222.00,122.80 L393.00,122.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">725</text>
 <text x="232.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">рукав → вход F-2</text>
-<text x="356.00" y="125.93" font-size="1.85" text-anchor="start" fill="#c62828">K25?</text>
+<text x="238.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">P-4 выход → рукав на F-2</text>
+<text x="356.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
 <text x="381.00" y="125.93" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,127.40 L393.00,127.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">726</text>
 <text x="232.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">выход F-2 → кран V-F3</text>
-<text x="356.00" y="130.53" font-size="1.85" text-anchor="start" fill="#c62828">K25?</text>
+<text x="238.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">рукав → вход F-2</text>
+<text x="356.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
 <text x="381.00" y="130.53" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,132.00 L393.00,132.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">727</text>
 <text x="232.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">V-F3 → рукав на налив</text>
-<text x="356.00" y="135.13" font-size="1.85" text-anchor="start" fill="#c62828">K25?</text>
+<text x="238.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">выход F-2 → кран V-F3</text>
+<text x="356.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
 <text x="381.00" y="135.13" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
-<path d="M231.00,17.00 L231.00,136.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M237.00,17.00 L237.00,136.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M355.00,17.00 L355.00,136.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M380.00,17.00 L380.00,136.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<text x="222.00" y="144.60" font-size="2.6" text-anchor="start" fill="#111111" font-weight="bold">СВОДКА: заказ = по схеме + 2 шт. каждого размера</text>
-<path d="M222.00,146.60 L342.00,146.60 L342.00,169.60 L222.00,169.60 Z" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<text x="223.00" y="149.73" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Ферула</text>
-<text x="241.00" y="149.73" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Соед.</text>
-<text x="255.00" y="149.73" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Хомутов</text>
-<text x="273.00" y="149.73" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">PTFE</text>
-<text x="287.00" y="149.73" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">EPDM</text>
-<text x="301.00" y="149.73" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Примечание</text>
-<text x="223.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111">K25</text>
-<text x="241.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111">49</text>
-<text x="255.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111">51</text>
-<text x="273.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111">38</text>
-<text x="287.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111">15</text>
-<text x="301.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111"></text>
-<path d="M222.00,155.80 L342.00,155.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">K50,5</text>
-<text x="241.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">13</text>
-<text x="255.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">15</text>
-<text x="273.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">13</text>
-<text x="287.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">4</text>
-<text x="301.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">рубашка N7/N8: +2 EPDM</text>
+<path d="M222.00,136.60 L393.00,136.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<text x="223.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">728</text>
+<text x="232.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">7</text>
+<text x="238.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">V-F3 → рукав на налив</text>
+<text x="356.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">K25</text>
+<text x="381.00" y="139.73" font-size="1.85" text-anchor="start" fill="#111111">PTFE</text>
+<path d="M231.00,17.00 L231.00,141.20" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<path d="M237.00,17.00 L237.00,141.20" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<path d="M355.00,17.00 L355.00,141.20" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<path d="M380.00,17.00 L380.00,141.20" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<text x="222.00" y="149.20" font-size="2.6" text-anchor="start" fill="#111111" font-weight="bold">СВОДКА: заказ = по схеме + 2 шт. каждого размера</text>
+<path d="M222.00,151.20 L342.00,151.20 L342.00,174.20 L222.00,174.20 Z" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="223.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Ферула</text>
+<text x="241.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Соед.</text>
+<text x="255.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Хомутов</text>
+<text x="273.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">PTFE</text>
+<text x="287.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">EPDM</text>
+<text x="301.00" y="154.33" font-size="1.9" text-anchor="start" fill="#111111" font-weight="bold">Примечание</text>
+<text x="223.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">K25</text>
+<text x="241.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">50</text>
+<text x="255.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">52</text>
+<text x="273.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">39</text>
+<text x="287.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">15</text>
+<text x="301.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111"></text>
 <path d="M222.00,160.40 L342.00,160.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">K91</text>
-<text x="241.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">6</text>
-<text x="255.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">8</text>
-<text x="273.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">—</text>
-<text x="287.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">8</text>
-<text x="301.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111"></text>
+<text x="223.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">K50,5</text>
+<text x="241.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">13</text>
+<text x="255.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">15</text>
+<text x="273.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">13</text>
+<text x="287.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">4</text>
+<text x="301.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">рубашка N7/N8: +2 EPDM</text>
 <path d="M222.00,165.00 L342.00,165.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="223.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">K119</text>
-<text x="241.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">3</text>
-<text x="255.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">5</text>
-<text x="273.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">5</text>
-<text x="287.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">—</text>
+<text x="223.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">K91</text>
+<text x="241.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">6</text>
+<text x="255.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">8</text>
+<text x="273.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">—</text>
+<text x="287.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">8</text>
 <text x="301.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111"></text>
-<path d="M240.00,146.60 L240.00,169.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M254.00,146.60 L254.00,169.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M272.00,146.60 L272.00,169.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M286.00,146.60 L286.00,169.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M300.00,146.60 L300.00,169.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<text x="222.00" y="174.60" font-size="1.9" text-anchor="start" fill="#111111">K25 = ½″; K50,5 = 1″–1½″ (DN25, DN38); K91 = 3″; K119 = 4″. Межкламповые фильтры: +1 хомут и +1 прокладка на каждый.</text>
+<path d="M222.00,169.60 L342.00,169.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
+<text x="223.00" y="172.73" font-size="1.9" text-anchor="start" fill="#111111">K119</text>
+<text x="241.00" y="172.73" font-size="1.9" text-anchor="start" fill="#111111">3</text>
+<text x="255.00" y="172.73" font-size="1.9" text-anchor="start" fill="#111111">5</text>
+<text x="273.00" y="172.73" font-size="1.9" text-anchor="start" fill="#111111">5</text>
+<text x="287.00" y="172.73" font-size="1.9" text-anchor="start" fill="#111111">—</text>
+<text x="301.00" y="172.73" font-size="1.9" text-anchor="start" fill="#111111"></text>
+<path d="M240.00,151.20 L240.00,174.20" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<path d="M254.00,151.20 L254.00,174.20" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<path d="M272.00,151.20 L272.00,174.20" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<path d="M286.00,151.20 L286.00,174.20" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<path d="M300.00,151.20 L300.00,174.20" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
+<text x="222.00" y="179.20" font-size="1.9" text-anchor="start" fill="#111111">K25 = ½″; K50,5 = 1″–1½″ (DN25, DN38); K91 = 3″; K119 = 4″. Межкламповые фильтры: +1 хомут и +1 прокладка на каждый.</text>
 </svg>

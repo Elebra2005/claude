@@ -25,15 +25,19 @@
 <path d="M136.00,147.00 L136.00,156.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M151.00,130.00 L190.00,130.00 L190.00,30.00 L230.00,30.00 L230.00,32.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M230.00,45.00 L230.00,60.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
-<path d="M230.00,52.00 L282.00,52.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
+<path d="M230.00,52.00 L238.00,52.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
 <path d="M230.00,134.00 L230.00,136.00" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round"/>
-<path d="M258.00,52.00 L258.00,47.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M258.00,41.00 L258.00,24.00 L206.00,24.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M272.00,52.00 L272.00,45.20" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M272.00,40.80 L272.00,34.00 L300.00,34.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M282.00,52.00 L284.80,52.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M289.20,52.00 L294.24,52.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M297.76,52.00 L305.00,52.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M238.00,52.00 L246.00,52.00 L246.00,28.00 L251.00,28.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M252.00,28.00 L299.80,28.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
+<path d="M304.20,28.00 L309.24,28.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
+<path d="M312.76,28.00 L318.00,28.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
+<path d="M273.00,28.00 L273.00,23.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M273.00,17.00 L273.00,12.00 L206.00,12.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M287.00,28.00 L287.00,23.20" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M287.00,18.80 L287.00,14.00 L330.00,14.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M297.00,28.00 L299.80,28.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M304.20,28.00 L309.24,28.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M312.76,28.00 L330.00,28.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M230.00,136.00 L230.00,143.80" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
 <path d="M230.00,148.20 L230.00,156.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
 <path d="M230.00,156.00 L230.00,162.00 L243.00,162.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
@@ -227,50 +231,58 @@
 <path d="M235.20,55.80 L238.80,55.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="237.00" cy="61.70" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="237.00" y="62.60" font-size="2.0" text-anchor="middle" fill="#1f5fa8">716</text>
-<path d="M244.00,52.00 L244.00,49.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<circle cx="244.00" cy="46.40" r="2.60" fill="#ffffff" stroke="#111111" stroke-width="0.3"/>
-<text x="244.00" y="47.20" font-size="1.8" text-anchor="middle" fill="#111111">PI</text>
-<text x="240.50" y="44.00" font-size="1.8" text-anchor="end" fill="#111111">PI-5</text>
-<path d="M249.60,48.80 L250.70,48.80 L250.70,55.20 L249.60,55.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M251.30,48.80 L252.40,48.80 L252.40,55.20 L251.30,55.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M249.20,48.20 L252.80,48.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M249.20,55.80 L252.80,55.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="251.00" cy="61.70" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="251.00" y="62.60" font-size="2.0" text-anchor="middle" fill="#1f5fa8">717</text>
-<path d="M255.00,41.00 L261.00,41.00 L261.00,47.00 L255.00,47.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="262.00" y="44.00" font-size="1.8" text-anchor="start" fill="#111111">PSV-4</text>
-<text x="205.00" y="25.00" font-size="1.8" text-anchor="end" fill="#111111">сброс → коллектор сбросов (лист 4)</text>
-<path d="M263.60,48.80 L264.70,48.80 L264.70,55.20 L263.60,55.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M265.30,48.80 L266.40,48.80 L266.40,55.20 L265.30,55.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M263.20,48.20 L266.80,48.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M263.20,55.80 L266.80,55.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="265.00" cy="61.70" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="265.00" y="62.60" font-size="2.0" text-anchor="middle" fill="#1f5fa8">718</text>
-<path d="M270.46,40.80 L273.54,45.20 L270.46,45.20 L273.54,40.80 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M272.00,43.00 L274.86,43.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M274.86,41.50 L274.86,44.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="276.00" y="44.00" font-size="1.8" text-anchor="start" fill="#111111">VV-2</text>
-<text x="301.00" y="35.00" font-size="1.8" text-anchor="start" fill="#111111">вакуум от VP-1 (лист 6)</text>
-<path d="M277.60,48.80 L278.70,48.80 L278.70,55.20 L277.60,55.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M279.30,48.80 L280.40,48.80 L280.40,55.20 L279.30,55.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M277.20,48.20 L280.80,48.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M277.20,55.80 L280.80,55.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="279.00" cy="61.70" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="279.00" y="62.60" font-size="2.0" text-anchor="middle" fill="#1f5fa8">719</text>
-<path d="M284.80,50.46 L289.20,53.54 L289.20,50.46 L284.80,53.54 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M287.00,52.00 L287.00,49.14" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M285.50,49.14 L288.50,49.14" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="287.00" y="47.00" font-size="1.8" text-anchor="middle" fill="#111111">V-F1</text>
-<path d="M294.24,52.00 L297.76,50.46 L297.76,53.54 Z" fill="#111111" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M294.24,50.24 L294.24,53.76" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<text x="296.00" y="47.00" font-size="1.8" text-anchor="middle" fill="#111111">NRV-5</text>
-<text x="306.00" y="53.00" font-size="1.8" text-anchor="start" fill="#111111">Ar A4 (лист 6)</text>
+<text x="248.00" y="46.00" font-size="1.6" text-anchor="start" fill="#111111">рукав PTFE ¾″</text>
+<path d="M250.60,24.80 L251.70,24.80 L251.70,31.20 L250.60,31.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M252.30,24.80 L253.40,24.80 L253.40,31.20 L252.30,31.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M250.20,24.20 L253.80,24.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M250.20,31.80 L253.80,31.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="252.00" cy="37.70" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="252.00" y="38.60" font-size="2.0" text-anchor="middle" fill="#1f5fa8">717</text>
+<path d="M259.00,28.00 L259.00,25.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<circle cx="259.00" cy="22.40" r="2.60" fill="#ffffff" stroke="#111111" stroke-width="0.3"/>
+<text x="259.00" y="23.20" font-size="1.8" text-anchor="middle" fill="#111111">PI</text>
+<text x="255.50" y="20.00" font-size="1.8" text-anchor="end" fill="#111111">PI-5</text>
+<path d="M264.60,24.80 L265.70,24.80 L265.70,31.20 L264.60,31.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M266.30,24.80 L267.40,24.80 L267.40,31.20 L266.30,31.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M264.20,24.20 L267.80,24.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M264.20,31.80 L267.80,31.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="266.00" cy="37.70" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="266.00" y="38.60" font-size="2.0" text-anchor="middle" fill="#1f5fa8">718</text>
+<path d="M270.00,17.00 L276.00,17.00 L276.00,23.00 L270.00,23.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<text x="277.00" y="20.00" font-size="1.8" text-anchor="start" fill="#111111">PSV-4</text>
+<text x="205.00" y="13.00" font-size="1.8" text-anchor="end" fill="#111111">сброс → коллектор сбросов (лист 4)</text>
+<path d="M278.60,24.80 L279.70,24.80 L279.70,31.20 L278.60,31.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M280.30,24.80 L281.40,24.80 L281.40,31.20 L280.30,31.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M278.20,24.20 L281.80,24.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M278.20,31.80 L281.80,31.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="280.00" cy="37.70" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="280.00" y="38.60" font-size="2.0" text-anchor="middle" fill="#1f5fa8">719</text>
+<path d="M285.46,18.80 L288.54,23.20 L285.46,23.20 L288.54,18.80 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M287.00,21.00 L289.86,21.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M289.86,19.50 L289.86,22.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<text x="290.00" y="22.00" font-size="1.8" text-anchor="start" fill="#111111">VV-2</text>
+<text x="331.00" y="15.00" font-size="1.8" text-anchor="start" fill="#111111">вакуум от VP-1 (лист 6)</text>
+<path d="M292.60,24.80 L293.70,24.80 L293.70,31.20 L292.60,31.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M294.30,24.80 L295.40,24.80 L295.40,31.20 L294.30,31.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M292.20,24.20 L295.80,24.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M292.20,31.80 L295.80,31.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="294.00" cy="37.70" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="294.00" y="38.60" font-size="2.0" text-anchor="middle" fill="#1f5fa8">720</text>
+<path d="M299.80,26.46 L304.20,29.54 L304.20,26.46 L299.80,29.54 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M302.00,28.00 L302.00,25.14" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M300.50,25.14 L303.50,25.14" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<text x="302.00" y="34.00" font-size="1.8" text-anchor="middle" fill="#111111">V-F1</text>
+<path d="M309.24,28.00 L312.76,26.46 L312.76,29.54 Z" fill="#111111" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M309.24,26.24 L309.24,29.76" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="311.00" y="34.00" font-size="1.8" text-anchor="middle" fill="#111111">NRV-5</text>
+<text x="331.00" y="29.00" font-size="1.8" text-anchor="start" fill="#111111">Ar A4 (лист 6)</text>
+<text x="299.00" y="39.00" font-size="1.7" text-anchor="start" fill="#111111">гребёнка нутча на раме, выше нутча</text>
 <path d="M226.80,137.60 L233.20,137.60 L233.20,138.70 L226.80,138.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M226.80,139.30 L233.20,139.30 L233.20,140.40 L226.80,140.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M226.20,137.20 L226.20,140.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M233.80,137.20 L233.80,140.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="222.00" cy="139.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="222.00" y="139.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">720</text>
+<text x="222.00" y="139.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">721</text>
 <path d="M228.46,143.80 L231.54,148.20 L228.46,148.20 L231.54,143.80 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M230.00,146.00 L232.86,146.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M232.86,144.50 L232.86,147.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
@@ -280,13 +292,13 @@
 <path d="M226.20,151.20 L226.20,154.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M233.80,151.20 L233.80,154.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="222.00" cy="153.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="222.00" y="153.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">721</text>
+<text x="222.00" y="153.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">722</text>
 <path d="M241.60,158.80 L242.70,158.80 L242.70,165.20 L241.60,165.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M243.30,158.80 L244.40,158.80 L244.40,165.20 L243.30,165.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M241.20,158.20 L244.80,158.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M241.20,165.80 L244.80,165.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="243.00" cy="154.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="243.00" y="155.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">722</text>
+<text x="243.00" y="155.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">723</text>
 <path d="M249.00,155.00 L259.00,155.00 L259.00,169.00 L249.00,169.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
 <text x="254.00" y="163.00" font-size="2.0" text-anchor="middle" fill="#111111" font-weight="bold">P-4</text>
 <path d="M246.20,160.60 L247.60,160.60 L247.60,163.40 L246.20,163.40 Z" fill="#9a9a9a" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
@@ -298,20 +310,20 @@
 <path d="M250.20,145.70 L250.20,149.30" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M257.80,145.70 L257.80,149.30" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="246.00" cy="147.50" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="246.00" y="148.40" font-size="2.0" text-anchor="middle" fill="#1f5fa8">723</text>
+<text x="246.00" y="148.40" font-size="2.0" text-anchor="middle" fill="#1f5fa8">724</text>
 <text x="256.00" y="137.50" font-size="1.8" text-anchor="start" fill="#111111">воздух ← регулятор</text>
 <path d="M263.60,158.80 L264.70,158.80 L264.70,165.20 L263.60,165.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M265.30,158.80 L266.40,158.80 L266.40,165.20 L265.30,165.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M263.20,158.20 L266.80,158.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M263.20,165.80 L266.80,165.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="265.00" cy="154.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="265.00" y="155.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">724</text>
+<text x="265.00" y="155.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">725</text>
 <path d="M279.60,158.80 L280.70,158.80 L280.70,165.20 L279.60,165.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M281.30,158.80 L282.40,158.80 L282.40,165.20 L281.30,165.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M279.20,158.20 L282.80,158.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M279.20,165.80 L282.80,165.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="281.00" cy="154.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="281.00" y="155.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">725</text>
+<text x="281.00" y="155.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">726</text>
 <path d="M286.00,145.00 L304.00,145.00 L304.00,195.00 L286.00,195.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
 <path d="M290.00,150.00 L300.00,150.00 L300.00,190.00 L290.00,190.00 Z" fill="none" stroke="#111111" stroke-width="0.3" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <text x="284.00" y="141.00" font-size="2.4" text-anchor="start" fill="#111111" font-weight="bold">F-2 10″</text>
@@ -323,7 +335,7 @@
 <path d="M307.20,146.20 L310.80,146.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M307.20,153.80 L310.80,153.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="309.00" cy="142.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="309.00" y="143.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">726</text>
+<text x="309.00" y="143.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">727</text>
 <path d="M315.10,148.32 L319.90,151.68 L319.90,148.32 L315.10,151.68 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M317.50,150.00 L317.50,146.88" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M316.00,146.88 L319.00,146.88" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
@@ -333,7 +345,7 @@
 <path d="M324.20,146.20 L327.80,146.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M324.20,153.80 L327.80,153.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="326.00" cy="142.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="326.00" y="143.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">727</text>
+<text x="326.00" y="143.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">728</text>
 <path d="M330.00,175.00 L352.00,175.00 L352.00,213.00 L330.00,213.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
 <path d="M340.00,175.00 L340.00,210.00" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <text x="355.00" y="190.00" font-size="1.8" text-anchor="start" fill="#111111">канистра, налив</text>
@@ -374,15 +386,16 @@
 <text x="208.30" y="91.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K119</text>
 <text x="208.30" y="123.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K119</text>
 <text x="240.40" y="62.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
-<text x="254.40" y="62.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
-<text x="268.40" y="62.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
-<text x="282.40" y="62.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="255.40" y="38.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="269.40" y="38.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="283.40" y="38.30" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="290.60" y="38.30" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
 <text x="218.60" y="139.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
 <text x="218.60" y="153.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
 <text x="239.60" y="155.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
 <text x="242.60" y="148.10" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
 <text x="268.40" y="155.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
-<text x="277.60" y="155.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25?</text>
-<text x="305.60" y="143.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25?</text>
-<text x="329.40" y="143.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25?</text>
+<text x="277.60" y="155.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="305.60" y="143.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="329.40" y="143.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
 </svg>
