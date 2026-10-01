@@ -458,7 +458,7 @@
 <path d="M222.00,99.00 L393.00,99.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="101.79" font-size="1.75" text-anchor="start" fill="#111111">714</text>
 <text x="232.00" y="101.79" font-size="1.75" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="101.79" font-size="1.75" text-anchor="start" fill="#111111">тройник 50,5 (вход нутча) → переход 50,5/64</text>
+<text x="238.00" y="101.79" font-size="1.75" text-anchor="start" fill="#111111">тройник 45° 50,5 (вход нутча) → переход 50,5/64</text>
 <text x="356.00" y="101.79" font-size="1.75" text-anchor="start" fill="#111111">K50,5 (1″)</text>
 <text x="381.00" y="101.79" font-size="1.75" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,103.10 L393.00,103.10" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -506,7 +506,7 @@
 <path d="M222.00,131.80 L393.00,131.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="134.59" font-size="1.75" text-anchor="start" fill="#111111">722</text>
 <text x="232.00" y="134.59" font-size="1.75" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="134.59" font-size="1.75" text-anchor="start" fill="#111111">тройник 50,5 (вход нутча) → переход 50,5/25</text>
+<text x="238.00" y="134.59" font-size="1.75" text-anchor="start" fill="#111111">тройник 45° 50,5 (вход нутча) → переход 50,5/25</text>
 <text x="356.00" y="134.59" font-size="1.75" text-anchor="start" fill="#111111">K50,5 (1″)</text>
 <text x="381.00" y="134.59" font-size="1.75" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,135.90 L393.00,135.90" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>

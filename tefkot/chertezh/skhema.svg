@@ -267,7 +267,7 @@
 <text x="276.70" y="244.14" font-size="3.045" text-anchor="end" fill="#5d666d">Na₂SO₄</text>
 <path d="M280.76,222.68 L284.24,222.68 L284.24,227.32 L280.76,227.32 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M284.24,225.00 L299.90,225.00" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
-<text x="279.60" y="224.42" font-size="3.045" text-anchor="end" fill="#5d666d">тройник 50,5</text>
+<text x="279.60" y="224.42" font-size="3.045" text-anchor="end" fill="#5d666d">тройник 45°</text>
 <circle cx="287.72" cy="229.64" r="2.32" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
 <text x="287.72" y="230.51" font-size="3.045" text-anchor="middle" fill="#5d666d">PI</text>
 <path d="M287.72,225.00 L287.72,227.32" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>

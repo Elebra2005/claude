@@ -31,7 +31,7 @@
 <path d="M136.00,147.00 L136.00,156.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M151.00,130.00 L190.00,130.00 L190.00,30.00 L230.00,30.00 L230.00,32.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M230.00,35.80 L230.00,55.20" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
-<path d="M230.00,47.00 L233.20,47.00" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M230.00,50.20 L233.20,47.00" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
 <path d="M230.00,61.80 L230.00,65.40" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
 <path d="M230.00,128.00 L230.00,131.60" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
 <path d="M240.80,47.00 L241.20,47.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
@@ -210,7 +210,7 @@
 <path d="M233.80,32.20 L233.80,35.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="222.00" cy="34.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="222.00" y="34.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">713</text>
-<text x="227.00" y="42.00" font-size="1.7" text-anchor="end" fill="#111111">тройник</text>
+<text x="227.00" y="42.00" font-size="1.7" text-anchor="end" fill="#111111">тройник 45°</text>
 <text x="227.00" y="45.50" font-size="1.7" text-anchor="end" fill="#111111">50,5</text>
 <path d="M226.80,55.60 L233.20,55.60 L233.20,56.70 L226.80,56.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M226.80,57.30 L233.20,57.30 L233.20,58.40 L226.80,58.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
@@ -458,7 +458,7 @@
 <text x="25.00" y="180.00" font-size="2.0" text-anchor="start" fill="#111111">(рукава переставить; соединения те же)</text>
 <text x="25.00" y="218.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">Примечания</text>
 <text x="25.00" y="223.50" font-size="2.0" text-anchor="start" fill="#111111">1. Рукава — силикон армированный на ёлочках: выгрузка 1″ на K50,5×25,4, линии K25 — ¾″ на K25×19,05.</text>
-<text x="25.00" y="227.00" font-size="2.0" text-anchor="start" fill="#111111">2. Нутч F-1 — сборка на клампах K119 (Бабкин); сверху тройник 50,5 + переход 50,5/25 на отвод.</text>
+<text x="25.00" y="227.00" font-size="2.0" text-anchor="start" fill="#111111">2. Нутч F-1 — сборка на клампах K119 (Бабкин); сверху тройник 45° 50,5 + переход 50,5/25 на отвод.</text>
 <text x="25.00" y="230.50" font-size="2.0" text-anchor="start" fill="#111111">3. P-2 — МН-0,25, ¼″NPT → кламп 50,5; P-4 — ¼″NPT → K25. Прокладки — PTFE.</text>
 <text x="58.60" y="61.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K50,5</text>
 <text x="80.40" y="63.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K50,5</text>
