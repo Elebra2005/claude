@@ -56,9 +56,8 @@
 <path d="M416.00,300.00 L416.00,296.00" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
 <path d="M431.00,300.00 L431.00,296.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M431.00,130.00 L431.00,125.00 L476.00,125.00 L476.00,166.00 L486.00,166.00 L486.00,156.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M424.14,277.00 L420.14,277.00 L420.14,150.00 L305.00,150.00 L305.00,494.80" fill="none" stroke="#0f6f6f" stroke-width="0.7" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M305.00,499.20 L305.00,505.00" fill="none" stroke="#0f6f6f" stroke-width="0.7" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M424.14,145.00 L417.14,145.00 L417.14,144.00 L313.00,144.00 L313.00,515.00" fill="none" stroke="#0f6f6f" stroke-width="0.7" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M424.14,277.00 L420.14,277.00 L420.14,150.00 L305.00,150.00 L305.00,470.00" fill="none" stroke="#0f6f6f" stroke-width="0.7" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M424.14,145.00 L417.14,145.00 L417.14,144.00 L313.00,144.00 L313.00,470.00" fill="none" stroke="#0f6f6f" stroke-width="0.7" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M446.00,300.00 L446.00,280.60" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round"/>
 <path d="M446.00,275.40 L446.00,269.00" fill="none" stroke="#111111" stroke-width="1.4" stroke-linejoin="round"/>
 <path d="M471.00,195.00 L465.00,198.00 L465.00,227.00 L483.00,227.00 L483.00,198.00 L477.00,195.00" fill="none" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
@@ -68,8 +67,7 @@
 <path d="M458.00,236.00 L458.00,231.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M458.00,227.00 L458.00,222.00 L453.60,222.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M450.40,222.00 L446.00,222.00 L446.00,266.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M245.00,505.00 L323.80,505.00" fill="none" stroke="#0f6f6f" stroke-width="0.8" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M328.20,505.00 L338.00,505.00 L338.00,410.00 L348.00,410.00" fill="none" stroke="#0f6f6f" stroke-width="0.8" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M245.00,505.00 L338.00,505.00 L338.00,410.00 L348.00,410.00" fill="none" stroke="#0f6f6f" stroke-width="0.8" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M452.00,330.00 L464.00,330.00 L464.00,515.00 L245.00,515.00" fill="none" stroke="#0f6f6f" stroke-width="0.8" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M486.00,156.00 L486.00,146.00 L492.00,140.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M492.00,140.00 L607.60,140.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
@@ -544,6 +542,9 @@
 <text x="422.14" y="179.00" font-size="2.6" text-anchor="end" fill="#111111" font-weight="bold">E-1</text>
 <text x="422.14" y="183.00" font-size="1.7" text-anchor="end" fill="#111111">стекло</text>
 <text x="433.00" y="123.00" font-size="1.7" text-anchor="start" fill="#111111">шлиф → ёлочка, рукав ¾″ → кламп K25</text>
+<path d="M297.00,470.00 L321.00,470.00 L321.00,482.00 L297.00,482.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
+<text x="309.00" y="477.50" font-size="1.9" text-anchor="middle" fill="#111111" font-weight="bold">TC-2</text>
+<text x="309.00" y="486.00" font-size="1.6" text-anchor="middle" fill="#111111">чиллер E-1</text>
 <path d="M442.80,292.60 L449.20,292.60 L449.20,293.70 L442.80,293.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M442.80,294.30 L449.20,294.30 L449.20,295.40 L442.80,295.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M442.20,292.20 L442.20,295.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -587,16 +588,8 @@
 <path d="M450.40,220.40 L450.40,223.60" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <text x="452.00" y="219.00" font-size="1.6" text-anchor="middle" fill="#111111">NRV-4</text>
 <path d="M190.00,500.00 L245.00,500.00 L245.00,520.00 L190.00,520.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
-<text x="193.00" y="509.00" font-size="2.2" text-anchor="start" fill="#111111" font-weight="bold">TC-1 чиллер</text>
+<text x="193.00" y="509.00" font-size="2.0" text-anchor="start" fill="#111111" font-weight="bold">TC-1 чиллер рубашки</text>
 <text x="193.00" y="514.00" font-size="1.7" text-anchor="start" fill="#111111">≥1 кВт при −25 °C</text>
-<path d="M323.80,503.46 L328.20,506.54 L328.20,503.46 L323.80,506.54 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M326.00,505.00 L326.00,502.14" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M324.50,502.14 L327.50,502.14" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="322.00" y="500.00" font-size="1.7" text-anchor="start" fill="#111111" font-weight="bold">CV-J</text>
-<path d="M303.46,494.80 L306.54,499.20 L303.46,499.20 L306.54,494.80 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M305.00,497.00 L307.86,497.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M307.86,495.50 L307.86,498.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="292.00" y="498.00" font-size="1.7" text-anchor="end" fill="#111111" font-weight="bold">CV-E</text>
 <text x="466.00" y="336.00" font-size="1.8" text-anchor="start" fill="#111111">JO</text>
 <text x="330.00" y="416.00" font-size="1.8" text-anchor="start" fill="#111111">JI</text>
 <text x="480.00" y="32.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">ГРЕБЁНКА (лист 4)</text>
@@ -1092,13 +1085,13 @@
 <text x="797.00" y="90.42" font-size="1.8" text-anchor="start" fill="#111111">6</text>
 <path d="M712.00,91.60 L806.00,91.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="713.00" y="94.12" font-size="1.8" text-anchor="start" fill="#111111">TC-1</text>
-<text x="727.00" y="94.12" font-size="1.8" text-anchor="start" fill="#111111">Чиллер</text>
+<text x="727.00" y="94.12" font-size="1.8" text-anchor="start" fill="#111111">Чиллер рубашки R-1</text>
 <text x="789.00" y="94.12" font-size="1.8" text-anchor="start" fill="#111111">1</text>
 <text x="797.00" y="94.12" font-size="1.8" text-anchor="start" fill="#111111">6</text>
 <path d="M712.00,95.30 L806.00,95.30" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="97.82" font-size="1.8" text-anchor="start" fill="#111111">CV-J, CV-E</text>
-<text x="727.00" y="97.82" font-size="1.8" text-anchor="start" fill="#111111">Краны теплоносителя</text>
-<text x="789.00" y="97.82" font-size="1.8" text-anchor="start" fill="#111111">2</text>
+<text x="713.00" y="97.82" font-size="1.8" text-anchor="start" fill="#111111">TC-2</text>
+<text x="727.00" y="97.82" font-size="1.8" text-anchor="start" fill="#111111">Чиллер конденсатора E-1</text>
+<text x="789.00" y="97.82" font-size="1.8" text-anchor="start" fill="#111111">1</text>
 <text x="797.00" y="97.82" font-size="1.8" text-anchor="start" fill="#111111">6</text>
 <path d="M712.00,99.00 L806.00,99.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="713.00" y="101.52" font-size="1.8" text-anchor="start" fill="#111111">P-2</text>

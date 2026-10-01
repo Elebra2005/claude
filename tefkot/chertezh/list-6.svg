@@ -28,16 +28,10 @@
 <path d="M300.00,40.00 L350.00,40.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M325.00,40.00 L325.00,64.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M366.00,40.00 L380.00,40.00 L380.00,28.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M68.00,158.00 L100.00,158.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M68.00,172.00 L100.00,172.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M100.00,158.00 L100.00,145.00 L122.40,145.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
-<path d="M127.60,145.00 L150.00,145.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
-<path d="M100.00,158.00 L137.40,158.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
-<path d="M142.60,158.00 L177.00,158.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
-<path d="M177.00,158.00 L213.00,158.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
-<path d="M100.00,172.00 L100.00,190.00 L150.00,190.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
-<path d="M100.00,172.00 L177.00,172.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
-<path d="M177.00,172.00 L215.00,172.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
+<path d="M68.00,149.00 L150.00,149.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M68.00,161.00 L150.00,161.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M68.00,183.00 L150.00,183.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<path d="M68.00,195.00 L150.00,195.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M0.20,0.20 L419.80,0.20 L419.80,296.80 L0.20,296.80 Z" fill="none" stroke="#bbbbbb" stroke-width="0.1" stroke-linejoin="round"/>
 <path d="M20.00,5.00 L415.00,5.00 L415.00,292.00 L20.00,292.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <path d="M230.00,237.00 L415.00,237.00 L415.00,292.00 L230.00,292.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
@@ -142,30 +136,30 @@
 <path d="M380.00,25.80 L380.90,28.00 L379.10,28.00 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="384.00" y="27.00" font-size="1.9" text-anchor="start" fill="#111111">выхлоп в вытяжку</text>
 <text x="330.00" y="50.00" font-size="1.9" text-anchor="start" fill="#c62828">рукав вакуумный армир. ID ?, L=?</text>
-<text x="25.00" y="130.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">ТЕПЛОНОСИТЕЛЬ: один чиллер TC-1 → рубашка R-1 ∥ E-1, б/м</text>
-<path d="M28.00,150.00 L68.00,150.00 L68.00,180.00 L28.00,180.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
-<text x="32.00" y="160.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">TC-1</text>
-<text x="32.00" y="165.00" font-size="2.0" text-anchor="start" fill="#111111">чиллер</text>
-<text x="32.00" y="169.00" font-size="1.8" text-anchor="start" fill="#111111">≥1 кВт при −25 °C</text>
-<text x="32.00" y="173.00" font-size="1.8" text-anchor="start" fill="#c62828">присоед. ?</text>
-<text x="72.00" y="156.00" font-size="1.8" text-anchor="start" fill="#111111">подача</text>
-<text x="72.00" y="177.00" font-size="1.8" text-anchor="start" fill="#111111">возврат</text>
-<path d="M122.40,143.18 L127.60,146.82 L127.60,143.18 L122.40,146.82 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M125.00,145.00 L125.00,141.62" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M123.50,141.62 L126.50,141.62" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="120.00" y="140.00" font-size="2.0" text-anchor="start" fill="#111111" font-weight="bold">CV-J</text>
-<text x="151.00" y="146.00" font-size="1.9" text-anchor="start" fill="#111111">→ JI рубашки</text>
-<path d="M137.40,156.18 L142.60,159.82 L142.60,156.18 L137.40,159.82 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M140.00,158.00 L140.00,154.62" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<path d="M138.50,154.62 L141.50,154.62" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<text x="135.00" y="153.00" font-size="2.0" text-anchor="start" fill="#111111" font-weight="bold">CV-E</text>
-<path d="M215.20,158.00 L213.00,158.90 L213.00,157.10 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="186.00" y="163.00" font-size="1.9" text-anchor="start" fill="#111111">на E-1 вход</text>
-<text x="152.00" y="191.00" font-size="1.9" text-anchor="start" fill="#111111">← рубашка R-1, JO</text>
-<text x="216.00" y="173.00" font-size="1.9" text-anchor="start" fill="#111111">← E-1 выход</text>
-<text x="100.00" y="214.00" font-size="2.0" text-anchor="start" fill="#111111">рубашка и E-1 всегда на одной температуре: стадии 1–6 −25 °C, стадия 7 +10 °C</text>
-<text x="100.00" y="218.00" font-size="2.0" text-anchor="start" fill="#c62828">рукава EPDM армир. ID ? в изоляции 13 мм; ёлочки + 2 хомута нерж. на соединение</text>
-<text x="100.00" y="222.00" font-size="2.0" text-anchor="start" fill="#c62828">тройники с ёлочками ID ? — 4 шт.; длины рукавов L=?</text>
+<text x="25.00" y="130.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">ТЕПЛОНОСИТЕЛЬ: два чиллера — TC-1 → рубашка R-1, TC-2 → E-1, б/м</text>
+<path d="M28.00,142.00 L68.00,142.00 L68.00,168.00 L28.00,168.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
+<text x="32.00" y="150.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">TC-1</text>
+<text x="32.00" y="155.00" font-size="1.9" text-anchor="start" fill="#111111">чиллер рубашки</text>
+<text x="32.00" y="159.50" font-size="1.7" text-anchor="start" fill="#111111">≥ 0,8–1 кВт при −25 °C</text>
+<text x="32.00" y="163.50" font-size="1.7" text-anchor="start" fill="#c62828">присоед. ?</text>
+<path d="M152.20,149.00 L150.00,149.90 L150.00,148.10 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
+<text x="153.00" y="150.00" font-size="1.9" text-anchor="start" fill="#111111">→ JI рубашки R-1 (N8, снизу)</text>
+<text x="153.00" y="162.00" font-size="1.9" text-anchor="start" fill="#111111">← JO рубашки R-1 (N7, сверху)</text>
+<text x="72.00" y="147.50" font-size="1.8" text-anchor="start" fill="#111111">подача</text>
+<text x="72.00" y="166.00" font-size="1.8" text-anchor="start" fill="#111111">возврат</text>
+<path d="M28.00,176.00 L68.00,176.00 L68.00,202.00 L28.00,202.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
+<text x="32.00" y="184.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">TC-2</text>
+<text x="32.00" y="189.00" font-size="1.9" text-anchor="start" fill="#111111">чиллер E-1</text>
+<text x="32.00" y="193.50" font-size="1.7" text-anchor="start" fill="#111111">≥ 0,3–0,5 кВт при −25 °C</text>
+<text x="32.00" y="197.50" font-size="1.7" text-anchor="start" fill="#c62828">присоед. ?</text>
+<path d="M152.20,183.00 L150.00,183.90 L150.00,182.10 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
+<text x="153.00" y="184.00" font-size="1.9" text-anchor="start" fill="#111111">→ E-1, нижняя олива</text>
+<text x="153.00" y="196.00" font-size="1.9" text-anchor="start" fill="#111111">← E-1, верхняя олива</text>
+<text x="72.00" y="181.50" font-size="1.8" text-anchor="start" fill="#111111">подача</text>
+<text x="72.00" y="200.00" font-size="1.8" text-anchor="start" fill="#111111">возврат</text>
+<text x="28.00" y="210.00" font-size="2.0" text-anchor="start" fill="#111111">контуры раздельные: стадии 1–6 TC-1 и TC-2 на −25 °C; стадия 7: TC-2 (E-1) +5…+10 °C, TC-1 (рубашка) до +30 °C</text>
+<text x="28.00" y="214.00" font-size="2.0" text-anchor="start" fill="#111111">стеклянный змеевик E-1 ≤ 0,5 бар — у TC-2 насос с малым напором или байпас</text>
+<text x="28.00" y="218.00" font-size="2.0" text-anchor="start" fill="#c62828">рукава EPDM армир. ID ? в изоляции 13 мм; ёлочки + 2 хомута нерж. на соединение; длины L=?</text>
 <text x="290.00" y="80.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">Примечания</text>
 <text x="290.00" y="85.50" font-size="2.0" text-anchor="start" fill="#111111">1. Аргонные линии — трубка PTFE 6×8</text>
 <text x="290.00" y="89.00" font-size="2.0" text-anchor="start" fill="#111111">   или нерж. ¼″, обжимные фитинги.</text>

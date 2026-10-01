@@ -145,10 +145,10 @@
 <path d="M228.56,83.48 L228.56,97.40 L233.78,100.30 L228.56,103.20 L233.78,106.10 L228.56,109.00 L233.78,111.90 L228.56,114.80 L233.78,117.70 L233.78,83.48" fill="none" stroke="#0f8a8a" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M228.56,83.48 L228.56,78.84 L222.18,78.84" fill="none" stroke="#0f8a8a" stroke-width="0.638" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M233.78,83.48 L233.78,78.84 L239.00,78.84" fill="none" stroke="#0f8a8a" stroke-width="0.638" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<text x="240.16" y="80.00" font-size="3.045" text-anchor="start" fill="#5d666d">→ TC-1</text>
-<text x="221.02" y="80.00" font-size="3.045" text-anchor="end" fill="#5d666d">от TC-1</text>
+<text x="240.16" y="80.00" font-size="3.045" text-anchor="start" fill="#5d666d">→ TC-2</text>
+<text x="221.02" y="80.00" font-size="3.045" text-anchor="end" fill="#5d666d">от TC-2</text>
 <text x="227.40" y="129.88" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">E-1</text>
-<text x="169.40" y="65.50" font-size="3.045" text-anchor="start" fill="#5d666d">змеевик: −25 °C / ст.7 +10 °C</text>
+<text x="162.44" y="65.50" font-size="3.045" text-anchor="start" fill="#5d666d">змеевик: −25 °C / ст.7 +5…+10 °C</text>
 <path d="M259.88,90.44 L276.12,90.44 L276.12,109.58 L259.88,109.58 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M265.10,87.54 L270.90,87.54 L270.90,90.44 L265.10,90.44 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="261.62" y="98.56" font-size="3.045" text-anchor="start" fill="#5d666d">MeSiCl₃</text>
@@ -175,8 +175,16 @@
 <text x="233.20" y="67.24" font-size="3.045" text-anchor="start" fill="#1d2226">E-1: шлиф → ёлочка</text>
 <path d="M117.20,242.40 L152.00,242.40 L152.00,262.70 L117.20,262.70 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="120.68" y="249.36" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">TC-1</text>
-<text x="120.68" y="254.00" font-size="3.045" text-anchor="start" fill="#5d666d">чиллер</text>
+<text x="120.68" y="254.00" font-size="3.045" text-anchor="start" fill="#5d666d">чиллер рубашки</text>
 <text x="120.68" y="258.06" font-size="3.045" text-anchor="start" fill="#5d666d">−30…+50 °C</text>
+<path d="M117.20,216.30 L152.00,216.30 L152.00,236.60 L117.20,236.60 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<text x="120.68" y="223.26" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">TC-2</text>
+<text x="120.68" y="227.90" font-size="3.045" text-anchor="start" fill="#5d666d">чиллер E-1</text>
+<text x="120.68" y="231.96" font-size="3.045" text-anchor="start" fill="#5d666d">−30…+20 °C</text>
+<path d="M117.20,222.10 L107.34,222.10" fill="none" stroke="#0f8a8a" stroke-width="0.638" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<text x="106.18" y="223.26" font-size="3.045" text-anchor="end" fill="#5d666d">→ E-1 (подача)</text>
+<path d="M117.20,230.80 L107.34,230.80" fill="none" stroke="#0f8a8a" stroke-width="0.638" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
+<text x="106.18" y="231.96" font-size="3.045" text-anchor="end" fill="#5d666d">← E-1 (возврат)</text>
 <path d="M152.00,248.20 L163.60,248.20 L163.60,190.20 L171.14,190.20" fill="none" stroke="#0f8a8a" stroke-width="0.638" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M152.00,257.48 L165.92,257.48 L165.92,230.80 L253.50,230.80 L253.50,146.70 L248.86,146.70" fill="none" stroke="#0f8a8a" stroke-width="0.638" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M310.34,62.60 L392.99,62.60" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
