@@ -29,8 +29,10 @@
 <path d="M98.50,79.00 L98.50,72.00 L118.00,72.00 L118.00,218.00 L150.00,218.00 L150.00,214.20" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M150.00,65.80 L150.00,59.00 L172.50,59.00 L172.50,221.00 L195.00,221.00 L195.00,214.20" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M195.00,65.80 L195.00,55.00 L265.60,55.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M270.40,55.00 L283.08,55.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M286.92,55.00 L300.00,55.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M270.40,55.00 L276.40,55.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
+<path d="M281.30,55.00 L283.08,55.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
+<path d="M286.92,55.00 L288.70,55.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
+<path d="M293.60,55.00 L300.00,55.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M0.20,0.20 L419.80,0.20 L419.80,296.80 L0.20,296.80 Z" fill="none" stroke="#bbbbbb" stroke-width="0.1" stroke-linejoin="round"/>
 <path d="M20.00,5.00 L415.00,5.00 L415.00,292.00 L20.00,292.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <path d="M230.00,237.00 L415.00,237.00 L415.00,292.00 L230.00,292.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
@@ -118,7 +120,7 @@
 <circle cx="58.00" cy="100.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="58.00" y="100.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">504</text>
 <text x="72.00" y="130.00" font-size="3" text-anchor="start" fill="#111111" font-weight="bold">G-1</text>
-<text x="72.00" y="135.00" font-size="2.0" text-anchor="start" fill="#111111">Atmaler БК-40</text>
+<text x="72.00" y="135.00" font-size="2.0" text-anchor="start" fill="#111111">Altmaler БК-40</text>
 <text x="72.00" y="139.00" font-size="2.0" text-anchor="start" fill="#c62828">Ø? × H?</text>
 <path d="M80.00,92.00 L87.00,92.00 L87.00,108.00 L80.00,108.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <path d="M83.50,108.00 L83.50,170.00" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
@@ -306,17 +308,31 @@
 <path d="M207.62,80.00 L208.42,82.20 L206.82,82.20 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <path d="M207.62,200.00 L206.82,197.80 L208.42,197.80 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="208.82" y="140.88" font-size="2.5" text-anchor="start" fill="#111111">600</text>
+<path d="M276.40,53.40 L277.70,53.40 L277.70,56.60 L276.40,56.60 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M265.60,53.32 L270.40,56.68 L270.40,53.32 L265.60,56.68 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M268.00,55.00 L268.00,51.88" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M266.50,51.88 L269.50,51.88" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <text x="263.00" y="49.00" font-size="1.9" text-anchor="start" fill="#111111">V-G2</text>
+<path d="M278.10,51.80 L279.20,51.80 L279.20,58.20 L278.10,58.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M279.80,51.80 L280.90,51.80 L280.90,58.20 L279.80,58.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M277.70,51.20 L281.30,51.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M277.70,58.80 L281.30,58.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="279.50" cy="47.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="279.50" y="48.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">525</text>
 <path d="M286.92,55.00 L283.08,56.68 L283.08,53.32 Z" fill="#111111" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M286.92,56.92 L286.92,53.08" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<text x="278.00" y="50.00" font-size="1.9" text-anchor="start" fill="#111111">NRV-3</text>
+<text x="285.00" y="60.50" font-size="1.9" text-anchor="middle" fill="#111111">NRV-3</text>
+<path d="M289.10,51.80 L290.20,51.80 L290.20,58.20 L289.10,58.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M290.80,51.80 L291.90,51.80 L291.90,58.20 L290.80,58.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<path d="M288.70,51.20 L292.30,51.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M288.70,58.80 L292.30,58.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<circle cx="290.50" cy="47.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="290.50" y="48.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">526</text>
+<path d="M292.30,53.40 L293.60,53.40 L293.60,56.60 L292.30,56.60 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <text x="302.00" y="56.00" font-size="2.0" text-anchor="start" fill="#111111">→ R-1, T2 под крышку (лист 2)</text>
-<text x="250.00" y="62.00" font-size="2.0" text-anchor="start" fill="#c62828">трубка PTFE 10×12 + обжим 12 мм, L=?</text>
-<text x="250.00" y="66.00" font-size="2.0" text-anchor="start" fill="#111111">переход обжим 12 мм → ¼″ у T2</text>
-<text x="250.00" y="80.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">Доработка бака Atmaler G-1</text>
+<text x="250.00" y="67.00" font-size="2.0" text-anchor="start" fill="#c62828">трубка PTFE 10×12 + обжим 12 мм, L=?</text>
+<text x="250.00" y="71.00" font-size="2.0" text-anchor="start" fill="#111111">переход обжим 12 мм → ¼″ у T2; NRV-3 — кламп ½″</text>
+<text x="250.00" y="80.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">Доработка бака Altmaler G-1</text>
 <text x="250.00" y="85.50" font-size="2.0" text-anchor="start" fill="#c62828">• снять блок редуктора (латунь); порт G? → переходник</text>
 <text x="250.00" y="88.90" font-size="2.0" text-anchor="start" fill="#c62828">  нерж. G? → ½″; резьбы всех штуцеров — замерить (?)</text>
 <text x="250.00" y="92.30" font-size="2.0" text-anchor="start" fill="#111111">• вход р-ра (сифон) и выход газа — наруж. G¼″:</text>
@@ -360,4 +376,6 @@
 <text x="206.40" y="206.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K50,5</text>
 <text x="183.60" y="213.00" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
 <text x="177.68" y="200.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K91</text>
+<text x="282.90" y="48.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
+<text x="293.90" y="48.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
 </svg>
