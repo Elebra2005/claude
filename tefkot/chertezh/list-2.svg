@@ -22,7 +22,7 @@
 <path d="M153.00,60.00 L153.00,55.00" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
 <path d="M50.00,174.00 L36.00,174.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
 <path d="M160.00,98.00 L174.00,98.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
-<path d="M105.00,200.00 L105.00,220.00" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M105.00,200.00 L105.00,216.20" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
 <path d="M105.00,220.00 L105.00,224.00 L108.00,227.00 L117.00,228.00" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
 <path d="M222.00,154.40 L391.00,154.40" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M0.20,0.20 L419.80,0.20 L419.80,296.80 L0.20,296.80 Z" fill="none" stroke="#bbbbbb" stroke-width="0.1" stroke-linejoin="round"/>
@@ -149,16 +149,19 @@
 <path d="M184.00,88.00 L206.00,88.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="184.50" y="87.20" font-size="2.0" text-anchor="start" fill="#111111">N7 выход, кламп DN25</text>
 <circle cx="177.00" cy="98.00" r="0.50" fill="#111111" stroke="#111111" stroke-width="0.1"/>
-<path d="M99.00,207.00 L111.00,207.00 L111.00,216.00 L99.00,216.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M111.00,211.00 L124.00,209.00" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
-<text x="126.00" y="210.00" font-size="2.1" text-anchor="start" fill="#111111">BV-1 кран CF3M</text>
+<path d="M99.00,200.00 L111.00,200.00 L111.00,209.00 L99.00,209.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<path d="M111.00,205.00 L124.00,205.00" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="126.00" y="206.50" font-size="2.1" text-anchor="start" fill="#111111" font-weight="bold">BV-1</text>
+<text x="146.00" y="206.50" font-size="2.0" text-anchor="start" fill="#111111">кран Swagelok CF3M, встроен в днище</text>
+<path d="M102.00,210.00 L108.00,210.00 L108.00,214.00 L102.00,214.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
+<text x="100.00" y="212.80" font-size="1.9" text-anchor="end" fill="#111111">переходник резьба/кламп 50,5 (сущ.)</text>
 <path d="M101.80,216.60 L108.20,216.60 L108.20,217.70 L101.80,217.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M101.80,218.30 L108.20,218.30 L108.20,219.40 L101.80,219.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M101.20,216.20 L101.20,219.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M108.80,216.20 L108.80,219.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="97.00" cy="218.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="97.00" y="218.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">205</text>
-<text x="119.00" y="232.00" font-size="2.0" text-anchor="start" fill="#111111">отвод 90° (сущ.) → лист 7</text>
+<text x="119.00" y="232.00" font-size="2.0" text-anchor="start" fill="#111111">отвод 90° кламп–кламп 50,5 → лист 7</text>
 <path d="M28.00,236.00 L190.00,236.00" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M30.00,236.00 L27.00,239.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <path d="M35.00,236.00 L32.00,239.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>

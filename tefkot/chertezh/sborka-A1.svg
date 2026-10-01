@@ -75,7 +75,7 @@
 <path d="M590.00,161.20 L590.00,171.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M624.00,140.00 L636.00,140.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M530.00,50.00 L672.00,50.00 L672.00,230.00 L677.60,230.00 L678.92,227.84 L680.00,227.60 L681.08,227.84 L682.40,230.00 L752.00,230.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M400.00,430.00 L400.00,442.00" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M400.00,430.00 L400.00,450.20" fill="none" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/>
 <path d="M400.00,454.00 L400.00,458.00 L409.20,458.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M412.80,458.00 L424.20,458.00" fill="none" stroke="#111111" stroke-width="2.0" stroke-linejoin="round"/>
 <path d="M416.00,458.00 L421.00,463.00 L421.00,466.20" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
@@ -689,8 +689,9 @@
 <text x="532.00" y="48.50" font-size="1.8" text-anchor="start" fill="#111111">коллектор сбросов NRV-1 → вытяжка</text>
 <path d="M745.00,215.00 L795.00,215.00 L795.00,245.00 L745.00,245.00 Z" fill="none" stroke="#666666" stroke-width="0.3" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <text x="758.00" y="233.00" font-size="1.8" text-anchor="start" fill="#666666">вытяжка</text>
-<path d="M394.00,442.00 L406.00,442.00 L406.00,450.00 L394.00,450.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<text x="386.00" y="447.00" font-size="1.9" text-anchor="end" fill="#111111" font-weight="bold">BV-1</text>
+<path d="M394.00,431.00 L406.00,431.00 L406.00,439.00 L394.00,439.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="392.00" y="436.00" font-size="1.9" text-anchor="end" fill="#111111" font-weight="bold">BV-1</text>
+<path d="M397.00,442.00 L403.00,442.00 L403.00,446.00 L397.00,446.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <path d="M396.80,450.60 L403.20,450.60 L403.20,451.70 L396.80,451.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M396.80,452.30 L403.20,452.30 L403.20,453.40 L396.80,453.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M396.20,450.20 L396.20,453.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
