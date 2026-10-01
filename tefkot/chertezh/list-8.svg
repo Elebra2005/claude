@@ -511,18 +511,19 @@
 <text x="255.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">8</text>
 <text x="273.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">—</text>
 <text x="287.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">8</text>
-<text x="301.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111"></text>
+<text x="301.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">хомуты усиленные болтовые</text>
 <path d="M222.00,165.00 L342.00,165.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">K119</text>
 <text x="241.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">3</text>
 <text x="255.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">5</text>
 <text x="273.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">5</text>
 <text x="287.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">—</text>
-<text x="301.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111"></text>
+<text x="301.00" y="168.13" font-size="1.9" text-anchor="start" fill="#111111">хомуты усиленные болтовые</text>
 <path d="M240.00,146.60 L240.00,169.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
 <path d="M254.00,146.60 L254.00,169.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
 <path d="M272.00,146.60 L272.00,169.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
 <path d="M286.00,146.60 L286.00,169.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
 <path d="M300.00,146.60 L300.00,169.60" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
 <text x="222.00" y="174.60" font-size="1.9" text-anchor="start" fill="#111111">K25 = ½″; K50,5 = 1″–1½″ (DN25, DN38); K91 = 3″; K119 = 4″. Межкламповые фильтры: +1 хомут и +1 прокладка на каждый.</text>
+<text x="222.00" y="178.60" font-size="1.9" text-anchor="start" fill="#111111">K91 и K119 (диоптры, межкламповые фильтры, нутч) — хомуты кламп УСИЛЕННЫЕ болтовые (Гросснер: с прокладками PTFE рекомендуются болтовые).</text>
 </svg>
