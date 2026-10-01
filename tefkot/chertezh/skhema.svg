@@ -172,7 +172,7 @@
 <path d="M248.28,127.85 L248.28,131.91" fill="none" stroke="#1d2226" stroke-width="0.58" stroke-linejoin="round"/>
 <text x="247.12" y="126.98" font-size="3.045" text-anchor="start" fill="#1d2226">NRV-4</text>
 <path d="M231.17,90.44 L231.17,62.60 L310.34,62.60" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
-<text x="233.20" y="67.24" font-size="3.045" text-anchor="start" fill="#1d2226">E-1: шлиф → K25</text>
+<text x="233.20" y="67.24" font-size="3.045" text-anchor="start" fill="#1d2226">E-1: шлиф → ёлочка</text>
 <path d="M117.20,242.40 L152.00,242.40 L152.00,262.70 L117.20,262.70 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="120.68" y="249.36" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">TC-1</text>
 <text x="120.68" y="254.00" font-size="3.045" text-anchor="start" fill="#5d666d">чиллер</text>
