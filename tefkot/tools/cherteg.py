@@ -594,13 +594,14 @@ def sheet6():
     for gx in (fx - 6, fx, fx + 6):
         s.line(gx, 73.5, gx, 88.5, lw=0.2, color=GREY, nc=True)
     J(s, 7, fx, 91, 'v', 'K119 (4″)', 'PTFE', 'диоптр → царга K119', side=-1, w=R + 1.5)
-    s.rect(fx - R, 91, 2 * R, 32, lw=0.6, fill='#ffffff')
+    s.rect(fx - R, 91, 2 * R, 16, lw=0.6, fill='#ffffff'); s.rect(fx - R, 107, 2 * R, 16, lw=0.6, fill='#ffffff')
+    J(s, 7, fx, 107, 'v', 'K119 (4″)', 'PTFE', 'царга K119 → царга K119', side=-1, w=R + 1.5)
     s.line(fx - R + 1, 116, fx + R - 1, 116, lw=0.3, dash='dash'); s.text(fx, 119.5, 'Na₂SO₄', 1.7, 'middle')
     J(s, 7, fx, 123, 'v', 'K119 (4″)', 'PTFE', 'царга → межкламповый фильтр K119 → переход K119/½″', side=-1, w=R + 1.5)
     s.poly([(fx - R, 123), (fx + R, 123), (fx + 3.2, 134), (fx - 3.2, 134)], lw=0.35, closed=True, fill='#ffffff')
     pipe(s, [(fx, 134), (fx, 136)], lw=1.4)
     s.text(fx + R + 3, 80, 'диоптр K119', 1.8); s.text(fx + R + 3, 100, 'F-1 нутч K119 (4″)', 2.2, bold=True)
-    s.text(fx + R + 3, 104, 'царга K119, L=?', 1.8); s.text(fx + R + 3, 127, 'межкламповый фильтр K119', 1.8)
+    s.text(fx + R + 3, 104, '2 царги K119 × 500 (7,4 л — весь осадок)', 1.8); s.text(fx + R + 3, 127, 'межкламповый фильтр K119', 1.8)
     s.text(fx + R + 3, 131, '+ ткань PTFE/PP, слой Na₂SO₄', 1.8)
     # гребёнка газов нутча на боковом отводе тройника 45°: PI-5, PSV-4, VV-2, аргон A4
     # гребёнка газов нутча — на раме ВЫШЕ нутча, к боковому отводу тройника 45° — рукавом PTFE ¾″ × К25
@@ -978,7 +979,8 @@ def sheet_assembly():
     JA(s, fx, 438, 'v', 'переход ½″/K119 → диоптр', side=-1, w=R + 1.5)
     s.rect(fx - R, 438, 2 * R, 12, lw=0.6, fill='#eef6fb')
     JA(s, fx, 450, 'v', 'диоптр → царга K119', side=-1, w=R + 1.5)
-    s.rect(fx - R, 450, 2 * R, 24, lw=0.6, fill='#ffffff'); s.line(fx - R + 1, 468, fx + R - 1, 468, lw=0.3, dash='dash')
+    s.rect(fx - R, 450, 2 * R, 12, lw=0.6, fill='#ffffff'); s.rect(fx - R, 462, 2 * R, 12, lw=0.6, fill='#ffffff'); s.line(fx - R + 1, 468, fx + R - 1, 468, lw=0.3, dash='dash')
+    JA(s, fx, 462, 'v', 'царга K119 → царга K119', side=-1, w=R + 1.5)
     JA(s, fx, 474, 'v', 'царга → межкламповый фильтр K119 → переход K119/½″', side=-1, w=R + 1.5)
     s.poly([(fx - R, 474), (fx + R, 474), (fx + 3.2, 482), (fx - 3.2, 482)], lw=0.35, closed=True, fill='#ffffff')
     pipe(s, [(fx, 482), (fx, 484)], lw=1.4)
