@@ -76,6 +76,7 @@ svg .eq{fill:var(--paper);stroke:var(--fg);stroke-width:1.6}
 svg .eqf{fill:var(--note-bg);stroke:var(--fg);stroke-width:1.6}
 svg .thin{fill:none;stroke:var(--muted);stroke-width:1}
 svg .glass{fill:#dcebf5;fill-opacity:.55;stroke:var(--fg);stroke-width:1.6}
+svg .tee{fill:var(--paper);stroke:var(--fg);stroke-width:1.6}
 svg .mesh{fill:none;stroke:var(--fg);stroke-width:2;stroke-dasharray:3 2}
 svg .liqlvl{fill:none;stroke:var(--l-liq);stroke-width:1.2;stroke-dasharray:6 4}
 svg .amine{fill:none;stroke:var(--l-amine);stroke-width:2.6}
@@ -237,9 +238,9 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <rect class="thin" x="190" y="541" width="132" height="10"/><text class="sm" x="228" y="568">W-2 весы 60 кг</text>
 <!-- PI + PSV-3 на генераторе -->
 <path class="vent" d="M290,360 L290,330 L290,300"/><rect class="eq" x="280" y="280" width="20" height="20"/><text class="lbl" x="232" y="276">PSV-3</text><text class="sm" x="236" y="296">0,4 бар</text><text class="sm" x="200" y="256">→ в коллектор сбросов</text>
-<circle class="eq" cx="262" cy="340" r="10"/><path class="thin" d="M262,350 L262,360"/><text class="sm" x="240" y="326">PI-3</text>
+<circle class="eq" cx="312" cy="348" r="9"/><path class="thin" d="M312,330 L312,339"/><text class="sm" x="321" y="352">PI-3</text>
 <!-- аргон A2 в G-1 -->
-<path class="argon" d="M330,300 L330,330 L300,330 L300,360"/>
+<path class="argon" d="M330,300 L330,330 L290,330"/>
 <!-- выход газа -->
 <path class="amine" d="M306,380 L360,380 L360,354 M360,336 L360,262 L404,262 L404,556 L438,556 L438,540"/><use href="#bvv" x="360" y="345"/><text class="sm" x="368" y="350">V-G1</text>
 <!-- C-1 -->
@@ -332,7 +333,7 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <path class="mesh" d="M939,770 L961,770"/><path class="eq" d="M938,776 L962,776 L954,790 L946,790 Z"/>
 <text class="lbl" x="930" y="740" text-anchor="end">F-1</text><text class="sm" x="930" y="754" text-anchor="end">нутч K119</text><text class="sm" x="930" y="766" text-anchor="end">Na₂SO₄</text>
 <rect class="eq" x="944" y="692" width="12" height="16" rx="1"/><path class="argon" d="M956,700 L1010,700"/><text class="sm" x="940" y="698" text-anchor="end">тройник 45°</text>
-<circle class="eq" cx="975" cy="716" r="8"/><text class="sm" x="975" y="719" text-anchor="middle" font-size="8">PI</text><path class="thin" d="M975,700 L975,708"/><text class="sm" x="987" y="720">PI-5</text>
+<circle class="eq" cx="968" cy="716" r="8"/><text class="sm" x="968" y="719" text-anchor="middle" font-size="8">PI</text><path class="thin" d="M968,700 L968,708"/><text class="sm" x="980" y="722">PI-5</text>
 <path class="vent" d="M984,700 L984,692"/><rect class="eq" x="977" y="676" width="14" height="16"/><path class="vent" d="M984,676 L984,666"/><text class="sm" x="984" y="660" text-anchor="middle">PSV-4</text>
 <path class="liq" d="M950,790 L950,801"/><path class="liq" d="M950,819 L950,830 L976,830"/><rect class="eq" x="976" y="818" width="30" height="24" rx="3"/><text class="lbl" x="979" y="835">P-4</text><text class="sm" x="900" y="858">МН-0,25 мембр.</text><path class="liq" d="M1006,830 L1040,830"/><use href="#bvv" x="950" y="810"/><text class="sm" x="958" y="814">V-F2</text>
 <!-- F-2 -->
@@ -342,6 +343,9 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <rect class="eq" x="1180" y="800" width="44" height="60" rx="3"/><rect class="eq" x="1236" y="800" width="44" height="60" rx="3"/>
 <rect class="thin" x="1172" y="864" width="116" height="8"/><text class="sm" x="1294" y="872">W-3 весы</text>
 <text class="sm" x="1180" y="894">канистры с р-лем (заземлены ⏚)</text>
+
+<!-- тройники (кол-во сверено со спецификацией) -->
+<rect class="tee" x="326" y="88" width="8" height="8"/><rect class="tee" x="416" y="88" width="8" height="8"/><rect class="tee" x="496" y="88" width="8" height="8"/><rect class="tee" x="1086" y="136" width="8" height="8"/><rect class="tee" x="1146" y="136" width="8" height="8"/><rect class="tee" x="1231" y="136" width="8" height="8"/><rect class="tee" x="1286" y="136" width="8" height="8"/><rect class="tee" x="1231" y="186" width="8" height="8"/><rect class="tee" x="1246" y="296" width="8" height="8"/><rect class="tee" x="1246" y="436" width="8" height="8"/><rect class="tee" x="964" y="696" width="8" height="8"/><rect class="tee" x="980" y="696" width="8" height="8"/><rect class="tee" x="996" y="696" width="8" height="8"/><rect class="tee" x="696" y="736" width="8" height="8"/><rect class="tee" x="696" y="696" width="8" height="8"/><rect class="tee" x="286" y="326" width="8" height="8"/><text class="sm" x="694" y="704" text-anchor="end">45°</text>
 </svg>
 </div>
 <p class="meta">Кран <span class="tag">SV-2</span> под аварийным <span class="tag">NRV-1</span> всегда открыт (табличка), закрывается только на время вакуумирования. <span class="tag">SV-3</span> (сброс на атмосферу) открывать только при давлении ≥ 0 по манометру шпунта.</p>
@@ -671,7 +675,7 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <tr><td class="pos">A1–A4, V-F1, V-B1</td><td>Кран шаровой 1/4″ обжим, нерж.</td><td></td><td class="n">7</td><td><span class="buy y">КУПИТЬ</span></td><td class="buy-l"><a href="https://bb-engineering.ru/b2v-h-6m-hy-lok-kran-sharovoy-obzhimnoy-6-mm-du-4-8-dvuhhodovoy-207-bar-10-65c-ptfe/" target="_blank" rel="noopener">BB-Engineering: кран Hy-Lok B2V-H-6M</a><br><a href="https://grossner.ru/shop/krany-sharovye/krany-rezbovye/kran-sharovoj-nerzhaveyushchij/" target="_blank" rel="noopener">Гросснер: кран шаровой резьбовой</a></td></tr>
 <tr><td></td><td>Обратный клапан 1/4″ (A1, A2, A3, P-1 нагнетание)</td><td>уплотнение EPDM; на A3 — PTFE/FFKM (пары хлорсилана)</td><td class="n">4</td><td><span class="buy y">КУПИТЬ</span></td><td class="buy-l"><a href="https://fluid-line.ru/cv700" target="_blank" rel="noopener">Флюид-Лайн: обратные клапаны Hy-Lok</a><br><a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/klapany-iz-nerzhaveyuschey-stali/klapan-obratnyj-rezba-rezba/" target="_blank" rel="noopener">Гросснер: обратный клапан резьба</a></td></tr>
 <tr><td class="pos">NRV-4, NRV-5</td><td>Обратный клапан 1/4″ нерж. (P-3 → реактор; A4 → F-1)</td><td>уплотнение PTFE/FFKM, не FKM</td><td class="n">2</td><td><span class="buy y">КУПИТЬ</span></td><td class="buy-l"><a href="https://fluid-line.ru/cv700" target="_blank" rel="noopener">Флюид-Лайн: обратные клапаны Hy-Lok</a><br><a href="https://grossner.ru/shop/klapany-nerzhaveyuschie/klapany-iz-nerzhaveyuschey-stali/klapan-obratnyj-rezba-rezba/" target="_blank" rel="noopener">Гросснер: обратный клапан резьба</a></td></tr>
-<tr><td></td><td>Тройники 1/4″ обжим</td><td></td><td class="n">6</td><td><span class="buy y">КУПИТЬ</span></td><td class="buy-l"><a href="https://bb-engineering.ru/fitingi-obzhimnye/" target="_blank" rel="noopener">BB-Engineering: обжимные фитинги</a></td></tr>
+<tr><td></td><td>Тройники обжимные ¼″ нерж. — распределитель аргона: отводы A2, A3, A4 (3) + PI-3 на линии A2 у G-1 (1)</td><td>4 по схеме + 2 запас</td><td class="n">6</td><td><span class="buy y">КУПИТЬ</span></td><td class="buy-l"><a href="https://bb-engineering.ru/fitingi-obzhimnye/" target="_blank" rel="noopener">BB-Engineering: обжимные фитинги</a></td></tr>
 <tr><td class="pos">VP-1</td><td>Мембранный химический вакуумный насос ≤ 10 мбар</td><td>PTFE-головки</td><td class="n">1</td><td><span class="buy h">ЕСТЬ?</span></td><td class="buy-l"><a href="https://www.dia-m.ru/catalog/lab/nasosy-nasosy-dozatory/nasosy-vakuumnye-vykuumno-nagnetatelnye/vacuubrand-732300-nasos-membrannyj-mz-2c-nt/" target="_blank" rel="noopener">Диа-М: Vacuubrand MZ 2C NT</a></td></tr>
 <tr class="sec"><td colspan="6">Дозирование</td></tr>
 <tr><td></td><td>Крышка-переходник на тару с 2 вводами (заборная трубка PTFE до дна + аргон 1/4″), PTFE, под резьбу горловины (GL45 или по таре)</td><td>MeSiCl₃, PDMS-OH, эфир</td><td class="n">2</td><td><span class="buy h">УТОЧНИТЬ</span></td><td class="buy-l"><a href="https://germeon.ru/catalog/item/76880/" target="_blank" rel="noopener">Germeon: крышка DURAN GL45, 2 порта</a><br><a href="http://www.wiegand.ru/catalog/equipment/laboratornaya_posuda_iz_plastika/krishka_duran_group_gl45_s_dvumya_portami_dg_ii_bezopasnaya_pb_ptfe/" target="_blank" rel="noopener">Wiegand: GL45 2 порта PTFE</a></td></tr>
@@ -707,7 +711,7 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <tr><td></td><td>Рукав PTFE антистат. в нерж. оплётке с обжатыми клампами</td><td>1″ × кламп 50,5 (суспензия): 1,5 м (слив → P-2), 2,5 м (P-2 → нутч); ¾″ × кламп ½″ (К25): 1 м (тройник нутча → гребёнка нутча на раме), 1 м (нутч → P-4), 1,5 м (P-4 → F-2), 2,5 м (бочка → V-S1), 1,5 м (F-2 → канистра)</td><td class="n">2 + 5</td><td><span class="buy y">КУПИТЬ</span></td><td class="buy-l"><a href="https://www.alva-group.ru/catalog/rukava_ptfe/" target="_blank" rel="noopener">АЛЬ-ВА: рукава PTFE</a><br><a href="https://msk.uzmr.ru/ptfe/braid/" target="_blank" rel="noopener">УЗМ: PTFE в оплётке</a></td></tr>
 <tr><td></td><td>Трубка PTFE 10×12, бухта</td><td></td><td class="n">20 м</td><td><span class="buy y">КУПИТЬ</span></td><td class="buy-l"><a href="https://industriation.ru/ptfe12-10/" target="_blank" rel="noopener">Industriation: PTFE 12/10</a></td></tr>
 <tr><td></td><td>Трубка PTFE 6×8, бухта</td><td></td><td class="n">10 м</td><td><span class="buy y">КУПИТЬ</span></td><td class="buy-l"><a href="https://pnevmo-elektro.ru/shop/trubki/trubka_ftoroplastovaya_ptfe/" target="_blank" rel="noopener">Пневмо-Электро: трубки PTFE</a></td></tr>
-<tr><td></td><td>Фитинги обжимные нерж. 12 мм / 8 мм: прямые, тройники, резьба 1/4″–1/2″</td><td></td><td class="n">≈20</td><td><span class="buy y">КУПИТЬ</span></td><td class="buy-l"><a href="https://bb-engineering.ru/fitingi-obzhimnye/" target="_blank" rel="noopener">BB-Engineering: обжимные фитинги</a></td></tr>
+<tr><td></td><td>Тройники обжимные 12 мм нерж. — коллектор сбросов: врезка PSV-3 (от G-1) и PSV-4 (от F-1) в линию NRV-1 → вытяжка</td><td>2 по схеме + 2 запас</td><td class="n">4</td><td><span class="buy y">КУПИТЬ</span></td><td class="buy-l"><a href="https://bb-engineering.ru/fitingi-obzhimnye/" target="_blank" rel="noopener">BB-Engineering: обжимные фитинги</a></td></tr><tr><td></td><td>Фитинги обжимные нерж. 12 мм / 8 мм: прямые, тройники, резьба 1/4″–1/2″</td><td></td><td class="n">≈20</td><td><span class="buy y">КУПИТЬ</span></td><td class="buy-l"><a href="https://bb-engineering.ru/fitingi-obzhimnye/" target="_blank" rel="noopener">BB-Engineering: обжимные фитинги</a></td></tr>
 <tr><td></td><td>Переходник кламп ½″ – резьба наружная ¼″ / ½″ (под обжимные фитинги)</td><td>¼″: ввод P-3 (NRV-4), аргон G-1 — 2; ½″: V-G1, C-1, C-2 (×2), PSV-3 — 6; + 2 шт.</td><td class="n">4 / 8</td><td><span class="buy y">КУПИТЬ</span></td><td class="buy-l"><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-naruzhnaya/" target="_blank" rel="noopener">Гросснер: кламп – резьба наружная</a></td></tr>
 <tr><td></td><td>Рукав EPDM армированный ID 12, бухта</td><td></td><td class="n">10 м</td><td><span class="buy y">КУПИТЬ</span></td><td class="buy-l"><a href="https://grossner.ru/shop/shlangi-pishhevye/shlang-pishhevoj-termostojkij-epdm-armirovannyj-provolokoj/" target="_blank" rel="noopener">Гросснер: рукав EPDM армированный</a></td></tr>
 <tr><td></td><td>Рукав EPDM армированный ID под ёлочки рубашки (16–19), бухта</td><td>+ изоляция; рубашка и E-1</td><td class="n">15 м</td><td><span class="buy y">КУПИТЬ</span></td><td class="buy-l"><a href="https://grossner.ru/shop/shlangi-pishhevye/shlang-pishhevoj-termostojkij-epdm-armirovannyj-provolokoj/" target="_blank" rel="noopener">Гросснер: рукав EPDM армированный</a><br><a href="https://grossner.ru/shop/shtucer-elochka/shtucer-nr/shtucer-nr/" target="_blank" rel="noopener">Гросснер: ёлочка НР</a></td></tr>
@@ -717,6 +721,22 @@ svg .zt{font-size:11px;fill:var(--muted);letter-spacing:.06em}
 <tr><td></td><td>Прокладки PTFE ½″ / 50,5 / K119 — везде, где эфир и углеводороды (реактор, гребёнка, дозирование, выгрузка, нутч, F-2)</td><td>ведомость: 36 / 11 / 4 (+1), + 2 шт.</td><td class="n">38 / 13 / 7</td><td><span class="buy y">КУПИТЬ</span></td><td class="buy-l"><a href="https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/uplotneniya-klamp/prokladka-klamp-ptfe/" target="_blank" rel="noopener">Гросснер: прокладка PTFE</a></td></tr>
 <tr><td></td><td>Прокладки EPDM ½″ / 50,5 / 3″ — где нет углеводородов</td><td>½″: G-1 7 + колонны 4 + воздух насосов 2 = 13; 50,5: рубашка 2; 3″: колонны 6 (+ 4 на межкламповые); + 2 шт.</td><td class="n">15 / 4 / 12</td><td><span class="buy y">КУПИТЬ</span></td><td class="buy-l"><a href="https://grossner.ru/katalog/soedinitelnaya-armatura/clamp-soedineniya/uplotneniya-klamp/" target="_blank" rel="noopener">Гросснер: уплотнения кламп, выбрать EPDM</a></td></tr>
 </tbody></table></div>
+<div class="box"><b class="h">Сводка тройников (сверено со схемой: каждый тройник на схеме отмечен квадратиком)</b>
+<div class="tbl"><table>
+<thead><tr><th>Тип</th><th>Где</th><th>По схеме</th><th>К закупке</th></tr></thead>
+<tbody>
+<tr><td>Тройник кламп ½″ T-тип</td><td>гребёнка реактора: SV-1, SV-2/NRV-1, VV-1, AV-1</td><td class="n">4</td><td class="n">4</td></tr>
+<tr><td>Тройник кламп ½″ T-тип</td><td>гребёнка нутча: PI-5, PSV-4, ввод A4/V-F1 (на конце — VV-2)</td><td class="n">3</td><td class="n">3</td></tr>
+<tr><td>Тройник кламп ½″ T-тип</td><td>порт регулятора G-1: вверх PSV-3, вбок аргон A2 (+PI-3)</td><td class="n">1</td><td class="n">1</td></tr>
+<tr><td>Тройник кламп ½″ 45°</td><td>над нутчем: прямо — суспензия, вбок — рукав на гребёнку нутча</td><td class="n">1</td><td class="n">1</td></tr>
+<tr><td>Тройник кламп переходной 50,5 × ½″ 45°</td><td>под BV-1: вниз — проба SP-1</td><td class="n">1</td><td class="n">1</td></tr>
+<tr><td>Тройник кламп переходной 50,5 × ½″ прямой</td><td>под BV-1: вбок — V-S1 (бочка), прямо — на P-2</td><td class="n">1</td><td class="n">1</td></tr>
+<tr><td>Тройник обжимной ¼″</td><td>распределитель аргона: A2, A3, A4; PI-3 на линии A2</td><td class="n">4</td><td class="n">6</td></tr>
+<tr><td>Тройник обжимной 12 мм</td><td>коллектор сбросов: врезки PSV-3 и PSV-4</td><td class="n">2</td><td class="n">4</td></tr>
+<tr><td>Тройник-ёлочка</td><td>вакуум: всас VP-1 → VV-1 гребёнки и VV-2 нутча</td><td class="n">1</td><td class="n">1</td></tr>
+</tbody></table></div>
+Клампы — без запаса (как краны и клапаны), обжимные — +2 шт. Теплоноситель тройников не имеет: у рубашки (TC-1) и E-1 (TC-2) отдельные чиллеры.</div>
+
 
 <!-- ============ 15 ============ -->
 <h2 id="s15"><span class="no">15</span>Порядок проведения синтеза на R-1</h2>

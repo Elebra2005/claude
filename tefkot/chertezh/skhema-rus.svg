@@ -80,10 +80,10 @@
 <path d="M88.20,103.20 L94.00,103.20 L94.00,109.00 L88.20,109.00 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="74.28" y="102.04" font-size="2.6099999999999994" text-anchor="start" fill="#1d2226" font-weight="bold">Предохр. клапан</text>
 <text x="65.00" y="96.24" font-size="3.045" text-anchor="start" fill="#5d666d">→ в коллектор сбросов</text>
-<circle cx="82.98" cy="120.60" r="2.90" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
-<path d="M82.98,123.50 L82.98,126.40" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
-<text x="76.60" y="116.54" font-size="3.045" text-anchor="start" fill="#1d2226">Манометр</text>
-<path d="M102.70,109.00 L102.70,117.70 L94.00,117.70 L94.00,126.40" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
+<circle cx="97.48" cy="122.92" r="2.61" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
+<path d="M97.48,117.70 L97.48,120.31" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
+<text x="100.09" y="124.08" font-size="2.436" text-anchor="start" fill="#1d2226">Ман.</text>
+<path d="M102.70,109.00 L102.70,117.70 L91.10,117.70" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
 <path d="M95.74,132.20 L111.40,132.20 L111.40,124.66" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M111.40,119.44 L111.40,97.98 L124.16,97.98 L124.16,183.24 L134.02,183.24 L134.02,178.60" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M109.66,119.44 L113.14,124.66 L109.66,124.66 L113.14,119.44 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
@@ -259,10 +259,10 @@
 <path d="M280.76,222.68 L284.24,222.68 L284.24,227.32 L280.76,227.32 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M284.24,225.00 L299.90,225.00" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
 <text x="279.60" y="224.42" font-size="3.045" text-anchor="end" fill="#5d666d">тройник 45°</text>
-<circle cx="289.75" cy="229.64" r="2.32" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
-<text x="289.75" y="230.51" font-size="3.045" text-anchor="middle" fill="#5d666d">М</text>
-<path d="M289.75,225.00 L289.75,227.32" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
-<text x="293.23" y="230.80" font-size="3.045" text-anchor="start" fill="#1d2226">Манометр</text>
+<circle cx="287.72" cy="229.64" r="2.32" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
+<text x="287.72" y="230.51" font-size="3.045" text-anchor="middle" fill="#5d666d">М</text>
+<path d="M287.72,225.00 L287.72,227.32" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
+<text x="291.20" y="231.38" font-size="3.045" text-anchor="start" fill="#1d2226">Манометр</text>
 <path d="M292.36,225.00 L292.36,222.68" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M290.33,218.04 L294.39,218.04 L294.39,222.68 L290.33,222.68 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M292.36,218.04 L292.36,215.14" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
@@ -286,6 +286,23 @@
 <path d="M346.88,272.56 L380.52,272.56 L380.52,274.88 L346.88,274.88 Z" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
 <text x="382.26" y="274.88" font-size="3.045" text-anchor="start" fill="#1d2226">Весы 3</text>
 <text x="349.20" y="281.26" font-size="3.045" text-anchor="start" fill="#5d666d">канистры с р-лем</text>
+<path d="M101.54,47.52 L103.86,47.52 L103.86,49.84 L101.54,49.84 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M127.64,47.52 L129.96,47.52 L129.96,49.84 L127.64,49.84 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M150.84,47.52 L153.16,47.52 L153.16,49.84 L150.84,49.84 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M321.94,61.44 L324.26,61.44 L324.26,63.76 L321.94,63.76 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M339.34,61.44 L341.66,61.44 L341.66,63.76 L339.34,63.76 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M363.99,61.44 L366.31,61.44 L366.31,63.76 L363.99,63.76 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M379.94,61.44 L382.26,61.44 L382.26,63.76 L379.94,63.76 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M363.99,75.94 L366.31,75.94 L366.31,78.26 L363.99,78.26 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M368.34,107.84 L370.66,107.84 L370.66,110.16 L368.34,110.16 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M368.34,148.44 L370.66,148.44 L370.66,150.76 L368.34,150.76 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M286.56,223.84 L288.88,223.84 L288.88,226.16 L286.56,226.16 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M291.20,223.84 L293.52,223.84 L293.52,226.16 L291.20,226.16 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M295.84,223.84 L298.16,223.84 L298.16,226.16 L295.84,226.16 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M208.84,235.44 L211.16,235.44 L211.16,237.76 L208.84,237.76 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M208.84,223.84 L211.16,223.84 L211.16,226.16 L208.84,226.16 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M89.94,116.54 L92.26,116.54 L92.26,118.86 L89.94,118.86 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<text x="208.26" y="226.16" font-size="3.045" text-anchor="end" fill="#5d666d">45°</text>
 <text x="8.00" y="282.00" font-size="2.6" text-anchor="start" fill="#1d2226" font-weight="bold">Условные обозначения линий:</text>
 <path d="M8.00,286.00 L18.00,286.00" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
 <text x="20.00" y="286.90" font-size="2.4" text-anchor="start" fill="#1d2226">газ CH₃NH₂</text>
