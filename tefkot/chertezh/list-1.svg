@@ -1272,7 +1272,7 @@
 <text x="797.00" y="101.52" font-size="1.8" text-anchor="start" fill="#111111">7</text>
 <path d="M712.00,102.70 L806.00,102.70" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="713.00" y="105.22" font-size="1.8" text-anchor="start" fill="#111111">P-3</text>
-<text x="727.00" y="105.22" font-size="1.8" text-anchor="start" fill="#111111">Насос дозирующий (перист./мембр. PTFE)</text>
+<text x="727.00" y="105.22" font-size="1.8" text-anchor="start" fill="#111111">Насос перистальтический (есть)</text>
 <text x="789.00" y="105.22" font-size="1.8" text-anchor="start" fill="#111111">1</text>
 <text x="797.00" y="105.22" font-size="1.8" text-anchor="start" fill="#111111">3</text>
 <path d="M712.00,106.40 L806.00,106.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
