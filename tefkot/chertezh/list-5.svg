@@ -157,8 +157,6 @@
 <circle cx="106.50" cy="81.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="106.50" y="81.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">507</text>
 <text x="72.00" y="147.00" font-size="1.8" text-anchor="start" fill="#c62828">лючок Ø? (загрузка NaOH)</text>
-<path d="M52.00,150.00 L116.00,150.00 L116.00,205.00 L52.00,205.00 Z" fill="none" stroke="#666666" stroke-width="0.3" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<text x="54.00" y="210.00" font-size="1.9" text-anchor="start" fill="#111111">ванна ~60 л, холодная вода</text>
 <path d="M50.00,214.00 L118.00,214.00 L118.00,217.00 L50.00,217.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <text x="52.00" y="222.00" font-size="2.0" text-anchor="start" fill="#111111">W-2 весы 60 кг</text>
 <path d="M60.00,200.00 L60.00,227.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>

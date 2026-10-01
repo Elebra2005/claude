@@ -332,8 +332,6 @@
 <path d="M93.60,423.00 L96.40,427.00 L93.60,427.00 L96.40,423.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M95.00,425.00 L97.60,425.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M97.60,423.50 L97.60,426.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
-<path d="M100.00,430.00 L170.00,430.00 L170.00,492.00 L100.00,492.00 Z" fill="none" stroke="#666666" stroke-width="0.3" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<text x="102.00" y="489.00" font-size="1.8" text-anchor="start" fill="#111111">ванна, вода</text>
 <path d="M96.00,495.00 L174.00,495.00 L174.00,499.00 L96.00,499.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <text x="96.00" y="505.00" font-size="2.0" text-anchor="start" fill="#111111">W-2 весы 60 кг</text>
 <path d="M108.00,395.00 L162.00,395.00 L162.00,485.00 L108.00,485.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
