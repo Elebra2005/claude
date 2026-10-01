@@ -184,11 +184,10 @@ NAMES = {
 'P-2_AODD_air': 'Воздух P-2: ниппель ⅛″ NPT × ¼″ BSP, кламп ¼″ × К25 с хомутом, цанга, трубка PU 8/6',
 'P-2_AODD_regulator': 'Фильтр-регулятор воздуха с манометром P-2 (Camozzi NXE2 G¼)',
 'BV-1_to_P-2_hose': 'Рукав PTFE от слива реактора к насосу выгрузки',
-'F-1_nutsche_DN350': 'Нутч F-1 — сборка K119 (4″): переход K119→½″ (К25), межкламповый фильтр K119, 2 царги K119 × 500',
+'F-1_nutsche_DN350': 'Нутч F-1 — сборка K119 (4″): переход K119→½″ (К25) снизу, межкламповый фильтр K119, 2 царги K119 × 500',
 'F-1_sight_glass_K119': 'Диоптр кламп K119 нутча F-1',
-'F-1_top_reducer': 'Переход кламп K119 → ½″ — крышка нутча',
-'F-1_tee45': 'Тройник кламп 45° ½″ над нутчем: прямо — суспензия, вбок — гребёнка газов',
-'F-1_inlet_reducer': 'Переход кламп 50,5 → ½″ — вход суспензии от P-2',
+'F-1_top_reducer': 'Переход кламп K119 → 50,5 — крышка нутча',
+'F-1_tee45': 'Тройник кламп 45° переходной 50,5 × ½″ над нутчем: прямо — суспензия 50,5, вбок ½″ — гребёнка газов',
 'F-1_stand': 'Опора нутч-фильтра',
 'F-1_lid_fittings': 'Гребёнка газов нутча ½″ на стойке выше нутча: тройники PI-5, PSV-4, VV-2, аргон A4',
 'F-1_gas_hose': 'Рукав PTFE ¾″ × К25 от бокового отвода тройника 45° к гребёнке нутча',
@@ -774,10 +773,9 @@ def discharge(zap, ar_outs):
     parts += [cyl((fx, fy, zm + 3), (fx, fy, zs - 3), 101.6)] + clampj((fx, fy, zs), (0, 0, 1), 119)
     add(g, 'F-1_nutsche_DN350', parts, 'steel')
     add(g, 'F-1_sight_glass_K119', [cyl((fx, fy, zs + 3), (fx, fy, zg - 3), 104)], 'glass')
-    add(g, 'F-1_top_reducer', clampj((fx, fy, zg), (0, 0, 1), 119) + [cone((fx, fy, zg + 3), (fx, fy, 1770), 101.6, 19)] + clampj((fx, fy, 1773), (0, 0, 1), 25), 'steel')
+    add(g, 'F-1_top_reducer', clampj((fx, fy, zg), (0, 0, 1), 119) + [cone((fx, fy, zg + 3), (fx, fy, 1770), 101.6, 50.8)] + clampj((fx, fy, 1773), (0, 0, 1), 50.5), 'steel')
     k = 0.7071
-    add(g, 'F-1_tee45', [cyl((fx, fy, 1776), (fx, fy, 1860), 19), cyl((fx, fy, 1800), (fx + 60, fy, 1860), 19)] + clampj((fx, fy, 1863), (0, 0, 1), 25), 'steel')
-    add(g, 'F-1_inlet_reducer', [cone((fx, fy, 1866), (fx, fy, 1910), 19, 50.8)] + clampj((fx, fy, 1913), (0, 0, 1), 50.5), 'steel')
+    add(g, 'F-1_tee45', [cyl((fx, fy, 1776), (fx, fy, 1910), 50.8), cyl((fx, fy, 1800), (fx + 60, fy, 1860), 19)] + clampj((fx, fy, 1913), (0, 0, 1), 50.5), 'steel')
     add(g, 'F-1_stand', [cyl((fx + 80 * math.cos(math.radians(a)), fy + 80 * math.sin(math.radians(a)), 0),
                                (fx + 80 * math.cos(math.radians(a)), fy + 80 * math.sin(math.radians(a)), 620), 20) for a in (90, 210, 330)]
         + [cyl((fx, fy, 600), (fx, fy, 620), 180).cut(cyl((fx, fy, 590), (fx, fy, 630), 104))], 'dark')
