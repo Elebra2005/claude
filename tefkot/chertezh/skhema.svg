@@ -78,7 +78,7 @@
 <path d="M67.90,164.10 L94.58,164.10 L94.58,177.44 L67.90,177.44 Z" fill="#eef3f5" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="76.02" y="170.48" font-size="3.045" text-anchor="start" fill="#5d666d">NaOH + р-р</text>
 <text x="76.60" y="133.94" font-size="3.4799999999999995" text-anchor="start" fill="#1d2226" font-weight="bold">G-1</text>
-<text x="78.92" y="138.00" font-size="3.045" text-anchor="start" fill="#5d666d">Atmaler</text>
+<text x="78.92" y="138.00" font-size="3.045" text-anchor="start" fill="#5d666d">Altmaler</text>
 <text x="78.92" y="141.48" font-size="3.045" text-anchor="start" fill="#5d666d">БК-40</text>
 <path d="M62.10,178.89 L100.38,178.89 L100.38,181.79 L62.10,181.79 Z" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
 <text x="73.12" y="186.72" font-size="3.045" text-anchor="start" fill="#1d2226">W-2 весы 60 кг</text>
@@ -267,7 +267,7 @@
 <text x="276.70" y="244.14" font-size="3.045" text-anchor="end" fill="#5d666d">Na₂SO₄</text>
 <path d="M280.76,222.68 L284.24,222.68 L284.24,227.32 L280.76,227.32 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M284.24,225.00 L299.90,225.00" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
-<text x="279.60" y="224.42" font-size="3.045" text-anchor="end" fill="#5d666d">тройник 45°</text>
+<text x="279.60" y="224.42" font-size="3.045" text-anchor="end" fill="#5d666d">тройник 50,5</text>
 <circle cx="287.72" cy="229.64" r="2.32" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
 <text x="287.72" y="230.51" font-size="3.045" text-anchor="middle" fill="#5d666d">PI</text>
 <path d="M287.72,225.00 L287.72,227.32" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
