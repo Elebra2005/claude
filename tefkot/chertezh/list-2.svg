@@ -317,7 +317,7 @@
 <text x="249.00" y="195.87" font-size="2.1" text-anchor="start" fill="#111111">нижний слив</text>
 <text x="291.00" y="195.87" font-size="2.1" text-anchor="start" fill="#111111">кламп Ø50,5</text>
 <text x="327.00" y="195.87" font-size="2.1" text-anchor="start" fill="#111111">38</text>
-<text x="338.00" y="195.87" font-size="2.1" text-anchor="start" fill="#111111">тройник + SP-1 (лист 7)</text>
+<text x="338.00" y="195.87" font-size="2.1" text-anchor="start" fill="#111111">отвод 90° + тройники (лист 7)</text>
 <path d="M222.00,197.60 L391.00,197.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="201.27" font-size="2.1" text-anchor="start" fill="#111111">JI/JO</text>
 <text x="235.00" y="201.27" font-size="2.1" text-anchor="start" fill="#111111">N8/N7</text>
