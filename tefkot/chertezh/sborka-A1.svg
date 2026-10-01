@@ -818,8 +818,8 @@
 <path d="M431.80,462.30 L438.20,462.30 L438.20,463.40 L431.80,463.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M431.20,460.20 L431.20,463.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M438.80,460.20 L438.80,463.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="443.00" cy="462.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="443.00" y="462.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">706</text>
+<circle cx="427.00" cy="462.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="427.00" y="462.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">706</text>
 <path d="M433.40,463.80 L436.60,463.80 L435.80,466.80 L434.20,466.80 Z" fill="#ffffff" stroke="#111111" stroke-width="0.35" stroke-linejoin="round"/>
 <path d="M431.80,467.60 L438.20,467.60 L438.20,468.70 L431.80,468.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M431.80,469.30 L438.20,469.30 L438.20,470.40 L431.80,470.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
@@ -1136,7 +1136,7 @@
 <text x="406.60" y="469.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
 <text x="406.60" y="481.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
 <text x="429.40" y="451.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K50,5</text>
-<text x="446.40" y="462.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K50,5</text>
+<text x="427.00" y="466.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K50,5</text>
 <text x="446.40" y="469.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
 <text x="446.40" y="481.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
 <text x="446.40" y="451.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K50,5</text>
