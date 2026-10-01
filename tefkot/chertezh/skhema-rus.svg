@@ -227,21 +227,21 @@
 <text x="331.80" y="155.40" font-size="3.045" text-anchor="end" fill="#1d2226">от клапана нутча →</text>
 <path d="M332.96,154.24 L369.50,154.24 L369.50,109.00" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M210.00,209.34 L210.00,211.37" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
-<path d="M210.00,216.59 L210.00,225.00" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M210.00,216.59 L210.00,222.10 L228.56,222.10 L228.56,236.60 L233.20,236.60" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
 <path d="M208.26,211.37 L211.74,216.59 L208.26,216.59 L211.74,211.37 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="212.32" y="213.40" font-size="3.045" text-anchor="start" fill="#1d2226">Кран слива</text>
-<path d="M210.00,225.00 L210.00,236.60 L233.20,236.60" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
-<path d="M210.00,225.00 L213.77,225.00" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
-<path d="M218.99,225.00 L221.60,225.00 L221.60,227.90" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
-<path d="M213.77,223.26 L218.99,226.74 L218.99,223.26 L213.77,226.74 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
-<text x="214.06" y="221.52" font-size="3.045" text-anchor="start" fill="#1d2226">Кран пробы</text>
-<text x="223.34" y="228.48" font-size="3.045" text-anchor="start" fill="#5d666d">проба</text>
-<path d="M210.00,236.60 L192.60,236.60 L192.60,242.69" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
-<path d="M192.60,247.91 L192.60,254.00" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
-<path d="M190.86,242.69 L194.34,247.91 L190.86,247.91 L194.34,242.69 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
-<text x="194.92" y="246.46" font-size="3.045" text-anchor="start" fill="#5d666d">Кран бочки</text>
-<text x="173.46" y="259.80" font-size="3.045" text-anchor="start" fill="#5d666d">бочка р-ля →</text>
-<text x="173.46" y="263.28" font-size="3.045" text-anchor="start" fill="#5d666d">загрузка р-ля</text>
+<text x="208.26" y="220.94" font-size="3.045" text-anchor="end" fill="#5d666d">отвод 90°</text>
+<path d="M215.80,222.10 L215.80,223.55" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M215.80,228.77 L215.80,234.28" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M214.06,223.55 L217.54,228.77 L214.06,228.77 L217.54,223.55 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
+<text x="213.77" y="227.61" font-size="3.045" text-anchor="end" fill="#1d2226">Кран пробы</text>
+<text x="211.74" y="237.76" font-size="3.045" text-anchor="start" fill="#5d666d">проба</text>
+<path d="M223.34,222.10 L223.34,223.55" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M223.34,228.77 L223.34,254.00 L198.40,254.00" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M221.60,223.55 L225.08,228.77 L221.60,228.77 L225.08,223.55 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
+<text x="221.89" y="242.98" font-size="3.045" text-anchor="end" fill="#5d666d">Кран бочки</text>
+<text x="175.78" y="255.16" font-size="3.045" text-anchor="start" fill="#5d666d">бочка р-ля →</text>
+<text x="175.78" y="259.22" font-size="3.045" text-anchor="start" fill="#5d666d">загрузка р-ля</text>
 <path d="M233.20,230.80 L249.44,230.80 L249.44,242.40 L233.20,242.40 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="235.52" y="238.05" font-size="2.784" text-anchor="start" fill="#1d2226" font-weight="bold">Насос 2</text>
 <text x="230.88" y="247.04" font-size="3.045" text-anchor="start" fill="#5d666d">МН-0,25 мембр.</text>
@@ -297,10 +297,9 @@
 <path d="M286.56,223.84 L288.88,223.84 L288.88,226.16 L286.56,226.16 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M291.20,223.84 L293.52,223.84 L293.52,226.16 L291.20,226.16 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M295.84,223.84 L298.16,223.84 L298.16,226.16 L295.84,226.16 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<path d="M208.84,235.44 L211.16,235.44 L211.16,237.76 L208.84,237.76 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<path d="M208.84,223.84 L211.16,223.84 L211.16,226.16 L208.84,226.16 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M222.18,220.94 L224.50,220.94 L224.50,223.26 L222.18,223.26 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M214.64,220.94 L216.96,220.94 L216.96,223.26 L214.64,223.26 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M89.94,116.54 L92.26,116.54 L92.26,118.86 L89.94,118.86 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<text x="208.26" y="226.16" font-size="3.045" text-anchor="end" fill="#5d666d">45°</text>
 <text x="8.00" y="282.00" font-size="2.6" text-anchor="start" fill="#1d2226" font-weight="bold">Условные обозначения линий:</text>
 <path d="M8.00,286.00 L18.00,286.00" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
 <text x="20.00" y="286.90" font-size="2.4" text-anchor="start" fill="#1d2226">газ CH₃NH₂</text>
