@@ -923,8 +923,6 @@
 <path d="M626.00,519.00 L656.00,519.00 L656.00,522.00 L626.00,522.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <text x="648.00" y="478.00" font-size="1.8" text-anchor="start" fill="#111111">канистра</text>
 <text x="648.00" y="512.00" font-size="1.8" text-anchor="start" fill="#111111">W-3</text>
-<path d="M390.00,529.00 L656.00,529.00" fill="none" stroke="#2e7d32" stroke-width="0.4" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<text x="392.00" y="534.00" font-size="1.9" text-anchor="start" fill="#2e7d32">шина заземления: R-1, P-2, F-1, F-2, канистры</text>
 <text x="127.40" y="386.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
 <text x="137.00" y="389.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K25</text>
 <text x="133.60" y="366.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
