@@ -38,7 +38,6 @@
 <text x="230.60" y="266.20" font-size="1.8" text-anchor="start" fill="#111111">Т.контр.</text>
 <text x="230.60" y="276.20" font-size="1.8" text-anchor="start" fill="#111111">Н.контр.</text>
 <text x="230.60" y="281.20" font-size="1.8" text-anchor="start" fill="#111111">Утв.</text>
-<text x="248.60" y="256.20" font-size="1.8" text-anchor="start" fill="#111111"></text>
 <text x="355.00" y="246.50" font-size="4.2" text-anchor="middle" fill="#111111" font-weight="bold">ИНУМ.770-50.00.08</text>
 <text x="330.00" y="262.00" font-size="2.9" text-anchor="middle" fill="#111111" font-weight="bold">Ведомость кламповых соединений</text>
 <text x="369.00" y="255.80" font-size="1.9" text-anchor="start" fill="#111111">Лит.</text>
@@ -503,7 +502,6 @@
 <text x="255.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">51</text>
 <text x="273.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">38</text>
 <text x="287.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111">15</text>
-<text x="301.00" y="158.93" font-size="1.9" text-anchor="start" fill="#111111"></text>
 <path d="M222.00,160.40 L342.00,160.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">K50,5</text>
 <text x="241.00" y="163.53" font-size="1.9" text-anchor="start" fill="#111111">13</text>

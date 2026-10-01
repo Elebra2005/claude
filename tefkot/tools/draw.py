@@ -26,6 +26,9 @@ class Sheet:
         self.items.append(('poly', [tuple(p) for p in pts], lw, color, dash, closed, fill))
 
     def ordered(self):
+        return [it for it in self._ordered() if not (it[0] == 'text' and not it[3].strip())]
+
+    def _ordered(self):
         """Трубопроводы — под символами; линия прерывается на кране/клапане и подходит к нему с двух сторон."""
         own = set()
         for sym in self.symbols:

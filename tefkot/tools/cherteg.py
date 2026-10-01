@@ -1,6 +1,6 @@
 """Монтажные чертежи обвязки реактора 50 л (Тефкот 770): SVG + PDF + VSDX.
 Запуск: python3 tools/cherteg.py  (из папки tefkot)"""
-import os, sys, zipfile, tempfile, collections
+import os, re, sys, zipfile, tempfile, collections
 sys.path.insert(0, os.path.dirname(__file__))
 from draw import Sheet, to_svg, to_vsdx, RED, INK, GREY, BLUE
 
@@ -707,11 +707,12 @@ def JA(sh, x, y, orient, where, side=1, w=None):
     return JR(sh, x, y, orient, where, side, w)
 
 
-def sheet_assembly():
+def sheet_assembly(clean=False):
     import math
     s = Sheet('1 Установка в сборе', 841.0, 594.0)
-    s.frame('Установка синтеза ТЕФКОТ 770 на реакторе 50 л. Монтажная схема в сборе', CODE + '.01', 1, N_SHEETS)
-    s.text(25, 14, 'УСТАНОВКА В СБОРЕ — МОНТАЖНАЯ СХЕМА (вид спереди, б/м). Номера соединений — как в ведомости (лист 8)', 4.0, bold=True)
+    if not clean:
+        s.frame('Установка синтеза ТЕФКОТ 770 на реакторе 50 л. Монтажная схема в сборе', CODE + '.01', 1, N_SHEETS)
+        s.text(25, 14, 'УСТАНОВКА В СБОРЕ — МОНТАЖНАЯ СХЕМА (вид спереди, б/м). Номера соединений — как в ведомости (лист 8)', 4.0, bold=True)
     FLOOR = 525
     s.line(25, FLOOR, 648, FLOOR, lw=0.6, nc=True)
     for k in range(27, 648, 6):
@@ -1024,8 +1025,9 @@ def sheet_assembly():
     s.poly([(390, 529), (656, 529)], lw=0.4, color='#2e7d32', dash='dash'); s.text(392, 534, 'шина заземления: R-1, P-2, F-1, F-2, канистры', 1.9, color='#2e7d32')
 
     # ---------------- РАЗМЕРЫ «?» ----------------
-    s.dim(285, FLOOR, cx, FLOOR, 14, '?')
-    s.dim(cx, FLOOR, 558, FLOOR, 14, '?')
+    if not clean:
+        s.dim(285, FLOOR, cx, FLOOR, 14, '?')
+        s.dim(cx, FLOOR, 558, FLOOR, 14, '?')
     s.dim(455, 120, 455, FLOOR, -175, 'H гребёнки = ?') if False else None
     s.text(540, 160, 'ось коллектора гребёнки: H над полом = ?', 1.9)
     s.dim(470, 300, 470, FLOOR, 0, '?') if False else None
@@ -1052,6 +1054,8 @@ def sheet_assembly():
     s.text(648, 14 + 7, '', 1)
     s.text(534, 32, '', 1)
     # таблица в правом верхнем углу
+    if clean:
+        return s
     s.text(720, 22, 'ПЕРЕЧЕНЬ ПОЗИЦИЙ', 2.8, bold=True)
     s.table(712, 25, [14, 62, 8, 10], pos[:1] + pos[1:], rowh=3.7, size=1.8)
     # примечания
@@ -1061,6 +1065,24 @@ def sheet_assembly():
         '3. Прокладки: PTFE — продукт, растворитель, газ; EPDM — генератор G-1, колонны C-1/C-2 и рубашка (нет углеводородов). Хомуты кламповые — нерж.',
         '4. Штриховые линии бирюзового цвета — теплоноситель; штриховые чёрные — гибкие рукава; тонкие сплошные — трубки PTFE ¼″/10×12.'], size=2.1, step=3.9)
     return s
+
+
+SECTION_HEADS = {'АРГОН (лист 6)', 'ГРЕБЁНКА (лист 4)', 'ВЫГРУЗКА И ФИЛЬТРАЦИЯ (лист 7)'}
+
+
+def clean_assembly(sh):
+    """Чистовой лист сборки: без заголовков разделов, ссылок на листы и красных замечаний «?».
+    Удалённые надписи заменяются пустыми (индексы символов не сдвигаются)."""
+    for i, it in enumerate(sh.items):
+        if it[0] != 'text':
+            continue
+        s = it[3]
+        if it[7] == RED or s in SECTION_HEADS:
+            s = ''
+        else:
+            s = re.sub(r'\s*\(лист[^)]*\)', '', s).strip()
+        sh.items[i] = it[:3] + (s,) + it[4:]
+    return sh
 
 
 def build():
@@ -1087,7 +1109,12 @@ def main():
     with zipfile.ZipFile(os.path.join(here, 'tools', 'visio-template.vsdx')) as z:
         z.extractall(tpl)
     to_vsdx(sheets, tpl, os.path.join(outdir, 'tefkot-770-montazhnye-chertezhi.vsdx'))
-    to_vsdx(sheets[:1] + sheets[-1:], tpl, os.path.join(outdir, 'tefkot-770-sborka-A1.vsdx'))
+    from place import place_sizes
+    sb = sheet_assembly(clean=True)
+    place_sizes(sb)
+    clean_assembly(sb)
+    open(os.path.join(outdir, 'sborka-A1.svg'), 'w', encoding='utf-8').write(to_svg(sb))
+    to_vsdx([sb], tpl, os.path.join(outdir, 'tefkot-770-sborka-A1.vsdx'))
     print('joints:', len(JOINTS))
 
 

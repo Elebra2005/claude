@@ -27,7 +27,6 @@
 <text x="230.60" y="266.20" font-size="1.8" text-anchor="start" fill="#111111">Т.контр.</text>
 <text x="230.60" y="276.20" font-size="1.8" text-anchor="start" fill="#111111">Н.контр.</text>
 <text x="230.60" y="281.20" font-size="1.8" text-anchor="start" fill="#111111">Утв.</text>
-<text x="248.60" y="256.20" font-size="1.8" text-anchor="start" fill="#111111"></text>
 <path d="M295.00,252.00 L415.00,252.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <text x="355.00" y="246.50" font-size="4.2" text-anchor="middle" fill="#111111" font-weight="bold">ИНУМ.770-50.00.09</text>
 <path d="M365.00,252.00 L365.00,292.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>

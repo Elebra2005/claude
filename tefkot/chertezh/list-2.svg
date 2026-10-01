@@ -50,7 +50,6 @@
 <text x="230.60" y="266.20" font-size="1.8" text-anchor="start" fill="#111111">Т.контр.</text>
 <text x="230.60" y="276.20" font-size="1.8" text-anchor="start" fill="#111111">Н.контр.</text>
 <text x="230.60" y="281.20" font-size="1.8" text-anchor="start" fill="#111111">Утв.</text>
-<text x="248.60" y="256.20" font-size="1.8" text-anchor="start" fill="#111111"></text>
 <text x="355.00" y="246.50" font-size="4.2" text-anchor="middle" fill="#111111" font-weight="bold">ИНУМ.770-50.00.02</text>
 <text x="330.00" y="262.00" font-size="2.9" text-anchor="middle" fill="#111111" font-weight="bold">Реактор R-1. Общий вид, штуцеры</text>
 <text x="369.00" y="255.80" font-size="1.9" text-anchor="start" fill="#111111">Лит.</text>
@@ -198,7 +197,6 @@
 <path d="M55.00,160.00 L155.00,160.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <path d="M55.00,160.00 L57.20,159.20 L57.20,160.80 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <path d="M155.00,160.00 L152.80,160.80 L152.80,159.20 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="105.00" y="159.20" font-size="2.5" text-anchor="middle" fill="#111111"></text>
 <text x="80.00" y="159.20" font-size="2.5" text-anchor="middle" fill="#111111">Ø450 (Wiggens)</text>
 <path d="M160.00,150.00 L176.00,140.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <path d="M176.00,140.00 L191.02,140.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -355,7 +353,6 @@
 <text x="338.00" y="68.70" font-size="2.1" text-anchor="start" fill="#111111">7. Все штуцеры — трикламп; DN по</text>
 <text x="338.00" y="72.30" font-size="2.1" text-anchor="start" fill="#111111">   DIN 11851 (Wiggens). DN25 и DN38 —</text>
 <text x="338.00" y="75.90" font-size="2.1" text-anchor="start" fill="#111111">   ферула Ø50,5.</text>
-<text x="338.00" y="94.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold"></text>
 <text x="338.00" y="99.50" font-size="1.9" text-anchor="start" fill="#111111">Условные обозначения:</text>
 <text x="338.00" y="102.80" font-size="1.9" text-anchor="start" fill="#111111">⊣⊢ кламповое соединение, № — ведомость (лист 8)</text>
 <text x="338.00" y="106.10" font-size="1.9" text-anchor="start" fill="#111111">— — гибкий рукав;  ─ тонкая — трубка ¼″ / 12 мм</text>

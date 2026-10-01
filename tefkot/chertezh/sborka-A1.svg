@@ -1,15 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.0 594.0" width="841.0mm" height="594.0mm" font-family="Arial, 'Liberation Sans', sans-serif"><rect width="100%" height="100%" fill="#fff"/>
-<path d="M651.00,544.00 L716.00,544.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
-<path d="M651.00,549.00 L716.00,549.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
-<path d="M716.00,534.00 L716.00,589.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
-<path d="M716.00,549.00 L836.00,549.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
-<path d="M786.00,549.00 L786.00,589.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
-<path d="M716.00,574.00 L836.00,574.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
-<path d="M786.00,554.00 L836.00,554.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
-<path d="M786.00,569.00 L836.00,569.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
-<path d="M803.00,549.00 L803.00,569.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
-<path d="M818.00,549.00 L818.00,569.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
-<path d="M818.00,569.00 L818.00,574.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <path d="M38.00,60.00 L38.00,55.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
 <path d="M41.00,52.00 L56.00,52.00" fill="none" stroke="#111111" stroke-width="0.8" stroke-linejoin="round"/>
 <path d="M64.00,52.00 L136.00,52.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
@@ -123,47 +112,6 @@
 <path d="M610.20,462.00 L617.50,462.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
 <path d="M621.50,462.00 L628.00,462.00" fill="none" stroke="#111111" stroke-width="1.0" stroke-linejoin="round"/>
 <path d="M628.80,462.00 L638.00,462.00 L638.00,480.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M712.00,28.70 L806.00,28.70" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<path d="M0.20,0.20 L840.80,0.20 L840.80,593.80 L0.20,593.80 Z" fill="none" stroke="#bbbbbb" stroke-width="0.1" stroke-linejoin="round"/>
-<path d="M20.00,5.00 L836.00,5.00 L836.00,589.00 L20.00,589.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
-<path d="M651.00,534.00 L836.00,534.00 L836.00,589.00 L651.00,589.00 Z" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
-<path d="M651.00,539.00 L716.00,539.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M651.00,554.00 L716.00,554.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M651.00,559.00 L716.00,559.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M651.00,564.00 L716.00,564.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M651.00,569.00 L716.00,569.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M651.00,574.00 L716.00,574.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M651.00,579.00 L716.00,579.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M651.00,584.00 L716.00,584.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M658.00,534.00 L658.00,589.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M668.00,534.00 L668.00,589.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M691.00,534.00 L691.00,589.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M706.00,534.00 L706.00,589.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="651.60" y="548.20" font-size="1.8" text-anchor="start" fill="#111111">Изм.</text>
-<text x="658.60" y="548.20" font-size="1.8" text-anchor="start" fill="#111111">Лист</text>
-<text x="668.60" y="548.20" font-size="1.8" text-anchor="start" fill="#111111">№ докум.</text>
-<text x="691.60" y="548.20" font-size="1.8" text-anchor="start" fill="#111111">Подп.</text>
-<text x="706.60" y="548.20" font-size="1.8" text-anchor="start" fill="#111111">Дата</text>
-<text x="651.60" y="553.20" font-size="1.8" text-anchor="start" fill="#111111">Разраб.</text>
-<text x="651.60" y="558.20" font-size="1.8" text-anchor="start" fill="#111111">Пров.</text>
-<text x="651.60" y="563.20" font-size="1.8" text-anchor="start" fill="#111111">Т.контр.</text>
-<text x="651.60" y="573.20" font-size="1.8" text-anchor="start" fill="#111111">Н.контр.</text>
-<text x="651.60" y="578.20" font-size="1.8" text-anchor="start" fill="#111111">Утв.</text>
-<text x="776.00" y="543.50" font-size="4.2" text-anchor="middle" fill="#111111" font-weight="bold">ИНУМ.770-50.00.01</text>
-<text x="751.00" y="554.40" font-size="2.9" text-anchor="middle" fill="#111111" font-weight="bold">Установка синтеза ТЕФКОТ 770 на</text>
-<text x="751.00" y="559.00" font-size="2.9" text-anchor="middle" fill="#111111">реакторе 50 л. Монтажная схема в</text>
-<text x="751.00" y="563.60" font-size="2.9" text-anchor="middle" fill="#111111">сборе</text>
-<text x="790.00" y="552.80" font-size="1.9" text-anchor="start" fill="#111111">Лит.</text>
-<text x="805.00" y="552.80" font-size="1.9" text-anchor="start" fill="#111111">Масса</text>
-<text x="820.00" y="552.80" font-size="1.9" text-anchor="start" fill="#111111">Масштаб</text>
-<text x="794.50" y="563.00" font-size="3" text-anchor="middle" fill="#111111">П</text>
-<text x="810.50" y="563.00" font-size="3" text-anchor="middle" fill="#111111">—</text>
-<text x="827.00" y="563.00" font-size="3" text-anchor="middle" fill="#111111">б/м</text>
-<text x="788.00" y="572.80" font-size="2.2" text-anchor="start" fill="#111111">Лист 1</text>
-<text x="820.00" y="572.80" font-size="2.2" text-anchor="start" fill="#111111">Листов 9</text>
-<text x="808.50" y="583.00" font-size="3.2" text-anchor="middle" fill="#111111" font-weight="bold">АО «ИНУМиТ»</text>
-<text x="751.00" y="585.00" font-size="2.2" text-anchor="middle" fill="#666666">ТЕФКОТ 770 · реактор 50 л</text>
-<text x="25.00" y="14.00" font-size="4.0" text-anchor="start" fill="#111111" font-weight="bold">УСТАНОВКА В СБОРЕ — МОНТАЖНАЯ СХЕМА (вид спереди, б/м). Номера соединений — как в ведомости (лист 8)</text>
 <path d="M25.00,525.00 L648.00,525.00" fill="none" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
 <path d="M27.00,525.00 L24.00,528.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <path d="M33.00,525.00 L30.00,528.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -269,7 +217,6 @@
 <path d="M633.00,525.00 L630.00,528.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <path d="M639.00,525.00 L636.00,528.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <path d="M645.00,525.00 L642.00,528.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="28.00" y="32.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">АРГОН (лист 6)</text>
 <path d="M30.00,60.00 L46.00,60.00 L46.00,170.00 L30.00,170.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
 <text x="28.00" y="176.00" font-size="2.6" text-anchor="start" fill="#111111" font-weight="bold">AR-1</text>
 <text x="28.00" y="180.00" font-size="2.0" text-anchor="start" fill="#111111">аргон</text>
@@ -312,7 +259,7 @@
 <path d="M620.50,401.40 L623.50,401.40" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <text x="622.00" y="408.50" font-size="1.6" text-anchor="middle" fill="#111111">V-F1</text>
 <path d="M24.00,300.00 L324.00,300.00 L324.00,512.00 L24.00,512.00 Z" fill="none" stroke="#666666" stroke-width="0.3" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<text x="205.00" y="306.00" font-size="2.4" text-anchor="start" fill="#111111" font-weight="bold">ЗОНА ВЫТЯЖКИ: генерация и осушка (лист 5)</text>
+<text x="205.00" y="306.00" font-size="2.4" text-anchor="start" fill="#111111" font-weight="bold">ЗОНА ВЫТЯЖКИ: генерация и осушка</text>
 <path d="M40.00,430.00 L58.00,430.00 L58.00,480.00 L40.00,480.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <text x="40.00" y="426.00" font-size="2.4" text-anchor="start" fill="#111111" font-weight="bold">V-1</text>
 <text x="38.00" y="492.00" font-size="1.8" text-anchor="start" fill="#111111">MeNH₂ 38%</text>
@@ -341,7 +288,6 @@
 <path d="M116.00,391.00 L116.00,480.00" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <text x="122.00" y="410.00" font-size="3.0" text-anchor="start" fill="#111111" font-weight="bold">G-1</text>
 <text x="122.00" y="415.00" font-size="1.9" text-anchor="start" fill="#111111">Atmaler БК-40</text>
-<text x="122.00" y="419.00" font-size="1.9" text-anchor="start" fill="#c62828">Ø? × H?</text>
 <path d="M125.00,380.00 L131.00,380.00 L131.00,391.00 L125.00,391.00 Z" fill="#eeeeee" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <path d="M128.00,395.00 L128.00,455.00" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
 <path d="M141.80,383.60 L148.20,383.60 L148.20,384.70 L141.80,384.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
@@ -480,7 +426,6 @@
 <path d="M339.76,280.00 L336.24,281.54 L336.24,278.46 Z" fill="#111111" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M339.76,281.76 L339.76,278.24" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <text x="330.00" y="274.00" font-size="1.8" text-anchor="start" fill="#111111" font-weight="bold">NRV-3</text>
-<text x="296.00" y="287.00" font-size="1.8" text-anchor="start" fill="#c62828">PTFE 10×12, L=?</text>
 <path d="M322.00,340.00 L327.00,340.00 L327.00,525.00 L322.00,525.00 Z" fill="none" stroke="#666666" stroke-width="0.3" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M473.00,340.00 L478.00,340.00 L478.00,525.00 L473.00,525.00 Z" fill="none" stroke="#666666" stroke-width="0.3" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <text x="329.00" y="522.00" font-size="1.8" text-anchor="start" fill="#666666">рама Wiggens (сущ.)</text>
@@ -590,7 +535,6 @@
 <text x="193.00" y="509.00" font-size="2.0" text-anchor="start" fill="#111111" font-weight="bold">TC-1 чиллер рубашки</text>
 <text x="466.00" y="336.00" font-size="1.8" text-anchor="start" fill="#111111">JO</text>
 <text x="330.00" y="416.00" font-size="1.8" text-anchor="start" fill="#111111">JI</text>
-<text x="480.00" y="32.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">ГРЕБЁНКА (лист 4)</text>
 <path d="M482.80,152.60 L489.20,152.60 L489.20,153.70 L482.80,153.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M482.80,154.30 L489.20,154.30 L489.20,155.40 L482.80,155.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M482.20,152.20 L482.20,155.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -741,7 +685,6 @@
 <text x="532.00" y="48.50" font-size="1.8" text-anchor="start" fill="#111111">коллектор сбросов NRV-1 → вытяжка</text>
 <path d="M745.00,215.00 L795.00,215.00 L795.00,245.00 L745.00,245.00 Z" fill="none" stroke="#666666" stroke-width="0.3" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <text x="758.00" y="233.00" font-size="1.8" text-anchor="start" fill="#666666">вытяжка</text>
-<text x="686.00" y="421.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">ВЫГРУЗКА И ФИЛЬТРАЦИЯ (лист 7)</text>
 <path d="M394.00,442.00 L406.00,442.00 L406.00,450.00 L394.00,450.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <text x="386.00" y="447.00" font-size="1.9" text-anchor="end" fill="#111111" font-weight="bold">BV-1</text>
 <path d="M396.80,450.60 L403.20,450.60 L403.20,451.70 L396.80,451.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
@@ -982,172 +925,6 @@
 <text x="648.00" y="512.00" font-size="1.8" text-anchor="start" fill="#111111">W-3</text>
 <path d="M390.00,529.00 L656.00,529.00" fill="none" stroke="#2e7d32" stroke-width="0.4" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <text x="392.00" y="534.00" font-size="1.9" text-anchor="start" fill="#2e7d32">шина заземления: R-1, P-2, F-1, F-2, канистры</text>
-<path d="M285.00,525.00 L285.00,540.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M400.00,525.00 L400.00,540.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M285.00,539.00 L400.00,539.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M285.00,539.00 L287.20,538.20 L287.20,539.80 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<path d="M400.00,539.00 L397.80,539.80 L397.80,538.20 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="342.50" y="538.20" font-size="2.5" text-anchor="middle" fill="#c62828">?</text>
-<path d="M400.00,525.00 L400.00,540.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M558.00,525.00 L558.00,540.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M400.00,539.00 L558.00,539.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<path d="M400.00,539.00 L402.20,538.20 L402.20,539.80 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<path d="M558.00,539.00 L555.80,539.80 L555.80,538.20 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
-<text x="479.00" y="538.20" font-size="2.5" text-anchor="middle" fill="#c62828">?</text>
-<text x="540.00" y="160.00" font-size="1.9" text-anchor="start" fill="#c62828">ось коллектора гребёнки: H над полом = ?</text>
-<text x="720.00" y="22.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">ПЕРЕЧЕНЬ ПОЗИЦИЙ</text>
-<path d="M712.00,25.00 L806.00,25.00 L806.00,132.30 L712.00,132.30 Z" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<text x="713.00" y="27.52" font-size="1.8" text-anchor="start" fill="#111111" font-weight="bold">Поз.</text>
-<text x="727.00" y="27.52" font-size="1.8" text-anchor="start" fill="#111111" font-weight="bold">Наименование</text>
-<text x="789.00" y="27.52" font-size="1.8" text-anchor="start" fill="#111111" font-weight="bold">Кол.</text>
-<text x="797.00" y="27.52" font-size="1.8" text-anchor="start" fill="#111111" font-weight="bold">Лист</text>
-<text x="713.00" y="31.22" font-size="1.8" text-anchor="start" fill="#111111">R-1</text>
-<text x="727.00" y="31.22" font-size="1.8" text-anchor="start" fill="#111111">Реактор Wiggens 50 л (сущ.)</text>
-<text x="789.00" y="31.22" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="31.22" font-size="1.8" text-anchor="start" fill="#111111">2</text>
-<path d="M712.00,32.40 L806.00,32.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="34.92" font-size="1.8" text-anchor="start" fill="#111111">E-1</text>
-<text x="727.00" y="34.92" font-size="1.8" text-anchor="start" fill="#111111">Конденсатор змеевиковый</text>
-<text x="789.00" y="34.92" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="34.92" font-size="1.8" text-anchor="start" fill="#111111">3</text>
-<path d="M712.00,36.10 L806.00,36.10" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="38.62" font-size="1.8" text-anchor="start" fill="#111111">W-4</text>
-<text x="727.00" y="38.62" font-size="1.8" text-anchor="start" fill="#111111">Весы 15 кг с тарой MeSiCl₃ / PDMS-OH</text>
-<text x="789.00" y="38.62" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="38.62" font-size="1.8" text-anchor="start" fill="#111111">3</text>
-<path d="M712.00,39.80 L806.00,39.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="42.32" font-size="1.8" text-anchor="start" fill="#111111">G-1</text>
-<text x="727.00" y="42.32" font-size="1.8" text-anchor="start" fill="#111111">Генератор (бак Atmaler БК-40)</text>
-<text x="789.00" y="42.32" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="42.32" font-size="1.8" text-anchor="start" fill="#111111">5</text>
-<path d="M712.00,43.50 L806.00,43.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="46.02" font-size="1.8" text-anchor="start" fill="#111111">V-1</text>
-<text x="727.00" y="46.02" font-size="1.8" text-anchor="start" fill="#111111">Канистра р-ра метиламина</text>
-<text x="789.00" y="46.02" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="46.02" font-size="1.8" text-anchor="start" fill="#111111">5</text>
-<path d="M712.00,47.20 L806.00,47.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="49.72" font-size="1.8" text-anchor="start" fill="#111111">P-1</text>
-<text x="727.00" y="49.72" font-size="1.8" text-anchor="start" fill="#111111">Насос перистальтический</text>
-<text x="789.00" y="49.72" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="49.72" font-size="1.8" text-anchor="start" fill="#111111">5</text>
-<path d="M712.00,50.90 L806.00,50.90" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="53.42" font-size="1.8" text-anchor="start" fill="#111111">C-1</text>
-<text x="727.00" y="53.42" font-size="1.8" text-anchor="start" fill="#111111">Колонна 3″: царга 400 + диоптр, сита 3A ≈1,8 кг</text>
-<text x="789.00" y="53.42" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="53.42" font-size="1.8" text-anchor="start" fill="#111111">5</text>
-<path d="M712.00,54.60 L806.00,54.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="57.12" font-size="1.8" text-anchor="start" fill="#111111">C-2</text>
-<text x="727.00" y="57.12" font-size="1.8" text-anchor="start" fill="#111111">Колонна 3″: царга 400 + диоптр, NaOH ≈2,7 кг</text>
-<text x="789.00" y="57.12" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="57.12" font-size="1.8" text-anchor="start" fill="#111111">5</text>
-<path d="M712.00,58.30 L806.00,58.30" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="60.82" font-size="1.8" text-anchor="start" fill="#111111">AR-1</text>
-<text x="727.00" y="60.82" font-size="1.8" text-anchor="start" fill="#111111">Баллон Ar 40 л</text>
-<text x="789.00" y="60.82" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="60.82" font-size="1.8" text-anchor="start" fill="#111111">6</text>
-<path d="M712.00,62.00 L806.00,62.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="64.52" font-size="1.8" text-anchor="start" fill="#111111">PR-1</text>
-<text x="727.00" y="64.52" font-size="1.8" text-anchor="start" fill="#111111">Ротаметр с игольчатым вентилем, до ~10 л/мин</text>
-<text x="789.00" y="64.52" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="64.52" font-size="1.8" text-anchor="start" fill="#111111">6</text>
-<path d="M712.00,65.70 L806.00,65.70" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="68.22" font-size="1.8" text-anchor="start" fill="#111111">A1–A4</text>
-<text x="727.00" y="68.22" font-size="1.8" text-anchor="start" fill="#111111">Кран шаровой ¼″ обжим</text>
-<text x="789.00" y="68.22" font-size="1.8" text-anchor="start" fill="#111111">4</text>
-<text x="797.00" y="68.22" font-size="1.8" text-anchor="start" fill="#111111">6</text>
-<path d="M712.00,69.40 L806.00,69.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="71.92" font-size="1.8" text-anchor="start" fill="#111111">PCV-1</text>
-<text x="727.00" y="71.92" font-size="1.8" text-anchor="start" fill="#111111">Шпунт-аппарат с манометром</text>
-<text x="789.00" y="71.92" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="71.92" font-size="1.8" text-anchor="start" fill="#111111">4</text>
-<path d="M712.00,73.10 L806.00,73.10" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="75.62" font-size="1.8" text-anchor="start" fill="#111111">SV-1,2,3, AV-1</text>
-<text x="727.00" y="75.62" font-size="1.8" text-anchor="start" fill="#111111">Кран кламп ½″</text>
-<text x="789.00" y="75.62" font-size="1.8" text-anchor="start" fill="#111111">4</text>
-<text x="797.00" y="75.62" font-size="1.8" text-anchor="start" fill="#111111">4</text>
-<path d="M712.00,76.80 L806.00,76.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="79.32" font-size="1.8" text-anchor="start" fill="#111111">NRV-1</text>
-<text x="727.00" y="79.32" font-size="1.8" text-anchor="start" fill="#111111">Обратный клапан кламп ½″ (над SV-2)</text>
-<text x="789.00" y="79.32" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="79.32" font-size="1.8" text-anchor="start" fill="#111111">4</text>
-<path d="M712.00,80.50 L806.00,80.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="83.02" font-size="1.8" text-anchor="start" fill="#111111">VV-1</text>
-<text x="727.00" y="83.02" font-size="1.8" text-anchor="start" fill="#111111">Кран кламп ½″ (вакуум)</text>
-<text x="789.00" y="83.02" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="83.02" font-size="1.8" text-anchor="start" fill="#111111">4</text>
-<path d="M712.00,84.20 L806.00,84.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="86.72" font-size="1.8" text-anchor="start" fill="#111111">PI-1, 3, 5</text>
-<text x="727.00" y="86.72" font-size="1.8" text-anchor="start" fill="#111111">Мановакуумметры</text>
-<text x="789.00" y="86.72" font-size="1.8" text-anchor="start" fill="#111111">3</text>
-<text x="797.00" y="86.72" font-size="1.8" text-anchor="start" fill="#111111">2–7</text>
-<path d="M712.00,87.90 L806.00,87.90" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="90.42" font-size="1.8" text-anchor="start" fill="#111111">VP-1</text>
-<text x="727.00" y="90.42" font-size="1.8" text-anchor="start" fill="#111111">Насос вакуумный мембранный</text>
-<text x="789.00" y="90.42" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="90.42" font-size="1.8" text-anchor="start" fill="#111111">6</text>
-<path d="M712.00,91.60 L806.00,91.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="94.12" font-size="1.8" text-anchor="start" fill="#111111">TC-1</text>
-<text x="727.00" y="94.12" font-size="1.8" text-anchor="start" fill="#111111">Чиллер рубашки R-1</text>
-<text x="789.00" y="94.12" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="94.12" font-size="1.8" text-anchor="start" fill="#111111">6</text>
-<path d="M712.00,95.30 L806.00,95.30" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="97.82" font-size="1.8" text-anchor="start" fill="#111111">TC-2</text>
-<text x="727.00" y="97.82" font-size="1.8" text-anchor="start" fill="#111111">Чиллер конденсатора E-1</text>
-<text x="789.00" y="97.82" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="97.82" font-size="1.8" text-anchor="start" fill="#111111">6</text>
-<path d="M712.00,99.00 L806.00,99.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="101.52" font-size="1.8" text-anchor="start" fill="#111111">P-2</text>
-<text x="727.00" y="101.52" font-size="1.8" text-anchor="start" fill="#111111">Насос мембр. пневм. (продукт)</text>
-<text x="789.00" y="101.52" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="101.52" font-size="1.8" text-anchor="start" fill="#111111">7</text>
-<path d="M712.00,102.70 L806.00,102.70" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="105.22" font-size="1.8" text-anchor="start" fill="#111111">P-3</text>
-<text x="727.00" y="105.22" font-size="1.8" text-anchor="start" fill="#111111">Насос дозирующий (перист./мембр. PTFE)</text>
-<text x="789.00" y="105.22" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="105.22" font-size="1.8" text-anchor="start" fill="#111111">3</text>
-<path d="M712.00,106.40 L806.00,106.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="108.92" font-size="1.8" text-anchor="start" fill="#111111">P-4</text>
-<text x="727.00" y="108.92" font-size="1.8" text-anchor="start" fill="#111111">Насос мембр. пневм. (фильтрат → F-2)</text>
-<text x="789.00" y="108.92" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="108.92" font-size="1.8" text-anchor="start" fill="#111111">7</text>
-<path d="M712.00,110.10 L806.00,110.10" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="112.62" font-size="1.8" text-anchor="start" fill="#111111">F-1</text>
-<text x="727.00" y="112.62" font-size="1.8" text-anchor="start" fill="#111111">Нутч — сборка K119 на клампах</text>
-<text x="789.00" y="112.62" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="112.62" font-size="1.8" text-anchor="start" fill="#111111">7</text>
-<path d="M712.00,113.80 L806.00,113.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="116.32" font-size="1.8" text-anchor="start" fill="#111111">PSV-4</text>
-<text x="727.00" y="116.32" font-size="1.8" text-anchor="start" fill="#111111">Сбросной клапан нутча</text>
-<text x="789.00" y="116.32" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="116.32" font-size="1.8" text-anchor="start" fill="#111111">7</text>
-<path d="M712.00,117.50 L806.00,117.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="120.02" font-size="1.8" text-anchor="start" fill="#111111">F-2</text>
-<text x="727.00" y="120.02" font-size="1.8" text-anchor="start" fill="#111111">Корпус фильтра 10″</text>
-<text x="789.00" y="120.02" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="120.02" font-size="1.8" text-anchor="start" fill="#111111">7</text>
-<path d="M712.00,121.20 L806.00,121.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="123.72" font-size="1.8" text-anchor="start" fill="#111111">W-1…4</text>
-<text x="727.00" y="123.72" font-size="1.8" text-anchor="start" fill="#111111">Весы</text>
-<text x="789.00" y="123.72" font-size="1.8" text-anchor="start" fill="#111111">4</text>
-<text x="797.00" y="123.72" font-size="1.8" text-anchor="start" fill="#111111">3,5,7</text>
-<path d="M712.00,124.90 L806.00,124.90" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="127.42" font-size="1.8" text-anchor="start" fill="#111111">NRV-3</text>
-<text x="727.00" y="127.42" font-size="1.8" text-anchor="start" fill="#111111">Обр. клапан (вход газа)</text>
-<text x="789.00" y="127.42" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="127.42" font-size="1.8" text-anchor="start" fill="#111111">5</text>
-<path d="M712.00,128.60 L806.00,128.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
-<text x="713.00" y="131.12" font-size="1.8" text-anchor="start" fill="#111111">PSV-3</text>
-<text x="727.00" y="131.12" font-size="1.8" text-anchor="start" fill="#111111">Предохр. клапан G-1</text>
-<text x="789.00" y="131.12" font-size="1.8" text-anchor="start" fill="#111111">1</text>
-<text x="797.00" y="131.12" font-size="1.8" text-anchor="start" fill="#111111">5</text>
-<path d="M726.00,25.00 L726.00,132.30" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M788.00,25.00 L788.00,132.30" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<path d="M796.00,25.00 L796.00,132.30" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
-<text x="25.00" y="550.00" font-size="2.8" text-anchor="start" fill="#111111" font-weight="bold">Примечания</text>
-<text x="25.00" y="555.50" font-size="2.1" text-anchor="start" fill="#111111">1. Схема в сборе без масштаба; E-1, колонны — в едином условном масштабе ~1:5. Детали — листы 2–7, ведомость клампов — лист 8.</text>
-<text x="25.00" y="559.40" font-size="2.1" text-anchor="start" fill="#c62828">2. Все размеры «?» (расстояния между аппаратами, высоты, длины рукавов и трубок, присоединения) — уточнить по месту.</text>
-<text x="25.00" y="563.30" font-size="2.1" text-anchor="start" fill="#111111">3. Прокладки: PTFE — продукт, растворитель, газ; EPDM — генератор G-1, колонны C-1/C-2 и рубашка (нет углеводородов). Хомуты кламповые — нерж.</text>
-<text x="25.00" y="567.20" font-size="2.1" text-anchor="start" fill="#111111">4. Штриховые линии бирюзового цвета — теплоноситель; штриховые чёрные — гибкие рукава; тонкие сплошные — трубки PTFE ¼″/10×12.</text>
 <text x="127.40" y="386.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
 <text x="137.00" y="389.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K25</text>
 <text x="133.60" y="366.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
