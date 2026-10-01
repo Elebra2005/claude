@@ -281,7 +281,7 @@
 <path d="M24.00,172.80 L195.00,172.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="175.59" font-size="1.75" text-anchor="start" fill="#111111">513</text>
 <text x="34.00" y="175.59" font-size="1.75" text-anchor="start" fill="#111111">5</text>
-<text x="40.00" y="175.59" font-size="1.75" text-anchor="start" fill="#111111">C-1 верх: переход 3″/50,5 → переход 50,5/½″</text>
+<text x="40.00" y="175.59" font-size="1.75" text-anchor="start" fill="#111111">C-1 верх: переход 3″/50,5 → переход 50,5/½″ (прокладка EPDM с сеткой 0,1 мм)</text>
 <text x="158.00" y="175.59" font-size="1.75" text-anchor="start" fill="#111111">K50,5 (1″)</text>
 <text x="183.00" y="175.59" font-size="1.75" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M24.00,176.90 L195.00,176.90" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -293,7 +293,7 @@
 <path d="M24.00,181.00 L195.00,181.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="183.79" font-size="1.75" text-anchor="start" fill="#111111">515</text>
 <text x="34.00" y="183.79" font-size="1.75" text-anchor="start" fill="#111111">5</text>
-<text x="40.00" y="183.79" font-size="1.75" text-anchor="start" fill="#111111">C-1 низ: переход 3″/50,5 → переход 50,5/½″</text>
+<text x="40.00" y="183.79" font-size="1.75" text-anchor="start" fill="#111111">C-1 низ: переход 3″/50,5 → переход 50,5/½″ (прокладка EPDM с сеткой 0,1 мм)</text>
 <text x="158.00" y="183.79" font-size="1.75" text-anchor="start" fill="#111111">K50,5 (1″)</text>
 <text x="183.00" y="183.79" font-size="1.75" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M24.00,185.10 L195.00,185.10" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -323,7 +323,7 @@
 <path d="M24.00,201.50 L195.00,201.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="204.29" font-size="1.75" text-anchor="start" fill="#111111">520</text>
 <text x="34.00" y="204.29" font-size="1.75" text-anchor="start" fill="#111111">5</text>
-<text x="40.00" y="204.29" font-size="1.75" text-anchor="start" fill="#111111">C-2 верх: переход 3″/50,5 → переход 50,5/½″</text>
+<text x="40.00" y="204.29" font-size="1.75" text-anchor="start" fill="#111111">C-2 верх: переход 3″/50,5 → переход 50,5/½″ (прокладка EPDM с сеткой 0,1 мм)</text>
 <text x="158.00" y="204.29" font-size="1.75" text-anchor="start" fill="#111111">K50,5 (1″)</text>
 <text x="183.00" y="204.29" font-size="1.75" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M24.00,205.60 L195.00,205.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -344,7 +344,7 @@
 <text x="381.00" y="19.79" font-size="1.75" text-anchor="start" fill="#111111" font-weight="bold">Прокл.</text>
 <text x="223.00" y="23.89" font-size="1.75" text-anchor="start" fill="#111111">522</text>
 <text x="232.00" y="23.89" font-size="1.75" text-anchor="start" fill="#111111">5</text>
-<text x="238.00" y="23.89" font-size="1.75" text-anchor="start" fill="#111111">C-2 низ: переход 3″/50,5 → переход 50,5/½″</text>
+<text x="238.00" y="23.89" font-size="1.75" text-anchor="start" fill="#111111">C-2 низ: переход 3″/50,5 → переход 50,5/½″ (прокладка EPDM с сеткой 0,1 мм)</text>
 <text x="356.00" y="23.89" font-size="1.75" text-anchor="start" fill="#111111">K50,5 (1″)</text>
 <text x="381.00" y="23.89" font-size="1.75" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M222.00,25.20 L393.00,25.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -500,7 +500,7 @@
 <path d="M222.00,127.70 L393.00,127.70" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="130.49" font-size="1.75" text-anchor="start" fill="#111111">721</text>
 <text x="232.00" y="130.49" font-size="1.75" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="130.49" font-size="1.75" text-anchor="start" fill="#111111">переход 64/50,5 → переход 50,5/25 (низ нутча)</text>
+<text x="238.00" y="130.49" font-size="1.75" text-anchor="start" fill="#111111">переход 64/50,5 → переход 50,5/25 (низ нутча, прокладка PTFE с сеткой 0,15 мм)</text>
 <text x="356.00" y="130.49" font-size="1.75" text-anchor="start" fill="#111111">K50,5 (1″)</text>
 <text x="381.00" y="130.49" font-size="1.75" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,131.80 L393.00,131.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
