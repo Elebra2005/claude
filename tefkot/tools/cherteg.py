@@ -188,51 +188,36 @@ def sheet2():
     import math
     s = Sheet('3 E-1, P-3, узлы P2 P3 P4')
     s.frame('Конденсатор E-1, подача P-3, узлы P2, P3, P4', CODE + '.03', 3, N_SHEETS)
-    s.text(25, 13, 'E-1 КОНДЕНСАТОР ЗМЕЕВИКОВЫЙ (изгот.), М 1:3', 3.0, bold=True)
-    cx, k = 62, 1 / 3
-    top, bot = 36, 36 + 500 * k                 # обечайка
-    R = 76.2 * k / 2
-    s.axis(cx, 18, cx, 232)
-    s.rect(cx - R, top, 2 * R, bot - top, lw=0.7)
-    s.rect(cx - R - 3, top + 4, 2 * R + 6, bot - top - 8, lw=0.2, dash='dash', color=GREY)
-    s.leader(cx + R + 3, 120, 100, 132, 'изоляция каучук 13–19 мм', 2.1)
-    # верхняя ферула DN65 и заглушка
-    s.rect(cx - 91 * k / 2, top - 2, 91 * k, 2, lw=0.5, fill='#ffffff')
-    J(s, 3, cx, top - 2, 'v', 'K91 (3″, E-1)', 'PTFE', 'E-1 верх — заглушка змеевика', side=-1, w=91 * k / 2)
-    s.rect(cx - 91 * k / 2, top - 5, 91 * k, 3, lw=0.5, fill='#eeeeee')
-    for bx in (cx - 5, cx + 5):
-        s.rect(bx - 1.6, top - 11, 3.2, 6, lw=0.4, fill='#ffffff')
-        s.poly([(bx - 1.2, top - 11), (bx - 0.8, top - 17), (bx + 0.8, top - 17), (bx + 1.2, top - 11)], lw=0.3)
-    s.leader(cx + 5, top - 14, 95, 22, 'проходные штуцеры 12 мм (2 шт.) → ёлочка 12', 2.1)
-    s.text(cx - 20, top - 19, 'вход', 1.9); s.text(cx + 7, top - 19, 'выход', 1.9)
-    # змеевик
-    zz = []
-    y = top + 8
-    while y < top + 8 + 350 * k:
-        zz += [(cx - 55 * k / 2, y), (cx + 55 * k / 2, y + 20 * k / 2)]
-        y += 20 * k
-    s.poly([(cx - 5, top - 5), (cx - 5, top + 8)] + zz, lw=0.4, color='#0f6f6f')
-    s.poly([(cx + 5, top - 5), (cx + 5, top + 8 + 350 * k)], lw=0.4, color='#0f6f6f')
-    s.leader(cx + 8, 90, 100, 76, 'змеевик 10×1 AISI 316L, L≈3000,', 2.1)
-    s.text(100.5, 80.5, 'навивка Ø55, шаг 20, ~17 витков', 2.1)
-    # боковой отвод
-    oy = top + 40 * k
-    pipe(s, [(cx + R, oy), (cx + R + 10, oy)], lw=1.2)
-    J(s, 3, cx + R + 11, oy, 'h', 'K25', 'PTFE', 'E-1 отвод газа → переходник на ёлочку', side=-1)
-    s.poly([(cx + R + 12.8, oy - 2.4), (cx + R + 17, oy - 1.4), (cx + R + 17, oy + 1.4), (cx + R + 12.8, oy + 2.4)], lw=0.35, closed=True, fill='#ffffff')
-    hose(s, [(cx + R + 17, oy), (cx + R + 24, oy)]); s.stub_arrow(cx + R + 24, oy, 'right')
-    s.text(cx + R + 30, oy + 1, 'шланг на гребёнку (лист 4)', 2.1)
-    # низ: переход 3″→1″, ферула DN25 под P1
-    s.reducer(cx, bot, 'v', 76.2 * k, 25.4 * k, 8)
-    s.rect(cx - 50.5 * k / 2, bot + 8, 50.5 * k, 2, lw=0.5, fill='#ffffff')
-    s.text(cx + 14, bot + 11, 'переход 3″→1″, ферула DN25 под P1 (N3)', 2.1)
-    s.text(cx, bot + 18, '→ R-1, штуцер P1 (соед. 203, лист 2)', 2.0, 'middle')
-    # размеры
-    s.dim(cx - R, top, cx - R, bot, 18, '500')
-    s.dim(cx - R, bot, cx - R, bot + 8, 18, '?')
-    s.dim(cx + R, top, cx + R, oy, -4, '40')
-    s.dim(cx - R, top + 8, cx - R, top + 8 + 350 * k, 8, '≈350')
-    s.dim(cx - R, bot - 10, cx + R, bot - 10, 0, 'Ø76,2×1,6')
+    s.text(25, 13, 'E-1 КОНДЕНСАТОР СТЕКЛЯННЫЙ (Wiggens), б/м', 3.0, bold=True)
+    cx = 62
+    top, bot, R = 52, 196, 9                     # стеклянная рубашка конденсатора
+    s.axis(cx, 26, cx, 232)
+    s.rect(cx - R, top, 2 * R, bot - top, lw=0.7, fill='#eef6fb')
+    zz, y = [], top + 8
+    while y < bot - 10:
+        zz += [(cx - 6, y), (cx + 6, y + 3)]; y += 6
+    s.poly(zz, lw=0.4, color='#0f6f6f', nc=True)
+    for oy_, lab in ((bot - 12, 'вход теплоносителя (снизу)'), (top + 12, 'выход теплоносителя (сверху)')):
+        pipe(s, [(cx + R, oy_), (cx + R + 8, oy_)], lw=0.8)
+        hose(s, [(cx + R + 8, oy_), (cx + R + 16, oy_)]); s.text(cx + R + 18, oy_ + 0.8, lab, 1.9)
+    s.text(cx + R + 18, 124, 'оливы стеклянные → рукав EPDM + хомут', 1.9)
+    s.text(cx + R + 18, 128, 'давление теплоносителя ≤ 0,5 бар (стекло)', 1.9, color=RED)
+    s.poly([(cx - 5, top), (cx + 5, top), (cx + 4, top - 6), (cx - 4, top - 6)], lw=0.5, closed=True, fill='#ffffff')
+    s.text(cx - 7, top - 2, 'шлиф NS ?', 1.9, 'end')
+    pipe(s, [(cx, top - 6), (cx, top - 12)], lw=1.2)
+    J(s, 3, cx, top - 10, 'v', 'K25', 'PTFE', 'E-1 верх: переходник шлиф NS?/K25 → рукав на гребёнку', side=-1)
+    hose(s, [(cx, top - 12), (cx, 30), (100, 30)]); s.stub_arrow(100, 30, 'right')
+    s.text(102, 31, 'рукав PTFE ¾″ K25–K25 → вход гребёнки (лист 4)', 2.0)
+    s.text(cx + 5, top - 7, 'переходник шлиф → кламп K25 (PTFE)', 1.8)
+    s.poly([(cx - 4, bot), (cx + 4, bot), (cx + 3, bot + 7), (cx - 3, bot + 7)], lw=0.5, closed=True, fill='#ffffff')
+    s.rect(cx - 8.4, bot + 7, 16.8, 6, lw=0.5, fill='#eeeeee')
+    s.text(cx + 11, bot + 6, 'керн NS ? → переходник шлиф / кламп K50,5', 1.9)
+    s.text(cx + 11, bot + 10, '(если нет в комплекте реактора)', 1.9)
+    JR(s, cx, bot + 13, 'v', 'P1 — конденсатор E-1', side=-1, w=8.4)
+    pipe(s, [(cx, bot + 13), (cx, bot + 20)], lw=1.6); s.line(cx - 14, bot + 20, cx + 14, bot + 20, lw=0.8, nc=True)
+    s.text(cx, bot + 25, 'крышка R-1, штуцер P1 (N3)', 2.0, 'middle')
+    s.text(cx - R - 2, 120, 'E-1', 2.6, 'end', bold=True)
+    s.text(cx - R - 2, 125, 'держатель —', 1.8, 'end'); s.text(cx - R - 2, 129, 'хомут на раме', 1.8, 'end')
 
     # --- тара MeSiCl₃ / PDMS-OH на весах W-4 + P-3
     s.text(112, 13, 'ПОДАЧА MeSiCl₃ / PDMS-OH НАСОСОМ P-3, б/м', 3.0, bold=True)
@@ -299,9 +284,9 @@ def sheet2():
     s.text(qx + 5, 141, 'PTFE-переходник с заглушкой (сущ.)', 1.9)
     s.text(qx - 12, 215, 'резервный штуцер', 1.9)
     notes(s, 300, 20, 'Примечания', [
-        '1. E-1 — сталь AISI 316L; сварка TIG,',
-        '   пищевая полировка внутр. поверхности.',
-        '2. Змеевик E-1: опрессовка 3 бар (теплонос.).',
+        '1. E-1 — стеклянный змеевиковый конденсатор',
+        '   из комплекта Wiggens; шлифы NS — замерить.',
+        '2. Теплоноситель в змеевике ≤ 0,5 бар (стекло).',
         '3. E-1 вертикально: конденсат стекает в R-1.',
         '4. Теплоноситель E-1: от TC-1 параллельно',
         '   рубашке (−25 °C; стадия 7: +10 °C).',
@@ -325,15 +310,9 @@ def sheet3():
     names = {'SH': 'SV-1', 'NR': 'NRV-1', 'VAC': 'VV-1', 'AR': 'AV-1'}
     # вход снизу: шланг от E-1 → ёлочка DN25 → кламп 50,5 → переход 50,5/½″ → отвод 90° → коллектор
     x = 40
-    hose(s, [(x, 222), (x, 212)]); s.stub_arrow(x, 222, 'down'); s.text(x + 3, 224, 'шланг от E-1 (лист 3), L=?', 2.0)
-    s.poly([(x - 1.4, 212), (x + 1.4, 212), (x + 2.4, 207), (x - 2.4, 207)], lw=0.35, closed=True, fill='#ffffff')
-    s.text(x - 4, 210, 'ёлочка DN25', 1.8, 'end')
-    pipe(s, [(x, 207), (x, 201)], lw=1.6)
-    J(s, 4, x, 203, 'v', 'K50,5 (DN25)', 'PTFE', 'вход: ёлочка DN25 → переход 50,5/½″', side=-1, w=4.4)
-    s.poly([(x - 3.2, 201), (x + 3.2, 201), (x + 1.6, 195), (x - 1.6, 195)], lw=0.35, closed=True, fill='#ffffff')
-    s.text(x + 5, 199, 'переход 50,5 → ½″', 1.8)
-    pipe(s, [(x, 195), (x, hy + 6), (x + 6, hy)], lw=2.0)
-    J(s, 4, x, 191, 'v', 'K25', 'PTFE', 'переход → отвод 90°', side=-1)
+    hose(s, [(x, 222), (x, 193)]); s.stub_arrow(x, 222, 'down'); s.text(x + 3, 224, 'рукав PTFE ¾″ K25–K25 от верха E-1 (лист 3), L=?', 2.0)
+    pipe(s, [(x, 193), (x, hy + 6), (x + 6, hy)], lw=2.0)
+    J(s, 4, x, 191, 'v', 'K25', 'PTFE', 'вход: рукав от E-1 → отвод 90°', side=-1)
     s.text(x - 4, hy + 10, 'отвод 90°', 1.8, 'end')
     # коллектор
     pipe(s, [(x + 6, hy), (X['AR'] + 12, hy)], lw=2.0)
@@ -399,7 +378,7 @@ def sheet3():
     s.dim(40, hy, X['AR'] + 30, hy, 30, 'L общ. = ?')
     notes(s, 25, 238, 'Примечания', [
         '1. Коллектор и краны — ½″ (кламп 25, «к25»), прокладки PTFE. Краны — простые «кран кламп» Гросснер.',
-        '2. Вход гребёнки — кламп 50,5 с ёлочкой под шланг от E-1; переход 50,5 → ½″ и отвод 90°. У шпунта — переход ½″ → 50,5.',
+        '2. Вход гребёнки — K25: рукав PTFE ¾″ от переходника шлиф/K25 на верху E-1, отвод 90°. У шпунта — переход ½″ → 50,5.',
         '3. NRV-1 — аварийный сброс. Кран SV-2 под ним всегда открыт (табличка), закрывать только на время вакуумирования (Бабкин).',
         '4. SV-3 (vent) открывать только при P ≥ 0. Гребёнка — отдельно, на уголках к раме Wiggens; место — по месту.'], size=2.1, step=3.6)
     return s
@@ -843,27 +822,23 @@ def sheet_assembly():
     EX = 431
     pipe(s, [(EX, 300), (EX, 296)], lw=2.0)
     JA(s, EX, 294, 'v', 'P1 — конденсатор E-1', side=-1)
-    etop, ebot = 283 - 500 * k, 283
-    s.poly([(EX - 50.8 * k / 2, 292), (EX + 50.8 * k / 2, 292), (EX + Re, ebot), (EX - Re, ebot)], lw=0.35, closed=True, fill='#ffffff')
-    s.rect(EX - Re, etop, 2 * Re, ebot - etop, lw=0.7)
-    zz, yy = [], etop + 6
-    while yy < etop + 6 + 350 * k:
+    etop, ebot = 283 - 800 * k, 283           # стеклянный змеевиковый конденсатор (комплект Wiggens)
+    s.poly([(EX - 50.8 * k / 2, 292), (EX + 50.8 * k / 2, 292), (EX + 2.5, ebot), (EX - 2.5, ebot)], lw=0.35, closed=True, fill='#eeeeee')
+    s.rect(EX - Re, etop, 2 * Re, ebot - etop, lw=0.7, fill='#eef6fb')
+    zz, yy = [], etop + 5
+    while yy < ebot - 6:
         zz += [(EX - 4.5, yy), (EX + 4.5, yy + 1.8)]; yy += 3.6
-    s.poly([((EX - 3), etop - 4), ((EX - 3), etop + 6)] + zz, lw=0.35, color='#0f6f6f'); s.line((EX + 3), etop - 4, (EX + 3), etop + 6 + 350 * k, lw=0.35, color='#0f6f6f')
-    s.rect(EX - 91 * k / 2, etop - 3, 91 * k, 3, lw=0.5, fill='#eeeeee')
-    JA(s, EX, etop, 'v', 'E-1 верх — заглушка змеевика', side=-1, w=91 * k / 2)
-    s.rect((EX - 4.2), etop - 8, 2.4, 5, lw=0.3, fill='#ffffff'); s.rect((EX + 1.8), etop - 8, 2.4, 5, lw=0.3, fill='#ffffff')
-    s.text(EX - Re - 2, etop + 25, 'E-1', 2.6, 'end', bold=True)
-    oy = etop + 40 * k
-    pipe(s, [(EX + Re, oy), (440, oy)], lw=1.2)
-    JA(s, 441.5, oy, 'h', 'E-1 отвод газа → переходник на ёлочку', side=-1)
-    s.poly([(443, oy - 2.4), (447, oy - 1.4), (447, oy + 1.4), (443, oy + 2.4)], lw=0.35, closed=True, fill='#ffffff')
-    hose(s, [(447, oy), (455, oy), (455, 172), (486, 172), (486, 169)])
-    s.text(453, 168, 'шланг от E-1', 1.8, 'end')
-    # теплоноситель E-1
+    s.poly(zz, lw=0.35, color='#0f6f6f', nc=True)
+    s.poly([(EX - 2.5, etop), (EX + 2.5, etop), (EX + 2, etop - 4), (EX - 2, etop - 4)], lw=0.35, closed=True, fill='#ffffff')
+    pipe(s, [(EX, etop - 4), (EX, etop - 9)], lw=1.2)
+    JA(s, EX, etop - 7, 'v', 'E-1 верх: переходник шлиф NS?/K25 → рукав на гребёнку', side=-1)
+    s.text(EX - Re - 2, etop + 40, 'E-1', 2.6, 'end', bold=True); s.text(EX - Re - 2, etop + 44, 'стекло', 1.7, 'end')
+    hose(s, [(EX, etop - 9), (EX, 172), (486, 172), (486, 156)])
+    s.text(470, 169, 'рукав PTFE ¾″ K25', 1.7, 'end')
+    # теплоноситель E-1: оливы сбоку (вход снизу, выход сверху)
     COOL = '#0f6f6f'
-    s.poly([((EX - 3), etop - 8), ((EX - 3), 150), (305, 150), (305, 505)], lw=0.7, color=COOL, dash='dash')     # подача на E-1
-    s.poly([((EX + 3), etop - 8), ((EX + 3), 144), (313, 144), (313, 515)], lw=0.7, color=COOL, dash='dash')     # возврат с E-1
+    s.poly([(EX - Re, ebot - 6), (EX - Re - 4, ebot - 6), (EX - Re - 4, 150), (305, 150), (305, 505)], lw=0.7, color=COOL, dash='dash')     # подача на E-1
+    s.poly([(EX - Re, etop + 6), (EX - Re - 7, etop + 6), (EX - Re - 7, 144), (313, 144), (313, 515)], lw=0.7, color=COOL, dash='dash')   # возврат с E-1
     # P3 + узел
     px = 446
     pipe(s, [(px, 300), (px, 254)], lw=1.4)
@@ -904,11 +879,8 @@ def sheet_assembly():
     s.text(480, 32, 'ГРЕБЁНКА (лист 4)', 2.8, bold=True)
     # вход снизу: ёлочка DN25 → кламп 50,5 → переход → отвод 90° → коллектор (по эскизу Дани)
     x = 486
-    s.poly([(x - 1.4, 169), (x + 1.4, 169), (x + 2.4, 165), (x - 2.4, 165)], lw=0.35, closed=True, fill='#ffffff')
-    pipe(s, [(x, 165), (x, 146), (x + 6, hy)], lw=2.0)
-    JA(s, x, 163, 'v', 'вход: ёлочка DN25 → переход 50,5/½″', side=-1, w=4.4)
-    s.poly([(x - 3.2, 161), (x + 3.2, 161), (x + 1.6, 156), (x - 1.6, 156)], lw=0.35, closed=True, fill='#ffffff')
-    JA(s, x, 154, 'v', 'переход → отвод 90°', side=-1)
+    pipe(s, [(x, 156), (x, 146), (x + 6, hy)], lw=2.0)
+    JA(s, x, 154, 'v', 'вход: рукав от E-1 → отвод 90°', side=-1)
     G = {'SH': 505, 'NR': 530, 'VAC': 560, 'AR': 590}
     pipe(s, [(x + 6, hy), (G['AR'] + 30, hy)], lw=2.0)
     JA(s, 496, hy, 'h', 'отвод → тройник SV-1', side=-1)
