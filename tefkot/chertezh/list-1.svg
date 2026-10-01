@@ -326,8 +326,8 @@
 <path d="M112.80,386.30 L119.20,386.30 L119.20,387.40 L112.80,387.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M112.20,384.20 L112.20,387.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M119.80,384.20 L119.80,387.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="108.00" cy="386.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="108.00" y="386.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">501</text>
+<circle cx="124.00" cy="386.00" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="124.00" y="386.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">501</text>
 <path d="M95.00,408.24 L96.54,411.76 L93.46,411.76 Z" fill="#111111" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M96.76,408.24 L93.24,408.24" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M93.60,423.00 L96.40,427.00 L93.60,427.00 L96.40,423.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
@@ -370,12 +370,12 @@
 <path d="M124.80,372.80 L125.90,372.80 L125.90,379.20 L124.80,379.20 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M122.70,372.20 L126.30,372.20" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <path d="M122.70,379.80 L126.30,379.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
-<circle cx="124.50" cy="385.70" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
-<text x="124.50" y="386.60" font-size="2.0" text-anchor="middle" fill="#1f5fa8">503</text>
-<path d="M110.00,376.00 L110.00,371.50" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<circle cx="110.00" cy="369.00" r="2.50" fill="#ffffff" stroke="#111111" stroke-width="0.3"/>
-<text x="110.00" y="369.70" font-size="1.4" text-anchor="middle" fill="#111111">PI</text>
-<text x="104.00" y="366.00" font-size="1.7" text-anchor="end" fill="#111111">PI-3</text>
+<circle cx="124.50" cy="368.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
+<text x="124.50" y="369.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">503</text>
+<path d="M110.00,391.00 L110.00,387.50" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<circle cx="110.00" cy="385.00" r="2.50" fill="#ffffff" stroke="#111111" stroke-width="0.3"/>
+<text x="110.00" y="385.70" font-size="1.4" text-anchor="middle" fill="#111111">PI</text>
+<text x="106.50" y="386.00" font-size="1.7" text-anchor="end" fill="#111111">PI-3</text>
 <path d="M151.80,383.60 L158.20,383.60 L158.20,384.70 L151.80,384.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M151.80,385.30 L158.20,385.30 L158.20,386.40 L151.80,386.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M151.20,383.20 L151.20,386.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -1152,11 +1152,11 @@
 <text x="25.00" y="559.40" font-size="2.1" text-anchor="start" fill="#c62828">2. Все размеры «?» (расстояния между аппаратами, высоты, длины рукавов и трубок, присоединения) — уточнить по месту.</text>
 <text x="25.00" y="563.30" font-size="2.1" text-anchor="start" fill="#111111">3. Прокладки: PTFE — продукт, растворитель, газ; EPDM — генератор G-1, колонны C-1/C-2 и рубашка (нет углеводородов). Хомуты кламповые — нерж.</text>
 <text x="25.00" y="567.20" font-size="2.1" text-anchor="start" fill="#111111">4. Штриховые линии бирюзового цвета — теплоноситель; штриховые чёрные — гибкие рукава; тонкие сплошные — трубки PTFE ¼″/10×12.</text>
-<text x="104.60" y="386.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="127.40" y="386.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
 <text x="137.00" y="389.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K25</text>
 <text x="133.60" y="366.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
 <text x="133.60" y="351.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
-<text x="121.30" y="383.30" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="127.90" y="369.40" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
 <text x="166.40" y="385.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
 <text x="166.40" y="369.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
 <text x="201.08" y="394.90" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K91</text>

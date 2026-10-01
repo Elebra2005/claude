@@ -116,10 +116,10 @@
 <path d="M68.70,89.80 L72.30,89.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <circle cx="70.50" cy="78.80" r="2.90" fill="#ffffff" stroke="#1f5fa8" stroke-width="0.25"/>
 <text x="70.50" y="79.70" font-size="2.0" text-anchor="middle" fill="#1f5fa8">503</text>
-<path d="M64.00,86.00 L64.00,82.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
-<circle cx="64.00" cy="79.50" r="2.50" fill="#ffffff" stroke="#111111" stroke-width="0.3"/>
-<text x="64.00" y="80.20" font-size="1.5" text-anchor="middle" fill="#111111">PI</text>
-<text x="60.50" y="78.00" font-size="1.9" text-anchor="end" fill="#111111">PI-3</text>
+<path d="M91.50,108.00 L91.50,103.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
+<circle cx="91.50" cy="100.50" r="2.50" fill="#ffffff" stroke="#111111" stroke-width="0.3"/>
+<text x="91.50" y="101.20" font-size="1.5" text-anchor="middle" fill="#111111">PI</text>
+<text x="91.50" y="96.00" font-size="1.9" text-anchor="middle" fill="#111111">PI-3</text>
 <path d="M71.30,77.60 L77.70,77.60 L77.70,78.70 L71.30,78.70 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M71.30,79.30 L77.70,79.30 L77.70,80.40 L71.30,80.40 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M70.70,77.20 L70.70,80.80" fill="none" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
@@ -289,7 +289,7 @@
 <text x="250.00" y="154.50" font-size="2.0" text-anchor="start" fill="#111111">   10×12, переходник ½″ → G½″ нар. + обжим 12 мм.</text>
 <text x="54.60" y="100.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
 <text x="66.50" y="92.40" font-size="1.7" text-anchor="middle" fill="#1f5fa8">K25</text>
-<text x="67.30" y="76.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
+<text x="67.10" y="79.40" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
 <text x="85.90" y="79.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>
 <text x="63.10" y="65.60" font-size="1.7" text-anchor="end" fill="#1f5fa8">K25</text>
 <text x="109.90" y="97.60" font-size="1.7" text-anchor="start" fill="#1f5fa8">K25</text>

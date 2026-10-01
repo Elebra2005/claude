@@ -80,9 +80,9 @@
 <path d="M88.20,103.20 L94.00,103.20 L94.00,109.00 L88.20,109.00 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="74.28" y="102.04" font-size="2.6099999999999994" text-anchor="start" fill="#1d2226" font-weight="bold">Предохр. клапан</text>
 <text x="65.00" y="96.24" font-size="3.045" text-anchor="start" fill="#5d666d">→ в коллектор сбросов</text>
-<circle cx="97.48" cy="122.92" r="2.61" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
-<path d="M97.48,117.70 L97.48,120.31" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
-<text x="100.09" y="124.08" font-size="2.436" text-anchor="start" fill="#1d2226">Ман.</text>
+<circle cx="82.98" cy="120.60" r="2.90" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
+<path d="M82.98,123.50 L82.98,126.40" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
+<text x="76.60" y="116.54" font-size="2.436" text-anchor="start" fill="#1d2226">Ман.</text>
 <path d="M102.70,109.00 L102.70,117.70 L91.10,117.70" fill="none" stroke="#2d6fb3" stroke-width="0.638" stroke-linejoin="round"/>
 <path d="M95.74,132.20 L111.40,132.20 L111.40,124.66" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M111.40,119.44 L111.40,97.98 L124.16,97.98 L124.16,183.24 L134.02,183.24 L134.02,178.60" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
