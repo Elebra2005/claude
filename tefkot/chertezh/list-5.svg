@@ -11,7 +11,6 @@
 <path d="M397.00,252.00 L397.00,272.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <path d="M397.00,272.00 L397.00,277.00" fill="none" stroke="#111111" stroke-width="0.7" stroke-linejoin="round"/>
 <path d="M32.00,150.00 L32.00,140.00 L44.00,140.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
-<path d="M50.00,146.00 L50.00,152.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M56.00,140.00 L58.00,140.00 L58.00,130.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M58.00,126.00 L58.00,119.92" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
 <path d="M58.00,116.08 L58.00,100.00 L66.00,100.00 L66.00,104.00" fill="none" stroke="#333333" stroke-width="0.9" stroke-dasharray="3 1.5" stroke-linejoin="round"/>
@@ -75,9 +74,8 @@
 <text x="22.00" y="194.00" font-size="1.9" text-anchor="start" fill="#111111">W-1</text>
 <path d="M44.00,134.00 L56.00,134.00 L56.00,146.00 L44.00,146.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.5" stroke-linejoin="round"/>
 <text x="50.00" y="141.00" font-size="2.0" text-anchor="middle" fill="#111111" font-weight="bold">P-1</text>
-<text x="22.00" y="120.00" font-size="1.8" text-anchor="start" fill="#111111">мембр. пневм. (как P-2)</text>
-<text x="22.00" y="124.00" font-size="1.8" text-anchor="start" fill="#111111">PP/PTFE, возд. 1–2 бар</text>
-<text x="52.00" y="153.00" font-size="1.7" text-anchor="start" fill="#111111">воздух</text>
+<text x="22.00" y="120.00" font-size="1.8" text-anchor="start" fill="#111111">перистальтический</text>
+<text x="22.00" y="124.00" font-size="1.8" text-anchor="start" fill="#111111">шланг Norprene Chem / PharMed</text>
 <path d="M56.60,126.00 L59.40,130.00 L56.60,130.00 L59.40,126.00 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M58.00,128.00 L60.60,128.00" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M60.60,126.50 L60.60,129.50" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>

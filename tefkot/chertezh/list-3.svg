@@ -21,7 +21,6 @@
 <path d="M153.00,60.00 L153.00,36.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M161.00,60.00 L161.00,52.00 L182.00,52.00 L182.00,122.60" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M182.00,127.40 L182.00,205.00 L154.00,205.00 L154.00,221.00 L160.00,221.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
-<path d="M165.00,228.00 L165.00,232.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M176.00,221.00 L180.80,221.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M185.20,221.00 L190.24,221.00" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
 <path d="M193.76,221.00 L199.00,221.00 L199.00,160.00 L225.00,160.00 L225.00,171.40" fill="none" stroke="#333333" stroke-width="0.45" stroke-linejoin="round"/>
@@ -123,8 +122,8 @@
 <text x="185.50" y="126.00" font-size="1.9" text-anchor="start" fill="#111111">V-B1 ¼″</text>
 <path d="M160.00,214.00 L176.00,214.00 L176.00,228.00 L160.00,228.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
 <text x="168.00" y="222.00" font-size="2.2" text-anchor="middle" fill="#111111" font-weight="bold">P-3</text>
-<text x="158.00" y="210.00" font-size="1.9" text-anchor="start" fill="#111111">мембр. пневм. (как P-2)</text>
-<text x="167.00" y="233.00" font-size="1.7" text-anchor="start" fill="#111111">воздух</text>
+<text x="158.00" y="207.00" font-size="1.9" text-anchor="start" fill="#111111">дозирующий: перист. Chem-Sure</text>
+<text x="158.00" y="210.50" font-size="1.9" text-anchor="start" fill="#111111">или мембр. PTFE / шприцевой</text>
 <path d="M180.80,219.46 L185.20,222.54 L185.20,219.46 L180.80,222.54 Z" fill="#ffffff" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M183.00,221.00 L183.00,218.14" fill="none" stroke="#111111" stroke-width="0.3" stroke-linejoin="round"/>
 <path d="M181.50,218.14 L184.50,218.14" fill="none" stroke="#111111" stroke-width="0.4" stroke-linejoin="round"/>
