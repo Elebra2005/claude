@@ -521,7 +521,7 @@
 <text x="423.00" y="130.90" font-size="2.0" text-anchor="middle" fill="#1f5fa8">301</text>
 <text x="422.14" y="179.00" font-size="2.6" text-anchor="end" fill="#111111" font-weight="bold">E-1</text>
 <text x="422.14" y="183.00" font-size="1.7" text-anchor="end" fill="#111111">стекло</text>
-<text x="433.00" y="123.00" font-size="1.7" text-anchor="start" fill="#111111">шлиф → K25 → ёлочка, Innovalloy 62U</text>
+<text x="433.00" y="123.00" font-size="1.7" text-anchor="start" fill="#111111">шлиф → K25 → ёлочка, силикон ¾″</text>
 <path d="M297.00,470.00 L321.00,470.00 L321.00,482.00 L297.00,482.00 Z" fill="#f2f2f2" stroke="#111111" stroke-width="0.6" stroke-linejoin="round"/>
 <text x="309.00" y="477.50" font-size="1.9" text-anchor="middle" fill="#111111" font-weight="bold">TC-2</text>
 <text x="309.00" y="486.00" font-size="1.6" text-anchor="middle" fill="#111111">чиллер E-1</text>
