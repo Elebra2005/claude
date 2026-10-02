@@ -434,17 +434,17 @@ def sheet4():
     for name, x, L, fillname in cols:
         top = base - L * k
         s.rect(x - Rc, top, 2 * Rc, L * k, lw=0.7, fill='#f7f7f7')
-        dz = 200 * k                                       # верхние 200 мм — диоптр 1½″ (видно засыпку)
-        s.rect(x - Rc, top, 2 * Rc, dz, lw=0.7, fill='#eef6fb')
+        dz = 200 * k                                       # нижние 200 мм — диоптр 1½″ над фильтром (видно состояние набивки)
+        s.rect(x - Rc, base - dz, 2 * Rc, dz, lw=0.7, fill='#eef6fb')
         for gx in (x,):
-            s.line(gx, top + 1, gx, top + dz - 1, lw=0.2, color=GREY, nc=True)
-        J(s, 5, x, top + dz, 'v', 'K50,5 (1½″)', 'EPDM', f'{name} царга → диоптр 1½″', side=-1, w=Rc + 1.5)
+            s.line(gx, base - dz + 1, gx, base - 1, lw=0.2, color=GREY, nc=True)
+        J(s, 5, x, base - dz, 'v', 'K50,5 (1½″)', 'EPDM', f'{name} диоптр 1½″ (низ) → царга', side=-1, w=Rc + 1.5)
         s.text(x - Rc - 1.5, top + 25, name, 2.6, 'end', bold=True)
         s.text(x, base + 29, fillname, 1.8, 'middle')
-        s.text(x, base + 33, 'диоптр 200 + царга 400', 1.8, 'middle')
-        J(s, 5, x, top, 'v', 'K50,5 (1½″)', 'EPDM', f'{name} верх: диоптр → переход 50,5/25 (прокладка EPDM с сеткой 0,1 мм K50,5 — держит засыпку)', side=-1, w=Rc + 1.5)
+        s.text(x, base + 33, 'царга 400 + диоптр 200 снизу', 1.8, 'middle')
+        J(s, 5, x, top, 'v', 'K50,5 (1½″)', 'EPDM', f'{name} верх: царга → переход 50,5/25 (прокладка EPDM с сеткой 0,1 мм K50,5 — держит засыпку)', side=-1, w=Rc + 1.5)
         col_ends(s, x, top, base, Rc, lambda *a, **k: J(s, 5, *a, **k), name)
-        J(s, 5, x, base, 'v', 'K50,5 (1½″)', 'EPDM', f'{name} низ — межкламповый фильтр K50,5 + переход 50,5/25', side=-1, w=Rc + 1.5)
+        J(s, 5, x, base, 'v', 'K50,5 (1½″)', 'EPDM', f'{name} низ — межкламповый фильтр K50,5 под диоптром + переход 50,5/25', side=-1, w=Rc + 1.5)
         if True:
             s.line(x - Rc, base - 1, x + Rc, base - 1, lw=0.25, dash='dot')
         s.dim(x + Rc, top, x + Rc, base, -5, str(L))
@@ -472,8 +472,10 @@ def sheet4():
         '• проверить внутр. покрытие (Zn/Al — недопустимо)',
         '• штатный предохр. клапан оставить (если нерж.)'], size=2.0, step=3.4)
     notes(s, 250, 115, 'Колонны C-1, C-2 — из чего собраны (каждая)', [
-        '1. Корпус K50,5 (труба 1½″ 38,1×1,65): царга L=400 + диоптр',
-        '   1½″ L≈200 сверху (видно засыпку и фронт влаги), всего ≈0,55 л.',
+        '1. Снизу вверх: переход K25/K50,5 → межкламповый фильтр K50,5 →',
+        '   диоптр 1½″ L≈200 (видно состояние набивки, газ входит снизу) →',
+        '   царга 1½″ L=400 → прокладка EPDM с сеткой → переход K50,5/K25.',
+        '   Труба 38,1×1,65, всего ≈0,55 л.',
         '2. Низ и верх: переход кламп K50,5 → K25 (1½″ × ½″).',
         '3. Опора засыпки: межкламповый фильтр K50,5 снизу (сетка 0,5 мм);',
         '   сверху засыпку держит прокладка EPDM с сеткой 0,1 мм K50,5 (1 на колонну).',
@@ -830,12 +832,12 @@ def sheet_assembly(clean=False):
         top = base - L * kc
         tops[name] = top
         s.rect(x - Rc, top, 2 * Rc, L * kc, lw=0.7, fill='#f7f7f7')
-        s.rect(x - Rc, top, 2 * Rc, 200 * kc, lw=0.7, fill='#eef6fb')
-        JA(s, x, top + 200 * kc, 'v', f'{name} царга → диоптр 1½″', side=-1, w=Rc + 1.5)
+        s.rect(x - Rc, base - 200 * kc, 2 * Rc, 200 * kc, lw=0.7, fill='#eef6fb')
+        JA(s, x, base - 200 * kc, 'v', f'{name} диоптр 1½″ (низ) → царга', side=-1, w=Rc + 1.5)
         s.text(x - Rc - 1.5, top + 25, name, 2.6, 'end', bold=True)
-        JA(s, x, top, 'v', f'{name} верх: диоптр → переход 50,5/25 (прокладка EPDM с сеткой 0,1 мм K50,5 — держит засыпку)', side=-1, w=Rc + 1.5)
+        JA(s, x, top, 'v', f'{name} верх: царга → переход 50,5/25 (прокладка EPDM с сеткой 0,1 мм K50,5 — держит засыпку)', side=-1, w=Rc + 1.5)
         col_ends(s, x, top, base, Rc, lambda x_, y_, o, size, g, where, **k: JA(s, x_, y_, o, where, **k), name)
-        JA(s, x, base, 'v', f'{name} низ — межкламповый фильтр K50,5 + переход 50,5/25', side=-1, w=Rc + 1.5)
+        JA(s, x, base, 'v', f'{name} низ — межкламповый фильтр K50,5 под диоптром + переход 50,5/25', side=-1, w=Rc + 1.5)
         s.dim(x + Rc, top, x + Rc, base, -3, str(L), 1.9)
     tube(s, [(215, tops['C-1'] - 14.2), (215, tops['C-1'] - 17), (232, tops['C-1'] - 17), (232, 492), (250, 492), (250, 484.2)])
     tube(s, [(250, tops['C-2'] - 14.2), (250, 280), (331.2, 280)]); tube(s, [(344.8, 280), (362, 280), (362, 294)])
