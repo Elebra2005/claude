@@ -76,9 +76,10 @@
 <text x="78.92" y="138.00" font-size="3.045" text-anchor="start" fill="#5d666d">Altmaler</text>
 <path d="M62.10,178.89 L100.38,178.89 L100.38,181.79 L62.10,181.79 Z" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
 <text x="73.12" y="186.72" font-size="3.045" text-anchor="start" fill="#1d2226">Весы 2, 60 кг</text>
-<path d="M91.10,126.40 L91.10,117.70 L91.10,109.00" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
-<path d="M88.20,103.20 L94.00,103.20 L94.00,109.00 L88.20,109.00 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<text x="74.28" y="102.04" font-size="2.6099999999999994" text-anchor="start" fill="#1d2226" font-weight="bold">Предохр. клапан</text>
+<path d="M91.10,126.40 L91.10,111.61" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
+<path d="M91.10,106.39 L91.10,97.98" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
+<path d="M89.36,106.39 L92.84,111.61 L89.36,111.61 L92.84,106.39 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
+<text x="74.28" y="109.00" font-size="2.6099999999999994" text-anchor="start" fill="#1d2226" font-weight="bold">Кран сброса</text>
 <text x="65.00" y="96.24" font-size="3.045" text-anchor="start" fill="#5d666d">→ в коллектор сбросов</text>
 <circle cx="82.98" cy="120.60" r="2.90" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997"/>
 <path d="M82.98,123.50 L82.98,126.40" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
@@ -222,7 +223,7 @@
 <path d="M401.40,109.00 L399.00,110.00 L399.00,108.00 Z" fill="#1d2226" stroke="#1d2226" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="371.24" y="114.22" font-size="3.045" text-anchor="start" fill="#5d666d">коллектор сбросов</text>
 <text x="384.00" y="106.10" font-size="3.045" text-anchor="start" fill="#5d666d">в вытяжку</text>
-<text x="331.80" y="150.76" font-size="3.045" text-anchor="end" fill="#1d2226">от клапана генератора →</text>
+<text x="331.80" y="150.76" font-size="3.045" text-anchor="end" fill="#5d666d">SV-G1 от G-1 →</text>
 <path d="M332.96,149.60 L369.50,149.60" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <text x="331.80" y="155.40" font-size="3.045" text-anchor="end" fill="#1d2226">от клапана нутча →</text>
 <path d="M332.96,154.24 L369.50,154.24 L369.50,109.00" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>

@@ -223,8 +223,8 @@
 <text x="241.00" y="156.00" font-size="1.9" text-anchor="start" fill="#111111">vent → вытяжка</text>
 <path d="M346.20,45.00 L344.00,45.90 L344.00,44.10 Z" fill="#111111" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
 <text x="350.00" y="45.80" font-size="2.0" text-anchor="start" fill="#111111">в вытяжку</text>
-<text x="117.00" y="43.50" font-size="2.0" text-anchor="start" fill="#111111">коллектор сбросов: NRV-1, PSV-3, PSV-4 → вытяжка, трубка PTFE 10×12</text>
-<text x="250.00" y="198.00" font-size="2.0" text-anchor="start" fill="#111111">от PSV-3 генератора (лист 5)</text>
+<text x="117.00" y="43.50" font-size="2.0" text-anchor="start" fill="#111111">коллектор сбросов: NRV-1, SV-G1, PSV-4 → вытяжка, трубка PTFE 10×12</text>
+<text x="250.00" y="198.00" font-size="2.0" text-anchor="start" fill="#111111">от SV-G1 генератора (лист 5)</text>
 <text x="250.00" y="208.50" font-size="2.0" text-anchor="start" fill="#111111">от PSV-4 нутча (лист 7)</text>
 <path d="M70.00,150.00 L70.00,171.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <path d="M115.00,150.00 L115.00,171.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
