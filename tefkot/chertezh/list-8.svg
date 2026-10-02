@@ -221,13 +221,13 @@
 <path d="M24.00,131.80 L195.00,131.80" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="134.59" font-size="1.75" text-anchor="start" fill="#111111">503</text>
 <text x="34.00" y="134.59" font-size="1.75" text-anchor="start" fill="#111111">5</text>
-<text x="40.00" y="134.59" font-size="1.75" text-anchor="start" fill="#111111">NRV-6 → штуцер K25×19,05 (рукав на G-1)</text>
+<text x="40.00" y="134.59" font-size="1.75" text-anchor="start" fill="#111111">NRV-6 → штуцер K25×6,35 (шланг ¼″ на G-1)</text>
 <text x="158.00" y="134.59" font-size="1.75" text-anchor="start" fill="#111111">K25</text>
 <text x="183.00" y="134.59" font-size="1.75" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M24.00,135.90 L195.00,135.90" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="138.69" font-size="1.75" text-anchor="start" fill="#111111">504</text>
 <text x="34.00" y="138.69" font-size="1.75" text-anchor="start" fill="#111111">5</text>
-<text x="40.00" y="138.69" font-size="1.75" text-anchor="start" fill="#111111">G-1 вход р-ра, сифон (переходник G¼″ вн./K25) → рукав от P-1</text>
+<text x="40.00" y="138.69" font-size="1.75" text-anchor="start" fill="#111111">G-1 вход р-ра, сифон (переходник G¼″ вн./K25) → штуцер K25×6,35, шланг ¼″ от P-1</text>
 <text x="158.00" y="138.69" font-size="1.75" text-anchor="start" fill="#111111">K25</text>
 <text x="183.00" y="138.69" font-size="1.75" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M24.00,140.00 L195.00,140.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
