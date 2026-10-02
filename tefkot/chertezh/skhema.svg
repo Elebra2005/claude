@@ -239,7 +239,10 @@
 <text x="331.80" y="155.40" font-size="3.045" text-anchor="end" fill="#5d666d">SV-F1 от F-1 →</text>
 <path d="M332.96,154.24 L369.50,154.24 L369.50,109.00" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M210.00,209.34 L210.00,211.37" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
-<path d="M210.00,216.59 L210.00,222.10 L228.56,222.10 L228.56,236.60 L233.20,236.60" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M210.00,216.59 L210.00,222.10 L228.56,222.10 L228.56,226.74" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M228.56,231.96 L228.56,236.60 L233.20,236.60" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
+<path d="M226.82,226.74 L230.30,231.96 L226.82,231.96 L230.30,226.74 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
+<text x="230.30" y="228.48" font-size="3.045" text-anchor="start" fill="#5d666d">V-P2</text>
 <path d="M208.26,211.37 L211.74,216.59 L208.26,216.59 L211.74,211.37 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="212.32" y="213.40" font-size="3.045" text-anchor="start" fill="#1d2226">BV-1</text>
 <text x="208.26" y="220.94" font-size="3.045" text-anchor="end" fill="#5d666d">отвод 90°</text>
