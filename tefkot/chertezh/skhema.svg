@@ -262,9 +262,10 @@
 <text x="230.88" y="247.04" font-size="3.045" text-anchor="start" fill="#5d666d">МН-0,25 мембр.</text>
 <path d="M249.44,236.60 L259.30,236.60 L259.30,207.60 L282.50,207.60 L282.50,227.90" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
 <path d="M281.92,227.90 L283.08,227.90 L285.98,230.22 L279.02,230.22 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<path d="M279.02,230.22 L285.98,230.22 L285.98,236.02 L279.02,236.02 Z" fill="#cfe4f2" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<path d="M279.02,236.02 L285.98,236.02 L285.98,247.04 L279.02,247.04 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<path d="M279.31,245.30 L285.69,245.30" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M279.02,230.22 L285.98,230.22 L285.98,234.28 L279.02,234.28 Z" fill="#cfe4f2" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M279.02,234.28 L285.98,234.28 L285.98,241.24 L279.02,241.24 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M279.02,241.24 L285.98,241.24 L285.98,244.72 L279.02,244.72 Z" fill="#cfe4f2" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M278.15,244.72 L286.85,244.72 L286.85,247.04 L278.15,247.04 Z" fill="#5b6670" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M279.02,247.04 L285.98,247.04 L283.66,251.10 L281.34,251.10 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="276.70" y="236.60" font-size="3.4799999999999995" text-anchor="end" fill="#1d2226" font-weight="bold">F-1</text>
 <text x="276.70" y="240.66" font-size="3.045" text-anchor="end" fill="#5d666d">нутч K119</text>
