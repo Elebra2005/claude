@@ -236,7 +236,7 @@
 <text x="384.00" y="106.10" font-size="3.045" text-anchor="start" fill="#5d666d">в вытяжку</text>
 <text x="331.80" y="150.76" font-size="3.045" text-anchor="end" fill="#5d666d">SV-G1 от G-1 →</text>
 <path d="M332.96,149.60 L369.50,149.60" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
-<text x="331.80" y="155.40" font-size="3.045" text-anchor="end" fill="#1d2226">PSV-4 от F-1 →</text>
+<text x="331.80" y="155.40" font-size="3.045" text-anchor="end" fill="#5d666d">SV-F1 от F-1 →</text>
 <path d="M332.96,154.24 L369.50,154.24 L369.50,109.00" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M210.00,209.34 L210.00,211.37" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
 <path d="M210.00,216.59 L210.00,222.10 L228.56,222.10 L228.56,236.60 L233.20,236.60" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
@@ -273,10 +273,10 @@
 <text x="287.72" y="230.51" font-size="3.045" text-anchor="middle" fill="#5d666d">PI</text>
 <path d="M287.72,225.00 L287.72,227.32" fill="none" stroke="#5d666d" stroke-width="0.29" stroke-linejoin="round"/>
 <text x="291.20" y="231.38" font-size="3.045" text-anchor="start" fill="#1d2226">PI-5</text>
-<path d="M292.36,225.00 L292.36,222.68" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
-<path d="M290.33,218.04 L294.39,218.04 L294.39,222.68 L290.33,222.68 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<path d="M292.36,218.04 L292.36,215.14" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
-<text x="292.36" y="213.40" font-size="3.045" text-anchor="middle" fill="#1d2226">PSV-4</text>
+<path d="M292.36,225.00 L292.36,222.97" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
+<path d="M290.62,217.75 L294.10,222.97 L290.62,222.97 L294.10,217.75 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
+<path d="M292.36,217.75 L292.36,215.14" fill="none" stroke="#7a4fa0" stroke-width="0.754" stroke-linejoin="round"/>
+<text x="292.36" y="213.40" font-size="3.045" text-anchor="middle" fill="#5d666d">SV-F1</text>
 <path d="M282.50,251.10 L282.50,254.29" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
 <path d="M282.50,259.51 L282.50,262.70 L290.04,262.70" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
 <path d="M290.04,259.22 L298.74,259.22 L298.74,266.18 L290.04,266.18 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>

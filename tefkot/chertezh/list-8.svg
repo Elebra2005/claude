@@ -530,25 +530,25 @@
 <path d="M222.00,148.20 L393.00,148.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="150.99" font-size="1.75" text-anchor="start" fill="#111111">726</text>
 <text x="232.00" y="150.99" font-size="1.75" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="150.99" font-size="1.75" text-anchor="start" fill="#111111">гребёнка нутча: PI-5 → PSV-4</text>
+<text x="238.00" y="150.99" font-size="1.75" text-anchor="start" fill="#111111">гребёнка нутча: PI-5 → SV-F1</text>
 <text x="356.00" y="150.99" font-size="1.75" text-anchor="start" fill="#111111">K25</text>
 <text x="381.00" y="150.99" font-size="1.75" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,152.30 L393.00,152.30" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="155.09" font-size="1.75" text-anchor="start" fill="#111111">727</text>
 <text x="232.00" y="155.09" font-size="1.75" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="155.09" font-size="1.75" text-anchor="start" fill="#111111">гребёнка нутча: тройник → PSV-4 (угловой, кламп)</text>
+<text x="238.00" y="155.09" font-size="1.75" text-anchor="start" fill="#111111">гребёнка нутча: тройник → кран сброса SV-F1</text>
 <text x="356.00" y="155.09" font-size="1.75" text-anchor="start" fill="#111111">K25</text>
 <text x="381.00" y="155.09" font-size="1.75" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,156.40 L393.00,156.40" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="159.19" font-size="1.75" text-anchor="start" fill="#111111">728</text>
 <text x="232.00" y="159.19" font-size="1.75" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="159.19" font-size="1.75" text-anchor="start" fill="#111111">PSV-4 выход → переходник ½″/G½″ (сброс в коллектор сбросов)</text>
+<text x="238.00" y="159.19" font-size="1.75" text-anchor="start" fill="#111111">SV-F1 → штуцер K25×19,05 (рукав в коллектор сбросов)</text>
 <text x="356.00" y="159.19" font-size="1.75" text-anchor="start" fill="#111111">K25</text>
 <text x="381.00" y="159.19" font-size="1.75" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,160.50 L393.00,160.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="223.00" y="163.29" font-size="1.75" text-anchor="start" fill="#111111">729</text>
 <text x="232.00" y="163.29" font-size="1.75" text-anchor="start" fill="#111111">7</text>
-<text x="238.00" y="163.29" font-size="1.75" text-anchor="start" fill="#111111">гребёнка нутча: PSV-4 → VV-2</text>
+<text x="238.00" y="163.29" font-size="1.75" text-anchor="start" fill="#111111">гребёнка нутча: SV-F1 → VV-2</text>
 <text x="356.00" y="163.29" font-size="1.75" text-anchor="start" fill="#111111">K25</text>
 <text x="381.00" y="163.29" font-size="1.75" text-anchor="start" fill="#111111">PTFE</text>
 <path d="M222.00,164.60 L393.00,164.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
