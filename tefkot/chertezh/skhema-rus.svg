@@ -90,17 +90,17 @@
 <path d="M109.66,119.44 L113.14,124.66 L109.66,124.66 L113.14,119.44 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.40599999999999997" stroke-linejoin="round"/>
 <text x="113.72" y="123.50" font-size="2.28375" text-anchor="start" fill="#5d666d">Кран ген.</text>
 <path d="M127.64,109.00 L140.40,109.00 L140.40,178.60 L127.64,178.60 Z" fill="#eef3f5" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<path d="M127.64,109.00 L140.40,109.00 L140.40,132.20 L127.64,132.20 Z" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M127.64,153.08 L140.40,153.08 L140.40,175.70 L127.64,175.70 Z" fill="#cfe4f2" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M126.77,175.70 L141.27,175.70 L141.27,178.02 L126.77,178.02 Z" fill="#5b6670" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M128.22,110.74 L139.82,110.74" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<path d="M128.22,176.86 L139.82,176.86" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="131.12" y="143.80" font-size="2.9579999999999997" text-anchor="start" fill="#1d2226" font-weight="bold">Кол. 1</text>
 <text x="127.64" y="191.36" font-size="3.045" text-anchor="start" fill="#5d666d">сита 3А</text>
-<text x="127.64" y="194.84" font-size="3.045" text-anchor="start" fill="#5d666d">диоптр+царга</text>
+<text x="127.64" y="194.84" font-size="3.045" text-anchor="start" fill="#5d666d">фильтр, диоптр, царга</text>
 <path d="M134.02,109.00 L134.02,103.20 L143.01,103.20 L143.01,183.24 L152.00,183.24 L152.00,178.60" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
 <path d="M145.62,109.00 L158.38,109.00 L158.38,178.60 L145.62,178.60 Z" fill="#eef3f5" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<path d="M145.62,109.00 L158.38,109.00 L158.38,132.20 L145.62,132.20 Z" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M145.62,153.08 L158.38,153.08 L158.38,175.70 L145.62,175.70 Z" fill="#cfe4f2" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M144.75,175.70 L159.25,175.70 L159.25,178.02 L144.75,178.02 Z" fill="#5b6670" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M146.20,110.74 L157.80,110.74" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<path d="M146.20,176.86 L157.80,176.86" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <text x="149.10" y="143.80" font-size="2.9579999999999997" text-anchor="start" fill="#1d2226" font-weight="bold">Кол. 2</text>
 <text x="145.62" y="191.36" font-size="3.045" text-anchor="start" fill="#5d666d">NaOH/KOH</text>
 <path d="M152.00,109.00 L152.00,96.24 L166.79,96.24" fill="none" stroke="#b4491b" stroke-width="0.754" stroke-linejoin="round"/>
@@ -251,7 +251,7 @@
 <text x="230.88" y="247.04" font-size="3.045" text-anchor="start" fill="#5d666d">МН-0,25 мембр.</text>
 <path d="M249.44,236.60 L259.30,236.60 L259.30,207.60 L282.50,207.60 L282.50,227.90" fill="none" stroke="#2f6b3a" stroke-width="0.8119999999999999" stroke-linejoin="round"/>
 <path d="M281.92,227.90 L283.08,227.90 L285.98,230.22 L279.02,230.22 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
-<path d="M279.02,230.22 L285.98,230.22 L285.98,236.02 L279.02,236.02 Z" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
+<path d="M279.02,230.22 L285.98,230.22 L285.98,236.02 L279.02,236.02 Z" fill="#cfe4f2" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M279.02,236.02 L285.98,236.02 L285.98,247.04 L279.02,247.04 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M279.31,245.30 L285.69,245.30" fill="none" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
 <path d="M279.02,247.04 L285.98,247.04 L283.66,251.10 L281.34,251.10 Z" fill="#ffffff" stroke="#1d2226" stroke-width="0.46399999999999997" stroke-linejoin="round"/>
