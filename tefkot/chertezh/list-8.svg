@@ -263,7 +263,7 @@
 <path d="M24.00,160.50 L195.00,160.50" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="163.29" font-size="1.75" text-anchor="start" fill="#111111">510</text>
 <text x="34.00" y="163.29" font-size="1.75" text-anchor="start" fill="#111111">5</text>
-<text x="40.00" y="163.29" font-size="1.75" text-anchor="start" fill="#111111">C-1 верх — межкламповый фильтр 3″ + переход 3″/50,5</text>
+<text x="40.00" y="163.29" font-size="1.75" text-anchor="start" fill="#111111">C-1 верх: диоптр → переход 3″/50,5 (без фильтра)</text>
 <text x="158.00" y="163.29" font-size="1.75" text-anchor="start" fill="#111111">K91 (3″)</text>
 <text x="183.00" y="163.29" font-size="1.75" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M24.00,164.60 L195.00,164.60" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -305,7 +305,7 @@
 <path d="M24.00,189.20 L195.00,189.20" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="191.99" font-size="1.75" text-anchor="start" fill="#111111">517</text>
 <text x="34.00" y="191.99" font-size="1.75" text-anchor="start" fill="#111111">5</text>
-<text x="40.00" y="191.99" font-size="1.75" text-anchor="start" fill="#111111">C-2 верх — межкламповый фильтр 3″ + переход 3″/50,5</text>
+<text x="40.00" y="191.99" font-size="1.75" text-anchor="start" fill="#111111">C-2 верх: диоптр → переход 3″/50,5 (без фильтра)</text>
 <text x="158.00" y="191.99" font-size="1.75" text-anchor="start" fill="#111111">K91 (3″)</text>
 <text x="183.00" y="191.99" font-size="1.75" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M24.00,193.30 L195.00,193.30" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
