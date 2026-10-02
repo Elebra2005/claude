@@ -16,8 +16,8 @@ description: Монтажные чертежи технологической о
 - `scripts/example_project.py` — рабочий пример: узел, ведомость соединений, сборка, чистовая сборка. **Начинай новый проект с копии этого файла** — в нём уже есть ведомость `J`/`JR`, сводка и экспорт.
 - `assets/visio-template.vsdx` — шаблон для Visio.
 - `references/drafting-rules.md` — правила оформления и инженерные правила обвязки (материалы прокладок и рукавов, запас при заказе, тройники, ёлочки) + уроки проекта ТЕФКОТ 770. Прочитай до того, как рисовать.
-- `scripts/smeta_xlsx.py` — смета Excel из JSON: лист «По узлам схемы» + «Сводная к заказу» по поставщикам (`python3 smeta_xlsx.py data.json out.xlsx`). Пример данных — `tefkot/tools/smeta-data.json`.
-- `references/3d-model.md` + `scripts/render3d/shot3d.js` — 3D-модель установки в STEP/GLB (CadQuery, пример `tefkot/tools/step_model.py`) и рендеры видов.
+- `scripts/smeta_xlsx.py` — смета Excel из JSON: лист «По узлам схемы» + «Сводная к заказу» по поставщикам (`python3 smeta_xlsx.py data.json out.xlsx`). Пример данных — `scripts/examples/example_smeta-data.json` (группы по узлам + доп. лист «Аргоновая линия», статусы КУПИТЬ / УТОЧНИТЬ / ЕСТЬ / ЭТАП 2).
+- `references/3d-model.md` + `scripts/render3d/shot3d.js` — 3D-модель установки в STEP/GLB (CadQuery, пример `scripts/examples/example_3d_model.py`, просмотрщик `assets/viewer.html`) и рендеры видов.
 - **Эталонный проект** — папка `tefkot/` в этом репозитории: P&ID (`tools/scheme_vsdx.py`), монтажные чертежи (`tools/cherteg.py`), 3D (`tools/step_model.py`), смета, итоговый комплект в `itog/`. Подглядывай туда за готовыми решениями узлов.
 
 ## Порядок работы

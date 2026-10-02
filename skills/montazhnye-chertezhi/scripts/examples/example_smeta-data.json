@@ -1,0 +1,1282 @@
+{
+ "groups": [
+  {
+   "title": "Реактор R-1: штуцер P3 и дозирование P-3 (MeSiCl₃, PDMS-OH)",
+   "rows": [
+    {
+     "pos": "V-P3",
+     "name": "Кран шаровой кламп 3A, сёдла PTFE, AISI 316L, PN10 (≈3 080 ₽)",
+     "size": "К25 (½″)",
+     "purpose": "штуцер P3 → V-P3 (запас на все 11 кранов ½″ — здесь)",
+     "qty_scheme": "1",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кран кламп ½″ 316L",
+     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-vnutrennij-d-vnu=97-94-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi-316l-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Переход кламп концентрический 1″ × ½″, 3A, AISI 316",
+     "size": "К50,5 → К25",
+     "purpose": "штуцер P3 → кран V-P3 (запас на все 9 переходов 1″ × ½″ — здесь)",
+     "qty_scheme": "1",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: переход 1″ × ½″ 316",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexod-klamp/?attribute_pa_dn=dn-1-x-dn-1-2&attribute_pa_standart=3a&attribute_pa_diametr-flanca-klampa-d=505-x-25-mm&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Переходник кламп – резьба наружная ¼″, AISI 316",
+     "size": "К25 × ¼″",
+     "purpose": "V-P3 → обжим ¼″ (ввод трубки P-3 после NRV-4)",
+     "qty_scheme": "1",
+     "qty_buy": "3",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кламп – резьба наружная",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-naruzhnaya/",
+     "extra_url": null
+    },
+    {
+     "pos": "FV-1",
+     "name": "Кран игольчатый нерж. AISI 316, внутр. резьба ¼″, PN 413 (≈2 900 ₽)",
+     "size": "¼″ ВР",
+     "purpose": "регулировка подачи P-3 → реактор; на трубку ¼″ — 2 обжимных фитинга ¼″ × ¼″ нар.",
+     "qty_scheme": "1",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кран игольчатый ¼″ 316",
+     "url": "https://grossner.ru/shop/ventili-i-zadvizhki/kran-igolchatyj/?attribute_pa_standart=iso-standart&attribute_pa_dn=dn-8-uslovnyj-diametr-dn&attribute_pa_rezba-dyujm=1-4-rezba-dyujm&attribute_pa_rezba-mm=137-mm-rezba-mm&attribute_pa_nominalnoe-davlenie-pn=pn413&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "NRV-4",
+     "name": "Клапан обратный муфтовый пружинный, AISI 316, внутр. резьба ¼″ (≈1 280 ₽)",
+     "size": "¼″ ВР (DN8)",
+     "purpose": "P-3 → реактор: не пускает пары из реактора в линию дозирования; на трубку ¼″ — 2 обжимных фитинга ¼″ × ¼″ нар.",
+     "qty_scheme": "1",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: клапан обратный муфтовый ¼″ 316",
+     "url": "https://grossner.ru/shop/klapany-nerzhaveyuschie/klapany-iz-nerzhaveyuschey-stali/klapan-obratnyj-muftovyj/?attribute_pa_standart=iso-standart&attribute_pa_dn=dn-8-uslovnyj-diametr-dn&attribute_pa_rezba-dyujm=1-4-rezba-dyujm&attribute_pa_rezba-mm=137-mm-rezba-mm&attribute_pa_nominalnoe-davlenie-pn=pn16&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Трубка PTFE ¼″ (6,35 × 4,35), бухта",
+     "size": "¼″",
+     "purpose": "тара → P-3 (перистальтический, есть) → FV-1 → NRV-4 → P3",
+     "qty_scheme": "≈3 м",
+     "qty_buy": "5 м",
+     "status": "КУПИТЬ",
+     "shop": "Пневмо-Электро: трубки PTFE",
+     "url": "https://pnevmo-elektro.ru/shop/trubki/trubka_ftoroplastovaya_ptfe/",
+     "extra_url": null
+    }
+   ]
+  },
+  {
+   "title": "Генератор метиламина G-1 (бак Altmaler БК-40ПВ) и подача водного метиламина P-1",
+   "rows": [
+    {
+     "pos": "",
+     "name": "Прокладка крышки бака G-1 — вырезать из техпластины EPDM 500×500×3 мм (45–80 Sh A, −45…+150 °C)",
+     "size": "500×500×3",
+     "purpose": "вода, NaOH, водный метиламин. Перед резкой снять размеры и толщину штатной прокладки (чек-лист g7); толще 3 мм — брать 4 мм. Доп. ссылка — штатная прокладка Altmaler (поз. 3, ≈5 800 ₽)",
+     "qty_scheme": "1 лист",
+     "qty_buy": "2 листа",
+     "status": "КУПИТЬ",
+     "shop": "Профрезина: техпластина EPDM 500×500×3",
+     "url": "https://profrezina.ru/catalog/vidy-izdeliy/tekhplastiny/tplst-epdm/tplstepdm-500x500-3/",
+     "extra_url": "https://altmaler.ru/catalog/remkomplekty-i-zapasnye-chasti/zapchasti-dlya-kraskonagnetatelnogo-baka-bk/remkomplekt-kraskonagnetatelnogo-baka-bk-poz-3-prokladka-bk-20-40pv-sht/"
+    },
+    {
+     "pos": "",
+     "name": "Переходник кламп – резьба внутренняя ISO DN8, G¼″, AISI 316 (≈1 455 ₽)",
+     "size": "К25 × G¼″ вн.",
+     "purpose": "вход р-ра (сифон) и выход газа — штуцеры G¼″ нар. (Ø≈13,2, шаг 1,337)",
+     "qty_scheme": "2",
+     "qty_buy": "4",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кламп – резьба внутренняя",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-vnutrennyaya/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Переходник кламп – резьба наружная G½″, ISO DN15, AISI 316 (≈1 455 ₽)",
+     "size": "К25 × G½″ нар.",
+     "purpose": "порт регулятора на крышке G-1 (гнездо G½″ вн.) → через прокладку EPDM сразу кран SV-G1; резьбу уплотнить лентой PTFE",
+     "qty_scheme": "1",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кламп – резьба наружная ½″ 316",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-naruzhnaya/?attribute_pa_standart=iso-standart&attribute_pa_dn=dn-15-uslovnyj-diametr-dn&attribute_pa_rezba-dyujm=1-2-rezba-dyujm&attribute_pa_rezba-mm=213-mm-rezba-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "SV-G1",
+     "name": "Кран шаровой кламп 3A, сёдла PTFE, AISI 316L, PN10 (≈3 080 ₽)",
+     "size": "К25 (½″)",
+     "purpose": "сброс давления G-1 вручную (вместо предохранительного клапана): порт → кран → ёлочка → рукав ¾″ в коллектор сбросов (коллектор — у смежников)",
+     "qty_scheme": "1",
+     "qty_buy": "1",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кран кламп ½″ 316L",
+     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-vnutrennij-d-vnu=97-94-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi-316l-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "V-G1",
+     "name": "Кран шаровой кламп 3A, сёдла PTFE, AISI 316L, PN10 (≈3 080 ₽)",
+     "size": "К25 (½″)",
+     "purpose": "выход газа G-1 → колонны",
+     "qty_scheme": "1",
+     "qty_buy": "1",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кран кламп ½″ 316L",
+     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-vnutrennij-d-vnu=97-94-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi-316l-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Штуцер шланговый кламп, ёлочка 6,35 (¼″), AISI 316",
+     "size": "К25 × 6,35",
+     "purpose": "V-G1 → шланг PF ¼″ на C-1 (газ CH₃NH₂, этап 1)",
+     "qty_scheme": "1",
+     "qty_buy": "1",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: штуцер K25 × 6,35",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/shtucery-klamp/shtucer-shlangovyj-klamp/?attribute_pa_diametr-shtucera-d-shtuc=635-mm-1-4&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Шланг силиконовый фармацевтический PF (неармированный), Гросснер",
+     "size": "DN ¼″ (ID 6,4)",
+     "purpose": "одним шлангом ID 6,4 на всей линии: канистра V-1 → головка P-1 (1 м) → K25 × 6,35 … V-P1 → NRV-6 → K25 × 6,35 → вход G-1 (1,5 м); толщину стенки сверить с головкой насоса",
+     "qty_scheme": "2,5 м",
+     "qty_buy": "4 м",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: силикон PF, DN ¼″",
+     "url": "https://grossner.ru/shop/shlangi-pishhevye/shlang-farmacevticheskij-silikonovyj/shlang-farmacevticheskij-silikonovyj/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Штуцер шланговый кламп, ёлочка 6,35 (¼″), AISI 316",
+     "size": "К25 × 6,35",
+     "purpose": "выход P-1 → V-P1; NRV-6 → шланг; шланг → вход G-1 (переходник G¼″); хомуты червячные 8–12",
+     "qty_scheme": "3",
+     "qty_buy": "5",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: штуцер K25 × 6,35",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/shtucery-klamp/shtucer-shlangovyj-klamp/?attribute_pa_diametr-shtucera-d-shtuc=635-mm-1-4&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Шланг EPDM химстойкий, ID 6 мм — на будущее, замена силикона после насоса (V-P1 → G-1)",
+     "size": "ID 6 мм",
+     "purpose": "водный метиламин, щёлочь — EPDM стойкий; на ёлочки K25 × 6,35. Через головку перистальтики не идёт — там только силикон",
+     "qty_scheme": "—",
+     "qty_buy": "4 м",
+     "status": "КУПИТЬ",
+     "shop": "Titan Lock: шланги EPDM",
+     "url": "https://titan-lock.shop/catalog/promyshlennye_rukava/sets/epdm/",
+     "extra_url": null
+    },
+    {
+     "pos": "V-P1",
+     "name": "Кран шаровой кламп 3A, сёдла PTFE, AISI 316L, PN10 (≈3 080 ₽)",
+     "size": "К25 (½″)",
+     "purpose": "после P-1",
+     "qty_scheme": "1",
+     "qty_buy": "1",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кран кламп ½″ 316L",
+     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-vnutrennij-d-vnu=97-94-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi-316l-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "NRV-6",
+     "name": "Клапан обратный кламп пружинный",
+     "size": "К25 (½″)",
+     "purpose": "нагнетание P-1 → G-1 (газ из G-1 не уходит назад в канистру)",
+     "qty_scheme": "1",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: клапан обратный кламп",
+     "url": "https://grossner.ru/shop/klapany-nerzhaveyuschie/klapany-iz-nerzhaveyuschey-stali/klapan-obratnyj-klamp/",
+     "extra_url": null
+    }
+   ]
+  },
+  {
+   "title": "Колонны осушки C-1 (сита 3A), C-2 (NaOH) и газ CH₃NH₂ → реактор T2",
+   "rows": [
+    {
+     "pos": "C-1, C-2",
+     "name": "Царга кламп (труба 38,1 × 1,65), 3A, AISI 304 (≈2 400 ₽)",
+     "size": "К50,5 (1½″) × 400",
+     "purpose": "корпуса колонн, над диоптром (основная засыпка). AISI 304: стойкость к метиламину — «A» (Graco, ISM, Filter Sciences); хлоридов в колоннах нет",
+     "qty_scheme": "2",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: царга кламп 1½″ × 400",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/cargi-klamp/carga-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-naruzhnyj-d-n=381-mm-diametr-naruzhnyj-d1&attribute_pa_tolshhina-stenki-s=15-165-mm-tolshhina-stenki-s&attribute_pa_diametr-flanca-klampa-d=505-mm-diametr-flanca-klampa-d&attribute_pa_dlina-l=400-mm&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi304-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "C-1, C-2",
+     "name": "Диоптр кламп 1½″ ASME-BPE, AISI 316, PN10 (≈5 540 ₽); уплотнения стекла в каталоге — силикон: уточнить у Гросснера EPDM/PTFE",
+     "size": "К50,5 (1½″), L — по каталогу",
+     "purpose": "низ колонн, над межкламповым фильтром — видно состояние набивки (сита 3A / NaOH): газ входит снизу, фронт влаги идёт отсюда",
+     "qty_scheme": "2",
+     "qty_buy": "2",
+     "status": "УТОЧНИТЬ",
+     "shop": "Гросснер: диоптр кламп 1½″",
+     "url": "https://grossner.ru/shop/dioptry/dioptr-klamp/?attribute_pa_standart=asme-bpe&attribute_pa_dn=dn-1-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-naruzhnyj-d-n=381-mm-diametr-naruzhnyj-d1&attribute_pa_diametr-vnutrennij-d-vnu=351-348-mm&attribute_pa_diametr-flanca-klampa-d=505-mm-diametr-flanca-klampa-d&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_firma=silicon-material-uplotneniya&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Фильтр межкламповый AISI 316: перфорированный диск + сетка 0,5 мм, PN10 (≈2 040 ₽)",
+     "size": "К50,5 (1½″)",
+     "purpose": "опора засыпки: низ C-1 и C-2, под диоптром (диоптр → фильтр → переход 50,5/25) — на нём лежат сита / NaOH; сверху засыпку держит прокладка EPDM с сеткой K50,5. 2 шт. + 1 запасной",
+     "qty_scheme": "2",
+     "qty_buy": "3",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: фильтр межкламповый K50,5 316",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/filtr-klamp/filtr-mezhklampovyj/?attribute_pa_diametr-flanca-klampa-d=505-mm-diametr-flanca-klampa-d&attribute_pa_yachejka=05-mm&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Переход кламп концентрический 1″ × ½″, 3A, AISI 316 (≈2 300 ₽)",
+     "size": "К50,5 → К25",
+     "purpose": "низ и верх каждой колонны: колонна K50,5 → трубка ½″ (K25)",
+     "qty_scheme": "4",
+     "qty_buy": "4",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: переход 1″ × ½″ 316",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexod-klamp/?attribute_pa_dn=dn-1-x-dn-1-2&attribute_pa_standart=3a&attribute_pa_diametr-flanca-klampa-d=505-x-25-mm&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Штуцер шланговый кламп, ёлочка 6,35 (¼″), AISI 316",
+     "size": "К25 × 6,35",
+     "purpose": "газ CH₃NH₂, этап 1 — шланг PF ¼″: входы и выходы C-1, C-2 (4), вход V-G2 (1), выход NRV-3 на T2 (1); хомуты червячные 8–12 мм по 2 на конец; запас +2 на все ёлочки 6,35 — в разделе генератора",
+     "qty_scheme": "6",
+     "qty_buy": "6",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: штуцер K25 × 6,35",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/shtucery-klamp/shtucer-shlangovyj-klamp/?attribute_pa_diametr-shtucera-d-shtuc=635-mm-1-4&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "V-G2",
+     "name": "Кран шаровой кламп 3A, сёдла PTFE, AISI 316L, PN10 (≈3 080 ₽)",
+     "size": "К25 (½″)",
+     "purpose": "газ после колонн, перед NRV-3: закрывать при вакуумировании реактора и продувке G-1; кламп с двух сторон: шланг от C-2 (через штуцер-ёлочку) → V-G2 → NRV-3",
+     "qty_scheme": "1",
+     "qty_buy": "1",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кран кламп ½″ 316L",
+     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-vnutrennij-d-vnu=97-94-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi-316l-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "NRV-3",
+     "name": "Клапан обратный кламп пружинный, AISI 316L, уплотнение PTFE, открытие от 0,1 бар (≈7 275 ₽)",
+     "size": "К25 (½″)",
+     "purpose": "C-2 → V-G2 → NRV-3 → ввод газа T2: не пускает пары эфира / MeSiCl₃ из реактора назад в колонны и G-1. Ставится в трубку 10×12 через 2 переходника кламп → ½″ нар. + обжим 12 мм. Генератор держать ≈0,15–0,25 бар (контроль по манометру G-1, лишнее — краном SV-G1 в коллектор)",
+     "qty_scheme": "1",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: клапан обратный кламп ½″ PTFE",
+     "url": "https://grossner.ru/shop/klapany-nerzhaveyuschie/klapany-iz-nerzhaveyuschey-stali/klapan-obratnyj-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-naruzhnyj-d-n=127-mm-diametr-naruzhnyj-d1&attribute_pa_diametr-vnutrennij-d-vnu=97-94-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_firma=ptfe-material-uplotneniya&attribute_pa_marka-stali=aisi-316l-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Шланг силиконовый фармацевтический PF (неармированный), Гросснер",
+     "size": "DN ¼″ (ID 6,4)",
+     "purpose": "газ CH₃NH₂, этап 1: V-G1 → C-1 (≈1,5 м), C-1 → C-2 (≈1,5 м), C-2 → V-G2 (≈1 м), NRV-3 → T2 (≈3 м); длины уточнить по месту",
+     "qty_scheme": "≈7 м",
+     "qty_buy": "9 м",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: силикон PF, DN ¼″",
+     "url": "https://grossner.ru/shop/shlangi-pishhevye/shlang-farmacevticheskij-silikonovyj/shlang-farmacevticheskij-silikonovyj/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Этап 2: трубка PTFE 10×12 + обжимные фитинги 12 мм + переходники кламп K25 – наружная ½″ (7 шт.) — замена силиконовых шлангов газовой линии",
+     "size": "10×12",
+     "purpose": "после первых пусков: газ V-G1 → C-1 → C-2 → V-G2/NRV-3 → T2 перевести на PTFE (силикон проницаем для влаги и метиламина). Сейчас НЕ закупать",
+     "qty_scheme": "≈8 м",
+     "qty_buy": "—",
+     "status": "ЭТАП 2",
+     "shop": "Industriation: PTFE 12/10",
+     "url": "https://industriation.ru/ptfe12-10/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Хомут трубный на ножке (держатель), AISI 304, SMS, для трубы 38,1 мм (≈320 ₽)",
+     "size": "Ø38,1 (1½″)",
+     "purpose": "крепление колонн C-1, C-2 к стойке-треноге — по 2 на колонну (на царгу, выше и ниже середины)",
+     "qty_scheme": "4",
+     "qty_buy": "4",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: хомут трубный 38,1 мм",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/homuty-nerzhaveyuschie-dlya-trub/xomut-dlya-trub/?attribute_pa_dn=dn-1-1-2-uslovnyj-diametr-dn&attribute_pa_standart=sms-standart&attribute_pa_dlya-truby-diametrom=381-mm-1-1-2&attribute_pa_marka-stali=aisi304-marka-stali",
+     "extra_url": null
+    }
+   ]
+  },
+  {
+   "title": "Слив реактора BV-1 и выгрузка суспензии P-2 → нутч",
+   "rows": [
+    {
+     "pos": "",
+     "name": "Отвод кламп 90°, AISI 316",
+     "size": "К50,5 (1″)",
+     "purpose": "сразу под краном слива BV-1 — выход в горизонталь",
+     "qty_scheme": "1",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: отвод кламп 90°",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/otvody-klamp/otvod-klamp/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Тройник кламп 45° равнопроходной, 3A, AISI 316 (≈3 540 ₽)",
+     "size": "К50,5 (1″)",
+     "purpose": "1-й после отвода под BV-1: отвод 45° вниз — проба SP-1 (через переход 50,5 → 25), суспензия не застаивается; запас на оба тройника 45° — здесь",
+     "qty_scheme": "1",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: тройник кламп 45° 1″ 316",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/trojniki-klamp/trojnik-klamp-45-gradusov/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-uslovnyj-diametr-dn&attribute_pa_diametr-naruzhnyj-d-n=254-mm-2-diametr-naruzhnyj-d1&attribute_pa_tolshhina-stenki-s=15-165-mm-tolshhina-stenki-s&attribute_pa_diametr-flanca-klampa-d=505-mm-diametr-flanca-klampa-d&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Тройник кламп прямой равнопроходной, 3A, AISI 316 (≈2 370 ₽)",
+     "size": "К50,5 (1″)",
+     "purpose": "2-й: вбок V-S1 на бочку (через переход 50,5 → 25), прямо — выгрузка на P-2 (переходных тройников 50,5 × 25 у Гросснера нет)",
+     "qty_scheme": "1",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: тройник кламп 1″ 316",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/trojniki-klamp/trojnik-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-uslovnyj-diametr-dn&attribute_pa_diametr-naruzhnyj-d-n=254-mm-2-diametr-naruzhnyj-d1&attribute_pa_tolshhina-stenki-s=15-165-mm-tolshhina-stenki-s&attribute_pa_diametr-flanca-klampa-d=505-mm-diametr-flanca-klampa-d&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Переход кламп концентрический 1″ × ½″, 3A, AISI 316",
+     "size": "К50,5 → К25",
+     "purpose": "отводы тройников → SP-1 и V-S1",
+     "qty_scheme": "2",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: переход 1″ × ½″ 316",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexod-klamp/?attribute_pa_dn=dn-1-x-dn-1-2&attribute_pa_standart=3a&attribute_pa_diametr-flanca-klampa-d=505-x-25-mm&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "V-P2",
+     "name": "Кран шаровой кламп 1″, AISI 316L, PN10 (≈3 265 ₽)",
+     "size": "К50,5 (1″)",
+     "purpose": "перед P-2: после тройника V-S1, перед рукавом на насос — отсечь насос при обслуживании, перекрыть линию из реактора при заборе растворителя из бочки",
+     "qty_scheme": "1",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кран кламп 1″ 316L",
+     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-uslovnyj-diametr-dn&attribute_pa_diametr-vnutrennij-d-vnu=224-221-mm&attribute_pa_diametr-flanca-klampa-d=505-mm-diametr-flanca-klampa-d&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi-316l-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "SP-1, V-S1",
+     "name": "Кран шаровой кламп 3A, сёдла PTFE, AISI 316L, PN10 (≈3 080 ₽)",
+     "size": "К25 (½″)",
+     "purpose": "SP-1 — проба, V-S1 — бочка растворителя",
+     "qty_scheme": "2",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кран кламп ½″ 316L",
+     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-vnutrennij-d-vnu=97-94-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi-316l-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Отвод кламп 90°",
+     "size": "К25 (½″)",
+     "purpose": "носик пробоотбора после SP-1",
+     "qty_scheme": "1",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: отвод кламп",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/otvody-klamp/otvod-klamp/",
+     "extra_url": null
+    },
+    {
+     "pos": "P-2",
+     "name": "Мембранный пневмонасос Ампика МН-0,25-PVDF/PTFE: ¼″ NPT вн., воздух ⅛″ NPT, до 18 л/мин",
+     "size": "",
+     "purpose": "выгрузка суспензии на нутч",
+     "qty_scheme": "1",
+     "qty_buy": "1",
+     "status": "КУПИТЬ",
+     "shop": "Ампика: МН-0,25-PVDF/PTFE",
+     "url": "https://www.ampika.ru/oborudovanie.html?id=19460",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Ниппель переходной нерж. 316 ¼″ NPT нар. × ¼″ BSP нар. (RizurLok-NP или аналог)",
+     "size": "¼″ NPT × ¼″ BSP",
+     "purpose": "P-2 вход/выход и P-4 вход/выход (запас — здесь)",
+     "qty_scheme": "4",
+     "qty_buy": "5",
+     "status": "КУПИТЬ",
+     "shop": "Rizur: ниппель RizurLok-NP",
+     "url": "https://rizur.ru/catalog/nippeli/nippel-perekhodnoy/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Переходник кламп – резьба внутренняя ISO DN8, ¼″ BSP, AISI 316 (≈1 455 ₽)",
+     "size": "К50,5 × ¼″ BSP вн.",
+     "purpose": "P-2: вход и выход → рукав 1″",
+     "qty_scheme": "2",
+     "qty_buy": "3",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кламп – резьба внутренняя ¼″ × К50,5",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-vnutrennyaya/?attribute_pa_standart=iso-standart&attribute_pa_dn=dn-8-uslovnyj-diametr-dn&attribute_pa_rezba-dyujm=1-4-rezba-dyujm&attribute_pa_rezba-mm=137-mm-rezba-mm&attribute_pa_diametr-flanca-klampa-d=505-mm-diametr-flanca-klampa-d&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Штуцер шланговый кламп, ёлочка 25,4 (1″), AISI 316",
+     "size": "К50,5 × 25,4",
+     "purpose": "рукав 1″ (силикон TSO): кран V-P2 → вход P-2 (2 конца), выход P-2 → вход нутча F-1 (2 конца); хомуты 32–50 по 2 на конец",
+     "qty_scheme": "4",
+     "qty_buy": "6",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: штуцер K50,5 × 25,4",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/shtucery-klamp/shtucer-shlangovyj-klamp/?attribute_pa_diametr-shtucera-d-shtuc=254-mm-1&attribute_pa_diametr-flanca-klampa-d=505-mm-diametr-flanca-klampa-d&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Шланг силиконовый фармацевтический армированный проволокой TSO, Гросснер",
+     "size": "DN 1″ (ID 25,4)",
+     "purpose": "слив → P-2 (1,5 м), P-2 → нутч (2,5 м); хомуты 32–50; армирование — чтобы не сплющивался на всасе",
+     "qty_scheme": "4 м",
+     "qty_buy": "5 м",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: силикон армированный TSO",
+     "url": "https://grossner.ru/shop/shlangi-pishhevye/shlang-farmacevticheskij-silikonovyj/shlang-farmacevticheskij-silikonovyj-armirovannyj-provolokoj/",
+     "extra_url": null
+    }
+   ]
+  },
+  {
+   "title": "Нутч F-1 (K119) и гребёнка газов нутча",
+   "rows": [
+    {
+     "pos": "",
+     "name": "Тройник кламп 45° равнопроходной, 3A, AISI 316 (≈3 540 ₽)",
+     "size": "К50,5 (1″)",
+     "purpose": "вход нутча сверху: прямо — суспензия, отвод 45° — гребёнка газов (через переход 50,5 → 25)",
+     "qty_scheme": "1",
+     "qty_buy": "1",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: тройник кламп 45° 1″ 316",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/trojniki-klamp/trojnik-klamp-45-gradusov/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-uslovnyj-diametr-dn&attribute_pa_diametr-naruzhnyj-d-n=254-mm-2-diametr-naruzhnyj-d1&attribute_pa_tolshhina-stenki-s=15-165-mm-tolshhina-stenki-s&attribute_pa_diametr-flanca-klampa-d=505-mm-diametr-flanca-klampa-d&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Переход кламп концентрический 1″ × ½″, 3A, AISI 316",
+     "size": "К50,5 → К25",
+     "purpose": "отвод тройника → рукав на гребёнку (1); низ нутча → V-F2 (1)",
+     "qty_scheme": "2",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: переход 1″ × ½″ 316",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexod-klamp/?attribute_pa_dn=dn-1-x-dn-1-2&attribute_pa_standart=3a&attribute_pa_diametr-flanca-klampa-d=505-x-25-mm&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Переход кламп концентрический DIN DN50 × DN25, AISI 316 (≈2 900 ₽)",
+     "size": "К64 → К50,5",
+     "purpose": "крышка нутча и низ нутча",
+     "qty_scheme": "2",
+     "qty_buy": "3",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: переход 64 × 50,5 316",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexod-klamp/?attribute_pa_dn=dn-50-x-dn-25&attribute_pa_standart=din-standart&attribute_pa_diametr-flanca-klampa-d=64-x-505-mm&attribute_pa_gigienicheskij-klass=n3-ra0-8&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Переход кламп концентрический DIN DN100 × DN50, AISI 316 (≈15 765 ₽)",
+     "size": "К119 → К64",
+     "purpose": "крышка нутча и низ нутча (4″ → 1″ и 4″ → ½″ одной деталью у Гросснера нет)",
+     "qty_scheme": "2",
+     "qty_buy": "3",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: переход 119 × 64 316",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexod-klamp/?attribute_pa_dn=dn-100-x-dn-50&attribute_pa_standart=din-standart&attribute_pa_diametr-flanca-klampa-d=119-x-64-mm&attribute_pa_gigienicheskij-klass=n3-ra0-8&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Диоптр кламп (стекло, уплотнения PTFE)",
+     "size": "К119 (4″)",
+     "purpose": "2 диоптра: верхний — уровень суспензии; нижний — над межкламповым фильтром, видно осадок и слой Na₂SO₄ на ткани",
+     "qty_scheme": "2",
+     "qty_buy": "3",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: диоптр кламп",
+     "url": "https://grossner.ru/shop/dioptry/dioptr-klamp/",
+     "extra_url": null
+    },
+    {
+     "pos": "F-1",
+     "name": "Царга кламп, AISI 316L (≈6 150 ₽)",
+     "size": "К119 (4″) × 500",
+     "purpose": "корпус нутча: 2 царги подряд — 7,4 л, весь осадок партии",
+     "qty_scheme": "2",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: царга кламп",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/carga-klamp/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Фильтр межкламповый AISI 316: перфорированный диск 3 мм + сетка 0,5 мм, PN10 (≈5 655 ₽)",
+     "size": "К119 (4″)",
+     "purpose": "опора слоя (ткань PTFE/PP + Na₂SO₄), под нижним диоптром — отдельная деталь между двумя стыками",
+     "qty_scheme": "1",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: фильтр межкламповый 4″ 316",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/filtr-klamp/filtr-mezhklampovyj/?attribute_pa_diametr-flanca-klampa-d=119-mm-diametr-flanca-klampa-d&attribute_pa_yachejka=05-mm&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Ткань фильтровальная PP (или PTFE) — круг под K119 на межкламповый фильтр",
+     "size": "Ø ≈ 110 мм",
+     "purpose": "фильтрующий слой нутча под Na₂SO₄ (сетка фильтра 0,5 мм сама осадок не держит); расходник — по 1 кругу на партию",
+     "qty_scheme": "1",
+     "qty_buy": "отрез 0,5 м²",
+     "status": "УТОЧНИТЬ",
+     "shop": "КемИнС: фильтровальные ткани PP",
+     "url": "https://www.cesolutions.ru/production/filtrovalnye_elementy/filtrovalnye_tkani/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Тройник кламп прямой равнопроходной, 3A, AISI 316",
+     "size": "К25 (½″)",
+     "purpose": "гребёнка нутча: PI-5, SV-F1, VV-2 (запас — здесь)",
+     "qty_scheme": "3",
+     "qty_buy": "4",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: тройник кламп ½″ 316",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/trojniki-klamp/trojnik-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-naruzhnyj-d-n=127-mm-diametr-naruzhnyj-d1&attribute_pa_tolshhina-stenki-s=15-165-mm-tolshhina-stenki-s&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "PI-5",
+     "name": "Мановакуумметр 63 мм, −1…+0,6 бар, мембранный разделитель на кламп",
+     "size": "К25 (½″)",
+     "purpose": "на отвод тройника гребёнки",
+     "qty_scheme": "1",
+     "qty_buy": "1",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: мановакуумметр 63 мм кламп",
+     "url": "https://grossner.ru/shop/izmeritelnye-pribory/manovakuumetr/manovakuumetr-63mm-s-membrannym-razdelitelem-klamp/",
+     "extra_url": null
+    },
+    {
+     "pos": "SV-F1",
+     "name": "Кран шаровой кламп 3A, сёдла PTFE, AISI 316L, PN10 (≈3 080 ₽)",
+     "size": "К25 (½″)",
+     "purpose": "сброс давления нутча вручную (вместо PSV-4): тройник гребёнки → кран → ёлочка → рукав ¾″ в коллектор сбросов (коллектор — у смежников)",
+     "qty_scheme": "1",
+     "qty_buy": "1",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кран кламп ½″ 316L",
+     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-vnutrennij-d-vnu=97-94-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi-316l-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "VV-2",
+     "name": "Кран шаровой кламп 3A, сёдла PTFE, AISI 316L, PN10 (≈3 080 ₽)",
+     "size": "К25 (½″)",
+     "purpose": "вакуум нутча",
+     "qty_scheme": "1",
+     "qty_buy": "1",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кран кламп ½″ 316L",
+     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-vnutrennij-d-vnu=97-94-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi-316l-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Переходник кламп – резьба внутренняя ISO DN8, ¼″ BSP, AISI 316 (≈1 455 ₽)",
+     "size": "К25 × ¼″ BSP вн.",
+     "purpose": "конец гребёнки нутча → штуцер S6510 6-1/4 → кран V-F1 (линия A4, лист «Аргоновая линия»)",
+     "qty_scheme": "1",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кламп – резьба внутренняя",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-vnutrennyaya/?attribute_pa_standart=iso-standart&attribute_pa_dn=dn-8-uslovnyj-diametr-dn&attribute_pa_rezba-dyujm=1-4-rezba-dyujm&attribute_pa_rezba-mm=137-mm-rezba-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "V-F2",
+     "name": "Кран шаровой кламп 3A, сёдла PTFE, AISI 316L, PN10 (≈3 080 ₽)",
+     "size": "К25 (½″)",
+     "purpose": "выход нутча (фильтрат)",
+     "qty_scheme": "1",
+     "qty_buy": "1",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кран кламп ½″ 316L",
+     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-vnutrennij-d-vnu=97-94-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi-316l-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "F-1",
+     "name": "Хомут трубный на ножке (держатель), AISI 304, SMS, для трубы 101,6 мм (≈625 ₽)",
+     "size": "Ø101,6 (K119, 4″)",
+     "purpose": "крепление нутча F-1 к стойке-треноге — 2 шт. на царги K119",
+     "qty_scheme": "2",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: хомут трубный 101,6 мм",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/homuty-nerzhaveyuschie-dlya-trub/xomut-dlya-trub/?attribute_pa_dn=dn-4-uslovnyj-diametr-dn&attribute_pa_standart=sms-standart&attribute_pa_dlya-truby-diametrom=1016-mm-4&attribute_pa_marka-stali=aisi304-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Хомут трубный на ножке (держатель), AISI 304, SMS, для трубы 12,7 мм (≈205 ₽)",
+     "size": "Ø12,7 (½″)",
+     "purpose": "крепление гребёнки газов нутча (труба ½″) к раме / стойке нутча — 2 шт.",
+     "qty_scheme": "2",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: хомут трубный 12,7 мм",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/homuty-nerzhaveyuschie-dlya-trub/xomut-dlya-trub/?attribute_pa_dn=dn-1-2-uslovnyj-diametr-dn&attribute_pa_standart=sms-standart&attribute_pa_dlya-truby-diametrom=127-mm-1-2&attribute_pa_marka-stali=aisi304-marka-stali",
+     "extra_url": null
+    }
+   ]
+  },
+  {
+   "title": "Опоры-треноги колонн C-1, C-2 и нутча F-1 (напольные, из конструкционного алюминиевого профиля, паз 10)",
+   "rows": [
+    {
+     "pos": "",
+     "name": "Профиль конструкционный алюминиевый 45×45, паз 10, L = 1600 мм (АЛТЕРВИА, АД31Т1, анодированный) — вертикальная стойка",
+     "size": "45×45 × 1600",
+     "purpose": "2 стойки: (1) колонны C-1 и C-2 — на неё 4 хомута Ø38,1; (2) нутч F-1 — 2 хомута Ø101,6 на царги и 2 хомута Ø12,7 гребёнки. Длину подтвердить по месту",
+     "qty_scheme": "2",
+     "qty_buy": "2",
+     "status": "УТОЧНИТЬ",
+     "shop": "Всеинструменты: профиль 45×45 паз 10",
+     "url": "https://www.vseinstrumenti.ru/product/profil-konstruktsionnyj-altervia-45x45-paz-10-a11454510x1600-21273632/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Профиль конструкционный алюминиевый 40×40, паз 10, L = 700 мм, упаковка 4 шт. — ноги треноги",
+     "size": "40×40 × 700",
+     "purpose": "по 3 ноги на стойку (под 120°), 6 шт. → 2 упаковки (2 шт. в запас / подкосы)",
+     "qty_scheme": "6 шт.",
+     "qty_buy": "2 уп.",
+     "status": "КУПИТЬ",
+     "shop": "Всеинструменты: профиль 40×40 × 700, уп. 4",
+     "url": "https://www.vseinstrumenti.ru/product/profil-konstruktsionnyj-altervia-40x40-paz-10-upakovka-4-shtuki-a11404010x700-4-23945754/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Уголок усиленный для соединения профилей, паз 10 (уп. 10 шт.)",
+     "size": "паз 10",
+     "purpose": "крепление ног к стойке: по 3 уголка на стойку + подкосы — 6…10 шт.",
+     "qty_scheme": "≈8",
+     "qty_buy": "1 уп.",
+     "status": "КУПИТЬ",
+     "shop": "Всеинструменты: уголок усиленный АЛТЕРВИА, уп. 10",
+     "url": "https://www.vseinstrumenti.ru/product/komplekt-altervia-ugolok-usilennyj-dlya-soedineniya-profilej-upakovka-10-shtuk-a00802-104590-10-21095066/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Опора регулируемая (ножка) с резьбой в торец профиля 40×40, Ø 40–60 мм, резиновая подошва",
+     "size": "М8 / М10 (по профилю)",
+     "purpose": "концы ног треноги — выставить стойки по уровню",
+     "qty_scheme": "6",
+     "qty_buy": "8",
+     "status": "КУПИТЬ",
+     "shop": "Яндекс.Маркет: опора регулируемая для профиля 40",
+     "url": "https://market.yandex.ru/search?text=опора+регулируемая+для+конструкционного+профиля+40х40",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Гайка-сухарь (молоток) паз 10 М8 + болт М8 нерж. с шайбой",
+     "size": "паз 10 · М8",
+     "purpose": "крепление хомутов на ножке к стойке (резьбу ножки хомутов — уточнить, М8/М10) и уголков: ≈8 хомутов + 16 под уголки",
+     "qty_scheme": "≈30",
+     "qty_buy": "1 компл. (40 шт.)",
+     "status": "КУПИТЬ",
+     "shop": "Яндекс.Маркет: гайка молоток паз 10 М8",
+     "url": "https://market.yandex.ru/search?text=гайка+молоток+паз+10+М8",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Альтернатива: тренога сварная нерж. (AISI 304) под заказ — труба 40×40, стойка 1600 мм, 3 ноги по 600 мм, регулируемые опоры",
+     "size": "по эскизу",
+     "purpose": "если профиль покажется недостаточно жёстким для нутча (≈25–35 кг с осадком на высоте ≈1,5 м); стойку нутча в любом случае прикрепить к раме реактора / стене сверху",
+     "qty_scheme": "—",
+     "qty_buy": "—",
+     "status": "УТОЧНИТЬ",
+     "shop": "местная металлообработка",
+     "url": "https://market.yandex.ru/search?text=изготовление+нержавеющих+конструкций+под+заказ",
+     "extra_url": null
+    }
+   ]
+  },
+  {
+   "title": "Фильтрация F-2 и фасовка (P-4)",
+   "rows": [
+    {
+     "pos": "P-4",
+     "name": "Мембранный пневмонасос Ампика МН-0,25-PVDF/PTFE: ¼″ NPT вн., воздух ⅛″ NPT, до 18 л/мин",
+     "size": "",
+     "purpose": "фильтрат нутча → F-2",
+     "qty_scheme": "1",
+     "qty_buy": "1",
+     "status": "КУПИТЬ",
+     "shop": "Ампика: МН-0,25-PVDF/PTFE",
+     "url": "https://www.ampika.ru/oborudovanie.html?id=19460",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Переходник кламп – резьба внутренняя ISO DN8, ¼″ BSP, AISI 316 (≈1 455 ₽)",
+     "size": "К25 × ¼″ BSP вн.",
+     "purpose": "P-4: вход и выход (на ниппели ¼″ NPT × ¼″ BSP — в разделе выгрузки)",
+     "qty_scheme": "2",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кламп – резьба внутренняя ¼″ × К25",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-vnutrennyaya/?attribute_pa_standart=iso-standart&attribute_pa_dn=dn-8-uslovnyj-diametr-dn&attribute_pa_rezba-dyujm=1-4-rezba-dyujm&attribute_pa_rezba-mm=137-mm-rezba-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "F-2",
+     "name": "Корпус микропористого фильтра 10″ на клампах",
+     "size": "10″",
+     "purpose": "тонкая фильтрация фильтрата (+1 корпус опционально)",
+     "qty_scheme": "1",
+     "qty_buy": "1",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: корпус 10″",
+     "url": "https://grossner.ru/shop/filtry-nerzhaveyuschie/mikroporistyj-membrannyj-filtr/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Патроны 10″ 5 / 2 / 0,2 / 0,05 мкм (PTFE или PP/PES)",
+     "size": "10″",
+     "purpose": "по 2 шт. каждого рейтинга",
+     "qty_scheme": "8",
+     "qty_buy": "8",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: патроны",
+     "url": "https://grossner.ru/shop/filtry-nerzhaveyuschie/patron-mikroporistogo-membrannogo-filtra/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Кольца уплотнительные в оболочке FEP — вместо штатных силикон/EPDM",
+     "size": "под корпус 10″",
+     "purpose": "крышка корпуса и посадка патронов (продукт — углеводород, EPDM не стоек)",
+     "qty_scheme": "2",
+     "qty_buy": "4",
+     "status": "КУПИТЬ",
+     "shop": "Hydrohype: кольца в оболочке FEP",
+     "url": "https://hydrohype.ru/products/kolco-vo-ftoroplastovoj-obolochke",
+     "extra_url": null
+    },
+    {
+     "pos": "V-F3",
+     "name": "Кран шаровой кламп 3A, сёдла PTFE, AISI 316L, PN10 (≈3 080 ₽)",
+     "size": "К25 (½″)",
+     "purpose": "выход F-2 → налив",
+     "qty_scheme": "1",
+     "qty_buy": "1",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кран кламп ½″ 316L",
+     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-vnutrennij-d-vnu=97-94-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi-316l-marka-stali",
+     "extra_url": null
+    }
+   ]
+  },
+  {
+   "title": "Сжатый воздух к насосам P-2, P-4",
+   "rows": [
+    {
+     "pos": "",
+     "name": "Ниппель переходной ⅛″ NPT нар. × ¼″ BSP нар., нерж. или латунь",
+     "size": "⅛″ NPT × ¼″ BSP",
+     "purpose": "вход воздуха насоса (по 1 на насос)",
+     "qty_scheme": "2",
+     "qty_buy": "3",
+     "status": "КУПИТЬ",
+     "shop": "Rizur: ниппель переходной",
+     "url": "https://rizur.ru/catalog/nippeli/nippel-perekhodnoy/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Переходник кламп – резьба внутренняя ISO DN8, ¼″ BSP, AISI 316",
+     "size": "К25 × ¼″ BSP вн.",
+     "purpose": "по 2 на насос: на ниппель и ответный — на цангу линии",
+     "qty_scheme": "4",
+     "qty_buy": "6",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: кламп – резьба внутренняя ¼″ × К25",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-vnutrennyaya/?attribute_pa_standart=iso-standart&attribute_pa_dn=dn-8-uslovnyj-diametr-dn&attribute_pa_rezba-dyujm=1-4-rezba-dyujm&attribute_pa_rezba-mm=137-mm-rezba-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Фитинг цанговый прямой G¼ × трубка 8 мм, Camozzi S6510 8-1/4",
+     "size": "G¼ × 8",
+     "purpose": "выход регулятора и кламп ¼″ у насоса",
+     "qty_scheme": "4",
+     "qty_buy": "6",
+     "status": "КУПИТЬ",
+     "shop": "BB-Engineering: S6510 8-1/4",
+     "url": "https://bb-engineering.ru/s6510-8-1-4/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Быстроразъём пневматический «папа» G¼ наружная (EURO)",
+     "size": "G¼",
+     "purpose": "вход регулятора ← магистраль; тип разъёма магистрали уточнить",
+     "qty_scheme": "2",
+     "qty_buy": "3",
+     "status": "КУПИТЬ",
+     "shop": "BB-Engineering: быстросъёмы EUROPEAN",
+     "url": "https://bb-engineering.ru/bystrosemnye-soedineniya/rapid-european/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Выхлоп насосов: шланг в вытяжку + ёлочка под порт выхлопа",
+     "size": "по порту",
+     "purpose": "резьбу выхлопного порта МН-0,25 уточнить у Ампики",
+     "qty_scheme": "2",
+     "qty_buy": "3",
+     "status": "УТОЧНИТЬ",
+     "shop": "Гросснер: ёлочка НР",
+     "url": "https://grossner.ru/shop/shtucer-elochka/shtucer-nr/shtucer-nr/",
+     "extra_url": null
+    }
+   ]
+  },
+  {
+   "title": "Кламп-соединения на всю установку: хомуты и прокладки (по ведомости; без реактора — на штуцерах P1–P4 родные клампы, без E-1, гребёнки реактора и VP-1)",
+   "rows": [
+    {
+     "pos": "",
+     "name": "Хомут кламп обычный, AISI 304",
+     "size": "К25 (½″)",
+     "purpose": "все соединения ½″ нашей обвязки",
+     "qty_scheme": "40",
+     "qty_buy": "42",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: хомут кламп",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/xomuty-klamp/xomut-klamp-soedineniya/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Хомут кламп обычный, AISI 304",
+     "size": "К50,5 (1″)",
+     "purpose": "BV-1 → отвод, тройники под BV-1 и на входе нутча, кран V-P2, выгрузка P-2, переходы нутча; колонны C-1, C-2: по 4 стыка на колонну — фильтр/переход, диоптр/фильтр, диоптр/царга, царга/верхний переход (8)",
+     "qty_scheme": "21",
+     "qty_buy": "23",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: хомут кламп",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/xomuty-klamp/xomut-klamp-soedineniya/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Хомут кламп обычный, AISI 304",
+     "size": "К64 (2″)",
+     "purpose": "нутч: стыки переходов 119/64 → 64/50,5 сверху и снизу",
+     "qty_scheme": "2",
+     "qty_buy": "4",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: хомут кламп",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/xomuty-klamp/xomut-klamp-soedineniya/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Хомут кламп УСИЛЕННЫЙ (болтовой), AISI 304 (≈2 770 ₽)",
+     "size": "К119 (4″)",
+     "purpose": "нутч: 6 стыков — переход/верхний диоптр, диоптр/царга, царга/царга, царга/нижний диоптр, диоптр/фильтр, фильтр/переход (с PTFE — только болтовые)",
+     "qty_scheme": "6",
+     "qty_buy": "8",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: хомут усиленный DN100 (119)",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/xomuty-klamp/xomut-klamp-usilennyj-dn-100-dn-4-aisi-304/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Прокладка кламп PTFE",
+     "size": "К25 (½″)",
+     "purpose": "где эфир и углеводороды: дозирование, слив и проба, выгрузка, нутч и его гребёнка, вакуум нутча, P-4, F-2",
+     "qty_scheme": "24",
+     "qty_buy": "26",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: прокладка кламп PTFE",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/prokladka-klamp-ptfe/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Прокладка кламп PTFE",
+     "size": "К50,5 (1″)",
+     "purpose": "BV-1 → отвод, тройники 45° и прямой, кран V-P2, переходы 50,5/25, выгрузка P-2, нутч",
+     "qty_scheme": "12",
+     "qty_buy": "14",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: прокладка кламп PTFE",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/prokladka-klamp-ptfe/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Прокладка кламп PTFE С СЕТКОЙ AISI 316, ячейка 0,15 мм (mesh 100), ≈900 ₽",
+     "size": "К50,5 (1″)",
+     "purpose": "низ нутча: стык переходов 64/50,5 → 50,5/½″ — ловит зёрна Na₂SO₄ и волокна ткани, если прорвутся, до крана V-F2 и насоса P-4",
+     "qty_scheme": "1",
+     "qty_buy": "3",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: прокладка с сеткой PTFE 0,15 мм",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/uplotneniya-klamp/prokladka-klamp-s-setkoj-ptfe/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-vnutrennij-d-vnu=351-348-mm&attribute_pa_diametr-flanca-klampa-d=505-mm-diametr-flanca-klampa-d&attribute_pa_yachejka=015-mm-mesh100&attribute_pa_firma=ptfe-material-uplotneniya&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Прокладка кламп PTFE",
+     "size": "К64 (2″)",
+     "purpose": "нутч: стыки переходов",
+     "qty_scheme": "2",
+     "qty_buy": "4",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: прокладка кламп PTFE",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/prokladka-klamp-ptfe/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Прокладка кламп PTFE",
+     "size": "К119 (4″)",
+     "purpose": "нутч: 6 стыков — переход/верхний диоптр, диоптр/царга, царга/царга, царга/нижний диоптр, диоптр/фильтр, фильтр/переход",
+     "qty_scheme": "6",
+     "qty_buy": "8",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: прокладка кламп PTFE",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/prokladka-klamp-ptfe/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Прокладка кламп EPDM",
+     "size": "К25 (½″)",
+     "purpose": "без углеводородов: P-1 → G-1 (4), порт G-1 → SV-G1 → рукав (2), выход газа и V-G1 (2), колонны (4), NRV-3 (2), воздух насосов (2)",
+     "qty_scheme": "16",
+     "qty_buy": "18",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: уплотнения кламп (EPDM)",
+     "url": "https://grossner.ru/katalog/soedinitelnaya-armatura/clamp-soedineniya/uplotneniya-klamp/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Прокладка кламп EPDM",
+     "size": "К50,5 (1½″)",
+     "purpose": "колонны: диоптр → царга (2), межкламповый фильтр снизу — с двух сторон: диоптр/фильтр и фильтр/переход (4)",
+     "qty_scheme": "6",
+     "qty_buy": "8",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: уплотнения кламп (EPDM)",
+     "url": "https://grossner.ru/katalog/soedinitelnaya-armatura/clamp-soedineniya/uplotneniya-klamp/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Прокладка кламп EPDM С СЕТКОЙ AISI 316, ячейка 0,1 мм (mesh 140), ≈800 ₽",
+     "size": "К50,5 (1½″)",
+     "purpose": "верх колонн C-1, C-2 (царга → переход 50,5/25): держит засыпку вместо межклампового фильтра, задерживает пыль сит 3A и NaOH — по 1 на колонну",
+     "qty_scheme": "2",
+     "qty_buy": "4",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: прокладка с сеткой EPDM K50,5 0,1 мм",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/uplotneniya-klamp/prokladka-klamp-s-setkoj/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-vnutrennij-d-vnu=351-348-mm&attribute_pa_diametr-flanca-klampa-d=505-mm-diametr-flanca-klampa-d&attribute_pa_yachejka=01-mm-mesh140&attribute_pa_firma=epdm-material-uplotneniya&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    }
+   ]
+  },
+  {
+   "title": "Рукава, трубки, крепёж — общее",
+   "rows": [
+    {
+     "pos": "",
+     "name": "Шланг силиконовый фармацевтический армированный проволокой TSO, Гросснер",
+     "size": "DN ¾″ (ID 19)",
+     "purpose": "линии K25 на ёлочках K25 × 19,05: тройник 45° нутча → гребёнка 1 м, V-F2 → P-4 1 м, P-4 → F-2 1,5 м, бочка → V-S1 2,5 м, F-2 → канистра 1,5 м, VV-2 → тройник VP-1 2,5 м, SV-G1 и SV-F1 → коллектор сбросов по 2 м; хомуты 25–40",
+     "qty_scheme": "≈14 м",
+     "qty_buy": "18 м",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: силикон армированный TSO",
+     "url": "https://grossner.ru/shop/shlangi-pishhevye/shlang-farmacevticheskij-silikonovyj/shlang-farmacevticheskij-silikonovyj-armirovannyj-provolokoj/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Штуцер шланговый кламп, ёлочка 19,05 (¾″), AISI 316",
+     "size": "К25 × 19,05",
+     "purpose": "концы рукавов ¾″: гребёнка нутча 2, P-4 вход 2, P-4 → F-2 2, бочка → V-S1 2, налив 1, VV-2 → VP-1 2, SV-G1 1, SV-F1 1",
+     "qty_scheme": "13",
+     "qty_buy": "15",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: штуцер K25 × 19,05",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/shtucery-klamp/shtucer-shlangovyj-klamp/?attribute_pa_diametr-shtucera-d-shtuc=1905-mm-3-4&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_marka-stali=aisi316-marka-stali",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Хомут червячный нерж.",
+     "size": "8–12 / 25–40 / 32–50",
+     "purpose": "по 2 на конец: шланг PF ¼″ на ёлочках 6,35 — линия P-1 (3 конца) и газ CH₃NH₂ (8 концов: 6 ёлочек + V-G1 + T2) / рукава ¾″ (15 концов, вкл. 2 конца у коллектора) / рукава 1″ (4)",
+     "qty_scheme": "22 / 30 / 8",
+     "qty_buy": "24 / 32 / 10",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: хомут червячный",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/homuty-nerzhaveyuschie-dlya-trub/xomut-chervyachnyj-nerzhaveyushhij/",
+     "extra_url": null
+    },
+    {
+     "pos": "",
+     "name": "Фитинги обжимные нерж. ¼″ и 8 мм: прямые ¼″ × ¼″ нар.; переход обжим 8 → 6 мм на вентиль T2; отрезок трубки нерж. Ø6 ≈50 мм под шланг",
+     "size": "¼″ / 8→6 мм",
+     "purpose": "дозирование P-3 (¼″): FV-1 и NRV-4 (¼″ × ¼″ нар. — 4), переходник на P3 — по месту; газ CH₃NH₂: ввод в T2 — переход 8 → 6 мм + трубка Ø6 под шланг PF ¼″ (ID 6,4)",
+     "qty_scheme": "≈6",
+     "qty_buy": "≈8",
+     "status": "КУПИТЬ",
+     "shop": "BB-Engineering: обжимные фитинги",
+     "url": "https://bb-engineering.ru/fitingi-obzhimnye/",
+     "extra_url": null
+    }
+   ]
+  }
+ ],
+ "extra_sheets": [
+  {
+   "name": "Аргоновая линия",
+   "note": "Аргоновая линия по листу 6 монтажных чертежей и сборке A1: баллон AR-1 → редуктор (200–300 мбар) → ротаметр PR-1 с вентилем → раздаточный коллектор (4 тройника 6 мм) → краны A1–A4 → обратные клапаны (A1, A2, A3; на A4 — NRV-5 у нутча) → потребители: A1 — гребёнка реактора (AV-1), A2 — генератор G-1, A3 — тара MeSiCl₃ / PDMS-OH, A4 — гребёнка нутча (V-F1). Трубка — полиамид PA12 6×4 на цанговых фитингах (аргон сухой и инертный, давление ≤ 0,3 бар). Запас: фитинги и заглушки +2, краны, клапаны, тройники +1, трубка ≈+30 %. Баллон, редуктор и ротаметр — подтвердить, есть ли у заказчика.",
+   "groups": [
+    {
+     "title": "Аргон: источник и регулировка расхода (баллон → редуктор → PR-1)",
+     "rows": [
+      {
+       "pos": "AR-1",
+       "name": "Баллон аргона 40 л (Ar ≥ 99,998 %)",
+       "size": "40 л, W21,8",
+       "purpose": "источник аргона; подтвердить, есть ли у заказчика",
+       "qty_scheme": "1",
+       "qty_buy": "—",
+       "status": "УТОЧНИТЬ",
+       "shop": "Поставщик газа",
+       "url": "https://market.yandex.ru/search?text=баллон+аргон+40+л",
+       "extra_url": null
+      },
+      {
+       "pos": "",
+       "name": "Редуктор баллонный аргоновый с манометрами, низкое давление на выходе 0,2–0,3 бар (двухступенчатый или с точной регулировкой)",
+       "size": "вход W21,8; выход — уточнить (G¼″)",
+       "purpose": "после вентиля баллона; уставка 200–300 мбар (раздел 13); подтвердить, есть ли",
+       "qty_scheme": "1",
+       "qty_buy": "1",
+       "status": "УТОЧНИТЬ",
+       "shop": "Яндекс.Маркет: редуктор аргоновый",
+       "url": "https://market.yandex.ru/search?text=редуктор+аргон+низкого+давления",
+       "extra_url": null
+      },
+      {
+       "pos": "PR-1",
+       "name": "Ротаметр газовый с игольчатым вентилем (стекло, поплавок), диапазон до 10 л/мин; для синтеза 0,1–0,2 л/мин — второй, малый (0,1–1 л/мин), либо один с вентилем тонкой регулировки",
+       "size": "присоединение — уточнить (G¼″)",
+       "purpose": "после редуктора: синтез 0,1–0,2 л/мин, продувки 3–5, выгрузка ≈10 л/мин",
+       "qty_scheme": "1",
+       "qty_buy": "1",
+       "status": "УТОЧНИТЬ",
+       "shop": "Яндекс.Маркет: ротаметр с вентилем",
+       "url": "https://market.yandex.ru/search?text=ротаметр+газовый+с+игольчатым+вентилем",
+       "extra_url": null
+      }
+     ]
+    },
+    {
+     "title": "Аргон: трубка полиамидная 6×4 и цанговые фитинги",
+     "rows": [
+      {
+       "pos": "",
+       "name": "Трубка полиамидная (PA12) 6×4 мм, Camozzi TRN 6/4, до 28 бар",
+       "size": "Ø6 × 4",
+       "purpose": "все линии аргона: редуктор → PR-1 → раздаточный коллектор → A1 (гребёнка AV-1), A2 (G-1), A3 (тара), A4 (нутч). Длины по 3D-модели: ≈0,7 + 0,2 + 1,5 + 2,8 + 2,3 + 5,6 м; уточнить по месту",
+       "qty_scheme": "≈14 м",
+       "qty_buy": "18 м",
+       "status": "КУПИТЬ",
+       "shop": "Би энд Би (Camozzi): трубка TRN 6/4 (под заказ 7 дней)",
+       "url": "https://bb-engineering.ru/trn-6-4/",
+       "extra_url": null
+      },
+      {
+       "pos": "",
+       "name": "Штуцер прямой цанговый с наружной резьбой G¼″ × трубка 6 мм, Camozzi S6510 6-1/4",
+       "size": "G¼″ × 6",
+       "purpose": "выход редуктора (1), вход и выход PR-1 (2), конец A1 на переходнике AV-1 (1), конец A4 на гребёнке нутча (1), ввод A2 в G-1 (1); резьбу редуктора и PR-1 подтвердить",
+       "qty_scheme": "6",
+       "qty_buy": "8",
+       "status": "КУПИТЬ",
+       "shop": "Би энд Би (Camozzi): S6510 6-1/4",
+       "url": "https://bb-engineering.ru/s6510-6-1-4/",
+       "extra_url": null
+      },
+      {
+       "pos": "",
+       "name": "Тройник T-образный цанговый 6 мм, Camozzi 6540 6",
+       "size": "6 мм",
+       "purpose": "раздаточный коллектор после PR-1: 4 отвода A1–A4",
+       "qty_scheme": "4",
+       "qty_buy": "5",
+       "status": "КУПИТЬ",
+       "shop": "Би энд Би (Camozzi): тройник 6540 6",
+       "url": "https://bb-engineering.ru/6540-6/",
+       "extra_url": null
+      },
+      {
+       "pos": "",
+       "name": "Заглушка цанговая 6 мм (в порт фитинга), Camozzi 6900 6",
+       "size": "6 мм",
+       "purpose": "конец раздаточного коллектора (резерв под 5-й отвод)",
+       "qty_scheme": "1",
+       "qty_buy": "3",
+       "status": "КУПИТЬ",
+       "shop": "Би энд Би (Camozzi): заглушка 6900 6",
+       "url": "https://bb-engineering.ru/6900-6/",
+       "extra_url": null
+      }
+     ]
+    },
+    {
+     "title": "Аргон: краны и обратные клапаны",
+     "rows": [
+      {
+       "pos": "A1–A4, V-F1",
+       "name": "Кран шаровой цанговый 2/2, трубка 6 мм — 6 мм, Aignep 06560 00 002",
+       "size": "6 мм",
+       "purpose": "A1 — гребёнка (AV-1), A2 — генератор G-1, A3 — тара MeSiCl₃ / PDMS-OH, A4 — нутч; V-F1 — у гребёнки нутча",
+       "qty_scheme": "5",
+       "qty_buy": "6",
+       "status": "КУПИТЬ",
+       "shop": "Би энд Би: Aignep 06560 00 002 (под заказ 7–10 дней)",
+       "url": "https://bb-engineering.ru/kran-cangovyy-aignep-06560-00-002/",
+       "extra_url": "https://pnevmo.ru/catalog/krany-sharovye-tsangovye/"
+      },
+      {
+       "pos": "NRV A1–A3, NRV-5",
+       "name": "Клапан обратный цанговый 6 мм, Camozzi PVNR 6: открытие 0,02 бар, корпус POM, уплотнения EPDM",
+       "size": "6 мм",
+       "purpose": "после кранов A1, A2, A3 (обязательно на A1 и A2 — лист 6); NRV-5 — на линии A4 перед V-F1 (не пускает пары растворителя из нутча в аргон)",
+       "qty_scheme": "4",
+       "qty_buy": "5",
+       "status": "КУПИТЬ",
+       "shop": "Би энд Би (Camozzi): PVNR 6 (нет в наличии — аналог Aignep по доп. ссылке)",
+       "url": "https://bb-engineering.ru/klapan-obratnyy-cangovyy-camozzi-pvnr-6/",
+       "extra_url": "https://bb-engineering.ru/klapan-obratnyy-cangovyy-aignep-06064-00-002/"
+      }
+     ]
+    },
+    {
+     "title": "Аргон: переходы на аппараты (границы линии)",
+     "rows": [
+      {
+       "pos": "AV-1",
+       "name": "Переходник кламп – резьба внутренняя ISO DN8, ¼″ BSP, AISI 316 (≈1 455 ₽)",
+       "size": "К25 × ¼″ BSP вн.",
+       "purpose": "кран AV-1 на гребёнке реактора → штуцер S6510 6-1/4 (вместо переходника на G½″)",
+       "qty_scheme": "1",
+       "qty_buy": "2",
+       "status": "КУПИТЬ",
+       "shop": "Гросснер: кламп – резьба внутренняя",
+       "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-vnutrennyaya/?attribute_pa_standart=iso-standart&attribute_pa_dn=dn-8-uslovnyj-diametr-dn&attribute_pa_rezba-dyujm=1-4-rezba-dyujm&attribute_pa_rezba-mm=137-mm-rezba-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_marka-stali=aisi316-marka-stali",
+       "extra_url": null
+      },
+      {
+       "pos": "A2",
+       "name": "Переходник на штуцер аргона крышки G-1 → резьба G¼″ внутр.",
+       "size": "по порту G-1",
+       "purpose": "ввод аргона A2 в генератор; резьбу порта крышки G-1 замерить (чек-лист)",
+       "qty_scheme": "1",
+       "qty_buy": "1",
+       "status": "УТОЧНИТЬ",
+       "shop": "по замеру (нерж. 316)",
+       "url": "https://market.yandex.ru/search?text=переходник+нержавеющий+резьба+G1/4+внутренняя",
+       "extra_url": null
+      },
+      {
+       "pos": "A3",
+       "name": "Ввод трубки 6 мм в крышку-переходник тары — через свободный порт крышки (GL14 с уплотнением под трубку 6 мм)",
+       "size": "6 мм",
+       "purpose": "линия A3 в тару MeSiCl₃ / PDMS-OH; крышка — в разделе «Реактор R-1: дозирование» основного листа",
+       "qty_scheme": "—",
+       "qty_buy": "—",
+       "status": "УТОЧНИТЬ",
+       "shop": "Germeon: крышка DURAN GL45, 2 порта",
+       "url": "https://germeon.ru/catalog/item/76880/",
+       "extra_url": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
