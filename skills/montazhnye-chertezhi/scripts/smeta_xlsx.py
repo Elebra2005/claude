@@ -9,6 +9,8 @@
     "shop": "Гросснер: кран кламп", "url": "https://…?attribute_pa_…", "extra_url": null}]}]}
 Количества — строками («1», «≈3 м»): числа складываются в сводной, остальное склеивается через « + ».
 Поставщик в сводной — текст `shop` до двоеточия.
+Необязательно: "extra_sheets": [{"name": "Аргоновая линия", "note": "…", "groups": [...]}] — отдельные листы
+в том же формате, что «По узлам схемы»; их позиции тоже идут в «Сводную к заказу».
 """
 import json, math, re, sys
 from urllib.parse import urlparse
@@ -104,6 +106,19 @@ def build(data, out):
     n1 = write(wb.active, ['№', 'Поз. на схеме', 'Наименование', 'Размер', 'Назначение / где стоит', 'По схеме', 'К закупке', 'Статус', 'Где купить', 'Доп. ссылка'],
                [5, 11, 44, 15, 50, 10, 10, 11, 30, 16], {1, 2, 4, 6, 7, 8}, s1, 9, 10, 8, 7)
     wb.active.title = 'По узлам схемы'
+    for ex in data.get('extra_sheets', []):
+        sx = [(g['title'], [((x['pos'], x['name'], x['size'], x['purpose'], x['qty_scheme'], x['qty_buy'], x['status'], x['shop']),
+                             x.get('url'), x.get('extra_url')) for x in g['rows']]) for g in ex['groups']]
+        ws = wb.create_sheet(ex['name'][:31])
+        n = write(ws, ['№', 'Поз. на схеме', 'Наименование', 'Размер', 'Назначение / где стоит', 'По схеме', 'К закупке', 'Статус', 'Где купить', 'Доп. ссылка'],
+                  [5, 11, 44, 15, 50, 10, 10, 11, 30, 16], {1, 2, 4, 6, 7, 8}, sx, 9, 10, 8, 7)
+        if ex.get('note'):
+            r = ws.max_row + 2
+            ws.cell(r, 2, ex['note']).font = f(9.5, c='404040')
+            ws.merge_cells(start_row=r, start_column=2, end_row=r, end_column=10)
+            ws.cell(r, 2).alignment = W; ws.row_dimensions[r].height = 13.5 * lines(ex['note'], 190) + 4
+        print(f'  лист «{ex["name"]}»: {n} строк')
+        groups = groups + ex['groups']
     # сводная: одинаковые (наименование, размер) — одной строкой, по поставщикам
     agg, order = {}, []
     for g in groups:

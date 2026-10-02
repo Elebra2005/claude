@@ -10,6 +10,7 @@ import sys
 T = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 E = html.escape
 d = json.load(open(os.path.join(T, 'tools/smeta-data.json'), encoding='utf-8'))
+ALL = d['groups'] + [g for ex in d.get('extra_sheets', []) for g in ex['groups']]
 
 # 1. смета XLSX
 subprocess.run([sys.executable, os.path.join(T, '../skills/montazhnye-chertezhi/scripts/smeta_xlsx.py'),
@@ -18,7 +19,7 @@ subprocess.run([sys.executable, os.path.join(T, '../skills/montazhnye-chertezhi/
 # 2. спецификация в документе установки
 CLS = {'КУПИТЬ': 'y', 'УТОЧНИТЬ': 'h', 'ЕСТЬ': 'h'}
 rows = []
-for g in d['groups']:
+for g in ALL:
     rows.append(f'<tr class="sec"><td colspan="7">{E(g["title"])}</td></tr>')
     for r in g['rows']:
         nm = E(r['name']) + (f' — <b>{E(r["size"])}</b>' if r['size'] else '')
@@ -36,7 +37,7 @@ open(p, 'w', encoding='utf-8').write(s)
 
 # 3. заказ Гросснер
 rows, n = [], 0
-for g in d['groups']:
+for g in ALL:
     gr = [r for r in g['rows'] if r['shop'].startswith('Гросснер') and r['status'] != 'ЕСТЬ']
     if not gr:
         continue

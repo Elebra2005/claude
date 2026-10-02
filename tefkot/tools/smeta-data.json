@@ -625,14 +625,14 @@
     },
     {
      "pos": "",
-     "name": "Переходник кламп – резьба наружная ¼″, AISI 316",
-     "size": "К25 × ¼″",
-     "purpose": "конец гребёнки → V-F1 (аргон A4 — граница с линией смежников)",
+     "name": "Переходник кламп – резьба внутренняя ISO DN8, ¼″ BSP, AISI 316 (≈1 455 ₽)",
+     "size": "К25 × ¼″ BSP вн.",
+     "purpose": "конец гребёнки нутча → штуцер S6510 6-1/4 → кран V-F1 (линия A4, лист «Аргоновая линия»)",
      "qty_scheme": "1",
      "qty_buy": "2",
      "status": "КУПИТЬ",
-     "shop": "Гросснер: кламп – резьба наружная",
-     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-naruzhnaya/",
+     "shop": "Гросснер: кламп – резьба внутренняя",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-vnutrennyaya/?attribute_pa_standart=iso-standart&attribute_pa_dn=dn-8-uslovnyj-diametr-dn&attribute_pa_rezba-dyujm=1-4-rezba-dyujm&attribute_pa_rezba-mm=137-mm-rezba-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_marka-stali=aisi316-marka-stali",
      "extra_url": null
     },
     {
@@ -1014,6 +1014,178 @@
      "shop": "BB-Engineering: обжимные фитинги",
      "url": "https://bb-engineering.ru/fitingi-obzhimnye/",
      "extra_url": null
+    }
+   ]
+  }
+ ],
+ "extra_sheets": [
+  {
+   "name": "Аргоновая линия",
+   "note": "Аргоновая линия по листу 6 монтажных чертежей и сборке A1: баллон AR-1 → редуктор (200–300 мбар) → ротаметр PR-1 с вентилем → раздаточный коллектор (4 тройника 6 мм) → краны A1–A4 → обратные клапаны (A1, A2, A3; на A4 — NRV-5 у нутча) → потребители: A1 — гребёнка реактора (AV-1), A2 — генератор G-1, A3 — тара MeSiCl₃ / PDMS-OH, A4 — гребёнка нутча (V-F1). Трубка — полиамид PA12 6×4 на цанговых фитингах (аргон сухой и инертный, давление ≤ 0,3 бар). Запас: фитинги и заглушки +2, краны, клапаны, тройники +1, трубка ≈+30 %. Баллон, редуктор и ротаметр — подтвердить, есть ли у заказчика.",
+   "groups": [
+    {
+     "title": "Аргон: источник и регулировка расхода (баллон → редуктор → PR-1)",
+     "rows": [
+      {
+       "pos": "AR-1",
+       "name": "Баллон аргона 40 л (Ar ≥ 99,998 %)",
+       "size": "40 л, W21,8",
+       "purpose": "источник аргона; подтвердить, есть ли у заказчика",
+       "qty_scheme": "1",
+       "qty_buy": "—",
+       "status": "УТОЧНИТЬ",
+       "shop": "Поставщик газа",
+       "url": "https://market.yandex.ru/search?text=баллон+аргон+40+л",
+       "extra_url": null
+      },
+      {
+       "pos": "",
+       "name": "Редуктор баллонный аргоновый с манометрами, низкое давление на выходе 0,2–0,3 бар (двухступенчатый или с точной регулировкой)",
+       "size": "вход W21,8; выход — уточнить (G¼″)",
+       "purpose": "после вентиля баллона; уставка 200–300 мбар (раздел 13); подтвердить, есть ли",
+       "qty_scheme": "1",
+       "qty_buy": "1",
+       "status": "УТОЧНИТЬ",
+       "shop": "Яндекс.Маркет: редуктор аргоновый",
+       "url": "https://market.yandex.ru/search?text=редуктор+аргон+низкого+давления",
+       "extra_url": null
+      },
+      {
+       "pos": "PR-1",
+       "name": "Ротаметр газовый с игольчатым вентилем (стекло, поплавок), диапазон до 10 л/мин; для синтеза 0,1–0,2 л/мин — второй, малый (0,1–1 л/мин), либо один с вентилем тонкой регулировки",
+       "size": "присоединение — уточнить (G¼″)",
+       "purpose": "после редуктора: синтез 0,1–0,2 л/мин, продувки 3–5, выгрузка ≈10 л/мин",
+       "qty_scheme": "1",
+       "qty_buy": "1",
+       "status": "УТОЧНИТЬ",
+       "shop": "Яндекс.Маркет: ротаметр с вентилем",
+       "url": "https://market.yandex.ru/search?text=ротаметр+газовый+с+игольчатым+вентилем",
+       "extra_url": null
+      }
+     ]
+    },
+    {
+     "title": "Аргон: трубка полиамидная 6×4 и цанговые фитинги",
+     "rows": [
+      {
+       "pos": "",
+       "name": "Трубка полиамидная (PA12) 6×4 мм, Camozzi TRN 6/4, до 28 бар",
+       "size": "Ø6 × 4",
+       "purpose": "все линии аргона: редуктор → PR-1 → раздаточный коллектор → A1 (гребёнка AV-1), A2 (G-1), A3 (тара), A4 (нутч). Длины по 3D-модели: ≈0,7 + 0,2 + 1,5 + 2,8 + 2,3 + 5,6 м; уточнить по месту",
+       "qty_scheme": "≈14 м",
+       "qty_buy": "18 м",
+       "status": "КУПИТЬ",
+       "shop": "Би энд Би (Camozzi): трубка TRN 6/4 (под заказ 7 дней)",
+       "url": "https://bb-engineering.ru/trn-6-4/",
+       "extra_url": null
+      },
+      {
+       "pos": "",
+       "name": "Штуцер прямой цанговый с наружной резьбой G¼″ × трубка 6 мм, Camozzi S6510 6-1/4",
+       "size": "G¼″ × 6",
+       "purpose": "выход редуктора (1), вход и выход PR-1 (2), конец A1 на переходнике AV-1 (1), конец A4 на гребёнке нутча (1), ввод A2 в G-1 (1); резьбу редуктора и PR-1 подтвердить",
+       "qty_scheme": "6",
+       "qty_buy": "8",
+       "status": "КУПИТЬ",
+       "shop": "Би энд Би (Camozzi): S6510 6-1/4",
+       "url": "https://bb-engineering.ru/s6510-6-1-4/",
+       "extra_url": null
+      },
+      {
+       "pos": "",
+       "name": "Тройник T-образный цанговый 6 мм, Camozzi 6540 6",
+       "size": "6 мм",
+       "purpose": "раздаточный коллектор после PR-1: 4 отвода A1–A4",
+       "qty_scheme": "4",
+       "qty_buy": "5",
+       "status": "КУПИТЬ",
+       "shop": "Би энд Би (Camozzi): тройник 6540 6",
+       "url": "https://bb-engineering.ru/6540-6/",
+       "extra_url": null
+      },
+      {
+       "pos": "",
+       "name": "Заглушка цанговая 6 мм (в порт фитинга), Camozzi 6900 6",
+       "size": "6 мм",
+       "purpose": "конец раздаточного коллектора (резерв под 5-й отвод)",
+       "qty_scheme": "1",
+       "qty_buy": "3",
+       "status": "КУПИТЬ",
+       "shop": "Би энд Би (Camozzi): заглушка 6900 6",
+       "url": "https://bb-engineering.ru/6900-6/",
+       "extra_url": null
+      }
+     ]
+    },
+    {
+     "title": "Аргон: краны и обратные клапаны",
+     "rows": [
+      {
+       "pos": "A1–A4, V-F1",
+       "name": "Кран шаровой цанговый 2/2, трубка 6 мм — 6 мм, Aignep 06560 00 002",
+       "size": "6 мм",
+       "purpose": "A1 — гребёнка (AV-1), A2 — генератор G-1, A3 — тара MeSiCl₃ / PDMS-OH, A4 — нутч; V-F1 — у гребёнки нутча",
+       "qty_scheme": "5",
+       "qty_buy": "6",
+       "status": "КУПИТЬ",
+       "shop": "Би энд Би: Aignep 06560 00 002 (под заказ 7–10 дней)",
+       "url": "https://bb-engineering.ru/kran-cangovyy-aignep-06560-00-002/",
+       "extra_url": "https://pnevmo.ru/catalog/krany-sharovye-tsangovye/"
+      },
+      {
+       "pos": "NRV A1–A3, NRV-5",
+       "name": "Клапан обратный цанговый 6 мм, Camozzi PVNR 6: открытие 0,02 бар, корпус POM, уплотнения EPDM",
+       "size": "6 мм",
+       "purpose": "после кранов A1, A2, A3 (обязательно на A1 и A2 — лист 6); NRV-5 — на линии A4 перед V-F1 (не пускает пары растворителя из нутча в аргон)",
+       "qty_scheme": "4",
+       "qty_buy": "5",
+       "status": "КУПИТЬ",
+       "shop": "Би энд Би (Camozzi): PVNR 6 (нет в наличии — аналог Aignep по доп. ссылке)",
+       "url": "https://bb-engineering.ru/klapan-obratnyy-cangovyy-camozzi-pvnr-6/",
+       "extra_url": "https://bb-engineering.ru/klapan-obratnyy-cangovyy-aignep-06064-00-002/"
+      }
+     ]
+    },
+    {
+     "title": "Аргон: переходы на аппараты (границы линии)",
+     "rows": [
+      {
+       "pos": "AV-1",
+       "name": "Переходник кламп – резьба внутренняя ISO DN8, ¼″ BSP, AISI 316 (≈1 455 ₽)",
+       "size": "К25 × ¼″ BSP вн.",
+       "purpose": "кран AV-1 на гребёнке реактора → штуцер S6510 6-1/4 (вместо переходника на G½″)",
+       "qty_scheme": "1",
+       "qty_buy": "2",
+       "status": "КУПИТЬ",
+       "shop": "Гросснер: кламп – резьба внутренняя",
+       "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/perexodniki-klamp/klamp-rezba-vnutrennyaya/?attribute_pa_standart=iso-standart&attribute_pa_dn=dn-8-uslovnyj-diametr-dn&attribute_pa_rezba-dyujm=1-4-rezba-dyujm&attribute_pa_rezba-mm=137-mm-rezba-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_marka-stali=aisi316-marka-stali",
+       "extra_url": null
+      },
+      {
+       "pos": "A2",
+       "name": "Переходник на штуцер аргона крышки G-1 → резьба G¼″ внутр.",
+       "size": "по порту G-1",
+       "purpose": "ввод аргона A2 в генератор; резьбу порта крышки G-1 замерить (чек-лист)",
+       "qty_scheme": "1",
+       "qty_buy": "1",
+       "status": "УТОЧНИТЬ",
+       "shop": "по замеру (нерж. 316)",
+       "url": "https://market.yandex.ru/search?text=переходник+нержавеющий+резьба+G1/4+внутренняя",
+       "extra_url": null
+      },
+      {
+       "pos": "A3",
+       "name": "Ввод трубки 6 мм в крышку-переходник тары — через свободный порт крышки (GL14 с уплотнением под трубку 6 мм)",
+       "size": "6 мм",
+       "purpose": "линия A3 в тару MeSiCl₃ / PDMS-OH; крышка — в разделе «Реактор R-1: дозирование» основного листа",
+       "qty_scheme": "—",
+       "qty_buy": "—",
+       "status": "УТОЧНИТЬ",
+       "shop": "Germeon: крышка DURAN GL45, 2 порта",
+       "url": "https://germeon.ru/catalog/item/76880/",
+       "extra_url": null
+      }
+     ]
     }
    ]
   }
