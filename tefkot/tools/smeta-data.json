@@ -7,7 +7,7 @@
      "pos": "V-P3",
      "name": "Кран шаровой кламп, сёдла PTFE, AISI 316",
      "size": "К25 (½″)",
-     "purpose": "штуцер P3 → V-P3 (запас на все 10 кранов ½″ — здесь)",
+     "purpose": "штуцер P3 → V-P3 (запас на все 10 кранов ½″ — здесь, в 316: подходит и вместо крана 304)",
      "qty_scheme": "1",
      "qty_buy": "2",
      "status": "КУПИТЬ",
@@ -118,26 +118,26 @@
     },
     {
      "pos": "SV-G1",
-     "name": "Кран шаровой кламп, сёдла PTFE, AISI 316",
+     "name": "Кран шаровой кламп 3A, сёдла PTFE, AISI 304, PN10 (≈1 910 ₽) — среда без хлоридов",
      "size": "К25 (½″)",
      "purpose": "сброс давления G-1 вручную (вместо предохранительного клапана): порт → кран → ёлочка → рукав ¾″ в коллектор сбросов (коллектор — у смежников)",
      "qty_scheme": "1",
      "qty_buy": "1",
      "status": "КУПИТЬ",
-     "shop": "Гросснер: кран кламп",
-     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/",
+     "shop": "Гросснер: кран кламп ½″ AISI 304",
+     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-vnutrennij-d-vnu=97-94-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi304-marka-stali",
      "extra_url": null
     },
     {
      "pos": "V-G1",
-     "name": "Кран шаровой кламп, сёдла PTFE, AISI 316",
+     "name": "Кран шаровой кламп 3A, сёдла PTFE, AISI 304, PN10 (≈1 910 ₽) — среда без хлоридов",
      "size": "К25 (½″)",
      "purpose": "выход газа G-1 → колонны",
      "qty_scheme": "1",
      "qty_buy": "1",
      "status": "КУПИТЬ",
-     "shop": "Гросснер: кран кламп",
-     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/",
+     "shop": "Гросснер: кран кламп ½″ AISI 304",
+     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-vnutrennij-d-vnu=97-94-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi304-marka-stali",
      "extra_url": null
     },
     {
@@ -190,14 +190,14 @@
     },
     {
      "pos": "V-P1",
-     "name": "Кран шаровой кламп, сёдла PTFE, AISI 316",
+     "name": "Кран шаровой кламп 3A, сёдла PTFE, AISI 304, PN10 (≈1 910 ₽) — среда без хлоридов",
      "size": "К25 (½″)",
      "purpose": "после P-1",
      "qty_scheme": "1",
      "qty_buy": "1",
      "status": "КУПИТЬ",
-     "shop": "Гросснер: кран кламп",
-     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/",
+     "shop": "Гросснер: кран кламп ½″ AISI 304",
+     "url": "https://grossner.ru/shop/krany-sharovye/krany-klamp/kran-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-vnutrennij-d-vnu=97-94-mm&attribute_pa_diametr-flanca-klampa-d=25-mm-diametr-flanca-klampa-d&attribute_pa_nominalnoe-davlenie-pn=pn10&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi304-marka-stali",
      "extra_url": null
     },
     {
@@ -219,14 +219,14 @@
    "rows": [
     {
      "pos": "C-1, C-2",
-     "name": "Царга кламп (труба 38,1 × 1,65), 3A, AISI 316L (≈2 600 ₽)",
+     "name": "Царга кламп (труба 38,1 × 1,65), 3A, AISI 304 (≈2 400 ₽)",
      "size": "К50,5 (1½″) × 400",
      "purpose": "корпуса колонн, над диоптром (основная засыпка)",
      "qty_scheme": "2",
      "qty_buy": "2",
      "status": "КУПИТЬ",
      "shop": "Гросснер: царга кламп 1½″ × 400",
-     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/cargi-klamp/carga-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-naruzhnyj-d-n=381-mm-diametr-naruzhnyj-d1&attribute_pa_tolshhina-stenki-s=15-165-mm-tolshhina-stenki-s&attribute_pa_diametr-flanca-klampa-d=505-mm-diametr-flanca-klampa-d&attribute_pa_dlina-l=400-mm&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi-316l-marka-stali",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/clamp-soedineniya/cargi-klamp/carga-klamp/?attribute_pa_standart=3a&attribute_pa_dn=dn-1-1-2-uslovnyj-diametr-dn&attribute_pa_diametr-naruzhnyj-d-n=381-mm-diametr-naruzhnyj-d1&attribute_pa_tolshhina-stenki-s=15-165-mm-tolshhina-stenki-s&attribute_pa_diametr-flanca-klampa-d=505-mm-diametr-flanca-klampa-d&attribute_pa_dlina-l=400-mm&attribute_pa_gigienicheskij-klass=sf3-ra%25e2%2589%25a40-8&attribute_pa_marka-stali=aisi304-marka-stali",
      "extra_url": null
     },
     {
@@ -279,14 +279,14 @@
     },
     {
      "pos": "V-G2",
-     "name": "Кран шаровой нержавеющий, AISI 316, сёдла PTFE, внутр. резьба ½″ (≈805 ₽)",
+     "name": "Кран шаровой нержавеющий, AISI 304, сёдла PTFE, внутр. резьба ½″ (≈485 ₽)",
      "size": "½″ ВР (DN15)",
      "purpose": "газ после колонн, перед NRV-3: закрывать при вакуумировании реактора и продувке G-1; на трубку 10×12 — 2 обжимных фитинга 12 мм × ½″ нар.",
      "qty_scheme": "1",
      "qty_buy": "2",
      "status": "КУПИТЬ",
      "shop": "Гросснер: кран шаровой ½″ 316",
-     "url": "https://grossner.ru/shop/krany-sharovye/krany-rezbovye/kran-sharovoj-nerzhaveyushchij/?attribute_pa_standart=iso-standart&attribute_pa_dn=dn-15-uslovnyj-diametr-dn&attribute_pa_rezba-dyujm=1-2-rezba-dyujm&attribute_pa_rezba-mm=213-mm-rezba-mm&attribute_pa_nominalnoe-davlenie-pn=pn63&attribute_pa_marka-stali=aisi316-marka-stali",
+     "url": "https://grossner.ru/shop/krany-sharovye/krany-rezbovye/kran-sharovoj-nerzhaveyushchij/?attribute_pa_standart=iso-standart&attribute_pa_dn=dn-15-uslovnyj-diametr-dn&attribute_pa_rezba-dyujm=1-2-rezba-dyujm&attribute_pa_rezba-mm=213-mm-rezba-mm&attribute_pa_nominalnoe-davlenie-pn=pn63&attribute_pa_marka-stali=aisi304-marka-stali",
      "extra_url": null
     },
     {
