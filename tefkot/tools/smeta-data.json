@@ -315,14 +315,14 @@
     },
     {
      "pos": "",
-     "name": "Стойка / кронштейны и хомуты-держатели для колонн",
-     "size": "Ø38",
-     "purpose": "крепление C-1, C-2 к раме или стенду",
-     "qty_scheme": "1 компл.",
-     "qty_buy": "1 компл.",
+     "name": "Хомут трубный на ножке (держатель), AISI 304, SMS, для трубы 38,1 мм (≈320 ₽)",
+     "size": "Ø38,1 (1½″)",
+     "purpose": "крепление колонн C-1, C-2 к раме или стенду — по 2 на колонну (на царгу, выше и ниже середины)",
+     "qty_scheme": "4",
+     "qty_buy": "4",
      "status": "КУПИТЬ",
-     "shop": "Гросснер: хомут для труб",
-     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/homuty-nerzhaveyuschie-dlya-trub/xomut-dlya-trub/",
+     "shop": "Гросснер: хомут трубный 38,1 мм",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/homuty-nerzhaveyuschie-dlya-trub/xomut-dlya-trub/?attribute_pa_dn=dn-1-1-2-uslovnyj-diametr-dn&attribute_pa_standart=sms-standart&attribute_pa_dlya-truby-diametrom=381-mm-1-1-2&attribute_pa_marka-stali=aisi304-marka-stali",
      "extra_url": null
     }
    ]
@@ -648,10 +648,22 @@
      "extra_url": null
     },
     {
+     "pos": "F-1",
+     "name": "Хомут трубный на ножке (держатель), AISI 304, SMS, для трубы 101,6 мм (≈625 ₽)",
+     "size": "Ø101,6 (K119, 4″)",
+     "purpose": "крепление нутча F-1 к раме / опоре — 2 шт. на царги K119",
+     "qty_scheme": "2",
+     "qty_buy": "2",
+     "status": "КУПИТЬ",
+     "shop": "Гросснер: хомут трубный 101,6 мм",
+     "url": "https://grossner.ru/shop/soedinitelnaya-armatura/homuty-nerzhaveyuschie-dlya-trub/xomut-dlya-trub/?attribute_pa_dn=dn-4-uslovnyj-diametr-dn&attribute_pa_standart=sms-standart&attribute_pa_dlya-truby-diametrom=1016-mm-4&attribute_pa_marka-stali=aisi304-marka-stali",
+     "extra_url": null
+    },
+    {
      "pos": "",
      "name": "Хомут-держатель для труб нерж.",
-     "size": "по Ø: ½″, K119",
-     "purpose": "крепление гребёнки нутча и нутча к раме — по месту",
+     "size": "по Ø: ½″",
+     "purpose": "крепление гребёнки нутча к раме — по месту",
      "qty_scheme": "1 компл.",
      "qty_buy": "1 компл.",
      "status": "КУПИТЬ",
