@@ -293,7 +293,7 @@
 <path d="M24.00,181.00 L195.00,181.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="183.79" font-size="1.75" text-anchor="start" fill="#111111">515</text>
 <text x="34.00" y="183.79" font-size="1.75" text-anchor="start" fill="#111111">5</text>
-<text x="40.00" y="183.79" font-size="1.75" text-anchor="start" fill="#111111">C-1 низ — межкламповый фильтр 3″ (сверху прокладка EPDM с сеткой К91) + переход 3″/50,5</text>
+<text x="40.00" y="183.79" font-size="1.75" text-anchor="start" fill="#111111">C-1 низ — межкламповый фильтр 3″ + переход 3″/50,5</text>
 <text x="158.00" y="183.79" font-size="1.75" text-anchor="start" fill="#111111">K91 (3″)</text>
 <text x="183.00" y="183.79" font-size="1.75" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M24.00,185.10 L195.00,185.10" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
@@ -335,7 +335,7 @@
 <path d="M24.00,209.70 L195.00,209.70" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="212.49" font-size="1.75" text-anchor="start" fill="#111111">522</text>
 <text x="34.00" y="212.49" font-size="1.75" text-anchor="start" fill="#111111">5</text>
-<text x="40.00" y="212.49" font-size="1.75" text-anchor="start" fill="#111111">C-2 низ — межкламповый фильтр 3″ (сверху прокладка EPDM с сеткой К91) + переход 3″/50,5</text>
+<text x="40.00" y="212.49" font-size="1.75" text-anchor="start" fill="#111111">C-2 низ — межкламповый фильтр 3″ + переход 3″/50,5</text>
 <text x="158.00" y="212.49" font-size="1.75" text-anchor="start" fill="#111111">K91 (3″)</text>
 <text x="183.00" y="212.49" font-size="1.75" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M33.00,17.00 L33.00,213.80" fill="none" stroke="#111111" stroke-width="0.25" stroke-linejoin="round"/>
