@@ -233,7 +233,7 @@
 <path d="M24.00,140.00 L195.00,140.00" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
 <text x="25.00" y="142.79" font-size="1.75" text-anchor="start" fill="#111111">505</text>
 <text x="34.00" y="142.79" font-size="1.75" text-anchor="start" fill="#111111">5</text>
-<text x="40.00" y="142.79" font-size="1.75" text-anchor="start" fill="#c62828">G-1 порт регулятора (переходник G?→½″) → тройник</text>
+<text x="40.00" y="142.79" font-size="1.75" text-anchor="start" fill="#111111">G-1 порт регулятора (гнездо G½″, переходник кламп – нар. G½″) → тройник</text>
 <text x="158.00" y="142.79" font-size="1.75" text-anchor="start" fill="#111111">K25</text>
 <text x="183.00" y="142.79" font-size="1.75" text-anchor="start" fill="#111111">EPDM</text>
 <path d="M24.00,144.10 L195.00,144.10" fill="none" stroke="#111111" stroke-width="0.18" stroke-linejoin="round"/>
