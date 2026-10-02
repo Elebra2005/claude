@@ -23,7 +23,7 @@ HF = PatternFill('solid', fgColor=NAVY); SF = PatternFill('solid', fgColor='D9E2
 th = Side(style='thin', color='BFBFBF'); B = Border(left=th, right=th, top=th, bottom=th)
 SB = Border(left=th, right=th, top=Side(style='medium', color=NAVY), bottom=th)
 W = Alignment(wrap_text=True, vertical='top'); C = Alignment(wrap_text=True, vertical='top', horizontal='center')
-STAT = {'КУПИТЬ': ('E2EFDA', '375623'), 'УТОЧНИТЬ': ('FFF2CC', '7F6000'), 'ЕСТЬ': ('EDEDED', '404040')}
+STAT = {'КУПИТЬ': ('E2EFDA', '375623'), 'УТОЧНИТЬ': ('FFF2CC', '7F6000'), 'ЕСТЬ': ('EDEDED', '404040'), 'ЭТАП 2': ('DDEBF7', '1F3864')}
 
 
 def f(sz=10, b=False, c='000000', u=None):
@@ -124,7 +124,7 @@ def build(data, out):
     for g in groups:
         node = g['title'].split(':')[0]
         for x in g['rows']:
-            if x['status'] == 'ЕСТЬ':
+            if x['status'] in ('ЕСТЬ', 'ЭТАП 2'):             # в заказ не идут
                 continue
             key = (norm(x['name']), x['size'])
             if key not in agg:

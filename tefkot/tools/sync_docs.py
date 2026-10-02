@@ -17,7 +17,7 @@ subprocess.run([sys.executable, os.path.join(T, '../skills/montazhnye-chertezhi/
                 os.path.join(T, 'tools/smeta-data.json'), os.path.join(T, 'itog/tefkot-770-smeta.xlsx')], check=True)
 
 # 2. спецификация в документе установки
-CLS = {'КУПИТЬ': 'y', 'УТОЧНИТЬ': 'h', 'ЕСТЬ': 'h'}
+CLS = {'КУПИТЬ': 'y', 'УТОЧНИТЬ': 'h', 'ЕСТЬ': 'h', 'ЭТАП 2': 'c'}
 rows = []
 for g in ALL:
     rows.append(f'<tr class="sec"><td colspan="7">{E(g["title"])}</td></tr>')
@@ -38,7 +38,7 @@ open(p, 'w', encoding='utf-8').write(s)
 # 3. заказ Гросснер
 rows, n = [], 0
 for g in ALL:
-    gr = [r for r in g['rows'] if r['shop'].startswith('Гросснер') and r['status'] != 'ЕСТЬ']
+    gr = [r for r in g['rows'] if r['shop'].startswith('Гросснер') and r['status'] not in ('ЕСТЬ', 'ЭТАП 2')]
     if not gr:
         continue
     rows.append(f'      <tr class="grp"><td colspan="5">{E(g["title"])}</td></tr>')
