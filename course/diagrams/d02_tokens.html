@@ -1,0 +1,31 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1f1d1a;--muted:#6b665e;--line:#e2dbcf;--accent:#c2603e;--accent-soft:#fbeee8;
+--teal:#2f6f6a;--teal-soft:#e6f1ef;--panel:#ffffff;--bg:#f8f4ee;--warn:#b7791f;--warn-soft:#fdf3df}
+body{font-family:Inter,sans-serif;color:var(--ink);background:var(--bg)}
+#card{width:1200px;height:675px;padding:44px 56px 40px;position:relative;background:var(--bg);overflow:hidden}
+.kicker{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-family:'Inter Display',Inter,sans-serif;font-size:38px;font-weight:700;letter-spacing:-.01em;margin-top:6px;line-height:1.15}
+.sub{font-size:18px;color:var(--muted);margin-top:8px}
+.foot{position:absolute;left:56px;right:56px;bottom:28px;font-size:14px;color:var(--muted);display:flex;justify-content:space-between}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.row{display:flex;align-items:center}
+.arr{flex:none;width:46px;display:flex;justify-content:center;color:var(--muted)}
+.tag{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:6px;padding:3px 8px}
+.t-acc{background:var(--accent-soft);color:var(--accent)}
+.t-teal{background:var(--teal-soft);color:var(--teal)}
+.big{font-size:22px;font-weight:700;line-height:1.25}
+.small{font-size:16px;color:var(--muted);line-height:1.4;margin-top:6px}
+</style></head>
+<body><div id="card"><div class="kicker">Урок 2</div><h1>Как текст делится на токены</h1>
+
+<div class="box" style="margin-top:36px;padding:26px 28px">
+  <div class="small" style="margin:0 0 14px">Фраза: «Рассчитай мощность мешалки реактора»</div>
+  <div><span style="display:inline-block;background:#fbeee8;border:1.5px solid #e7b9a6;border-radius:10px;padding:10px 12px;margin:0 6px 10px 0;font-size:30px;font-weight:600;white-space:pre">Рас</span><span style="display:inline-block;background:#e6f1ef;border:1.5px solid #a9cdc7;border-radius:10px;padding:10px 12px;margin:0 6px 10px 0;font-size:30px;font-weight:600;white-space:pre">счи</span><span style="display:inline-block;background:#fdf3df;border:1.5px solid #ead29d;border-radius:10px;padding:10px 12px;margin:0 6px 10px 0;font-size:30px;font-weight:600;white-space:pre">тай</span><span style="display:inline-block;background:#ece8f6;border:1.5px solid #c9bfe6;border-radius:10px;padding:10px 12px;margin:0 6px 10px 0;font-size:30px;font-weight:600;white-space:pre"> мощ</span><span style="display:inline-block;background:#fbeee8;border:1.5px solid #e7b9a6;border-radius:10px;padding:10px 12px;margin:0 6px 10px 0;font-size:30px;font-weight:600;white-space:pre">ность</span><span style="display:inline-block;background:#e6f1ef;border:1.5px solid #a9cdc7;border-radius:10px;padding:10px 12px;margin:0 6px 10px 0;font-size:30px;font-weight:600;white-space:pre"> меш</span><span style="display:inline-block;background:#fdf3df;border:1.5px solid #ead29d;border-radius:10px;padding:10px 12px;margin:0 6px 10px 0;font-size:30px;font-weight:600;white-space:pre">алки</span><span style="display:inline-block;background:#ece8f6;border:1.5px solid #c9bfe6;border-radius:10px;padding:10px 12px;margin:0 6px 10px 0;font-size:30px;font-weight:600;white-space:pre"> реак</span><span style="display:inline-block;background:#fbeee8;border:1.5px solid #e7b9a6;border-radius:10px;padding:10px 12px;margin:0 6px 10px 0;font-size:30px;font-weight:600;white-space:pre">тора</span></div>
+  <div class="small" style="margin-top:6px">Каждый цветной фрагмент — один токен. Разбивка условная: реальные границы зависят от модели.</div>
+</div>
+<div class="row" style="margin-top:22px;gap:16px;align-items:stretch">
+  <div class="box" style="flex:1"><span class="tag t-teal">В токенах измеряется</span><div class="small" style="font-size:18px;color:var(--ink)">объём контекста · лимиты · длина ответа</div></div>
+  <div class="box" style="flex:1"><span class="tag t-acc">Учтите</span><div class="small" style="font-size:18px;color:var(--ink)">русский текст обычно «дороже» английского по числу токенов</div></div>
+  <div class="box" style="flex:1"><span class="tag t-teal">Правило</span><div class="small" style="font-size:18px;color:var(--ink)">короче и точнее — экономнее и для лимита, и для качества</div></div>
+</div><div class="foot"><span>Курс «ИИ в работе»</span><span>Claude</span></div></div></body></html>

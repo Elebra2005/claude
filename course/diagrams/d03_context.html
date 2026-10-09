@@ -1,0 +1,37 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1f1d1a;--muted:#6b665e;--line:#e2dbcf;--accent:#c2603e;--accent-soft:#fbeee8;
+--teal:#2f6f6a;--teal-soft:#e6f1ef;--panel:#ffffff;--bg:#f8f4ee;--warn:#b7791f;--warn-soft:#fdf3df}
+body{font-family:Inter,sans-serif;color:var(--ink);background:var(--bg)}
+#card{width:1200px;height:675px;padding:44px 56px 40px;position:relative;background:var(--bg);overflow:hidden}
+.kicker{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-family:'Inter Display',Inter,sans-serif;font-size:38px;font-weight:700;letter-spacing:-.01em;margin-top:6px;line-height:1.15}
+.sub{font-size:18px;color:var(--muted);margin-top:8px}
+.foot{position:absolute;left:56px;right:56px;bottom:28px;font-size:14px;color:var(--muted);display:flex;justify-content:space-between}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.row{display:flex;align-items:center}
+.arr{flex:none;width:46px;display:flex;justify-content:center;color:var(--muted)}
+.tag{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:6px;padding:3px 8px}
+.t-acc{background:var(--accent-soft);color:var(--accent)}
+.t-teal{background:var(--teal-soft);color:var(--teal)}
+.big{font-size:22px;font-weight:700;line-height:1.25}
+.small{font-size:16px;color:var(--muted);line-height:1.4;margin-top:6px}
+</style></head>
+<body><div id="card"><div class="kicker">Урок 3</div><h1>Контекстное окно: что Claude «помнит»</h1>
+
+<div class="row" style="margin-top:30px;gap:28px;align-items:stretch">
+  <div style="flex:1.25;position:relative">
+    <div style="border:3px solid var(--teal);border-radius:18px;padding:18px 18px 10px;background:#fbfaf7;height:380px;position:relative;overflow:hidden">
+      <span class="tag t-teal" style="position:absolute;top:-1px;right:16px;border-radius:0 0 8px 8px;z-index:2">Контекстное окно</span>
+      <div style="margin-top:22px"><div style="opacity:.38;max-width:78%;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:16px;margin-bottom:8px">Сжато: обсуждали письмо поставщику…</div><div style="opacity:.38;margin-left:auto;max-width:78%;background:#e6f1ef;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:16px;margin-bottom:8px">…и расчёт объёма ёмкости</div><div style="margin-left:auto;max-width:78%;background:#e6f1ef;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:16px;margin-bottom:8px">Загружен файл: ТКП_1.pdf</div><div style="max-width:78%;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:16px;margin-bottom:8px">Сравнительная таблица по ТКП готова</div><div style="margin-left:auto;max-width:78%;background:#e6f1ef;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:16px;margin-bottom:8px">Добавь столбец «Гарантия»</div><div style="max-width:78%;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:16px;margin-bottom:8px">Таблица обновлена</div></div>
+      <div style="position:absolute;left:0;right:0;top:0;height:110px;background:linear-gradient(#fbfaf7,rgba(251,250,247,0))"></div>
+    </div>
+    <div class="small" style="margin-top:8px">Ранние части длинного чата сжимаются — детали теряются</div>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:14px">
+    <div class="box"><span class="tag t-acc">Другие чаты</span><div class="small" style="font-size:17px;color:var(--ink)">по умолчанию Claude их не видит: каждый новый чат — с чистого листа</div></div>
+    <div class="box"><div class="big" style="font-size:20px">Одна задача — один чат</div></div>
+    <div class="box"><div class="big" style="font-size:20px">Новая тема — новый чат</div></div>
+    <div class="box"><div class="big" style="font-size:20px">Путается — резюме и новый чат</div><div class="small">«Сделай краткое резюме, чтобы продолжить в новом чате»</div></div>
+  </div>
+</div><div class="foot"><span>Курс «ИИ в работе»</span><span>Claude</span></div></div></body></html>

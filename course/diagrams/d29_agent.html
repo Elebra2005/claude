@@ -1,0 +1,48 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1f1d1a;--muted:#6b665e;--line:#e2dbcf;--accent:#c2603e;--accent-soft:#fbeee8;
+--teal:#2f6f6a;--teal-soft:#e6f1ef;--panel:#ffffff;--bg:#f8f4ee;--warn:#b7791f;--warn-soft:#fdf3df}
+body{font-family:Inter,sans-serif;color:var(--ink);background:var(--bg)}
+#card{width:1200px;height:675px;padding:44px 56px 40px;position:relative;background:var(--bg);overflow:hidden}
+.kicker{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-family:'Inter Display',Inter,sans-serif;font-size:38px;font-weight:700;letter-spacing:-.01em;margin-top:6px;line-height:1.15}
+.sub{font-size:18px;color:var(--muted);margin-top:8px}
+.foot{position:absolute;left:56px;right:56px;bottom:28px;font-size:14px;color:var(--muted);display:flex;justify-content:space-between}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.row{display:flex;align-items:center}
+.arr{flex:none;width:46px;display:flex;justify-content:center;color:var(--muted)}
+.tag{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:6px;padding:3px 8px}
+.t-acc{background:var(--accent-soft);color:var(--accent)}
+.t-teal{background:var(--teal-soft);color:var(--teal)}
+.big{font-size:22px;font-weight:700;line-height:1.25}
+.small{font-size:16px;color:var(--muted);line-height:1.4;margin-top:6px}
+</style></head>
+<body><div id="card"><div class="kicker">Урок 29</div><h1>Агент и субагенты</h1>
+
+<div class="row" style="margin-top:30px;gap:34px;align-items:flex-start">
+  <div style="flex:1">
+    <span class="tag t-teal">Цикл агента</span>
+    <div style="display:flex;flex-direction:column;align-items:center;margin-top:14px;position:relative">
+      <div class="box" style="width:210px;text-align:center;background:var(--panel)"><div class="big" style="font-size:21px">План</div><div class="small" style="margin-top:2px">разбить задачу на шаги</div></div>
+      <div style="margin:4px 0"><svg width="20" height="34" viewBox="0 0 20 34"><path d="M10 2v26M3 21l7 8 7-8" fill="none" stroke="#8a8378" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="box" style="width:210px;text-align:center;background:var(--panel)"><div class="big" style="font-size:21px">Действие</div><div class="small" style="margin-top:2px">читать, считать, писать</div></div>
+      <div style="margin:4px 0"><svg width="20" height="34" viewBox="0 0 20 34"><path d="M10 2v26M3 21l7 8 7-8" fill="none" stroke="#8a8378" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="box" style="width:210px;text-align:center;background:var(--accent-soft)"><div class="big" style="font-size:21px">Проверка</div><div class="small" style="margin-top:2px">сверить с задачей</div></div>
+      <svg width="140" height="340" style="position:absolute;left:calc(50% + 105px);top:30px"><path d="M0 327 H70 V10 H8" fill="none" stroke="#c2603e" stroke-width="2.5" stroke-dasharray="7 6"/><path d="M16 3 L6 10 L16 17" fill="none" stroke="#c2603e" stroke-width="2.5"/></svg>
+      <div style="position:absolute;left:calc(50% + 185px);top:150px;font-size:15px;color:var(--accent);font-weight:600;width:110px">ошибка — исправить и повторить</div>
+    </div>
+  </div>
+  <div style="flex:1.15">
+    <span class="tag t-acc">Субагенты</span>
+    <div style="display:flex;flex-direction:column;align-items:center;margin-top:14px">
+      <div class="box" style="width:300px;text-align:center;background:var(--ink);color:#fff;border-color:var(--ink)"><div class="big" style="font-size:21px">Главный агент</div><div class="small" style="color:#cfc8be;margin-top:2px">держит общую картину</div></div>
+      <div class="row" style="gap:44px;margin:10px 0;font-size:15px;color:var(--muted)"><span>задача ↓</span><span>↑ только итог</span></div>
+      <div class="row" style="gap:12px">
+        <div class="box" style="width:170px;height:118px;text-align:center;display:flex;flex-direction:column;justify-content:center"><div style="font-weight:700;font-size:17px">Анализ протоколов</div><div class="small" style="font-size:14px">свой контекст</div></div>
+        <div class="box" style="width:170px;height:118px;text-align:center;display:flex;flex-direction:column;justify-content:center"><div style="font-weight:700;font-size:17px">Поиск в нормах</div><div class="small" style="font-size:14px">свой контекст</div></div>
+        <div class="box" style="width:170px;height:118px;text-align:center;display:flex;flex-direction:column;justify-content:center"><div style="font-weight:700;font-size:17px">Проверка</div><div class="small" style="font-size:14px">свой контекст</div></div>
+      </div>
+      <div class="small" style="margin-top:14px;text-align:center;font-size:16px">Каждому субагенту — своя роль, инструменты и модель. Независимые части выполняются параллельно.</div>
+    </div>
+  </div>
+</div><div class="foot"><span>Курс «ИИ в работе»</span><span>Claude</span></div></div></body></html>
