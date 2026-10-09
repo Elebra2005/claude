@@ -168,8 +168,8 @@ def build(out):
 
     # ---- Обложка
     para(doc, "", after=110)
-    para(doc, "КУРС МИНИ-УРОКОВ ДЛЯ РАБОЧЕГО КАНАЛА", size=11, bold=True, color=ACCENT, after=8)
-    para(doc, "ИИ в работе: от основ до команды агентов", size=28, bold=True, after=10)
+    para(doc, "ПОСТЫ ДЛЯ РАБОЧЕГО КАНАЛА", size=11, bold=True, color=ACCENT, after=8)
+    para(doc, "Работа с Claude: от основ до команды агентов", size=28, bold=True, after=10)
     para(doc, "32 обучающих поста о работе с Claude: готовые тексты, схемы, сценарии видео и пометки, какие скриншоты и медиа приложить.", size=13, color=MUTED, after=30)
     for m, name in MODULES.items():
         ns = [p["n"] for p in POSTS if p["module"] == m]
@@ -276,4 +276,4 @@ def build(out):
 
 
 if __name__ == "__main__":
-    build(os.path.join(os.path.dirname(HERE), "Курс_ИИ_в_работе_32_поста.docx"))
+    build(os.path.join(os.path.dirname(HERE), "Посты_для_канала_32.docx"))

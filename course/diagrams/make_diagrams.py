@@ -27,10 +27,10 @@ ARROW = '<svg width="40" height="20" viewBox="0 0 40 20"><path d="M2 10h32M26 3l
 ARROW_DOWN = '<svg width="20" height="34" viewBox="0 0 20 34"><path d="M10 2v26M3 21l7 8 7-8" fill="none" stroke="#8a8378" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 
 
-def page(body, kicker, title, sub="", foot_left="Курс «ИИ в работе»"):
+def page(body, kicker, title, sub=""):
     return f"""<!doctype html><html lang="ru"><head><meta charset="utf-8"><style>{CSS}</style></head>
 <body><div id="card"><div class="kicker">{kicker}</div><h1>{title}</h1>{f'<div class="sub">{sub}</div>' if sub else ''}
-{body}<div class="foot"><span>{foot_left}</span><span>Claude</span></div></div></body></html>"""
+{body}</div></body></html>"""
 
 
 D = {}
@@ -196,7 +196,7 @@ D["d27_connectors"] = f"""<!doctype html><html lang="ru"><head><meta charset="ut
 {nd}
 <div style="position:absolute;left:{cx-85}px;top:{cy-85}px;width:170px;height:170px;border-radius:50%;background:var(--ink);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:28px;font-weight:700">Claude<span style="font-size:15px;font-weight:500;color:#cfc8be;margin-top:4px">коннекторы (MCP)</span></div>
 <div style="position:absolute;right:56px;top:52px;font-size:15px;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:8px"><svg width="40" height="6"><line x1="0" y1="3" x2="40" y2="3" stroke="#c2603e" stroke-width="2.5" stroke-dasharray="8 7"/></svg>только по согласованию</div>
-<div class="foot"><span>Курс «ИИ в работе»</span><span>Claude</span></div></div></body></html>"""
+</div></body></html>"""
 
 # 29 — агент и субагенты
 def step(t, s, col="var(--panel)"):
