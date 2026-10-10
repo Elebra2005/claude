@@ -28,8 +28,15 @@ TEAL = RGBColor(0x2F, 0x6F, 0x6A)
 FONT = "Calibri"
 
 
+DAYS = ["понедельник", "среда", "пятница"]
+
+
 def week(n):
-    return math.ceil(n / 2)
+    return math.ceil(n / 3)
+
+
+def day(n):
+    return DAYS[(n - 1) % 3]
 
 
 def shade(cell, hex_fill):
@@ -108,7 +115,7 @@ def text_box(doc, text, fill="F7F4EF", left="C2603E"):
         if line.strip() == "":
             pf.space_after = Pt(2)
             continue
-        is_title = line.startswith("Урок ") and p is c.paragraphs[0]
+        is_title = p is c.paragraphs[0]
         run(p, line, size=11, bold=is_title)
     return t
 
@@ -182,9 +189,9 @@ def build(out):
     doc.add_heading("Как пользоваться документом", level=1)
     para(doc, "Каждый пост ниже готов к публикации: текст можно копировать в канал целиком. Под текстом указано, какие медиа приложить, а для постов с видео — пошаговый сценарий записи экрана.", after=8)
     doc.add_heading("Ритм публикации", level=3)
-    para(doc, "Два поста в неделю, например во вторник и четверг. Весь курс занимает 16 недель. Если коллеги не успевают, лучше растянуть курс, чем сократить посты.", after=6)
+    para(doc, "Три поста в неделю: понедельник, среда и пятница. Весь курс занимает 11 недель, в последнюю неделю выходят два поста — в понедельник и среду. Если коллеги не успевают, лучше растянуть курс, чем сокращать посты.", after=6)
     doc.add_heading("Структура каждого поста", level=3)
-    bullets(doc, [("Заголовок", "«Урок N. Тема» — чтобы посты было легко искать в канале"),
+    bullets(doc, [("Заголовок", "короткая и понятная тема — чтобы посты было легко искать в канале"),
                   ("Суть", "3–5 коротких абзацев или списков без лишней теории"),
                   ("Пример", "промт или ситуация из нашей работы"),
                   ("Задание «Попробуйте»", "одно действие на 5 минут — закрепляет навык"),
@@ -222,8 +229,8 @@ def build(out):
         for k, _ in p["media"]:
             w = media_word(k)
             if w not in kinds: kinds.append(w)
-        rows.append([p["n"], week(p["n"]), p["title"], ", ".join(kinds)])
-    table(doc, ["№", "Неделя", "Тема", "Медиа"], rows, [Cm(1.0), Cm(1.6), Cm(10.2), Cm(4.0)])
+        rows.append([p["n"], week(p["n"]), {"понедельник": "Пн", "среда": "Ср", "пятница": "Пт"}[day(p["n"])], p["title"], ", ".join(kinds)])
+    table(doc, ["№", "Неделя", "День", "Тема", "Медиа"], rows, [Cm(1.0), Cm(1.6), Cm(1.2), Cm(9.0), Cm(4.0)])
 
     # ---- Посты
     current = None
@@ -239,7 +246,7 @@ def build(out):
             w = media_word(k)
             if w not in kinds: kinds.append(w)
         meta = para(doc, "", after=2)
-        run(meta, f"Модуль {p['module']} · неделя {week(p['n'])} · медиа: {', '.join(kinds)}", size=9.5, color=MUTED)
+        run(meta, f"Модуль {p['module']} · неделя {week(p['n'])}, {day(p['n'])} · медиа: {', '.join(kinds)}", size=9.5, color=MUTED)
         g = para(doc, "", after=6)
         run(g, "Цель урока: ", size=10.5, bold=True); run(g, p["goal"], size=10.5)
 
@@ -256,7 +263,6 @@ def build(out):
             pi = doc.add_paragraph(); pi.alignment = WD_ALIGN_PARAGRAPH.CENTER
             pi.paragraph_format.space_before = Pt(6); pi.paragraph_format.keep_with_next = True
             pi.add_run().add_picture(img, width=Cm(15.5))
-            para(doc, f"Схема к посту {p['n']} (файл {p['diagram']})", size=9, italic=True, color=MUTED, align=WD_ALIGN_PARAGRAPH.CENTER, after=6)
 
         if p.get("video"):
             total = sum(s for _, _, s in p["video"])

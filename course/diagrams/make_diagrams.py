@@ -10,7 +10,7 @@ CSS = """
 body{font-family:Inter,sans-serif;color:var(--ink);background:var(--bg)}
 #card{width:1200px;height:675px;padding:44px 56px 40px;position:relative;background:var(--bg);overflow:hidden}
 .kicker{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
-h1{font-family:'Inter Display',Inter,sans-serif;font-size:38px;font-weight:700;letter-spacing:-.01em;margin-top:6px;line-height:1.15}
+h1{font-family:'Inter Display',Inter,sans-serif;font-size:38px;font-weight:700;letter-spacing:-.01em;margin-top:0;line-height:1.15}
 .sub{font-size:18px;color:var(--muted);margin-top:8px}
 .foot{position:absolute;left:56px;right:56px;bottom:28px;font-size:14px;color:var(--muted);display:flex;justify-content:space-between}
 .box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
@@ -29,7 +29,7 @@ ARROW_DOWN = '<svg width="20" height="34" viewBox="0 0 20 34"><path d="M10 2v26M
 
 def page(body, kicker, title, sub=""):
     return f"""<!doctype html><html lang="ru"><head><meta charset="utf-8"><style>{CSS}</style></head>
-<body><div id="card"><div class="kicker">{kicker}</div><h1>{title}</h1>{f'<div class="sub">{sub}</div>' if sub else ''}
+<body><div id="card"><h1>{title}</h1>{f'<div class="sub">{sub}</div>' if sub else ''}
 {body}</div></body></html>"""
 
 
@@ -191,7 +191,7 @@ nd = "".join(
     f'<div class="box" style="position:absolute;left:{x-115}px;top:{y-32}px;width:230px;height:64px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:19px;font-weight:600;{"border:2px dashed var(--accent);background:var(--accent-soft)" if i==5 else ""}">{t}</div>'
     for i, (t, x, y) in enumerate(nodes))
 D["d27_connectors"] = f"""<!doctype html><html lang="ru"><head><meta charset="utf-8"><style>{CSS}</style></head><body><div id="card">
-<div class="kicker">Урок 27</div><h1>Подключения к сервисам</h1><div class="sub">Claude получает данные из сервисов сам — без копирования и вставки</div>
+<h1>Подключения к сервисам</h1><div class="sub">Claude получает данные из сервисов сам — без копирования и вставки</div>
 <svg width="1200" height="675" style="position:absolute;left:0;top:0">{lines}</svg>
 {nd}
 <div style="position:absolute;left:{cx-85}px;top:{cy-85}px;width:170px;height:170px;border-radius:50%;background:var(--ink);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:28px;font-weight:700">Claude<span style="font-size:15px;font-weight:500;color:#cfc8be;margin-top:4px">коннекторы (MCP)</span></div>
