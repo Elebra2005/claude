@@ -53,7 +53,7 @@ D["d01_how_it_works"] = page(f"""
 </div>""", "Урок 1", "Как работает Claude", "Эрудированный стажёр: быстро делает черновик, вы проверяете и принимаете решение")
 
 # 02 — токены
-chips = ["Рас", "счи", "тай", " мощ", "ность", " меш", "алки", " реак", "тора"]
+chips = ["Срав", "ни", " два", " пред", "ложе", "ния", " пост", "авщи", "ков"]
 cols = ["#fbeee8", "#e6f1ef", "#fdf3df", "#ece8f6"]
 bord = ["#e7b9a6", "#a9cdc7", "#ead29d", "#c9bfe6"]
 chip_html = "".join(
@@ -61,7 +61,7 @@ chip_html = "".join(
     for i, c in enumerate(chips))
 D["d02_tokens"] = page(f"""
 <div class="box" style="margin-top:36px;padding:26px 28px">
-  <div class="small" style="margin:0 0 14px">Фраза: «Рассчитай мощность мешалки реактора»</div>
+  <div class="small" style="margin:0 0 14px">Фраза: «Сравни два предложения поставщиков»</div>
   <div>{chip_html}</div>
   <div class="small" style="margin-top:6px">Каждый цветной фрагмент — один токен. Разбивка условная: реальные границы зависят от модели.</div>
 </div>
