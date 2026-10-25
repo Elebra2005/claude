@@ -1,0 +1,12 @@
+{
+  "name": "millor-halloween-bingo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Миллор Групп: Секретная лаборатория — Halloween Bingo",
+  "main": "server.js",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/*.test.js"
+  }
+}
