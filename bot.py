@@ -174,7 +174,9 @@ def _db_create_user(tg_id: int, username: str, days: int):
 
     try:
         with conn.cursor() as cur:
-            cur.execute("select coalesce(max(t_id), 0) + 1 from users")
+            # Номер берём из той же последовательности, что и панель: при
+            # max(t_id) + 1 она отстаёт, и создание через API падает на t_id
+            cur.execute("select nextval(pg_get_serial_sequence('users', 't_id'))")
             t_id = cur.fetchone()[0]
 
             cur.execute(
