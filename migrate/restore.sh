@@ -10,14 +10,15 @@ command -v docker >/dev/null || { echo "Нет Docker: curl -fsSL https://get.do
 [ -f "$IN/remnawave-db.dump" ] || { echo "Нет $IN — сначала scp с старого сервера"; exit 1; }
 cd "$IN"
 
+# Уже распакованный архив можно удалить, чтобы освободить место: шаг пропустится
 echo "== 1. Файлы"
-tar xzf files.tar.gz -C /
+if [ -f files.tar.gz ]; then tar xzf files.tar.gz -C /; else echo "(пропущено)"; fi
 
 echo "== 2. Образы ботов"
-gunzip -c images.tar.gz | docker load
+if [ -f images.tar.gz ]; then gunzip -c images.tar.gz | docker load; else echo "(пропущено)"; fi
 
 echo "== 3. Тома ботов"
-if [ -s volumes.txt ]; then
+if [ -s volumes.txt ] && [ -f volumes.tar.gz ]; then
   for v in $(cat volumes.txt); do docker volume create "$v" >/dev/null; done
   tar xzf volumes.tar.gz -C /var/lib/docker/volumes
 fi
