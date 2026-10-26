@@ -5,7 +5,8 @@ set -euo pipefail
 
 OUT=/root/migrate
 DB=103c04531ada_remnawave-db
-BOTS="remna-sales-bot remna-telegram-bot-prod rates-bot bus814-bot wallet-watch amnezia-awg2"
+# amnezia-awg2 не переносим: на новом сервере своя Amnezia с тем же именем контейнера
+BOTS="remna-sales-bot remna-telegram-bot-prod rates-bot bus814-bot wallet-watch"
 PANEL="remnawave remnawave-subscription-page remnawave-nginx remnanode"
 
 mkdir -p "$OUT/containers"

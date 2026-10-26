@@ -1,7 +1,7 @@
 # Переезд на новый сервер (старый IP заблокировал РКН)
 
 Переезжает всё: панель Remnawave, база, страница подписок, nginx с
-сертификатами, нода, AmneziaWG и все боты (`remna-sales-bot`,
+сертификатами, нода и все боты (`remna-sales-bot`,
 `remna-telegram-bot-prod`, `rates-bot`, `bus814-bot`, `wallet-watch`).
 Домены те же: `panelnikitusik`, `subnikitusik`, `nodenikitusik`
 (`.ncknms.com`). Меняется только IP.
@@ -73,9 +73,16 @@ DNS: `certbot renew --dry-run`.
 
 ## 5. AmneziaWG
 
-Ключи и клиенты перенесены, а в конфигах клиентов прописан старый IP. Им
-нужно поменять `Endpoint = СТАРЫЙ_IP:49540` на новый IP или получить новый
-конфиг из приложения Amnezia.
+Старую Amnezia не переносим: на новом сервере уже стоит своя, и её
+контейнер тоже называется `amnezia-awg2`. Клиентам старой Amnezia нужно
+выдать новые конфиги из приложения Amnezia на новом сервере.
+
+Если `get.docker.com` заменил системный Docker и тот не поднялся сам:
+
+```bash
+systemctl enable --now docker.socket docker containerd
+docker update --restart always amnezia-awg2
+```
 
 ## 6. Проверка
 
