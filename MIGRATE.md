@@ -1,158 +1,101 @@
-# Переезд панели Remnawave на новый сервер
+# Переезд на новый сервер (старый IP заблокировал РКН)
 
-Домены не меняются: `panelnikitusik.ncknms.com` (панель) и
-`subnikitusik.ncknms.com` (подписки). Меняется только IP. Ссылки подписок у
-клиентов остаются прежними.
+Переезжает всё: панель Remnawave, база, страница подписок, nginx с
+сертификатами, нода, AmneziaWG и все боты (`remna-sales-bot`,
+`remna-telegram-bot-prod`, `rates-bot`, `bus814-bot`, `wallet-watch`).
+Домены те же: `panelnikitusik`, `subnikitusik`, `nodenikitusik`
+(`.ncknms.com`). Меняется только IP.
 
-Общая схема: бэкап на старом сервере → восстановление на новом → перенос
-бота → смена A-записей → проверка → выключение старого сервера.
+Скрипты лежат в каталоге `migrate/`:
 
-## 0. Заранее (за сутки)
+- `backup.sh` запускается на старом сервере. Он останавливает ботов и
+  панель, снимает дамп базы и делает снимки контейнеров ботов (вместе с
+  правками внутри, например `/app/bot.py`). Ещё он сохраняет их тома,
+  `/opt`, `/root`, сертификаты и crontab в `/root/migrate`.
+- `restore.sh` запускается на новом сервере. Он разворачивает всё обратно:
+  сначала базу, потом дамп, потом панель, потом ботов.
+- `recreate.py` пересоздаёт контейнеры ботов с теми же параметрами, что
+  были на старом сервере (сеть, порты, тома, restart, capabilities).
 
-- В DNS снизить TTL A-записей `panelnikitusik` и `subnikitusik` до 60–300 с,
-  чтобы переключение разошлось быстро.
-- Выяснить, работает ли на старом сервере ещё и нода (`docker ps | grep
-  remnanode`). Если да, клиенты подключаются к VPN по его IP/домену, и ноду
-  тоже нужно переносить или оставить старый сервер включённым как ноду.
-- Записать, что запущено и где лежат файлы:
+## 0. Заранее
 
-```bash
-docker ps --format '{{.Names}}\t{{.Image}}'
-ls -la /opt/remnawave
-docker inspect remna-sales-bot --format '{{json .Config.Env}}' > /root/bot-env.json
-docker inspect remna-sales-bot --format '{{range $k,$v := .NetworkSettings.Networks}}{{$k}} {{end}}'
-```
+В DNS снизить TTL записей `panelnikitusik`, `subnikitusik` и
+`nodenikitusik` до 60–300 секунд.
 
-## 1. Бэкап на старом сервере
-
-Вариант А, скрипт `remnawave-backup` (как советовали): сделать бэкап и
-убедиться, что в архив попали дамп БД **и** каталог `/opt/remnawave` с `.env`.
-
-Вариант Б, вручную. Панель на время дампа остановить, чтобы после бэкапа
-не появились новые оплаты или пользователи:
+На новом сервере:
 
 ```bash
-cd /opt/remnawave
-docker stop remnawave remna-sales-bot
-docker exec 103c04531ada_remnawave-db pg_dump -U postgres -d postgres -Fc \
-  > /root/remnawave-db.dump
-docker cp remna-sales-bot:/app/bot.py /root/bot.py
-tar czf /root/remnawave-migrate.tgz -C / opt/remnawave root/remnawave-db.dump \
-  root/bot.py root/bot-env.json
-```
-
-Бот хранит свои таблицы (`bot_sent_reminders` и др.) в той же базе
-`postgres`, поэтому они попадут в дамп. А сам `bot.py` живёт только внутри
-контейнера, и скрипт бэкапа панели его **не** сохранит.
-
-Если правки бота уже есть в этом репозитории, `bot.py` можно взять отсюда.
-
-## 2. Важно в `.env`
-
-`.env` переносить **целиком, без перегенерации**. Особенно:
-
-- `JWT_AUTH_SECRET`, `JWT_API_TOKENS_SECRET`: если они другие, перестанет
-  работать `REMNAWAVE_API_TOKEN` бота и разлогинятся админы.
-- `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`, `DATABASE_URL`.
-- `PANEL_DOMAIN`, `SUB_PUBLIC_DOMAIN` остаются прежними.
-
-Ключи нод хранятся в БД, так что после восстановления ноды переподключатся
-сами, перевыпускать `SECRET_KEY` на нодах не нужно.
-
-## 3. Восстановление на новом сервере
-
-```bash
-# Docker
 curl -fsSL https://get.docker.com | sh
-
-scp root@СТАРЫЙ_IP:/root/remnawave-migrate.tgz /root/
-tar xzf /root/remnawave-migrate.tgz -C /
-cd /opt/remnawave
-
-# Сначала ТОЛЬКО база: панель при старте накатывает миграции на пустую БД,
-# и потом дамп ляжет с конфликтами.
-docker compose up -d remnawave-db
-sleep 10
-docker exec -i remnawave-db pg_restore -U postgres -d postgres --clean --if-exists \
-  < /root/remnawave-db.dump
-
-# Теперь всё остальное
-docker compose up -d
-docker compose logs -f --tail 100 remnawave
 ```
 
-Версия образа PostgreSQL на новом сервере должна быть **не ниже** старой.
-Возьми тот же `docker-compose.yml`, тогда версия совпадёт.
-
-Если используешь скрипт `remnawave-backup`, шаг 3 за тебя сделает его режим
-восстановления. Дальше переходи к шагу 4.
-
-Имя контейнера БД на новом сервере, скорее всего, будет `remnawave-db`, без
-префикса `103c04531ada_`. Проверь через `docker ps`.
-
-## 4. Бот remna-sales-bot
-
-Запустить с теми же переменными, что в `/root/bot-env.json`, в сети панели
-(обычно `remnawave-network`) и **явно** указать хост БД:
+## 1. Старый сервер
 
 ```bash
-docker run -d --name remna-sales-bot --restart unless-stopped \
-  --network remnawave-network \
-  --env-file /root/bot.env \
-  -e POSTGRES_HOST=remnawave-db \
-  ОБРАЗ_БОТА
-docker cp /root/bot.py remna-sales-bot:/app/bot.py
-docker restart remna-sales-bot
-docker logs remna-sales-bot --tail 50
+cd /root/bot-src && git fetch origin claude/beautiful-curie-v29j9d \
+  && git checkout claude/beautiful-curie-v29j9d && git pull
+bash /root/bot-src/migrate/backup.sh
 ```
 
-`/root/bot.env` собрать из `bot-env.json`, по одной строке `КЛЮЧ=значение`.
-Образ бота: либо `docker save`/`docker load` со старого сервера, либо
-пересобрать. Бот работает через polling, поэтому от IP он не зависит.
+Скрипт останавливает ботов и панель, чтобы после бэкапа не появились новые
+оплаты и чтобы два одинаковых бота не работали одновременно. База остаётся
+запущенной.
 
-**Старый бот должен быть остановлен**: два бота с одним токеном конфликтуют
-(`TelegramConflictError`).
-
-## 5. Файрвол
-
-- На новом сервере открыть 80/443 (и SSH).
-- **На каждой ноде** разрешить подключение к порту ноды (обычно 2222) с
-  нового IP панели. Часто там стоит `ufw allow from СТАРЫЙ_IP to any port 2222`.
+## 2. Новый сервер
 
 ```bash
-ufw allow from НОВЫЙ_IP to any port 2222 proto tcp
+scp -r root@СТАРЫЙ_IP:/root/migrate /root/
+git clone -b claude/beautiful-curie-v29j9d https://github.com/elebra2005/claude.git /root/migrate-src
+bash /root/migrate-src/migrate/restore.sh
 ```
 
-## 6. DNS
+Переменные окружения ботов с секретами скрипт сохраняет в
+`/root/migrate/containers/env/` с правами 600.
 
-A-записи на IP нового сервера:
+## 3. DNS
 
-- `panelnikitusik.ncknms.com → НОВЫЙ_IP`
-- `subnikitusik.ncknms.com → НОВЫЙ_IP`, если страница подписок жила на том
-  же сервере. Без этого у клиентов перестанут обновляться подписки.
+Поменять A-записи на новый IP:
 
-Сертификаты: Caddy выпустит их сам, как только DNS укажет на новый сервер.
-Если используются nginx и certbot/acme.sh, скопировать каталог сертификатов
-или перевыпустить их после смены DNS.
+- `panelnikitusik.ncknms.com`
+- `subnikitusik.ncknms.com`
+- `nodenikitusik.ncknms.com`
 
-## 7. Проверка
+Сертификаты скопированы со старого сервера и работают сразу. Для
+продления certbot должен видеть домены на новом IP. Проверка после смены
+DNS: `certbot renew --dry-run`.
+
+## 4. Панель
+
+- **Nodes**: если адрес ноды был указан IP-адресом, заменить его на новый
+  IP. Нода должна стать online.
+- **Hosts**: если адрес хоста указан доменом `nodenikitusik`, клиентам
+  ничего делать не нужно. Если там старый IP, заменить его, после чего
+  клиенты обновляют подписку в приложении.
+
+## 5. AmneziaWG
+
+Ключи и клиенты перенесены, а в конфигах клиентов прописан старый IP. Им
+нужно поменять `Endpoint = СТАРЫЙ_IP:49540` на новый IP или получить новый
+конфиг из приложения Amnezia.
+
+## 6. Проверка
 
 ```bash
-dig +short panelnikitusik.ncknms.com
-dig +short subnikitusik.ncknms.com
+docker ps --format '{{.Names}}\t{{.Status}}'
+docker logs remna-sales-bot --tail 30
+docker logs remna-telegram-bot-prod --tail 30
 curl -sI https://panelnikitusik.ncknms.com | head -1
-curl -s https://subnikitusik.ncknms.com/КОРОТКИЙ_UUID_ЛЮБОГО_КЛИЕНТА | head -c 200
 ```
 
-- В панели все ноды в статусе online, пользователи и трафик на месте.
-- Тестовая покупка в боте: пользователь создаётся, ссылка открывается.
+Сделать тестовую покупку в боте: пользователь должен создаться, а ссылка
+подписки должна открыться.
 
-## 8. Старый сервер
-
-1–2 дня держать выключенными панель и бота, но не удалять (это откат). Потом
-вернуть TTL в DNS и отключить сервер у хостера.
+Если всё работает, установить crontab: сначала посмотреть
+`cat /root/migrate/crontab.txt`, потом выполнить
+`crontab /root/migrate/crontab.txt`. Правила файрвола старого сервера
+лежат в `/root/migrate/ufw-status.txt`.
 
 ## Откат
 
-Вернуть A-записи на старый IP, на старом сервере выполнить
-`docker start remnawave remna-sales-bot`, а на новом остановить бота.
+На старом сервере выполнить `docker start` для остановленных
+контейнеров (список есть в начале `backup.sh`), а на новом остановить
+ботов. Старый сервер не удалять, пока новый не отработает пару дней.
