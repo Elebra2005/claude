@@ -38,6 +38,16 @@ def build(spec: dict, env_dir: str) -> list[str]:
         if k in keys:
             env = [e for e in env if not e.startswith(k + "=")]
         env.append(f"{k}={v}")
+    # Ручные правки (например, новый API-токен): containers/<имя>.override,
+    # строки КЛЮЧ=значение заменяют одноимённые переменные
+    override = os.path.join(os.path.dirname(env_dir), f"{name}.override")
+    if os.path.exists(override):
+        with open(override) as f:
+            extra = [l.strip() for l in f if "=" in l and not l.startswith("#")]
+        for e in extra:
+            k = e.split("=", 1)[0]
+            env = [x for x in env if not x.startswith(k + "=")]
+            env.append(e)
     env_file = os.path.join(env_dir, f"{name}.env")
     with open(env_file, "w") as f:
         f.write("\n".join(env) + "\n")
