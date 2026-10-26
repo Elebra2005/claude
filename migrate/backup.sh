@@ -53,7 +53,7 @@ for p in /opt /root /etc/letsencrypt /var/www/html $BINDS; do
   [ -e "$p" ] && PATHS="$PATHS ${p#/}"
 done
 tar czf files.tar.gz -C / \
-  --exclude=opt/containerd --exclude=root/migrate --exclude=root/snap --exclude=root/.ssh $PATHS
+  --exclude=opt/containerd --exclude=opt/amnezia --exclude=root/migrate --exclude=root/snap --exclude=root/.ssh $PATHS
 
 du -sh "$OUT"
 echo
