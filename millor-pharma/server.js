@@ -31,37 +31,40 @@ const MAX_UPLOADS_PER_PLAYER = 8;
 
 fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 
-// Секрет сервера: перец для хэшей кодов и ключ шифрования копии кода (чтобы организатор мог повторно выгрузить список).
+// Секрет сервера: перец для хэшей PIN-кодов. Хранится рядом с базой, но отдельно от неё.
 const KEY_FILE = path.join(DATA_DIR, 'secret.key');
 if (!fs.existsSync(KEY_FILE)) fs.writeFileSync(KEY_FILE, crypto.randomBytes(32).toString('hex'), { mode: 0o600 });
 const KEY = Buffer.from(fs.readFileSync(KEY_FILE, 'utf8').trim(), 'hex');
-const codeHash = (code) => crypto.createHmac('sha256', KEY).update(code).digest('hex');
-function encCode(code) {
-  const iv = crypto.randomBytes(12); const c = crypto.createCipheriv('aes-256-gcm', KEY, iv);
-  const enc = Buffer.concat([c.update(code, 'utf8'), c.final()]);
-  return [iv, c.getAuthTag(), enc].map((b) => b.toString('base64')).join('.');
-}
-function decCode(s) {
-  try {
-    const [iv, tag, enc] = s.split('.').map((x) => Buffer.from(x, 'base64'));
-    const d = crypto.createDecipheriv('aes-256-gcm', KEY, iv); d.setAuthTag(tag);
-    return Buffer.concat([d.update(enc), d.final()]).toString('utf8');
-  } catch { return ''; }
-}
+const hashPin = (pin, salt) => crypto.scryptSync(String(pin), Buffer.concat([KEY, Buffer.from(salt, 'hex')]), 32).toString('hex');
+const nameKey = (n) => String(n).toLowerCase().replace(/ё/g, 'е').replace(/\s+/g, ' ').trim();
+const PIN_RE = /^\d{4}$/;
+const MAX_PIN_FAILS = 5, PIN_LOCK_MS = 10 * 60_000;
 
 // ---------- База данных ----------
 const db = new DatabaseSync(path.join(DATA_DIR, 'game.db'));
+const PLAYERS_DDL = (t) => `CREATE TABLE ${t} (
+  id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, name_key TEXT NOT NULL UNIQUE, work_format TEXT NOT NULL,
+  pin_salt TEXT, pin_hash TEXT, pin_fails INTEGER NOT NULL DEFAULT 0, pin_locked_until INTEGER NOT NULL DEFAULT 0,
+  is_test INTEGER NOT NULL DEFAULT 0, rules_seen INTEGER NOT NULL DEFAULT 0, created_at INTEGER NOT NULL, last_seen INTEGER NOT NULL)`;
+// Переход со входа по кодам на имя + PIN: профили сохраняются, PIN игрок задаёт при следующем входе.
+if (db.prepare('PRAGMA table_info(players)').all().some((c) => c.name === 'code_id')) {
+  db.exec('PRAGMA foreign_keys = OFF; BEGIN;');
+  db.exec(PLAYERS_DDL('players_new'));
+  const used = new Set();
+  for (const r of db.prepare('SELECT * FROM players ORDER BY id').all()) {
+    let key = nameKey(r.name); if (used.has(key)) key += ` #${r.id}`; used.add(key);
+    db.prepare('INSERT INTO players_new (id, name, name_key, work_format, is_test, rules_seen, created_at, last_seen) VALUES (?, ?, ?, ?, ?, ?, ?, ?)').run(r.id, r.name, key, r.work_format, r.is_test, r.rules_seen, r.created_at, r.last_seen);
+  }
+  db.exec('DROP TABLE players; ALTER TABLE players_new RENAME TO players; DROP TABLE IF EXISTS codes; COMMIT; PRAGMA foreign_keys = ON;');
+}
 db.exec(`
 PRAGMA journal_mode = WAL;
 PRAGMA foreign_keys = ON;
 CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT NOT NULL);
-CREATE TABLE IF NOT EXISTS codes (
-  id INTEGER PRIMARY KEY AUTOINCREMENT, code_hash TEXT NOT NULL UNIQUE, code_enc TEXT NOT NULL, is_test INTEGER NOT NULL DEFAULT 0,
-  revoked INTEGER NOT NULL DEFAULT 0, note TEXT NOT NULL DEFAULT '', created_at INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS players (
-  id INTEGER PRIMARY KEY AUTOINCREMENT, code_id INTEGER NOT NULL UNIQUE REFERENCES codes(id) ON DELETE CASCADE,
-  name TEXT NOT NULL, work_format TEXT NOT NULL, is_test INTEGER NOT NULL DEFAULT 0, rules_seen INTEGER NOT NULL DEFAULT 0,
-  created_at INTEGER NOT NULL, last_seen INTEGER NOT NULL);
+  id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, name_key TEXT NOT NULL UNIQUE, work_format TEXT NOT NULL,
+  pin_salt TEXT, pin_hash TEXT, pin_fails INTEGER NOT NULL DEFAULT 0, pin_locked_until INTEGER NOT NULL DEFAULT 0,
+  is_test INTEGER NOT NULL DEFAULT 0, rules_seen INTEGER NOT NULL DEFAULT 0, created_at INTEGER NOT NULL, last_seen INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS sessions (token_hash TEXT PRIMARY KEY, player_id INTEGER NOT NULL REFERENCES players(id) ON DELETE CASCADE, expires_at INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS admin_sessions (token_hash TEXT PRIMARY KEY, expires_at INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS progress (
@@ -172,10 +175,9 @@ const fmtMsk = (ms) => (ms ? new Intl.DateTimeFormat('ru-RU', { timeZone: 'Europ
 function currentPlayer(req) {
   const tok = parseCookies(req).mgp_s;
   if (!tok) return null;
-  return q(`SELECT p.* FROM sessions s JOIN players p ON p.id = s.player_id JOIN codes c ON c.id = p.code_id
-            WHERE s.token_hash = ? AND s.expires_at > ? AND c.revoked = 0`).get(sha(tok), now()) || null;
+  return q('SELECT p.* FROM sessions s JOIN players p ON p.id = s.player_id WHERE s.token_hash = ? AND s.expires_at > ?').get(sha(tok), now()) || null;
 }
-function requirePlayer(req) { const p = currentPlayer(req); if (!p) throw new HttpError(401, 'Нужно войти по игровому коду'); return p; }
+function requirePlayer(req) { const p = currentPlayer(req); if (!p) throw new HttpError(401, 'Нужно войти: имя и PIN'); return p; }
 const isAdmin = (req) => { const tok = parseCookies(req).mgp_a; return !!tok && !!q('SELECT 1 FROM admin_sessions WHERE token_hash = ? AND expires_at > ?').get(sha(tok), now()); };
 function requireAdmin(req) { if (!isAdmin(req)) throw new HttpError(401, 'Требуется вход администратора'); }
 const adminActor = () => ADMIN_EMAIL || 'admin';
@@ -187,17 +189,6 @@ function checkSameOrigin(req, raw) {
   else if (!(req.headers['content-type'] || '').startsWith('application/json')) throw new HttpError(415, 'Ожидается JSON');
   const origin = req.headers.origin;
   if (origin) { try { if (new URL(origin).host !== (req.headers['x-forwarded-host'] || req.headers.host)) throw 0; } catch { throw new HttpError(403, 'Запрос с чужого сайта'); } }
-}
-
-const CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-function generateCode(isTest) {
-  const pick = (n) => Array.from({ length: n }, () => CODE_ALPHABET[crypto.randomInt(CODE_ALPHABET.length)]).join('');
-  return `${isTest ? 'TST' : 'MLF'}-${pick(4)}-${pick(4)}-${pick(4)}`;
-}
-function normCode(s) {
-  const t = String(s || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
-  const m = /^(MLF|TST)([A-Z0-9]{4})([A-Z0-9]{4})([A-Z0-9]{4})$/.exec(t);
-  return m ? `${m[1]}-${m[2]}-${m[3]}-${m[4]}` : t;
 }
 
 // ---------- Пароль администратора ----------
@@ -468,27 +459,56 @@ function assertTaskOpen(player) {
 
 route('GET', '/api/public', () => ({ game: gameStatus(), logo: getSetting('logo') ? '/logo' : null }));
 
-route('POST', '/api/login', async (req, res, body) => {
-  const fail = failGuard('login:' + clientIp(req), 30, 10 * 60_000);
-  const failAll = failGuard('login-all', 300, 10 * 60_000);
-  rateLimit('login-req:' + clientIp(req), 120, 10 * 60_000);
-  const code = normCode(body.code);
-  const c = q('SELECT * FROM codes WHERE code_hash = ? AND revoked = 0').get(codeHash(code));
-  if (!c) { fail(); failAll(); throw new HttpError(401, 'Код не найден или отключён. Проверьте код у организатора.'); }
-  let player = q('SELECT * FROM players WHERE code_id = ?').get(c.id);
-  if (!player) {
-    const name = String(body.name || '').replace(/\s+/g, ' ').trim();
-    const format = body.format === 'office' || body.format === 'remote' ? body.format : null;
-    if (!name) return { needsProfile: true };
-    if (name.length < 2 || name.length > 60) throw new HttpError(400, 'Имя и фамилия: от 2 до 60 символов');
-    if (!format) throw new HttpError(400, 'Выберите «Офис» или «Удалённо»');
-    try { q('INSERT INTO players (code_id, name, work_format, is_test, created_at, last_seen) VALUES (?, ?, ?, ?, ?, ?)').run(c.id, name, format, c.is_test, now(), now()); } catch {}
-    player = q('SELECT * FROM players WHERE code_id = ?').get(c.id);
-  }
+function startSession(res, player) {
   const tok = newToken();
   q('INSERT INTO sessions (token_hash, player_id, expires_at) VALUES (?, ?, ?)').run(sha(tok), player.id, now() + PLAYER_SESSION_DAYS * 864e5);
   setCookie(res, 'mgp_s', tok, PLAYER_SESSION_DAYS * 86400);
-  return { ok: true, name: player.name };
+}
+function setPin(playerId, pin) {
+  const salt = crypto.randomBytes(16).toString('hex');
+  q('UPDATE players SET pin_salt = ?, pin_hash = ?, pin_fails = 0, pin_locked_until = 0 WHERE id = ?').run(salt, hashPin(pin, salt), playerId);
+}
+const cleanName = (v) => String(v || '').replace(/\s+/g, ' ').trim();
+function checkName(name) {
+  if (name.length < 2 || name.length > 60) throw new HttpError(400, 'Имя и фамилия: от 2 до 60 символов');
+  if (!/\p{L}/u.test(name)) throw new HttpError(400, 'В имени должны быть буквы');
+}
+route('POST', '/api/register', (req, res, body) => {
+  rateLimit('reg:' + clientIp(req), 300, 10 * 60_000);
+  const name = cleanName(body.name); checkName(name);
+  const format = body.format === 'office' || body.format === 'remote' ? body.format : null;
+  if (!format) throw new HttpError(400, 'Выберите «Офис» или «Удалённо»');
+  const pin = String(body.pin || '');
+  if (!PIN_RE.test(pin)) throw new HttpError(400, 'PIN — ровно 4 цифры');
+  const key = nameKey(name);
+  if (q('SELECT 1 FROM players WHERE name_key = ?').get(key)) throw new HttpError(409, 'Это имя уже занято. Если вы уже заходили в игру — откройте вкладку «Войти» и введите свой PIN. Если вы однофамилец, добавьте к имени инициал или отчество.');
+  const r = q('INSERT INTO players (name, name_key, work_format, is_test, created_at, last_seen) VALUES (?, ?, ?, 0, ?, ?)').run(name, key, format, now(), now());
+  setPin(Number(r.lastInsertRowid), pin);
+  startSession(res, { id: Number(r.lastInsertRowid) });
+  return { ok: true, name };
+});
+route('POST', '/api/login', (req, res, body) => {
+  const fail = failGuard('login:' + clientIp(req), 60, 10 * 60_000);
+  rateLimit('login-req:' + clientIp(req), 200, 10 * 60_000);
+  const name = cleanName(body.name), pin = String(body.pin || '');
+  if (!name) throw new HttpError(400, 'Введите имя и фамилию');
+  if (!PIN_RE.test(pin)) throw new HttpError(400, 'PIN — ровно 4 цифры');
+  const p = q('SELECT * FROM players WHERE name_key = ?').get(nameKey(name));
+  if (!p) { fail(); throw new HttpError(401, 'Участник с таким именем не найден. Если вы здесь впервые, откройте вкладку «Я здесь впервые».'); }
+  if (p.pin_locked_until > now()) throw new HttpError(429, `Слишком много неверных PIN. Попробуйте через ${Math.ceil((p.pin_locked_until - now()) / 60000)} мин. или попросите организатора сбросить PIN.`);
+  if (!p.pin_hash) setPin(p.id, pin); // PIN сброшен организатором (или профиль перенесён): новый PIN задаётся при входе
+  else {
+    const ok = safeEq(hashPin(pin, p.pin_salt), p.pin_hash);
+    if (!ok) {
+      const fails = p.pin_fails + 1;
+      q('UPDATE players SET pin_fails = ?, pin_locked_until = ? WHERE id = ?').run(fails >= MAX_PIN_FAILS ? 0 : fails, fails >= MAX_PIN_FAILS ? now() + PIN_LOCK_MS : 0, p.id);
+      fail();
+      throw new HttpError(401, fails >= MAX_PIN_FAILS ? `Неверный PIN. Вход заблокирован на ${PIN_LOCK_MS / 60000} минут.` : `Неверный PIN. Осталось попыток: ${MAX_PIN_FAILS - fails}.`);
+    }
+    if (p.pin_fails) q('UPDATE players SET pin_fails = 0 WHERE id = ?').run(p.id);
+  }
+  startSession(res, p);
+  return { ok: true, name: p.name };
 });
 route('POST', '/api/logout', (req, res) => { const tok = parseCookies(req).mgp_s; if (tok) q('DELETE FROM sessions WHERE token_hash = ?').run(sha(tok)); setCookie(res, 'mgp_s', '', 0); return { ok: true }; });
 route('GET', '/api/me', (req) => { const p = requirePlayer(req); q('UPDATE players SET last_seen = ? WHERE id = ?').run(now(), p.id); return meView(p); });
@@ -687,7 +707,6 @@ route('GET', '/api/admin/dashboard', (req) => {
     game: g, scope: t, total: rows.length, active: rows.filter((r) => now() - r.lastSeen < 15 * 60_000).length, closedTasks, pending: pendingCount(t === 1),
     bingos: rows.reduce((a, r) => a + r.bingos, 0), average: rows.length ? Math.round((rows.reduce((a, r) => a + r.total, 0) / rows.length) * 10) / 10 : 0,
     leaders: rows.slice(0, 5).map((r) => ({ rank: r.rank, name: r.name, total: r.total, bingos: r.bingos })), final: !!getFinal(t === 1),
-    codes: q('SELECT COUNT(*) n FROM codes WHERE is_test = ?').get(t).n, codesUsed: q('SELECT COUNT(*) n FROM players WHERE is_test = ?').get(t).n,
   };
 });
 route('GET', '/api/admin/players', (req) => {
@@ -868,34 +887,12 @@ route('GET', '/api/admin/log', (req, res, body, m, url) => {
     .map((r) => ({ ...r, task: r.task_id ? `№${r.task_id} ${TASK_BY_ID.get(r.task_id).title}` : '', atMsk: fmtMsk(r.at) }));
 });
 
-route('GET', '/api/admin/codes', (req) => {
-  requireAdmin(req);
-  return q('SELECT c.id, c.code_enc, c.revoked, c.note, c.created_at, p.name, p.id AS player_id FROM codes c LEFT JOIN players p ON p.code_id = c.id WHERE c.is_test = ? ORDER BY c.id').all(scopeOf(req))
-    .map((c) => ({ id: c.id, code: decCode(c.code_enc), revoked: !!c.revoked, note: c.note, name: c.name, playerId: c.player_id }));
-});
-route('POST', '/api/admin/codes/generate', (req, res, body) => {
-  requireAdmin(req);
-  const count = Math.min(100, Math.max(1, Math.floor(Number(body.count) || 0)));
-  const isTest = scopeOf(req);
-  const created = [];
-  tx(() => { while (created.length < count) { const c = generateCode(isTest); try { q('INSERT INTO codes (code_hash, code_enc, is_test, note, created_at) VALUES (?, ?, ?, ?, ?)').run(codeHash(c), encCode(c), isTest, String(body.note || '').slice(0, 100), now()); created.push(c); } catch {} } });
-  audit(adminActor(), 'codes', `создано ${count}${isTest ? ' (тест)' : ''}`);
-  return { created };
-});
-route('POST', '/api/admin/codes/(\\d+)/(revoke|restore|delete)', (req, res, body, m) => {
-  requireAdmin(req);
-  const c = q('SELECT * FROM codes WHERE id = ?').get(Number(m[1]));
-  if (!c) throw new HttpError(404, 'Код не найден');
-  if (c.is_test !== scopeOf(req)) throw new HttpError(409, 'Код относится к другому режиму панели');
-  if (m[2] === 'delete') { deletePlayers('p.code_id = ?', c.id); q('DELETE FROM codes WHERE id = ?').run(c.id); }
-  else { q('UPDATE codes SET revoked = ? WHERE id = ?').run(m[2] === 'revoke' ? 1 : 0, c.id); if (m[2] === 'revoke') q('DELETE FROM sessions WHERE player_id IN (SELECT id FROM players WHERE code_id = ?)').run(c.id); }
-  audit(adminActor(), `code-${m[2]}`, `#${c.id}`);
+route('POST', '/api/admin/players/(\\d+)/reset-pin', (req, res, body, m) => {
+  requireAdmin(req); const p = scopedPlayer(req, m[1]);
+  q('UPDATE players SET pin_hash = NULL, pin_salt = NULL, pin_fails = 0, pin_locked_until = 0 WHERE id = ?').run(p.id);
+  q('DELETE FROM sessions WHERE player_id = ?').run(p.id);
+  audit(adminActor(), 'reset-pin', `${p.name} (#${p.id})`);
   return { ok: true };
-});
-route('GET', '/api/admin/codes.csv', (req, res) => {
-  requireAdmin(req);
-  const rows = q('SELECT c.*, p.name FROM codes c LEFT JOIN players p ON p.code_id = c.id WHERE c.is_test = ? ORDER BY c.id').all(scopeOf(req));
-  sendCsv(res, 'millor-pharma-codes.csv', [['Код', 'Пометка', 'Участник', 'Статус'], ...rows.map((r) => [decCode(r.code_enc), r.note, r.name || '', r.revoked ? 'отключён' : r.name ? 'используется' : 'свободен'])]);
 });
 route('POST', '/api/admin/logo', (req, res, body) => {
   requireAdmin(req);
@@ -921,20 +918,26 @@ route('GET', '/api/admin/backup.json', (req, res) => {
 route('POST', '/api/admin/demo/create', (req, res, body) => {
   requireAdmin(req);
   const n = Math.min(20, Math.max(1, Math.floor(Number(body.count) || 3))), created = [];
-  while (created.length < n) { const c = generateCode(1); try { q('INSERT INTO codes (code_hash, code_enc, is_test, note, created_at) VALUES (?, ?, 1, ?, ?)').run(codeHash(c), encCode(c), 'Тест', now()); created.push(c); } catch {} }
+  let i = q('SELECT COUNT(*) n FROM players WHERE is_test = 1').get().n;
+  while (created.length < n) {
+    i++; const name = `Тест Участник ${i}`;
+    if (q('SELECT 1 FROM players WHERE name_key = ?').get(nameKey(name))) continue;
+    const r = q('INSERT INTO players (name, name_key, work_format, is_test, created_at, last_seen) VALUES (?, ?, ?, 1, ?, ?)').run(name, nameKey(name), created.length % 2 ? 'remote' : 'office', now(), now());
+    setPin(Number(r.lastInsertRowid), '1234'); created.push({ name, pin: '1234' });
+  }
   return { created };
 });
 route('POST', '/api/admin/demo/clear', (req) => {
   requireAdmin(req);
-  tx(() => { deletePlayers('p.is_test = 1'); q('DELETE FROM codes WHERE is_test = 1').run(); setSetting('final_1', null); });
+  tx(() => { deletePlayers('p.is_test = 1'); setSetting('final_1', null); });
   audit(adminActor(), 'clear-test', ''); return { ok: true };
 });
 route('POST', '/api/admin/wipe', (req, res, body) => {
   requireAdmin(req);
   if (body.confirm !== 'УДАЛИТЬ') throw new HttpError(400, 'Введите слово УДАЛИТЬ');
-  tx(() => { q('DELETE FROM players').run(); q('DELETE FROM uploads').run(); if (body.codes) q('DELETE FROM codes').run(); setSetting('final_0', null); setSetting('final_1', null); setSetting('tie_draw', {}); });
+  tx(() => { q('DELETE FROM players').run(); q('DELETE FROM uploads').run(); setSetting('final_0', null); setSetting('final_1', null); setSetting('tie_draw', {}); });
   for (const f of fs.readdirSync(UPLOAD_DIR)) { try { fs.unlinkSync(path.join(UPLOAD_DIR, f)); } catch {} }
-  audit(adminActor(), 'wipe', body.codes ? 'вместе с кодами' : 'коды сохранены');
+  audit(adminActor(), 'wipe', '');
   return { ok: true };
 });
 

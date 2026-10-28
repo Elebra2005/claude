@@ -284,3 +284,8 @@ table.rating tr.top td { background: rgba(240, 184, 74, .07); } table.rating tr.
 .dc.g { background: var(--greenbg); border-color: var(--green); color: #9ff0c4; } .dc.bad { background: #3a2c10; border-color: #c99a34; color: var(--gold); } .dc.line { box-shadow: 0 0 0 2px var(--gold), 0 0 16px rgba(240, 184, 74, .6); }
 .demo-msg { min-height: 2.4em; text-align: center; font-weight: 800; margin-top: 8px; } .demo-msg.win { color: var(--gold); font-size: 1.15rem; } .demo-msg.no { color: #ffb4bd; }
 .section { margin: 22px 0; }
+
+.pin-input { letter-spacing: .5em; text-align: center; font-size: 1.3rem; font-weight: 800; }
+.seg { display: flex; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; margin: 10px 0 4px; }
+.seg button { flex: 1; padding: 11px 8px; background: none; border: 0; cursor: pointer; color: var(--muted); font-weight: 700; }
+.seg button.on { background: var(--pumpkin); color: #241003; }

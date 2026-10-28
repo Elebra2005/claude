@@ -34,13 +34,15 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const PNG = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==', 'base64');
 const PNG_PAD = Buffer.concat([PNG, Buffer.alloc(200)]);
 
-let admin, adminT, codes, testCodes;
-async function newPlayer(code, name, format = 'office') {
+let admin, adminT, testNames;
+const PIN = '4821';
+async function newPlayer(name, format = 'office') {
   const c = client();
-  const r = await c.post('/api/login', { code, name, format });
+  const r = await c.post('/api/register', { name, format, pin: PIN });
   assert.equal(r.status, 200, JSON.stringify(r.data));
   return c;
 }
+async function loginAs(name, pin = PIN) { const c = client(); const r = await c.post('/api/login', { name, pin }); assert.equal(r.status, 200, JSON.stringify(r.data)); return c; }
 const setPts = (c, playerId, taskId, points) => c.post('/api/admin/adjust', { playerId, taskId, points, reason: 'тест' });
 const me = async (c) => (await c.get('/api/me')).data;
 async function idOf(name, a = admin) { return (await a.get('/api/admin/players')).data.find((p) => p.name === name).id; }
@@ -67,40 +69,63 @@ test('Сценарий 10: настройка администратора, вх
   assert.equal((await admin.get('/api/admin/dashboard')).status, 200);
 });
 
-test('Коды, регистрация, повторный вход с другого устройства, один профиль на код', async () => {
-  codes = (await admin.post('/api/admin/codes/generate', { count: 60 })).data.created;
-  assert.equal(new Set(codes).size, 60);
-  assert.ok(codes.every((c) => /^MLF-[A-Z2-9]{4}-[A-Z2-9]{4}-[A-Z2-9]{4}$/.test(c)));
-  testCodes = (await adminT.post('/api/admin/codes/generate', { count: 6 })).data.created;
-  assert.ok(testCodes.every((c) => c.startsWith('TST-')));
+test('Регистрация: имя + свой PIN из 4 цифр; вход с другого устройства; имя занято', async () => {
   const a = client();
-  assert.equal((await a.post('/api/login', { code: 'MLF-AAAA-AAAA-AAAA' })).status, 401);
-  assert.equal((await a.post('/api/login', { code: codes[0].toLowerCase() })).data.needsProfile, true);
-  assert.equal((await a.post('/api/login', { code: codes[0], name: 'Анна Смирнова' })).status, 400);
-  assert.equal((await a.post('/api/login', { code: codes[0], name: 'Анна Смирнова', format: 'office' })).status, 200);
-  const b = client();
-  assert.equal((await b.post('/api/login', { code: codes[0], name: 'Другой', format: 'remote' })).data.name, 'Анна Смирнова');
+  assert.equal((await a.post('/api/register', { name: 'Анна Смирнова', format: 'office', pin: '12' })).status, 400, 'PIN — ровно 4 цифры');
+  assert.equal((await a.post('/api/register', { name: 'Анна Смирнова', format: 'office', pin: 'abcd' })).status, 400);
+  assert.equal((await a.post('/api/register', { name: 'А', format: 'office', pin: PIN })).status, 400);
+  assert.equal((await a.post('/api/register', { name: 'Анна Смирнова', pin: PIN })).status, 400, 'нужно место работы');
+  assert.equal((await a.post('/api/register', { name: 'Анна Смирнова', format: 'office', pin: PIN })).status, 200);
+  assert.equal((await me(a)).player.name, 'Анна Смирнова', 'после регистрации сессия открыта');
+  // имя занято (регистр, лишние пробелы и «ё» не важны)
+  assert.equal((await client().post('/api/register', { name: '  анна   СМИРНОВА ', format: 'remote', pin: '0000' })).status, 409);
+  // другое устройство: имя + PIN → тот же профиль
+  const b = await loginAs('анна смирнова');
   assert.equal((await me(b)).player.name, 'Анна Смирнова');
-  assert.equal((await admin.get('/api/admin/players')).data.length, 1);
-  // в базе нет кода в открытом виде
+  assert.equal((await client().post('/api/login', { name: 'Анна Смирнова', pin: '0000' })).status, 401, 'чужой PIN не подходит');
+  assert.equal((await client().post('/api/login', { name: 'Никто Никакой', pin: PIN })).status, 401);
+  assert.equal((await client().get('/api/me')).status, 401);
+  assert.equal((await admin.get('/api/admin/players')).data.length, 1, 'один человек — один профиль');
   const { db } = require('../server');
-  const stored = JSON.stringify(db.prepare('SELECT * FROM codes').all());
-  assert.ok(!stored.includes(codes[0]));
+  assert.ok(!JSON.stringify(db.prepare('SELECT * FROM players').all()).includes(PIN), 'PIN хранится только в виде хэша');
 });
 
-test('Перебор кодов ограничен', async () => {
-  const c = client(), h = { 'X-Forwarded-For': '203.0.113.9' };
-  let last;
-  for (let i = 0; i < 31; i++) last = await c.post('/api/login', { code: 'MLF-ZZZZ-ZZZZ-' + (2222 + i) }, h);
+test('Подбор PIN ограничен: 5 ошибок блокируют вход на 10 минут; организатор сбрасывает PIN', async () => {
+  await newPlayer('Борис Блокировка');
+  const c = client();
+  for (let i = 1; i <= 4; i++) { const r = await c.post('/api/login', { name: 'Борис Блокировка', pin: '0000' }); assert.equal(r.status, 401); assert.match(r.data.error, new RegExp(`Осталось попыток: ${5 - i}`)); }
+  assert.equal((await c.post('/api/login', { name: 'Борис Блокировка', pin: '0000' })).status, 401);
+  const locked = await c.post('/api/login', { name: 'Борис Блокировка', pin: PIN });
+  assert.equal(locked.status, 429, 'даже верный PIN в период блокировки не принимается');
+  // организатор сбрасывает PIN: игрок задаёт новый при следующем входе, прогресс остаётся
+  const id = await idOf('Борис Блокировка');
+  assert.equal((await adminT.post(`/api/admin/players/${id}/reset-pin`)).status, 409, 'тестовая роль не трогает реальных игроков');
+  assert.equal((await admin.post(`/api/admin/players/${id}/reset-pin`)).status, 200);
+  const fresh = client();
+  assert.equal((await fresh.post('/api/login', { name: 'Борис Блокировка', pin: '7777' })).status, 200, 'новый PIN задан при входе');
+  assert.equal((await client().post('/api/login', { name: 'Борис Блокировка', pin: PIN })).status, 401, 'старый PIN больше не работает');
+  assert.equal((await loginAs('Борис Блокировка', '7777') && 1), 1);
+  // защита от перебора имён с одного адреса
+  const h = { 'X-Forwarded-For': '203.0.113.9' }; let last;
+  for (let i = 0; i < 61; i++) last = await client().post('/api/login', { name: 'Нет Такого ' + i, pin: PIN }, h);
   assert.equal(last.status, 429);
-  assert.equal((await c.post('/api/login', { code: codes[0] }, h)).status, 429, 'и верный код с этого адреса временно закрыт');
-  assert.equal((await c.post('/api/login', { code: codes[0] }, { 'X-Forwarded-For': '203.0.113.10' })).status, 200, 'другие адреса не затронуты');
+  assert.equal((await client().post('/api/login', { name: 'Анна Смирнова', pin: PIN }, h)).status, 429, 'адрес временно закрыт');
+  assert.equal((await client().post('/api/login', { name: 'Анна Смирнова', pin: PIN }, { 'X-Forwarded-For': '203.0.113.10' })).status, 200);
+});
+
+test('Тестовые участники создаются организатором и входят по имени и PIN 1234', async () => {
+  const r = await adminT.post('/api/admin/demo/create', { count: 3 });
+  testNames = r.data.created.map((x) => x.name);
+  assert.deepEqual(testNames, ['Тест Участник 1', 'Тест Участник 2', 'Тест Участник 3']);
+  assert.equal((await client().post('/api/login', { name: testNames[0], pin: '1234' })).status, 200);
+  assert.equal((await adminT.get('/api/admin/players')).data.length, 3);
+  assert.equal((await admin.get('/api/admin/players')).data.some((p) => /Тест Участник/.test(p.name)), false);
 });
 
 test('Игра не началась: настоящие участники закрыты, тестовые играют', async () => {
-  const a = client(); await a.post('/api/login', { code: codes[0] });
+  const a = await loginAs('Анна Смирнова');
   assert.equal((await a.get('/api/tasks/15')).status, 423);
-  const t = await newPlayer(testCodes[0], 'Тест Один');
+  const t = await loginAs(testNames[0], '1234');
   assert.equal((await t.get('/api/tasks/15')).status, 200);
   assert.equal((await t.post('/api/tasks/15/start')).status, 200);
   const m = await me(t);
@@ -108,7 +133,7 @@ test('Игра не началась: настоящие участники за
 });
 
 test('Ключи ответов не уходят клиенту', async () => {
-  const t = await newPlayer(testCodes[1], 'Тест Два');
+  const t = await loginAs(testNames[1], '1234');
   const hidden = { 3: ['реглисам'], 7: ['1023'], 12: ['ТЫКВА', 'ПРИЗРАК', 'ЗОМБИ'] };
   for (const id of [1, 3, 4, 6, 7, 9, 10, 12, 13, 15]) {
     const before = JSON.stringify((await t.get(`/api/tasks/${id}`)).data);
@@ -127,7 +152,7 @@ test('Ключи ответов не уходят клиенту', async () => {
 });
 
 test('Запуск игры организатором, пауза, возобновление', async () => {
-  const a = client(); await a.post('/api/login', { code: codes[0] });
+  const a = await loginAs('Анна Смирнова');
   assert.equal((await admin.post('/api/admin/game', { action: 'start' })).data.game.phase, 'running');
   assert.equal((await a.get('/api/tasks/15')).status, 200);
   await admin.post('/api/admin/game', { action: 'pause' });
@@ -137,7 +162,7 @@ test('Запуск игры организатором, пауза, возобн
 });
 
 test('Сценарий 1+2+3: прогресс сохраняется; 6 → 10−2 = 8; третья попытка невозможна', async () => {
-  const p = await newPlayer(codes[1], 'Борис Попытки', 'remote');
+  const p = await newPlayer('Борис Попытки', 'remote');
   const start = await p.post('/api/tasks/15/start');
   assert.equal(start.data.task.attempts.used, 1);
   // 6 из 8 пустых клеток верно, без бонуса за полную таблицу
@@ -162,11 +187,11 @@ test('Сценарий 1+2+3: прогресс сохраняется; 6 → 10�
   assert.equal((await p.post('/api/tasks/15/act', { action: 'finish' })).data.result, null, 'повторная отправка ничего не меняет');
   assert.equal((await me(p)).total, 8);
   // вторая попытка хуже первой не уменьшает результат
-  const q = await newPlayer(codes[2], 'Вера Лучшая');
+  const q = await newPlayer('Вера Лучшая');
   await q.post('/api/tasks/15/start'); await q.post('/api/tasks/15/act', { action: 'finish', data: { cells: sol } });
   assert.equal((await me(q)).total, 10, 'первая попытка на 10 закрывает задание');
   assert.equal((await q.post('/api/tasks/15/start')).status, 409);
-  const w = await newPlayer(codes[3], 'Глеб Оставил');
+  const w = await newPlayer('Глеб Оставил');
   await w.post('/api/tasks/15/start'); const f = await w.post('/api/tasks/15/act', { action: 'finish', data: { cells: cells } });
   assert.equal(f.data.result.final, 6);
   assert.equal((await w.post('/api/tasks/15/keep')).data.task.attempts.closed, true, '«Оставить результат» закрывает задание');
@@ -174,7 +199,7 @@ test('Сценарий 1+2+3: прогресс сохраняется; 6 → 10�
 });
 
 test('Сценарий 4: подсказка в № 3 и штрафы, включая вторую попытку', async () => {
-  const p = await newPlayer(codes[4], 'Дарья Шифр');
+  const p = await newPlayer('Дарья Шифр');
   await p.post('/api/tasks/3/start');
   const hint = await p.post('/api/tasks/3/act', { action: 'hint' });
   assert.match(hint.data.task.active.view.hint, /порядковые номера букв русского алфавита/);
@@ -186,26 +211,26 @@ test('Сценарий 4: подсказка в № 3 и штрафы, вклю�
   const f2 = await p.post('/api/tasks/3/act', { action: 'finish', data: { name: 'Реглисам', split: '18 6 4 13 10 19 1 14' } });
   assert.equal(f2.data.result.raw, 5); assert.equal(f2.data.result.final, 3); assert.equal(f2.data.result.best, 5, 'сохраняется лучший');
   // без подсказки: имя без разбивки = 5; верно всё = 10; неверное имя = 0
-  const q = await newPlayer(codes[5], 'Егор Без Подсказки');
+  const q = await newPlayer('Егор Без Подсказки');
   await q.post('/api/tasks/3/start');
   assert.equal((await q.post('/api/tasks/3/act', { action: 'finish', data: { name: 'РЕГЛИСАМ', split: '1,2,3' } })).data.result.final, 5);
   await q.post('/api/tasks/3/start');
   assert.equal((await q.post('/api/tasks/3/act', { action: 'finish', data: { name: 'Фламин', split: '' } })).data.result.final, 0);
   // подсказка только во второй попытке
-  const r = await newPlayer(codes[6], 'Жанна Поздняя');
+  const r = await newPlayer('Жанна Поздняя');
   await r.post('/api/tasks/3/start');
   assert.equal((await r.post('/api/tasks/3/act', { action: 'finish', data: { name: 'Реглисам', split: '1' } })).data.result.final, 5);
   await r.post('/api/tasks/3/start'); await r.post('/api/tasks/3/act', { action: 'hint' });
   const f = await r.post('/api/tasks/3/act', { action: 'finish', data: { name: 'Реглисам', split: '18-6-4-13-10-19-1-14' } });
   assert.equal(f.data.result.raw, 5); assert.equal(f.data.result.final, 3);
   // результат не может уйти ниже нуля
-  const z = await newPlayer(codes[7], 'Зоя Ноль');
+  const z = await newPlayer('Зоя Ноль');
   await z.post('/api/tasks/3/start'); await z.post('/api/tasks/3/act', { action: 'hint' });
   assert.equal((await z.post('/api/tasks/3/act', { action: 'finish', data: { name: 'xx', split: '' } })).data.result.final, 0);
 });
 
 test('Сценарии 5 и 6: БИНГО только при ≥ 8 в каждой из четырёх клеток; ровно +30', async () => {
-  const p = await newPlayer(codes[8], 'Игорь Линии');
+  const p = await newPlayer('Игорь Линии');
   const id = await idOf('Игорь Линии');
   // строка 1 поля: задания 16, 2, 12, 7
   for (const [t, v] of [[16, 8], [2, 9], [12, 10]]) assert.equal((await setPts(admin, id, t, v)).status, 200);
@@ -217,7 +242,7 @@ test('Сценарии 5 и 6: БИНГО только при ≥ 8 в кажд�
   assert.deepEqual(m.lines.filter((l) => l.complete).map((l) => l.idx), [0]);
   // 10, 7, 10, 10 — не засчитывается
   await setPts(admin, id, 9, 0); // служебное
-  const q = await newPlayer(codes[9], 'Кира Семёрка');
+  const q = await newPlayer('Кира Семёрка');
   const qid = await idOf('Кира Семёрка');
   for (const [t, v] of [[5, 10], [10, 7], [8, 10], [11, 10]]) await setPts(admin, qid, t, v);
   m = await me(q);
@@ -230,7 +255,7 @@ test('Сценарии 5 и 6: БИНГО только при ≥ 8 в кажд�
 });
 
 test('Все 10 линий: 4 строки, 4 столбца, 2 диагонали, максимум 460', async () => {
-  const p = await newPlayer(codes[10], 'Максим Максимум');
+  const p = await newPlayer('Максим Максимум');
   const id = await idOf('Максим Максимум');
   for (let t = 1; t <= 16; t++) await setPts(admin, id, t, 10);
   const m = await me(p);
@@ -243,7 +268,7 @@ test('Все 10 линий: 4 строки, 4 столбца, 2 диагонал
 });
 
 test('Сценарии 7 и 8: творческое задание — проверка по критериям, баллы, рейтинг, пересчёт', async () => {
-  const p = await newPlayer(codes[11], 'Лена Творец');
+  const p = await newPlayer('Лена Творец');
   const lid = await idOf('Лена Творец');
   const v0 = (await p.get('/api/tasks/16')).data;
   assert.equal(v0.creative.criteria.reduce((a, c) => a + c.pts, 0), 10);
@@ -284,7 +309,7 @@ test('Сценарии 7 и 8: творческое задание — пров�
   const log = (await admin.get('/api/admin/log')).data;
   assert.ok(log.some((l) => /Подтверждено: 8/.test(l.note)) && log.some((l) => /Корректировка/.test(l.note)));
   // отклонение закрывает задание с нулём
-  const r = await newPlayer(codes[12], 'Макар Отклонён');
+  const r = await newPlayer('Макар Отклонён');
   await r.post('/api/tasks/14/submit', { data: { title: 'Чат', m1: 'раз', m2: 'два', m3: 'три' } });
   const rs = (await admin.get('/api/admin/submissions?status=pending')).data.find((x) => x.name === 'Макар Отклонён');
   await admin.post(`/api/admin/submissions/${rs.id}/review`, { decision: 'reject', comment: 'Не по теме' });
@@ -293,7 +318,7 @@ test('Сценарии 7 и 8: творческое задание — пров�
 });
 
 test('Приватные загрузки: фото и видео; чужие и посторонние не видят', async () => {
-  const p = await newPlayer(codes[13], 'Фёдор Фото');
+  const p = await newPlayer('Фёдор Фото');
   const h = { 'x-requested-with': 'mgp', 'content-type': 'application/octet-stream' };
   assert.equal((await p.raw('/api/uploads?kind=image', PNG_PAD, {})).status, 403, 'нужен служебный заголовок');
   const up = await p.raw('/api/uploads?kind=image', PNG_PAD, h);
@@ -312,7 +337,7 @@ test('Приватные загрузки: фото и видео; чужие и
   // доступ
   assert.equal((await p.get(up.data.url)).status, 200);
   assert.equal((await client().get(up.data.url)).status, 403);
-  const other = await newPlayer(codes[14], 'Чужой Игрок');
+  const other = await newPlayer('Чужой Игрок');
   assert.equal((await other.get(up.data.url)).status, 403);
   assert.equal((await other.post('/api/tasks/5/submit', { data: { note: 'x'.repeat(12) }, media: [up.data.id] })).status, 400, 'чужой файл прикрепить нельзя');
   assert.equal((await admin.get(up.data.url)).status, 200);
@@ -323,7 +348,7 @@ test('Приватные загрузки: фото и видео; чужие и
 
 test('Автоигры: № 4 привидения, № 6, № 7, № 12, № 13 — частичные баллы и проверка на сервере', async () => {
   // № 4
-  const a = await newPlayer(codes[15], 'Анатолий Охотник');
+  const a = await newPlayer('Анатолий Охотник');
   await a.post('/api/tasks/4/start');
   let r;
   for (const g of T.GHOSTS.slice(0, 3)) r = await a.post('/api/tasks/4/act', { action: 'click', x: g.x + 5, y: g.y - 5 });
@@ -332,12 +357,12 @@ test('Автоигры: № 4 привидения, № 6, № 7, № 12, № 13
   for (let i = 0; i < 10; i++) r = await a.post('/api/tasks/4/act', { action: 'click', x: 5, y: 495 });
   assert.equal(r.data.result.raw, 6, '3 привидения × 2, раунд закончен десятой ошибкой');
   assert.equal((await me(a)).cells.find((c) => c.id === 4).points, 6);
-  const b = await newPlayer(codes[16], 'Борис Полный');
+  const b = await newPlayer('Борис Полный');
   await b.post('/api/tasks/4/start');
   for (const g of T.GHOSTS) r = await b.post('/api/tasks/4/act', { action: 'click', x: g.x, y: g.y });
   assert.equal(r.data.result.final, 10); assert.equal(r.data.task.attempts.closed, true);
   // № 6
-  const d = await newPlayer(codes[17], 'Денис Детектив');
+  const d = await newPlayer('Денис Детектив');
   await d.post('/api/tasks/6/start');
   await d.post('/api/tasks/6/act', { action: 'save', order: ['ghost', 'witch', 'vampire', 'zombie'], culprit: 'zombie' });
   let f = await d.post('/api/tasks/6/act', { action: 'finish' });
@@ -346,7 +371,7 @@ test('Автоигры: № 4 привидения, № 6, № 7, № 12, № 13
   f = await d.post('/api/tasks/6/act', { action: 'finish', data: { order: ['ghost', 'witch', 'zombie', 'vampire'], culprit: 'zombie' } });
   assert.equal(f.data.result.raw, 10); assert.equal(f.data.result.final, 8);
   // № 7
-  const w = await newPlayer(codes[18], 'Ольга Склад');
+  const w = await newPlayer('Ольга Склад');
   await w.post('/api/tasks/7/start');
   f = await w.post('/api/tasks/7/act', { action: 'finish', data: { order: ['kardio', 'reaktaktiv', 'flamin', 'reglisam'], code: '15' } });
   assert.equal(f.data.result.raw, 4);
@@ -354,7 +379,7 @@ test('Автоигры: № 4 привидения, № 6, № 7, № 12, № 13
   f = await w.post('/api/tasks/7/act', { action: 'finish', data: { order: ['kardio', 'reaktaktiv', 'flamin', 'reglisam'], code: '1023' } });
   assert.equal(f.data.result.raw, 10);
   // № 12
-  const s = await newPlayer(codes[19], 'Сергей Шифры');
+  const s = await newPlayer('Сергей Шифры');
   await s.post('/api/tasks/12/start');
   f = await s.post('/api/tasks/12/act', { action: 'finish', data: { a: ['ТЫКВА', 'призрак', 'зомбо'] } });
   assert.equal(f.data.result.raw, 6);
@@ -362,7 +387,7 @@ test('Автоигры: № 4 привидения, № 6, № 7, № 12, № 13
   f = await s.post('/api/tasks/12/act', { action: 'finish', data: { a: ['тыква', 'ПРИЗРАК', 'Зомби'] } });
   assert.equal(f.data.result.raw, 10);
   // № 13
-  const p = await newPlayer(codes[20], 'Павел Пазл');
+  const p = await newPlayer('Павел Пазл');
   const v = (await p.post('/api/tasks/13/start')).data.task.active.view;
   assert.ok(v.arr.every((x, i) => x !== i), 'плитки перемешаны');
   assert.equal((await p.post('/api/tasks/13/act', { action: 'save', arr: [0, 0, 1, 2, 3, 4, 5, 6, 7] })).status, 400);
@@ -375,7 +400,7 @@ test('Автоигры: № 4 привидения, № 6, № 7, № 12, № 13
 });
 
 test('№ 1 и № 10: раунды, ответы, таймаут и серверный таймер', async () => {
-  const p = await newPlayer(codes[21], 'Роман Кино');
+  const p = await newPlayer('Роман Кино');
   let v = (await p.post('/api/tasks/1/start')).data.task.active.view;
   assert.equal(v.round, 0); assert.equal(v.question.title, '«Оно»'); assert.equal(v.question.palette.length, 8);
   let r = await p.post('/api/tasks/1/act', { action: 'answer', round: 0, answer: ['🎈', '🤡'] });
@@ -385,14 +410,14 @@ test('№ 1 и № 10: раунды, ответы, таймаут и серве�
   r = await p.post('/api/tasks/1/act', { action: 'answer', round: 2, answer: ['🧛', '🏰', '🦇'] });
   assert.equal(r.data.result.raw, 10);
   // порядок не важен; лишний эмодзи сверх лимита и пустая комбинация не засчитываются
-  const q = await newPlayer(codes[22], 'Тимур Кино');
+  const q = await newPlayer('Тимур Кино');
   await q.post('/api/tasks/1/start');
   await q.post('/api/tasks/1/act', { action: 'answer', round: 0, answer: ['🤡', '🎈', '🎃', '🦇', '🔮'] });
   await q.post('/api/tasks/1/act', { action: 'answer', round: 1, answer: ['👻', '🚫'] });
   r = await q.post('/api/tasks/1/act', { action: 'answer', round: 2, answer: ['🧛', '🏰', '🩸'] });
   assert.equal(r.data.result.raw, 4, 'раунд 1 не засчитан (5 эмодзи), раунд 2 без одного из трёх вариантов — тоже, раунд 3 верен (4)');
   // № 10
-  const e = await newPlayer(codes[23], 'Эльвира Ведьма');
+  const e = await newPlayer('Эльвира Ведьма');
   v = (await e.post('/api/tasks/10/start')).data.task.active.view;
   assert.equal(v.sec, 10, 'по умолчанию 10 секунд');
   const right = ['Репа', 'Канун Дня всех святых', 'Три', 'Джек Скеллингтон', 'Самайн'];
@@ -410,7 +435,7 @@ test('№ 1 и № 10: раунды, ответы, таймаут и серве�
 test('Таймеры на сервере: обновление страницы не сбрасывает, по истечении результат фиксируется сам', async () => {
   assert.equal((await admin.post('/api/admin/timers', { timers: { 3: 3, 10: 3, 1: 3 } })).status, 409, 'во время игры — только с подтверждением');
   assert.equal((await admin.post('/api/admin/timers', { timers: { 3: 3, 10: 3, 1: 3 }, confirm: true, reason: 'ускоряем тест' })).status, 200);
-  const p = await newPlayer(codes[24], 'Тарас Таймер');
+  const p = await newPlayer('Тарас Таймер');
   const t0 = (await p.post('/api/tasks/3/start')).data.task.active;
   await p.post('/api/tasks/3/act', { action: 'save', name: 'Реглисам', split: '18 6 4 13 10 19 1 14' });
   await sleep(1200);
@@ -423,7 +448,7 @@ test('Таймеры на сервере: обновление страницы 
   assert.equal(done.last.final, 10, 'сохранённые ответы засчитаны по таймеру');
   assert.equal((await p.post('/api/tasks/3/act', { action: 'finish', data: { name: 'x' } })).data.result, null, 'отправка после таймера ничего не меняет');
   // раунды без активности игрока: все три раунда истекают сами
-  const q = await newPlayer(codes[25], 'Ника Раунды');
+  const q = await newPlayer('Ника Раунды');
   await q.post('/api/tasks/1/start');
   await sleep(6500);
   const after = (await q.get('/api/tasks/1')).data;
@@ -432,7 +457,7 @@ test('Таймеры на сервере: обновление страницы 
   const fin = (await q.get('/api/tasks/1')).data;
   assert.equal(fin.last.final, 0); assert.equal(fin.active, undefined);
   // таймаут викторины: вопросы закрываются по 3 секунды
-  const w = await newPlayer(codes[26], 'Влад Викторина');
+  const w = await newPlayer('Влад Викторина');
   await w.post('/api/tasks/10/start');
   await sleep(4600);
   assert.equal((await w.get('/api/tasks/10')).data.active.view.round, 1, 'первый вопрос закрылся по таймеру');
@@ -444,7 +469,7 @@ test('Таймеры на сервере: обновление страницы 
 });
 
 test('№ 9: конвейер — +1/−1, окно клика, дубли игнорируются', async () => {
-  const p = await newPlayer(codes[27], 'Кирилл Конвейер');
+  const p = await newPlayer('Кирилл Конвейер');
   const v = (await p.post('/api/tasks/9/start')).data.task.active.view;
   assert.equal(v.items.length, 20); assert.equal(v.items.filter((i) => i.e).length, 10);
   await sleep(3000); // к этому моменту появились упаковки 0..2
@@ -462,8 +487,8 @@ test('№ 9: конвейер — +1/−1, окно клика, дубли иг�
 });
 
 test('Сценарий 9: одинаковые баллы — критерии ничьих и жеребьёвка', async () => {
-  const mk = async (code, name) => { const c = await newPlayer(code, name); return { c, id: await idOf(name) }; };
-  const A = await mk(codes[30], 'Ничья А'), B = await mk(codes[31], 'Ничья Б'), C = await mk(codes[32], 'Ничья В'), D = await mk(codes[33], 'Ничья Г');
+  const mk = async (_, name) => { const c = await newPlayer(name); return { c, id: await idOf(name) }; };
+  const A = await mk(0, 'Ничья А'), B = await mk(0, 'Ничья Б'), C = await mk(0, 'Ничья В'), D = await mk(0, 'Ничья Г');
   // А: 8+8 = 16, Б: 10+6 = 16 (больше «десяток»), В и Г: по 9+7 = 16 с одинаковыми попытками
   for (const [pl, vals] of [[A, [8, 8]], [B, [10, 6]], [C, [9, 7]], [D, [9, 7]]]) { await setPts(admin, pl.id, 14, vals[0]); await setPts(admin, pl.id, 16, vals[1]); }
   const rows = (await admin.get('/api/admin/rating')).data.rows;
@@ -482,7 +507,7 @@ test('Сценарий 9: одинаковые баллы — критерии �
   const rows2 = (await admin.get('/api/admin/rating')).data.rows;
   assert.ok(rows2.find((r) => r.name === 'Ничья Г').rank < rows2.find((r) => r.name === 'Ничья В').rank, 'меньше попыток — выше');
   // полное равенство: жеребьёвка
-  const E = await mk(codes[34], 'Ничья Д'), F = await mk(codes[35], 'Ничья Е');
+  const E = await mk(0, 'Ничья Д'), F = await mk(0, 'Ничья Е');
   for (const x of [E, F]) await setPts(admin, x.id, 14, 5);
   let rr = (await admin.get('/api/admin/rating')).data.rows;
   assert.equal(rr.find((r) => r.name === 'Ничья Д').rank, rr.find((r) => r.name === 'Ничья Е').rank);
@@ -494,13 +519,13 @@ test('Сценарий 9: одинаковые баллы — критерии �
 });
 
 test('Тестовый режим панели не трогает настоящие данные', async () => {
-  const t = await newPlayer(testCodes[2], 'Тест Три');
+  const t = await loginAs(testNames[2], '1234');
   const real = (await admin.get('/api/admin/players')).data[0];
   assert.equal((await adminT.post('/api/admin/adjust', { playerId: real.id, taskId: 1, points: 5, reason: 'проба' })).status, 409);
-  const tid = (await adminT.get('/api/admin/players')).data.find((p) => p.name === 'Тест Три').id;
+  const tid = (await adminT.get('/api/admin/players')).data.find((p) => p.name === testNames[2]).id;
   assert.equal((await admin.post('/api/admin/adjust', { playerId: tid, taskId: 1, points: 5, reason: 'проба' })).status, 409);
   assert.equal((await adminT.post('/api/admin/adjust', { playerId: tid, taskId: 1, points: 5, reason: 'проба' })).status, 200);
-  assert.ok(!(await admin.get('/api/admin/players')).data.some((p) => p.name === 'Тест Три'));
+  assert.ok(!(await admin.get('/api/admin/players')).data.some((p) => p.name === testNames[2]));
   assert.ok((await t.get('/api/leaderboard')).data.rows.every((r) => !/Ничья/.test(r.name)), 'тестовый рейтинг отдельный');
 });
 
@@ -510,7 +535,7 @@ test('Итоги: «Подвести итоги», фиксация рейтин
   for (const s of (await admin.get('/api/admin/submissions?status=pending')).data) await admin.post(`/api/admin/submissions/${s.id}/review`, { decision: 'approve', criteria: s.criteria.map((c) => c.id) });
   assert.equal((await admin.post('/api/admin/game', { action: 'end' })).status, 409, 'нужно подтверждение');
   await admin.post('/api/admin/game', { action: 'end', confirm: true });
-  const a = client(); await a.post('/api/login', { code: codes[0] });
+  const a = await loginAs('Анна Смирнова');
   assert.equal((await a.post('/api/tasks/15/start')).status, 423, 'после окончания новые попытки закрыты');
   const f = await admin.post('/api/admin/finalize', {});
   assert.equal(f.status, 200, JSON.stringify(f.data));
@@ -532,9 +557,7 @@ test('Экспорт CSV, резервная копия, список кодов
   assert.ok(text.includes('№1 Кино наоборот') && text.includes('№16 Эликсир идеальной пятницы') && text.includes('Бонус БИНГО') && text.includes('Максим Максимум'));
   const bk = (await admin.get('/api/admin/backup.json')).data; const backup = JSON.stringify(bk);
   assert.ok(bk.players.length > 20);
-  assert.ok(!backup.includes(codes[0]), 'в резервной копии нет игровых кодов');
-  const list = (await admin.get('/api/admin/codes')).data;
-  assert.ok(list.some((c) => c.code === codes[0] && c.name === 'Анна Смирнова'));
+  assert.ok(!/pin_hash|pin_salt/.test(backup), 'в резервной копии нет PIN-данных');
   assert.equal((await admin.post('/api/admin/demo/clear')).status, 200);
   assert.equal((await adminT.get('/api/admin/players')).data.length, 0);
   assert.ok((await admin.get('/api/admin/players')).data.length > 20);
@@ -546,11 +569,11 @@ test('Экспорт CSV, резервная копия, список кодов
 
 test('Сценарий 11: 50 участников играют одновременно', async () => {
   await admin.post('/api/admin/game', { action: 'reopen' });
-  const fresh = (await admin.post('/api/admin/codes/generate', { count: 50 })).data.created;
+  const fresh = Array.from({ length: 50 }, (_, i) => `Участник ${String(i + 1).padStart(2, '0')}`);
   const t0 = Date.now();
   const sol = [1, 2, 3, 4, 3, 4, 1, 2, 2, 1, 4, 3, 4, 3, 2, 1];
-  const results = await Promise.all(fresh.map(async (code, i) => {
-    const c = await newPlayer(code, `Участник ${String(i + 1).padStart(2, '0')}`, i % 2 ? 'remote' : 'office');
+  const results = await Promise.all(fresh.map(async (name, i) => {
+    const c = await newPlayer(name, i % 2 ? 'remote' : 'office');
     const out = [];
     out.push((await c.post('/api/tasks/15/start')).status);
     out.push((await c.post('/api/tasks/15/act', { action: 'finish', data: { cells: i % 3 ? sol : sol.map((v, k) => (k === 2 ? 0 : v)) } })).status);

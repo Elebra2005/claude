@@ -73,7 +73,7 @@ const VIEWS = {
     main.innerHTML = `<div class="banner ${g.phase === 'running' ? 'test' : 'warn'}"><div class="grow">Игра: <span class="state-pill ${g.phase}">${phaseText[g.phase]}</span> · ${esc(fmt(Date.parse(g.start)))} — ${esc(fmt(Date.parse(g.end)))} МСК${d.final ? ' · <b>итоги подведены</b>' : ''}</div>
       ${g.phase === 'before' || g.phase === 'ended' ? '<button class="btn sm green" data-g="start">▶ Запустить игру</button>' : ''}${g.phase === 'running' ? '<button class="btn sm ghost" data-g="pause">⏸ Пауза приёма попыток</button>' : ''}${g.phase === 'paused' ? '<button class="btn sm green" data-g="resume">▶ Продолжить</button>' : ''}${g.phase === 'running' || g.phase === 'paused' ? '<button class="btn sm red" data-g="end">⏹ Завершить игру</button>' : ''}</div>
       <div id="gm"></div>
-      <div class="grid-stats"><div class="card stat"><div class="label">Всего участников</div><div class="value">${d.total}</div><div class="muted small">кодов выдано: ${d.codes}, использовано: ${d.codesUsed}</div></div>
+      <div class="grid-stats"><div class="card stat"><div class="label">Всего участников</div><div class="value">${d.total}</div></div>
         <div class="card stat"><div class="label">Активных (15 мин)</div><div class="value">${d.active}</div></div><div class="card stat"><div class="label">Завершённых заданий</div><div class="value">${d.closedTasks}</div></div>
         <div class="card stat"><div class="label">Работ на модерации</div><div class="value">${d.pending}</div></div><div class="card stat"><div class="label">Собрано БИНГО</div><div class="value">${d.bingos}</div></div><div class="card stat"><div class="label">Средний результат</div><div class="value">${d.average}</div></div></div>
       <div class="card"><h3>Текущие лидеры</h3><table class="tbl"><thead><tr><th>#</th><th>Участник</th><th class="n">БИНГО</th><th class="n">Баллы</th></tr></thead><tbody>${d.leaders.map((r) => `<tr><td>${r.rank}</td><td>${esc(r.name)}</td><td class="n">${r.bingos}</td><td class="n gold"><b>${r.total}</b></td></tr>`).join('') || '<tr><td colspan="4" class="muted">Пока никого</td></tr>'}</tbody></table></div>`;
@@ -138,7 +138,6 @@ const VIEWS = {
 
   async settings() {
     const s = await api('/api/admin/settings'), g = s.game;
-    const codes = await api('/api/admin/codes');
     main.innerHTML = `<div class="cols2">
       <div class="card"><h2>🕰 Время игры (МСК)</h2><div class="muted small">Сейчас: <span class="state-pill ${g.phase}">${phaseText[g.phase]}</span></div>
         <form id="tf"><label class="field"><span>Начало</span><input class="input" type="datetime-local" id="ts" value="${toInput(g.start)}" required></label>
@@ -148,18 +147,14 @@ const VIEWS = {
       <div class="card"><h2>⏱ Таймеры заданий</h2><p class="muted small">Менять можно до начала мероприятия. Во время игры изменение требует подтверждения и причины и записывается в журнал.</p>
         <form id="tm">${Object.entries(s.timerLabels).map(([id, l]) => `<div class="timer-row"><span>${esc(l)}</span><input class="input" type="number" min="3" max="900" data-t="${id}" value="${s.timers[id]}"></div>`).join('')}
         <div id="tm-extra"></div><button class="btn">Сохранить таймеры</button></form></div></div>
-    <div class="card"><h2>🎟️ Игровые коды ${testMode ? '(тестовые)' : ''}</h2><p class="muted small">Один код — один игровой профиль. В базе хранится только защищённое представление; список для выдачи доступен здесь и в CSV.</p>
-      <form class="row" id="gen"><input class="input" type="number" id="cnt" min="1" max="100" value="${testMode ? 3 : 50}" style="max-width:110px"><input class="input" id="note" placeholder="Пометка (необязательно)" maxlength="100"><button class="btn">Создать коды</button></form>
-      <div class="row" style="margin-top:10px"><a class="btn ghost sm" href="${sc('/api/admin/codes.csv')}">⬇ Список кодов (CSV)</a><button class="btn ghost sm" id="print">🖨 Карточки для печати</button><span class="muted small">всего: ${codes.length}, свободно: ${codes.filter((c) => !c.name && !c.revoked).length}</span></div>
-      <div class="scroll-x" style="margin-top:10px"><table class="tbl"><thead><tr><th>Код</th><th>Пометка</th><th>Участник</th><th>Статус</th><th></th></tr></thead><tbody>${codes.map((c) => `<tr><td class="code">${esc(c.code)}</td><td class="small">${esc(c.note)}</td><td>${c.name ? esc(c.name) : '<span class="muted">—</span>'}</td><td>${c.revoked ? '<span class="pill failed">отключён</span>' : c.name ? '<span class="pill done">используется</span>' : '<span class="pill">свободен</span>'}</td><td class="row">${c.revoked ? `<button class="btn ghost sm" data-c="${c.id}" data-a="restore">Включить</button>` : `<button class="btn ghost sm" data-c="${c.id}" data-a="revoke">Отключить</button>`}<button class="btn ghost sm" data-c="${c.id}" data-a="delete">Удалить</button></td></tr>`).join('') || '<tr><td colspan="5" class="muted">Кодов пока нет</td></tr>'}</tbody></table></div></div>
     <div class="cols2"><div class="card"><h2>🖼 Логотип</h2><p class="muted small">Официальный логотип Миллор Фарма (PNG/JPEG/WebP до 1 МБ). Без него показывается текстовое название.</p>${s.logo ? `<img src="${s.logo}?t=${Date.now()}" alt="Логотип" style="max-height:60px;background:#fff2;padding:8px;border-radius:8px">` : ''}
       <div class="row" style="margin-top:8px"><input type="file" id="logo" accept="image/png,image/jpeg,image/webp">${s.logo ? '<button class="btn ghost sm" id="rmlogo">Удалить</button>' : ''}</div></div>
-      <div class="card"><h2>🧪 Тестовый режим</h2><p class="muted small">Тестовые участники играют вне расписания и не попадают в настоящий рейтинг. Включите «Тестовая роль» вверху, чтобы проверять модерацию, жеребьёвку и итоги на тестовых данных.</p>
-        <div class="row"><button class="btn" id="mk">Создать 3 тестовых кода</button><button class="btn ghost" id="clr">Очистить тестовые данные</button></div><div id="newc"></div></div></div>
+      <div class="card"><h2>🧪 Тестовый режим</h2><p class="muted small">Тестовые участники играют вне расписания и не попадают в настоящий рейтинг. Они входят по имени и PIN 1234. Включите «Тестовая роль» вверху, чтобы проверять модерацию, жеребьёвку и итоги на тестовых данных.</p>
+        <div class="row"><button class="btn" id="mk">Создать 3 тестовых участника</button><button class="btn ghost" id="clr">Очистить тестовые данные</button></div><div id="newc"></div></div></div>
     <div class="card"><h2>📜 История</h2><div class="seg" id="logseg"><button data-k="points" class="on">Начисления и корректировки</button><button data-k="audit">Журнал действий организатора</button></div><div id="logbox" class="scroll-x" style="margin-top:10px"></div></div>
     <div class="card"><h2>💾 Резервная копия и удаление данных</h2><div class="row"><a class="btn sm" href="/api/admin/backup.json">⬇ Скачать резервную копию результатов (JSON)</a></div>
       <hr style="border-color:var(--line);margin:16px 0"><p>Удаление после мероприятия безвозвратно стирает участников, ответы и фото. Сначала выгрузите CSV и резервную копию.</p>
-      <label class="check"><input type="checkbox" id="wc"><span>Удалить также игровые коды</span></label><div class="row"><input class="input" id="wconf" placeholder="Введите слово УДАЛИТЬ" style="max-width:260px"><button class="btn red" id="wipe">Удалить все игровые данные</button></div></div>`;
+      <div class="row"><input class="input" id="wconf" placeholder="Введите слово УДАЛИТЬ" style="max-width:260px"><button class="btn red" id="wipe">Удалить все игровые данные</button></div></div>`;
     $('#tf').addEventListener('submit', guard(async (e) => { e.preventDefault(); await post('/api/admin/game', { action: 'schedule', start: iso($('#ts').value), end: iso($('#te').value), autoStart: $('#as').checked }); toast('Время сохранено', 'ok'); render(); }));
     $$('[data-g]', main).forEach((b) => b.addEventListener('click', guard(async () => { await post('/api/admin/game', { action: b.dataset.g }); toast('Готово', 'ok'); render(); })));
     $('#endg').addEventListener('click', () => { $('#gm').innerHTML = '<div class="banner warn"><div class="grow">Завершить игру для всех?</div><button class="btn sm red" id="y">Да</button><button class="btn sm ghost" id="n">Нет</button></div>'; $('#n').onclick = () => ($('#gm').innerHTML = ''); $('#y').onclick = guard(async () => { await post('/api/admin/game', { action: 'end', confirm: true }); render(); }); });
@@ -171,25 +166,15 @@ const VIEWS = {
       if (g.phase !== 'before' && !$('#reason')) { $('#tm-extra').innerHTML = '<div class="result bad">Игра уже идёт или завершена. Укажите причину изменения правил — она будет записана в журнал.<label class="field"><span>Причина</span><input class="input" id="reason" maxlength="200"></label></div>'; return; }
       await post('/api/admin/timers', { timers, confirm: true, reason: $('#reason') ? $('#reason').value : '' }); toast('Таймеры сохранены', 'ok'); render();
     }));
-    $('#gen').addEventListener('submit', guard(async (e) => { e.preventDefault(); const r = await post('/api/admin/codes/generate', { count: $('#cnt').value, note: $('#note').value }); toast(`Создано кодов: ${r.created.length}`, 'ok'); render(); }));
-    $$('[data-a]', main).forEach((b) => b.addEventListener('click', guard(async () => {
-      if (b.dataset.a === 'delete' && !confirm('Удалить код? Профиль и ответы участника тоже будут удалены.')) return;
-      if (b.dataset.a === 'revoke' && !confirm('Отключить код? Участник будет разлогинен.')) return;
-      await post(`/api/admin/codes/${b.dataset.c}/${b.dataset.a}`); render();
-    })));
-    $('#print').addEventListener('click', () => {
-      const w = window.open('', '_blank'); if (!w) return toast('Разрешите всплывающие окна', 'bad');
-      w.document.write(`<!doctype html><meta charset="utf-8"><title>Коды</title><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">${codes.filter((c) => !c.revoked).map((c) => `<div style="border:1px dashed #999;padding:14px;border-radius:8px;font-family:Arial"><div style="font-size:12px;color:#666">Миллор Фарма · Halloween Bingo 🎃</div><div style="font:700 18px 'Courier New';margin:8px 0;letter-spacing:1px">${esc(c.code)}</div><div style="font-size:12px">${esc(location.origin)}</div></div>`).join('')}</div>`); w.document.close();
-    });
     $('#logo').addEventListener('change', guard(async (e) => {
       const f = e.target.files[0]; if (!f) return; if (f.size > 1024 * 1024) throw new Error('Файл больше 1 МБ');
       const data = await new Promise((ok, fail) => { const r = new FileReader(); r.onload = () => ok(r.result); r.onerror = fail; r.readAsDataURL(f); });
       await post('/api/admin/logo', { image: data }); toast('Логотип загружен', 'ok'); render();
     }));
     const rm = $('#rmlogo'); if (rm) rm.addEventListener('click', guard(async () => { await post('/api/admin/logo', { remove: true }); render(); }));
-    $('#mk').addEventListener('click', guard(async () => { const r = await post('/api/admin/demo/create', { count: 3 }); $('#newc').innerHTML = `<p>Тестовые коды: ${r.created.map((c) => `<b class="code">${esc(c)}</b>`).join(' · ')}</p>`; }));
-    $('#clr').addEventListener('click', guard(async () => { if (!confirm('Удалить всех тестовых участников, их ответы, фото и тестовые коды?')) return; await post('/api/admin/demo/clear'); toast('Тестовые данные удалены', 'ok'); render(); }));
-    $('#wipe').addEventListener('click', guard(async () => { if (!confirm('Точно удалить ВСЕ игровые данные? Это необратимо.')) return; await post('/api/admin/wipe', { confirm: $('#wconf').value.trim(), codes: $('#wc').checked }); toast('Данные удалены', 'ok'); render(); }));
+    $('#mk').addEventListener('click', guard(async () => { const r = await post('/api/admin/demo/create', { count: 3 }); $('#newc').innerHTML = `<p>Войти можно так: имя и PIN <b>1234</b>.<br>${r.created.map((c) => `<b>${esc(c.name)}</b>`).join(' · ')}</p>`; }));
+    $('#clr').addEventListener('click', guard(async () => { if (!confirm('Удалить всех тестовых участников с их ответами и фото?')) return; await post('/api/admin/demo/clear'); toast('Тестовые данные удалены', 'ok'); render(); }));
+    $('#wipe').addEventListener('click', guard(async () => { if (!confirm('Точно удалить ВСЕ игровые данные? Это необратимо.')) return; await post('/api/admin/wipe', { confirm: $('#wconf').value.trim() }); toast('Данные удалены', 'ok'); render(); }));
     const drawLog = async (k) => {
       const rows = await api(`/api/admin/log?kind=${k}`);
       $('#logbox').innerHTML = k === 'points' ? `<table class="tbl"><thead><tr><th>Время (МСК)</th><th>Участник</th><th>Задание</th><th class="n">Баллы</th><th>Что произошло</th><th>Кто</th></tr></thead><tbody>${rows.map((r) => `<tr><td class="small">${esc(r.atMsk)}</td><td>${esc(r.name)}</td><td class="small">${esc(r.task)}</td><td class="n">${r.points ?? ''}</td><td>${esc(r.note)}</td><td class="small muted">${esc(r.actor)}</td></tr>`).join('') || '<tr><td colspan="6" class="muted">Пока пусто</td></tr>'}</tbody></table>`
@@ -209,9 +194,10 @@ async function playerCard(id) {
     <p class="muted small">* оценка скорректирована организатором. 💡 — использована подсказка.</p>
     <h3>Скорректировать оценку</h3><form id="adj" class="row"><select class="input" id="at" style="max-width:260px">${d.tasks.map((t) => `<option value="${t.id}">№ ${t.id} ${esc(t.title)}</option>`).join('')}</select><input class="input" id="ap" type="number" min="0" max="10" placeholder="0–10" style="max-width:100px"><input class="input" id="ar" placeholder="Причина (обязательно)" maxlength="300"><button class="btn sm">Применить</button><button class="btn ghost sm" type="button" id="aclr">Снять корректировку</button></form>
     <h3>Последние начисления</h3><table class="tbl"><tbody>${d.log.slice(0, 15).map((l) => `<tr><td class="small muted">${esc(fmt(l.at))}</td><td class="small">${l.task_id ? '№' + l.task_id : ''}</td><td class="small">${esc(l.note)}</td><td class="small muted">${esc(l.actor)}</td></tr>`).join('')}</tbody></table>
-    <div class="actions"><button class="btn ghost sm" id="delp">Удалить профиль</button></div>`);
+    <div class="actions"><button class="btn ghost sm" id="rpin">🔑 Сбросить PIN</button><button class="btn ghost sm" id="delp">Удалить профиль</button></div><p class="muted small">После сброса PIN участник входит по имени и задаёт новый PIN при следующем входе.</p>`);
   $('#adj').addEventListener('submit', guard(async (e) => { e.preventDefault(); await post('/api/admin/adjust', { playerId: Number(id), taskId: Number($('#at').value), points: Number($('#ap').value), reason: $('#ar').value }); toast('Оценка изменена, баллы и БИНГО пересчитаны', 'ok'); closeModal(); render(); }));
   $('#aclr').addEventListener('click', guard(async () => { await post('/api/admin/adjust', { playerId: Number(id), taskId: Number($('#at').value), points: null, reason: $('#ar').value || 'снятие корректировки' }); closeModal(); render(); }));
+  $('#rpin').addEventListener('click', guard(async () => { if (!confirm('Сбросить PIN? Участник будет разлогинен и задаст новый PIN при следующем входе.')) return; await post(`/api/admin/players/${id}/reset-pin`); toast('PIN сброшен', 'ok'); closeModal(); }));
   $('#delp').addEventListener('click', guard(async () => { if (!confirm('Удалить профиль со всеми ответами и фото?')) return; await post(`/api/admin/players/${id}/delete`); closeModal(); render(); }));
 }
 

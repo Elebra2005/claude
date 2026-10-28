@@ -119,21 +119,39 @@ async function viewWelcome() {
 function viewLogin() {
   showChrome(false);
   app.innerHTML = `<section class="login"><div class="card"><h2>🔐 Вход в лабораторию</h2>
-    <p class="muted">Код выдал организатор. По нему же можно продолжить игру с другого устройства: результаты сохранятся.</p>
-    <form id="f"><label class="field"><span>Имя и фамилия</span><input class="input" id="name" maxlength="60" autocomplete="name" required></label>
-      <div class="field"><span class="muted small">Место работы</span><div class="chips" style="margin-top:6px"><button type="button" class="chip" data-format="office" aria-pressed="false">🏢 Офис</button><button type="button" class="chip" data-format="remote" aria-pressed="false">🏠 Удалённо</button></div></div>
-      <label class="field"><span>Индивидуальный игровой код</span><input class="input code-input" id="code" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="MLF-XXXX-XXXX-XXXX" maxlength="24" required></label>
-      <div class="form-error" id="err" role="alert"></div><button class="btn big" style="width:100%">Войти</button></form></div>
+    <div class="seg" id="mode" role="tablist"><button type="button" data-m="new" class="on">Я здесь впервые</button><button type="button" data-m="old">Войти</button></div>
+    <form id="f"><label class="field"><span>Имя и фамилия</span><input class="input" id="name" maxlength="60" autocomplete="username" required></label>
+      <div class="field" id="fmt"><span class="muted small">Место работы</span><div class="chips" style="margin-top:6px"><button type="button" class="chip" data-format="office" aria-pressed="false">🏢 Офис</button><button type="button" class="chip" data-format="remote" aria-pressed="false">🏠 Удалённо</button></div></div>
+      <label class="field"><span id="pin-l">Придумай PIN: 4 цифры</span><input class="input pin-input" id="pin" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="new-password" placeholder="••••" required></label>
+      <label class="field" id="pin2f"><span>Повтори PIN</span><input class="input pin-input" id="pin2" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="off" placeholder="••••"></label>
+      <p class="muted small" id="pin-note">Запомни PIN: по имени и PIN можно продолжить игру с любого устройства, а результаты сохранятся. Забудешь — обратись к организатору.</p>
+      <div class="form-error" id="err" role="alert"></div><button class="btn big" style="width:100%" id="go">Войти в лабораторию</button></form></div>
     <p class="center"><a href="#/">← На главный экран</a></p></section>`;
-  let format = null;
+  let format = null, mode = 'new';
+  const setMode = (m) => {
+    mode = m; $$('#mode button').forEach((b) => b.classList.toggle('on', b.dataset.m === m));
+    $('#fmt').hidden = $('#pin2f').hidden = m === 'old'; $('#pin2').required = m === 'new';
+    $('#pin-l').textContent = m === 'new' ? 'Придумай PIN: 4 цифры' : 'Твой PIN'; $('#pin').autocomplete = m === 'new' ? 'new-password' : 'current-password';
+    $('#pin-note').hidden = m === 'old'; $('#err').textContent = '';
+  };
+  $$('#mode button').forEach((b) => b.addEventListener('click', () => setMode(b.dataset.m)));
   $$('.chip').forEach((b) => b.addEventListener('click', () => { format = b.dataset.format; $$('.chip').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); }));
+  $$('.pin-input').forEach((i) => i.addEventListener('input', () => (i.value = i.value.replace(/\D/g, '').slice(0, 4))));
+  setMode('new'); $('#name').focus();
   $('#f').addEventListener('submit', async (e) => {
     e.preventDefault(); $('#err').textContent = '';
-    if (!format) { $('#err').textContent = 'Выберите: офис или удалённо'; return; }
+    const body = { name: $('#name').value, pin: $('#pin').value };
+    if (!/^\d{4}$/.test(body.pin)) { $('#err').textContent = 'PIN — ровно 4 цифры'; return; }
+    if (mode === 'new') {
+      if (!format) { $('#err').textContent = 'Выберите: офис или удалённо'; return; }
+      if ($('#pin2').value !== body.pin) { $('#err').textContent = 'PIN-коды не совпадают'; return; }
+      body.format = format;
+    }
+    $('#go').disabled = true;
     try {
-      await api('/api/login', { method: 'POST', body: { code: $('#code').value, name: $('#name').value, format } });
+      await api(mode === 'new' ? '/api/register' : '/api/login', { method: 'POST', body });
       S.me = null; S.prevLines = null; S.prevStates = null; location.hash = '#/board';
-    } catch (err) { $('#err').textContent = err.message; }
+    } catch (err) { $('#err').textContent = err.message; $('#go').disabled = false; }
   });
 }
 
