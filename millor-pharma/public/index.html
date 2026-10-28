@@ -20,12 +20,13 @@
         <a href="#/hall" data-route="hall"><span class="ico">🏆</span><span>Зал славы</span></a>
         <button type="button" id="btn-how"><span class="ico">❓</span><span>Как играть</span></button>
       </nav>
-      <div class="toggles">
-        <button type="button" class="tgl" id="tgl-anim" aria-pressed="true" title="Анимации">✨</button>
-        <button type="button" class="tgl" id="tgl-sound" aria-pressed="false" title="Звуки">🔇</button>
-      </div>
     </div>
   </header>
+  <div class="toggles" id="toggles">
+    <button type="button" class="tgl" id="tgl-music" aria-pressed="true" title="Музыка" aria-label="Фоновая музыка">🎵</button>
+    <button type="button" class="tgl" id="tgl-sound" aria-pressed="false" title="Звуки действий" aria-label="Звуки действий">🔇</button>
+    <button type="button" class="tgl" id="tgl-anim" aria-pressed="true" title="Анимации" aria-label="Анимации">✨</button>
+  </div>
   <main id="app"></main>
   <div class="modal" id="modal" hidden role="dialog" aria-modal="true"><div class="modal-card card"><button class="modal-close" id="modal-close" aria-label="Закрыть">✕</button><div id="modal-body"></div></div></div>
   <div id="bingo" hidden></div>

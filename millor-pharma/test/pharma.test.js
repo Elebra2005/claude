@@ -198,6 +198,16 @@ test('Сценарий 1+2+3: прогресс сохраняется; 6 → 10�
   assert.equal((await w.post('/api/tasks/15/start')).status, 409);
 });
 
+test('№ 3: пояснение принимается числами или словами (номера букв в алфавите)', async () => {
+  const p = await newPlayer('Ирина Словами');
+  await p.post('/api/tasks/3/start');
+  const f = await p.post('/api/tasks/3/act', { action: 'finish', data: { name: 'Реглисам', split: 'Это порядковые номера букв в русском алфавите' } });
+  assert.equal(f.data.result.final, 10);
+  const q = await newPlayer('Игорь Мимо');
+  await q.post('/api/tasks/3/start');
+  assert.equal((await q.post('/api/tasks/3/act', { action: 'finish', data: { name: 'Реглисам', split: 'просто угадал' } })).data.result.final, 5);
+});
+
 test('Сценарий 4: подсказка в № 3 и штрафы, включая вторую попытку', async () => {
   const p = await newPlayer('Дарья Шифр');
   await p.post('/api/tasks/3/start');
@@ -420,7 +430,7 @@ test('№ 1 и № 10: раунды, ответы, таймаут и серве�
   const e = await newPlayer('Эльвира Ведьма');
   v = (await e.post('/api/tasks/10/start')).data.task.active.view;
   assert.equal(v.sec, 10, 'по умолчанию 10 секунд');
-  const right = ['Репа', 'Канун Дня всех святых', 'Три', 'Джек Скеллингтон', 'Самайн'];
+  const right = ['1897', 'Зеро', 'Годзилла', '«Сонная Лощина»', 'Белтайн'];
   for (let i = 0; i < 5; i++) {
     const cur = (await e.get('/api/tasks/10')).data.active.view;
     assert.equal(cur.round, i);

@@ -12,26 +12,85 @@ const S = { me: null, offset: 0, prevLines: null, prevStates: null, poll: null, 
 const now = () => Date.now() + S.offset;
 const syncTime = (t) => { if (t) S.offset = t - Date.now(); };
 
-/* ---------- Настройки анимации и звука ---------- */
+/* ---------- Анимации, звуки и фоновая музыка ---------- */
 S.anim = store.get('mp-anim') !== null ? store.get('mp-anim') === '1' : !matchMedia('(prefers-reduced-motion: reduce)').matches;
 S.sound = store.get('mp-sound') === '1';
+S.music = store.get('mp-music') !== '0';
 function applyToggles() {
   document.body.classList.toggle('noanim', !S.anim);
   $('#tgl-anim').setAttribute('aria-pressed', String(S.anim));
-  $('#tgl-sound').setAttribute('aria-pressed', String(S.sound));
-  $('#tgl-sound').textContent = S.sound ? '🔊' : '🔇';
+  $('#tgl-sound').setAttribute('aria-pressed', String(S.sound)); $('#tgl-sound').textContent = S.sound ? '🔊' : '🔇';
+  $('#tgl-music').setAttribute('aria-pressed', String(S.music)); $('#tgl-music').style.opacity = S.music ? 1 : .5;
 }
 $('#tgl-anim').addEventListener('click', () => { S.anim = !S.anim; store.set('mp-anim', S.anim ? '1' : '0'); applyToggles(); });
 $('#tgl-sound').addEventListener('click', () => { S.sound = !S.sound; store.set('mp-sound', S.sound ? '1' : '0'); applyToggles(); beep([[660, .08]]); });
+$('#tgl-music').addEventListener('click', () => { S.music = !S.music; store.set('mp-music', S.music ? '1' : '0'); applyToggles(); S.music ? Music.start() : Music.stop(); });
 let actx;
+const audioCtx = () => { try { actx = actx || new (window.AudioContext || window.webkitAudioContext)(); if (actx.state === 'suspended') actx.resume(); return actx; } catch { return null; } };
 function beep(seq) {
   if (!S.sound) return;
-  try {
-    actx = actx || new (window.AudioContext || window.webkitAudioContext)();
-    let t = actx.currentTime;
-    for (const [f, d] of seq) { const o = actx.createOscillator(), g = actx.createGain(); o.frequency.value = f; o.type = 'triangle'; g.gain.setValueAtTime(.08, t); g.gain.exponentialRampToValueAtTime(.0001, t + d); o.connect(g).connect(actx.destination); o.start(t); o.stop(t + d); t += d * .9; }
-  } catch {}
+  const ctx = audioCtx(); if (!ctx) return;
+  let t = ctx.currentTime;
+  for (const [f, d] of seq) { const o = ctx.createOscillator(), g = ctx.createGain(); o.frequency.value = f; o.type = 'triangle'; g.gain.setValueAtTime(.08, t); g.gain.exponentialRampToValueAtTime(.0001, t + d); o.connect(g).connect(ctx.destination); o.start(t); o.stop(t + d); t += d * .9; }
 }
+/* Мелодия собирается в браузере из нот (без аудиофайлов): вальс в ля миноре, музыкальная шкатулка, низкий бас и эхо. */
+const Music = (() => {
+  const BEAT = 0.62; // секунд на долю, размер 3/4
+  const hz = (m) => 440 * Math.pow(2, (m - 69) / 12);
+  const MELODY = [
+    [[76, 1], [72, 1], [69, 1], [71, 1], [72, 1], [74, 1], [77, 2], [76, 1], [74, 1], [71, 1], [68, 1]],
+    [[69, 1], [72, 1], [76, 1], [81, 2], [80, 1], [77, 1], [76, 1], [74, 1], [76, 2], [null, 1]],
+  ];
+  const BASS = [[45, 52], [45, 52], [41, 48], [40, 47]]; // Am, Am, F, E: корень и квинта
+  let ctx, master, echo, timer, nextT = 0, beat = 0, on = false;
+  const pluck = (m, t, dur, vol) => {
+    for (const [mul, v, type] of [[1, vol, 'sine'], [2, vol * .28, 'sine'], [3.01, vol * .08, 'sine']]) {
+      const o = ctx.createOscillator(), g = ctx.createGain(); o.type = type; o.frequency.value = hz(m) * mul;
+      g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(v, t + .012); g.gain.exponentialRampToValueAtTime(.0001, t + dur);
+      o.connect(g); g.connect(master); g.connect(echo); o.start(t); o.stop(t + dur + .05);
+    }
+  };
+  const bass = (m, t, dur, vol) => {
+    const o = ctx.createOscillator(), f = ctx.createBiquadFilter(), g = ctx.createGain(); o.type = 'triangle'; o.frequency.value = hz(m); f.type = 'lowpass'; f.frequency.value = 420;
+    g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + .05); g.gain.exponentialRampToValueAtTime(.0001, t + dur);
+    o.connect(f); f.connect(g); g.connect(master); o.start(t); o.stop(t + dur + .05);
+  };
+  const flat = MELODY.map((ph) => { const out = []; let b = 0; for (const [n, d] of ph) { out.push([b, n, d]); b += d; } return out; });
+  const schedule = () => {
+    while (nextT < ctx.currentTime + .7) {
+      const bar = Math.floor(beat / 3), inBar = beat % 3, phrase = Math.floor(bar / 4) % 2, barInPhrase = bar % 4, t = nextT;
+      const [root, fifth] = BASS[barInPhrase];
+      if (inBar === 0) bass(root, t, BEAT * 2.6, .5); else bass(fifth, t, BEAT * .9, .22);
+      for (const [b, n, d] of flat[phrase]) if (n && b === barInPhrase * 3 + inBar) pluck(n, t, BEAT * d * 1.9, .1);
+      if (inBar === 0 && barInPhrase % 2 === 1 && Math.random() < .7) pluck([93, 88, 84][Math.floor(Math.random() * 3)], t + BEAT * .5, 2.4, .035); // далёкий колокольчик
+      nextT += BEAT; beat++;
+    }
+  };
+  return {
+    start() {
+      if (on || !S.music) return;
+      ctx = audioCtx(); if (!ctx) return;
+      if (!master) {
+        master = ctx.createGain(); master.gain.value = 0; master.connect(ctx.destination);
+        const d = ctx.createDelay(1.5); d.delayTime.value = BEAT * 1.5; const fb = ctx.createGain(); fb.gain.value = .38; const wet = ctx.createGain(); wet.gain.value = .5;
+        const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 2600;
+        echo = ctx.createGain(); echo.connect(d); d.connect(lp); lp.connect(fb); fb.connect(d); lp.connect(wet); wet.connect(master);
+      }
+      on = true; nextT = ctx.currentTime + .15; beat = 0;
+      master.gain.cancelScheduledValues(ctx.currentTime); master.gain.linearRampToValueAtTime(.55, ctx.currentTime + 2);
+      timer = setInterval(schedule, 150); schedule();
+    },
+    stop() {
+      if (!on) return; on = false; clearInterval(timer);
+      if (master && ctx) { master.gain.cancelScheduledValues(ctx.currentTime); master.gain.setTargetAtTime(0, ctx.currentTime, .15); }
+    },
+    get on() { return on; },
+  };
+})();
+// Браузеры разрешают звук только после касания: запускаем музыку при первом действии на странице.
+const unlockMusic = () => { if (S.music) Music.start(); };
+document.addEventListener('pointerdown', unlockMusic, { once: true }); document.addEventListener('keydown', unlockMusic, { once: true });
+document.addEventListener('visibilitychange', () => { if (!actx) return; if (document.hidden) actx.suspend(); else if (S.music || S.sound) actx.resume(); });
 applyToggles();
 
 /* ---------- Сеть ---------- */
@@ -74,7 +133,7 @@ function startTimer(root, endAt, startAt, onExpire) {
 const debounce = (fn, ms) => { let t; const d = (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; d.flush = (...a) => { clearTimeout(t); return fn(...a); }; onCleanup(() => clearTimeout(t)); return d; };
 
 /* ---------- Каркас и маршруты ---------- */
-const brandHtml = (logo) => (logo ? `<img src="${logo}" alt="Миллор Фарма">` : '<span class="wordmark">Миллор Фарма · <b>Лаборатория</b></span>');
+const brandHtml = (logo) => (logo ? `<img src="${logo}" alt="Миллор Фарма">` : '<span class="wordmark">Миллор Фарма<small> · <b>Лаборатория</b></small></span>');
 const showChrome = (on) => { $('#topbar').hidden = !on; document.body.classList.toggle('with-nav', on); };
 async function router() {
   closeModal(true);
@@ -414,7 +473,7 @@ GAMES.cipher = (root, t, A) => {
   const v = A.view; let hint = v.hint;
   root.innerHTML = `<div class="code-display">${esc(v.code)}</div>
     <label class="field"><span>1. Название препарата</span><input class="input" id="nm" maxlength="40" autocomplete="off" value="${esc(v.fields.name)}"></label>
-    <label class="field"><span>2. Как расшифровал(а)? Раздели код на числа</span><input class="input" id="sp" maxlength="80" autocomplete="off" placeholder="например: 1-2-3-4" value="${esc(v.fields.split)}"></label>
+    <label class="field"><span>2. Как расшифровал(а)?</span><input class="input" id="sp" maxlength="120" autocomplete="off" placeholder="Опиши принцип расшифровки" value="${esc(v.fields.split)}"></label>
     <div id="hint">${hint ? `<div class="hint-box">💡 ${esc(hint)}</div>` : ''}</div>
     <div class="actions"><button class="btn ghost" id="hb" ${hint ? 'hidden' : ''}>Получить подсказку (−5 баллов)</button><button class="btn" id="ok">Отправить</button></div><div id="hc"></div>`;
   const save = debounce(() => sendSave(t, { name: $('#nm', root).value, split: $('#sp', root).value }), 400);
@@ -446,44 +505,87 @@ GAMES.ghosts = (root, t, A) => {
     } finally { busy = false; }
   }));
 };
+
+/* Расстановка по слотам: нажми карточку, затем слот; или перетащи мышью. Занятый слот меняется местами. */
+function slotArranger(root, { getOrder, setOrder, onChange, redraw }) {
+  let sel = null;
+  const place = (id, i) => {
+    const order = [...getOrder()], from = order.indexOf(id), occupant = order[i];
+    if (from === i) return;
+    if (from >= 0) order[from] = occupant || null; // место-источник получает прежнего жильца (обмен) или освобождается
+    order[i] = id; setOrder(order); sel = null; onChange(); redraw();
+  };
+  const unplace = (id) => { setOrder(getOrder().map((x) => (x === id ? null : x))); sel = null; onChange(); redraw(); };
+  return {
+    get sel() { return sel; },
+    bind() {
+      $$('[data-card]', root).forEach((c) => {
+        const id = c.dataset.card;
+        c.setAttribute('draggable', 'true');
+        c.addEventListener('dragstart', (e) => { e.dataTransfer.setData('text/plain', id); e.dataTransfer.effectAllowed = 'move'; });
+        c.addEventListener('click', (e) => { if (e.target.closest('[data-stop]')) return; e.stopPropagation(); const slot = c.closest('[data-slot]');
+          if (sel && slot && sel !== id) return place(sel, Number(slot.dataset.slot)); // нажали на занятый слот при выбранной карточке — ставим/меняем
+          sel = sel === id ? null : id; redraw(); });
+      });
+      $$('[data-slot]', root).forEach((s) => {
+        const i = Number(s.dataset.slot);
+        s.addEventListener('click', () => { if (sel) place(sel, i); });
+        s.addEventListener('dragover', (e) => { e.preventDefault(); s.classList.add('target'); }); s.addEventListener('dragleave', () => s.classList.remove('target'));
+        s.addEventListener('drop', (e) => { e.preventDefault(); const id = e.dataTransfer.getData('text/plain'); if (id) place(id, i); });
+      });
+      const pool = $('[data-pool]', root);
+      if (pool) { pool.addEventListener('dragover', (e) => e.preventDefault()); pool.addEventListener('drop', (e) => { e.preventDefault(); const id = e.dataTransfer.getData('text/plain'); if (id) unplace(id); }); pool.addEventListener('click', () => { if (sel && getOrder().includes(sel)) unplace(sel); }); }
+    },
+  };
+}
 GAMES.detective = (root, t, A) => {
-  const v = A.view; let order = [...v.order], culprit = v.culprit, sel = null;
+  const v = A.view; let order = [...v.order], culprit = v.culprit;
   const byId = Object.fromEntries(v.suspects.map((s) => [s.id, s]));
   const save = debounce(() => sendSave(t, { order, culprit }), 300);
+  let warn = null;
+  const arr = slotArranger(root, { getOrder: () => order, setOrder: (o) => (order = o), onChange: () => { warn = null; save(); }, redraw: () => draw() });
+  const card = (s) => `<div class="char ${arr.sel === s.id ? 'selected' : ''}" data-card="${s.id}"><span class="f">${s.emoji}</span>${esc(s.name)}</div>`;
   const draw = () => {
     const pool = v.suspects.filter((s) => !order.includes(s.id));
-    const card = (s) => `<div class="char ${sel === s.id ? 'selected' : ''} ${culprit === s.id ? 'culprit' : ''}" data-id="${s.id}"><span class="f">${s.emoji}</span>${esc(s.name)}<button class="accuse" data-c="${s.id}">${culprit === s.id ? '🔪 это вор' : 'назвать вором'}</button></div>`;
-    root.innerHTML = `<div class="case-box muted small">Время визитов — слева направо. Выбери персонажа, затем нажми на время. Лишних карточек быть не должно.</div>
-      <div class="board-d"><div><h3>Хронология</h3><div class="timeline">${v.slots.map((tm, i) => `<div class="slot ${sel && !order[i] ? 'target' : sel ? 'target' : ''}" data-i="${i}"><span class="time">${tm}</span>${order[i] ? card(byId[order[i]]) : '<span class="muted small">пусто</span>'}</div>`).join('')}</div></div>
-      <div><h3>Персонажи</h3><div class="chars">${pool.map(card).join('') || '<span class="muted small">Все на местах</span>'}</div></div>
-      <div><h3>Улики</h3>${v.clues.map((c, i) => `<div class="clue-card"><b>${i + 1}.</b> ${esc(c)}</div>`).join('')}</div></div>
+    const placed = order.filter(Boolean).length;
+    root.innerHTML = `<div class="step"><span class="step-n">Шаг 1</span> Расставь персонажей по времени визита</div>
+      <p class="muted small">Нажми персонажа, затем время. Можно перетаскивать; нажми на занятое время, чтобы поменять местами. Расставлено: ${placed} из 4.</p>
+      <div class="timeline">${v.slots.map((tm, i) => `<div class="slot ${arr.sel ? 'target' : ''}" data-slot="${i}"><span class="time">${tm}</span>${order[i] ? card(byId[order[i]]) : '<span class="muted small">пусто</span>'}</div>`).join('')}</div>
+      <div data-pool style="margin-top:10px"><div class="chars">${pool.map(card).join('') || '<span class="muted small">Все на местах. Чтобы убрать персонажа, выбери его и нажми сюда.</span>'}</div></div>
+      <h3 style="margin-top:14px">Улики</h3>${v.clues.map((c, i) => `<div class="clue-card"><b>${i + 1}.</b> ${esc(c)}</div>`).join('')}
+      <div class="step thief ${culprit ? 'set' : ''}"><span class="step-n">Шаг 2</span> 🔪 Кто украл конфеты? Выбери вора</div>
+      <div class="thief-grid">${v.suspects.map((s) => `<button type="button" class="thief-btn ${culprit === s.id ? 'on' : ''}" data-t="${s.id}" aria-pressed="${culprit === s.id}"><span class="f">${s.emoji}</span><span>${esc(s.name)}</span></button>`).join('')}</div>
+      <div class="thief-status ${culprit ? 'ok' : 'no'}">${culprit ? `Вор: ${byId[culprit].emoji} ${esc(byId[culprit].name)}` : '⚠ Вор не выбран: это 6 баллов из 10'}</div>
+      ${warn ? `<div class="result bad">${warn}<div class="actions"><button class="btn sm red" id="force">Всё равно отправить</button><button class="btn sm ghost" id="back">Вернуться</button></div></div>` : ''}
       <div class="actions"><button class="btn red" id="ok">🔨 Предъявить обвинение</button></div>`;
-    $$('.char', root).forEach((c) => c.addEventListener('click', (e) => { if (e.target.closest('.accuse')) return; sel = sel === c.dataset.id ? null : c.dataset.id; draw(); }));
-    $$('.accuse', root).forEach((b) => b.addEventListener('click', () => { culprit = culprit === b.dataset.c ? null : b.dataset.c; save(); draw(); }));
-    $$('.slot', root).forEach((s) => s.addEventListener('click', (e) => {
-      if (e.target.closest('.char')) return; if (!sel) return;
-      const i = Number(s.dataset.i), prev = order.indexOf(sel); if (prev >= 0) order[prev] = null; order[i] = sel; sel = null; save(); draw();
-    }));
-    $$('.timeline .char', root).forEach((c) => c.addEventListener('dblclick', () => { order = order.map((x) => (x === c.dataset.id ? null : x)); save(); draw(); }));
-    $('#ok', root).addEventListener('click', safe(async () => { $('#ok', root).disabled = true; applyAct(await actCall(t, { action: 'finish', data: { order, culprit } })); }));
+    arr.bind();
+    $$('.thief-btn', root).forEach((b) => b.addEventListener('click', () => { culprit = b.dataset.t; warn = null; save(); draw(); }));
+    const send = safe(async () => { $('#ok', root).disabled = true; applyAct(await actCall(t, { action: 'finish', data: { order, culprit } })); });
+    $('#ok', root).addEventListener('click', () => {
+      const miss = [!culprit && 'не выбран вор (шаг 2)', placed < 4 && 'не все персонажи поставлены на время (шаг 1)'].filter(Boolean);
+      if (miss.length) { warn = `Не закончено: ${miss.join('; ')}. Баллы за это не начислятся.`; draw(); const w = $('.result.bad', root); if (w) w.scrollIntoView({ block: 'center' }); return; }
+      send();
+    });
+    const f = $('#force', root); if (f) f.addEventListener('click', send); const bk = $('#back', root); if (bk) bk.addEventListener('click', () => { warn = null; draw(); });
   };
   draw();
 };
 GAMES.warehouse = (root, t, A) => {
-  const v = A.view; let order = [...v.order], sel = null; const colors = { reglisam: '#c9631b', flamin: '#8a1830', kardio: '#5a2a7a', reaktaktiv: '#2f6b5a' };
+  const v = A.view; let order = [...v.order]; const colors = { reglisam: '#c9631b', flamin: '#8a1830', kardio: '#5a2a7a', reaktaktiv: '#2f6b5a' };
   const name = Object.fromEntries(v.boxes.map((b) => [b.id, b.name]));
-  const save = debounce(() => sendSave(t, { order, code: $('#code', root) ? $('#code', root).value : '' }), 300);
-  const pack = (id) => `<div class="pack ${sel === id ? 'selected' : ''}" data-id="${id}" style="--pc:${colors[id]}">${esc(name[id].toUpperCase())}</div>`;
+  let code = v.code;
+  const save = debounce(() => sendSave(t, { order, code }), 300);
+  const arr = slotArranger(root, { getOrder: () => order, setOrder: (o) => (order = o), onChange: save, redraw: () => draw() });
+  const pack = (id) => `<div class="pack ${arr.sel === id ? 'selected' : ''}" data-card="${id}" style="--pc:${colors[id]}">${esc(name[id].toUpperCase())}</div>`;
   const draw = () => {
-    const code = $('#code', root) ? $('#code', root).value : v.code;
     root.innerHTML = `<h3>Улики</h3>${v.clues.map((c, i) => `<div class="clue-card"><b>${i + 1}.</b> ${esc(c)}</div>`).join('')}
-      <h3 style="margin-top:14px">Полка слева направо</h3><div class="shelf">${order.map((id, i) => `<div class="slot" data-i="${i}"><span class="time">${i + 1}</span>${id ? pack(id) : '<span class="muted small">пусто</span>'}</div>`).join('')}</div>
-      <h3 style="margin-top:14px">Упаковки</h3><div class="chars">${v.boxes.filter((b) => !order.includes(b.id)).map((b) => pack(b.id)).join('') || '<span class="muted small">Все на полке</span>'}</div>
+      <h3 style="margin-top:14px">Полка слева направо</h3><p class="muted small">Нажми упаковку, затем место на полке. Можно перетаскивать; упаковки на полке можно менять местами между собой.</p>
+      <div class="shelf">${order.map((id, i) => `<div class="slot ${arr.sel ? 'target' : ''}" data-slot="${i}"><span class="time">${i + 1}</span>${id ? pack(id) : '<span class="muted small">пусто</span>'}</div>`).join('')}</div>
+      <h3 style="margin-top:14px">Упаковки</h3><div class="chars" data-pool>${v.boxes.filter((b) => !order.includes(b.id)).map((b) => pack(b.id)).join('') || '<span class="muted small">Все на полке. Чтобы снять, выбери упаковку и нажми сюда.</span>'}</div>
       <label class="field"><span>Код склада</span><input class="input" id="code" inputmode="numeric" maxlength="6" value="${esc(code)}" autocomplete="off"></label><p class="muted small">${esc(v.codeRule)}</p>
       <div class="actions"><button class="btn" id="ok">Открыть склад</button></div>`;
-    $$('.pack', root).forEach((p) => p.addEventListener('click', (e) => { e.stopPropagation(); sel = sel === p.dataset.id ? null : p.dataset.id; draw(); }));
-    $$('.shelf .slot', root).forEach((s) => s.addEventListener('click', () => { if (!sel) return; const i = Number(s.dataset.i), prev = order.indexOf(sel); if (prev >= 0) order[prev] = null; order[i] = sel; sel = null; save(); draw(); }));
-    $('#code', root).addEventListener('input', save);
+    arr.bind();
+    $('#code', root).addEventListener('input', (e) => { code = e.target.value; save(); });
     $('#ok', root).addEventListener('click', safe(async () => { $('#ok', root).disabled = true; applyAct(await actCall(t, { action: 'finish', data: { order, code: $('#code', root).value } })); }));
   };
   draw();
@@ -519,14 +621,13 @@ function conveyorTraining(zone) {
 }
 const ALPHA = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
 GAMES.spells = (root, t, A) => {
-  const v = A.view; const ans = [...v.answers]; let shift = 0;
+  const v = A.view; const ans = [...v.answers];
   const save = debounce(() => sendSave(t, { a: ans }), 400);
   const [s1, s2, s3] = v.stages;
   root.innerHTML = `<div class="word-stage"><h3>${esc(s1.title)} · ${s1.pts} б.</h3><div class="letters">${[...s1.text].map((l, i) => `<button class="lt" data-i="${i}">${l}</button>`).join('')}</div>
       <div class="muted small">Нажимай буквы так, чтобы слово читалось в обратном порядке:</div><div class="letters" id="o1"></div><button class="btn sm ghost" id="b1">Стереть</button></div>
     <div class="word-stage"><h3>${esc(s2.title)} · ${s2.pts} б.</h3><div class="num-boxes">${s2.codes.map((n, i) => `<div class="num-box">${n}<input maxlength="1" data-i="${i}" autocomplete="off" aria-label="Буква ${i + 1}"></div>`).join('')}</div><button class="btn sm ghost" id="al" style="margin-top:8px">Показать алфавит с номерами</button><div class="alpha" id="alpha" hidden>${[...ALPHA].map((l, i) => `<span><b>${i + 1}</b> ${l}</span>`).join('')}</div></div>
     <div class="word-stage"><h3>${esc(s3.title)} · ${s3.pts} б.</h3><div class="wheel">${esc(s3.text)}</div>
-      <div class="shifter"><button class="btn sm ghost" id="sm">◀</button><span class="muted small">Диск: сдвиг <b id="sv">0</b></span><button class="btn sm ghost" id="sp">▶</button><span class="wheel" id="sw" style="margin-left:6px"></span></div>
       <label class="field"><span>Расшифрованное слово</span><input class="input" id="a3" maxlength="12" autocomplete="off"></label></div>
     <div class="actions"><button class="btn" id="ok">Завершить заклинания</button></div>`;
   const out1 = []; // выбранные индексы букв этапа 1
@@ -537,8 +638,6 @@ GAMES.spells = (root, t, A) => {
   const inputs = $$('.num-box input', root);
   inputs.forEach((inp, i) => { if (ans[1][i]) inp.value = ans[1][i]; inp.addEventListener('input', () => { inp.value = inp.value.toUpperCase(); ans[1] = inputs.map((x) => x.value).join(''); save(); if (inp.value && inputs[i + 1]) inputs[i + 1].focus(); }); });
   $('#al', root).addEventListener('click', () => { const a = $('#alpha', root); a.hidden = !a.hidden; });
-  const sh = () => { $('#sv', root).textContent = shift > 0 ? '+' + shift : shift; $('#sw', root).textContent = [...s3.text].map((l) => { const i = ALPHA.indexOf(l); return i < 0 ? l : ALPHA[(i + shift + 33) % 33]; }).join(''); };
-  $('#sm', root).addEventListener('click', () => { shift = Math.max(-5, shift - 1); sh(); }); $('#sp', root).addEventListener('click', () => { shift = Math.min(5, shift + 1); sh(); }); sh();
   const a3 = $('#a3', root); a3.value = ans[2] || ''; a3.addEventListener('input', () => { ans[2] = a3.value; save(); });
   $('#ok', root).addEventListener('click', safe(async () => { $('#ok', root).disabled = true; ans[1] = inputs.map((x) => x.value).join(''); applyAct(await actCall(t, { action: 'finish', data: { a: ans } })); }));
 };
