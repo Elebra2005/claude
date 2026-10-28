@@ -44,7 +44,7 @@ function ghostScene(spots) {
   <circle cx="700" cy="62" r="4" fill="#d9b768" opacity=".6"/><circle cx="719" cy="80" r="3" fill="#d9b768" opacity=".6"/>
   <path d="M685 32 V148 M612 90 H758" stroke="#4a3a3e" stroke-width="6"/>
   <path d="M630 120 q8 -10 16 0 q8 -10 16 0" fill="none" stroke="#1b1619" stroke-width="3"/>
-  ${ghost(g2.x, g2.y, 1.05, -12, 0.5)}
+  ${ghost(g2.x, g2.y, 0.62, -12, 0.5)}
   <rect x="612" y="88" width="72" height="4" fill="#4a3a3e"/>
 
   <!-- лампа -->
@@ -52,15 +52,21 @@ function ghostScene(spots) {
   <path d="M300 0 V22" stroke="#4a3a3e" stroke-width="3"/>
   <path d="M276 46 L288 22 H312 L324 46 Z" fill="#3a2b2f"/>
   <ellipse cx="300" cy="48" rx="12" ry="5" fill="#f6c46b"/>
-  ${ghost(g5.x, g5.y, 1, 18, 0.5)}
+  ${ghost(g5.x, g5.y, 0.62, 18, 0.42)}
 
   <!-- полки с колбами -->
   <rect x="40" y="176" width="210" height="10" fill="#4a3a3e"/>
   <rect x="40" y="268" width="210" height="10" fill="#4a3a3e"/>
-  ${ghost(g1.x, g1.y, 1.05, 8, 0.52)}
+  ${ghost(g1.x, g1.y, 0.62, 8, 0.6)}
   ${flask(80, 176, '#9b1d2a')}${flask(150, 176, '#f28c28', 40)}${flask(205, 176, '#5bbf8a', 52)}
   ${flask(70, 268, '#f2b33d', 36)}${flask(125, 268, '#6d4ba8')}${flask(190, 268, '#9b1d2a', 42)}
   <path d="M60 300 q10 18 0 36 M60 300 q-10 18 0 36" stroke="#3a2b2f" stroke-width="1.5" fill="none" opacity=".7"/>
+
+
+  <!-- отвлекающие предметы: белое, но не привидения -->
+  <g transform="translate(228 266)" opacity=".75"><ellipse cx="0" cy="-9" rx="9" ry="8" fill="#e6dfd0"/><rect x="-5" y="-3" width="10" height="5" rx="1" fill="#e6dfd0"/><circle cx="-3.4" cy="-9" r="2" fill="#1a1416"/><circle cx="3.4" cy="-9" r="2" fill="#1a1416"/></g>
+  <g transform="translate(385 118)" opacity=".7"><path d="M-16 -6 L-8 -12 H8 L16 -6 L22 24 H-22 Z" fill="#d9d2c4"/><path d="M-2 -12 L0 4 L2 -12" stroke="#a9a090" fill="none"/><rect x="-1" y="-24" width="2" height="12" fill="#6b5a4a"/></g>
+  <g transform="translate(540 372)" opacity=".8"><rect x="-4" y="-18" width="8" height="18" rx="2" fill="#e9e1d0"/><path d="M0 -26 q4 5 0 8 q-4 -3 0 -8z" fill="#f6c46b"/></g>
 
   <!-- паутина -->
   <g stroke="#6b5b5f" stroke-width="1" fill="none" opacity=".6">
@@ -73,14 +79,14 @@ function ghostScene(spots) {
   <rect x="478" y="262" width="214" height="6" fill="#4a3a3e"/><rect x="478" y="334" width="214" height="6" fill="#4a3a3e"/>
   ${box(486, 214, 52, 48, '#9b1d2a', 'ФЛАМИН')}${box(546, 222, 60, 40, '#f28c28', 'РЕГЛИСАМ')}${box(614, 206, 70, 56, '#5a2a7a', 'КАРДИОВАЛЕН')}
   ${box(490, 290, 48, 44, '#f2b33d', 'МИЛЛОР')}
-  ${ghost(g4.x, g4.y, 1.05, -6, 0.52)}
+  ${ghost(g4.x, g4.y, 0.62, -6, 0.42)}
   ${box(612, 286, 66, 48, '#9b1d2a', 'ФЛАМИН')}
   ${box(486, 356, 70, 42, '#5a2a7a', 'РЕГЛИСАМ')}${box(566, 362, 50, 36, '#f28c28', 'АПТЕКА')}${box(626, 352, 60, 46, '#2f6b5a', 'ЛАБ-13')}
 
   <!-- лабораторный стол -->
   <rect x="300" y="378" width="270" height="16" rx="3" fill="#4a3a3e"/>
   <rect x="314" y="394" width="12" height="76" fill="#3a2b2f"/><rect x="544" y="394" width="12" height="76" fill="#3a2b2f"/>
-  ${ghost(g3.x, g3.y, 1.1, 4, 0.48)}
+  ${ghost(g3.x, g3.y, 0.62, 4, 0.55)}
   ${flask(350, 378, '#5bbf8a', 34)}${flask(410, 378, '#f28c28', 48)}
   <g transform="translate(470 378)"><rect x="-4" y="-56" width="8" height="56" fill="#9fb3b8" opacity=".35"/><rect x="-4" y="-22" width="8" height="22" fill="#9b1d2a"/></g>
   <g transform="translate(510 378)"><rect x="-6" y="-30" width="30" height="30" rx="4" fill="#2a1f22" stroke="#6b5b5f"/><circle cx="9" cy="-15" r="8" fill="#f28c28" opacity=".8"/></g>

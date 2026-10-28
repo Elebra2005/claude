@@ -361,11 +361,11 @@ test('Автоигры: № 4 привидения, № 6, № 7, № 12, № 13
   const a = await newPlayer('Анатолий Охотник');
   await a.post('/api/tasks/4/start');
   let r;
-  for (const g of T.GHOSTS.slice(0, 3)) r = await a.post('/api/tasks/4/act', { action: 'click', x: g.x + 5, y: g.y - 5 });
+  for (const g of T.GHOSTS.slice(0, 3)) r = await a.post('/api/tasks/4/act', { action: 'click', x: g.x + 4, y: g.y - 4 });
   assert.equal(r.data.task.active.view.found.length, 3);
   assert.equal((await a.post('/api/tasks/4/act', { action: 'click', x: T.GHOSTS[0].x, y: T.GHOSTS[0].y })).data.task.active.view.wrong, 0, 'повторное нажатие на найденное — не ошибка');
-  for (let i = 0; i < 10; i++) r = await a.post('/api/tasks/4/act', { action: 'click', x: 5, y: 495 });
-  assert.equal(r.data.result.raw, 6, '3 привидения × 2, раунд закончен десятой ошибкой');
+  for (let i = 0; i < 8; i++) r = await a.post('/api/tasks/4/act', { action: 'click', x: 5, y: 495 });
+  assert.equal(r.data.result.raw, 6, '3 привидения × 2, раунд закончен восьмой ошибкой');
   assert.equal((await me(a)).cells.find((c) => c.id === 4).points, 6);
   const b = await newPlayer('Борис Полный');
   await b.post('/api/tasks/4/start');
