@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Кабинет организатора — Миллор Фарма</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/admin.css">
+</head>
+<body class="admin">
+  <section class="login" id="login" hidden><div class="card"><h2>🛡️ Кабинет организатора</h2><p class="muted">Миллор Фарма · Halloween Bingo</p><div id="login-body"></div></div></section>
+  <div id="panel" hidden>
+    <header class="adm-top"><div class="adm-title">🛡️ Кабинет организатора <span class="muted small">Миллор Фарма</span></div>
+      <label class="check test-toggle" title="Работать только с тестовыми участниками — реальные данные не меняются"><input type="checkbox" id="test-mode"><span>Тестовая роль</span></label>
+      <a class="btn ghost sm" href="/" target="_blank" rel="noopener">Открыть игру ↗</a><button class="btn ghost sm" id="logout">Выйти</button></header>
+    <nav class="adm-tabs" id="tabs">
+      <button data-tab="dash">📊 Дашборд</button><button data-tab="players">👥 Участники</button><button data-tab="review">📝 Проверка <span class="badge" id="pending-badge"></span></button>
+      <button data-tab="rating">🏆 Рейтинг и победители</button><button data-tab="settings">⚙️ Настройки игры</button></nav>
+    <div id="scope-note"></div>
+    <main class="adm-main" id="main"></main>
+  </div>
+  <div class="modal" id="modal" hidden><div class="modal-card card"><button class="modal-close" id="modal-close" aria-label="Закрыть">✕</button><div id="modal-body"></div></div></div>
+  <div id="toasts" aria-live="polite"></div>
+  <script src="/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+# Запуск: DOMAIN=game.example.ru ADMIN_EMAIL=you@company.ru docker compose up -d --build
+services:
+  game:
+    build: .
+    restart: unless-stopped
+    environment:
+      ADMIN_EMAIL: ${ADMIN_EMAIL:?Укажите ADMIN_EMAIL}
+      COOKIE_SECURE: "1"
+      TRUST_PROXY: "1"
+    volumes:
+      - game-data:/data
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    environment:
+      DOMAIN: ${DOMAIN:?Укажите DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+    depends_on: [game]
+volumes:
+  game-data:
+  caddy-data:

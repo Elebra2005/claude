@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f0c0e">
+  <title>Миллор Фарма: Halloween Bingo</title>
+  <meta name="description" content="Секретная лаборатория: спаси пятницу! Корпоративная игра Миллор Фарма.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="decor" aria-hidden="true"><span class="bat b1">🦇</span><span class="bat b2">🦇</span><span class="floater" style="left:5%;top:34%">👻</span><span class="floater" style="right:6%;top:58%;animation-delay:-3s">🎃</span></div>
+  <header id="topbar" hidden>
+    <div class="topbar-row">
+      <a class="brand" href="#/board" id="brand"></a>
+      <nav class="nav" id="nav">
+        <a href="#/board" data-route="board"><span class="ico">🧪</span><span>Поле</span></a>
+        <a href="#/bingo" data-route="bingo"><span class="ico">🎯</span><span>Мои БИНГО</span></a>
+        <a href="#/hall" data-route="hall"><span class="ico">🏆</span><span>Зал славы</span></a>
+        <button type="button" id="btn-how"><span class="ico">❓</span><span>Как играть</span></button>
+      </nav>
+      <div class="toggles">
+        <button type="button" class="tgl" id="tgl-anim" aria-pressed="true" title="Анимации">✨</button>
+        <button type="button" class="tgl" id="tgl-sound" aria-pressed="false" title="Звуки">🔇</button>
+      </div>
+    </div>
+  </header>
+  <main id="app"></main>
+  <div class="modal" id="modal" hidden role="dialog" aria-modal="true"><div class="modal-card card"><button class="modal-close" id="modal-close" aria-label="Закрыть">✕</button><div id="modal-body"></div></div></div>
+  <div id="bingo" hidden></div>
+  <div id="toasts" aria-live="polite"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
