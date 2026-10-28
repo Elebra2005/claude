@@ -471,18 +471,17 @@ GAMES.quiz = (root, t, A) => roundGame(root, t, A, (box, q, send) => {
 });
 GAMES.cipher = (root, t, A) => {
   const v = A.view; let hint = v.hint;
-  root.innerHTML = `<div class="code-display">${esc(v.code)}</div>
-    <label class="field"><span>1. Название препарата</span><input class="input" id="nm" maxlength="40" autocomplete="off" value="${esc(v.fields.name)}"></label>
-    <label class="field"><span>2. Как расшифровал(а)?</span><input class="input" id="sp" maxlength="120" autocomplete="off" placeholder="Опиши принцип расшифровки" value="${esc(v.fields.split)}"></label>
+  root.innerHTML = `<div class="code-display">${esc(v.code)}</div><p class="muted small whisper">🕯 ${esc(v.whisper)}</p>
+    <label class="field"><span>Название препарата</span><input class="input" id="nm" maxlength="40" autocomplete="off" value="${esc(v.fields.name)}"></label>
     <div id="hint">${hint ? `<div class="hint-box">💡 ${esc(hint)}</div>` : ''}</div>
     <div class="actions"><button class="btn ghost" id="hb" ${hint ? 'hidden' : ''}>Получить подсказку (−5 баллов)</button><button class="btn" id="ok">Отправить</button></div><div id="hc"></div>`;
-  const save = debounce(() => sendSave(t, { name: $('#nm', root).value, split: $('#sp', root).value }), 400);
-  $('#nm', root).addEventListener('input', save); $('#sp', root).addEventListener('input', save);
+  const save = debounce(() => sendSave(t, { name: $('#nm', root).value }), 400);
+  $('#nm', root).addEventListener('input', save);
   $('#hb', root).addEventListener('click', () => { $('#hc', root).innerHTML = '<div class="result info">Подсказка снизит результат на 5 баллов, штраф сохранится и на второй попытке. Взять подсказку? <div class="actions"><button class="btn sm red" id="hy">Да, взять</button><button class="btn sm ghost" id="hn">Нет</button></div></div>';
     $('#hn', root).addEventListener('click', () => ($('#hc', root).innerHTML = ''));
     $('#hy', root).addEventListener('click', safe(async () => { const r = await actCall(t, { action: 'hint' }); $('#hc', root).innerHTML = ''; $('#hint', root).innerHTML = `<div class="hint-box">💡 ${esc(r.task.active.view.hint)}</div>`; $('#hb', root).hidden = true; }));
   });
-  $('#ok', root).addEventListener('click', safe(async () => { $('#ok', root).disabled = true; applyAct(await actCall(t, { action: 'finish', data: { name: $('#nm', root).value, split: $('#sp', root).value } })); }));
+  $('#ok', root).addEventListener('click', safe(async () => { $('#ok', root).disabled = true; applyAct(await actCall(t, { action: 'finish', data: { name: $('#nm', root).value } })); }));
 };
 GAMES.ghosts = (root, t, A) => {
   const v = A.view; let zoom = 1, busy = false, wrong = v.wrong, found = v.found.length;

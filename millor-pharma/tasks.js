@@ -106,23 +106,15 @@ quiz.extra = () => ({ perm: QUIZ.map(() => shuffle([0, 1, 2])) });
 
 // ---------- № 3. Досье № 13 ----------
 const DOSSIER_CODE = '1864131019114';
-const DOSSIER_SPLIT = [18, 6, 4, 13, 10, 19, 1, 14];
 const HINT_TEXT = 'Числа обозначают порядковые номера букв русского алфавита, включая Ё. А = 1, Б = 2.';
 const cipher = {
-  init: (ctx) => ({ name: '', split: '', hint: ctx.hint ? 1 : 0 }),
-  view: (s) => ({ code: DOSSIER_CODE, fields: { name: s.name, split: s.split }, hint: s.hint ? HINT_TEXT : null }),
-  save(s, p) { if (p.name !== undefined) s.name = str(p.name, 40); if (p.split !== undefined) s.split = String(p.split).slice(0, 80); },
+  init: (ctx) => ({ name: '', hint: ctx.hint ? 1 : 0 }),
+  view: (s) => ({ code: DOSSIER_CODE, fields: { name: s.name }, hint: s.hint ? HINT_TEXT : null, whisper: 'Старый архивариус любил повторять: «Всё начинается с азбуки».' }),
+  save(s, p) { if (p.name !== undefined) s.name = str(p.name, 40); },
   act(s, action) { if (action !== 'hint') throw bad('Неизвестное действие'); s.hint = 1; return { done: false, hintUsed: true }; },
   score(s) {
-    const nameOk = norm(s.name) === 'реглисам';
-    const nums = (String(s.split).match(/\d+/g) || []).map(Number);
-    const splitOk = nums.length === DOSSIER_SPLIT.length && nums.every((v, i) => v === DOSSIER_SPLIT[i]);
-    // Пояснение засчитывается, если верно записаны числа, либо словами названо правило: номера букв в алфавите.
-    const t = norm(s.split);
-    const wordsOk = t.includes('алфавит') && /(номер|порядк|позици|цифр|числ)/.test(t);
-    const explainOk = splitOk || wordsOk;
-    const base = nameOk ? (explainOk ? 10 : 5) : 0;
-    const parts = [{ label: 'Название препарата', got: nameOk ? 5 : 0, max: 5 }, { label: 'Принцип расшифровки', got: nameOk && explainOk ? 5 : 0, max: 5 }];
+    const base = norm(s.name) === 'реглисам' ? 10 : 0;
+    const parts = [{ label: 'Название препарата', got: base, max: 10 }];
     let raw = base;
     if (s.hint) { parts.push({ label: 'Штраф за подсказку', got: -Math.min(5, base), max: 0, penalty: true }); raw = Math.max(0, base - 5); }
     return { raw, parts };
@@ -309,7 +301,7 @@ const TASKS = [
     rules: ['Ориентир 2–3 минуты, без жёсткого таймера.', 'Название — 5 баллов, слоган — 5 баллов.', 'Это шутка: вымышленный препарат без реальных лечебных свойств.', 'Пример: «Дедлайнофф — возвращает веру в пятницу!»'] }),
   T({ id: 3, emoji: '🔐', title: 'Досье № 13: стёртая этикетка', type: 'auto', kind: 'cipher',
     story: 'В секретном архиве на досье № 13 стёрлось название препарата. Остался только числовой код.',
-    rules: ['Время: {sec} секунд.', 'Восстанови название и объясни, как расшифровал(а) код.', 'Правильное название без пояснения — 5 баллов, с верным пояснением — 10.', 'Подсказка стоит −5 баллов и действует на обеих попытках.'] }),
+    rules: ['Время: {sec} секунд.', 'Восстанови название препарата по числовому коду.', 'Верное название — 10 баллов.', 'Подсказка стоит −5 баллов и действует на обеих попытках.'] }),
   T({ id: 4, emoji: '👻', title: 'Охотник за привидениями', type: 'auto', kind: 'ghosts',
     story: 'В ночной лаборатории Миллор Фарма прячутся пять маленьких привидений. Найди их всех!',
     rules: ['Время: {sec} секунд на попытку.', 'По 2 балла за каждое привидение, максимум 10.', 'Не больше 8 ошибочных нажатий — потом охота заканчивается.', 'Привидения маленькие и прячутся за предметами и на похожем фоне; белых предметов-обманок хватает. На телефоне изображение можно увеличить.'] }),

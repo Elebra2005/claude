@@ -300,3 +300,5 @@ table.rating tr.top td { background: rgba(240, 184, 74, .07); } table.rating tr.
 .thief-status { margin-top: 8px; padding: 8px 12px; border-radius: 10px; font-weight: 800; text-align: center; }
 .thief-status.no { background: rgba(255, 93, 115, .15); color: #ffb4bd; } .thief-status.ok { background: rgba(46, 139, 94, .2); color: #9ff0c4; }
 .slot[data-slot] .char, .slot[data-slot] .pack { cursor: grab; }
+
+.whisper { font-style: italic; text-align: center; margin: 8px 0 0; }

@@ -198,45 +198,40 @@ test('Сценарий 1+2+3: прогресс сохраняется; 6 → 10�
   assert.equal((await w.post('/api/tasks/15/start')).status, 409);
 });
 
-test('№ 3: пояснение принимается числами или словами (номера букв в алфавите)', async () => {
-  const p = await newPlayer('Ирина Словами');
-  await p.post('/api/tasks/3/start');
-  const f = await p.post('/api/tasks/3/act', { action: 'finish', data: { name: 'Реглисам', split: 'Это порядковые номера букв в русском алфавите' } });
-  assert.equal(f.data.result.final, 10);
-  const q = await newPlayer('Игорь Мимо');
-  await q.post('/api/tasks/3/start');
-  assert.equal((await q.post('/api/tasks/3/act', { action: 'finish', data: { name: 'Реглисам', split: 'просто угадал' } })).data.result.final, 5);
-});
-
 test('Сценарий 4: подсказка в № 3 и штрафы, включая вторую попытку', async () => {
   const p = await newPlayer('Дарья Шифр');
   await p.post('/api/tasks/3/start');
   const hint = await p.post('/api/tasks/3/act', { action: 'hint' });
   assert.match(hint.data.task.active.view.hint, /порядковые номера букв русского алфавита/);
-  const f1 = await p.post('/api/tasks/3/act', { action: 'finish', data: { name: 'реглисам', split: '18–6–4–13–10–19–1–14' } });
+  const f1 = await p.post('/api/tasks/3/act', { action: 'finish', data: { name: 'реглисам' } });
   assert.equal(f1.data.result.raw, 5, '10 − 5 за подсказку'); assert.equal(f1.data.result.final, 5);
   // подсказка запомнена: на второй попытке штраф действует снова, плюс −2
   const s2 = await p.post('/api/tasks/3/start');
   assert.ok(s2.data.task.active.view.hint, 'подсказка остаётся открытой');
-  const f2 = await p.post('/api/tasks/3/act', { action: 'finish', data: { name: 'Реглисам', split: '18 6 4 13 10 19 1 14' } });
+  const f2 = await p.post('/api/tasks/3/act', { action: 'finish', data: { name: 'Реглисам' } });
   assert.equal(f2.data.result.raw, 5); assert.equal(f2.data.result.final, 3); assert.equal(f2.data.result.best, 5, 'сохраняется лучший');
-  // без подсказки: имя без разбивки = 5; верно всё = 10; неверное имя = 0
+  // без подсказки: верное имя = 10 и задание закрыто; неверное = 0
   const q = await newPlayer('Егор Без Подсказки');
   await q.post('/api/tasks/3/start');
-  assert.equal((await q.post('/api/tasks/3/act', { action: 'finish', data: { name: 'РЕГЛИСАМ', split: '1,2,3' } })).data.result.final, 5);
-  await q.post('/api/tasks/3/start');
-  assert.equal((await q.post('/api/tasks/3/act', { action: 'finish', data: { name: 'Фламин', split: '' } })).data.result.final, 0);
+  const full = await q.post('/api/tasks/3/act', { action: 'finish', data: { name: 'РЕГЛИСАМ' } });
+  assert.equal(full.data.result.final, 10); assert.equal(full.data.task.attempts.closed, true);
+  const w = await newPlayer('Влада Мимо');
+  await w.post('/api/tasks/3/start');
+  assert.equal((await w.post('/api/tasks/3/act', { action: 'finish', data: { name: 'Фламин' } })).data.result.final, 0);
   // подсказка только во второй попытке
   const r = await newPlayer('Жанна Поздняя');
   await r.post('/api/tasks/3/start');
-  assert.equal((await r.post('/api/tasks/3/act', { action: 'finish', data: { name: 'Реглисам', split: '1' } })).data.result.final, 5);
+  assert.equal((await r.post('/api/tasks/3/act', { action: 'finish', data: { name: 'не знаю' } })).data.result.final, 0);
   await r.post('/api/tasks/3/start'); await r.post('/api/tasks/3/act', { action: 'hint' });
-  const f = await r.post('/api/tasks/3/act', { action: 'finish', data: { name: 'Реглисам', split: '18-6-4-13-10-19-1-14' } });
+  const f = await r.post('/api/tasks/3/act', { action: 'finish', data: { name: 'Реглисам' } });
   assert.equal(f.data.result.raw, 5); assert.equal(f.data.result.final, 3);
   // результат не может уйти ниже нуля
   const z = await newPlayer('Зоя Ноль');
   await z.post('/api/tasks/3/start'); await z.post('/api/tasks/3/act', { action: 'hint' });
-  assert.equal((await z.post('/api/tasks/3/act', { action: 'finish', data: { name: 'xx', split: '' } })).data.result.final, 0);
+  assert.equal((await z.post('/api/tasks/3/act', { action: 'finish', data: { name: 'xx' } })).data.result.final, 0);
+  // намёк про азбуку виден сразу, ответ — нет
+  const v = (await (await newPlayer('Анна Намёк')).get('/api/tasks/3')).data;
+  assert.ok(!JSON.stringify(v).includes('Реглисам'));
 });
 
 test('Сценарии 5 и 6: БИНГО только при ≥ 8 в каждой из четырёх клеток; ровно +30', async () => {
