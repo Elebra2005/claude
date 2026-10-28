@@ -430,7 +430,7 @@ test('№ 1 и № 10: раунды, ответы, таймаут и серве�
   const e = await newPlayer('Эльвира Ведьма');
   v = (await e.post('/api/tasks/10/start')).data.task.active.view;
   assert.equal(v.sec, 10, 'по умолчанию 10 секунд');
-  const right = ['1897', 'Зеро', 'Годзилла', '«Сонная Лощина»', 'Белтайн'];
+  const right = ['Репа', 'Канун Дня всех святых', 'Три', 'Джек Скеллингтон', 'Самайн'];
   for (let i = 0; i < 5; i++) {
     const cur = (await e.get('/api/tasks/10')).data.active.view;
     assert.equal(cur.round, i);
