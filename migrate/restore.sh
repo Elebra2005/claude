@@ -17,6 +17,11 @@ if [ -f files.tar.gz ]; then tar xzf files.tar.gz -C /; else echo "(пропущ
 echo "== 2. Образы ботов"
 if [ -f images.tar.gz ]; then gunzip -c images.tar.gz | docker load; else echo "(пропущено)"; fi
 
+if [ -f panel-images.tar.gz ]; then
+  echo "== 2b. Образы панели"
+  gunzip -c panel-images.tar.gz | docker load
+fi
+
 echo "== 3. Тома ботов"
 if [ -s volumes.txt ] && [ -f volumes.tar.gz ]; then
   for v in $(cat volumes.txt); do docker volume create "$v" >/dev/null; done

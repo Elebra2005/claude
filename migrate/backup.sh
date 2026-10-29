@@ -4,10 +4,20 @@
 set -euo pipefail
 
 OUT=/root/migrate
-DB=103c04531ada_remnawave-db
-# amnezia-awg2 не переносим: на новом сервере своя Amnezia с тем же именем контейнера
-BOTS="remna-sales-bot remna-telegram-bot-prod rates-bot bus814-bot wallet-watch"
-PANEL="remnawave remnawave-subscription-page remnawave-nginx remnanode"
+# Контейнер базы: remnawave-db или с префиксом вида 103c04531ada_remnawave-db
+DB=$(docker ps -a --format '{{.Names}}' | grep -E '(^|_)remnawave-db$' | head -1)
+[ -n "$DB" ] || { echo "Не найден контейнер базы remnawave-db"; exit 1; }
+# amnezia-awg2 не переносим: на новом сервере своя Amnezia с тем же именем контейнера.
+# Берём только тех ботов, что реально есть на сервере.
+BOTS=""
+for b in remna-sales-bot remna-telegram-bot-prod rates-bot bus814-bot wallet-watch; do
+  docker inspect "$b" >/dev/null 2>&1 && BOTS="$BOTS $b"
+done
+PANEL=""
+for c in remnawave remnawave-subscription-page remnawave-nginx remnanode; do
+  docker inspect "$c" >/dev/null 2>&1 && PANEL="$PANEL $c"
+done
+echo "База: $DB; боты:$BOTS"
 
 mkdir -p "$OUT/containers"
 cd "$OUT"
@@ -32,6 +42,13 @@ for c in $BOTS; do
 done
 docker save $IMAGES | gzip > images.tar.gz
 ls -lh images.tar.gz
+
+echo "== 4b. Образы панели (чтобы не качать с Docker Hub на новом сервере)"
+PIMAGES=$(for c in $DB $PANEL; do docker inspect "$c" --format '{{.Config.Image}}'; done | sort -u)
+REDIS=$(docker ps -a --format '{{.Names}}' | grep -E '(^|_)remnawave-redis$' | head -1)
+[ -n "$REDIS" ] && PIMAGES="$PIMAGES $(docker inspect "$REDIS" --format '{{.Config.Image}}')"
+docker save $PIMAGES | gzip > panel-images.tar.gz
+ls -lh panel-images.tar.gz
 
 echo "== 5. Тома ботов"
 VOLS=$(for c in $BOTS; do
