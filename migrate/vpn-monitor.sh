@@ -32,21 +32,45 @@ send() {
     --data-urlencode "chat_id=$CHAT_ID" --data-urlencode "text=$1"
 }
 
-# Тихий отчёт моноширинной таблицей (без звука уведомления)
+# Тихий плановый отчёт (без звука уведомления)
 send_report() {
   curl -s -m 15 -o /dev/null "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" \
     --data-urlencode "chat_id=$CHAT_ID" --data-urlencode "parse_mode=HTML" \
     --data-urlencode "disable_notification=true" --data-urlencode "text=$1"
 }
 
-# Дополнить строку пробелами до ширины $2 (в символах, кириллица тоже)
-pad() { local t=$1; while [ ${#t} -lt "$2" ]; do t+=" "; done; printf '%s' "$t"; }
-
-ROWS=""; ALL_OK=1
-row() {  # $1 — название, $2 — ok/fail, $3 — код, $4 — время ответа
-  local mark="OK  "; [ "$2" = ok ] || { mark="FAIL"; ALL_OK=0; }
-  ROWS+="$(pad "$1" 9) $(pad "$mark" 4) $(pad "${3:--}" 4) ${4:--}"$'\n'
+# Флаг и название страны по коду ноды из NODES
+country() {
+  case $1 in
+    FI) echo "🇫🇮 Финляндия";;   NL) echo "🇳🇱 Нидерланды";;
+    DE) echo "🇩🇪 Германия";;    PL) echo "🇵🇱 Польша";;
+    SE) echo "🇸🇪 Швеция";;      EE) echo "🇪🇪 Эстония";;
+    LV) echo "🇱🇻 Латвия";;      LT) echo "🇱🇹 Литва";;
+    FR) echo "🇫🇷 Франция";;     GB|UK) echo "🇬🇧 Великобритания";;
+    US) echo "🇺🇸 США";;         TR) echo "🇹🇷 Турция";;
+    KZ) echo "🇰🇿 Казахстан";;   *) echo "🌐 $1";;
+  esac
 }
+
+# Значок и время для строки отчёта: $1 — ok/fail, $2 — время в секундах
+SLOW_MS=${SLOW_MS:-1500}
+mark() {
+  local ms=""
+  [ -n "${2:-}" ] && ms=$(awk -v t="$2" 'BEGIN{printf "%d", t*1000}')
+  if [ "$1" != ok ]; then printf '🔴 нет ответа'; return; fi
+  if [ -z "$ms" ]; then printf '🟢 в строю'; return; fi
+  if [ "$ms" -ge "$SLOW_MS" ]; then printf '🟡 %s мс' "$ms"; else printf '🟢 %s мс' "$ms"; fi
+}
+
+# Учесть результат в общей сводке (вызывать не в подоболочке): $1 — ok/fail, $2 — время
+note() {
+  [ "$1" = ok ] || { ALL_OK=0; return; }
+  [ -n "${2:-}" ] && awk -v t="$2" -v s="$SLOW_MS" 'BEGIN{exit !(t*1000>=s)}' && SLOW=1
+  return 0
+}
+
+ALL_OK=1; SLOW=0; NODES_OK=0; NODES_ALL=0
+ENTRY_LINE=""; NODE_LINES=""; SUB_LINE=""
 
 # Учёт состояния одной проверки: $1 — ключ, $2 — ok/fail, $3 — подпись
 track() {
@@ -75,38 +99,49 @@ done
 out=$(ssh -o BatchMode=yes -o ConnectTimeout=10 -o StrictHostKeyChecking=accept-new \
       "root@$ENTRY" "$remote_checks" 2>/dev/null)
 if [ $? -eq 0 ] && [ -n "$out" ]; then
-  track entry ok "вход $ENTRY (SSH)"; row "Вход" ok
+  track entry ok "вход $ENTRY (SSH)"
+  ENTRY_LINE="🛡 <b>Вход</b> · $(mark ok)"; note ok
   for n in $NODES; do
-    name=${n%%=*}
+    name=${n%%=*}; NODES_ALL=$((NODES_ALL + 1))
     code=$(echo "$out" | awk -v n="$name" '$1==n{print $2}')
-    t=$(echo "$out" | awk -v n="$name" '$1==n{printf "%.2fs", $3}')
-    if [ "$code" = 200 ]; then r=ok; else r=fail; fi
-    track "node-$name" "$r" "нода $name (с входа код ${code:-нет ответа})"
-    row "Нода $name" "$r" "$code" "$t"
+    t=$(echo "$out" | awk -v n="$name" '$1==n{print $3}')
+    if [ "$code" = 200 ]; then r=ok; NODES_OK=$((NODES_OK + 1)); else r=fail; t=""; fi
+    track "node-$name" "$r" "нода $(country "$name") (с входа код ${code:-нет ответа})"
+    NODE_LINES+="$(country "$name") · $(mark "$r" "$t")"$'\n'; note "$r" "$t"
   done
 else
   track entry fail "вход $ENTRY недоступен по SSH (ноды не проверены)"
-  row "Вход" fail
-  for n in $NODES; do row "Нода ${n%%=*}" fail "?" ; done
+  ENTRY_LINE="🛡 <b>Вход</b> · $(mark fail)"; note fail
+  for n in $NODES; do
+    NODES_ALL=$((NODES_ALL + 1))
+    NODE_LINES+="$(country "${n%%=*}") · ⚪️ не проверена"$'\n'
+  done
 fi
 
 # 3. Подписки через вход
 host=$(echo "$SUB_URL" | sed -E 's#https?://([^/]+)/.*#\1#')
 res=$(curl -sk -o /dev/null -m 15 -A 'Happ/1.0' -w '%{http_code} %{time_total}' \
        --resolve "$host:443:$ENTRY" "$SUB_URL")
-code=${res%% *}; t=$(printf '%.2fs' "${res#* }" 2>/dev/null)
-if [ "$code" = 200 ]; then r=ok; else r=fail; fi
+code=${res%% *}; t=${res#* }
+if [ "$code" = 200 ]; then r=ok; else r=fail; t=""; fi
 track sub "$r" "подписки через вход (код $code)"
-row "Подписки" "$r" "$code" "$t"
+SUB_LINE="📄 <b>Подписки</b> · $(mark "$r" "$t")"; note "$r" "$t"
 
 # 4. Плановый отчёт
 if [ "$REPORT_EVERY" -gt 0 ] && [ $(( 10#$(date +%M) % REPORT_EVERY )) -eq 0 ]; then
-  if [ "$ALL_OK" = 1 ]; then head="🟢 MareevVPN: всё работает"; else head="🔴 MareevVPN: есть сбои"; fi
-  now=$(TZ=$REPORT_TZ date '+%d.%m %H:%M')
-  table="$(pad "Узел" 9) $(pad "Ст." 4) $(pad "Код" 4) Ответ"$'\n'"$ROWS"
-  send_report "<b>$head</b>
-$now (МСК), вход $ENTRY
-<pre>$table</pre>"
+  if [ "$ALL_OK" != 1 ]; then head="🔴 <b>MareevVPN · есть сбои</b>"
+  elif [ "$SLOW" = 1 ]; then head="🟡 <b>MareevVPN · работает, но медленно</b>"
+  else head="🟢 <b>MareevVPN · всё работает</b>"; fi
+  now=$(TZ=$REPORT_TZ date '+%d.%m.%Y · %H:%M')
+  send_report "$head
+🕐 $now МСК
+
+$ENTRY_LINE
+━━━━━━━━━━━━━━━━
+🌍 <b>Ноды</b> · $NODES_OK из $NODES_ALL в строю
+${NODE_LINES%$'\n'}
+━━━━━━━━━━━━━━━━
+$SUB_LINE"
 fi
 
 # --- Образец /etc/vpn-monitor.conf ---
@@ -117,3 +152,5 @@ fi
 # SUB_URL=https://subnikitusik.ncknms.com/КОРОТКИЙ_ID_ЛЮБОЙ_ПОДПИСКИ
 # FAILS_TO_ALERT=2
 # REPORT_EVERY=5                       # плановый отчёт каждые 5 минут (0 — выключить)
+# SLOW_MS=1500                         # с какого времени ответа нода считается медленной (🟡)
+# Коды нод в NODES: FI NL DE PL SE EE LV LT FR GB US TR KZ — подставляется флаг и название
