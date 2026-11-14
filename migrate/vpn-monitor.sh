@@ -6,7 +6,7 @@
 #   1. вход (Selectel) доступен по SSH;
 #   2. с входа каждая нода отвечает как Reality+selfsteal (curl по SNI на :8445);
 #   3. через вход открываются подписки (Caddy -> панель);
-#   4. на сервере панели запущены контейнеры панели и ботов.
+#   4. на сервере панели запущены контейнеры панели.
 # Раз в час (если NODE_SSH=1): здоровье нод — контейнеры, диск, память, срок
 # сертификатов selfsteal.
 #
@@ -37,7 +37,6 @@ HEALTH_EVERY=${HEALTH_EVERY:-60}
 CERT_WARN_DAYS=${CERT_WARN_DAYS:-14}
 DISK_WARN=${DISK_WARN:-90}
 PANEL_CONTAINERS=${PANEL_CONTAINERS:-"remnawave remnawave-db remnawave-redis remnawave-subscription-page remnawave-nginx"}
-BOT_CONTAINERS=${BOT_CONTAINERS:-"remna-sales-bot remna-telegram-bot-prod"}
 STATE_DIR=${STATE_DIR:-/var/lib/vpn-monitor}
 mkdir -p "$STATE_DIR"
 SUB_HOST=$(echo "$SUB_URL" | sed -E 's#https?://([^/]+)/.*#\1#')
@@ -226,13 +225,6 @@ diag_panel() {
     say "диск сервера панели заполнен на ${dsk}%." "почистить место (docker system prune, старые бэкапы) или поднять тариф." "диск ${dsk}%, свободно RAM ${mem} МБ"
   fi
 }
-diag_bots() {
-  local bad
-  # shellcheck disable=SC2086
-  bad=$(container_report $BOT_CONTAINERS)
-  say "не работают боты: $(esc "$bad") — оплата и выдача подписок могут не работать." \
-      "docker start ИМЯ; docker logs ИМЯ --tail 20" "$(esc "$bad")"
-}
 
 # ---------- Учёт состояний ----------
 # $1 ключ, $2 ok/fail, $3 заголовок, $4 порог, далее — команда диагностики
@@ -318,7 +310,7 @@ if [ "$code" = 200 ]; then r=ok; else r=fail; t=""; fi
 track sub "$r" "Подписки через вход" "$FAILS_TO_ALERT" diag_sub
 SUB_LINE="📄 <b>Подписки</b> · $(mark "$r" "$t")"; note "$r" "$t"
 
-# ---------- 4. Сервер панели и боты ----------
+# ---------- 4. Сервер панели ----------
 if command -v docker >/dev/null 2>&1; then
   # shellcheck disable=SC2086
   bad=$(container_report $PANEL_CONTAINERS)
@@ -326,11 +318,6 @@ if command -v docker >/dev/null 2>&1; then
   if [ -z "$bad" ] && [ "${dsk:-0}" -lt "$DISK_WARN" ]; then r=ok; else r=fail; fi
   track panel "$r" "Сервер панели" "$FAILS_TO_ALERT" diag_panel
   PANEL_LINE="🖥 <b>Панель</b> · $(mark "$r")"; note "$r"
-  # shellcheck disable=SC2086
-  bad=$(container_report $BOT_CONTAINERS)
-  if [ -z "$bad" ]; then r=ok; else r=fail; fi
-  track bots "$r" "Боты" "$FAILS_TO_ALERT" diag_bots
-  PANEL_LINE+=$'\n'"🤖 <b>Боты</b> · $(mark "$r")"; note "$r"
 fi
 
 # ---------- 5. Здоровье нод изнутри (раз в HEALTH_EVERY минут) ----------
