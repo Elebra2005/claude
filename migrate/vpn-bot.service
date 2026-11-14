@@ -1,0 +1,12 @@
+[Unit]
+Description=MareevVPN_Report bot (кнопка «Проверить статус»)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/local/bin/vpn-bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

@@ -18,6 +18,10 @@
 set -u
 export LC_ALL=C.UTF-8
 
+# --report: проверить всё прямо сейчас и прислать отчёт (кнопка «Проверить статус»).
+# В этом режиме состояние тревог не меняется, а причины сбоев идут в тот же отчёт.
+ON_DEMAND=0; [ "${1:-}" = --report ] && ON_DEMAND=1
+
 CONF=${CONF:-/etc/vpn-monitor.conf}
 [ -f "$CONF" ] || { echo "Нет $CONF"; exit 1; }
 # shellcheck disable=SC1090
@@ -232,9 +236,14 @@ diag_bots() {
 
 # ---------- Учёт состояний ----------
 # $1 ключ, $2 ok/fail, $3 заголовок, $4 порог, далее — команда диагностики
+DIAG_TEXT=""
 track() {
   local key=$1 res=$2 title=$3 th=$4 f="$STATE_DIR/$1" fails=0 alerted=0 since=0 now mins
   shift 4
+  if [ "$ON_DEMAND" = 1 ]; then
+    [ "$res" = ok ] || DIAG_TEXT+=$'\n\n'"🔴 <b>$title</b>"$'\n'"$("$@")"
+    return 0
+  fi
   [ -f "$f" ] && read -r fails alerted since < "$f"
   now=$(date +%s)
   if [ "$res" = ok ]; then
@@ -325,7 +334,7 @@ if command -v docker >/dev/null 2>&1; then
 fi
 
 # ---------- 5. Здоровье нод изнутри (раз в HEALTH_EVERY минут) ----------
-if [ "$NODE_SSH" = 1 ] && [ $(( MINUTE % HEALTH_EVERY )) -eq 0 ]; then
+if [ "$NODE_SSH" = 1 ] && { [ "$ON_DEMAND" = 1 ] || [ $(( MINUTE % HEALTH_EVERY )) -eq 0 ]; }; then
   for n in $NODES; do
     name=${n%%=*}; rest=${n#*=}; ip=${rest%%=*}
     info=$(node_info "$ip")
@@ -343,12 +352,14 @@ if [ "$NODE_SSH" = 1 ] && [ $(( MINUTE % HEALTH_EVERY )) -eq 0 ]; then
 fi
 
 # ---------- 6. Плановый отчёт ----------
-if [ "$REPORT_EVERY" -gt 0 ] && [ $(( MINUTE % REPORT_EVERY )) -eq 0 ]; then
+if [ "$ON_DEMAND" = 1 ] || { [ "$REPORT_EVERY" -gt 0 ] && [ $(( MINUTE % REPORT_EVERY )) -eq 0 ]; }; then
   if [ "$ALL_OK" != 1 ]; then head="🔴 <b>MareevVPN · есть сбои</b>"
   elif [ "$SLOW" = 1 ]; then head="🟡 <b>MareevVPN · работает, но медленно</b>"
   else head="🟢 <b>MareevVPN · всё работает</b>"; fi
   now=$(TZ=$REPORT_TZ date '+%d.%m.%Y · %H:%M')
-  tail_note=""; [ "$ALL_OK" != 1 ] && tail_note=$'\n\n'"ℹ️ Причины сбоев — в отдельных сообщениях."
+  tail_note=""
+  if [ "$ON_DEMAND" = 1 ]; then tail_note="$DIAG_TEXT"
+  elif [ "$ALL_OK" != 1 ]; then tail_note=$'\n\n'"ℹ️ Причины сбоев — в отдельных сообщениях."; fi
   tg "$head
 🕐 $now МСК
 
@@ -357,7 +368,7 @@ $ENTRY_LINE
 🌍 <b>Ноды</b> · $NODES_OK из $NODES_ALL в строю
 ${NODE_LINES%$'\n'}
 ━━━━━━━━━━━━━━━━
-$SUB_LINE${PANEL_LINE:+$'\n'$PANEL_LINE}$tail_note" true
+$SUB_LINE${PANEL_LINE:+$'\n'$PANEL_LINE}$tail_note" "$([ "$ON_DEMAND" = 1 ] && echo false || echo true)"
 fi
 
 # --- Образец /etc/vpn-monitor.conf ---
@@ -368,7 +379,7 @@ fi
 # NODES="FI=2.27.13.73=docs.ncknms.com NL=78.17.68.185=notes.ncknms.com DE=2.27.60.173=docs.ncknms.com PL=191.44.113.142=notes.ncknms.com"
 # SUB_URL=https://subnikitusik.ncknms.com/КОРОТКИЙ_ID_ЛЮБОЙ_ПОДПИСКИ
 # FAILS_TO_ALERT=2                     # сколько неудачных проверок подряд до тревоги
-# REPORT_EVERY=5                       # плановый отчёт каждые 5 минут (0 — выключить)
+# REPORT_EVERY=0                       # плановый отчёт каждые N минут (0 — только по кнопке в боте)
 # SLOW_MS=1500                         # с какого времени ответа нода считается медленной (🟡)
 # NODE_SSH=1                           # заглядывать внутрь нод по SSH (нужен ключ панели на нодах)
 # HEALTH_EVERY=60                      # как часто проверять сертификаты/диск/RAM на нодах (минуты)
