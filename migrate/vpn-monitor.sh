@@ -213,6 +213,21 @@ diag_sub() {
   fi
 }
 
+diag_fwd() {  # $1 код, $2 ip, $3 sni, $4 порт на входе
+  local rule
+  rule=$(on_entry "nft list ruleset | grep -E 'dport $4 '" | sed 's/^[[:space:]]*//')
+  if [ -z "$rule" ]; then
+    say "нода исправна, но на входе нет правила пересылки для порта $4 — клиенты на этой ноде без связи." \
+        "на входе: проверь /etc/nftables.conf (строка tcp dport $4 dnat to $2:8445) и выполни nft -f /etc/nftables.conf" "правила для $4 нет"
+  elif ! grep -q "$2:8445" <<<"$rule"; then
+    say "нода исправна, но вход пересылает порт $4 не на неё, а на другой адрес — клиенты уходят на старый/чужой сервер." \
+        "на входе: в /etc/nftables.conf поставить $2 вместо старого адреса (и в строке masquerade), затем nft -f /etc/nftables.conf" "$(esc "$rule")"
+  else
+    say "правило пересылки верное, нода отвечает напрямую, но через вход:$4 ответа нет — мешает masquerade или старые записи conntrack." \
+        "на входе: nft list ruleset | grep masquerade (там должен быть $2); conntrack -D -p tcp --dport $4" "$(esc "$rule")"
+  fi
+}
+
 diag_panel() {
   local bad dsk mem
   # shellcheck disable=SC2086
@@ -276,7 +291,7 @@ note() {  # учесть результат в общей сводке (не в 
 # ---------- 1–2. Вход и ноды ----------
 remote_checks=""
 for n in $NODES; do            # формат: Код=IP=SNI
-  name=${n%%=*}; rest=${n#*=}; ip=${rest%%=*}; sni=${rest#*=}
+  name=${n%%=*}; rest=${n#*=}; ip=${rest%%=*}; sni=${rest#*=}; port=${sni#*=}; sni=${sni%%=*}; [ "$port" = "$sni" ] && port=""
   remote_checks+="c=\$(curl -sk -o /dev/null -m 8 -w '%{http_code} %{time_total}' --resolve $sni:8445:$ip https://$sni:8445/); echo \"$name \$c\"; "
 done
 
@@ -285,12 +300,18 @@ if [ $? -eq 0 ] && [ -n "$out" ]; then
   track entry ok "Вход $ENTRY" "$FAILS_TO_ALERT" diag_entry
   ENTRY_LINE="🛡 <b>Вход</b> · $(mark ok)"; note ok
   for n in $NODES; do
-    name=${n%%=*}; rest=${n#*=}; ip=${rest%%=*}; sni=${rest#*=}
+    name=${n%%=*}; rest=${n#*=}; ip=${rest%%=*}; sni=${rest#*=}; port=${sni#*=}; sni=${sni%%=*}; [ "$port" = "$sni" ] && port=""
     NODES_ALL=$((NODES_ALL + 1))
     code=$(awk -v n="$name" '$1==n{print $2}' <<<"$out")
     t=$(awk -v n="$name" '$1==n{print $3}' <<<"$out")
     if [ "$code" = 200 ]; then r=ok; NODES_OK=$((NODES_OK + 1)); else r=fail; t=""; fi
     track "node-$name" "$r" "Нода $(country "$name") ($ip)" "$FAILS_TO_ALERT" diag_node "$name" "$ip" "$sni"
+    if [ -n "$port" ]; then   # тот же путь, что у клиента: вход:порт → DNAT → нода
+      if [ "$r" = ok ]; then
+        [ "$(https_code "$ENTRY" "$sni" "$port")" = 200 ] || { r=fail; t=""; NODES_OK=$((NODES_OK - 1)); }
+        track "fwd-$name" "$r" "Пересылка $ENTRY:$port → $(country "$name")" "$FAILS_TO_ALERT" diag_fwd "$name" "$ip" "$sni" "$port"
+      fi
+    fi
     NODE_LINES+="$(country "$name") · $(mark "$r" "$t")"$'\n'; note "$r" "$t"
   done
 else
@@ -363,7 +384,8 @@ fi
 # CHAT_ID=123456789                    # твой chat_id
 # ENTRY=139.100.219.235                # российский вход
 # PANEL_IP=31.77.6.157                 # адрес сервера панели
-# NODES="FI=2.27.13.73=docs.ncknms.com NL=78.17.68.185=notes.ncknms.com DE=2.27.60.173=docs.ncknms.com PL=191.44.113.142=notes.ncknms.com"
+# NODES="FI=191.217.205.146=docs.ncknms.com=8451 NL=88.210.62.9=notes.ncknms.com=8452 DE=2.27.60.173=docs.ncknms.com=8454 PL=191.44.113.142=notes.ncknms.com=8455"
+#   Код=IP=SNI=ПОРТ_НА_ВХОДЕ — порт необязателен; с ним монитор проверяет и путь клиента через вход (DNAT)
 # SUB_URL=https://subnikitusik.ncknms.com/КОРОТКИЙ_ID_ЛЮБОЙ_ПОДПИСКИ
 # FAILS_TO_ALERT=2                     # сколько неудачных проверок подряд до тревоги
 # REPORT_EVERY=0                       # плановый отчёт каждые N минут (0 — только по кнопке в боте)
