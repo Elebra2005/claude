@@ -16,6 +16,7 @@
 import datetime as dt
 import json
 import os
+import re
 import subprocess
 import threading
 import time
@@ -73,7 +74,7 @@ def today():
 
 # ---------- Список серверов ----------
 # Формат /etc/vpn-servers.txt (по строке на сервер, # — комментарий):
-#   КОД | Название | IP | Хостер | ДД.ММ.ГГГГ
+#   КОД | Название | IP | Хостер | ДД.ММ.ГГГГ | Цена в месяц (например 2.86 $)
 def load_servers():
     items = []
     try:
@@ -83,23 +84,24 @@ def load_servers():
                 if not line or line.startswith("#"):
                     continue
                 parts = [p.strip() for p in line.split("|")]
-                parts += [""] * (5 - len(parts))
-                code, name, ip, host, date = parts[:5]
+                parts += [""] * (6 - len(parts))
+                code, name, ip, host, date, price = parts[:6]
                 try:
                     due = dt.datetime.strptime(date, "%d.%m.%Y").date()
                 except ValueError:
                     due = None
-                items.append({"code": code, "name": name, "ip": ip, "host": host, "due": due})
+                items.append({"code": code, "name": name, "ip": ip, "host": host, "due": due,
+                              "price": price})
     except FileNotFoundError:
         pass
     return items
 
 
 def save_servers(items):
-    lines = ["# КОД | Название | IP | Хостер | Оплачен до (ДД.ММ.ГГГГ)"]
+    lines = ["# КОД | Название | IP | Хостер | Оплачен до (ДД.ММ.ГГГГ) | Цена в месяц"]
     for s in items:
         date = s["due"].strftime("%d.%m.%Y") if s["due"] else ""
-        lines.append(" | ".join([s["code"], s["name"], s["ip"], s["host"], date]))
+        lines.append(" | ".join([s["code"], s["name"], s["ip"], s["host"], date, s["price"]]))
     tmp = SERVERS + ".tmp"
     with open(tmp, "w") as f:
         f.write("\n".join(lines) + "\n")
@@ -115,9 +117,39 @@ def days_word(n):
     return "дней"
 
 
+def parse_price(text):
+    """'2.86 $' -> (2.86, '$'); без цены -> None."""
+    m = re.match(r"\s*([\d.,]+)\s*(.*)", text or "")
+    if not m:
+        return None
+    try:
+        return float(m.group(1).replace(",", ".")), m.group(2).strip() or "?"
+    except ValueError:
+        return None
+
+
+def fmt_money(amount, cur):
+    num = f"{amount:.2f}".rstrip("0").rstrip(".")
+    return f"{num} {cur}"
+
+
+def totals(items):
+    sums = {}
+    for s in items:
+        p = parse_price(s["price"])
+        if p:
+            sums[p[1]] = sums.get(p[1], 0) + p[0]
+    return " + ".join(fmt_money(v, k) for k, v in sums.items())
+
+
+def price_part(s):
+    return f" · 💰 {s['price']}/мес" if s["price"] else ""
+
+
 def line_for(s):
     if not s["due"]:
-        return f"⚪️ <b>{s['name']}</b> — дата не указана\n      <code>{s['ip']}</code> · {s['host']}"
+        return (f"⚪️ <b>{s['name']}</b> — дата не указана\n"
+                f"      <code>{s['ip']}</code> · {s['host']}{price_part(s)}")
     left = (s["due"] - today()).days
     if left < 0:
         icon, when = "🔴", f"просрочен на {-left} {days_word(left)}"
@@ -130,7 +162,7 @@ def line_for(s):
     else:
         icon, when = "🟢", f"через {left} {days_word(left)}"
     return (f"{icon} <b>{s['name']}</b> — до {s['due'].strftime('%d.%m.%Y')} ({when})\n"
-            f"      <code>{s['ip']}</code> · {s['host']} · код <code>{s['code']}</code>")
+            f"      <code>{s['ip']}</code> · {s['host']}{price_part(s)} · код <code>{s['code']}</code>")
 
 
 def payments_table():
@@ -143,6 +175,9 @@ def payments_table():
     head = "🗓 <b>Сроки оплаты серверов</b>"
     head += f"\n⚠️ Скоро оплатить: {soon}" if soon else "\n✅ В ближайшую неделю платить не нужно"
     body = "\n\n".join(line_for(s) for s in items)
+    total = totals(items)
+    if total:
+        body += f"\n\n💰 <b>Итого в месяц:</b> {total}"
     tip = ("\n\nПосле продления:\n<code>/paid КОД ДД.ММ.ГГГГ</code> — новая дата\n"
            "<code>/plus КОД 30</code> — плюс 30 дней")
     return f"{head}\n\n{body}{tip}"
@@ -186,8 +221,10 @@ def reminders_loop():
                         due.append(s)
                 if due:
                     due.sort(key=lambda s: s["due"])
+                    total = totals(due)
                     send("💳 <b>Пора оплатить серверы</b>\n\n"
                          + "\n\n".join(line_for(s) for s in due)
+                         + (f"\n\n💰 <b>К оплате:</b> {total}" if total else "")
                          + "\n\nПосле оплаты: <code>/paid КОД ДД.ММ.ГГГГ</code>")
                 os.makedirs(os.path.dirname(STATE), exist_ok=True)
                 with open(STATE, "w") as f:
